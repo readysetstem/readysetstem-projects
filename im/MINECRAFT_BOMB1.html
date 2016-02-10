@@ -51,9 +51,26 @@
  "">
  <h2>Writing Our Code</h2>
 
- <p>xxx</p>
- <div class="code" data-firstline="1">
-  <textarea>
+
+<h2>Hardware Setup</h2>
+<img class="bb" src="img/Minecraft_1button_bb.png">
+
+<h2>Writing Our Code</h2>
+
+<p>The code for this project should be pretty self-explanatory.
+In our game loop, if there is currently no bomb set, we check
+for a button press, and when we get one, we place a bomb at that
+location.  If a bomb has been set, the next button press will
+detonate the bomb (using a separate <code>detonate()</code>
+function.
+
+<h3>Full Code</h3>
+
+<p>
+Here is what the full code for this project should look like:
+</p>
+
+<div class="code" data-firstline="1"> <div></div> <textarea>
 from rstem.button import Button
 from rstem.mcpi import minecraft, control, block
 from rstem.mcpi.vec3 import Vec3
