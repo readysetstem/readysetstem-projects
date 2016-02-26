@@ -26,13 +26,15 @@
   </script>
 </head>
 <body>
+  <div class="hw" data-count="1" data-name="battery"></div>
+  <div class="hw" data-count="1" data-name="led_yfc"></div>
+  <div class="hw" data-count="1" data-name="resistor_yfc"></div>
   <div class="section" id="intro">
       <p>
       In this project, we're going to rebuild the circuit we built in the last
       project, but this time, using the breadboard.
 
-  <p>In our previous project (<a href="YOUR_FIRST_CIRCUIT.html">YOUR FIRST
-  CIRCUIT</a>), we built the following circuit using a battery, an LED and a
+  <p>In our previous project (<a data-uid="yfc"></a>), we built the following circuit using a battery, an LED and a
   resistor:</p><img class="bb" src="img/Your_First_Circuit_complete_bb.png"
   alt="">
 
@@ -45,34 +47,33 @@
   wire" -- this is a half-inch long green wire that is in a small plastic bag
   packaged inside of a larger bag of wires.</p>
 
-  <p>If you haven't read <a href="USING_THE_BREADBOARD.html">USING THE
-  BREADBOARD</a>, we highly recommend you do so now. You'll need that
+  <p>If you haven't read <a data-uid="breadboard"></a>, we highly recommend you do so now. You'll need that
   information for not only this projects, but for all future projects as well
   -- from here on out, everything we build will be on our breadboard.</p>
+  </div>
+  <div class="section" id="hw">
   <h2>Breadboarding Our Circuit - Step By Step</h2>
 
-  <p>Hopefully, you've also read <a href="YOUR_FIRST_SCHEMATIC.html">YOUR FIRST
-  SCHEMATIC</a> and have a general idea of how a schematic works. Here is the
+  <p>Hopefully, you've also read <a data-uid="breadboard"></a> and have a general idea of how a schematic works. Here is the
   example we used in that lesson, which also happens to be the schematic of our
-  first circuit (pictured above):</p><img class="schematic" style=
-  "width: 636px; height: 343px;" alt="" src="img/Battery-LED-Circuit.png">
+  first circuit (pictured above):</p><img class="schematic" 
+  alt="" src="img/Battery-LED-Circuit.png">
 
   <p>To implement that design (or any design) on our breadboard, we will follow
   the schematic from power (the + terminal of the battery) to ground (the -
   terminal of the battery), inserting each component along the way.</p>
 
   <p>Let’s look at this step-by-step:</p>
-  <h4>Step #1: Build our power source</h4>
+  <h3 class=step>Build our power source</h3>
 
-  <p>We discussed in <a href="USING_THE_BREADBOARD.html">USING THE
-  BREADBOARD</a> how we can power our circuits in any number of ways. While the
+  <p>We discussed in <a data-uid="breadboard"></a> how we can power our circuits in any number of ways. While the
   RaspberrySTEM CREATOR Kit itself can provide power to the breadboard and the
   circuits that are on the breadboard -- and we'll be using the RaspberrySTEM
   CREATOR Kit for power starting in the next project -- we want to give you an
   example of how other power sources can be used instead.</p>
 
   <p>So, for this project, we're going to use the 3V lithium battery that we
-  used in <a href="YOUR_FIRST_CIRCUIT.html">YOUR FIRST CIRCUIT</a> to power our
+  used in <a data-uid="yfc"></a> to power our
   first breadboard circuit.</p>
 
   <p>To use the 3V battery as the "power supply" for the breadboard in this
@@ -91,7 +92,7 @@
 
   <p>This is going to serve as our power supply for this project. And we're now
   ready to start building our circuit...</p>
-  <h4>Step #2: Provide power (and ground) to the breadboard</h4>
+  <h3 class=step>Provide power (and ground) to the breadboard</h3>
 
   <p>If you follow the schematic starting from the battery, the first component
   you hit is the battery itself. Here is that part of the
@@ -100,7 +101,7 @@
   "img/Battery-LED-Circuit-Battery-Only.png">
 
   <p>In other words, the first step in breadboarding your circuit is to hook up
-  the power supply (that we created in Step #1 above) to the breadboard. To do
+  the power supply (that we created in the previous step) to the breadboard. To do
   this, we first want to take the silver wire that is attached to the (+) side
   of the battery and insert it into one of the holes along the red strip of the
   breadboard rail. Then, we want to take the silver wire that is attached to
@@ -109,7 +110,9 @@
 
   <p><strong>Note:</strong> It may be a little difficult to get the wires into
   the breadboard holes, as these wires aren't specifically made for this
-  purpose. But, this will be the last project where we're using the battery, so
+  purpose. You may need to pinch the wires tightly against the battery to keep
+  them from slipping out from behind the adhesive white dot.  But, this will be
+  the last project where we're using the battery, so
   it doesn't matter if the wires bend or don't look very good. Also note that
   the wires are short, so it's quite likely the battery will be sticking up in
   the air once the wires are inserted into the breadboard.</p>
@@ -120,7 +123,7 @@
   <p><strong>Note:</strong> You'll want to ensure that the two bare wires are
   not touching each other, as that would "short" the battery (meaning that the
   electric current would run from the (+) terminal of the battery directly to
-  the (-) terminal of the battery, and quickly drain all the power.</p>
+  the (-) terminal of the battery, and quickly drain all the power.)</p>
 
   <p>The wire attached to the (+) side of the battery is your power, and
   because all holes in the red rail strip are connected together, we have now
@@ -128,14 +131,14 @@
   (-) side of the battery is your ground, and because all holes in the blue
   strip are connected together, we have now provided ground that entire strip
   of the breadboard.</p>
-  <h4>Step #3: Connect the resistor to the (+) side of the battery</h4>
+  <h3 class=step>Connect the resistor to the (+) side of the battery</h3>
 
   <p>If we following the schematic around the loop, the next component we come
   to is the resistor, which is attached to the (+) terminal of the
   battery:</p><img class="schematic" style="width: 400px;" alt="" src=
   "img/Battery-LED-Circuit-Resistor-Added.png">
 
-  <p>In the <a href="YOUR_FIRST_CIRCUIT.html">YOUR FIRST CIRCUIT</a> project,
+  <p>In the <a data-uid="yfc"></a> project,
   we learned that by touching the components together, we complete the circuit
   and allow electric charge to flow. The breadboard allows us to do the exact
   same thing (complete the circuit) but in a way that doesn't involve the
@@ -168,7 +171,7 @@
 
   <p><strong>Note:</strong> Don't be afraid to bend the resistor leads as
   necessary -- that's what they're made for!</p>
-  <h4>Step #4: Connect the LED to the resistor</h4>
+  <h3 class=step>Connect the LED to the resistor</h3>
 
   <p>Following the schematic around further, the next component we get to is
   the LED:</p><img class="schematic" style="width: 449px;" alt="" src=
@@ -186,7 +189,7 @@
   LED into any other 5-hole connect strip on the breadboard. This is about what
   your breadboard should look like now:</p><img class="bb" src=
   "img/Your_First_Breadboard_LED_Added_bb.png" alt="">
-  <h4>Step #5: Complete the circuit by attaching the LED to ground</h4>
+  <h3 class=step>Complete the circuit by attaching the LED to ground</h3>
 
   <p>If we continue to follow our schematic around the loop, you'll see that
   the final step is to connect the second lead of the LED to the (-) terminal
@@ -216,9 +219,21 @@
   breadboard!</p>
 
   </div>
-  <div class="section" id="hw">
-  </div>
-  <div class="section" id="sw">
+  <div class="section" id="challenge">
+  <ol>
+    <li>
+      <p>We used the green wire in the circuit in this section only show the
+      circuit being assembled in four distinct steps - one for each side of the
+      circuit in the schematic.  Instead, wire up the circuit without the green
+      wire.
+    </li>
+    <li>
+      <p>We hooked up the battery to power rail - the red and blue strips on
+      the breadboard.  This is what the power rails are intended for - however,
+      they don't have to be used that way, or used at all.  Hook up your
+      circuit without using the power rail at all.
+    </li>
+  </ol>
   </div>
 </body>
 </html>

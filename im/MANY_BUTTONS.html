@@ -33,9 +33,7 @@
       GPIO inputs. We'll use this setup in future projects to control different
       outputs.
 
-  <p>In our previous projects, <a href="GENERAL_PURPOSE_INPUT-OUTPUT.html">GPIO
-  AS OUTPUTS (CONTROLLING LEDS)</a> and <a href=
-  "USING_BUTTONS_WITH_GPIO.html">GPIO AS INPUTS (READING BUTTONS)</a>, we
+  <p>In our previous projects, <a data-uid="gpoutp"></a> and <a data-uid="button"></a>, we
   introduced the concept of controlling and monitoring the state of a component
   (LEDs and buttons) using GPIOs as inputs/outputs. In the gaming world, this
   concept gets more useful -- and interesting -- as we add more components.
@@ -119,8 +117,7 @@ while True:
       initialization for each of the four buttons we've created. For each
       button in the list, we call the Button() function, which returns a
       "button object" for each item in the my_buttons variable. We talked about
-      that a bit in <a href="VARIABLES_-_ASSIGNMENTS.html">VARIABLES &amp;
-      ASSIGNMENTS</a>, but the important thing to understand is that we can use
+      that a bit in <a data-uid="vars"></a>, but the important thing to understand is that we can use
       these objects to access Button() functions and attributes</p>
     </li>
     <li>
@@ -141,7 +138,7 @@ while True:
     <li>
 
       <p>On Line 9, if the button we observed in Line 8 was being pressed, we
-      send that information to the Output Window</p>
+      send that information to the Program Output window</p>
     </li>
     <li>
 
@@ -162,8 +159,8 @@ while True:
   creating something with dozens or hundreds of buttons (like a piano keyboard
   that has 88 keys)? The code to monitor the 88 keys on a piano keyboard would
   be no longer than the code you see above. When you run this code, you'll see
-  that every time you press a button, that information is sent to the Output
-  Window. If you want to try a variation of this project, why not try replacing
+  that every time you press a button, that information is sent to the Program Output
+  window. If you want to try a variation of this project, why not try replacing
   the buttons with LEDs, and then rewrite the code to flash the LEDs instead of
   reading the buttons?</p>
 

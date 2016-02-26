@@ -27,6 +27,75 @@
 </head>
 <body>
 <div class=section>
+  <h1>USING THE BREADBOARD</h1>
+
+  <p>When it comes to building circuits in real life, pinching and holding
+  wires together with your fingers as we did in the <a data-uid="yfc"></a> project isn't very
+  practical.</p>
+
+  <p>When building electronics in real life, we often want to first build
+  temporary circuits that are easy to modify -- this lets you "play around"
+  with the circuit and work out the kinks in your design; then, once you have a
+  temporary circuit that is working exactly the way you want, you can use the
+  design as the basis for creating a permanent circuit.</p>
+
+  <p>One of the most common ways of building a temporary circuit involves the
+  use of a “breadboard.” The name breadboard stems from the fact that early
+  electronics hobbyists would often use the large wooden boards designed for
+  rolling out and cutting bread dough to house their temporary circuits.</p>
+
+  <p>The breadboards used to build electronics are often called “solderless”
+  breadboards, which can help avoid confusion when talking to your pastry chef
+  friends. <big><big>☺</big></big></p>
+  <h2>Breadboard Design</h2>
+
+  <p>Breadboards come in many shapes and sizes, but the fundamental components
+  of the breadboard will remain the same:</p><img style="max-width: 600px;" src=
+  "img/breadboard_example_1.png" alt="">
+
+  <p>We’ll get to the purpose of each of these parts in a moment, but the key
+  to a breadboard’s usefulness is how the various areas are electrically
+  connected. Those connections are illustrated here:</p><img style=
+  "max-width: 600px;" src="img/breadboard_example_2.png" alt="">
+
+  <p>As you can see, each of the two rails consists of two long row of
+  connections (a red row in each rail and a blue row in each rail). There are
+  spaces between the groups of holes in the rail, but the entire row is still
+  electrically connected as indicated. Also note that the two red rows are not
+  connected and the two blue rows are not connected – they are denoted in the
+  same color only because they serve the same purpose.</p>
+
+  <p>In the center of the board, each vertical column of five holes (shown
+  highlighted in green) is electrically connected together. While we only
+  highlighted a few columns of five-hole connected strips, in actuality, every
+  columns of five holes is a connected strip. It’s important to note that there
+  is no electrical connection across the notch.</p>
+
+  <p>If you recall from <a data-uid="electronics"></a>, in order to have a
+  closed circuit, electric charge must be able
+  to flow from power, through the circuit, to ground. A breadboard makes it
+  easy to wire a circuit in this fashion – the rails denote the power and
+  ground of the circuit, while the rest of the breadboard provides space for
+  your components and the connections between those components.</p>
+  <p><mark>Could use a section here on tips on inserting wire</mark>
+  <p><mark>PIC: how to hole leads vs how not to (gripping end of pin)</mark>
+
+  <h2>Powering the Breadboard</h2>
+
+  <p>Of course, the circuits you build on your breadboard are going to require
+  power to operate. When it comes to providing power to the breadboard (and to
+  the circuits on them), there are lots of options.</p>
+
+  <p>In one of our projects, we use a little 3V lithium battery to power the
+  breadboard. In the rest of our projects, we power the breadboard from the
+  Raspberry Pi, which in turn gets its power from being plugged into a wall
+  outlet. Alternatively, if you ever use a breadboard outside of the
+  RaspberrySTEM CREATOR Kit, you'll find that there are power supplies built
+  specifically for breadboards. And you always have the option of finding your
+  own power source (battery, solar cell, AC power adapter, etc) and hooking
+  that up to your breadboard as well.</p>
+</div>
+<div class=section>
   <h1>YOUR FIRST SCHEMATIC</h1>
 
   <p>In the real world, building circuits often start with a “schematic” for
@@ -34,7 +103,7 @@
   house, a schematic tells an engineer how to build a circuit.</p>
 
   <p>A schematic for a circuit might look something like this:</p><img style=
-  "width: 559px; height: 287px;" src=
+  "max-width: 600;" src=
   "img/Projects%20Guide%20-%20061115-2_html_m4aa427eb.png" alt=""> 
   <!--Is this public domain or similar?-->
 
@@ -42,12 +111,12 @@
 
   <p>In reality, its pretty straightforward. Let’s look at the parts of a
   schematic step by step…</p>
-  <h2><strong>The Parts &amp; Their Symbols</strong></h2>
+  <h2>The Parts &amp; Their Symbols</h2>
 
   <p>Schematics use symbols to represent all the common parts you will find in
   a circuit. The symbols don’t always look like the parts they represent, so
   we’ve provided a little cheat-sheet right here:</p><img style=
-  "width: 516px; height: 278px;" src=
+  "max-width: 600px;" src=
   "img/Projects%20Guide%20-%20061115-2_html_d028f08.png" alt="">
 
   <p>You may see some slight variations between how some of these things are
@@ -60,7 +129,7 @@
   And in some cases, you’ll see a number next to a part indicating what size of
   that part to use – for example, a resistor may have something like “100 Ω”
   next to it, indicating that the resistor should be “100 ohm” in size.</p>
-  <h2><strong>Connecting the Parts</strong></h2>
+  <h2>Connecting the Parts</h2>
 
   <p>In a schematic, you’ll notice that all the parts are attached to each
   other by lines. These lines represent the wires through which electric
@@ -70,17 +139,16 @@
   each other) as indicated in the schematic. If you can replicate the drawing
   using real wires and parts, your circuit will work as expected.</p>
 
-  <p>Let’s use the following schematic as an example:</p><img style=
-  "width: 534px; height: 287px;" alt="" src="img/Battery-LED-Circuit.png">
+  <p>Let’s use the following schematic as an example:</p><img class=schematic
+  alt="" src="img/Battery-LED-Circuit.png">
 
-  <p>Does this look familiar? It is the same circuit from the project <a href=
-  "YOUR_FIRST_CIRCUIT.html">YOUR FIRST CIRCUIT</a>.</p>
+  <p>Does this look familiar? It is the same circuit from the project <a data-uid="yfc"></a>.</p>
   <h2>Closing the Loop</h2>
 
-  <p>You probably noticed in our schematic above that the entire circuit made a
+  <p>You probably noticed in our schematic above electric charge the entire circuit made a
   loop. This makes sense given our definition of a circuit as needing to be a
-  closed loop for it to work (remember, in an open circuit, electricity can’t
-  flow). Conceptually, we can think of the electricity as flowing through the
+  closed loop for it to work (remember, in an open circuit, electric charge can’t
+  flow). Conceptually, we can think of the electric charge as flowing through the
   circuit starting at the (+) terminal of the battery and finishing at the (-)
   terminal of the battery, the ground.</p>
   <div class="info">
@@ -89,11 +157,11 @@
     </div>
     <div>
 
-      <p>Above, we said that we can conceptually think of the electricity as
+      <p>Above, we said that we can conceptually think of the electric charge as
       starting at one point and ending at another. The reason we say
       "conceptually" is that, in actuality, the electrons that create
-      electricity already exist at all points in a closed circuit, so the
-      electricity doesn't really start any point. But, since the (+) terminal
+      electric charge already exist at all points in a closed circuit, so the
+      electric charge doesn't really start any point. But, since the (+) terminal
       of the battery is the highest point of voltage, it's easy to think of the
       flow starting there in a circuit diagram.</p>
     </div>

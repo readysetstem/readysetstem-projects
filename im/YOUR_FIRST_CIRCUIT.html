@@ -26,46 +26,23 @@
   </script>
 </head>
 <body>
+  <div class="hw" data-count="1" data-name="battery"></div>
+  <div class="hw" data-count="1" data-name="led_yfc"></div>
+  <div class="hw" data-count="1" data-name="resistor_yfc"></div>
+
   <div class="section" id="intro">
       <p>
       In this project, you're going to create your first electric circuit using
       a few basic components that we've provided in the kit.
 
-  <p>Before we get started, notice that we've added some information in a blue
-  header at the top of this project. This header includes some important
-  information that you will likely want to review before continuing on,
-  including:</p>
-  <ul>
-    <li>
-
-      <p><strong>Project Name &amp; Description:</strong> This is a brief
-      overview of the project you're about to start.</p>
-    </li>
-    <li>
-
-      <p><strong>Hardware Required:</strong> This will tell you which cells (or
-      other hardware) are going to be used in the project.</p>
-    </li>
-    <li>
-
-      <p><strong>New Concepts Required:</strong> These are the tutorials we
-      suggest you read before getting started on the project. These tutorials
-      will provide background information that will make the project much
-      easier to understand and complete.</p>
-    </li>
-  </ul>
-
-  <p>From here on, we'll include this type of header in every project so that
-  you'll know what to expect -- and what is needed -- for the upcoming project.
-  In some cases, the header will also indicate what your hardware setup should
-  look like coming into the project -- this is especially true when a project
-  is a continuation of a previous project.</p>
   <div class="info">
     <div>
       What is Electronics?
     </div>
     <div>
 
+      <mark>too vague? "various components"?  Contrast with the study of
+      electricity?</mark>
       <p>Electronics is the study and building of circuits that rely on various
       types of components, including wires, computer chips and other common
       electrical devices. Through the study of programming and electronics, you
@@ -78,62 +55,37 @@
   </div>
   <h2>Your First Circuit</h2>
 
-  <p>Now that you've (hopefully) spent some time reading our <a href=
-  "INTRO_TO_ELECTRONICS.html">INTRODUCTION TO ELECTRONICS</a>, let’s jump into
+  <p>Now that you've (hopefully) spent some time reading our
+    <a data-uid="electronics"></a>, let’s jump into
   a real-life example of building a circuit.</p>
 
-  <p>We’ve provided all parts you will need to build this circuit as part of
-  the RaspberrySTEM CREATOR Kit, in the bag marked <strong>Your First Circuit
+  <p>We’ve provided all of the parts you will need to build this circuit as
+  part of the RaspberrySTEM CREATOR Kit, in the bag marked <strong>Your First
+  Circuit
   RaspberrySTEM Cell</strong>. You'll find this bag (along with all the other
   project parts you'll need later) in the box marked <strong>OPEN LATER --
   Project Parts</strong>. Open the box/bag and follow along!</p>
 
   <p>The purpose of this circuit is to power and illuminate a “light emitting
-  diode" (or “LED” for short). An LED a light source that looks and works a bit
+  diode" (or “LED” for short). An LED is a light source that looks and works a bit
   like a lightbulb (in that they both light up when you run electric current
-  through them), so this circuit will work nearly identically to the circuit
-  discussed in <a href="INTRO_TO_ELECTRONICS.html">INTRODUCTION TO
-  ELECTRONICS</a> with the battery and the lightbulb.</p>
+  through them), so this circuit will work similarly to the circuit
+  discussed in <a data-uid="electronics"></a> with the battery and the lightbulb.</p>
 
+  </div>
+  <div class="section" id="hw">
   <p>To build this circuit, you’ll need the following three components (all
   provided in the bag marked <strong>Your First Circuit RaspberrySTEM
-  Cell</strong>):</p>
-  <table style="width: 80%; margin-left: 10%; margin-right: 10%;">
-    <tbody>
-      <tr>
-        <td style="text-align: center;"><img style=
-        "width: 200px; height: auto;" src="img/Your_First_Circuit_battery.png"
-        alt=""></td>
-        <td style=
-        "vertical-align: middle; text-align: center; font-size: 140%;">
-        <strong>BATTERY</strong></td>
-      </tr>
-      <tr>
-        <td style="text-align: center;"><img style="width: auto; height: auto;"
-        src="img/Your_First_Circuit_LED.png" alt=""></td>
-        <td style=
-        "vertical-align: middle; text-align: center; font-size: 140%;">
-        <strong>LED</strong></td>
-      </tr>
-      <tr>
-        <td style="text-align: center;"><img src=
-        "img/Your_First_Circuit_resistor.png" alt=""></td>
-        <td style=
-        "vertical-align: middle; text-align: center; font-size: 140%;">
-        <strong>RESISTOR</strong></td>
-      </tr>
-    </tbody>
-  </table>
+  Cell</strong>), and shown at the top of this page.
 
-  <p>By the way, remember how we mentioned in <a href=
-  "INTRO_TO_ELECTRONICS.html">INTRODUCTION TO ELECTRONICS</a> that sometimes we
+  <p>By the way, remember how we mentioned in <a data-uid="electronics"></a> that sometimes we
   want to provide extra resistance to a circuit to get it to work? Notice that
   we have included a resistor in this circuit – its job is to reduce the amount
   of electric current flowing through the circuit so that the LED doesn’t
   break.</p>
 
   <p>Okay, let’s give this a try, step by step…</p>
-  <h4>Step #1: Connect the Resistor and LED to the Battery</h4>
+  <h3 class=step>Connect the Resistor and LED to the Battery</h3>
 
   <p>Using your fingers, pinch one lead of the resistor (the "leads" are the
   metal wires on either side) to the positive (+) side of the battery and pinch
@@ -187,7 +139,7 @@
       </ol>
     </div>
   </div>
-  <h4>Step #2: Touch the Other Leads of the Resistor and LED Together</h4>
+  <h3 class=step>Touch the Other Leads of the Resistor and LED Together</h3>
 
   <p>Using your free hand, touch the other leads of the resistor and LED
   together, as indicated below:</p><img class="bb" src=
@@ -214,6 +166,13 @@
       When a power supply puts out more voltage/current than the part can
       handle, a resistor in the circuit can reduce the voltage/current to
       ensure the part isn't damaged and works properly.</p>
+
+      <p>It turns out that with a small battery, like the one
+    we are using, the voltage of the battery decreases a little when it is in
+    the LED circuit.  This decrease in voltage lowers the current through the LED, and
+    there's no harm in using it without the resistor.  In general, though - in
+    particular using a power source other than a battery - the resistor is
+    important.
     </div>
   </div>
   <div class="info">
@@ -234,11 +193,26 @@
       unexpected results.</p>
     </div>
   </div>
+  </div>
 
-  </div>
-  <div class="section" id="hw">
-  </div>
-  <div class="section" id="sw">
+  <div class="section" id="challenge">
+  <ol>
+    <li>
+      <p>We said that current will only flow through the LED in one direction -
+      if you haven't already, try the LED in both directions.
+    </li>
+    <li>
+      <p>We mentioned that if you remove the resistor, the circuit still works - try it.
+    </li>
+    <li>
+      <p>Try wrapping a rubberband (not included) around the battery and LED to hold them together.  This will keep your LED on, without having to hold it together.
+    </li>
+    <li> <p>With your rubberband wrapped LED circuit, slide a piece of paper
+    between the battery and one of the leads of the LED.  The LED should go off.
+    Now, you can turn on the LED only when you want, simply by removing the
+    paper.  Why does this work?
+    </li>
+  </ol>
   </div>
 </body>
 </html>

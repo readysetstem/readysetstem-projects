@@ -2,18 +2,11 @@
     margin: 0.79in
 }
 img {
-    width: 90%;
     height: auto;
     margin: auto;
     margin-top: 0.2in;
     margin-bottom: 0.1in;
     display: block;
-}
-img.inline_icon {
-    width: 25px;
-    margin: initial;
-    display: initial;
-    vertical-align: middle;
 }
 * {
     font-family: "Verdana", serif;
@@ -35,9 +28,11 @@ pre {
     font-family: Courier New,Courier,monospace;
     font-size: 12pt;
 }
-
 code {
     font-family: Courier New,Courier,monospace;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 110%;
     font-weight: bold;
 }
 
