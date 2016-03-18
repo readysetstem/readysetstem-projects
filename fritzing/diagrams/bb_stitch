@@ -44,5 +44,6 @@ S=1092
 convert \
     \( "$TOP_NAME" -crop x$((S-T))-0+$((T)) \) \
     \( "$BOT_NAME" -crop x$((H-S-B))-0+$((S)) \) \
+    -strip \
     -append -trim +repage "$NAME"
 
