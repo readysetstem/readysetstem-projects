@@ -4,6 +4,7 @@ RIGHT=124
 UP=126
 DOWN=125
 ENTER=36
+ESC=53
 
 SLEEP=0.2
 
@@ -38,44 +39,7 @@ function ctrlkeycode() {
     osascript -e 'tell application "System Events" to key code '$1' using {control down}'
 }
 
-function raise_lower_breadboard() {
-    # 
-    # select breadboard
-    #
-
-    # CTRL-F2 menu
-    ctrlkeycode $F2
-    # (P)art menu (requires down arrow)
-    key p
-    keycode $DOWN
-    # (F)ind Part in sketch
-    key f
-    keycode $ENTER
-    key breadboard1
-    keycode $ENTER
-
-    #
-    # Raise or lower (']' or '[' character)
-    #
-    sleep 0.5
-    if [ $1 == 'top' ]; then
-        shiftcmdkey ']'
-    else
-        shiftcmdkey '['
-    fi
-
-    #
-    # Deselect breadboard
-    #
-    # CTRL-F2 menu
-    ctrlkeycode $F2
-    # (E)dit menu
-    key e
-    keycode $DOWN
-    key s
-    keycode $DOWN
-    keycode $ENTER
-
+function export_png() {
     #
     # Export PNG
     #
@@ -91,42 +55,24 @@ function raise_lower_breadboard() {
     keycode $RIGHT
     keycode $RIGHT
     keycode $ENTER
-    sleep 1 
-    keycode $RIGHT
-    keycode $LEFT
-    keycode $LEFT
-    key $1
-    key _
+    sleep 2 
     keycode $ENTER
 }
 
-if [ $# -eq 1 ]; then
-    BOT_CROP=0
-    LEFT_CROP=0
-elif [ $# -eq 3 ]; then
-    BOT_CROP=$(($2*10))
-    LEFT_CROP=$(($3*17))
-else
-    echo "Usage: $0 <FZZ> [ <bot_crop> <left_crop> ]"
-fi
 FILE="$1"
 EXT="${FILE##*.}"
 BASE="${FILE%.*}"
 
+echo "$FILE"
 open "$FILE"
 sleep 16
 
-rm -f "$BASE"_*.png
-raise_lower_breadboard top
-raise_lower_breadboard bot
+rm -f "$BASE"_bb.png
+export_png
 sleep 2
 cmdkey w
-sleep 2
-key d
-
-./bb_stitch "$BASE"
-convert "$BASE"_bb.png -crop 100%x+$LEFT_CROP-$BOT_CROP -quality 30 -sharpen 0x0.7 "$BASE"_bb.jpg
-rm -f "$BASE"_*.png
+# note - we often get "Fritzing quit unexpectedly." here, but we just ignore it.
 sleep 2
 
-mv "$BASE"_bb.jpg ../../im/img
+./bb_crop "$BASE"_bb.png
+mv "$BASE"_bb.png ../../im/img

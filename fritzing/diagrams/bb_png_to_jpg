@@ -1,0 +1,10 @@
+if [ $# -eq 1 ]; then
+    BOT_CROP=0
+    LEFT_CROP=0
+elif [ $# -eq 3 ]; then
+    BOT_CROP=$(($2*10))
+    LEFT_CROP=$(($3*17))
+else
+    echo "Usage: $0 <BASENAME> [ <bot_crop> <left_crop> ]"
+fi
+convert "$1".png -crop 100%x+$LEFT_CROP-$BOT_CROP -quality 30 -sharpen 0x0.7 "$1".jpg
