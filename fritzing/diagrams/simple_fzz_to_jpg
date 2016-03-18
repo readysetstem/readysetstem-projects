@@ -6,7 +6,7 @@ DOWN=125
 ENTER=36
 ESC=53
 
-SLEEP=0.2
+SLEEP=0.3
 
 function key() {
     sleep $SLEEP
