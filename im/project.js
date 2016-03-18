@@ -1,19 +1,23 @@
 var hw_types = {
-    "resistor" :        
-        { file : "hw_resistor.png",     item : "Resistor",      cell : "(I/O Cell)" },
-    "led" :             
+    "resistor" :
+        { file : "hw_resistor100.png",  item : "100Ω Resistor", cell : "(I/O Cell)" },
+    "led" :
         { file : "hw_led.png",          item : "LED",           cell : "(I/O Cell)" },
-    "button" :          
+    "button" :
         { file : "hw_button.png",       item : "Button",        cell : "(I/O Cell)" },
-    "accelerometer" :   
+    "accelerometer" :
         { file : "hw_accelerometer.png",item : "Accelerometer", cell : "(Accel. Cell)" },
-    "battery" :         
+    "battery" :
         { file : "hw_battery.png",      item : "Battery",       cell : "(YFC Cell)" },
-    "resistor_yfc" :        
-        { file : "hw_resistor.png",     item : "Resistor",      cell : "(YFC Cell)" },
-    "led_yfc" :             
+    "resistor_100" :
+        { file : "hw_resistor100.png",  item : "100Ω Resistor", cell : "(YFC Cell)" },
+    "resistor_470" :
+        { file : "hw_resistor470.png",  item : "470Ω Resistor", cell : "(YFC Cell)" },
+    "resistor_1000" :
+        { file : "hw_resistor1000.png", item : "1000Ω Resistor",cell : "(YFC Cell)" },
+    "led_yfc" :
         { file : "hw_led.png",          item : "LED",           cell : "(YFC Cell)" },
-    "led_matrix" :      
+    "led_matrix" :
         { file : "hw_led_matrix.png",   item : "LED Matrix",    cell : "(LED Matrix Cell)" },
     "led_matrix_cable" :
         { file : "hw_led_matrix_cable.png", item : "LED Matrix Cable", cell : "(LED Matrix Cell)" },
@@ -29,7 +33,7 @@ var section_titles = {
     "challenge" : "Challenges",
 }
 
-TROUBLESHOOTING_STRING = 
+TROUBLESHOOTING_STRING =
     'Having issues? Check out the <a href="TROUBLESHOOTING.html">Troubleshooting Guide</a>.';
 
 chainedOnload(function() {
@@ -83,7 +87,7 @@ chainedOnload(function() {
             header_html += hw[i].outerHTML;
         }
         header_html += '</div>';
-        header_html += '<div id=troubleshooting class=outer><div class=inner><p>' 
+        header_html += '<div id=troubleshooting class=outer><div class=inner><p>'
             + TROUBLESHOOTING_STRING +  '</p></div></div>';
     }
     header_html += '</header>';

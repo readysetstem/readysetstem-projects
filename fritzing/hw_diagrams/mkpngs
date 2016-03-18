@@ -3,7 +3,9 @@ SIZE=100
 PADDING=0
 SVG2PNG_ARGS=(
     "hw_led.svg                 $PADDING    $SIZE"
-    "hw_resistor.svg            $PADDING    $SIZE"
+    "hw_resistor100.svg         $PADDING    $SIZE"
+    "hw_resistor470.svg         $PADDING    $SIZE"
+    "hw_resistor1000.svg        $PADDING    $SIZE"
     "hw_button.svg              20          $SIZE"
     "hw_accelerometer.svg       $PADDING    $SIZE"
     "hw_battery.svg             10          $SIZE"
