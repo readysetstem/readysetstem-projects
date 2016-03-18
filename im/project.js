@@ -11,10 +11,10 @@ var hw_types = {
         { file : "hw_battery.png",      item : "Battery",       cell : "(YFC Cell)" },
     "resistor_100" :
         { file : "hw_resistor100.png",  item : "100Ω Resistor", cell : "(YFC Cell)" },
-    "resistor_470" :
-        { file : "hw_resistor470.png",  item : "470Ω Resistor", cell : "(YFC Cell)" },
     "resistor_1000" :
         { file : "hw_resistor1000.png", item : "1000Ω Resistor",cell : "(YFC Cell)" },
+    "resistor_4700" :
+        { file : "hw_resistor4700.png", item : "4700Ω Resistor",cell : "(YFC Cell)" },
     "led_yfc" :
         { file : "hw_led.png",          item : "LED",           cell : "(YFC Cell)" },
     "led_matrix" :
