@@ -40,6 +40,9 @@ all:
 	./double_fzz_to_jpg Tweaking_LED_100_ohms.fzz					40	30
 	./double_fzz_to_jpg Tweaking_LED_470_ohms.fzz					40	30
 	./double_fzz_to_jpg Tweaking_LED_5V.fzz							40	30
+	./double_fzz_to_jpg Series_Parallel.fzz							40	30
+	./double_fzz_to_jpg Series_Parallel_In_Parallel.fzz				40	30
+	./double_fzz_to_jpg Series_Parallel_In_Series.fzz				40	30
 	
 	./simple_fzz_to_jpg Your_First_Circuit_complete.fzz
 	./simple_fzz_to_jpg Your_First_Circuit_connect_battery.fzz
