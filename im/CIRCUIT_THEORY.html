@@ -184,25 +184,36 @@ or more times as much resistance.  Because of this, some resistors are labelled
 with a color
 code - a set of colored bands that indicate what the value of the resistance, in ohms.  The color code
 matches a color with each of the digits 0-9:
+  <style>
+    tbody.thistable td { 
+        padding:2px !important; 
+        } 
+    tbody.thistable p { 
+        text-align: center; 
+        margin: 0 10px 0 10px !important; 
+        border-radius: 3px; 
+        padding: 5px; 
+        }
+    </style>
   <table class="basic slim">
-    <tbody>
+    <tbody class=thistable>
       <tr>
         <th><p>COLOR</p></th>
         <th><p>DIGIT</th>
       </tr>
-      <tr><td><p style="border-radius: 3px; padding: 5px; background:black; color:white;">BLACK</td> <td><p>0</td></tr>
-      <tr><td><p style="border-radius: 3px; padding: 5px; background:BROWN; color:white;">BROWN</td> <td><p>1</td></tr>
-      <tr><td><p style="border-radius: 3px; padding: 5px; background:RED; color:white;">RED</td> <td><p>2</td></tr>
-      <tr><td><p style="border-radius: 3px; padding: 5px; background:ORANGE; color:white;">ORANGE</td> <td><p>3</td></tr>
-      <tr><td><p style="border-radius: 3px; padding: 5px; background:YELLOW; color:gray;">YELLOW</td> <td><p>4</td></tr>
-      <tr><td><p style="border-radius: 3px; padding: 5px; background:GREEN; color:white;">GREEN</td> <td><p>5</td></tr>
-      <tr><td><p style="border-radius: 3px; padding: 5px; background:BLUE; color:white;">BLUE</td> <td><p>6</td></tr>
-      <tr><td><p style="border-radius: 3px; padding: 5px; background:VIOLET; color:white;">VIOLET</td> <td><p>7</td></tr>
-      <tr><td><p style="border-radius: 3px; padding: 5px; background:GRAY; color:white;">GRAY</td> <td><p>8</td></tr>
-      <tr><td><p style="border-radius: 3px; padding: 5px; background:WHITE; color:black;">WHITE</td> <td><p>9</td></tr>
+      <tr><td><p style="background:BLACK; color:white;">BLACK</td> <td><p>0</td></tr>
+      <tr><td><p style="background:rgb(138,61,6); color:white;">BROWN</td> <td><p>1</td></tr>
+      <tr><td><p style="background:RED; color:white;">RED</td> <td><p>2</td></tr>
+      <tr><td><p style="background:ORANGE; color:white;">ORANGE</td> <td><p>3</td></tr>
+      <tr><td><p style="background:YELLOW; color:gray;">YELLOW</td> <td><p>4</td></tr>
+      <tr><td><p style="background:GREEN; color:white;">GREEN</td> <td><p>5</td></tr>
+      <tr><td><p style="background:BLUE; color:white;">BLUE</td> <td><p>6</td></tr>
+      <tr><td><p style="background:rgb(205,102,255); color:white;">VIOLET</td> <td><p>7</td></tr>
+      <tr><td><p style="background:GRAY; color:white;">GRAY</td> <td><p>8</td></tr>
+      <tr><td><p style="background:WHITE; color:black;">WHITE</td> <td><p>9</td></tr>
     </tbody>
     </table>
-<p><mark>Finish - color codes in a table, mnemonics.
+  </ol><img style="min-width: 200px; max-width:450px" alt="" src="img/resistor_color_code.png">
     <p>As shown above, the first 2 bands of color are the first two digits of
     the resistance.  The third band is a 10-times multiplier - it is the number
     of zeros to add to the end of the number.
