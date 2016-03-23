@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
+  "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="default.css">
@@ -61,8 +61,7 @@
   last project, with one exception. In our last project, we used the following
   to print out the coordinates of each block that we hit:</p>
   <div class="code" data-firstline="0">
-    <textarea>
-print "The X, Y, Z coordinates of the block you hit is:", blockHit.pos
+    <textarea>print "The X, Y, Z coordinates of the block you hit is:", blockHit.pos
 </textarea>
   </div>
 
@@ -70,16 +69,14 @@ print "The X, Y, Z coordinates of the block you hit is:", blockHit.pos
   function to actually modify the block we hit, instead of just printing
   information about it. Like this:</p>
   <div class="code" data-firstline="0">
-    <textarea>
-mc.setBlock(hit.pos, block.AIR)
+    <textarea>mc.setBlock(hit.pos, block.AIR)
 </textarea>
   </div>
 
   <p>In the example above, the block gets turned into Air, making the block
   disappear. The full code is as follows:</p>
   <div class="code" data-firstline="1">
-    <textarea>
-from rstem.button import Button
+    <textarea>from rstem.button import Button
 from rstem.mcpi import minecraft, control, block
 import time
 

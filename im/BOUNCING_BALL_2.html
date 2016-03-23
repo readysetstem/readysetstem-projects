@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
+  "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="default.css">
@@ -29,20 +29,19 @@
 </head>
 <body>
   <div class="section" id="intro">
-      <p>
-      In this project, and we will continue to develop the moving dot from our
-      previous project and add in a second axis of movement.
 
-  <p>In our last project, we learned how to move our dot on a single axis, but
-  keep it from falling off the edge of the screen by setting and testing
-  boundaries. In this project, we're going to start moving the dot on two axes
-  (left and right; up and down) and learn how to constrain the dot on both axes
-  so that it doesn't fall off the screen.</p>
+    <p>In this project, and we will continue to develop the moving dot from our
+    previous project and add in a second axis of movement.</p>
 
-  <p>Here is the code we finished with from our last project:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-# Initialize the game environment
+    <p>In our last project, we learned how to move our dot on a single axis,
+    but keep it from falling off the edge of the screen by setting and testing
+    boundaries. In this project, we're going to start moving the dot on two
+    axes (left and right; up and down) and learn how to constrain the dot on
+    both axes so that it doesn't fall off the screen.</p>
+
+    <p>Here is the code we finished with from our last project:</p>
+    <div class="code" data-firstline="1">
+      <textarea># Initialize the game environment
 from rstem.led_matrix import FrameBuffer
 import time
 
@@ -67,44 +66,41 @@ while True:
         # Wait for some period of time
         time.sleep(.5)
 </textarea>
-  </div>
+    </div>
 
-  <p>Adding the same functionality along the other axis (the y-axis) is
-  actually pretty simple. In addition to changing the x location by 1 each time
-  through the loop, we also do the same with the y location. This requires
-  another <code>direction</code> variable to keep track of the y-axis
-  direction:</p>
-  <div class="code" data-firstline="0">
-    <textarea>
-y_direction = 1
+    <p>Adding the same functionality along the other axis (the y-axis) is
+    actually pretty simple. In addition to changing the x location by 1 each
+    time through the loop, we also do the same with the y location. This
+    requires another <code>direction</code> variable to keep track of the
+    y-axis direction:</p>
+    <div class="code" data-firstline="0">
+      <textarea>y_direction = 1
 </textarea>
-  </div>
+    </div>
 
-  <p>And then we need to increment in the y-direction each time through the
-  loop and test whether we've hit the y-axis edge:</p>
-  <div class="code" data-firstline="0">
-    <textarea>
-y += y_direction
+    <p>And then we need to increment in the y-direction each time through the
+    loop and test whether we've hit the y-axis edge:</p>
+    <div class="code" data-firstline="0">
+      <textarea>y += y_direction
 if (y &lt;= 0) or (y &gt;= 7):
         y_direction = -y_direction
 </textarea>
-  </div>
+    </div>
 
-  <p>To avoid confusion with the variable names, we'll also change the previous
-  variable <code>direction</code> to <code>x_direction</code></p>
+    <p>To avoid confusion with the variable names, we'll also change the
+    previous variable <code>direction</code> to <code>x_direction</code></p>
 
-  <p>Lastly, you'll probably want to set the initial position of the ball to
-  something other than (0, 0) to make the bouncing a little more interesting.
-  In fact, you can play around with different initial points and see how it
-  affects the bouncing.</p>
+    <p>Lastly, you'll probably want to set the initial position of the ball to
+    something other than (0, 0) to make the bouncing a little more interesting.
+    In fact, you can play around with different initial points and see how it
+    affects the bouncing.</p>
 
-  <p>Give it a try. You should now see the dot bouncing back and forth on the
-  display in two directions.</p>
+    <p>Give it a try. You should now see the dot bouncing back and forth on the
+    display in two directions.</p>
 
-  <p>Here is the final code:</p>
-  <div class="code" data-firstline="0">
-    <textarea>
-# Initialize the game environment
+    <p>Here is the final code:</p>
+    <div class="code" data-firstline="0">
+      <textarea># Initialize the game environment
 from rstem.led_matrix import FrameBuffer
 import time
 
@@ -134,12 +130,9 @@ while True:
         # Wait for some period of time
         time.sleep(.5)
 </textarea>
+    </div>
   </div>
-
-  </div>
-  <div class="section" id="hw">
-  </div>
-  <div class="section" id="sw">
-  </div>
+  <div class="section" id="hw"></div>
+  <div class="section" id="sw"></div>
 </body>
 </html>

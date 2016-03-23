@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
+  "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="default.css">
@@ -29,33 +29,31 @@
 </head>
 <body>
   <div class="section" id="intro">
-      <p>
-      In this project, we'll continue animating the aliens.
 
-  <p>In this project, we'll start with our code from the last project (where we
-  moved the aliens to the right), and we'll add moving the aliens back to the
-  left and increasing the speed as they get closer and closer to the bottom of
-  the LED Matrix screen.</p>
+    <p>In this project, we'll continue animating the aliens.</p>
 
-  <p>To do this, we'll need to create two new variables to track the direction
-  of the aliens (+1 or -1) and the speed of the aliens. Every time the aliens
-  get to the edge of the screen, we'll move them down one row, and increase the
-  alien speed. If the alien's row ever reaches 0, the aliens have won --
-  ouch!</p>
+    <p>In this project, we'll start with our code from the last project (where
+    we moved the aliens to the right), and we'll add moving the aliens back to
+    the left and increasing the speed as they get closer and closer to the
+    bottom of the LED Matrix screen.</p>
 
-  <p>Here is our initialization code:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-alien_direction = 1
+    <p>To do this, we'll need to create two new variables to track the
+    direction of the aliens (+1 or -1) and the speed of the aliens. Every time
+    the aliens get to the edge of the screen, we'll move them down one row, and
+    increase the alien speed. If the alien's row ever reaches 0, the aliens
+    have won -- ouch!</p>
+
+    <p>Here is our initialization code:</p>
+    <div class="code" data-firstline="1">
+      <textarea>alien_direction = 1
 
 alien_speed = 1
 </textarea>
-  </div>
+    </div>
 
-  <p>And here is the code we will add to our game loop:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-# Move aliens
+    <p>And here is the code we will add to our game loop:</p>
+    <div class="code" data-firstline="1">
+      <textarea># Move aliens
 if now - alien_start_time &gt; ALIENS_STEP_TIME / alien_speed:
         alien_at_right_side = alien_direction &gt; 0 and max(alien_columns) == fb.width - 1
         alien_at_left_side = alien_direction &lt; 0 and min(alien_columns) == 0
@@ -68,14 +66,13 @@ if now - alien_start_time &gt; ALIENS_STEP_TIME / alien_speed:
         else:
                 alien_columns = [column + alien_direction for column in alien_columns]
 </textarea>
-  </div>
+    </div>
 
-  <p>Here is what the full project code should look like at this point -- give
-  it a try, and you should now see the aliens going back and forth, and
-  marching down one row on each pass:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-# ###############################################################
+    <p>Here is what the full project code should look like at this point --
+    give it a try, and you should now see the aliens going back and forth, and
+    marching down one row on each pass:</p>
+    <div class="code" data-firstline="1">
+      <textarea># ###############################################################
 #
 # SPACE INVADERS GAME
 #
@@ -193,12 +190,9 @@ if alien_columns:
 else:
         print("You win!")
 </textarea>
+    </div>
   </div>
-
-  </div>
-  <div class="section" id="hw">
-  </div>
-  <div class="section" id="sw">
-  </div>
+  <div class="section" id="hw"></div>
+  <div class="section" id="sw"></div>
 </body>
 </html>

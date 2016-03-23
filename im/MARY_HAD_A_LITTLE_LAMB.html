@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
+  "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="default.css">
@@ -29,15 +29,14 @@
 </head>
 <body>
   <div class="section" id="intro">
-      <p>
-      In this project, we continue using the sound library to play a version of
-      Mary Had a Little Lamb.
 
-  <p>Below is an example of how you can play a musical tune using the
-  RaspberrySTEM:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-from rstem.sound import Note
+    <p>In this project, we continue using the sound library to play a version
+    of Mary Had a Little Lamb.</p>
+
+    <p>Below is an example of how you can play a musical tune using the
+    RaspberrySTEM:</p>
+    <div class="code" data-firstline="1">
+      <textarea>from rstem.sound import Note
 
 notes = [ Note('E'), 
         Note('D'), 
@@ -70,58 +69,58 @@ for note in notes:
         note.play(duration=0.5) 
         note.wait()
 </textarea>
-  </div>
-
-  <p>The code above is pretty simple -- we create a list of notes, and then we
-  use a <code>for</code> loop to loop through them, play each in turn. Now, the
-  one big issue with this code is that each note is of a fixed duration. But,
-  in most songs, you have notes of varying length (some longer and some
-  shorter). We can modify this code so that we can specify the length of each
-  note independently. We do that by creating a second list that contains the
-  note durations, and in our <code>for</code> loop, we use both the note and
-  the duration in our <code>play()</code> function.</p>
-  <div class="info">
-    <div>
-      zip() Function
     </div>
-    <div>
 
-      <p>The zip() function provides a convenient way to combine two (or more)
-      lists into one. Just like a zipper on jacket meshes together two rows of
-      metal pins, the zip() function does the same things with lists. zip()
-      will take the first element of each list and combine them together. It
-      will then take the second element of each list and combine those
-      together. And so on, until the shortest list runs out of elements.</p>
+    <p>The code above is pretty simple -- we create a list of notes, and then
+    we use a <code>for</code> loop to loop through them, play each in turn.
+    Now, the one big issue with this code is that each note is of a fixed
+    duration. But, in most songs, you have notes of varying length (some longer
+    and some shorter). We can modify this code so that we can specify the
+    length of each note independently. We do that by creating a second list
+    that contains the note durations, and in our <code>for</code> loop, we use
+    both the note and the duration in our <code>play()</code> function.</p>
+    <div class="info">
+      <div>
+        zip() Function
+      </div>
+      <div>
 
-      <p>For example, imagine that you have two lists, one containing the name
-      of all the people in a household and one containing the age of all those
-      people. The lists might look like this:</p>
-      <pre>
+        <p>The zip() function provides a convenient way to combine two (or
+        more) lists into one. Just like a zipper on jacket meshes together two
+        rows of metal pins, the zip() function does the same things with lists.
+        zip() will take the first element of each list and combine them
+        together. It will then take the second element of each list and combine
+        those together. And so on, until the shortest list runs out of
+        elements.</p>
+
+        <p>For example, imagine that you have two lists, one containing the
+        name of all the people in a household and one containing the age of all
+        those people. The lists might look like this:</p>
+        <pre>
 name = [Bob, Susie, Brian, Carol]
 </pre>
-      <pre>
+        <pre>
 age = [31, 29, 7, 4]
 </pre>
 
-      <p>If we were to zip() those two lists together:</p>
-      <pre>
+        <p>If we were to zip() those two lists together:</p>
+        <pre>
 zipped = zip(name, age)
 </pre>
 
-      <p>Our resulting list ("zipped") would contain the following:</p>
-      <pre>
+        <p>Our resulting list ("zipped") would contain the following:</p>
+        <pre>
 [(Bob, 31), (Susie, 29), (Brian, 7), (Carol, 4)]
 </pre>
 
-      <p>The zip() function is often helpful when traversing two related lists
-      through a for loop, as we will do below.</p>
+        <p>The zip() function is often helpful when traversing two related
+        lists through a for loop, as we will do below.</p>
+      </div>
     </div>
-  </div>
 
-  <p>Here is what the code would look like:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-from rstem.sound import Note
+    <p>Here is what the code would look like:</p>
+    <div class="code" data-firstline="1">
+      <textarea>from rstem.sound import Note
 
 notes = [ Note('E'), 
         Note('D'), 
@@ -181,12 +180,9 @@ for note, duration in zip(notes, durations):
         note.play(duration=duration) 
         note.wait()
 </textarea>
+    </div>
   </div>
-
-  </div>
-  <div class="section" id="hw">
-  </div>
-  <div class="section" id="sw">
-  </div>
+  <div class="section" id="hw"></div>
+  <div class="section" id="sw"></div>
 </body>
 </html>

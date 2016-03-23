@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
+  "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="default.css">
@@ -29,44 +29,41 @@
 </head>
 <body>
   <div class="section" id="intro">
-      <p>
-      In this project, we continue the development of our Space Invaders game
-      by adding in the aliens.
 
-  <p>In this project, we're going to add our aliens into the code.</p>
+    <p>In this project, we continue the development of our Space Invaders game
+    by adding in the aliens.</p>
 
-  <p>The first thing we'll want to do is keep track of the aliens. We're going
-  to have four aliens in our game (you're welcome to change that if you'd
-  like), and we'll need to keep track of both what columns they are in and what
-  row they are in at any given time.</p>
+    <p>In this project, we're going to add our aliens into the code.</p>
 
-  <p>We'll do that by adding a list to track their columns (they'll each be in
-  their own column) and a variable to track their row (they'll all be in the
-  same row). We'll start the aliens at the top of the display (the height of
-  the display minus 1):</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-alien_columns = [0, 1, 2, 3]
+    <p>The first thing we'll want to do is keep track of the aliens. We're
+    going to have four aliens in our game (you're welcome to change that if
+    you'd like), and we'll need to keep track of both what columns they are in
+    and what row they are in at any given time.</p>
+
+    <p>We'll do that by adding a list to track their columns (they'll each be
+    in their own column) and a variable to track their row (they'll all be in
+    the same row). We'll start the aliens at the top of the display (the height
+    of the display minus 1):</p>
+    <div class="code" data-firstline="1">
+      <textarea>alien_columns = [0, 1, 2, 3]
 alien_row = fb.height - 1
 </textarea>
-  </div>
+    </div>
 
-  <p>Next, we need to add code to draw the aliens each time through the
-  loop:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-# Draw aliens   
+    <p>Next, we need to add code to draw the aliens each time through the
+    loop:</p>
+    <div class="code" data-firstline="1">
+      <textarea># Draw aliens   
 for column in alien_columns: 
         fb.point(column, alien_row)
 </textarea>
-  </div>
+    </div>
 
-  <p>The aliens are not moving yet, but at least they are displayed!</p>
+    <p>The aliens are not moving yet, but at least they are displayed!</p>
 
-  <p>Here is the full project at this point:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-# ###############################################################
+    <p>Here is the full project at this point:</p>
+    <div class="code" data-firstline="1">
+      <textarea># ###############################################################
 #
 # SPACE INVADERS GAME
 #
@@ -132,12 +129,9 @@ while True:
         fb.show()
         time.sleep(0.001)
 </textarea>
+    </div>
   </div>
-
-  </div>
-  <div class="section" id="hw">
-  </div>
-  <div class="section" id="sw">
-  </div>
+  <div class="section" id="hw"></div>
+  <div class="section" id="sw"></div>
 </body>
 </html>

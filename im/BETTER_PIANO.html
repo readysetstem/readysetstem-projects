@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
+  "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="default.css">
@@ -29,30 +29,30 @@
 </head>
 <body>
   <div class="section" id="intro">
-      <p>
-      In this project, we improve on the Simple Piano we created in the
-      previous project by monitoring the buttons and playing the notes for the
-      duration of the button press.
 
-  <p>Using the same hardware setup from the <a data-uid="simplepiano"></a> project, we can turn our RaspberrySTEM into a mini-keyboard.
-  We will modify the code so that each time you press one of the buttons on the
-  RaspberrySTEM, the corresponding note plays for as long as the button is
-  held:</p>
-  <h4>Step #1: Build the circuit.</h4>
+    <p>In this project, we improve on the Simple Piano we created in the
+    previous project by monitoring the buttons and playing the notes for the
+    duration of the button press.</p>
 
-  <p>Your breadboard should still have the circuit we wired in the <a data-uid="manybuttons"></a> project. As a reminder, here
-  is what it should look like: <img class="bb" src="img/Many_Buttons_bb.jpg"
-  alt=""></p>
-  <h4>Step #2: Write the code.</h4>
+    <p>Using the same hardware setup from the <a data-uid="simplepiano"></a>
+    project, we can turn our RaspberrySTEM into a mini-keyboard. We will modify
+    the code so that each time you press one of the buttons on the
+    RaspberrySTEM, the corresponding note plays for as long as the button is
+    held:</p>
+    <h4>Step #1: Build the circuit.</h4>
 
-  <p>The main change in the code for this project is -- after detecting a
-  button press -- to monitor the button state to determine if continues to be
-  pressed, and if so, continue to play the note.</p>
+    <p>Your breadboard should still have the circuit we wired in the
+    <a data-uid="manybuttons"></a> project. As a reminder, here is what it
+    should look like: <img class="bb" src="img/Many_Buttons_bb.jpg" alt=""></p>
+    <h4>Step #2: Write the code.</h4>
 
-  <p>Here is what the code should look like:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-from rstem.button import Button
+    <p>The main change in the code for this project is -- after detecting a
+    button press -- to monitor the button state to determine if continues to be
+    pressed, and if so, continue to play the note.</p>
+
+    <p>Here is what the code should look like:</p>
+    <div class="code" data-firstline="1">
+      <textarea>from rstem.button import Button
 from rstem.sound import Note
 import time
 
@@ -68,12 +68,9 @@ while True:
                         note.stop()
         time.sleep(0.01)
 </textarea>
+    </div>
   </div>
-
-  </div>
-  <div class="section" id="hw">
-  </div>
-  <div class="section" id="sw">
-  </div>
+  <div class="section" id="hw"></div>
+  <div class="section" id="sw"></div>
 </body>
 </html>

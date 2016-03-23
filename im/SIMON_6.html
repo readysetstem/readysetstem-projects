@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
+  "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="default.css">
@@ -29,47 +29,44 @@
 </head>
 <body>
   <div class="section" id="intro">
-      <p>
-      In this project, we continue the development of our Simon-like pattern
-      matching game by adding sound to our LED flashes.
 
-  <p>In our last project, we added in the use of the buttons as inputs and we
-  tested the sequence of button presses to determine if they were correct. In
-  this project, we'll add sound to our LED flashes.</p>
-  <h2>Programming Implementation</h2>
+    <p>In this project, we continue the development of our Simon-like pattern
+    matching game by adding sound to our LED flashes.</p>
 
-  <p>First, we need to import the sound function we'll use and initialize a
-  list of four sounds -- one for each of the LEDs. We'll also initialize a
-  specific note to play when an incorrect button is pressed (this is for
-  later):</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-# Initialize the LEDs and sequence list
+    <p>In our last project, we added in the use of the buttons as inputs and we
+    tested the sequence of button presses to determine if they were correct. In
+    this project, we'll add sound to our LED flashes.</p>
+    <h2>Programming Implementation</h2>
+
+    <p>First, we need to import the sound function we'll use and initialize a
+    list of four sounds -- one for each of the LEDs. We'll also initialize a
+    specific note to play when an incorrect button is pressed (this is for
+    later):</p>
+    <div class="code" data-firstline="1">
+      <textarea># Initialize the LEDs and sequence list
 from rstem.sound import Note
 
 notes = [Note('A'), Note('B'), Note('C'), Note('D')
 
 you_failed_note = Note('E2')
 </textarea>
-  </div>
+    </div>
 
-  <p>Next, we need to insert our sounds into two locations -- where we flash
-  the sequence of LEDs for the player and where the player presses a button
-  while repeating the sequence. Here is what those two code blocks should be
-  updated to:</p>
-  <div class="code" data-firstline="0">
-    <textarea>
-# Play LED sequence 
+    <p>Next, we need to insert our sounds into two locations -- where we flash
+    the sequence of LEDs for the player and where the player presses a button
+    while repeating the sequence. Here is what those two code blocks should be
+    updated to:</p>
+    <div class="code" data-firstline="0">
+      <textarea># Play LED sequence 
 for i in play_order: 
         lights[i].on() 
         notes[i].play(0.4).wait() 
         lights[i].off()
         time.sleep(0.2) 
 </textarea>
-  </div>
-  <div class="code" data-firstline="0">
-    <textarea>
-# If user enters correct button, flash LED and play tone
+    </div>
+    <div class="code" data-firstline="0">
+      <textarea># If user enters correct button, flash LED and play tone
 lights[button_pressed].on()     
 notes[button_pressed].play(duration=None)
 buttons[button_pressed].wait(press=False) 
@@ -77,13 +74,12 @@ time.sleep(0.2)
 lights[button_pressed].off() 
 notes[button_pressed].stop()    
 </textarea>
-  </div>
+    </div>
 
-  <p>Here is what the code for this project should look like at this point --
-  it should run similarly to the previous project, but with sound added:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-# ##################################
+    <p>Here is what the code for this project should look like at this point --
+    it should run similarly to the previous project, but with sound added:</p>
+    <div class="code" data-firstline="1">
+      <textarea># ##################################
 # Import Modules and Initialize Game
 # ##################################
 
@@ -149,12 +145,9 @@ while not failed:
 
 # Game Over -- Play error sequence
 </textarea>
+    </div>
   </div>
-
-  </div>
-  <div class="section" id="hw">
-  </div>
-  <div class="section" id="sw">
-  </div>
+  <div class="section" id="hw"></div>
+  <div class="section" id="sw"></div>
 </body>
 </html>

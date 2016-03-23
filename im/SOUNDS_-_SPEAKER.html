@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
+  "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="default.css">
@@ -28,59 +28,56 @@
   </script>
 </head>
 <body>
-<div class=section>
-      In this project, we introduce the sound library and use it to play notes
-      through the speaker.
+  <div class="section">
+    In this project, we introduce the sound library and use it to play notes
+    through the speaker.
 
-  <p>The assembled RaspberrySTEM CREATOR Kit has an attached speaker and audio
-  cable, and also a library of functions that allow you to play notes, music
-  and sound effects.</p>
+    <p>The assembled RaspberrySTEM CREATOR Kit has an attached speaker and
+    audio cable, and also a library of functions that allow you to play notes,
+    music and sound effects.</p>
 
-  <p>If your audio cable was removed, reattach it now:</p>
-  <ol>
-    <li>
+    <p>If your audio cable was removed, reattach it now:</p>
+    <ol>
+      <li>
 
-      <p>Insert the Audio Cable into the audio jack on the Raspberry
-      Pi.</p><img style="display: block; margin: auto; width: 70%;" alt="" src=
-      "img/Insert%20audio%20cable.jpg">
-    </li>
-    <li>
+        <p>Insert the Audio Cable into the audio jack on the Raspberry
+        Pi.</p><img style="display: block; margin: auto; width: 70%;" alt=""
+        src="img/Insert%20audio%20cable.jpg">
+      </li>
+      <li>
 
-      <p>Connect the other end of the Audio Cable to the Speaker Cable (the
-      cable attached to the Speaker Assembly). Note: It doesn’t matter which way
-      the three-pronged Audio Cable is oriented.</p><img style=
-      "display: block; margin: auto; width: 80%;" alt="" src=
-      "img/Audio%20to%20speaker.jpg">
-    </li>
-  </ol>
+        <p>Connect the other end of the Audio Cable to the Speaker Cable (the
+        cable attached to the Speaker Assembly). Note: It doesn’t matter which
+        way the three-pronged Audio Cable is oriented.</p><img style=
+        "display: block; margin: auto; width: 80%;" alt="" src=
+        "img/Audio%20to%20speaker.jpg">
+      </li>
+    </ol>
 
-  <p>With the speaker hardware connected, we can start making noise with just a
-  few lines of code...</p>
+    <p>With the speaker hardware connected, we can start making noise with just
+    a few lines of code...</p>
 
-  <p>In this project, we're just going to use the basic functionality of the
-  sound library to play notes in variable durations. Let's start with this
-  code:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-from rstem.sound import Note
+    <p>In this project, we're just going to use the basic functionality of the
+    sound library to play notes in variable durations. Let's start with this
+    code:</p>
+    <div class="code" data-firstline="1">
+      <textarea>from rstem.sound import Note
 note = Note('A')
 note.play() # by default, notes play for one second
 note.wait()
 </textarea>
-  </div>
+    </div>
 
-  <p>If you run this code, you'll hear a single tone play for one second. If
-  you want to change the duration of the note, you can set duration in the
-  <code>play()</code> function, as you see below:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-from rstem.sound import Note
+    <p>If you run this code, you'll hear a single tone play for one second. If
+    you want to change the duration of the note, you can set duration in the
+    <code>play()</code> function, as you see below:</p>
+    <div class="code" data-firstline="1">
+      <textarea>from rstem.sound import Note
 note = Note('A')
 note.play(duration=0.5)
 note.wait()
 </textarea>
+    </div>
   </div>
-
-</div>
 </body>
 </html>

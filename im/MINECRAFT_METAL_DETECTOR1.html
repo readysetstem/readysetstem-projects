@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
+  "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="default.css">
@@ -83,8 +83,7 @@
   <p>First, we'll do our basic initialization of the Minecraft code, including
   creating our game loop:</p>
   <div class="code" data-firstline="0">
-    <textarea>
-from rstem.mcpi import minecraft, control, block
+    <textarea>from rstem.mcpi import minecraft, control, block
 import time
 from random import randint
 
@@ -109,8 +108,7 @@ while True:
   distance from our character that we defined above -- and change it to
   gold:</p>
   <div class="code" data-firstline="0">
-    <textarea>
-GOLD_DEPTH = 0
+    <textarea>GOLD_DEPTH = 0
 gold_pos = mc.player.getTilePos()
 gold_pos.x +=  randint(-ARENA_WIDTH, ARENA_WIDTH)
 gold_pos.z +=  randint(-ARENA_WIDTH, ARENA_WIDTH)
@@ -150,8 +148,7 @@ gold_exists = True
   it still exists) and when it has been smashed (it ceases to exist), to exit
   the loop.</p>
   <div class="code" data-firstline="1">
-    <textarea>
-while gold_exists:
+    <textarea>while gold_exists:
     player_pos = mc.player.getTilePos()
     gold_exists = block.Block(mc.getBlock(gold_pos)) == block.GOLD_BLOCK
     time.sleep(0.01)
@@ -172,8 +169,7 @@ while gold_exists:
   <p>Once the gold has been found and we've exited the loop, we need to let the
   user know that he found the gold:</p>
   <div class="code" data-firstline="1">
-    <textarea>
-mc.postToChat("You found the gold!")
+    <textarea>mc.postToChat("You found the gold!")
 time.sleep(3)
 </textarea>
   </div>
@@ -181,8 +177,7 @@ time.sleep(3)
 
   <p>Here is what the full code for this project should look like:</p>
   <div class="code" data-firstline="1">
-    <textarea>
-from rstem.mcpi import minecraft, control, block
+    <textarea>from rstem.mcpi import minecraft, control, block
 import time
 from random import randint
 

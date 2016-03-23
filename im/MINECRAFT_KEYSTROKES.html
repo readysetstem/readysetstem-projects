@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
+  "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="default.css">
@@ -28,121 +28,115 @@
   </script>
 </head>
 <body>
-<div class=section>
-  <h2>Controlling Our Character</h2>
+  <div class="section">
+    <h2>Controlling Our Character</h2>
 
-  <p>As mentioned earlier, the RaspberrySTEM has an enhanced Minecraft API
-  (<code>mcpi</code>) that allows us to control our Minecraft character (Steve)
-  and manipulate the Minecraft world. One of the things the API allows us to do
-  is to remap the keyboard presses in other ways. For example, normally when we
-  press the "W" key on the keyboard, Steve moves forward. But, using the API,
-  we could change this -- we could make the "P" key on the keyboard move Steve
-  forward instead. Or, better yet, we could control the forward movement of
-  Steve using something else entirely...like a button on our RaspberrySTEM
-  kit!</p>
+    <p>As mentioned earlier, the RaspberrySTEM has an enhanced Minecraft API
+    (<code>mcpi</code>) that allows us to control our Minecraft character
+    (Steve) and manipulate the Minecraft world. One of the things the API
+    allows us to do is to remap the keyboard presses in other ways. For
+    example, normally when we press the "W" key on the keyboard, Steve moves
+    forward. But, using the API, we could change this -- we could make the "P"
+    key on the keyboard move Steve forward instead. Or, better yet, we could
+    control the forward movement of Steve using something else entirely...like
+    a button on our RaspberrySTEM kit!</p>
 
-  <p>Below, we'll discuss the major actions our character can perform in the
-  game, and how we can remap those actions to things other than the standard
-  keyboard presses.</p>
-  <h2>Control API</h2>
+    <p>Below, we'll discuss the major actions our character can perform in the
+    game, and how we can remap those actions to things other than the standard
+    keyboard presses.</p>
+    <h2>Control API</h2>
 
-  <p>All of the character control functions are accessed from the
-  <code>control</code> module, which we can import with:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-from rstem.mcpi import control
+    <p>All of the character control functions are accessed from the
+    <code>control</code> module, which we can import with:</p>
+    <div class="code" data-firstline="1">
+      <textarea>from rstem.mcpi import control
 </textarea>
-  </div>
+    </div>
 
-  <p>Once <code>control</code> is imported, we can control Steve's movements
-  with the functions <code>forward()</code>, <code>backward()</code>,
-  <code>left()</code> and <code>right()</code>. Calling those functions without
-  arguments is just like pressing and holding the keyboard key that normally
-  invokes this movement. The key is not released until you call the function
-  with the argument <code>release=True</code>.</p>
+    <p>Once <code>control</code> is imported, we can control Steve's movements
+    with the functions <code>forward()</code>, <code>backward()</code>,
+    <code>left()</code> and <code>right()</code>. Calling those functions
+    without arguments is just like pressing and holding the keyboard key that
+    normally invokes this movement. The key is not released until you call the
+    function with the argument <code>release=True</code>.</p>
 
-  <p>For example, to have Steve walk forward for 2 seconds and then stop, this
-  is what the code would look like:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-control.forward()
+    <p>For example, to have Steve walk forward for 2 seconds and then stop,
+    this is what the code would look like:</p>
+    <div class="code" data-firstline="1">
+      <textarea>control.forward()
 time.sleep(2)
 control.forward(release=True)
 </textarea>
-  </div>
+    </div>
 
-  <p>This is what our code snippet does:</p>
-  <ul>
-    <li>
+    <p>This is what our code snippet does:</p>
+    <ul>
+      <li>
 
-      <p>Line 1 of the program starts moving Steve forward</p>
-    </li>
-    <li>
+        <p>Line 1 of the program starts moving Steve forward</p>
+      </li>
+      <li>
 
-      <p>Line 2 of the program waits for two seconds (while Steve is
-      continuously moving)</p>
-    </li>
-    <li>
+        <p>Line 2 of the program waits for two seconds (while Steve is
+        continuously moving)</p>
+      </li>
+      <li>
 
-      <p>Line 3 of the program stops Steve's movement</p>
-    </li>
-  </ul>
+        <p>Line 3 of the program stops Steve's movement</p>
+      </li>
+    </ul>
 
-  <p>Another way to implement this same functionality (having a key pressed for
-  a specific amount of time) is by using the <code>duration=</code> argument
-  inside the function. The following code will also have Steve walk forward for
-  2 seconds and then stop:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-control.forward(duration=2)
+    <p>Another way to implement this same functionality (having a key pressed
+    for a specific amount of time) is by using the <code>duration=</code>
+    argument inside the function. The following code will also have Steve walk
+    forward for 2 seconds and then stop:</p>
+    <div class="code" data-firstline="1">
+      <textarea>control.forward(duration=2)
 </textarea>
-  </div>
+    </div>
 
-  <p>This one line of code achieves the same thing as the three lines of code
-  above.</p>
+    <p>This one line of code achieves the same thing as the three lines of code
+    above.</p>
 
-  <p>Finally, to stop all keys from being pressed, you can use
-  <code>control.stop()</code>. For example, to walk both forward and right for
-  a second, and then stop, our code might look like this:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-control.forward()
+    <p>Finally, to stop all keys from being pressed, you can use
+    <code>control.stop()</code>. For example, to walk both forward and right
+    for a second, and then stop, our code might look like this:</p>
+    <div class="code" data-firstline="1">
+      <textarea>control.forward()
 control.right()
 time.sleep(2)
 control.stop()
 </textarea>
-  </div>
+    </div>
 
-  <p>In addition to controlling Steve's movements forward, backwards, left and
-  right, we also have the ability to control his other actions...</p>
+    <p>In addition to controlling Steve's movements forward, backwards, left
+    and right, we also have the ability to control his other actions...</p>
 
-  <p>One of the main things that Steve does in Minecraft is breaking (smashing)
-  blocks. This is typically accomplished using the left mouse button. Using the
-  same <code>control</code> module we've been using, we can have Steve smash
-  whatever is in front of him like this:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-control.smash()
+    <p>One of the main things that Steve does in Minecraft is breaking
+    (smashing) blocks. This is typically accomplished using the left mouse
+    button. Using the same <code>control</code> module we've been using, we can
+    have Steve smash whatever is in front of him like this:</p>
+    <div class="code" data-firstline="1">
+      <textarea>control.smash()
 </textarea>
-  </div>
+    </div>
 
-  <p>Additionally, Steve has the ability to jump, which is typically
-  accomplished using the spacebar on the keyboard, and can be implemented in
-  our code like this:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-control.jump()
+    <p>Additionally, Steve has the ability to jump, which is typically
+    accomplished using the spacebar on the keyboard, and can be implemented in
+    our code like this:</p>
+    <div class="code" data-firstline="1">
+      <textarea>control.jump()
 </textarea>
+    </div>
+    <h2>Current Keyboard/Mouse Mappings</h2>
+
+    <p>Because the <code>control</code> functions simply poll the keyboard and
+    mouse presses, there are many additional <code>control</code> commands that
+    we can implement in our code -- in fact, there is one for every keypress
+    supported by Minecraft.</p>
+
+    <p>For reference, here is the full list of functions accessible by the
+    <code>control</code> code:</p>
   </div>
-  <h2>Current Keyboard/Mouse Mappings</h2>
-
-  <p>Because the <code>control</code> functions simply poll the keyboard and
-  mouse presses, there are many additional <code>control</code> commands that
-  we can implement in our code -- in fact, there is one for every keypress
-  supported by Minecraft.</p>
-
-  <p>For reference, here is the full list of functions accessible by the
-  <code>control</code> code:</p>
-</div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
+  "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="default.css">
@@ -29,77 +29,73 @@
 </head>
 <body>
   <div class="section" id="intro">
-      <p>
-      In this project, we continue the development of our Space Invaders game
-      by initializing and drawing our ship at the correct location.
 
-  <p>Now that we have the framebuffer initialized and have verified that the
-  LED Matrix is working, let's put our spaceship where it's supposed to be
-  located -- in the middle of the LED Matrix horizontally (along the x-axis)
-  and at the bottom of the LED Matrix vertically (y=0).</p>
+    <p>In this project, we continue the development of our Space Invaders game
+    by initializing and drawing our ship at the correct location.</p>
 
-  <p>To determine the middle of the LED Matrix, we could take the known width
-  (8 dots) and divide that by two -- that would give us our middle dot (x=4).
-  But, what if you later want to use this code on a smaller or larger LED
-  Matrix display? For example, let's say you put four LED Matrices together to
-  build a 16x16 display. If you put x=4 right into your code, when you run the
-  program on your new 16x16 display, your spaceship will no longer be in the
-  middle of the display.</p>
+    <p>Now that we have the framebuffer initialized and have verified that the
+    LED Matrix is working, let's put our spaceship where it's supposed to be
+    located -- in the middle of the LED Matrix horizontally (along the x-axis)
+    and at the bottom of the LED Matrix vertically (y=0).</p>
 
-  <p>Luckily, we have a way to handle this. There is a <code>FrameBuffer</code>
-  attribute called <code>width</code> that will determine how many LED Matrices
-  you have chained together and will tell you the width of your LED Matrix
-  display. We can use that attribute to determine the actual width of the
-  display, and then divide that actual width by 2 to get the starting position
-  of our spaceship.</p>
+    <p>To determine the middle of the LED Matrix, we could take the known width
+    (8 dots) and divide that by two -- that would give us our middle dot (x=4).
+    But, what if you later want to use this code on a smaller or larger LED
+    Matrix display? For example, let's say you put four LED Matrices together
+    to build a 16x16 display. If you put x=4 right into your code, when you run
+    the program on your new 16x16 display, your spaceship will no longer be in
+    the middle of the display.</p>
 
-  <p>Here is what the initialization code for the initial position of the ship
-  would look like:</p>
-  <div class="code" data-firstline="0">
-    <textarea>
-# Initialize the spaceship
+    <p>Luckily, we have a way to handle this. There is a
+    <code>FrameBuffer</code> attribute called <code>width</code> that will
+    determine how many LED Matrices you have chained together and will tell you
+    the width of your LED Matrix display. We can use that attribute to
+    determine the actual width of the display, and then divide that actual
+    width by 2 to get the starting position of our spaceship.</p>
+
+    <p>Here is what the initialization code for the initial position of the
+    ship would look like:</p>
+    <div class="code" data-firstline="0">
+      <textarea># Initialize the spaceship
 spaceship_position = fb.width / 2
 </textarea>
-  </div>
+    </div>
 
-  <p>In our previous project, we just drew the ship at x=3, y=0. But, now we
-  have the actual x-coordinate from our calculation above, so we can draw the
-  ship at its actual starting position.</p>
+    <p>In our previous project, we just drew the ship at x=3, y=0. But, now we
+    have the actual x-coordinate from our calculation above, so we can draw the
+    ship at its actual starting position.</p>
 
-  <p>But, there's one thing we need to keep in mind -- now that we're using a
-  calculation to determine the position of the ship, it's possible that the
-  result of our calculation won't be a whole number (for example, if we were
-  using an LED Matrix that was 7 dots wide, our initial position would be
-  x=3.5). To accommodate for that, we need to round our calculation to the
-  nearest whole number, and that is where we will display our ship.</p>
+    <p>But, there's one thing we need to keep in mind -- now that we're using a
+    calculation to determine the position of the ship, it's possible that the
+    result of our calculation won't be a whole number (for example, if we were
+    using an LED Matrix that was 7 dots wide, our initial position would be
+    x=3.5). To accommodate for that, we need to round our calculation to the
+    nearest whole number, and that is where we will display our ship.</p>
 
-  <p>We do that using the built-in math function called <code>round()</code>.
-  Here is what the code will look like:</p>
-  <div class="code" data-firstline="0">
-    <textarea>
-# Draw the spaceship
+    <p>We do that using the built-in math function called <code>round()</code>.
+    Here is what the code will look like:</p>
+    <div class="code" data-firstline="0">
+      <textarea># Draw the spaceship
 fb.point(round(spaceship_position),0)
 </textarea>
-  </div>
+    </div>
 
-  <p>Finally, now is as good a time as any to put our pause at the end of the
-  game loop. We had discussed trying a pause of of between .001 and .01
-  seconds. Let's start with the smaller number and see if that poses any
-  problems as we're continuing to develop the game:</p>
-  <div class="code" data-firstline="0">
-    <textarea>
-# Import required functions/modules
+    <p>Finally, now is as good a time as any to put our pause at the end of the
+    game loop. We had discussed trying a pause of of between .001 and .01
+    seconds. Let's start with the smaller number and see if that poses any
+    problems as we're continuing to develop the game:</p>
+    <div class="code" data-firstline="0">
+      <textarea># Import required functions/modules
 import time
 
 # Wait for some period of time
 time.sleep(.001)
 </textarea>
-  </div>
+    </div>
 
-  <p>Here is the full code for our game at this point:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-# ###############################################################
+    <p>Here is the full code for our game at this point:</p>
+    <div class="code" data-firstline="1">
+      <textarea># ###############################################################
 #
 # SPACE INVADERS GAME
 #
@@ -172,12 +168,9 @@ while True:
 # Print "You won!" if the player wins
 # Print "You lost..." if the player loses
 </textarea>
+    </div>
   </div>
-
-  </div>
-  <div class="section" id="hw">
-  </div>
-  <div class="section" id="sw">
-  </div>
+  <div class="section" id="hw"></div>
+  <div class="section" id="sw"></div>
 </body>
 </html>

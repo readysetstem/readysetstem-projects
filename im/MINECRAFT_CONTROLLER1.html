@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
+  "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="default.css">
@@ -123,8 +123,7 @@
 
   <p>Here is what the import function code will look like:</p>
   <div class="code" data-firstline="0">
-    <textarea>
-from rstem.accel import Accel
+    <textarea>from rstem.accel import Accel
 from rstem.button import Button
 from rstem.mcpi import control
 import time
@@ -133,8 +132,7 @@ import time
 
   <p>Next, we'll create our buttons and our accelerometer objects:</p>
   <div class="code" data-firstline="0">
-    <textarea>
-left = Button(18)
+    <textarea>left = Button(18)
 right = Button(14)
 up = Button(15)
 down = Button(23)
@@ -150,8 +148,7 @@ accel = Accel()
   Minecraft window. As we discussed in an earlier project, that is accomplished
   using the <code>control.show()</code> function:</p>
   <div class="code" data-firstline="0">
-    <textarea>
-control.show()
+    <textarea>control.show()
 </textarea>
   </div>
   <h3>Step #3: The Game Loop</h3>
@@ -160,8 +157,7 @@ control.show()
   code. For this project, our game loop will continue forever (until the user
   manually stops the game), so our loop will start with:</p>
   <div class="code" data-firstline="0">
-    <textarea>
-while True:
+    <textarea>while True:
 </textarea>
   </div>
 
@@ -181,8 +177,7 @@ while True:
   of the buttons is pressed, we will move Steve in that direction. Here is what
   that code will look like:</p>
   <div class="code" data-firstline="0">
-    <textarea>
-if left.is_pressed():
+    <textarea>if left.is_pressed():
     control.left()
 else:
     control.left(release=True)
@@ -218,8 +213,7 @@ else:
   accelerometer and we'll control where Steve is looking based on that
   information:</p>
   <div class="code" data-firstline="0">
-    <textarea>
-x, y, z = accel.forces()
+    <textarea>x, y, z = accel.forces()
 control.look(up=50*y, left=50*x)
 </textarea>
   </div>
@@ -231,16 +225,14 @@ control.look(up=50*y, left=50*x)
   <p>Finally, to keep our game loop from running too quickly, we'll implement a
   brief <code>sleep</code> (1/100 of the second) at the bottom of the loop:</p>
   <div class="code" data-firstline="0">
-    <textarea>
-time.sleep(0.01)
+    <textarea>time.sleep(0.01)
 </textarea>
   </div>
   <h3>Full Code</h3>
 
   <p>Here is what the full code for this project should look like:</p>
   <div class="code" data-firstline="1">
-    <textarea>
-from rstem.accel import Accel
+    <textarea>from rstem.accel import Accel
 from rstem.button import Button
 from rstem.mcpi import control
 import time
@@ -305,8 +297,7 @@ while True:
 
       <p>Add another button (or remap an existing button) to allow Steve to
       crouch at the press of the button.</p>
-      <div style="margin-left: 2em">
-      </div>
+      <div style="margin-left: 2em"></div>
     </li>
   </ol>
 </body>

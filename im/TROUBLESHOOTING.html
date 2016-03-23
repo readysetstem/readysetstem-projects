@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
+  "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="default.css">
@@ -220,8 +220,7 @@
   the LED is wired correctly (note that the code reflects using GPIO14 for the
   LED):</p>
   <div class="code" data-firstline="1">
-    <textarea>
-from rstem.gpio import Output
+    <textarea>from rstem.gpio import Output
 my_led = Output(14)
 my_led.on()
 </textarea>
@@ -273,8 +272,7 @@ my_led.on()
   to verify that the button is wired correctly (note that the code reflects
   using GPIO14 for the button):</p>
   <div class="code" data-firstline="1">
-    <textarea>
-from rstem.button import Button
+    <textarea>from rstem.button import Button
 import time
 
 my_button = Button(14)
@@ -319,8 +317,7 @@ while True:
   appear to be working, you can check to verify that the accelerometer is wired
   correctly and working properly by running a very short test program:</p>
   <div class="code" data-firstline="1">
-    <textarea>
-from rstem.accel import Accel
+    <textarea>from rstem.accel import Accel
 import time
 
 accel = Accel()
@@ -367,23 +364,23 @@ while True:
   "img/Matrix_Cable.jpg" alt="">
   <h4>3. Ensure that the LED Matrix is powered and functional</h4>
 
-  <p>See the section in the <a data-uid="ledmatrix"></a> project on how to correctly attach power and ground. Disconnect
-  and reattach power and ground now to verify that the LED Matrix is
-  functional. Once power and ground are correctly attached, you should see
-  vertical and horizontal bars sweep across the display a single time. This is
-  indication that the LED Matrix is powered up and working correctly.</p>
+  <p>See the section in the <a data-uid="ledmatrix"></a> project on how to
+  correctly attach power and ground. Disconnect and reattach power and ground
+  now to verify that the LED Matrix is functional. Once power and ground are
+  correctly attached, you should see vertical and horizontal bars sweep across
+  the display a single time. This is indication that the LED Matrix is powered
+  up and working correctly.</p>
   <h4>4. Ensure that the LED Matrix is wired correctly and run a test
   program</h4>
 
   <p>Next, we'll test the connection between the Raspberry Pi and the LED
-  Matrix. See the section in the <a data-uid="ledmatrix"></a> project on how to correctly wire SCLK, MOSI, CE &amp; MISO
-  pins.</p>
+  Matrix. See the section in the <a data-uid="ledmatrix"></a> project on how to
+  correctly wire SCLK, MOSI, CE &amp; MISO pins.</p>
 
   <p>Open a new file and run a the short test program below to verify the LED
   Matrix is wired correctly and working properly.</p>
   <div class="code" data-firstline="1">
-    <textarea>
-from rstem.led_matrix import FrameBuffer
+    <textarea>from rstem.led_matrix import FrameBuffer
 fb = FrameBuffer()
 
 x, y = (3, 3)
