@@ -7,11 +7,15 @@
   <title>index</title>
   <link rel="stylesheet" type="text/css" href="default.css">
   <link rel="stylesheet" type="text/css" href="index.css">
+  <script type="text/javascript" src="jquery.js">
+  </script>
   <script type="text/javascript" src="onload.js">
   </script>
-  <script type="text/javascript" src="toc_order.js">
+  <script type="text/javascript" src="flows.js">
   </script>
-  <script type="text/javascript" src="toc.js">
+  <script type="text/javascript" src="flow_cookie.js">
+  </script>
+  <script type="text/javascript" src="autotoc.js">
   </script>
   <script type="text/javascript" src="stickydiv.js">
   </script>
@@ -42,12 +46,17 @@
         </tr>
       </tbody>
     </table>
-  </div><br>
+  </div>
 
-  <p><a href="COPYRIGHT.html">Copyright © 2015 by Scott Silver Labs</a></p>
+    <table style="width:calc(100% - 20px); margin: auto;"><tr><td>
+  <p style="font-size:8pt; line-height: 0pt;"><a href="COPYRIGHT.html">Copyright © 2015 by Scott Silver Labs</a></p>
 
-  <p>Raspberry Pi® is a registered trademark of Raspberry Pi Foundation</p>
+  <p style="font-size:8pt; line-height: 0pt;">Raspberry Pi® is a registered trademark of Raspberry Pi Foundation</p>
 
-  <p>Minecraft ®/TM &amp; © 2009-2013 Mojang / Notch</p>
+  <p style="font-size:8pt; line-height: 0pt;">Minecraft ®/TM &amp; © 2009-2013 Mojang / Notch</p>
+</td><td style="text-align:right;"><p style="font-size: 9pt; text-align:right;">Flow: 
+<select id=flow onchange="newFlow()">
+</select>
+</p></td></tr></table>
 </body>
 </html>

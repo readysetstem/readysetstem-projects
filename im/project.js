@@ -37,6 +37,14 @@ TROUBLESHOOTING_STRING =
     'Having issues? Check out the <a href="TROUBLESHOOTING.html">Troubleshooting Guide</a>.';
 
 chainedOnload(function() {
+    var pg_index = getFlowIndex();
+    var pg_index_html = "index.html";
+
+    var pg_filename_to_pos = {};
+    for (var i = 0; i < pg_index.length; i++) {
+        pg_filename_to_pos[pg_index[i].filename] = i;
+    }
+
     var filename = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
     pos = pg_filename_to_pos[filename];
 
