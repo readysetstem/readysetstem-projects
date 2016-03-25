@@ -40,7 +40,7 @@ pg_flows.Main = [
     {filename: "MANY_BUTTONS.html",                 title: "READING MULTIPLE BUTTONS",      concept: false, uid: "manybuttons"},
 
     {filename: "SOUNDS_-_SPEAKER.html",             title: "HOW SPEAKERS WORK",             concept: true, uid: "", section: "SPEAKER"},
-    {filename: "SOUNDS_-_SPEAKER_PROJECT.html",     title: "PLAYING NOTES",                 concept: false, uid: ""},
+    {filename: "SOUNDS_-_SPEAKER_PROJECT.html",     title: "PLAYING NOTES",                 concept: false, uid: "playingnotes"},
     {filename: "NOTES_FUNCTION.html",               title: "MORE NOTES",                    concept: true, uid: ""},
     {filename: "MARY_HAD_A_LITTLE_LAMB.html",       title: "PLAYING A SONG",                concept: false, uid: ""},
     {filename: "SIMPLE_PIANO.html",                 title: "BUILD A SIMPLE PIANO",          concept: false, uid: "simplepiano"},
