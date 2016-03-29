@@ -41,22 +41,24 @@ Note(<i>pitch</i>)
 <p>where <code><i>pitch</i></code> can be either a number which represents the frequency of the
 pitch, or a letter A though G which is the name of the note.
 
-<p>For example, a middle 'A' note has the frequency of 440Hz.  So create an 'A' note you have two
-choices:
+<p>For example, an 'A' note (above middle 'C') has the frequency of 440Hz.  So
+create an 'A' note you have two choices:
 
-    <div class="code" data-firstline="0">
+    <div class="code" data-firstline="1">
       <textarea>
+from rstem.sound import Note
 a_note = Note('A')
 another_a_note = Note(440)
 </textarea>
     </div>
 
-<p>Both <code>a_note</code> and <code>another_a_note</code> are equivalent.
+<p>Both <code>a_note</code> and <code>another_a_note</code> are equivalent.  But, we still haven't
+played anything yet - we've just created the note we going to play, in the next section.
 
 <p>If you've played an instrument, you know there are more notes than just A through G.  For one,
 each note can be played a half-step up ("sharp") or down ("flat").  To specify sharps or flats
 with the <code>Note()</code> function, append a '#' to your note for a sharp, or 'b' for a flat.
-For example, to create a middle B flat, use:
+For example, to create a B flat, use:
     <div class="code" data-firstline="0">
       <textarea>
 my_b_flat = Note('Bb')
@@ -87,7 +89,8 @@ an_octave_lower_a_note = Note('A5')
 <p>To play notes, as in the previous project, you'll use the play function, which by default plays
 a note for one second.  For example:
     <div class="code" data-firstline="1">
-      <textarea>from rstem.sound import Note
+      <textarea>
+from rstem.sound import Note
 note = Note('A')
 note.play()
 </textarea>

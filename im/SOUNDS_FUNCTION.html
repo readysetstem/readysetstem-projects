@@ -29,55 +29,66 @@
 </head>
 <body>
   <div class="section">
-    In this project, we introduce the sound library and use it to play notes
-    through the speaker.
 
-    <p>The assembled RaspberrySTEM CREATOR Kit has an attached speaker and
-    audio cable, and also a library of functions that allow you to play notes,
-    music and sound effects.</p>
+<h1>Sounds galore</h1>
+    <p>Games and gadets often use prerecorded sounds and songs.  The Ready Set STEM API provides some simple
+	function to play recorded sounds that are on the SD card.  The main function you'll used to
+	play sounds is:
+<pre>
+Sound(<i>sound_filename</i>)
+</pre>
+<p>where <code><i>sound_filename</i></code> is the name of the file on the SD card that you want
+to play.
 
-    <p>If your audio cable was removed, reattach it now:</p>
-    <ol>
-      <li>
+<p>For example, to hear a cat meow, try this:
+choices:
 
-        <p>Insert the Audio Cable into the audio jack on the Raspberry
-        Pi.</p><img style="display: block; margin: auto; width: 70%;" alt=""
-        src="img/Insert%20audio%20cable.jpg">
-      </li>
-      <li>
-
-        <p>Connect the other end of the Audio Cable to the Speaker Cable (the
-        cable attached to the Speaker Assembly). Note: It doesn’t matter which
-        way the three-pronged Audio Cable is oriented.</p><img style=
-        "display: block; margin: auto; width: 80%;" alt="" src=
-        "img/Audio%20to%20speaker.jpg">
-      </li>
-    </ol>
-
-    <p>With the speaker hardware connected, we can start making noise with just
-    a few lines of code...</p>
-
-    <p>In this project, we're just going to use the basic functionality of the
-    sound library to play notes in variable durations. Let's start with this
-    code:</p>
-    <div class="code" data-firstline="1">
-      <textarea>from rstem.sound import Note
-note = Note('A')
-note.play() # by default, notes play for one second
-note.wait()
+    <div class="code" data-firstline="0">
+      <textarea>
+from rstem.sound import Sound
+meow = Sound('Meow.wav')
+meow.play()
+meow.wait()
 </textarea>
     </div>
 
-    <p>If you run this code, you'll hear a single tone play for one second. If
-    you want to change the duration of the note, you can set duration in the
-    <code>play()</code> function, as you see below:</p>
-    <div class="code" data-firstline="1">
-      <textarea>from rstem.sound import Note
-note = Note('A')
-note.play(duration=0.5)
-note.wait()
+<p>But what notes can you play?  All the sounds on the SD card are stored in one directory, and
+you can write a little program to see what they are.  The Ready Set STEM API can tell you what
+directory they are stored in using the function <code>sound_dir</code>:
+
+
+    <div class="code" data-firstline="0">
+      <textarea>
+from rstem.Sound import sound_dir
+print(sound_dir())
 </textarea>
     </div>
-  </div>
+
+<p>And, from there you could go to the desktop and view that directory from the File Manager.  But
+you can do it in Python as well!  Python provides a function that will return a list of all the
+files in a directory, called <code>listdir()</code>:
+    <div class="code" data-firstline="0">
+      <textarea>
+from rstem.Sound import sound_dir
+from os import listdir
+print(listdir(sound_dir()))
+</textarea>
+    </div>
+<p>And you'll see alist of all the sounds you can play.
+<p>One final note - you can add your own sounds to the SD card as well.  If
+you're on the network, you can download sound files from the web right onto the
+SD card.  You can even copy them directly to the SD card.  We won't go into to
+the details of downloading or copying here - but once you have a sound downloaded, you can play it
+simply by specifying its full location when creating the sound.  For example, you might do:
+
+
+
+    <div class="code" data-firstline="0">
+      <textarea>
+mysound = Sound('/home/pi/MyVeryOwnVeryCoolSound.wav')
+</textarea>
+    </div>
+    </div>
+
 </body>
 </html>
