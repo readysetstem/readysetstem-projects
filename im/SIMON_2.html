@@ -28,16 +28,18 @@
 <body>
   <div class="hw" data-count="1" data-name="resistor"></div>
   <div class="hw" data-count="1" data-name="led"></div>
-  <div class="hw" data-count="1" data-name="audio_cable"></div>
-  <div class="hw" data-count="1" data-name="speaker"></div>
+
   <div class="section" id="intro">
       <p>In this project, we continue the development of our Simon-like pattern
       matching game by adding the LEDs to our circuit.
 
   <p>In the previous project, we wired up and tested the four buttons we'll be
   using for our pattern-matching game. Now it's time to add four LEDs to the
-  circuit from our last project and test those.</p>
+  circuit from our last project and test those.  Once this is complete, we will
+  have the working circuit for our game, and we can start writing the code
+  to bring it all together.</p>
   </div>
+
   <div class="section" id="hw">
 
   <p>We're going to start with the breadboard setup from the previous
@@ -91,20 +93,23 @@
   buttons in our circuit, so keeping the wires off to the sides as much as
   possible is highly recommended.</p>
 
-  <p>Congratulations...you've just finished the wiring for your first game!</p>
+  <p><b>Congratulations...you've just finished the wiring for your first game!</b></p>
 
   <p>Before we move on to start implementing the game software, we're going to
   write some code to verify that the LEDs are all wired correctly and are
   working properly. Like with our button test code, our LED test code is going
   to have two sections -- the first will import the functions we're going to
   need for the rest of the code and the second will test each of the LEDs.</p>
-  <h2>Programming Implementation</h2>
+</div>
+
+  <div class="section" id="sw">
 
   <p>To test our LEDs, we'll create a list of LEDs and cycle through turning
   each of them on and off.</p>
 
   <p>Here's what this import code should look like (this probably looks
   familiar from earlier GPIO projects):</p>
+
   <div class="code" data-firstline="1">
     <textarea>
 from rstem.gpio import Output
@@ -117,9 +122,11 @@ for led in my_leds:
         time.sleep(.6)
         led.off()
         time.sleep(.2)
-
 </textarea>
   </div>
+
+  <p>If you run this code, you should see each LED flash briefly0.</p>
+</div>
 
 </body>
 </html>

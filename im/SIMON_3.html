@@ -27,22 +27,27 @@
 </head>
 <body>
   <div class="section" id="intro">
-      <p>
-      In this project, we continue the development of our Simon-like pattern
-      matching game by starting to write the game code.
 
   <p>In our last project, we finished wiring up the four LEDs and tested to
   verify they work. Assuming your buttons and LEDs are all working correctly,
-  we've now completed the hardware for our Simon-like game.</p>
+  we've now completed the hardware for our Simon-like game and are ready to
+  move on to writing our game code.</p>
 
   <p>So, let's jump in to that code writing.</p>
+</div>
+
+<div class="section" id="hw">
+<p>The hardware setup for this project should be the same setup that was 
+completed for the <a data-uid="simon2"> project.</a>
+</div>
+
+  <div class="section" id="sw">
 
   <p>To start programming our game, the first thing we want to do is learn how
   to flash a sequence of LEDs, as this will be the basis for the entire game.
-  For this project, we'll start slow and just use a pre-defined list to create
-  a planned sequence of LED flashes. For the next project, we'll expand on that
-  by making the flashing sequence random.</p>
-  <h2>Programming Implementation</h2>
+  For this project, we'll start slow and just use a pre-defined list of LED
+  flashes that we make up and write the code to execute that list of flashes.
+  In the next project, we'll expand on that by making the flashing sequence random.</p>
 
   <p>The first thing we're going to need to do is to import the modules and
   functions we'll be using and initialize our list of LEDs. Here's what our
@@ -125,11 +130,6 @@ for i in play_order:
         time.sleep(0.2)
 </textarea>
   </div>
-
-  </div>
-  <div class="section" id="hw">
-  </div>
-  <div class="section" id="sw">
   </div>
 </body>
 </html>

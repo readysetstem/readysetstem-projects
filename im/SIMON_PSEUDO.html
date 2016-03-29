@@ -27,16 +27,14 @@
 </head>
 <body>
 <div class=section>
-      In this project, we kick off the development of our Simon-like pattern
-      matching game by writing the pseudo-code for our game.
-
+  
   <p>Over the next eight projects, we're going to use buttons, LEDs and a good
   bit of code to build and program a pattern-matching game much like the
-  popular toy Simon.</p>
-
-  <p>If you're not familiar with Simon, let me describe how our
-  pattern-matching game will work. The game will start by flashing one of four
-  LEDs at random (and will play a tone specific to that LED). You (the player)
+  popular toy Simon.  If you're not familiar with Simon, let me describe how our
+  pattern-matching game will work:
+  
+  <p>The game will start by flashing one of four different color
+  LEDs at random, and will play a tone specific to that LED. You (the player)
   will then have a short amount of time to press the button associated with the
   LED that flashed. If you do that successfully, the game will repeat the first
   LED flash and then add a second LED flash at random. Again, you'll need to
@@ -49,8 +47,9 @@
 
   <p>Since this is a bit longer and more complex project than we've done so
   far, it's important to spend some time planning what the code will do and in
-  what order. To do this, we'll create an outline for Simon is through a common
+  what order. To do this, we'll create an outline for Simon using a common
   programming technique called pseudo-code.</p>
+
   <div class="info">
     <div>
       Pseudo-Code
@@ -62,7 +61,7 @@
       outline for your code using a combination of regular English mixed with
       some bits of programming code. This allows you (or others) to read the
       order of the code and determine if what you're getting ready to write is
-      logical and will accomplish what you'd expect.</p>
+      logical and will accomplish what you want and expect.</p>
 
       <p>Let's use the<a data-uid="manybuttons"></a> 
       project to show an example of how we'd write pseudo-code. In that
@@ -100,10 +99,10 @@ Repeat:
   might look like:</p>
   <pre>
 Import Modules and Initialize Game
-Add another random LED to sequence
-Play LED sequence 
+Add a new random LED to sequence
+Flash the current LED sequence 
 Allow player to repeat sequence one button at a time 
-Get the user's button press
+Get the user's button presses, one-by-one
 If user enters incorrect button, end game
 If user enters correct button, flash LED and play tone
 If the user enters the entire sequence, go back to top and add another LED to the sequence 
@@ -112,7 +111,7 @@ If the user enters the wrong sequence, play an error sequence
 
   <p>That's basically all our Simon game needs to do. But, now it's time to
   start thinking about how this outline would actually look when written with
-  code. You'll notice that the last two lines indicate that -- for as long as
+  code. You'll notice that the second to last line indicate that -- for as long as
   the user does something correctly -- we go back to the top of the code. Does
   this sound like a concept we've already discussed? A <code>while</code> loop,
   perhaps?</p>
@@ -137,7 +136,7 @@ while (user enters the sequence correctly):
 If the user enters the wrong sequence, play an error sequence
 </pre>
 
-  <p>The pseudo-code above is still very simple to follow, but by adding in the
+  <p>The pseudo-code above is easy to follow, but by adding in the
   two loops, we start to see the format for our program.</p>
 
   <p>We could drill down into each piece of the pseudo-code further -- and in
