@@ -29,55 +29,62 @@
 </head>
 <body>
   <div class="section">
-    In this project, we introduce the sound library and use it to play notes
-    through the speaker.
 
-    <p>The assembled RaspberrySTEM CREATOR Kit has an attached speaker and
-    audio cable, and also a library of functions that allow you to play notes,
-    music and sound effects.</p>
-
-    <p>If your audio cable was removed, reattach it now:</p>
-    <ol>
-      <li>
-
-        <p>Insert the Audio Cable into the audio jack on the Raspberry
-        Pi.</p><img style="display: block; margin: auto; width: 70%;" alt=""
-        src="img/Insert%20audio%20cable.jpg">
-      </li>
-      <li>
-
-        <p>Connect the other end of the Audio Cable to the Speaker Cable (the
-        cable attached to the Speaker Assembly). Note: It doesn’t matter which
-        way the three-pronged Audio Cable is oriented.</p><img style=
-        "display: block; margin: auto; width: 80%;" alt="" src=
-        "img/Audio%20to%20speaker.jpg">
-      </li>
-    </ol>
-
-    <p>With the speaker hardware connected, we can start making noise with just
-    a few lines of code...</p>
-
-    <p>In this project, we're just going to use the basic functionality of the
-    sound library to play notes in variable durations. Let's start with this
-    code:</p>
-    <div class="code" data-firstline="1">
-      <textarea>from rstem.sound import Note
-note = Note('A')
-note.play() # by default, notes play for one second
-note.wait()
-</textarea>
-    </div>
-
-    <p>If you run this code, you'll hear a single tone play for one second. If
-    you want to change the duration of the note, you can set duration in the
-    <code>play()</code> function, as you see below:</p>
-    <div class="code" data-firstline="1">
-      <textarea>from rstem.sound import Note
-note = Note('A')
-note.play(duration=0.5)
-note.wait()
-</textarea>
-    </div>
+<h1>How robots talk</h1>
+    <p>On TV, the movies, and even the real world, you'll often hear a robot speak in a metallic,
+	not-very-fluid voice.  The reason, is that although <i>recorded</i> voices
+	can provide a very accurate reproduction of the orignal sound, in order to use
+	them, you need to know what to record.  If you want to have a computer or robot respond with
+	arbitrary sentences, you can't know what to record before hand.  And you can't record
+	<i>everything</i>.
+	<p>For years, programmers have been working on making computers be able to say arbitrary
+	sentence while sounding the same as a human.  This process is called "text-to-speech".  And
+	even though we have come a long way, most people can still detect the robotic voices that you
+	often hear coming from your computer, phone or car.
+	<p><mark>More info
   </div>
+  <div class="section">
+<h1>Using TTS</h1>
+
+	<p>The Ready Set STEM API provides some simple functions to play recorded
+	sounds that are on the SD card.  The main function you'll used to play
+	sounds is:
+<pre>
+Sound(<i>text_to_speak</i>)
+</pre>
+<p>where <code><i>text_to_speak</i></code> is a string of text that you want to speak.
+
+<p>For example, to hear a cat meow, try this:
+
+    <div class="code" data-firstline="0">
+      <textarea>
+from rstem.sound import Speech
+madbro = Speech('Y U MAD BRO?')
+madbro.play()
+madbro.wait()
+</textarea>
+    </div>
+    </div>
+
+  <div class="section">
+<h1>Sound chains</h1>
+<p>Often in programming languages, you may want to perform a sequence of operations in a row.  We've
+been doing this with sounds, where we first create the sound (or note or speech), then we play it,
+then we wait for it to finish.
+
+<p>Because this is so common, many times APIs will provide a simpler way to do this, called
+chaining.  The Ready Set STEM API supports this for sounds, and it makes playing a sound or speech
+very concise.  The code above as a simplified call chain would look like:
+
+
+    <div class="code" data-firstline="0">
+      <textarea>
+from rstem.sound import Speech
+Speech('Y U MAD BRO?').play().wait()
+</textarea>
+    </div>
+<p>The above creates some speech, plays it, and waits for it exactly as before.
+
+    </div>
 </body>
 </html>

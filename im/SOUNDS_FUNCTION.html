@@ -32,7 +32,7 @@
 
 <h1>Sounds galore</h1>
     <p>Games and gadets often use prerecorded sounds and songs.  The Ready Set STEM API provides some simple
-	function to play recorded sounds that are on the SD card.  The main function you'll used to
+	functions to play recorded sounds that are on the SD card.  The main function you'll used to
 	play sounds is:
 <pre>
 Sound(<i>sound_filename</i>)
@@ -41,7 +41,6 @@ Sound(<i>sound_filename</i>)
 to play.
 
 <p>For example, to hear a cat meow, try this:
-choices:
 
     <div class="code" data-firstline="0">
       <textarea>
@@ -75,7 +74,7 @@ print(listdir(sound_dir()))
 </textarea>
     </div>
 <p>And you'll see alist of all the sounds you can play.
-<p>One final note - you can add your own sounds to the SD card as well.  If
+<p>In additon, you can add your own sounds to the SD card.  If
 you're on the network, you can download sound files from the web right onto the
 SD card.  You can even copy them directly to the SD card.  We won't go into to
 the details of downloading or copying here - but once you have a sound downloaded, you can play it
@@ -88,7 +87,11 @@ simply by specifying its full location when creating the sound.  For example, yo
 mysound = Sound('/home/pi/MyVeryOwnVeryCoolSound.wav')
 </textarea>
     </div>
-    </div>
 
+Finally, a <code>Sound</code> is very similar to a <code>Note</code> in that you can call the same
+functions to <code>play()</code> them,
+<code>wait()</code> for them,
+or <code>stop()</code> them.
+    </div>
 </body>
 </html>

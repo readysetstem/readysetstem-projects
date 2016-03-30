@@ -28,56 +28,95 @@
   </script>
 </head>
 <body>
-  <div class="section">
-    In this project, we introduce the sound library and use it to play notes
-    through the speaker.
+  <div class="section" id="intro">
 
-    <p>The assembled RaspberrySTEM CREATOR Kit has an attached speaker and
-    audio cable, and also a library of functions that allow you to play notes,
-    music and sound effects.</p>
+	<p>In this project, we create a text-to-speech (TTS) sound machine.  When a
+	button is pressed, we'll say a different phrase for each button.
 
-    <p>If your audio cable was removed, reattach it now:</p>
-    <ol>
-      <li>
+  </div>
+  <div class="section" id="hw">
+    <p>Your breadboard should still have the circuit we wired in the
+    <a data-uid="manybuttons"></a> project. As a reminder, here is what it
+    should look like: <img class="bb" src="img/Many_Buttons_bb.jpg" alt=""></p>
+  </div>
+  <div class="section" id="sw">
 
-        <p>Insert the Audio Cable into the audio jack on the Raspberry
-        Pi.</p><img style="display: block; margin: auto; width: 70%;" alt=""
-        src="img/Insert%20audio%20cable.jpg">
-      </li>
-      <li>
-
-        <p>Connect the other end of the Audio Cable to the Speaker Cable (the
-        cable attached to the Speaker Assembly). Note: It doesn’t matter which
-        way the three-pronged Audio Cable is oriented.</p><img style=
-        "display: block; margin: auto; width: 80%;" alt="" src=
-        "img/Audio%20to%20speaker.jpg">
-      </li>
-    </ol>
-
-    <p>With the speaker hardware connected, we can start making noise with just
-    a few lines of code...</p>
-
-    <p>In this project, we're just going to use the basic functionality of the
-    sound library to play notes in variable durations. Let's start with this
-    code:</p>
+	<p>For our sound machine, we can start with the code from the last piano project
+    <a data-uid="betterpiano"></a>, except just
+	replace <code>Note()</code> with <code>Speech()</code>:  
+	
     <div class="code" data-firstline="1">
-      <textarea>from rstem.sound import Note
-note = Note('A')
-note.play() # by default, notes play for one second
-note.wait()
+      <textarea>from rstem.button import Button
+from rstem.sound import Speech
+import time
+
+buttons_and_speech = [
+	[Button(14), Speech("What's brown and sticky?  A stick.")],
+	[Button(15), Speech("What do you call cheese that isn't yours?  Nacho Cheese.")],
+	[Button(25), Speech("When is a door not a door? When it's ajar.")],
+	[Button(7), Speech("Why do gorillas have big nostrils?  Because they have big fingers.")],
+    ]
+
+while True:
+	for button, speech in buttons_and_speech:
+        if button.is_pressed():
+            if not speech.is_playing():
+                speech.play(duration=None)
+        else:
+            speech.stop()
+    time.sleep(0.01)
 </textarea>
     </div>
-
-    <p>If you run this code, you'll hear a single tone play for one second. If
-    you want to change the duration of the note, you can set duration in the
-    <code>play()</code> function, as you see below:</p>
+	<p>And that works.  But, unfortunately, you have to hold down the button for the entire time
+	that the speech plays.  It would be nice if the speech would start playing when the button was
+	pressed, and just play until it finished, regardless if we held down the button or not.  We
+	can actually simplify our code to do this - we only need to remove the code that stops the
+	sound from playing when the button is released:
     <div class="code" data-firstline="1">
-      <textarea>from rstem.sound import Note
-note = Note('A')
-note.play(duration=0.5)
-note.wait()
+      <textarea>from rstem.button import Button
+from rstem.sound import Speech
+import time
+
+buttons_and_speech = [
+	[Button(14), Speech("What's brown and sticky?  A stick.")],
+	[Button(15), Speech("What do you call cheese that isn't yours?  Nacho Cheese.")],
+	[Button(25), Speech("When is a door not a door? When it's ajar.")],
+	[Button(7), Speech("What is red and smells like blue paint?  Red paint.")],
+    ]
+
+while True:
+	for button, speech in buttons_and_speech:
+        if button.is_pressed():
+            if not speech.is_playing():
+                speech.play(duration=None)
+    time.sleep(0.01)
 </textarea>
     </div>
   </div>
+  <div class="section" id="challenge">
+    <ol>
+      <li> <p>In the last code example above, there are two nested <code>if</code> statements that
+	  only allow the speech to start playing if the button is pressed and speech is not already
+	  playing.  Can you combine the two <code>if</code> statements into one?
+      </li>
+      <li> <p>Instead of using all four buttons, use only one.  However, modify the code so that
+	  each time the button is pressed, it plays the <i>next</i> line of speech, and when it gets
+	  through all four, it starts over again.
+      </li>
+      <li> <p>The code:
+    <div class="code" data-firstline="1">
+      <textarea>
+from random import randrange
+print(randrange(4))
+</textarea>
+    </div>
+	<p>uses the function <code>randrange()</code> to print a random number between 0 and 3.  Can you
+	use <code>randrange()</code> to speak a random joke when the button is pressed?
+
+      </li>
+    <ul>
+      </li>
+    </ol>
+</div>
 </body>
 </html>

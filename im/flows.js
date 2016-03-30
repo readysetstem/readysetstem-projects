@@ -45,7 +45,7 @@ pg_flows.Main = [
     {filename: "MARY_HAD_A_LITTLE_LAMB.html",       title: "PLAYING A SONG",                concept: false, uid: "mary"},
     {filename: "SIMPLE_PIANO.html",                 title: "BUILD A SIMPLE PIANO",          concept: false, uid: "simplepiano"},
     {filename: "SOUNDS_FUNCTION.html",              title: "OTHER SOUNDS",                  concept: true, uid: ""},
-    {filename: "BETTER_PIANO.html",                 title: "BUILD A BETTER PIANO",          concept: false, uid: ""},
+    {filename: "BETTER_PIANO.html",                 title: "BUILD A BETTER PIANO",          concept: false, uid: "betterpiano"},
     {filename: "WALKABLE_PIANO.html",               title: "BUILD A WALKABLE PIANO",        concept: false, uid: ""},
     {filename: "TEXT_TO_SPEECH.html",               title: "TEXT TO SPEECH (TTS)",          concept: true, uid: ""},
     {filename: "TEXT_TO_SPEECH_PROJECT.html",       title: "TTS SOUND MACHINE",             concept: false, uid: ""},
