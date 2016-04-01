@@ -26,6 +26,10 @@
   </script>
 </head>
 <body>
+  <div class="hw" data-count="1" data-name="resistor"></div>
+  <div class="hw" data-count="1" data-name="led"></div>
+  <div class="hw" data-count="4" data-name="button"></div>
+
   <div class="section" id="intro">
 
   <p>In our last project, we finished wiring up the four LEDs and tested to
@@ -33,12 +37,13 @@
   we've now completed the hardware for our Simon-like game and are ready to
   move on to writing our game code.</p>
 
-  <p>So, let's jump in to that code writing.</p>
 </div>
 
 <div class="section" id="hw">
 <p>The hardware setup for this project should be the same setup that was 
-completed for the <a data-uid="simon2"> project.</a>
+completed for the <a data-uid="simon2"></a> project.  Here's a reminder:
+
+<img class="bb" src="img/simon-4but-4led_bb.jpg" alt="">
 </div>
 
   <div class="section" id="sw">
@@ -96,11 +101,11 @@ play_order = [0, 1, 2, 3, 2, 1, 0, 3]
 
   <div class="code" data-firstline="0">
     <textarea>
-# Play sequence
-
+# Ensure all lights are off
 for light in lights: 
         light.off()
 
+# Play sequence
 for i in play_order: 
         lights[i].on() 
         time.sleep(0.4) 

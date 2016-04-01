@@ -26,59 +26,62 @@
   </script>
 </head>
 <body>
+  <div class="hw" data-count="1" data-name="resistor"></div>
+  <div class="hw" data-count="1" data-name="led"></div>
+  <div class="hw" data-count="4" data-name="button"></div>
+
   <div class="section" id="intro">
       <p>
       In this project, we continue the development of our Simon-like pattern
       matching game by adding randomized LED blinking.
 
+</div>
+
+  <div class="section" id="hw">
+
+<p>The hardware setup for this project should be the same setup that was 
+completed for the <a data-uid="simon2"></a> project.  Here's a reminder:
+
+<img class="bb" src="img/simon-4but-4led_bb.jpg" alt="">
+</div>
+
+  <div class="section" id="sw">
+
   <p>In our last project, we wrote some code to flash LEDs in a pre-planned
   sequence. While that's a good start, in our Simon-like game, we're going to
-  need to flash LEDs in a random sequence.</p>
-
-  <p>In this project, we're going to make some modifications to the code from
-  the last project which will give us a random sequence of LED flashes. In the
-  next project, we'll add in the buttons.</p>
-  <div class="info">
-    <div>
-      randrange() Function
-    </div>
-    <div>
-
-      <p>The randrange() function simply returns a random number with the range
-      provided when the function is called. If one parameter is supplied, the
-      random number generated will fall between 1 and that parameter. If two
-      parameters are supplied, the random number will fall between the first
-      and second parameter, both included.</p>
-
-      <p>We use the randrange() function in our Simon-like game to generate a
-      random sequence of LED flashes for our game.</p>
-    </div>
-  </div>
-  <h2>Programming Implementation</h2>
+  need to flash LEDs in a random sequence.  This will require us to make some 
+  modifications to the code from the last project, which will give us a random 
+  sequence of LED flashes. 
+  
+  <p>In the next project, we'll add in the buttons.</p>
 
   <p>Starting with the code we left off with in the previous project, the first
-  thing we'll need to do is import the function randrange() to create our
-  random generation of LED flashes:</p>
+  thing we'll need to do is import the function <code>randrange()</code> to 
+  create our random generation of LED flashes:</p>
+
   <div class="code" data-firstline="0">
     <textarea>
 from random import randrange
 </textarea>
   </div>
 
-  <p>Next, instead of filling the list <code>play_order</code> with a
-  pre-defined sequence, we're going to make that an empty list that we can use
-  to hold our random sequence. To do that, we'll replace the list we created
-  previously with a new (empty) list:</p>
+  <p>Next, instead of filling the list <code>play_order</code> with our
+  pre-defined sequence of LED flashes, we're going to create an empty list 
+  that we can fill with random sequence of flashes. 
+  
+  <p>To do that, we'll replace the list we created previously with a new (empty) 
+  list:</p>
   <div class="code" data-firstline="0">
     <textarea>
 play_order = []
 </textarea>
   </div>
 
-  <p>Finally, we'll have to create our random sequence of LEDs. We'll add a
-  random LED to the end of the <code>play_order</code> list. The following line
-  of code is a shorthand to append an item to a list (in this case, the item is
-  a random number from 0 to 3):</p>
+  <p>Finally, we'll have to create our random sequence of LEDs. Each round of the
+  game, we'll want to add one random LED to the end of the <code>play_order</code> 
+  list. The following line of code is a shorthand to append an item to a list 
+  (in this case, the item is a random number from 0 to 3):</p>
+
   <div class="code" data-firstline="0">
     <textarea>
 play_order += [randrange(4)]
@@ -98,12 +101,14 @@ lights = [Output(4), Output(18), Output(24), Output(27)]
 
 play_order = []
 
+# Add another random LED to sequence
 play_order += [randrange(4)]
 
-# Play sequence
+# Ensure all lights are off
 for light in lights: 
         light.off()
 
+# Play sequence
 for i in play_order:
         lights[i].on()
         time.sleep(0.4)
@@ -126,18 +131,20 @@ lights = [Output(4), Output(18), Output(24), Output(27)]
 
 play_order = []
 
-# Play sequence
+# Ensure all lights are off
 for light in lights: 
         light.off()
 
 while True:
-        play_order += [randrange(4)]
-        
-        for i in play_order:
-                lights[i].on()
-                time.sleep(0.4)
-                lights[i].off()
-                time.sleep(0.2)
+	  # Add another random LED to sequence
+	  play_order += [randrange(4)]
+	  
+	  # Play sequence
+	  for i in play_order:
+	  	  lights[i].on()
+		  time.sleep(0.4)
+		  lights[i].off()
+		  time.sleep(0.2)
 </textarea>
   </div>
 
@@ -196,11 +203,24 @@ while True:
 # Game Over -- Play error sequence
 </textarea>
   </div>
+</div>
 
+  <div class="info">
+    <div>
+      randrange() Function
+    </div>
+    <div>
+
+      <p>The randrange() function simply returns a random number with the range
+      provided when the function is called. If one parameter is supplied, the
+      random number generated will fall between 1 and that parameter. If two
+      parameters are supplied, the random number will fall between the first
+      and second parameter, both included.</p>
+
+      <p>We use the randrange() function in our Simon-like game to generate a
+      random sequence of LED flashes for our game.</p>
+    </div>
   </div>
-  <div class="section" id="hw">
-  </div>
-  <div class="section" id="sw">
-  </div>
+
 </body>
 </html>
