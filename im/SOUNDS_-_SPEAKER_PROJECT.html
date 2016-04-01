@@ -28,14 +28,16 @@
   </script>
 </head>
 <body>
+  <div class="hw" data-count="1" data-name="speaker"></div>
+  <div class="hw" data-count="1" data-name="audio_cable"></div>
   <div id=intro class="section">
-    <p>In this project, we introduce the sound library and use it to play notes
+    <p>In this project, we introduce the sound functions and use them to play notes
     through the speaker.  <mark>more?
     </div>
 
   <div id=hw class="section">
-    <p>The assembled RaspberrySTEM CREATOR Kit has an attached speaker and
-    audio cable, and also a library of functions that allow you to play notes,
+    <p>The assembled CREATOR Kit has an attached speaker and
+    audio cable, and also a set of functions that allow you to play notes,
     music and sound effects.</p>
 
     <p>If your audio cable was removed, reattach it now:</p>
@@ -63,7 +65,7 @@
 
   <div id=sw class="section">
     <p>In this project, we're just going to use the basic functionality of the
-    sound library to play notes in variable durations. Let's start with this
+    sound functions to play notes of different durations. Let's start with this
     code:</p>
     <div class="code" data-firstline="1">
       <textarea>from rstem.sound import Note
@@ -82,7 +84,7 @@ note.wait()
       </li>
       <li>
 
-        <p>In line 2, create an A <code>Note</code>, that we'll store in a
+        <p>In line 2, create an "A" <code>Note</code>, that we'll store in a
         new variable named <code>note</code>
       </li>
       <li>

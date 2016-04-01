@@ -28,16 +28,19 @@
   </script>
 </head>
 <body>
+  <div class="hw" data-count="4" data-name="button"></div>
+  <div class="hw" data-count="1" data-name="speaker"></div>
+  <div class="hw" data-count="1" data-name="audio_cable"></div>
   <div class="section" id="intro">
 
     <p>In this project, we integrate the multiple buttons we implemented
     several projects ago along with the note/sound generation from the sound
-    library and the speaker.</p>
+    functions and the speaker.</p>
 
   </div>
   <div class="section" id="hw">
-    <p>Using the hardware setup from Many Buttons, we can turn our
-    RaspberrySTEM into a very basic sound machine. We will start with four
+    <p>Using the hardware setup from <a data-uid="manybuttons"></a>, we can turn our
+    CREATOR Kit into a very basic piano. We will start with four
     buttons each wired to a GPIO as input, and write some code that will
     generate corresponding note when each button is pressed. We'll keep it
     simple in this project, and just play each note for one second.</p>
@@ -56,7 +59,7 @@
       <li>
 
         <p>Next, we initialize the buttons with their corresponding GPIOs and
-        initialize the notes from our sound library.</p>
+        initialize the notes with our sound functions.</p>
       </li>
       <li>
 
@@ -105,12 +108,24 @@ next project.
       <li>
 
 		<p>Can you modify only your <i>hardware</i> so that a 'C' note plays
-		only if <i>all</i> of the buttons are pressed?
+		only if <i>all</i> of the buttons are pressed?  Hint: think about buttons in series or
+		parallel.
+      </li>
+      <li>
+
+		<p>Can you modify only your <i>hardware</i> so that a 'C' note plays
+		only if <i>any</i> of the buttons are pressed?  Hint: think about buttons in series or
+		parallel.
       </li>
       <li>
 
 		<p>Can you modify only your <i>software</i> so that a 'C' note plays
 		only if <i>all</i> of the buttons are pressed?
+      </li>
+      <li>
+
+		<p>Can you modify only your <i>software</i> so that a 'C' note plays
+		only if <i>any</i> of the buttons are pressed?
       </li>
     </ol>
 </div>

@@ -28,9 +28,11 @@
   </script>
 </head>
 <body>
+  <div class="hw" data-count="1" data-name="speaker"></div>
+  <div class="hw" data-count="1" data-name="audio_cable"></div>
   <div class="section" id="intro">
 
-    <p>In this project, we continue using the sound library to play a version
+    <p>In this project, we continue using the sound functions to play a version
     of Mary Had a Little Lamb.</p>
 
   </div>
@@ -40,7 +42,7 @@
   </div>
 <div class="section" id="sw">
     <p>Below is an example of how you can play a musical tune using the
-    RaspberrySTEM:</p>
+    CREATOR Kit:</p>
     <div class="code" data-firstline="1">
       <textarea>
 from rstem.sound import Note
@@ -82,12 +84,13 @@ for note in notes:
 
     <p>The code above is pretty simple -- we create a list of notes, and then
     we use a <code>for</code> loop to loop through them, play each in turn.
-    Now, the one big issue with this code is that each note is of a fixed
+    Now, one issue with this code is that each note is of a fixed
     duration. But, in most songs, you have notes of varying length (some longer
-    and some shorter). We can modify this code so that we can specify the
-    length of each note independently. We do that by creating a second list
-    that contains the note durations, and in our <code>for</code> loop, we use
-    both the note and the duration in our <code>play()</code> function.</p>
+    and some shorter). We can modify this code to specify the
+    length of each note independently. We do that changing the <code>Note()</code>
+	into a list that contains both the note and the note's durations.  Then, in
+	our <code>for</code> loop, we use both the note and the duration in our
+	<code>play()</code> function.</p>
 
     <p>Here is what the code would look like:</p>
     <div class="code" data-firstline="1">
@@ -161,7 +164,7 @@ this to work, each sublist in <code>notes_and_durations</code> has to have
 
         <p>When defining the notes in the first example, <code>Note</code> is written out each
         time a note is created.  To create a more concise program, can you create the notes by
-        looping through each note of a string?  That is, the whole song above code be
+        looping through each note of a string?  In other words, the whole song above could be
         represented by <code>"EDCDEEEDDDEGGEDCDEEEEDDEDC"</code>.
       </li>
     </ol>
