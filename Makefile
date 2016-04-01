@@ -54,8 +54,16 @@ tidy: $(TIDY_TARGETS)
 $(TIDY_TARGETS):
 	@# First run of tidy will insert 'alt=""' text on images.  We run is
 	@# separately so we can ignore its error.
-	tidy5 -quiet --alt-text "" -m $@ >/dev/null 2>&1; exit 0
-	tidy5 -w 80 -quiet --indent auto -m $@
+	tidy -quiet --alt-text "" -m $@ >/dev/null 2>&1; exit 0
+	$(eval TIDYOPTS=-w 80 -quiet --indent auto)
+	@echo tidy $(TIDYOPTS) $@
+	@tidy $(TIDYOPTS) -f /tmp/tidyerrors -m $@; \
+		if [ $$? -gt 0 ]; then \
+			sed 's/^/    /' /tmp/tidyerrors; \
+			if [ $$? -gt 1 ]; then \
+				exit $$?; \
+			fi \
+		fi
 	@# Add extra line spacing before paragraphs
 	gawk -i inplace '/<p>/{print ""}1' $@
 
