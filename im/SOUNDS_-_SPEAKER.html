@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
+  "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="default.css">
@@ -28,59 +28,47 @@
   </script>
 </head>
 <body>
-<div class=section>
-      In this project, we introduce the sound library and use it to play notes
-      through the speaker.
+  <div class="section">
+    <h1>How speakers work</h1>
+        </p><img style="width: 500px;" alt="" src="img/speaker1.jpg">
+    <p>Speakers make sounds.  They exist all around us in or lives - in phones,
+    TVs, greeting cards, toys, musical keyboards, and video games.  They allow
+    us to directly play amplified sounds through electric megaphones, PA
+    (public announcement) systems in schools and buildings, and loudspeakers at
+    concerts.  They can also play recorded sounds, or even create new made up
+    sounds that you'd never hear in nature.  
+    <p>Speakers work by converting electrical energy into mechanical energy.
+    That is, changes in the the voltage/current in a circuit can cause
+    something physical to move back and forth.  As we talked about in 
+	<a data-uid="sources"></a>, electricity and magnetism are two closely
+	related concepts.  In an electric motor, current flowing through a loop of
+	wire will push on a nearby magnet.  This pushing force is felt equally by both the magnet and
+	the loop of wire, and causes them to move apart.  A speaker uses this
+	property to move and vibrate the cone the speaker (the frontmost part that
+	you see), which in turn vibrates the surrounding air.
+    <p><mark>PIC: Animated speaker circuit, with sounds waves to an ear.
+    <h1>Sound waves</h1>
+	<p>As the speaker vibrates, the air around it vibrates as well, and travels
+	outward from the speaker in all directions.  When the vibrations travel into your
+	ear, you are able to sense the vibrations as sounds.
+	<p>The vibrations that create sounds move back and forth a different speeds (frequencies).
+	The faster the vibrations move, the higher the frequency, or pitch, that you hear.  Likewise,
+	slower vibrations make lower frequency sounds.  Because larger, more massive objects tend to
+	move slower, they also tend to make lower frequency sounds.  And, smaller, lighter objects
+	tend to make higher frequency sounds.
+	<p><mark>PIC: low freq vs high freq animation.  TBD.
+	<p>For example, if you take a glass partially filled with water, and gently tap it with a
+	spoon, the glass will ring.  If you add more water, and tap it again, the glass will ring at a
+	<i>lower</i> frequency.  The more water you add, the more massive the glass and water become,
+	and therefore the slower it can vibrate.  Slower vibrations mean lower frequencies.
+	<p>Sounds and music are composed of a continuous blend of many different frequency that you
+	hear at the same time.  It is the combination of sound waves vibrating at different
+	frequencies that create all of the familiar (and distinct) sounds you know, from trumpets and
+	violins, to chalk scratching a blackboard.
+    <p>The CREATOR Kit includes a small speaker, which means its better for higher frequency
+	sounds than low frequency sounds.  Also, the CREATOR Kit's speaker is unamplified - this means
+	that the sounds it produces will be at a relatively low volume.
+    <p>
 
-  <p>The assembled RaspberrySTEM CREATOR Kit has an attached speaker and audio
-  cable, and also a library of functions that allow you to play notes, music
-  and sound effects.</p>
-
-  <p>If your audio cable was removed, reattach it now:</p>
-  <ol>
-    <li>
-
-      <p>Insert the Audio Cable into the audio jack on the Raspberry
-      Pi.</p><img style="display: block; margin: auto; width: 70%;" alt="" src=
-      "img/Insert%20audio%20cable.jpg">
-    </li>
-    <li>
-
-      <p>Connect the other end of the Audio Cable to the Speaker Cable (the
-      cable attached to the Speaker Assembly). Note: It doesn’t matter which way
-      the three-pronged Audio Cable is oriented.</p><img style=
-      "display: block; margin: auto; width: 80%;" alt="" src=
-      "img/Audio%20to%20speaker.jpg">
-    </li>
-  </ol>
-
-  <p>With the speaker hardware connected, we can start making noise with just a
-  few lines of code...</p>
-
-  <p>In this project, we're just going to use the basic functionality of the
-  sound library to play notes in variable durations. Let's start with this
-  code:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-from rstem.sound import Note
-note = Note('A')
-note.play() # by default, notes play for one second
-note.wait()
-</textarea>
-  </div>
-
-  <p>If you run this code, you'll hear a single tone play for one second. If
-  you want to change the duration of the note, you can set duration in the
-  <code>play()</code> function, as you see below:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-from rstem.sound import Note
-note = Note('A')
-note.play(duration=0.5)
-note.wait()
-</textarea>
-  </div>
-
-</div>
 </body>
 </html>

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="default.css">
+  <link rel="stylesheet" type="text/css" href="project.css">
+  <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
+  <link type="text/css" id="theme" rel="stylesheet" href=
+  "/assets/themes/solarized-dark.css">
+  <script type="text/javascript" src="/assets/cmirror/codemirror.js">
+  </script>
+  <script type="text/javascript" src="/assets/cmirror/python.js">
+  </script>
+  <script type="text/javascript" src="onload.js">
+  </script>
+  <script type="text/javascript" src="flows.js">
+  </script>
+  <script type="text/javascript" src="flow_cookie.js">
+  </script>
+  <script type="text/javascript" src="project.js">
+  </script>
+  <script type="text/javascript" src="stickydiv.js">
+  </script>
+  <script type="text/javascript" src="codeblocks.js">
+  </script>
+</head>
+<body>
+  <div class="section">
+
+<h1>How robots talk</h1>
+    <p>On TV, the movies, and even the real world, you'll often hear a robot speak in a metallic,
+	not-very-fluid voice.  The reason, is that although <i>recorded</i> voices
+	can provide a very accurate reproduction of the orignal sound, in order to use
+	them, you need to know the exact speech to record.  If you want to have a
+	computer or robot respond with arbitrary sentences, you can't know what to
+	record before hand.  And you can't record
+	<i>everything</i>.
+	<p>For years, programmers have been working on making computers be able to say arbitrary
+	sentence while sounding the same as a human.  This process is called "text-to-speech".  And
+	even though we have come a long way, most people can still detect the robotic voices that you
+	often hear coming from your computer, phone or car.
+	<p><mark>More info
+  </div>
+  <div class="section">
+<h1>Using TTS</h1>
+
+	<p>The Ready Set STEM API provides some simple functions to play recorded
+	sounds that are on the SD card.  The main function you'll used to play
+	sounds is:
+<pre>
+Sound(<i>text_to_speak</i>)
+</pre>
+<p>where <code><i>text_to_speak</i></code> is a string of text that you want to speak.
+
+<p>For example, to hear a cat meow, try this:
+
+    <div class="code" data-firstline="0">
+      <textarea>
+from rstem.sound import Speech
+madbro = Speech('Y U MAD BRO?')
+madbro.play()
+madbro.wait()
+</textarea>
+    </div>
+    </div>
+
+  <div class="section">
+<h1>Sound chains</h1>
+<p>Often in programming languages, you may want to perform a sequence of operations in a row.  We've
+been doing this with sounds, where we first create the sound (or note or speech), then we play it,
+then we wait for it to finish.
+
+<p>Because this is so common, many times APIs will provide a simpler way to do this, called
+chaining.  The Ready Set STEM API supports this for sounds, and it makes playing a sound or speech
+very concise.  The code above as a simplified call chain would look like:
+
+
+    <div class="code" data-firstline="0">
+      <textarea>
+from rstem.sound import Speech
+Speech('Y U MAD BRO?').play().wait()
+</textarea>
+    </div>
+<p>The above creates some speech, plays it, and waits for it exactly as before.
+
+    </div>
+</body>
+</html>
