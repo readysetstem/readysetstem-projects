@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="default.css">
+  <link rel="stylesheet" type="text/css" href="project.css">
+  <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
+  <link type="text/css" id="theme" rel="stylesheet" href=
+  "/assets/themes/solarized-dark.css">
+  <script type="text/javascript" src="/assets/cmirror/codemirror.js">
+  </script>
+  <script type="text/javascript" src="/assets/cmirror/python.js">
+  </script>
+  <script type="text/javascript" src="onload.js">
+  </script>
+  <script type="text/javascript" src="flows.js">
+  </script>
+  <script type="text/javascript" src="flow_cookie.js">
+  </script>
+  <script type="text/javascript" src="project.js">
+  </script>
+  <script type="text/javascript" src="stickydiv.js">
+  </script>
+  <script type="text/javascript" src="codeblocks.js">
+  </script>
+</head>
+<body>
+  <div class="section">
+
+<h1>Making Notes</h1>
+    <p>Songs are made up of sequences of notes (or combinations of multiple notes).  The Ready Set
+    STEM API provides a <code>Note()</code> function to create notes of different pitches.
+
+    <p>The basic use of the <code>Note()</code> function is to create a note with:
+<pre>
+Note(<i>pitch</i>)
+</pre>
+<p>where <code><i>pitch</i></code> can be either a number which represents the frequency of the
+pitch, or a letter A though G which is the name of the note.
+
+<p>For example, an 'A' note (above middle 'C') has the frequency of 440Hz (Hz is a unit of
+frequency - it is how many times something happens each second).  So
+create an 'A' note you have two choices:
+
+    <div class="code" data-firstline="1">
+      <textarea>
+from rstem.sound import Note
+a_note = Note('A')
+another_a_note = Note(440)
+</textarea>
+    </div>
+
+<p>Both <code>a_note</code> and <code>another_a_note</code> are equivalent.  But, we still haven't
+played anything yet - we've just created the note we are going to play.
+
+<p>If you've played an instrument, you know there are more notes than just A through G.  For one,
+each note can be played a half-step up ("sharp") or down ("flat").  To specify sharps or flats
+with the <code>Note()</code> function, append a '#' to your note for a sharp, or 'b' for a flat.
+For example, to create a B flat, use:
+    <div class="code" data-firstline="0">
+      <textarea>
+my_b_flat = Note('Bb')
+</textarea>
+    </div>
+
+<p>And there's octaves, too!  To specify the octave, append a single digit to the very end of your
+note.  By default, the octave is the fourth octave.  One octave higher would be the fifth octave,
+one octave lower would be the third.  For example, some more ways to specify an 'A':
+
+
+    <div class="code" data-firstline="0">
+      <textarea>
+a_note = Note('A')
+the_same_a_note = Note('A4')
+an_octave_higher_a_note = Note('A5')
+an_octave_lower_a_note = Note('A5')
+</textarea>
+    </div>
+
+<p>Finally, you can combine sharps or flats with octaves, as in: 'Ab4', 'B#6', or
+'Db7'
+    </div>
+
+  <div class="section">
+<h1>Making Music</h1>
+
+<p>To play notes, as in the previous project, you'll use the play function, which by default plays
+a note for one second.  For example:
+    <div class="code" data-firstline="1">
+      <textarea>
+from rstem.sound import Note
+note = Note('A')
+note.play()
+</textarea>
+    </div>
+
+<p>Try the above if you want, and you'll be dissapointed to find your note
+doesn't play.  The reason is that <code>play()</code> just <i>starts</i>
+playing a note, in the background.  After starting it, the program will
+continue to run - but in our program above, there's no more code after line 3,
+so the program ends.  The note will stop playing if you tell it to, or if the
+program ends.
+
+<p>What you normally want to do is <code>wait()</code> for the note to finish.
+For example here we've added a wait:
+
+    <div class="code" data-firstline="1">
+      <textarea>from rstem.sound import Note
+note = Note('A')
+note.play()
+*note.wait()
+</textarea>
+    </div>
+
+<p>And because the <code>wait()</code> above waits for one second, you could
+also just pause for one second if you wanted, for about the same result, by
+changing the wait to a <code>time.sleep(1)</code>.
+
+<p>Playing your own song would involve a sequence of playing notes of different
+durations and waiting for them to finish playing.  In addition, a
+<code>time.sleep()</code> can be be used as a silence between notes.  To change
+the duration that a note plays, you use the <code>duration</code> parameter, to
+set the seconds to play, as we did in <a data-uid="playingnotes"></a>.  But,
+you also can play a note <i>forever</i> by
+specifying the <code>duration=None</code>.
+
+<p>Finally, what if you want to stop a note early?  When writing a game, you
+might want to start a note when something happens (say a button is pressed) and
+then stop it when the button is released.  To stop it, you'd use the
+<code>stop()</code>
+function.  For example:
+
+    <div class="code" data-firstline="1">
+      <textarea>
+from rstem.sound import Note
+import time
+note = Note('A')
+note.play(duration=None)
+# The note is now playing, and won't stop until we stop it 
+# or the program ends...
+time.sleep(2)
+note.stop()
+# The note has now stopped - wait for two more second just 
+# to prove it really stopped!
+time.sleep(2)
+</textarea>
+    </div>
+
+<p>So, in the above code, the note plays for two seconds, there are two
+seconds of silence, and then the program ends.
+  </div>
+
+</body>
+</html>
