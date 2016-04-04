@@ -26,8 +26,8 @@
   </script>
 </head>
 <body>
-  <div class="hw" data-count="1" data-name="resistor"></div>
-  <div class="hw" data-count="1" data-name="led"></div>
+  <div class="hw" data-count="4" data-name="resistor"></div>
+  <div class="hw" data-count="4" data-name="led"></div>
   <div class="hw" data-count="4" data-name="button"></div>
 
   <div class="section" id="intro">
@@ -55,6 +55,8 @@ completed for the <a data-uid="simon2"></a> project.  Here's a reminder:
   
   <p>In the next project, we'll add in the buttons.</p>
 
+<h3 class=step>Add Initialization Code</h3>
+
   <p>Starting with the code we left off with in the previous project, the first
   thing we'll need to do is import the function <code>randrange()</code> to 
   create our random generation of LED flashes:</p>
@@ -64,6 +66,8 @@ completed for the <a data-uid="simon2"></a> project.  Here's a reminder:
 from random import randrange
 </textarea>
   </div>
+
+<h3 class=step>Create a List for LED Flashes & Generate First LED</h3>
 
   <p>Next, instead of filling the list <code>play_order</code> with our
   pre-defined sequence of LED flashes, we're going to create an empty list 
@@ -87,6 +91,8 @@ play_order = []
 play_order += [randrange(4)]
 </textarea>
   </div>
+
+<h3 class=step>Play the List of LED Flashes</h3>
 
   <p>If we add this code to our previous code that includes the play sequence,
   we'll see that we're adding a single random LED flash to our sequence list
@@ -116,6 +122,8 @@ for i in play_order:
         time.sleep(0.2)
 </textarea>
   </div>
+
+<h3 class=step>Use a Loop to Generate an LED Sequence</h3>
 
   <p>If we add a <code>while</code> loop, we can continue to generate a random
   LED and add it to the list each time through the loop. This will play the
@@ -147,6 +155,8 @@ while True:
 		  time.sleep(0.2)
 </textarea>
   </div>
+
+<h3 class=step>Put It All Together</h3>
 
   <p>Here is what the code for this project should look like at this point --
   when you run it, you will see a random LED flash, then that light will repeat
@@ -205,22 +215,6 @@ while True:
   </div>
 </div>
 
-  <div class="info">
-    <div>
-      randrange() Function
-    </div>
-    <div>
-
-      <p>The randrange() function simply returns a random number with the range
-      provided when the function is called. If one parameter is supplied, the
-      random number generated will fall between 1 and that parameter. If two
-      parameters are supplied, the random number will fall between the first
-      and second parameter, both included.</p>
-
-      <p>We use the randrange() function in our Simon-like game to generate a
-      random sequence of LED flashes for our game.</p>
-    </div>
-  </div>
 
 </body>
 </html>

@@ -26,8 +26,8 @@
   </script>
 </head>
 <body>
-  <div class="hw" data-count="1" data-name="resistor"></div>
-  <div class="hw" data-count="1" data-name="led"></div>
+  <div class="hw" data-count="4" data-name="resistor"></div>
+  <div class="hw" data-count="4" data-name="led"></div>
   <div class="hw" data-count="4" data-name="button"></div>
 
   <div class="section" id="intro">
@@ -54,6 +54,8 @@ completed for the <a data-uid="simon2"></a> project.  Here's a reminder:
   flashes that we make up and write the code to execute that list of flashes.
   In the next project, we'll expand on that by making the flashing sequence random.</p>
 
+<h3 class=step>Add Initialization Code</h3>
+
   <p>The first thing we're going to need to do is to import the modules and
   functions we'll be using and initialize our list of LEDs. Here's what our
   initialization code should look like (this should look familiar from previous
@@ -68,6 +70,8 @@ import time
 lights = [Output(4), Output(18), Output(24), Output(27)]
 </textarea>
   </div>
+
+<h3 class=step>Create a List of LED Flashes</h3>
 
   <p>For our game, we'll store the sequence of LED flashes in a list.  Each
   item in that list will refer to one of the LEDs in our <code>lights[]</code>
@@ -91,6 +95,8 @@ play_order = [0, 1, 2, 3, 2, 1, 0, 3]
 </textarea>
   </div>
 
+<h3 class=step>Play the List of LED Flashes</h3>
+
   <p>Finally, we want to actually play that sequence of flashes on our LEDs.
   To do that, we'll first ensure that all the LEDs are turned off when we start, 
   since we can't be sure of the previous state of the GPIOs. Then, we'll use a 
@@ -113,6 +119,8 @@ for i in play_order:
         time.sleep(0.2)
 </textarea>
   </div>
+
+<h3 class=step>Put It All Together</h3>
 
   <p>Here is our full code at this point -- when you run it, you will see the
   four LEDs flash in the hard-coded pattern that we've added to the code:</p>

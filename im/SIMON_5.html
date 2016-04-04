@@ -26,10 +26,27 @@
   </script>
 </head>
 <body>
+
+  <div class="hw" data-count="4" data-name="resistor"></div>
+  <div class="hw" data-count="4" data-name="led"></div>
+  <div class="hw" data-count="4" data-name="button"></div>
+
   <div class="section" id="intro">
       <p>
       In this project, we continue the development of our Simon-like pattern
       matching game by adding button input.
+
+</div>
+
+  <div class="section" id="hw">
+
+<p>The hardware setup for this project should be the same setup that was 
+completed for the <a data-uid="simon2"></a> project.  Here's a reminder:
+
+<img class="bb" src="img/simon-4but-4led_bb.jpg" alt="">
+</div>
+
+  <div class="section" id="sw">
 
   <p>In our last project, we created a random sequence of LED flashes. We
   included that code in a loop that will continue to add another flash to the
@@ -41,8 +58,8 @@
 
   <p>In this project, we'll add the buttons as input, and add the code that
   will verify the button sequence that the player enters.</p>
-  <h2>Programming Implementation</h2>
-  <h4>Step #1: Add the initialization code</h4>
+
+<h3 class=step>Add Initialization Code</h3>
 
   <p>The first thing we're going to need to do is initialize the buttons --
   we'll import the function we need and create the button list just like we did
@@ -55,7 +72,8 @@ from rstem.button import Button
 buttons = [Button(14), Button(15), Button(23), Button(17)]
 </textarea>
   </div>
-  <h4>Step #2: Check the button sequence entered by the player</h4>
+
+<h3 class=step>Check Button Sequence Entered by Player</h3>
 
   <p>Next, we need to add code after we play the sequence to check for whether
   the user has entered the correct sequence back. There are several parts to
@@ -139,7 +157,8 @@ lights[button_pressed].off()
   and turn it back off. But there's an extra line in there as well - we sleep
   for a very short period. This extends the time the LED is on to give a better
   appearance when a player presses and releases a button very quickly.</p>
-  <h4>Step #3: Update the while loop</h4>
+
+<h3 class=step>Update the <code>while</code> Loop</h3>
 
   <p>Finally, we have to update our <code>while</code> loop, as we want it to
   drop through if we determine that the user made a mistake and the game is
@@ -160,6 +179,8 @@ failed = False
 while not failed:
 </textarea>
   </div>
+
+<h3 class=step>Put It All Together</h3>
 
   <p>Here is what the code for this project should look like at this point --
   when you run it, you will see a single LED flash, and you can press the
@@ -229,11 +250,7 @@ while not failed:
 # Game Over -- Play error sequence
 </textarea>
   </div>
+</div>
 
-  </div>
-  <div class="section" id="hw">
-  </div>
-  <div class="section" id="sw">
-  </div>
 </body>
 </html>
