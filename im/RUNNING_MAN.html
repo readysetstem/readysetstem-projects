@@ -30,6 +30,7 @@
 <body>
   <div class="hw" data-count="1" data-name="led_matrix"></div>
   <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
+  <div class="hw" data-count="4" data-name="button"></div>
   <div class="section" id="intro">
       <p>
       In this project, and we will continue to develop the moving dot from our
@@ -63,33 +64,71 @@ project. As a reminder, here is what it should look like:
   <p>Here is the final code, with the new code marked with arrows:</p>
   <div class="code" data-firstline="0">
     <textarea>
+# Initialize the game environment
 from rstem.led_matrix import FrameBuffer
+from rstem.led_matrix import Sprite
 import time
 
-# Initialize the game environment
 fb = FrameBuffer()
-x, y = (3, 1)
-x_direction = 1
-*y_direction = 1
+sprites = [
+    Sprite("""
+        00000000
+        0000FF00
+        000FF000
+        000FFF00
+        00FFFF00
+        000FFF00
+        0FF00F00
+        0F0000FF
+        """),
+    Sprite("""
+        00000000
+        0000FF00
+        0000F000
+        00FFFF00
+        0F0FF0F0
+        000FFF00
+        0FF00F00
+        00000FF0
+        """),
+    Sprite("""
+        00000000
+        0000FF00
+        000FF000
+        000FF000
+        000FF000
+        000FF000
+        00FFF000
+        000FF000
+        """),
+    Sprite("""
+        0000FF00
+        000FF000
+        000FFF00
+        00FFFF00
+        000FFF00
+        00F00F00
+        00F0F000
+        00F00000
+        """),
+    ]
 
+which_sprite = 0
 while True:
 	# Get user input
 
 	# Update the game world
-	x += x_direction
-	y += y_direction
-	if (x &lt;= 0) or (x &gt;= 7):
-		x_direction = -x_direction
-*	if (y &lt;= 0) or (y &gt;= 7):
-*		y_direction = -y_direction
+	which_sprite = which_sprite + 1
+	if which_sprite &gt; 3:
+		which_sprite = 0
 
 	# Draw graphics on the screen
 	fb.erase()
-	fb.point(x, y)
+	fb.draw(sprites[which_sprite])
 	fb.show()
 
 	# Wait for some period of time
-	time.sleep(.5)
+	time.sleep(0.1)
 </textarea>
   </div>
 
@@ -101,17 +140,32 @@ while True:
   <ol>
     <li>
       <p>
-  Set the initial position of the ball to something other than (0, 0) to make
-  the bouncing a little more interesting.  Can you get it to bounce in a diamond shape?
+Can you add a button that, when pressed, makes the running man jump?  That is,
+displays him shifted up one or two points above the bottom of the display.
 
     </li>
     <li>
-	  <p>As is, the ball moves the same distance in both the x and y
-	  directions.  Increase the distance it moves in either direction.
+	  <p>
+
+Can you add a second button that, when pressed, makes the running man go faster?
+
     </li>
     <li>
-	  <p>Using one of the random functions, can you add a little randomness to
-	  the ball's position to make it wiggle about the display?
+	  <p>
+Can you add a third button that, when pressed, makes the running man flash on and off while still
+running?
+    </li>
+    <li>
+	  <p>
+Can you add a fourth button that, when pressed, makes the running man change direction?
+    </li>
+    <li>
+      <p>
+Challenging: Can you modify the first button so that it makes the running man
+jump gradually?  That is, as he continues to run, slowly display him shifted up
+one point, then two points, then three points, then two points, then one point,
+then back to ground?
+
     </li>
   </ol>
 </div>

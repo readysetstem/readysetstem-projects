@@ -29,8 +29,7 @@
 </head>
 <body>
 <div class=section>
-	  <h1>Overview</h1>
-      <p>In this project, we introduce the concept of Game Loops, and we use a
+      In this project, we introduce the concept of Game Loops, and we use a
       game loop to create a very basic game for the LED Matrix display.
 
   <p>Now that we have the LED Matrix as a display and can take input with
@@ -62,69 +61,28 @@ while (game not finished):
 Finish &amp; Cleanup
 </pre>
 
-</div>
-<div class=section>
-	  <h1> A Simple "Game"</h1>
-
-<p>We're going to create a simple "game" - too simple to really qualify as a
-game - but that will give us start to creating more complicated games later.
-This game is going to draw a dot on the screen, and move it across the screen
-from left to right.  That's it - simple.
-
-  <div class="code" data-firstline="1">
-    <textarea>
-# Initialize the game environment
-from rstem.led_matrix import FrameBuffer
-import time
-
-fb = FrameBuffer()
-x, y = (0, 0)
-
-while True: 
-	# Get user input 
-
-	# Update the game world 
-	x += 1 
-
-	# Draw graphics on the screen 
-	fb.erase() 
-	fb.point(x, y) 
-	fb.show() 
-
-	# Wait for some period of time 
-	time.sleep(.5)
-
-# Finish &amp; Cleanup
-</textarea>
-  </div>
-
-  <p>If you have LED Matrix hooked up, you can give this a a try now!
-
-</div>
-<div class=section>
-	  <h1>How It Works</h1>
-  <p>Lets examine the code line-by-line below.
+  <p>We'll examine this loop line-by-line below. And at the same time, let's
+  build our very own (very simple) game loop that will move a dot around the
+  LED Matrix...</p>
   <h2>Initialize the game environment</h2>
 
   <p>The very first step in any game is to initialize anything that will be
   used in the game loop. If you're not familiar with the term "initialize," it
   basically means setting up all the aspects of the game so that when the user
   starts playing, the game code is ready to be executed. For example, this
-  might include creating a framebuffer that will hold the graphics during the
-  game, defining the start location and speed of various game characters,
-  etc.</p>
+  might include importing libraries and functions we'll need later in the code,
+  creating a framebuffer (or perhaps many framebuffers) that will hold the
+  graphics during the game, defining the start location and speed of various
+  game characters, etc.</p>
 
-  <p>In most all Python programs, you'll start importing the functions you're going
-  to use in the program.
-  <div class="code" data-firstline="5">
-    <textarea>
-fb = FrameBuffer()
-x, y = (0, 0)
-</textarea>
-  </div>
-  
-  <p>In lines 5 and 6, we'll:
+  <p>In our case, we're going to want to do three things to get ready for our
+  game loop:</p>
   <ol>
+    <li>
+
+      <p>Import the <code>Framebuffer()</code> function and the time
+      library</p>
+    </li>
     <li>
 
       <p>Create a framebuffer that we'll use to draw and display the dot</p>
@@ -136,9 +94,20 @@ x, y = (0, 0)
     </li>
   </ol>
 
-  <h2>The game loop (while game is not finished)
-  
-  </h2>
+  <p>Here's what the code will look like:</p>
+  <div class="code" data-firstline="0">
+    <textarea>
+from rstem.led_matrix import FrameBuffer
+import time
+
+fb = FrameBuffer()
+
+x, y = (0, 0)
+fb.erase()
+fb.point(x, y)
+</textarea>
+  </div>
+  <h2>while (game not finished):</h2>
 
   <p>We call it a game loop because it's an actual loop in the code that
   continues until the game is finished or until the user says chooses to exit.
@@ -147,7 +116,7 @@ x, y = (0, 0)
   <code>while True:</code> loop.</p>
 
   <p>So, this will be the very first line of our game loop:</p>
-  <div class="code" data-firstline="8">
+  <div class="code" data-firstline="0">
     <textarea>
 while True:
 </textarea>
@@ -176,7 +145,7 @@ while True:
   right one space, regardless of what the user does. To do that, we need to
   increment the x-coordinate by 1. We then erase the current framebuffer data
   and update the framebuffer with the new location.</p>
-  <div class="code" data-firstline="12">
+  <div class="code" data-firstline="0">
     <textarea>
 x += 1
 </textarea>
@@ -188,7 +157,7 @@ x += 1
   the the new graphics. This typically involves erasing and drawing the new
   graphics to the framebuffer and then displaying that framebuffer. We can do
   that just like we did in the last project:</p>
-  <div class="code" data-firstline="15">
+  <div class="code" data-firstline="0">
     <textarea>
 fb.erase()
 fb.point(x, y)
@@ -213,7 +182,7 @@ fb.show()
   <p>In this case, our graphics rely on the loop speed, and we'd probably be
   happy moving the location of the dot every half-second. Which means we'll
   want to put in a half-second delay at the end of the loop.</p>
-  <div class="code" data-firstline="20">
+  <div class="code" data-firstline="0">
     <textarea>
 time.sleep(.5)
 </textarea>
@@ -227,23 +196,48 @@ time.sleep(.5)
   graphics (for example, something special if the player beats the game) or you
   may want to go back to another menu screen.</p>
 
-  <p>In this project, we never drop out of the loop (remember, we used a <code>while
-  True:</code> loop), so there doesn't need to be any code at this point in the
+  <p>In this project, we never drop out of the loop (remember, we used a while
+  True: loop), so there doesn't need to be any code at this point in the
   program.</p>
   <h2>Putting It All Together</h2>
+
+  <p>We now have all of the code necessary for a game loop that will place a
+  dot at one corner of the LED Matrix display and then move that dot to the
+  right every half-second. Here's what the entire snippet of code should look
+  like:</p>
+  <div class="code" data-firstline="1">
+    <textarea>
+# Initialize the game environment
+from rstem.led_matrix import FrameBuffer
+import time
+
+fb = FrameBuffer()
+x, y = (0, 0)
+fb.erase()
+
+while True: 
+        # Get user input 
+
+        # Update the game world 
+        x += 1 
+
+        # Draw graphics on the screen 
+        fb.erase() 
+        fb.point(x, y) 
+        fb.show() 
+
+        # Wait for some period of time 
+        time.sleep(.5)
+
+# Finish &amp; Cleanup
+</textarea>
+  </div>
 
   <p>When you run this code, you should see the dot start at one corner of the
   LED Matrix and move in one direction until it is off the screen. Because
   we're not checking to see if the dot is still on the screen or not, the code
   will just continue to run even after you can no longer see the dot. So, once
   the dot has disappeared, you can stop the program.</p>
-
-  <p>Also, you might notice that the first place you see the dot is one the LED
-  second from the left.  This is due to the fact that we "update the game
-  world" before we "draw graphics on the screen".  Our first update moves the
-  dot one position to the right, before we've even had a chance to see it on
-  the screen.  In a more normal game, this doesn't matter, as the wait period
-  will be fast, and this small quirk won't be noticable.
 
 </div>
 </body>

@@ -139,16 +139,24 @@ from rstem.sound import Note
 import time
 note = Note('A')
 note.play(duration=None)
-# The note is now playing, and won't stop until we stop it 
-# or the program ends...
-time.sleep(2)
+*time.sleep(2)
 note.stop()
-# The note has now stopped - wait for two more second just 
-# to prove it really stopped!
-time.sleep(2)
+*time.sleep(2)
 </textarea>
     </div>
+	<p>
 
+<p>There are 2 sleeps highlighted in the code above:
+<ul>
+<li>
+<p>During the first sleep, the note has started playing, and won't stop until
+we stop it or the program ends...
+</li>
+<li>
+<p>
+During the second sleep, the note was just stopped - so wait for two more second
+just to prove it really stopped!  </li>
+</ul>
 <p>So, in the above code, the note plays for two seconds, there are two
 seconds of silence, and then the program ends.
   </div>
