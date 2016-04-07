@@ -27,31 +27,103 @@
 </head>
 <body>
 <div class=section>
-  <h1>Open and Closed Circuits</h1>
+  <h1>Closed, Open & Short Circuits</h1>
 
-  <p>An <strong>open circuit</strong> is a circuit that does not form a complete
-  conducting loop.  Of course, by definition, it's not a circuit at all, as
-  electric charge can't flow around a loop that is broken.  If an open circuit
-  is connected together to complete the circuit, then we have a <strong>closed
-  circuit</strong>
-  - that is, a circuit that forms a closed loop around which electric charge
-  can flow.  Most often, though, there's no need to refer to a circuit as
-  "closed", as any working circuit is closed.
+  <p>We have discussed several times throughout this guide that in order for a
+  circuit to operate properly -- for electric current to be able to flow -- the
+  circuit must be a closed loop.  When we have a circuit that is a closed loop
+  and where current is flowing, we call that a <i><b>closed circuit</b></i>. 
+  It is always our goal for our circuits to be closed circuits, so that they
+  operate as we expect.
+  
+  <p>When our circuit doesn't form a closed loop, we call that an 
+  <i><strong>open circuit</strong></i>.  Actually, by definition, an open
+  circuit is not a circuit at all, as electric charge can't flow around a loop 
+  that is broken.  Very often when a circuit is not working as expected --
+  especially when nothing at all seems to be happening with the circuit --
+  the problem is that the circuit doesn't form a complete loop and is an
+  open circuit.
+  
+  <p>Let's take a look at the lightbulb circuit from <a data-uid="electronics"></a>, 
+  and cut a wire -- by doing this, we have created an open circuit, current will 
+  stop flowing and the light bulb will not illuminate:
 
-<p>If you took the lightbulb circuit from <a data-uid="electronics"></a>, and
-cut a wire, you'll have created an open circuit, and current will stop flowing:
   <p><mark>PIC: Animation of lightbulb circuit being cut.
 
-  <p>A <strong>short circuit</strong> is what happens when one part of a
-  circuit is connected by a conductor <i>unintentionally</i> to another part of
-  the circuit.  Electric charge can then flow through a part of the circuit
-  that it was not intended to.  For example, in the battery and LED circuit in
+  <div class="info">
+    <div>
+		 The Path of Least Resistance
+    </div>
+    <div>
+  <p>An important concept behind electric current is that it will tend to favor
+  paths of low resistance over paths of higher resistance.  In other words, if 
+  your circuit has two potential paths for current to flow, and if one of those 
+  paths has less resistance than the other, more current will flow through the 
+  path with less resistance than through the path with more resistance.  
+
+  <p><mark>PIC: Parallel circuit - one path small resistor, one path large
+  
+  <p>That's not to say <i>all</i> the current will flow through the path of least
+  resistance, but that <i>more</i> current will flow through that path.  In fact,
+  if a circuit has 10 paths for current to flow, current will flow through all
+  10 of those paths, but the paths with the least resistance will have the most
+  current flowing through them and the paths with the highest resistance will have
+  the least current flowing through them.
+  
+  <p><mark>PIC: Parallel circuit - Many paths, many resistances
+
+    </div>
+  </div>
+  <p>
+
+  <p>While we always strive to have a closed circuit, not all closed circuits
+  are  going to work as we want or expect.  One particular situation where a 
+  closed circuit will often not work correctly is when we have a 
+  <i><strong>short circuit</strong></i>.  
+  
+  <p>A short circuit is a closed circuit where one part of a circuit is 
+  <i>unintentionally</i> connected by a wire to another part of the circuit, and
+  unintentionally by-passes a set of components.  Electric charge can then flow 
+  through a part of the circuit that it was not intended to, and unexpected 
+  things can happen.
+  
+  <p>For example, let's say that we are trying to build a circuit that contains 
+  two lightbulbs:
+
+  <p><mark>PIC: Two lightbulb circuit
+  
+  <p>But, we accidentally add another wire that runs between the two lightbulbs:
+  
+  <p><mark>PIC: Two lightbulb circuit with a short between the bulbs
+
+  <p>In this case, current has two potential paths that it can follow once it
+  gets past the first lightbulb -- one path is through the second lightbulb and 
+  one path is directly to the negative terminal of the battery.  We mentioned
+  above that current will always flow down every path, but when one path has
+  a <i>much lower</i> resistance than another path, nearly all the current will
+  tend to flow down the path with the much lower resistance.
+  
+  <p>A plain wire has almost no resistance.  Therefore, almost all the current
+  will flow through the bare wire -- instead of through the second lightbulb --
+  and the second lightbulb will not illuminate.  Any time that you see your 
+  circuit not acting the way you would expect, check to ensure that there are
+  no unintentional short circuits.
+  
+  <div class="info">
+    <div>
+SHORTING THE BATTERY
+    </div>
+    <div>
+  
+  There's a specific type of short circuit that's especially bad.    For example, in the battery and LED circuit in
   previous projects, attaching a wire from power to ground with nothing in
   between will cause large amounts of electricity to flow
   through that wire (instead of the LED as intended). This can dissipate your
   power source very quickly, or worst-case (for larger power sources than the
   battery we used), the flow of current can heat up the wire to the point
   where it breaks or causes a fire.</p>
+</div>
+</div>
 
   <h1>Pushing your buttons</h1>
   <p>The pushbutton (or
