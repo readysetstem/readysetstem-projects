@@ -26,7 +26,7 @@ header {
     margin-bottom: 0.5in;
 }
 div.outer {
-    background: hsl(213, 53%, 52%); /* Header blue */
+    background: hsl(210, 64%, 45%); /* Header blue */
     border-radius: 10px;
     text-align: left;
     font-size: 0px;
@@ -37,7 +37,7 @@ div.outer {
 div.inner {
     font-size: 36px;
     text-align: center;
-    background: hsl(213, 53%, 82%); /* Header subblock blue */
+    background: hsl(210, 64%, 82%); /* Header light blue */
     border-radius: 10px;
 }
 
@@ -165,7 +165,7 @@ div.outer#troubleshooting p {
 .section_heading div {
     padding: 0.4em 0.0em 0.4em 1em;
     float: left;
-    background: hsl(358, 84%, 70%);
+    background: hsl(26, 87%, 46%); /* Header orange */
     position: relative;
     z-index: 1;
     -webkit-border-radius: 10px;
@@ -173,7 +173,7 @@ div.outer#troubleshooting p {
 }
 
 .section_heading div::after{
-    background: hsl(358, 84%, 70%);
+    background: hsl(26, 87%, 46%); /* Header orange */
     content: "";
     width: 2.5em;
     height: 2.5em;
@@ -227,7 +227,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 20pt;
     padding: 0.4em;
-    background: hsl(358, 84%, 70%);
+    background: hsl(26, 87%, 46%); /* Header orange */
     border-radius: 10px;  
 }
 h2 {

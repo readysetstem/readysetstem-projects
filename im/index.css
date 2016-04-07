@@ -1,6 +1,8 @@
 /*
  * Index
  */
+/* background: hsl(26, 87%, 56%); /* Ready Set STEM Logo orange */
+/* background: hsl(210, 64%, 45%); /* Ready Set STEM Logo blue */
 div.autotoc table {
     width: 100%;
     border: 0px;
@@ -11,14 +13,14 @@ div.autotoc td, thead th {
     border: 0px;
 }
 thead {
-    background: hsl(84, 53%, 50%); /* Header green */
+    background: hsl(210, 64%, 45%); /* Header blue */
     z-index: 999; /* keeps thead above rest of table when stickyheader */
     -webkit-box-shadow: 0px 20px 10px rgba(0,0,0,0.5);
     box-shadow: 0px 20px 10px rgba(0,0,0,0.5);
     margin-bottom: 30px !important;  /* Space below main table header */
 }
 th:nth-child(2) {
-    background: hsl(84, 53%, 75%); /* Header subblock green */
+    background: hsl(210, 64%, 82%); /* Header light blue */
     border-radius: 12px;
     width: 100%;
 }
@@ -35,10 +37,10 @@ div.autotoc table#index_table > thead.sticky.stuck {
     border-top-right-radius: 0px;
 }
 div.autotoc table#index_table > tbody:nth-child(odd) {
-    background: hsl(358, 84%, 50%);
+    background: hsl(26, 87%, 71%); /* Header light orange */
 }
 div.autotoc table#index_table > tbody:nth-child(even) {
-    background: hsl(358, 84%, 75%);
+    background: hsl(26, 87%, 51%); /* Header orange */
 }
 tr.content_row p {
     margin-top: 0.0in;
@@ -118,7 +120,7 @@ table#index_header {
     font-weight: bold;
 }
 table#index_header td div { /* tootip question mark <div> */
-    background: hsl(84, 53%, 50%); /* Header green */
+    background: hsl(210, 64%, 45%); /* Header blue */
     height: 25px;
     width: 25px;
     border-radius: 50%;
