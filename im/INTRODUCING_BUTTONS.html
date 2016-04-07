@@ -48,6 +48,8 @@
   and cut a wire -- by doing this, we have created an open circuit, current will 
   stop flowing and the light bulb will not illuminate:
 
+ <p><mark>MOVE THE FOLLOWING ABOUT SHORT CIRCUITS TO PARALLEL/SERIES???
+ 
   <p><mark>PIC: Animation of lightbulb circuit being cut.
 
   <div class="info">
@@ -82,8 +84,8 @@
   <i><strong>short circuit</strong></i>.  
   
   <p>A short circuit is a closed circuit where one part of a circuit is 
-  <i>unintentionally</i> connected by a wire to another part of the circuit, and
-  unintentionally by-passes a set of components.  Electric charge can then flow 
+  <i>unintentionally</i> connected by a plain wire to another part of the circuit, 
+  and unintentionally by-passes a set of components.  Electric charge can then flow 
   through a part of the circuit that it was not intended to, and unexpected 
   things can happen.
   
@@ -111,46 +113,99 @@
   
   <div class="info">
     <div>
-SHORTING THE BATTERY
+Shorting the Battery
     </div>
     <div>
   
-  There's a specific type of short circuit that's especially bad.    For example, in the battery and LED circuit in
-  previous projects, attaching a wire from power to ground with nothing in
-  between will cause large amounts of electricity to flow
-  through that wire (instead of the LED as intended). This can dissipate your
-  power source very quickly, or worst-case (for larger power sources than the
-  battery we used), the flow of current can heat up the wire to the point
-  where it breaks or causes a fire.</p>
+  <p>There's one specific type of short circuit that we want to talk about a 
+  little more, as it's especially bad.  Not only can it make your circuit 
+  not work as expected, but it can even cause damage to various components
+  of your circuit.  This situation occurs when you have a short circuit (a 
+  plain wire) that connects power to ground with nothing in-between.
+  
+  <p>For example, this is one example of what shorting the battery might
+  look like:
+  
+  <p><mark>PIC: Battery with single wire from + to -
+
+  <p>Here is another exmaple of shorting the battery:
+  
+  <p><mark>PIC: Battery with load (lightbulb) and also a short wire in parallel
+  
+  <p>In that second example, we have a full circuit with a battery and lightbulb,
+  and we also have a short that runs directly from the positive terminal of the 
+  battery to the negative terminal.  Remember from earlier that if current has
+  a choice between two paths, and one path has much <i>much lower</i> resistance,
+  most of the current will run through that path.  In this case, most of the 
+  current will run from the positive terminal of the battery to the negative
+  terminal, directly through the plain wire.
+  
+  <p>The reason why shorting a battery is so bad is that when you have all the
+  current running directly from the positive terminal of the battery to the 
+  negative terminal without any load (components) in-between, you will quickly
+  drain your battery.
+  
+  <p>Shorting the battery can actually work with any power source.  For example,
+  here is what a short circuit might look like using our breadboard with the
+  Raspberry Pi as the power source:
+
+  <p><mark>PIC: Short on the breadboard
+  
+  <p>In this circuit, we have a short directly from power to ground.  Because
+  we have a <i>lot</i> of current running from the Raspberry Pi power source
+  directly back to the Raspberry Pi ground, we'll overload the 
+  Raspberry Pi electronic circuitry and the Raspberry Pi will likely reboot
+  itself.
+  
+  <p><b>NOTE: If the Raspberry Pi ever reboots for no apparent reason, check
+  to see if you have a short circuit on your breadboard.</b>  This will often
+  happen if you accidentally wire both power and ground into the same
+  breadboard rail, like this:
+  
+  <p><mark>PIC: 3.3V and GND both plugged into red rail
+  </div>
 </div>
-</div>
+  
+  <h1>Pushing Your buttons</h1>
+  <p>One of the most common -- and versatile -- components in the electronics
+  world is the pushbutton (or just "button").  A button is just a very 
+  simple switch -- electric current can flow through it only when it is pressed,
+  but can't flow through it when it is not pressed.  While buttons are very
+  simple in the way they work, when you use them strategically in a circuit --
+  and when you combine that circuit with some computer code -- buttons can 
+  provide a very versatile way to get information from a user to a computer
+  program.
+  
+  <p>Go ahead and take one of the buttons out of your <strong>Your First Circuit
+  RaspberrySTEM Cell</strong>, and let's take a closer look at how it
+  works.  This is a very basic pushbutton –- it has four “legs” that can be 
+  attached to your breadboard and wired to the circuit, and it has one button in 
+  the center of the device that can be pushed (“closed”) or
+  released (“open”).  
+  
+  <p>When the button is left unpressed, the legs are not connected to one another.
+  If that button is inserted into a circuit, the circuit is <i>open</i> when 
+  the button is unpressed.  As we learned above, in an open circuit, current
+  doesn't flow and the components don't do anything.  When the button is pressed, 
+  a small metal disk inside of the button case pushes into the legs of the button, 
+  connecting all four metal legs together -- this <i>closes</i> the circuit.
+  Remember, when a circuit is closed, current will flow and the components in 
+  the circuit will operate.
 
-  <h1>Pushing your buttons</h1>
-  <p>The pushbutton (or
-  just "button") is just a very simple switch – electric current can
-  flow through it only when it is pressed.</p>
-
-  <p>Take one of the buttons out of your <strong>I/O (Input/Output)
-  RaspberrySTEM Cell</strong> so we can take a closer look at how a button
-  works. This is a representation of most basic pushbuttons – they have four
-  “legs” that can be attached to your breadboard and wired to the circuit and
-  then one button in the center of the device that can be pushed (“closed”) or
-  released (“open”).  When it is pushed closed, a small metal disk pushes into
-  the legs of the button, connecting all four metal legs together.
-
-  <p>Internally, the left side of the button (the two legs on the left) are
-  connected together, and the right side of the button (the two legs on the
-  right) are connected together:</p>
+  <p>On thing to note:  Internally, the left side of the button (the two legs 
+  on the left) are connected together, and the right side of the button (the two 
+  legs on the right) are connected together:</p>
+  
   <p><mark>Replace drawing below with button used in breadboard diagrams
   <img style="width: 202px;" alt="" src= "img/button2%20cropped.jpg">
+  <p><mark>Animate above drawing to show current flowing on left and right???
+
   <p>The dashed lines above show the internal wires that permanently connect
   some of the legs together.  So, when using a button, you'll generally want to
   just use two of the legs - either the top two, or the bottom two.
 
-  <p><mark>PIC: Animation of open/closed circuit (lightblub lighting), including
-  sideways view of button.
-
-  <p>When we insert a button into a circuit, it has one of two operations:</p>
+  <p>As we mentioned above, when we insert a button into a circuit, it has one 
+  of two operations:</p>
   <ol>
     <li>
 
@@ -160,9 +215,14 @@ SHORTING THE BATTERY
     <li>
 
       <p>When the button is pressed, the button acts as a wire and closes the
-      circuit – electric current can then flow through the button.</p>
+      circuit – electric current can then flow through the button and the 
+	  components can operate.</p>
     </li>
   </ol>
+
+  <p><mark>PIC: Animation of open/closed circuit (lightblub lighting), including
+  sideways view of button.
+</div>
 
 </body>
 </html>
