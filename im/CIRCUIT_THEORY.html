@@ -28,18 +28,27 @@
 <body>
 <div class=section>
   <h1>Voltage, Current & Resistance</h1>
-  <p>These three concepts define how and when electric charge flows, and
-  controlling these things allows us to harness the power that
-  electricity
-  provides. While we can’t actually see voltage, current or resistance, there
-  are some analogies we can use to help understand what each of these concepts
-  are and how they interact with each other.</p>
 
-    <mark>PIC: Battery resistive circuit vs water resistive circuit</mark>
-    <p>Similar to the previous example, the Battery/Pump forces
-    Electrons/Water around a closed loop (circuit).  But we've now added a
-    constriction (narrowing) to the pipe so we can discuss additional elements
-    of the circuit:
+  <p>In our <a data-uid="electronics"></a> concept earlier in this guide, we
+  talked about three common measurement used in electrical circuit -- 
+  <i>voltage</i>, <i>current</i> and <i>resistance</i>.  These three things 
+  aren't just measurements; they actually define how, when and to what extent 
+  electric charge flows, and by controlling these three parts of a circuit, we 
+  can harness the power that electricity provides. While we can’t actually see 
+  voltage, current or resistance, there are some analogies we can use (based on 
+  the water analogy) to help understand what each of these concepts are and how 
+  they interact with each other.</p>
+
+  <p>Let's take a look at a new circuit and an analogous water loop:
+
+  <p><mark>PIC: Battery resistive circuit vs water resistive circuit</mark>
+	
+  <p>Similar to our previous water analogy example, the battery (or pump) forces 
+  charged particles (or water molecules) around a closed circuit (or closed loop).
+  But, in this example, we've added a narrowing to the pipe so we can discuss 
+  concepts relating to the circuit.  Here is are the analogous pieces of each
+  of the images above:
+  
   <table class=basic style="table-layout: fixed;">
     <tbody>
       <tr>
@@ -48,78 +57,85 @@
       </tr>
       <tr>
         <td><p>Voltage</td>
-        <td><p>Pressure</td>
+        <td><p>Water Pressure</td>
       </tr>
       <tr>
         <td><p>Current</td>
-        <td><p>Current (water flow)</td>
+        <td><p>Water Flow</td>
       </tr>
       <tr>
         <td><p>Resistance</td>
-        <td><p>Narrow pipe</td>
+        <td><p>Narrowed Pipe</td>
       </tr>
     </tbody>
     </table>
+
+  <p>Now let's talk about each of these components in more detail...
+	
   <h2>Voltage</h2>
 
   <mark>PIC: Battery vs water circuits, with low/high voltage/pressure highlighted</mark>
-  <p>Voltage is essentially the difference in the amount of charge from one
-  point in a circuit to another. An important electrical concept is that
-  charge will typically only flow between two points that have a difference in
-  charge (a voltage). Specifically, charged particles will flow from a point of
-  higher (more positive) charge to a point of lower (more negative) charge. If
-  there is the same amount of
-  charge at two points in a circuit, no electric charge will flow.</p>
+
+  <p>Voltage is electrical force and it's measured as the difference in the 
+  amount of charge from one point in an electrical circuit to another.  An 
+  important electrical concept is that electrical current will typically only 
+  flow between two points that have a difference in charge (a voltage). 
+  Specifically, current will flow from a point of higher charge to a point of 
+  lower charge. If there is the same amount of charge at two points in a circuit, 
+  no electric charge will flow.</p>
 
   <p>Using our water analogy, voltage is analogous to the amount of pressure
-  (basically, the force) that there is pushing water through a pipe filled with
-  water. Imagine a water system that contains a water pump that is pushing
-  water around a loop of a water-filled pipe (a 'circuit') -- water enters the
-  pump at a low pressure and is forced out of the pump at a high pressure. It
-  is this pressure difference that makes the water flow. Likewise in an
-  electric circuit, the electric power source is analogous to the water pump --
-  a power source takes in charge at a low voltage and pushes it out at a high
-  voltage. It is this difference in voltage on the opposite sides of the
-  power source that makes the charged particles flow.</p>
-
-<p>Finally, voltage are (virtually) always talked about between two points.
-That is, we always discuss a voltage <i>difference</i> between those two
-points.  For example, if you've ever measured the voltage of a battery, you
-know that have to measure the voltage <i>difference</i> between the negative
-and positive sides.  However, it is generally common to just discuss voltages
-at a single point in a circuit.  This is because it is <i>assumed</i> that you
-are asking for the voltage difference between that point and <i>ground</i>,
-which is generally the lowest point of volatge in a circuit.
-
-<p>Voltage is measured in "volts", which are named after the Italian physicist
-Alessandro Volta, who was one of the first inventors of a rudimentary battery
-around 1800.
+  (basically, the force) that is pushing water through the pipe.  In a circuit
+  of pipes where water is being pushed, water enters the pump at a low pressure 
+  and is forced out of the pump at a high pressure. It is this pressure difference 
+  that makes the water flow.  Likewise, in an electric circuit, a power source 
+  takes in charge at a low voltage and pushes it out at a high voltage. It is 
+  this difference in voltage on the opposite sides of the power source that makes 
+  the charged particles flow.</p>
+  
+  <p>One more thing to mention -- voltage is almost always talked about as a 
+  measurement between two points.  That is, voltage isn't an absolute value; it
+  is relative to other points in a circuit.  Think of it this way -- we can
+  say that's 60 degrees outside (that's an absolute value), but we can also
+  say that it's 20 degrees warmer inside than outside (though it's not clear
+  what the exact inside and outside temperatures are).  With voltage, we're
+  always measuring relative to some other point in the circuit.  
+  
+  <p>For example, when we talk about the voltage of a battery, we're actually
+  measuring the difference in charge between the positive side of the battery
+  and the negative side.  When we do talk about a voltage a single point, it's
+  generally assumed that we are measuring the voltage between that point in the
+  circuit an <i>ground</i>, which is the lowest point of charge in a circuit.
+  
+  <p>Voltage is measured in "volts", which are named after the Italian physicist
+  Alessandro Volta, who was one of the first inventors of a rudimentary battery
+  around 1800.
 
   <h2>Current</h2>
 
-    <mark>PIC: Battery vs water circuits, with constant current highlighted</mark>
-  <p>Current is the flow of electric charge through a
-  circuit. Using our water analogy, 
-  current is the amount of water actually flowing through the
-  pipe.  In both cases, its measured by the amount of stuff (charge or
-  water) that flows through the pipe in an amount of time.</p>
+  <mark>PIC: Battery vs water circuits, with constant current highlighted</mark>
 
-    <p>Its important to note that in our simple circuit example above, the
-  current is exactly the same at every point in the circuit.  That is, if your
-  were to look at any small segment of the circuit, the same amount of
-  charge is going into that segment as is going out.  This is true in the
-  battery, the wires, and the resistor.  
+  <p>Current is the flow of electric charge through a circuit and it's measured
+  as the amount of charged particles moving through a point in the circuit
+  in a given period of time.  Using our water analogy, current is analogous to
+  the volume of water actually flowing through the pipe.  
+  
+  <p>It's important to note that in our simple circuit example above, the
+  current is exactly the same at every point in the circuit.  That is, at any 
+  point in the circuit, the same number of charged particles are passing that 
+  point in a given period of time.  This is true for all the components of the
+  circuit -- current will move through the battery, the wires, and the resistor
+  all at the same rate.  
 
-  <p>If you think about the water analogy, you might realize this must be true.
-  If there was any segment of the circuit where there was more water
+  <p>If you think about the water analogy, you might realize that this must be 
+  true.  If there was any segment of the circuit where there was more water
   continuouslly going into that segment than going out, then the pipe would
-  ballon up at that point, or
-  burst.  But that doesn't happen - the flow of current happens around the
-  entrie circuit all together, in lock step.
-
-<p>Current is measured in "amperes" ("amps", for short), which are named after
-the French physicist André-Marie Ampère, who researched electrical current and other phenomenon in the 1800s.
-
+  ballon up at that point, and maybe even burst.  But that doesn't happen -- 
+  current flows around the entire circuit all together, in lock step.
+  
+  <p>Current is measured in "amperes" ("amps", for short), which are named after
+  the French physicist André-Marie Ampère, who researched electrical current and 
+  other phenomenon in the 1800s.
 
   <div class="info">
     <div>
@@ -127,63 +143,78 @@ the French physicist André-Marie Ampère, who researched electrical current and
     </div>
     <div>
 
-      <p>Benjamin Franklin is generally credited with defining the "positive"
-    and "negative" values of charge.  Unfortunately, he did so more than 200
-    years before the discovery of the electron.  In other words, he didn't know
-    what charge physically was, and in fact refered to it as the "electrical
-    fluid".  It turns out, you can understand many of the concepts of
-    electricity without knowing the details of the physical particles that carry
-    charge.  In fact, you can think of circuits as having positive charges that
-    flow in one direction, or negative charges that flow the opposite direction
-    - the result is the same.
-      <p>Franklin made the arbitrary choice to define current as the flow of
-      positive charges from a positive voltage to a negative voltage.  That is
-      the same definition that we use today, and we call it "conventional
-      current".  However, we now know that the particles that actually move are
-      the negatively charged electrons, and they flow from negative to positive
-      voltage.
-    <p>The thing to remember is that conventional current flows in the equal
-    but opposite direction as electron current flows.  And when engineers,
-    teachers, and electricians say just "current", they mean "conventional
-    current".  
-    <p>One additional unfortunate twist: physicists like to use "current" to
-    mean "electron current", and so physicists have a backwards convention
-    compared to everyone else.  But, unless you become a physicist, you can
-    just ignore that!
+  <p>Benjamin Franklin is generally credited with defining the "positive"
+  and "negative" values of charge (which come from protons and neutrons within
+  atoms).  Unfortunately, he did so more than 200 years before the discovery of 
+  atoms, so he didn't know what charge physically was; in fact, he refered to it 
+  as "electrical fluid".  
+  
+  <p>It turns out, you can understand many of the concepts of electricity without 
+  knowing the details of the physical particles that carry charge.  In fact, you 
+  can think of electrical current as positive charges that flow in one direction, 
+  or you can think of it as negative charges that flow the opposite direction -- 
+  from the outside, everything would look the same.
+  
+  <p>Franklin made the arbitrary choice to define current as the flow of positive 
+  charges from a positive voltage to a negative voltage.  However, we now know that 
+  the particles that actually move are negatively charged electrons, and they flow 
+  from negative to positive voltage.  Today, we still draw current as moving from
+  higher voltage (the positive terminal of a battery) to lower voltage (the negative
+  terminal of a battery), but if you could see into a wire, you'd actually see that
+  the electrons are moving in the opposite direction.  We call the current flow
+  from higher voltage to lower voltage <i>conventional current</i>.
+  
+  <p>When you hear an engineers, teacher or electrician say "current", they most
+  likely mean conventional current -- not the actual flow of electrons.
     </div>
   </div>
+
   <h2>Resistance</h2>
-    <mark>PIC: Labelled water/pump/narrowing resistance circuit</mark>
-  <p>If a water pipe is constricted (narrow), then less water can flow through
-  it (for a certain water pressure).  This concept is familiar to anyone who
-  has played with a garden hose - if you pinch the hose, less water comes out.
-  If you pinch the hose hard enough, <i>no</i> water comes out.
 
-<p>As you might imagine from the water analogy, if the more resistance there is
-the less current.  That is, the more constricted the pipe is, the less amount
-of water that can flow through it.  
+  <mark>PIC: Labelled water/pump/narrowing resistance circuit</mark>
 
-<p>Also notice that the voltage at the top
-of the resistor will be less than the voltage a the bottom of the resistor.
-This difference in voltage is called the <i>voltage drop</i> across the
-resistor.  This is similar in the water analogy - when water is forced into a
-narrow pipe, the water gets "squished" together at the narrow entrance, and the
-pressure is greater there than after then end of the narrow region.
-
-<p>Resistance is measured in "ohms", which are named after physicist Georg
-Simon Ohm, who studied electrical resistance in the 1800s.
+  <p>Resistance is what reduces the flow of current in a circuit.  Using our water
+  analogy, if a water pipe is constricted (narrowed), then less water can flow 
+  through it using the same amount of force.  If you've ever played with a garden
+  hose, this concept is probably familiar to you -- if you pinch the hose, less 
+  water comes out.  If you pinch the hose hard enough, <i>no</i> water comes out.
+  
+  <p>As you might imagine from the water analogy, the more you increase resistance 
+  in an electrical circuit, the more you reduce the current moving through the
+  circuit.  All components in an electrical circuit will have some resistance -- 
+  even the wires.  But, some components have more resistance than others, and some
+  components (resistors) designed specifically for the purpose of creating 
+  resistance in a circuit.  They are generally used to reduce current through part
+  or all of the circuit.
+  
+  <p>While introducing a resistor into a closed circuit will reduce current throughout
+  the entire circuit (remember that current is going to be the same at every point
+  in the circuit), a resistor will have a different voltage on one side of it than
+  on the other.  The voltage at the side of the resistor nearest the positive side
+  of the power source will have a higher voltage than the side of the resistor 
+  nearest the negative (ground) side of the power source.  
+  
+  <p>This difference in voltage is called the <i>voltage drop</i> across the resistor.  
+  This is similar in the water analogy -- when water is forced through a narrow pipe, 
+  the water gets "squished" together at the beginning of the narrow portion of pipe
+  (pressure is higher) and is "unsquished" at the end of that portion of pipe (pressure
+  is lower).
+  
+  <p>Resistance is measured in "ohms", which are named after physicist Georg Simon Ohm, 
+  who studied electrical resistance in the 1800s.
 
   <div class="info">
     <div>
     Reading resistance
     </div>
     <div>
-<p>You can't tell how much resistance a resistor has by the size of it.  One
-resistor that is exactly the same size and shape as another can have a million
-or more times as much resistance.  Because of this, some resistors are labelled
-with a color
-code - a set of colored bands that indicate what the value of the resistance, in ohms.  The color code
-matches a color with each of the digits 0-9:
+	
+  <p>You can't tell how much resistance a resistor has by the size of it.  One 
+  resistor that is exactly the same size and shape as another can have a million
+  or more times as much resistance.  Because of this, some resistors are labelled
+  with a color code -- a set of colored bands that indicate what the value of the 
+  resistance, in ohms.  The color code matches a color with each of the digits 0-9:
+
   <style>
     tbody.thistable td { 
         padding:2px !important; 
@@ -214,42 +245,62 @@ matches a color with each of the digits 0-9:
     </tbody>
     </table>
   </ol><img style="min-width: 200px; max-width:450px" alt="" src="img/resistor_color_code.png">
-    <p>As shown above, the first 2 bands of color are the first two digits of
-    the resistance.  The third band is a 10-times multiplier - it is the number
-    of zeros to add to the end of the number.
-    <p>For example, for the resistor shown above, the color bands are brown, black,
-    and red, which corresponds to the numbers 1, 0, and 2.  Therefore, the
-    resistance is "10" followed by 2 zeros, which is 1000 ohms.
+
+  <p>As shown above, the first 2 bands of color are the first two digits of
+  the resistance.  The third band is a multiplier - it is the number
+  of zeros to add to the end of the number.
+  
+  <p>For example, for the resistor shown above, the color bands are brown, black,
+  and red, which corresponds to the numbers 1, 0, and 2.  Therefore, the
+  resistance is "10" followed by 2 zeros, which equates to <i>1000</i> ohms.
     </div>
   </div>
 </div>
 <div class=section>
-  <h1>Ohm's Law</h1>
 
-<p>With the basic definitions of voltage, current and resistance in hand,
-you're ready for one of the fundamental equations in circuit theory, Ohm's law:
+<h1>Ohm's Law</h1>
+
+<p>Now that you have the basic definitions of voltage, current and resistance,
+you're ready for one of the fundamental equations in circuit theory, Ohm's Law:
 
 <p style="margin-left: 0.5in; font-size: 150%;">
 <strong><i>Voltage</i></strong> = <strong><i>Current</i></strong> &middot; <strong><i>Resistance</i></strong>
 
-<p>It says that, for
-a component in a circuit, the voltage drop across that component is equal to
-the current through that component times the Resistance of that component.
-<p>Thinking about a constricted pipe in the water analogy, this makes a lot of
-sense.  What it says is, for a given amount of resistance, if you increase the
-voltage some percentage, the current will increase by the same percentage.  Or
-in terms of water, if you increase the pressure some percentage, the water
-current will increase by the same percentage.
-<p>For example, for a given constriction in a pipe, if you pump twice as hard,
-twice as much water will flow.
-<p>A similar relationship is true for resistance:
-    <p><mark>PIC: resistive circuits, with resistance changing</mark>
-    <p>Assuming the pumping pressure stays constant, as the resistance
-    increases (the pipe gets narrower), the current decreases by the same
-    percentage.  For example, if the resistance doubled, the current would be
-    half as much.
-    <p>The same is true with electric circuits, and there are variable resistors
-    (sometimes called potentiometers or "pots") that allow you to change the resistance in a circuit by turning a knob.
+<p>This formula basically says that, within a circuit, voltage, current and 
+resistance are all interrelated -- if you change one or two of them, it will 
+impact the others.  Specifically:
+
+<ul>
+<li><p>If you keep the amount of resistance the same, increasing/decreasing
+the voltage by some percentage will increase/decrease the current by the same
+percentage.  This makes sense when you think about the water analogy with a 
+constricted pipe -- if you increase the water pressure some percentage, the water 
+flow will increase by the same percentage.  For example, if you pump water twice 
+as hard through a constricted water pipe, twice as much water will flow.
+</li>
+<li><p>If you keep the amount of voltage the same, increasing/decreasing
+the resistance by some percentage will increase/decrease the current by the same
+percentage.  This makes sense when you think about the water analogy again -- if 
+you pump the water at the same rate, it will flow through a bigger pipe (less
+resistance) faster than it will flow through a smaller pipe (more resistance).
+In fact, water will flow twice as fast through a pipe that is twice as big if 
+the pump is working at the same rate.
+</li>
+<li><p>If you keep the amount of current the same, increasing/decreasing
+the resistance by some percentage will increase/decrease the voltage by the same
+percentage.  Again, let's go back to the water analogy and a constricted pipe -- 
+the water flow coming into the beginning of the pipe (where it is squished) will
+have a higher pressure than the water exiting the pipe at the unsquished end.  
+Likewise, any component in an electrical circuit will have a higher voltage at
+the point where the current is coming in than it will at the point where the 
+current is leaving the component.  This is called the <i>voltage drop</i> across
+the component, and a component with twice as much resistance will have twice as 
+big a voltage drop.
+</li>
+</ul>
+
+<p><mark>??? PIC: resistive circuits, with resistance changing</mark>
+
 </div>
 </body>
 </html>
