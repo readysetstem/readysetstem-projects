@@ -1,4 +1,4 @@
-raspberrystem-projects
+readysetstem-projects
 ======================
 
 RaspberrySTEM(TM) Project Guides

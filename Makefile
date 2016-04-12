@@ -42,10 +42,10 @@ all: $(TARGETS)
 
 PG=projectsguide
 pushpg:
-	ssh swolski@raspberrystem.com mkdir -p raspberrystem.com/$(PG)
-	scp -r im/* swolski@raspberrystem.com:raspberrystem.com/$(PG)
+	ssh readysetstem@readysetstem.com mkdir -p readysetstem.com/$(PG)
+	scp -r im/* swolski@readysetstem.com:readysetstem.com/$(PG)
 	@echo "####################################################################"
-	@echo "### NOTE: you may want to also 'make pushpg' from raspberrystem-ide"
+	@echo "### NOTE: you may want to also 'make pushpg' from readysetstem-ide"
 	@echo "####################################################################"
 
 TIDY_TARGETS=$(wildcard im/*.html)
@@ -54,8 +54,16 @@ tidy: $(TIDY_TARGETS)
 $(TIDY_TARGETS):
 	@# First run of tidy will insert 'alt=""' text on images.  We run is
 	@# separately so we can ignore its error.
-	tidy5 -quiet --alt-text "" -m $@ >/dev/null 2>&1; exit 0
-	tidy5 -w 80 -quiet --indent auto -m $@
+	tidy -quiet --alt-text "" -m $@ >/dev/null 2>&1; exit 0
+	$(eval TIDYOPTS=-w 80 -quiet --indent auto)
+	@echo tidy $(TIDYOPTS) $@
+	@tidy $(TIDYOPTS) -f /tmp/tidyerrors -m $@; \
+		if [ $$? -gt 0 ]; then \
+			sed 's/^/    /' /tmp/tidyerrors; \
+			if [ $$? -gt 1 ]; then \
+				exit $$?; \
+			fi \
+		fi
 	@# Add extra line spacing before paragraphs
 	gawk -i inplace '/<p>/{print ""}1' $@
 

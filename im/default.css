@@ -28,11 +28,16 @@ pre {
     font-family: Courier New,Courier,monospace;
     font-size: 12pt;
 }
+pre i {
+    font-family: Courier New,Courier,monospace;
+}
 code {
     font-family: Courier New,Courier,monospace;
-    margin-left: 5px;
-    margin-right: 5px;
     font-size: 110%;
     font-weight: bold;
+}
+code i {
+    font-family: Courier New,Courier,monospace;
+    font-weight: normal;
 }
 

@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="default.css">
+  <link rel="stylesheet" type="text/css" href="project.css">
+  <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
+  <link type="text/css" id="theme" rel="stylesheet" href=
+  "/assets/themes/solarized-dark.css">
+  <script type="text/javascript" src="/assets/cmirror/codemirror.js">
+  </script>
+  <script type="text/javascript" src="/assets/cmirror/python.js">
+  </script>
+  <script type="text/javascript" src="onload.js">
+  </script>
+  <script type="text/javascript" src="flows.js">
+  </script>
+  <script type="text/javascript" src="flow_cookie.js">
+  </script>
+  <script type="text/javascript" src="project.js">
+  </script>
+  <script type="text/javascript" src="stickydiv.js">
+  </script>
+  <script type="text/javascript" src="codeblocks.js">
+  </script>
+</head>
+<body>
+  <div class="hw" data-count="1" data-name="led_matrix"></div>
+  <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
+  <div class="hw" data-count="4" data-name="button"></div>
+  <div class="section" id="intro">
+      <p>
+      In this project, and we will continue to develop the moving dot from our
+      previous project and add in a second axis of movement.
+
+  <p>In our last project, we learned how to move our dot on a single axis, but
+  keep it from falling off the edge of the screen by setting and testing
+  boundaries. In this project, we're going to start moving the dot on two axes
+  (left and right; up and down) and learn how to constrain the dot on both axes
+  so that it doesn't fall off the screen.</p>
+
+  </div>
+  <div class="section" id="hw">
+<p>
+Your breadboard should still have the circuit we wired in the <a data-uid="ledp"></a>
+project. As a reminder, here is what it should look like:
+  <img class="bb" src="img/LED_Matrix_bb.jpg" alt="">
+  </div>
+  <div class="section" id="sw">
+  <p>Adding the same functionality along the other axis (the y-axis) is
+  actually pretty simple. In addition to changing the x location by 1 each time
+  through the loop, we also do the same with the y location. This requires
+  another <code>direction</code> variable to keep track of the y-axis
+  direction.
+  To avoid confusion with the variable names, we'll also change the previous
+  variable <code>direction</code> to <code>x_direction</code></p>
+
+  <p>In addition, we need to increment in the y-direction each time through the
+  loop and test whether we've hit the y-axis edge.</p>
+
+  <p>Here is the final code, with the new code marked with arrows:</p>
+  <div class="code" data-firstline="0">
+    <textarea>
+# Initialize the game environment
+from rstem.led_matrix import FrameBuffer
+from rstem.led_matrix import Sprite
+import time
+
+fb = FrameBuffer()
+sprites = [
+    Sprite("""
+        00000000
+        0000FF00
+        000FF000
+        000FFF00
+        00FFFF00
+        000FFF00
+        0FF00F00
+        0F0000FF
+        """),
+    Sprite("""
+        00000000
+        0000FF00
+        0000F000
+        00FFFF00
+        0F0FF0F0
+        000FFF00
+        0FF00F00
+        00000FF0
+        """),
+    Sprite("""
+        00000000
+        0000FF00
+        000FF000
+        000FF000
+        000FF000
+        000FF000
+        00FFF000
+        000FF000
+        """),
+    Sprite("""
+        0000FF00
+        000FF000
+        000FFF00
+        00FFFF00
+        000FFF00
+        00F00F00
+        00F0F000
+        00F00000
+        """),
+    ]
+
+which_sprite = 0
+while True:
+	# Get user input
+
+	# Update the game world
+	which_sprite = which_sprite + 1
+	if which_sprite &gt; 3:
+		which_sprite = 0
+
+	# Draw graphics on the screen
+	fb.erase()
+	fb.draw(sprites[which_sprite])
+	fb.show()
+
+	# Wait for some period of time
+	time.sleep(0.1)
+</textarea>
+  </div>
+
+  <p>Give it a try. You should now see the dot bouncing back and forth on the
+  display in two directions.</p>
+
+  </div>
+<div id=challenge class=section>
+  <ol>
+    <li>
+      <p>
+Can you add a button that, when pressed, makes the running man jump?  That is,
+displays him shifted up one or two points above the bottom of the display.
+
+    </li>
+    <li>
+	  <p>
+
+Can you add a second button that, when pressed, makes the running man go faster?
+
+    </li>
+    <li>
+	  <p>
+Can you add a third button that, when pressed, makes the running man flash on and off while still
+running?
+    </li>
+    <li>
+	  <p>
+Can you add a fourth button that, when pressed, makes the running man change direction?
+    </li>
+    <li>
+      <p>
+Challenging: Can you modify the first button so that it makes the running man
+jump gradually?  That is, as he continues to run, slowly display him shifted up
+one point, then two points, then three points, then two points, then one point,
+then back to ground?
+
+    </li>
+  </ol>
+</div>
+</body>
+</html>

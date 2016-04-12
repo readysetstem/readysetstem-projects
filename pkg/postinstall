@@ -4,6 +4,6 @@ PKG_DIR=$1
 PKG_NAME=$2
 
 echo "Running postinstall script..."
-PRJDIR=/opt/raspberrystem/projects
+PRJDIR=/opt/readysetstem/projects
 mkdir -p $PRJDIR
 cp -r ./projects.build/* $PRJDIR

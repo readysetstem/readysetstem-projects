@@ -16,7 +16,9 @@
   </script>
   <script type="text/javascript" src="onload.js">
   </script>
-  <script type="text/javascript" src="toc_order.js">
+  <script type="text/javascript" src="flows.js">
+  </script>
+  <script type="text/javascript" src="flow_cookie.js">
   </script>
   <script type="text/javascript" src="project.js">
   </script>
@@ -26,6 +28,8 @@
   </script>
 </head>
 <body>
+  <div class="hw" data-count="1" data-name="led_matrix"></div>
+  <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
   <div class="section" id="intro">
       <p>
       In this project, and we will continue to develop the moving dot from our
@@ -37,107 +41,79 @@
   (left and right; up and down) and learn how to constrain the dot on both axes
   so that it doesn't fall off the screen.</p>
 
-  <p>Here is the code we finished with from our last project:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-# Initialize the game environment
-from rstem.led_matrix import FrameBuffer
-import time
-
-fb = FrameBuffer()
-x, y = (0, 0)
-
-direction = 1
-
-while True:
-        # Get user input
-
-        # Update the game world
-        x += direction
-        if (x &lt;= 0) or (x &gt;= 7):
-                direction = -direction
-
-        # Draw graphics on the screen
-        fb.erase()
-        fb.point(x, y)
-        fb.show()
-
-        # Wait for some period of time
-        time.sleep(.5)
-</textarea>
   </div>
-
+  <div class="section" id="hw">
+<p>
+Your breadboard should still have the circuit we wired in the <a data-uid="ledp"></a>
+project. As a reminder, here is what it should look like:
+  <img class="bb" src="img/LED_Matrix_bb.jpg" alt="">
+  </div>
+  <div class="section" id="sw">
   <p>Adding the same functionality along the other axis (the y-axis) is
   actually pretty simple. In addition to changing the x location by 1 each time
   through the loop, we also do the same with the y location. This requires
   another <code>direction</code> variable to keep track of the y-axis
-  direction:</p>
-  <div class="code" data-firstline="0">
-    <textarea>
-y_direction = 1
-</textarea>
-  </div>
-
-  <p>And then we need to increment in the y-direction each time through the
-  loop and test whether we've hit the y-axis edge:</p>
-  <div class="code" data-firstline="0">
-    <textarea>
-y += y_direction
-if (y &lt;= 0) or (y &gt;= 7):
-        y_direction = -y_direction
-</textarea>
-  </div>
-
-  <p>To avoid confusion with the variable names, we'll also change the previous
+  direction.
+  To avoid confusion with the variable names, we'll also change the previous
   variable <code>direction</code> to <code>x_direction</code></p>
 
-  <p>Lastly, you'll probably want to set the initial position of the ball to
-  something other than (0, 0) to make the bouncing a little more interesting.
-  In fact, you can play around with different initial points and see how it
-  affects the bouncing.</p>
+  <p>In addition, we need to increment in the y-direction each time through the
+  loop and test whether we've hit the y-axis edge.</p>
+
+  <p>Here is the final code, with the new code marked with arrows:</p>
+  <div class="code" data-firstline="0">
+    <textarea>
+from rstem.led_matrix import FrameBuffer
+import time
+
+# Initialize the game environment
+fb = FrameBuffer()
+x, y = (3, 1)
+x_direction = 1
+*y_direction = 1
+
+while True:
+	# Get user input
+
+	# Update the game world
+	x += x_direction
+	y += y_direction
+	if (x &lt;= 0) or (x &gt;= 7):
+		x_direction = -x_direction
+*	if (y &lt;= 0) or (y &gt;= 7):
+*		y_direction = -y_direction
+
+	# Draw graphics on the screen
+	fb.erase()
+	fb.point(x, y)
+	fb.show()
+
+	# Wait for some period of time
+	time.sleep(.5)
+</textarea>
+  </div>
 
   <p>Give it a try. You should now see the dot bouncing back and forth on the
   display in two directions.</p>
 
-  <p>Here is the final code:</p>
-  <div class="code" data-firstline="0">
-    <textarea>
-# Initialize the game environment
-from rstem.led_matrix import FrameBuffer
-import time
-
-fb = FrameBuffer()
-
-x, y = (3, 1)
-x_direction = 1
-y_direction = 1
-
-fb.point(x, y)
-while True:
-        # Get user input
-
-        # Update the game world
-        x += x_direction
-        y += y_direction
-        if (x &lt;= 0) or (x &gt;= 7):
-                x_direction = -x_direction
-        if (y &lt;= 0) or (y &gt;= 7):
-                y_direction = -y_direction
-
-        # Draw graphics on the screen
-        fb.erase()
-        fb.point(x, y)
-        fb.show()
-
-        # Wait for some period of time
-        time.sleep(.5)
-</textarea>
   </div>
+<div id=challenge class=section>
+  <ol>
+    <li>
+      <p>
+  Set the initial position of the ball to something other than (0, 0) to make
+  the bouncing a little more interesting.  Can you get it to bounce in a diamond shape?
 
-  </div>
-  <div class="section" id="hw">
-  </div>
-  <div class="section" id="sw">
-  </div>
+    </li>
+    <li>
+	  <p>As is, the ball moves the same distance in both the x and y
+	  directions.  Increase the distance it moves in either direction.
+    </li>
+    <li>
+	  <p>Using one of the random functions, can you add a little randomness to
+	  the ball's position to make it wiggle about the display?
+    </li>
+  </ol>
+</div>
 </body>
 </html>

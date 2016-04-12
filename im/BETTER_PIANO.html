@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
+  "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="default.css">
@@ -16,7 +16,9 @@
   </script>
   <script type="text/javascript" src="onload.js">
   </script>
-  <script type="text/javascript" src="toc_order.js">
+  <script type="text/javascript" src="flows.js">
+  </script>
+  <script type="text/javascript" src="flow_cookie.js">
   </script>
   <script type="text/javascript" src="project.js">
   </script>
@@ -26,52 +28,97 @@
   </script>
 </head>
 <body>
+  <div class="hw" data-count="4" data-name="button"></div>
+  <div class="hw" data-count="1" data-name="speaker"></div>
+  <div class="hw" data-count="1" data-name="audio_cable"></div>
   <div class="section" id="intro">
-      <p>
-      In this project, we improve on the Simple Piano we created in the
-      previous project by monitoring the buttons and playing the notes for the
-      duration of the button press.
 
-  <p>Using the same hardware setup from the <a data-uid="simplepiano"></a> project, we can turn our RaspberrySTEM into a mini-keyboard.
-  We will modify the code so that each time you press one of the buttons on the
-  RaspberrySTEM, the corresponding note plays for as long as the button is
-  held:</p>
-  <h4>Step #1: Build the circuit.</h4>
+    <p>In this project, we improve on the Simple Piano we created in the
+    previous project by monitoring the buttons and playing the notes for the
+    duration of the button press.</p>
 
-  <p>Your breadboard should still have the circuit we wired in the <a data-uid="manybuttons"></a> project. As a reminder, here
-  is what it should look like: <img class="bb" src="img/Many_Buttons_bb.jpg"
-  alt=""></p>
-  <h4>Step #2: Write the code.</h4>
+    <p>Using the same hardware setup from the <a data-uid="simplepiano"></a>
+    project, we can turn our CREATOR Kit into a mini-keyboard. We will modify
+    the code so that each time you press one of the buttons on the
+    CREATOR Kit, the corresponding note plays for as long as the button is
+    held.</p>
+  </div>
+  <div class="section" id="hw">
+    <p>Your breadboard should still have the circuit we wired in the
+    <a data-uid="manybuttons"></a> project. As a reminder, here is what it
+    should look like: <img class="bb" src="img/Many_Buttons_bb.jpg" alt=""></p>
+  </div>
+  <div class="section" id="sw">
 
-  <p>The main change in the code for this project is -- after detecting a
-  button press -- to monitor the button state to determine if continues to be
-  pressed, and if so, continue to play the note.</p>
+    <p>Here, we fix the popping/crackling sound from the previous project.  Instead of trying to
+	<code>play()</code> the note whenever the button is pressed down, we only play the note if the
+	button is pressed <i>and</i> it is not already playing.  That way, it only starts playing
+	right when it is pressed.  
+	
+	<p>In addition, if the button is <i>not</i> pressed, we
+	<code>stop()</code> playing the note.  This only has an affect if the note
+	was already playing (right after we release the button).  If the note
+	wasn't playing, stopping it doesn't do anything.
 
-  <p>Here is what the code should look like:</p>
-  <div class="code" data-firstline="1">
-    <textarea>
-from rstem.button import Button
+    <p>Here is what the code should look like:</p>
+    <div class="code" data-firstline="1">
+      <textarea>from rstem.button import Button
 from rstem.sound import Note
 import time
 
-buttons = [Button(14), Button(15), Button(25), Button(7)]
-notes = [Note('A'), Note('B'), Note('C'), Note('D')]
+buttons_and_notes = [
+	[Button(14), Note('C')],
+	[Button(15), Note('D')],
+	[Button(25), Note('E')],
+	[Button(7), Note('G')],
+    ]
 
 while True:
-        for button, note in zip(buttons, notes):
-                if button.is_pressed():
-                        if not note.is_playing():
-                                note.play(duration=None)
-                else:
-                        note.stop()
-        time.sleep(0.01)
+	for button, note in buttons_and_notes:
+        if button.is_pressed():
+            if not note.is_playing():
+                note.play(duration=None)
+        else:
+            note.stop()
+    time.sleep(0.01)
 </textarea>
+    </div>
+	<p>There's one new function used above that we haven't mentioned.  The function <code>is_playing()</code>
+	tells us whether or not a given note is currently playing.
   </div>
+  <div class="section" id="challenge">
+    <ol>
+      <li>
 
-  </div>
-  <div class="section" id="hw">
-  </div>
-  <div class="section" id="sw">
-  </div>
+		<p>We used the new function <code>is_playing()</code> in the code above.  However, the
+		code can be written without it.  How?  Hint: You'll likely need a variable (or
+		variables) to keep track of whether or not each note is playing.
+      </li>
+      <li>
+
+		<p>Pushing multiple buttons at the same time will play notes simultaneously.  Can you
+		modify the code to only play one note at a time?
+      </li>
+      <li>
+
+		<p>Your piano can easily be converted to a sound machine by playing <code>Sound</code>s
+		instead of <code>Note</code>s.  How?
+      </li>
+      <li>
+
+		<p>Your piano plays one note for each button that is pressed.  Can you play more than one
+		note <i>at the same time</i> for each button?
+      </li>
+      <li>
+
+		<p>Can you modify your piano so that the first three buttons play a
+		note when pressed, and the note keeps on playing even when the button
+		is released.
+		Then, if the fourth button is pressed, stop all notes from playing.
+      </li>
+    <ul>
+      </li>
+    </ol>
+</div>
 </body>
 </html>
