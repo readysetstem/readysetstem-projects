@@ -71,7 +71,7 @@ td.concept, td.project {
     border-radius: 12px;
     padding: 2px 15px 2px 15px;
     width: 100%;
-    position: relative; /* Required to make cotainer clickable.  See below. */
+    position: relative; /* Required to make container clickable.  See below. */
 }
 td.concept {
     background: -webkit-linear-gradient(left, lightgray, white);
@@ -118,6 +118,9 @@ table#index_header td.spacer {
 table#index_header {
     font-size: 36px;
     font-weight: bold;
+    border-collapse: separate;
+    border-spacing: 0px;
+    padding: 8px;
 }
 table#index_header td div { /* tootip question mark <div> */
     background: hsl(210, 64%, 45%); /* Header blue */
@@ -125,8 +128,12 @@ table#index_header td div { /* tootip question mark <div> */
     width: 25px;
     border-radius: 50%;
     text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
+}
+table#index_header td:nth-child(2) div {
+    margin-left: 20px;
+}
+table#index_header td:nth-last-child(2) div {
+    margin-right: 20px;
 }
 table#index_header td div p { /* tootip question mark <p> */
     position: relative;
