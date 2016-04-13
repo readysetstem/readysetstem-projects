@@ -42,6 +42,12 @@ div.autotoc table#index_table > tbody:nth-child(odd) {
 div.autotoc table#index_table > tbody:nth-child(even) {
     background: hsl(26, 87%, 51%); /* Header orange */
 }
+div.autotoc table#index_table > tbody:nth-child(odd) td:last-child {
+    background: hsl(26, 87%, 91%); /* Header extra extra light orange */
+}
+div.autotoc table#index_table > tbody:nth-child(even) td:last-child {
+    background: hsl(26, 87%, 81%); /* Header extra light orange */
+}
 tr.content_row p {
     margin-top: 0.0in;
     margin-bottom: 0.0in;
@@ -72,14 +78,6 @@ td.concept, td.project {
     padding: 2px 15px 2px 15px;
     width: 100%;
     position: relative; /* Required to make container clickable.  See below. */
-}
-td.concept {
-    background: -webkit-linear-gradient(left, lightgray, white);
-    background: linear-gradient(to left, lightgray, white);
-}
-td.project {
-    background: -webkit-linear-gradient(right, lightgray, white);
-    background: linear-gradient(to right, lightgray, white);
 }
 td.project p {
     text-align: right;
