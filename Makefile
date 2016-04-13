@@ -66,6 +66,10 @@ $(TIDY_TARGETS):
 		fi
 	@# Add extra line spacing before paragraphs
 	gawk -i inplace '/<p>/{print ""}1' $@
+	# Verify that all code blocks (textareas) are tab-only indented
+	gawk 'on&&/^\s* \s*\S/{exit 1}/<textarea>/{on=1}/<\/textarea>/{on=0}' $@
+	# Verify that opening <textarea> is followed by EOL
+	gawk '/<textarea>./{exit 1}' $@
 
 upload:
 	$(SETUP) sdist upload
