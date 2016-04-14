@@ -86,7 +86,7 @@ td.concept p {
     text-align: left;
 }
 td.concept:hover, td.project:hover {
-    background: gray;
+    background: gray !important;
 }
 td.concept a span, td.project a span {
     /*
