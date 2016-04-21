@@ -45,7 +45,7 @@ pg_flows.Main = [
     {filename: "SOUNDS_FUNCTION.html",              title: "OTHER SOUNDS",                  concept: true, uid: ""},
     {filename: "BETTER_PIANO.html",                 title: "BUILD A BETTER PIANO",          concept: false, uid: "betterpiano"},
     {filename: "WALKABLE_PIANO.html",               title: "BUILD A WALKABLE PIANO",        concept: false, uid: ""},
-    {filename: "TEXT_TO_SPEECH.html",               title: "TEXT TO SPEECH (TTS)",          concept: true, uid: ""},
+    {filename: "TEXT_TO_SPEECH.html",               title: "TEXT TO SPEECH (TTS)",          concept: true, uid: "tts"},
     {filename: "TEXT_TO_SPEECH_PROJECT.html",       title: "TTS SOUND MACHINE",             concept: false, uid: ""},
 
     {filename: "SIMON_PSEUDO.html",                 title: "SIMON 0",                       concept: true, uid: "", section: "SIMON"},
@@ -66,8 +66,9 @@ pg_flows.Main = [
     {filename: "FRAMEBUFFERS.html",                 title: "FRAMEBUFFER",                   concept: true, uid: "fb"},
     {filename: "BOUNCING_BALL_2.html",              title: "BOUNCING BALL 2",               concept: false, uid: ""},
     {filename: "PULSATING_RECT.html",               title: "PULSATING RECTANGLE",           concept: false, uid: ""},
-    {filename: "SPRITES.html",                      title: "SPRITES & TEXT",                concept: true, uid: ""},
+    {filename: "SPRITES.html",                      title: "SPRITES",                       concept: true, uid: ""},
     {filename: "RUNNING_MAN.html",                  title: "RUNNING MAN",                   concept: false, uid: ""},
+    {filename: "TEXT.html",                         title: "TEXT",                          concept: true, uid: ""},
     {filename: "SCROLLING_TEXT.html",               title: "SCROLLING TEXT",                concept: false, uid: ""},
 
     {filename: "ACCELEROMETER.html",                title: "THE ACCELEROMETER",             concept: true, uid: "accel", section: "ACCELEROMETER"},

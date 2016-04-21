@@ -450,3 +450,9 @@ img.schematic {
     max-width: 600px;
 }
 
+/*
+ * LED Matrix
+ */
+pre.matrix {
+    display: none;
+}
