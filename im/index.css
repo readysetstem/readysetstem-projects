@@ -56,7 +56,6 @@ tr.content_row p {
 }
 .section {
     position: relative;
-    display: inline-block;
     padding-left: 100px;
     overflow: hidden;
 }
