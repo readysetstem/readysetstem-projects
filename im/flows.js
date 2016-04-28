@@ -2,8 +2,6 @@
 //{filename: "INTRO_TO_FUNCTIONS.html",           title: "INTRO TO FUNCTIONS",                    concept: true, uid: ""},
 //{filename: "FUNCTION_INPUTS.html",              title: "FUNCTION INPUTS",                       concept: true, uid: ""},
 //{filename: "FUNCTION_OUTPUTS.html",             title: "FUNCTION OUTPUTS",                      concept: true, uid: ""},
-//{filename: "STRING_THEORY.html",                title: "STRING THEORY",                         concept: true, uid: "strings"},
-//{filename: "CALCULATIONS.html",                 title: "CALCULATIONS",                          concept: true, uid: "calc"},
 var pg_flows =  {};
 
 pg_flows.Main = [
@@ -133,6 +131,8 @@ pg_flows.Main = [
     {filename: "MORE_RESOURCES.html",               title: "MORE RESOURCES",                  concept: true, uid: ""},
     {filename: "HANDLING_ERRORS.html",              title: "HANDLING ERRORS",                 concept: true, uid: ""},
     {filename: "TROUBLESHOOTING.html",              title: "TROUBLESHOOTING",                 concept: true, uid: ""},
+    {filename: "STRING_THEORY.html",                title: "STRING THEORY",                   concept: true, uid: "strings"},
+    {filename: "CALCULATIONS.html",                 title: "CALCULATIONS",                    concept: true, uid: "calc"},
     {filename: "GLOSSARY.html",                     title: "GLOSSARY",                        concept: true, uid: ""},
     ];
 
