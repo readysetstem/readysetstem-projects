@@ -26,6 +26,8 @@
   </script>
   <script type="text/javascript" src="codeblocks.js">
   </script>
+  <script type="text/javascript" src="matrix.js">
+  </script>
 </head>
 <body>
 <div class=section>
@@ -165,6 +167,197 @@ fb.rect((1,1),(3,5))
 <p>Lines and rectangles support the color parameter, too.  And don't forget to
 <code>show()</code> your lines and rectangles, or you won't see them on the
 display!
+
+</div>
+  <div class="section">
+<h1>Examples</h1>
+<p>Here's a set of examples that all use the above framebuffer functions:
+
+    <div class="code" data-firstline="1">
+      <textarea>
+from rstem.led_matrix import FrameBuffer
+
+fb = FrameBuffer()
+fb.erase()
+fb.point(0,0)
+fb.show()
+</textarea>
+    </div>
+<p>
+  The above code just draws a point at the coordinates (0, 0).  If we change line 5
+  (<code>fb.point(0,0)</code>) to use a
+  different function and parameters, the output would look like:
+  <table class="basic">
+    <tbody>
+      <tr>
+        <th><p>Functions</p></th>
+        <th><p>LED Matrix</p></th>
+      </tr>
+      <tr><td><p><code># Draw a point in the lower left corner</code><br>
+	  <code>fb.point(0,0)</code>
+      </td><td>
+<pre class=matrix>
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+F0000000
+</pre>
+  </td></tr>
+      <tr><td><p><code># Draw a point in the upper right corner</code><br>
+	  <code>fb.point(7,7)</code>
+      </td><td>
+<pre class=matrix>
+0000000F
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+</pre>
+  </td></tr>
+      <tr><td><p><code># Draw a diagonal line (forward slash)</code><br>
+	  <code>fb.line((0,0), (7,7))</code>
+      </td><td>
+<pre class=matrix>
+0000000F
+000000F0
+00000F00
+0000F000
+000F0000
+00F00000
+0F000000
+F0000000
+</pre>
+  </td></tr>
+      <tr><td><p><code># Draw a diagonal line (backslash)</code><br>
+	  <code>fb.line((0,7), (7,0))</code>
+      </td><td>
+<pre class=matrix>
+F0000000
+0F000000
+00F00000
+000F0000
+0000F000
+00000F00
+000000F0
+0000000F
+</pre>
+  </td></tr>
+      <tr><td><p><code># Draw an "X" (2 diagonal lines)</code><br>
+	  <code>fb.line((0,0), (7,7))</code><br>
+	  <code>fb.line((0,7), (7,0))</code>
+      </td><td>
+<pre class=matrix>
+F000000F
+0F0000F0
+00F00F00
+000FF000
+000FF000
+00F00F00
+0F0000F0
+F000000F
+</pre>
+  </td></tr>
+      <tr><td><p><code># Draw a "U" (3 lines)</code><br>
+	  <code>fb.line((0,7), (0,0))</code><br>
+	  <code>fb.line((0,0), (7,0))</code><br>
+	  <code>fb.line((7,0), (7,7))</code>
+      </td><td>
+<pre class=matrix>
+F000000F
+F000000F
+F000000F
+F000000F
+F000000F
+F000000F
+F000000F
+FFFFFFFF
+</pre>
+  </td></tr>
+      <tr><td><p><code># Draw a rectangle from edge to edge</code><br>
+	  <code>fb.rect((0,0), (8,8))</code>
+      </td><td>
+<pre class=matrix>
+FFFFFFFF
+F000000F
+F000000F
+F000000F
+F000000F
+F000000F
+F000000F
+FFFFFFFF
+</pre>
+  </td></tr>
+      <tr><td><p><code># Draw a rectangle in the upper left</code><br>
+	  <code>fb.rect((0,4), (4,4))</code>
+      </td><td>
+<pre class=matrix>
+FFFF0000
+F00F0000
+F00F0000
+FFFF0000
+00000000
+00000000
+00000000
+00000000
+</pre>
+  </td></tr>
+      <tr><td><p><code># Draw a "U" (1 rectangle, 1 black line)</code><br>
+	  <code>fb.rect((0,0), (8,8))</code><br>
+	  <code>fb.line((1,7), (6,7), color=0)</code>
+      </td><td>
+<pre class=matrix>
+F000000F
+F000000F
+F000000F
+F000000F
+F000000F
+F000000F
+F000000F
+FFFFFFFF
+</pre>
+  </td></tr>
+      <tr><td><p><code># Draw a "Q" </code><br>
+	  <code>fb.rect((0,1), (7,7))</code><br>
+	  <code>fb.line((4,3), (7,0))</code>
+      </td><td>
+<pre class=matrix>
+FFFFFFF0
+F00000F0
+F00000F0
+F00000F0
+F000F0F0
+F0000FF0
+FFFFFFF0
+0000000F
+</pre>
+  </td></tr>
+      <tr><td><p><code># Draw 4 rectangles inside each other</code><br>
+      <code># with each rectangle lighter in color</code><br>
+	  <code>fb.rect((0,0), (8,8), color=15)</code><br>
+	  <code>fb.rect((1,1), (6,6), color=11)</code><br>
+	  <code>fb.rect((2,2), (4,4), color=7)</code><br>
+	  <code>fb.rect((3,3), (2,2), color=3)</code><br>
+      </td><td>
+<pre class=matrix>
+FFFFFFFF
+FBBBBBBF
+FB7777BF
+FB7337BF
+FB7337BF
+FB7777BF
+FBBBBBBF
+FFFFFFFF
+</pre>
+  </td></tr>
+</tbody>
+</table>
 
 </div>
 </body>
