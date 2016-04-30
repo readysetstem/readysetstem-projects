@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="default.css">
+  <link rel="stylesheet" type="text/css" href="project.css">
+  <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
+  <link type="text/css" id="theme" rel="stylesheet" href=
+  "/assets/themes/solarized-dark.css">
+  <script type="text/javascript" src="/assets/cmirror/codemirror.js">
+  </script>
+  <script type="text/javascript" src="/assets/cmirror/python.js">
+  </script>
+  <script type="text/javascript" src="onload.js">
+  </script>
+  <script type="text/javascript" src="toc_order.js">
+  </script>
+  <script type="text/javascript" src="project.js">
+  </script>
+  <script type="text/javascript" src="stickydiv.js">
+  </script>
+  <script type="text/javascript" src="codeblocks.js">
+  </script>
+</head>
+<body>
+<div class=section>
+
+  <p>In our previous GPIO concept, we focused on how we could control our
+  circuit from our code (GPIO as Outputs). This concept will focus on the other
+  aspect of how GPIOs are used -- to allow the outside world (our circuits) to 
+  communicate with our code.  This is 
+  important because we often want to trigger our code to do certain things or 
+  take certain actions based on input or changes coming from our circuit.</p>
+
+  <p>For example, our code might count the number of times a button is pressed
+  in a short a period of time -- if the button is pressed once, have our code
+  do one thing and if the button is pressed twice, have our code do something
+  else. In this way, we've added "intelligence" to our button presses. When our
+  hardware can communicate directly with our code, we open a world of
+  possibilities.</p>
+
+  <p>So, how do we do this? By using GPIOs as Inputs. 
+  
+  <h2>GPIOs As Inputs</h2>
+
+  <p>Much like GPIO outputs
+  work by simply setting a voltage on the GPIO pin to either low (0V) or
+  high (3.3V), GPIO inputs work by reading the voltage -- either 0V or 3.3V --
+  being sent to the GPIO pin by the attached component:</p>
+
+  </p><img style="width: 450px;" alt="" src="img/gpio_input.jpg">
+
+  <p>For example, a GPIO can be used to get the current state of a button or
+  switch (pressed or released). Based on the current state, the software can do
+  what we expect when the button/switch is in that state.</p>
+  
+  <div class="info">
+    <div>
+      "State"
+    </div>
+    <div>
+
+      <p>"State" is a common term used in electronics and just means the
+      current condition or situation of a component or circuit. For example, in
+      the case of a button or switch, state would refer to whether the button
+      is currently being pressed or released. For an LED, state might refer to
+      whether the LED was illuminated or not.</p>
+    </div>
+  </div>
+
+  <p>For a component to communicate with our code, instead of wiring the
+  component directly into the rest of the circuit, we instead wire the
+  component directly to a GPIO. Typically, a component wired to a GPIO input
+  would either generate 0V or 3.3V and the GPIO input would read that voltage
+  and communicate it to our code -- hence the code knows about the "state" of
+  the component.</p>
+
+  <p>Buttons are a little bit different, as they don't generate a voltage. But,
+  with a little bit of behind-the-scenes configuration, we can wire a circuit
+  so that our button can be used as a GPIO input and we can read the state of
+  the button based on the voltages generated.</p>
+
+  <p>This is what the schematic would look like for a button wired to a GPIO as
+  an input:
+  
+  </p><img class="schematic" style="width:350px;" src="img/Pushbutton-to-GPIO.png" alt="">
+
+  <p>This circuit works by defaulting the GPIO voltage to 3.3V (that's the
+  behind-the-scenes configuration we mentioned above, but not shown in the
+  schematic). When the button is unpressed (circuit open), the GPIO reads the
+  3.3V default voltage. When the button is pressed, the circuit is closed, the GPIO
+  gets pulled low (since it will be directly connected to ground), and will 
+  read 0V. 
+  
+  <p>With this wiring and configuration, the code can measure the voltage at the GPIO 
+  and know if the button is pressed (0V at GPIO) or unpressed (3.3V at GPIO).</p>
+  
+  <p>We'll explore GPIO inputs more in our next project, and will be using GPIO inputs
+  when wiring buttons in all future projects.
+
+</body>
+</html>
