@@ -1,12 +1,12 @@
-//{filename: "TROUBLESHOOTING.html",              title: "TROUBLESHOOTING CIRCUITS",              concept: true, uid: ""},
 //{filename: "INTRODUCTION_TO_THE_PROJECTS_GUIDE.html", title: "INTRODUCTION TO THE PROJECTS GUIDE", concept: true, uid: "", section: "INTRO"},
 //{filename: "INTRO_TO_FUNCTIONS.html",           title: "INTRO TO FUNCTIONS",                    concept: true, uid: ""},
 //{filename: "FUNCTION_INPUTS.html",              title: "FUNCTION INPUTS",                       concept: true, uid: ""},
 //{filename: "FUNCTION_OUTPUTS.html",             title: "FUNCTION OUTPUTS",                      concept: true, uid: ""},
 //{filename: "STRING_THEORY.html",                title: "STRING THEORY",                         concept: true, uid: "strings"},
 //{filename: "CALCULATIONS.html",                 title: "CALCULATIONS",                          concept: true, uid: "calc"},
-//{filename: "HANDLING_ERRORS.html",              title: "HANDLING ERRORS",               concept: true, uid: ""},
-var pg_index = [
+var pg_flows =  {};
+
+pg_flows.Main = [
     {filename: "INTRODUCTION_TO_THE_IDE.html",      title: "LET'S GET STARTED",             concept: true, uid: "", section: "YOUR FIRST CIRCUIT"},
     {filename: "HELLO,_WORLD.html",                 title: "HELLO, WORLD!",                 concept: false, uid: "hello"},
     {filename: "INTRO_TO_ELECTRONICS.html",         title: "INTRO TO ELECTRONICS",          concept: true, uid: "electronics"},
@@ -38,16 +38,15 @@ var pg_index = [
     {filename: "MANY_BUTTONS.html",                 title: "READING MULTIPLE BUTTONS",      concept: false, uid: "manybuttons"},
 
     {filename: "SOUNDS_-_SPEAKER.html",             title: "HOW SPEAKERS WORK",             concept: true, uid: "", section: "SPEAKER"},
-    {filename: "SOUNDS_-_SPEAKER2.html",            title: "PLAYING NOTES",                 concept: false, uid: ""},
-    {filename: "NOTES_FUNCTION.html",               title: "MORE NOTES",                    concept: true, uid: ""},
-    {filename: "MARY_HAD_A_LITTLE_LAMB.html",       title: "PLAYING A SONG",                concept: false, uid: ""},
-    {filename: "AMPLIFIERS.html",                   title: "HOW AMPLIFIERS WORK",           concept: true, uid: ""},
+    {filename: "SOUNDS_-_SPEAKER_PROJECT.html",     title: "PLAYING NOTES",                 concept: false, uid: "playingnotes"},
+    {filename: "NOTES_FUNCTION.html",               title: "MORE NOTES",                    concept: true, uid: "notes"},
+    {filename: "MARY_HAD_A_LITTLE_LAMB.html",       title: "PLAYING A SONG",                concept: false, uid: "mary"},
     {filename: "SIMPLE_PIANO.html",                 title: "BUILD A SIMPLE PIANO",          concept: false, uid: "simplepiano"},
     {filename: "SOUNDS_FUNCTION.html",              title: "OTHER SOUNDS",                  concept: true, uid: ""},
-    {filename: "BETTER_PIANO.html",                 title: "BUILD A BETTER PIANO",          concept: false, uid: ""},
+    {filename: "BETTER_PIANO.html",                 title: "BUILD A BETTER PIANO",          concept: false, uid: "betterpiano"},
     {filename: "WALKABLE_PIANO.html",               title: "BUILD A WALKABLE PIANO",        concept: false, uid: ""},
     {filename: "TEXT_TO_SPEECH.html",               title: "TEXT TO SPEECH (TTS)",          concept: true, uid: ""},
-    {filename: "TEXT_TO_SPEECH2.html",              title: "TTS SOUND MACHINE",             concept: false, uid: ""},
+    {filename: "TEXT_TO_SPEECH_PROJECT.html",       title: "TTS SOUND MACHINE",             concept: false, uid: ""},
 
     {filename: "SIMON_PSEUDO.html",                 title: "SIMON 0",                       concept: true, uid: "", section: "SIMON"},
     {filename: "SIMON_1.html",                      title: "SIMON 1",                       concept: false, uid: ""},
@@ -60,28 +59,26 @@ var pg_index = [
     {filename: "SIMON_6.html",                      title: "SIMON 6",                       concept: false, uid: ""},
     {filename: "SIMON_7.html",                      title: "SIMON 7",                       concept: false, uid: ""},
 
-    {filename: "LED_MATRIX.html",                   title: "THE LED MATRIX",                concept: true, uid: "", section: "LED MATRIX"},
-    {filename: "LED_MATRIX2.html",                  title: "USING THE LED MATRIX",          concept: false, uid: ""},
+    {filename: "LED_MATRIX.html",                   title: "THE LED MATRIX",                concept: true, uid: "ledc", section: "LED MATRIX"},
+    {filename: "LED_MATRIX_PROJECT.html",           title: "USING THE LED MATRIX",          concept: false, uid: "ledp"},
     {filename: "GAME_LOOPS.html",                   title: "GAME LOOPS",                    concept: true, uid: "gameloops"},
     {filename: "BOUNCING_BALL_1.html",              title: "BOUNCING BALL 1",               concept: false, uid: ""},
-    {filename: "LED_COLORS.html",                   title: "LED COLORS",                    concept: true, uid: ""},
+    {filename: "FRAMEBUFFERS.html",                 title: "FRAMEBUFFER",                   concept: true, uid: "fb"},
     {filename: "BOUNCING_BALL_2.html",              title: "BOUNCING BALL 2",               concept: false, uid: ""},
-    {filename: "LINES.html",                        title: "LINES & RECTANGLES",            concept: true, uid: ""},
     {filename: "PULSATING_RECT.html",               title: "PULSATING RECTANGLE",           concept: false, uid: ""},
     {filename: "SPRITES.html",                      title: "SPRITES & TEXT",                concept: true, uid: ""},
     {filename: "RUNNING_MAN.html",                  title: "RUNNING MAN",                   concept: false, uid: ""},
-    {filename: "SPI_BUS.html",                      title: "SPI BUS",                       concept: true, uid: ""},
     {filename: "SCROLLING_TEXT.html",               title: "SCROLLING TEXT",                concept: false, uid: ""},
 
     {filename: "ACCELEROMETER.html",                title: "THE ACCELEROMETER",             concept: true, uid: "accel", section: "ACCELEROMETER"},
-    {filename: "ACCELEROMETER2.html",               title: "USING THE ACCELEROMETER",       concept: false, uid: ""},
-    {filename: "I2C_BUS.html",                      title: "I2C BUS",                       concept: true, uid: ""},
+    {filename: "ACCELEROMETER_PROJECT.html",        title: "USING THE ACCELEROMETER",       concept: false, uid: ""},
     {filename: "TILT_METER.html",                   title: "TILT METER",                    concept: false, uid: ""},
-    {filename: "TAPS.html",                         title: "SINGLE/DOUBLE TAPS",            concept: true, uid: ""},
-    {filename: "WAKEUP_KNOCK.html",                 title: "WAKEUP KNOCK",                  concept: false, uid: ""},
-    {filename: "SECRET_KNOCK.html",                 title: "SECRET KNOCK",                  concept: false, uid: ""},
-    {filename: "FREEFALL.html",                     title: "FREEFALL",                      concept: true, uid: ""},
-    {filename: "FREEFALL2.html",                    title: "DETECTING FREEFALL",            concept: false, uid: ""},
+    {filename: "SECRET_KNOCK1.html",                title: "SECRET KNOCK",                  concept: false, uid: ""},
+    {filename: "SECRET_KNOCK2.html",                title: "SECRET KNOCK",                  concept: false, uid: ""},
+    {filename: "SECRET_KNOCK3.html",                title: "SECRET KNOCK",                  concept: false, uid: ""},
+    {filename: "SHAKE1.html",                       title: "BOOP IT 1",                     concept: false, uid: ""},
+    {filename: "SHAKE2.html",                       title: "BOOP IT 2",                     concept: false, uid: ""},
+    {filename: "SHAKE3.html",                       title: "BOOP IT 3",                     concept: false, uid: ""},
 
     {filename: "SPACE_INVADERS_PSEUDO.html",        title: "SPACE INVADERS 0",              concept: true, uid: "", section: "SPACE INVADERS"},
     {filename: "SPACE_INVADERS_1.html",             title: "SPACE INVADERS 1",              concept: false, uid: ""},
@@ -130,10 +127,11 @@ var pg_index = [
     {filename: "MINECRAFT_BURIED_TREASURE2.html",   title: "MINECRAFT - BURIED TREASURE 2",   concept: false, uid: ""},
     {filename: "MINECRAFT_BURIED_TREASURE3.html",   title: "MINECRAFT - BURIED TREASURE 3",   concept: false, uid: ""},
     {filename: "MINECRAFT_BURIED_TREASURE4.html",   title: "MINECRAFT - BURIED TREASURE 4",   concept: false, uid: ""},
+
+    {filename: "CONGRATS.html",                     title: "CONGRATULATIONS!",                concept: true, uid: "", section: "APPENDIX"},
+    {filename: "MORE_RESOURCES.html",               title: "MORE RESOURCES",                  concept: true, uid: ""},
+    {filename: "HANDLING_ERRORS.html",              title: "HANDLING ERRORS",                 concept: true, uid: ""},
+    {filename: "TROUBLESHOOTING.html",              title: "TROUBLESHOOTING",                 concept: true, uid: ""},
+    {filename: "GLOSSARY.html",                     title: "GLOSSARY",                        concept: true, uid: ""},
     ];
-    
-var pg_index_html = "index.html";
-var pg_filename_to_pos = {};
-for (var i = 0; i < pg_index.length; i++) {
-    pg_filename_to_pos[pg_index[i].filename] = i;
-}
+

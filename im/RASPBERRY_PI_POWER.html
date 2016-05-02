@@ -16,7 +16,9 @@
   </script>
   <script type="text/javascript" src="onload.js">
   </script>
-  <script type="text/javascript" src="toc_order.js">
+  <script type="text/javascript" src="flows.js">
+  </script>
+  <script type="text/javascript" src="flow_cookie.js">
   </script>
   <script type="text/javascript" src="project.js">
   </script>
@@ -33,14 +35,19 @@
       In this project, we'll replace the battery power source we used in the
       previous project with power from the Raspberry Pi.
 
-  <p>We’ve built our first circuit – both on and off the breadboard – using our
+  <p>So far, we’ve built our first circuit –- both on and off the breadboard -– using our
   3V battery as our power source. But, there’s no reason we couldn’t power our
-  circuits with another power source instead. For example, some breadboards
-  come with special built-in power supplies so that you don’t have to use a
-  battery or another external power source.</p>
+  circuits with another power source instead. In fact, using the 3V battery is probably
+  not the best choice for power source, as it takes up space and is a bit cumbersome. 
+  Also, because it's a battery, it will eventually run out of power. 
+  
+  <p>It's common for breadboards to use power sources other than batteries.  For example, 
+  some breadboards come with special built-in power supplies so that you don’t have to use a
+  battery or another external power source.  Or, you can purchase just a separate power
+  supply that plugs into a wall and powers your breadboard.  Luckily, with the RaspberrySTEM
+  CREATOR Kit, we don't need a separate power supply, as the kit comes with it's own power supply.</p>
 
-  <p>One of the features of the RaspberrySTEM CREATOR Kit is that it can use
-  the power from the Raspberry Pi to power the breadboard. The power
+  <p>The kit can use power directly from the Raspberry Pi to power the breadboard. The power
   is made available to the breadboard through the Lid Connector Board (the
   green board on the top of the lid - see diagrams below).  Of course, the
   Raspberry Pi doesn't magically create the electrical energy needed to power
@@ -61,7 +68,7 @@
   <div class="section" id="hw">
   <p>And here are step-by-step instructions for how we make the change to the
   circuit (assumes you are starting where you left off in the previous
-  project, <a data-uid="yfcbreadboard"></a>):</p>
+  project, <a data-uid="yfcbreadboard"></a>:</p>
   <h3 class=step>Disconnect the 3V battery</h3>
 
   <p>First, we need to disconnect our existing power source. From the
@@ -143,7 +150,7 @@
     </li>
     <li>
       <p>Likewise, there are 8 ground (GND) pins on the Lid Connector board.
-      Try a different one.
+      Try a different one.  Does it work the same?
     </li>
     <li>
       <p>What happens if you connect more than one ground (GND) pin to the blue

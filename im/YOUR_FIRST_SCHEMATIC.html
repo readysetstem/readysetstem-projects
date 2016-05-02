@@ -16,7 +16,9 @@
   </script>
   <script type="text/javascript" src="onload.js">
   </script>
-  <script type="text/javascript" src="toc_order.js">
+  <script type="text/javascript" src="flows.js">
+  </script>
+  <script type="text/javascript" src="flow_cookie.js">
   </script>
   <script type="text/javascript" src="project.js">
   </script>
@@ -37,7 +39,9 @@
   temporary circuits that are easy to modify -- this lets you "play around"
   with the circuit and work out the kinks in your design; then, once you have a
   temporary circuit that is working exactly the way you want, you can use the
-  design as the basis for creating a permanent circuit.</p>
+  design as the basis for creating a permanent circuit (this would likely
+  involve soldering your circuit together or giving a design of your circuit
+  to manufacturing company to build for you).</p>
 
   <p>One of the most common ways of building a temporary circuit involves the
   use of a “breadboard.” The name breadboard stems from the fact that early
@@ -46,7 +50,7 @@
 
   <p>The breadboards used to build electronics are often called “solderless”
   breadboards, which can help avoid confusion when talking to your pastry chef
-  friends. <big><big>☺</big></big></p>
+  friends. <big><big>?</big></big></p>
   <h2>Breadboard Design</h2>
 
   <p>Breadboards come in many shapes and sizes, but the fundamental components
@@ -55,8 +59,34 @@
 
   <p>We’ll get to the purpose of each of these parts in a moment, but the key
   to a breadboard’s usefulness is how the various areas are electrically
-  connected. Those connections are illustrated here:</p><img style=
-  "max-width: 600px;" src="img/breadboard_example_2.png" alt="">
+  connected. Those connections are illustrated here -- the first picture
+  indicates which rows and columns of holes are connected together and the
+  second picture is the inside of the breadboard, so you can actually see 
+  <i>how</i> the connections between holes are made:
+  
+  <table style="width: 100%; border: 0; cellpadding: 2; cellspacing: 2;">
+    <tbody>
+      <tr>
+        <td style="text-align: center;"><img style="" alt="" src=
+        "img/breadboard_example_2.png"></td>
+        <td style="text-align: center;"><img style="" alt="" src=
+        "img/breadboard_back.png"></td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: center;"><strong>Example of
+		Breadboard Connections</strong></td>
+        <td style="vertical-align: top; text-align: center;"><strong>Actual Inside
+		of Breadboard</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><mark>Can't figure out how to align this!!!
+  
+  <p><mark>Should we add a paragragh/diagram that actually shows two components
+  being plugged into two holes and with an indication that they are actually
+  connected (perhaps next to a picture show the two components being held
+  together and saying, "This is doing the same exact thing."
 
   <p>As you can see, each of the two rails consists of two long row of
   connections (a red row in each rail and a blue row in each rail). There are
@@ -77,27 +107,24 @@
   easy to wire a circuit in this fashion – the rails denote the power and
   ground of the circuit, while the rest of the breadboard provides space for
   your components and the connections between those components.</p>
-  <p><mark>Could use a section here on tips on inserting wire</mark>
+
   <p><mark>PIC: how to hole leads vs how not to (gripping end of pin)</mark>
 
-  <h2>Powering the Breadboard</h2>
-
-  <p>Of course, the circuits you build on your breadboard are going to require
-  power to operate. When it comes to providing power to the breadboard (and to
-  the circuits on them), there are lots of options.</p>
-
-  <p>In one of our projects, we use a little 3V lithium battery to power the
-  breadboard. In the rest of our projects, we power the breadboard from the
-  Raspberry Pi, which in turn gets its power from being plugged into a wall
-  outlet. Alternatively, if you ever use a breadboard outside of the
-  RaspberrySTEM CREATOR Kit, you'll find that there are power supplies built
-  specifically for breadboards. And you always have the option of finding your
-  own power source (battery, solar cell, AC power adapter, etc) and hooking
-  that up to your breadboard as well.</p>
+  <p>One last thing to remember -- breadboards themselves provide no power.
+  All they do is to allow you to connect components together so that when you
+  provide power, current will flow from one component to another.  Power to
+  a breadboard can be provided in many different ways, and we'll explore 
+  several of those over the next few projects.  As you'll see, most of the
+  project in this kit will be powered directly from the Raspberry Pi.
 </div>
+
 <div class=section>
   <h1>YOUR FIRST SCHEMATIC</h1>
 
+  <p><mark>Eventually, I think we should break this out into a separate
+  concept with a corresponding project -- perhaps just showing some basic
+  schematics and having them wire the breadboard in the same configuration.
+  
   <p>In the real world, building circuits often start with a “schematic” for
   the circuit. Just like a blueprint tells a builder exactly how to build a
   house, a schematic tells an engineer how to build a circuit.</p>
@@ -127,7 +154,7 @@
   signs that indicate which side of the part is which – for example, which side
   of the battery is the positive (+) side and which is the negative (-) side.
   And in some cases, you’ll see a number next to a part indicating what size of
-  that part to use – for example, a resistor may have something like “100 Ω”
+  that part to use – for example, a resistor may have something like “100 O”
   next to it, indicating that the resistor should be “100 ohm” in size.</p>
   <h2>Connecting the Parts</h2>
 
@@ -143,6 +170,7 @@
   alt="" src="img/Battery-LED-Circuit.png">
 
   <p>Does this look familiar? It is the same circuit from the project <a data-uid="yfc"></a>.</p>
+
   <h2>Closing the Loop</h2>
 
   <p>You probably noticed in our schematic above electric charge the entire circuit made a
@@ -159,7 +187,7 @@
 
       <p>Above, we said that we can conceptually think of the electric charge as
       starting at one point and ending at another. The reason we say
-      "conceptually" is that, in actuality, the electrons that create
+      "conceptually" is that, in actuality, the particles that create
       electric charge already exist at all points in a closed circuit, so the
       electric charge doesn't really start any point. But, since the (+) terminal
       of the battery is the highest point of voltage, it's easy to think of the
@@ -168,10 +196,10 @@
   </div>
 
   <p>A good way to think about current flow through a circuit is to assume that
-  the flow starts at a particular power source and finishes at the ground of
+  the flow starts at the postive end of a power source and finishes at the ground of
   that power source. And in many schematics – like the one we’ve been using
   above – the circuit will appear as a closed loop, starting at one side of the
-  power source and completing at the other side. And while this is how circuits
+  power source and completing at the other side. But, while this is how circuits
   work, it’s not always convenient to draw circuits in a closed loop. In
   complex schematics, having to draw everything in a loop can make the drawings
   very difficult to follow.</p>

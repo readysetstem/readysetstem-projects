@@ -1,4 +1,5 @@
-chainedOnload(function() {
+function generate_toc() {
+    var pg_index = getFlowIndex();
     var autotoc = document.getElementsByClassName("autotoc")[0];
 
     // Calc size of each section.  For each pg_index item that has a 'section',
@@ -19,13 +20,13 @@ chainedOnload(function() {
     pg_index[section_index].section_size = section_size;
 
     var html = "";
-    var inner = autotoc.innerHTML;
+    var index_header = document.getElementById("index_header");
     html += "<table id=index_table>";
         html += "<thead class=sticky>";
             html += "<tr class=content_row>";
                 html += "<th class=section><p></p></th>";
                 html += "<th>";
-                    html += inner;
+                    html += index_header.outerHTML;
                 html += "</th>";
             html += "</tr>";
         html += "</thead>";
@@ -55,5 +56,33 @@ chainedOnload(function() {
     }
     html += "</tbody></table>";
     autotoc.innerHTML = html;
-});
+}
 
+function newFlow() {
+    // Using jquery to scroll to top
+    $("body").animate({ scrollTop: 0 }, 1200);
+    
+    var flow = document.getElementById("flow");
+    setFlowName(flow.value);
+    generate_toc();
+}
+
+chainedOnload(function() {
+    // Configure flow select box
+    var flow = document.getElementById("flow");
+    for (var f in pg_flows) {
+        var option = document.createElement("option");
+        option.text = f;
+        flow.add(option);
+    }
+
+    // Restore default selection
+    flow_name = getFlowName();
+    if (flow_name.length > 0) {
+        flow.value = flow_name;
+    } else {
+        flow.options[0].selected = true;
+    }
+
+    generate_toc();
+});

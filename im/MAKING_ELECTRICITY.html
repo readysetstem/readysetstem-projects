@@ -16,7 +16,9 @@
   </script>
   <script type="text/javascript" src="onload.js">
   </script>
-  <script type="text/javascript" src="toc_order.js">
+  <script type="text/javascript" src="flows.js">
+  </script>
+  <script type="text/javascript" src="flow_cookie.js">
   </script>
   <script type="text/javascript" src="project.js">
   </script>
@@ -29,30 +31,35 @@
 <div class=section>
   <h1>How electricity is made</h1>
 
-<p>Batteries play a critical part in powering our everyday devices, from mobile
-phones
-and laptops, to watches and hearing aids.  Batteries use a chemical reaction to
-convert chemical energy into electrical energy.
+<p>In our previous projects, we used a battery to power our circuits.  Batteries 
+play a critical part in powering our everyday devices, from mobile phones
+and laptops, to watches and hearing aids.  Batteries are a common source of power
+for many electronic devices, but it's certainly not the only option for electrical
+power.
 
-<p>However, most of the electrical energy  we use everyday comes from the power
-company.  This electrical energy is readily available through outlets around
-our homes, and heats our home, runs our computers, cooks our food, lights our
-rooms, recharges our batteries, and so much more...  Where does the energy to
+<p>Most of the electrical energy we use in our everyday lives comes from the power
+company.  This electrical energy is readily available to us through electrical outlets 
+around our homes -- it heats our houses, runs our computers, cooks our food, lights our
+rooms, recharges our batteries, and so much more...  But, where does the energy to
 do this come from, and how does it get to our homes?
 
 <p>There are a number of different ways that the power company provides
 electric power, but the most common way is through an electric generator.  A
 generator is a device that converts mechanical energy (movement) into
-electrical energy.  So, to generate electrical energy, all you need to do is
-provide the mechanical energy to turn the generator.  For example, if you
-actually turn a generator by hand, then <i>you</i> can generate electrical
-energy.
+electrical energy.  When everything is set up properly, all you need to do to
+generate electrical energy is to provide the mechanical energy to turn the 
+generator.  For example, if you actually turn a generator by hand, then 
+<i>you</i> can generate electrical energy.
 
 <p>One thing to remember, though - electrical energy is never "made" out
 of thin air.  The energy already exists - we simply convert other forms of
-energy into electrical energy.
+energy (like the energy you use to turn the generator) into electrical energy.
 
 <p><mark> PIC: hand cranked electrical energy</mark>
+
+<p>As you might imagine, power companies don't actually have people turning
+cranks on a generator all day to generate power.  So, exactly how do they
+do it?  That's where magnets come into play...
 
   <div class="info">
     <div>
@@ -60,77 +67,75 @@ energy into electrical energy.
     </div>
     <div>
 
-      <p>It turns out that magnetism and electricity and are two tightly
-    intertwined related concepts.  Moving magnets can generate electric current
-    in conductors, and likewise, electric currents can generate the same
-    pulling forces that a magnet provides.  When a magnet moves nears a closed
-    loop of conducting wire, a current is generated
-    in the loop.  And the reverse is true as well: an electric current near a
-    magnet will push the magnet.
-    <p>Both of these concepts are used in two very similar items:
-  <ul>
-    <li><p>In an electric <i>generator</i> a loop of wire rotated around a magnet generates a current in that wire.
-    
-    </li>
-    <li><p>In an electric <i>motor</i> a current in a loop of wire causes a magnet to turn.
-    </li>
-  </ul>
-  <p>Electric motors are used everywhere - they spin washing machines, they
-  run air conditioners and refrigerators, pump water, and even turn
-  the wheels on electric vehicles.
+    <p>It turns out that magnet forces and electricity and are two very related
+    concepts -- either one can be used to create the other.  If you move a magnet 
+	near a conductor, it can generate an electric current; and likewise, an 
+	electric current can create a magnetic pulling force.  
+	
+	<p>This is the principle used by the power companies in their electric 
+	generators.  By repeatedly moving a magnet within a closed loop of conducting 
+	wire (or moving the wire around the magnet), a current is generated in the loop.  
+
+	<p>Keep in mind that the reverse is true as well: an electric current near a
+    magnet will push the magnet (since the electric current creates a magnetic
+	pulling force).   This is how an electric <i>motor</i> works -- a current in 
+	a loop of wire causes a magnet to turn.  This is good to understand, as electric 
+	motors are used everywhere - they spin washing machines, they run air 
+	conditioners and refrigerators, they pump water, and they even turn
+	the wheels on electric vehicles.
     </div>
   </div>
-  <p>
 
-<p>The primary way to mechanically turn a generator is to push steam through a
-turbine (which is basically a large fan with many fan blades).  The steam
-pushes the blades of the turbine, which turns the shaft of the generator to
-generate electrical energy.  So how do you generate steam?  You need to boil
-water, which you can do in many ways:
+<p>Now that you know that power companies create electric current by moving 
+a magnet around a loop of wire (or a loop of wire around a magnet), you may 
+be wondering how the magnet (or the wire) is turned?  This is generally
+accomplished by pushing steam through a turbine (which is basically a large 
+fan with many fan blades) -- the steam pushes the blades of the turbine, which 
+turns the shaft of the generator, which moves the magnet (or wire) to
+generate electrical energy.  
+
+<p>Which leads us to our next question -- how do you generate steam?  To
+generate steam, we need to boil water.  This can be done in one of many ways:
+
   <ul>
-    <li><p>Burn something.  This is the primary way generating electrical
-    energy in the U.S.  The main fuel we burn is coal, followed by natural gas.
+    <li><p>We can burn something to heat the water.  In the United States, 
+	this is the primary way generating electrical energy and typically the
+	thing that we burn is coal (and sometimes natural gas).  This is why
+	you will often hear that coal is used to generate electricity.
     </li>
-    <li><p>Nuclear reactors use a process of "splitting" atoms which releases
-    vasts amount of energy.  This energy can be used to boil water.
+    <li><p>We can use nuclear energy.  Nuclear reactors use a process of 
+	"splitting" atoms and that process releases vasts amount of energy.  
+	This energy can be used to boil water.
     </li>
-    <li><p>Solar energy: Mirrors and lenses can reflect the sun's light to a
-    small spot that geneartes huge amount of heat.
+    <li><p>We can use the sun (solar energy).  Using mirrors and lenses,
+	we can reflect the sun's light to a small location that geneartes huge 
+	amount of heat that can be used to boil water.
     </li>
   </ul>
 
-<p>So that is how electrical energy is generated - but how does it go from
-being generated to powering the electronics in your home?  The power company
-relies on a vast network of
-interconnected wires (often called "the grid") that deliver electrical energy
-to you and your neighbor's homes.
+<p>It's a long and somewhat complicated process, but that is how electrical 
+energy is typically generated.  But, how does it go from being created by 
+the power companies in their buildings to powering the electronics in your home?  
+The power company relies on a vast network of interconnected wires (often 
+called "the grid") that delivers electrical energy from the places where it is
+being created all the way to you and your neighbor's homes.
 
 <p><mark> PIC: Full pic of electric grid from fire to generator to transmission
 lines to home </mark>
 
 <p>Its important to note in the above picture that the generator, wires, and
-lightbulb form one continuous loop.  It is this circuit, which starts many
-miles away at a power plant, around which the current flows.  Think about this
-as you work on the following project, where we will stop using the battery and
-instead use power coming from the Raspberry Pi.  The Raspberry Pi gets
-<i>it's</i> power from the wall outlet, which is connected to a generator at a
-power plant far away in one long continuous loop.
+lightbulb form one continuous loop.  It's a big loop -- but like we mentioned
+earlier, all working electric circuit most form a closed loop.  It is no different
+when that electrical energy is coming from the power company.
 
-<p>Boiling water to turn a turbine isn't the only way to turn a generator and
-generate electrical energy.  In fact, sometimes you can turn generator
-directly.  For example:
-  <ul>
-    <li><p>A hydroelectric power plant user the power of a water fall to turn
-    the shaft of a generator.
-    </li>
-    <li><p>A wind turbine uses the force of the wind to directly turn the shaft
-    of a generator.
-    </li>
-  </ul>
+<p>Think about this as you work on the following project, where we will stop 
+using the battery to power our circuit and will instead use power coming from 
+the Raspberry Pi.  The Raspberry Pi gets <i>it's</i> power from the wall outlet, 
+which is connected to a generator at a power plant far away in one long continuous 
+loop.  So, while you may be thinking that you have created a small closed loop circuit
+on your breadboard, in reality, you have created a closed loop that's miles long
+all the way back to the power plant.
 
-<p>And, there are other ways to generate electrical energy as well, including solar
-cells, which directly convert the sun's energy to electric current, without any
-moving parts at all!
 </div>
 </body>
 </html>

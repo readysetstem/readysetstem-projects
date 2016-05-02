@@ -16,7 +16,9 @@
   </script>
   <script type="text/javascript" src="onload.js">
   </script>
-  <script type="text/javascript" src="toc_order.js">
+  <script type="text/javascript" src="flows.js">
+  </script>
+  <script type="text/javascript" src="flow_cookie.js">
   </script>
   <script type="text/javascript" src="project.js">
   </script>
@@ -35,36 +37,17 @@
       In this project, you're going to create your first electric circuit using
       a few basic components that we've provided in the kit.
 
-  <div class="info">
-    <div>
-      What is Electronics?
-    </div>
-    <div>
+  <p>In 
+    <a data-uid="electronics"></a>, we provided a basic 
+	overview of how and why an electric circuit works -- now, let’s jump into
+  a real-life example of building a circuit.
 
-      <mark>too vague? "various components"?  Contrast with the study of
-      electricity?</mark>
-      <p>Electronics is the study and building of circuits that rely on various
-      types of components, including wires, computer chips and other common
-      electrical devices. Through the study of programming and electronics, you
-      can learn where these two areas collide, often referred to as "embedded
-      systems" or "consumer devices." By combining programming and electronics,
-      we can design and build games, tools and devices that can solve real
-      world problems, as well as provide entertainment and ultimately make life
-      easier and more convenient.</p>
-    </div>
-  </div>
-  <h2>Your First Circuit</h2>
-
-  <p>Now that you've (hopefully) spent some time reading our
-    <a data-uid="electronics"></a>, let’s jump into
-  a real-life example of building a circuit.</p>
-
-  <p>We’ve provided all of the parts you will need to build this circuit as
+  We’ve provided all of the parts you will need to build this first circuit as
   part of the RaspberrySTEM CREATOR Kit, in the bag marked <strong>Your First
   Circuit
   RaspberrySTEM Cell</strong>. You'll find this bag (along with all the other
   project parts you'll need later) in the box marked <strong>OPEN LATER --
-  Project Parts</strong>. Open the box/bag and follow along!</p>
+  Project Parts</strong>. Open the box/bag and let's get started!</p>
 
   <p>The purpose of this circuit is to power and illuminate a “light emitting
   diode" (or “LED” for short). An LED is a light source that looks and works a bit
@@ -84,7 +67,8 @@
   of electric current flowing through the circuit so that the LED doesn’t
   break.</p>
 
-  <p>Okay, let’s give this a try, step by step…</p>
+  <p>Okay, let’s give this a try, step by step...</p>
+  
   <h3 class=step>Connect the Resistor and LED to the Battery</h3>
 
   <p>Using your fingers, pinch one lead of the resistor (the "leads" are the
@@ -95,6 +79,45 @@
   <p>Like this:</p>
   <p style="text-align: center;"><img class="bb" src=
   "img/Your_First_Circuit_connect_battery_bb.png" alt=""></p>
+
+  <h3 class=step>Touch the Other Leads of the Resistor and LED Together</h3>
+
+  <p>Using your free hand, touch the other leads of the resistor and LED
+  together, as indicated below:</p><img class="bb" src=
+  "img/Your_First_Circuit_complete_bb.png" alt="">
+
+  <p>At this point, the LED should be lit, like this:</p><img src=
+  "img/LED%20finger%20circuit.jpg" width="80%" alt="">
+
+  <p>Congratulations...you just built your first electric circuit!</p>
+
+  <div class="info">
+    <div>
+      Why the Resistor?
+    </div>
+    <div>
+
+      <p>You'll notice that if you remove the resistor from the circuit above
+      and attach the LED directly to the battery, the LED still lights. Which
+      means you're probably wondering why we need the resistor at all?</p>
+
+      <p>Often, electronic components can only handle certain maximum voltages
+      and/or currents. In general, the manufacturer of the component does a
+      bunch of testing to determine how much voltage and/or current the part
+      can handle before it's at risk of being damaged or working improperly.
+      When a power supply puts out more voltage/current than the part can
+      handle, a resistor in the circuit can reduce the voltage/current to
+      ensure the part isn't damaged and works properly.</p>
+
+      <p>It turns out that with a small battery, like the one
+    we are using, the voltage of the battery decreases a little when it is in
+    the LED circuit.  This decrease in voltage lowers the current through the LED, and
+    there's no harm in using it without the resistor.  In general, though - in
+    particular using a power source other than a battery - the resistor is
+    important.
+    </div>
+  </div>
+  
   <div class="info">
     <div>
       Wiring LEDs
@@ -139,44 +162,9 @@
       </ol>
     </div>
   </div>
-  <h3 class=step>Touch the Other Leads of the Resistor and LED Together</h3>
 
-  <p>Using your free hand, touch the other leads of the resistor and LED
-  together, as indicated below:</p><img class="bb" src=
-  "img/Your_First_Circuit_complete_bb.png" alt="">
-
-  <p>At this point, the LED should be lit, like this:</p><img src=
-  "img/LED%20finger%20circuit.jpg" width="80%" alt="">
-
-  <p>Congratulations...you just built your first electric circuit!</p>
   <div class="info">
-    <div>
-      Why the Resistor?
-    </div>
-    <div>
-
-      <p>You'll notice that if you remove the resistor from the circuit above
-      and attach the LED directly to the battery, the LED still lights. Which
-      means you're probably wondering why we need the resistor at all?</p>
-
-      <p>Often, electronic components can only handle certain maximum voltages
-      and/or currents. In general, the manufacturer of the component does a
-      bunch of testing to determine how much voltage and/or current the part
-      can handle before it's at risk of being damaged or working improperly.
-      When a power supply puts out more voltage/current than the part can
-      handle, a resistor in the circuit can reduce the voltage/current to
-      ensure the part isn't damaged and works properly.</p>
-
-      <p>It turns out that with a small battery, like the one
-    we are using, the voltage of the battery decreases a little when it is in
-    the LED circuit.  This decrease in voltage lowers the current through the LED, and
-    there's no harm in using it without the resistor.  In general, though - in
-    particular using a power source other than a battery - the resistor is
-    important.
-    </div>
-  </div>
-  <div class="info">
-    <div>
+  <div>
       Shorting Wires
     </div>
     <div>
@@ -198,11 +186,16 @@
   <div class="section" id="challenge">
   <ol>
     <li>
-      <p>We said that current will only flow through the LED in one direction -
-      if you haven't already, try the LED in both directions.
+      <p>We discussed that current will only flow through the LED in one direction --
+      try reversing the LED to prove that it won't light up when oriented the other way.
     </li>
     <li>
-      <p>We mentioned that if you remove the resistor, the circuit still works - try it.
+      <p>Do you think that current will flow through the resistor in both direction?  Try
+	  reversing the orientation of the resistor and see if the LED still illuminates.
+    </li>
+    <li>
+      <p>We mentioned that if you remove the resistor, the circuit still works - try it
+	  and see for yourself.
     </li>
     <li>
       <p>Try wrapping a rubberband (not included) around the battery and LED to hold them together.  This will keep your LED on, without having to hold it together.
@@ -210,7 +203,7 @@
     <li> <p>With your rubberband wrapped LED circuit, slide a piece of paper
     between the battery and one of the leads of the LED.  The LED should go off.
     Now, you can turn on the LED only when you want, simply by removing the
-    paper.  Why does this work?
+    paper.  Can you figure out why the LED goes off when the paper is inserted?
     </li>
   </ol>
   </div>

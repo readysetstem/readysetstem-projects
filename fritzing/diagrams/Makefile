@@ -1,5 +1,8 @@
 .PHONY:
 all:
+	./double_fzz_to_jpg LED_Matrix_with_ce.fzz						40	30
+	./double_fzz_to_jpg LED_Matrix_with_ce_and_power.fzz			40	30
+	exit 1
 	./double_fzz_to_jpg Buttons_with_GPIO_1.fzz						40	30
 	./double_fzz_to_jpg Buttons_with_GPIO_2.fzz						40	30
 	./double_fzz_to_jpg Flashlight.fzz								40	30

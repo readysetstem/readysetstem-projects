@@ -10,7 +10,7 @@ from setuptools.command.install import install as _install
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-outputs = ['/opt/raspberrystem/projects']
+outputs = ['/opt/readysetstem/projects']
 
 def _post_install(dir):
     from subprocess import call
@@ -30,10 +30,10 @@ setup(
     name = read('NAME').strip(),
     version = read('VERSION').strip(),
     author = 'Brian Silverman',
-    author_email = 'bri@raspberrystem.com',
+    author_email = 'bri@readysetstem.com',
     description = ('RaspberrySTEM Project Guides'),
-    keywords = ['raspberrystem', 'raspberrypi', 'stem', 'docs'],
-    url = 'http://www.raspberrystem.com',
+    keywords = ['readysetstem', 'raspberrypi', 'stem', 'docs'],
+    url = 'http://www.readysetstem.com',
     long_description = read('README.md'),
     # use https://pypi.python.org/pypi?%3Aaction=list_classifiers as help when editing this
     classifiers=[

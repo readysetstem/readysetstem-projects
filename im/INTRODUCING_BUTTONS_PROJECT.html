@@ -16,7 +16,9 @@
   </script>
   <script type="text/javascript" src="onload.js">
   </script>
-  <script type="text/javascript" src="toc_order.js">
+  <script type="text/javascript" src="flows.js">
+  </script>
+  <script type="text/javascript" src="flow_cookie.js">
   </script>
   <script type="text/javascript" src="project.js">
   </script>
@@ -33,23 +35,25 @@
   just "button"). A button is just a very simple switch – electric current can
   flow through it only when it is pressed.</p>
 
-  <p>So, if we go back to our first breadboard circuit containing a simple
-  resistor and LED that is always illuminated, we should be able to add a
-  switch that we can then use to control the LED turning on and off (by
-  pressing the button).</p>
+  <p>If we go back to our first breadboard circuit -- the one containing just a
+  resistor and an LED that is always illuminated -- we should be able to add a
+  switch that we can then use to control the LED.  The switch could turn the LED
+  on and off when it is pressed or released.</p>
 
-  <p>Let’s build that circuit now…</p>
-
-  <p>Here’s what the schematic will look like: <img class="schematic" style=
-  "width:200px;" src="img/Battery-LED-Circuit-With-Button.png" alt=""></p>
-
+  <p>Here’s what the schematic will look like to build that circuit: 
+  
+  <img class="schematic" style="width:200px;" src="img/Battery-LED-Circuit-With-Button.png" alt=""></p>
 </div>
+
 <div class=section id=hw>
 
-  <p>To build the circuit, let's start with the circuit we built in the last
-  project -- <a data-uid="rpipower"></a>:</p><img class="bb"
-  src="img/Your_First_Breadboard_Add_Power_bb.jpg"
+  <p>Now, let's actually build this circuit.  To build the circuit, we can 
+  start with the circuit we built in the last project -- 
+  <a data-uid="rpipower"></a>:</p>
+  
+  <img class="bb" src="img/Your_First_Breadboard_Add_Power_bb.jpg"
   alt="">
+
   <h3 class=step>Remove wire from LED to ground.</h3>
 
   <p>We’re going to be adding the button into the circuit between the LED and
@@ -61,15 +65,17 @@
   <h3 class=step>Provide connectivity from the LED to the button.</h3>
 
   <p>The next step is to provide connectivity between the second lead of the
-  LED and the button. You can wire the button directly to the LED, but to space
-  the parts out a little more, we're going to first add an additional wire (one
-  of the the half-inch green wires).</p>
+  LED and where the button will sit. You could wire the button directly to the 
+  LED (in the same row of holes), but to space the parts out a little more, we're 
+  going to use an additional wire (one of the the half-inch green wires) to 
+  connect the LED and the button.</p>
 
   <p>This is what the breadboard should look like at this point:</p><img class=
   "bb" src="img/Introducing_Buttons_2_bb.jpg" alt="">
   <h3 class=step>Place button on the breadboard.</h3>
 
-  <p>Next, we’ll place the button on the breadboard. Note that the button
+  <p>Next, we’ll place the button on the breadboard, connected to the new wire
+  we placed in the previous step. Note that the button
   should be oriented so that the two sides of the button sit on different
   connect strips, as follows:</p>
   <table style="margin: auto; width: 70%;">
@@ -86,7 +92,7 @@
   </table>
 
   <p>One side of the button should sit in the same connect strip as the green
-  wire from the LED. This will provide connectivity from the LED through the
+  wire coming from the LED. This will provide connectivity from the LED through the
   green wire and to the button, as follows:</p><img class="bb" src=
   "img/Introducing_Buttons_3_bb.jpg" alt="">
 
@@ -136,16 +142,17 @@
 <div class=section id=challenge>
   <ol>
     <li>
-      <p>We added the button in at the end of our circuit (after the LED and resistor).  What
-      happens if you add it before the LED and resistor?  Why or why not?
+      <p>We added the button in at the end of our circuit (after the LED and resistor).
+	  Try adding the button between the resistor and the LED and see if it still
+	  works the same way (it should!).
     </li>
     <li>
-      <p>Similarly, can you add the resistor into our circuit in between the
-      LED and resistor?  Why or why not?
+      <p>How about inserting the button in the circuit before the resistor (between
+	  power and the resistor)?  Does it still work?
     </li>
     <li>
-      <p>We used two additional short green wires to hook up the button.  Can
-      you hook it up without any additional green wires?
+      <p>How do you think the circuit would work if you hooked up two buttons within
+	  it?  Give it a try and see if it works as you'd expect.
     </li>
   </ol>
 </div>

@@ -60,10 +60,10 @@
  * QUIT/NEXT buttons
  */
 .wizard button:hover {
-    background: hsl(84, 53%, 75%); /* Header subblock green */
+    background: hsl(210, 64%, 82%); /* Header light blue */
 }
 .wizard button {
-    background: hsl(84, 53%, 50%); /* Header green */
+    background: hsl(210, 64%, 45%); /* Header blue */
     font-size: 16pt;
     border-radius: 5px;
     padding: 10px;

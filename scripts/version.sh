@@ -1,4 +1,4 @@
 #!/bin/bash
-echo raspberrystem_projects > NAME
+echo readysetstem_projects > NAME
 git describe --tags --dirty > VERSION
 
