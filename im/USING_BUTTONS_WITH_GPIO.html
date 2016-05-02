@@ -1,43 +1,42 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-  <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="default.css">
-  <link rel="stylesheet" type="text/css" href="project.css">
-  <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
-  <link type="text/css" id="theme" rel="stylesheet" href=
-  "/assets/themes/solarized-dark.css">
-  <script type="text/javascript" src="/assets/cmirror/codemirror.js">
-  </script>
-  <script type="text/javascript" src="/assets/cmirror/python.js">
-  </script>
-  <script type="text/javascript" src="onload.js">
-  </script>
-  <script type="text/javascript" src="flows.js">
-  </script>
-  <script type="text/javascript" src="flow_cookie.js">
-  </script>
-  <script type="text/javascript" src="project.js">
-  </script>
-  <script type="text/javascript" src="stickydiv.js">
-  </script>
-  <script type="text/javascript" src="codeblocks.js">
-  </script>
+ <meta name="generator" content=
+ "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
+ <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+ <title></title>
+ <link rel="stylesheet" type="text/css" href="default.css">
+ <link rel="stylesheet" type="text/css" href="project.css">
+ <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
+ <link type="text/css" id="theme" rel="stylesheet" href=
+ "/assets/themes/solarized-dark.css">
+ <script type="text/javascript" src="/assets/cmirror/codemirror.js">
+ </script>
+ <script type="text/javascript" src="/assets/cmirror/python.js">
+ </script>
+ <script type="text/javascript" src="onload.js">
+ </script>
+ <script type="text/javascript" src="flows.js">
+ </script>
+ <script type="text/javascript" src="flow_cookie.js">
+ </script>
+ <script type="text/javascript" src="project.js">
+ </script>
+ <script type="text/javascript" src="stickydiv.js">
+ </script>
+ <script type="text/javascript" src="codeblocks.js">
+ </script>
 </head>
 <body>
-  <div class="section" id="intro">
-  <p>In this project, we'll read the voltage from a wire attached to a
-  GPIO input.  Once you 
-      In this project, we will use GPIOs to get input from a pushbutton into
-      our software.
+ <div class="section" id="intro">
+
+  <p>In this project, we'll read the voltage from a wire attached to a GPIO
+  input. Once you In this project, we will use GPIOs to get input from a
+  pushbutton into our software.</p>
 
   <p>Before jumping into this project, we very strongly recommend that you read
-  <a data-uid="gpioc"></a>, as these
-  concepts will be the basis for this project and nearly all future
-  RaspberrySTEM projects.</p>
+  <a data-uid="gpioc"></a>, as these concepts will be the basis for this
+  project and nearly all future RaspberrySTEM projects.</p>
 
   <p>In the previous project, we saw how GPIOs can be used as outputs to
   control components attached to the Raspberry Pi (like our LED). GPIOs can
@@ -46,11 +45,10 @@
   be taken.</p>
   <h2>Reading Buttons Using GPIOs</h2>
 
-  <p>In <a data-uid="gpioc"></a>, we
-  introduced the idea of reading button state based on using GPIOs as inputs and
-  then provided a schematic for the circuit we'd need to accomplish this. It
-  turns out that implementing that circuit on our breadboard is easy. Let's
-  give it a try...</p>
+  <p>In <a data-uid="gpioc"></a>, we introduced the idea of reading button
+  state based on using GPIOs as inputs and then provided a schematic for the
+  circuit we'd need to accomplish this. It turns out that implementing that
+  circuit on our breadboard is easy. Let's give it a try...</p>
 
   <p>First, we start with an empty breadboard, with power and ground wired from
   the Lid Connector Board, like this:</p><img class="bb" src=
@@ -63,18 +61,16 @@
   that the button is oriented correctly -- the two independent sides of the
   button must sit on different connect strips, as follows:</p>
   <table style="margin: auto; width: 70%;">
-    <tbody>
-      <tr>
-        <td><img src="img/Button_orientation_correct.png" width="285" alt=
-        ""></td>
-        <td><img src="img/Button_orientation_wrong.png" width="285" alt=
-        ""></td>
-      </tr>
-      <tr>
-        <td><strong>CORRECT</strong></td>
-        <td><strong><span style="color: red;">WRONG!!!</span></strong></td>
-      </tr>
-    </tbody>
+   <tbody>
+    <tr>
+     <td><img src="img/Button_orientation_correct.png" width="285" alt=""></td>
+     <td><img src="img/Button_orientation_wrong.png" width="285" alt=""></td>
+    </tr>
+    <tr>
+     <td><strong>CORRECT</strong></td>
+     <td><strong><span style="color: red;">WRONG!!!</span></strong></td>
+    </tr>
+   </tbody>
   </table>
   <h4>Step #2: Wire one side of the button to a GPIO.</h4>
 
@@ -93,7 +89,7 @@
   <p>Now that the circuit is wired, we can write the code to get the GPIO state
   (low or high):</p>
   <div class="code" data-firstline="1">
-    <textarea>
+   <textarea>
 from rstem.button import Button
 my_button = Button(14)
 print(my_button.is_pressed())
@@ -105,18 +101,18 @@ print(my_button.is_pressed())
   that moment. Try running the program a couple times, either holding down or
   not holding down the button at the moment the program is run.</p>
 
-  <p>You may notice that this example is similar to the<a data-uid="gpoutp"></a> 
-  example. But in this case, we configure the GPIO as a input instead of an
-  output:</p>
+  <p>You may notice that this example is similar to the<a data-uid=
+  "gpoutp"></a> example. But in this case, we configure the GPIO as a input
+  instead of an output:</p>
   <ul>
-    <li>
+   <li>
 
-      <p>In Line 2: We're configuring GPIO 14 as a button input.</p>
-    </li>
-    <li>
+    <p>In Line 2: We're configuring GPIO 14 as a button input.</p>
+   </li>
+   <li>
 
-      <p>In Line 3: We're getting the state of the button, and printing it.</p>
-    </li>
+    <p>In Line 3: We're getting the state of the button, and printing it.</p>
+   </li>
   </ul>
 
   <p>We'll look at these concepts again in more detail in upcoming
@@ -129,15 +125,15 @@ print(my_button.is_pressed())
 
   <p>Here’s what that code would look like:</p>
   <div class="code" data-firstline="1">
-    <textarea>
+   <textarea>
 from rstem.button import Button
 import time
 
 my_button = Button(14)
 
 while True: 
-        print(my_button.is_pressed())
-        time.sleep(0.1)
+    print(my_button.is_pressed())
+    time.sleep(0.1)
 </textarea>
   </div>
 
@@ -145,30 +141,27 @@ while True:
   button. Take a look at the output window – you should see an indication of
   when the button is pressed and when it is released.</p>
   <div class="info">
-    <div>
-      "while True:"
-    </div>
-    <div>
+   <div>
+    "while True:"
+   </div>
+   <div>
 
-      <p>You may have noticed that we used a new programming concept above:</p>
-      <pre>
+    <p>You may have noticed that we used a new programming concept above:</p>
+    <pre>
 while True:
 </pre>
 
-      <p>We'll discuss exactly how this works in a future project, but for now,
-      just know that using this line of code will force the block of code below
-      it to be repeated over and over, forever.</p>
-    </div>
+    <p>We'll discuss exactly how this works in a future project, but for now,
+    just know that using this line of code will force the block of code below
+    it to be repeated over and over, forever.</p>
+   </div>
   </div>
 
   <p>When you're done testing your button, you can stop the program by pressing
   the square STOP icon in the upper-left-hand corner of the code window (this
   icon replaced the PLAY icon while the program was running).</p>
-
-  </div>
-  <div class="section" id="hw">
-  </div>
-  <div class="section" id="sw">
-  </div>
+ </div>
+ <div class="section" id="hw"></div>
+ <div class="section" id="sw"></div>
 </body>
 </html>

@@ -1,141 +1,145 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-  <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="default.css">
-  <link rel="stylesheet" type="text/css" href="project.css">
-  <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
-  <link type="text/css" id="theme" rel="stylesheet" href=
-  "/assets/themes/solarized-dark.css">
-  <script type="text/javascript" src="/assets/cmirror/codemirror.js">
-  </script>
-  <script type="text/javascript" src="/assets/cmirror/python.js">
-  </script>
-  <script type="text/javascript" src="onload.js">
-  </script>
-  <script type="text/javascript" src="flows.js">
-  </script>
-  <script type="text/javascript" src="flow_cookie.js">
-  </script>
-  <script type="text/javascript" src="project.js">
-  </script>
-  <script type="text/javascript" src="stickydiv.js">
-  </script>
-  <script type="text/javascript" src="codeblocks.js">
-  </script>
+ <meta name="generator" content=
+ "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
+ <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+ <title></title>
+ <link rel="stylesheet" type="text/css" href="default.css">
+ <link rel="stylesheet" type="text/css" href="project.css">
+ <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
+ <link type="text/css" id="theme" rel="stylesheet" href=
+ "/assets/themes/solarized-dark.css">
+ <script type="text/javascript" src="/assets/cmirror/codemirror.js">
+ </script>
+ <script type="text/javascript" src="/assets/cmirror/python.js">
+ </script>
+ <script type="text/javascript" src="onload.js">
+ </script>
+ <script type="text/javascript" src="flows.js">
+ </script>
+ <script type="text/javascript" src="flow_cookie.js">
+ </script>
+ <script type="text/javascript" src="project.js">
+ </script>
+ <script type="text/javascript" src="stickydiv.js">
+ </script>
+ <script type="text/javascript" src="codeblocks.js">
+ </script>
 </head>
 <body>
-<div class=section>
+ <div class="section">
   <h1>Going Loopy</h1>
+
   <p>All of our first circuits contained just one loop -- that is, just one
   path that ran from the positive side of the power source through some
-  components and to the ground of the power source.  In the real-world, 
-  circuits are generally more complicated than that, with lots of separate
-  paths around the circuit running through lots of components.  In fact, 
-  inside microprocessors, there are literally millions of interconnected 
-  wires and components, making millions and millions of tiny loops.
-  
-  <p>As an example, lets start with an example circuit we've seen before, 
-  a simple circuit that contains one loop and two components: a battery 
-  and a resistor.
+  components and to the ground of the power source. In the real-world, circuits
+  are generally more complicated than that, with lots of separate paths around
+  the circuit running through lots of components. In fact, inside
+  microprocessors, there are literally millions of interconnected wires and
+  components, making millions and millions of tiny loops.</p>
 
-    <p><mark>Battery/resistor schematic
-	
-  <p>When you add a new component to an existing circuit -- assuming it has 
-  just two  leads (legs) like a resistor does -- there are two ways you can 
-  do it.  The first way is that you can add the component in 
-  <i><strong>series</strong></i> with the other component:
-  
-    <p><mark>Battery/2-resistor series schematic
+  <p>As an example, lets start with an example circuit we've seen before, a
+  simple circuit that contains one loop and two components: a battery and a
+  resistor.</p>
 
-  <p>Adding a component in series means that you are adding the component
-  to the existing loop.  You can add as many components as you want in 
-  series -- it simply makes the loop bigger:
-  
-    <p><mark>Battery/3-resistor series schematic
+  <p><mark>Battery/resistor schematic</mark></p>
 
-  <p>The second way to add a component to a circuit is to add the component in 
-  <i><strong>parallel</strong></i> with other components:
+  <p><mark>When you add a new component to an existing circuit -- assuming it
+  has just two leads (legs) like a resistor does -- there are two ways you can
+  do it. The first way is that you can add the component in
+  <i><strong>series</strong></i> with the other component:</mark></p>
 
-    <p><mark>Battery/2-resistor parallel schematic
+  <p><mark><mark>Battery/2-resistor series schematic</mark></mark></p>
 
-  <p>Adding a component in parallel means that you are creating a new loop
-  (path) in the circuit.  You can add as many components as you want in 
-  parallel -- it simply adds more paths to the circuit:
-  
-    <p><mark>Battery/3-resistor parallel schematic 
-	
-  <p>Of course, you aren't limited to adding components only in series or 
-  only in parallel -- you can do both to create more complex circuits that
-  do more interesting things:
-  
-    <p><mark>Battery/multiple-resistor parallel and series schematic
+  <p><mark>Adding a component in series means that you are adding the component
+  to the existing loop. You can add as many components as you want in series --
+  it simply makes the loop bigger:</mark></p>
 
-  <p>It's also worth noting that there are some types of components (like 
-  a computer chip) that have more than two leads (sometimes dozens or 
-  hundreds) -- in these cases, we tend not to talk about series and parallel 
-  for that part of the circuit.
+  <p><mark><mark>Battery/3-resistor series schematic</mark></mark></p>
 
-</div>
-<div class=section>
+  <p><mark>The second way to add a component to a circuit is to add the
+  component in <i><strong>parallel</strong></i> with other
+  components:</mark></p>
 
-  <h1>Series & Parallel Resistance</h1>
+  <p><mark><mark>Battery/2-resistor parallel schematic</mark></mark></p>
 
-  <p>So what happens when you add more resistance in series or parallel?  
+  <p><mark>Adding a component in parallel means that you are creating a new
+  loop (path) in the circuit. You can add as many components as you want in
+  parallel -- it simply adds more paths to the circuit:</mark></p>
+
+  <p><mark><mark>Battery/3-resistor parallel schematic</mark></mark></p>
+
+  <p><mark>Of course, you aren't limited to adding components only in series or
+  only in parallel -- you can do both to create more complex circuits that do
+  more interesting things:</mark></p>
+
+  <p><mark><mark>Battery/multiple-resistor parallel and series
+  schematic</mark></mark></p>
+
+  <p><mark>It's also worth noting that there are some types of components (like
+  a computer chip) that have more than two leads (sometimes dozens or hundreds)
+  -- in these cases, we tend not to talk about series and parallel for that
+  part of the circuit.</mark></p>
+ </div>
+ <div class="section">
+  <h1><mark>Series &amp; Parallel Resistance</mark></h1>
+
+  <p><mark>So what happens when you add more resistance in series or parallel?
   Using the water analogy, we can get a good conceptual idea of what should
-  happen.
+  happen.</mark></p>
 
-  <p>When resistances are put in series, the total <i>resistance</i> adds up.
-  This becomes important because, if you recall from our <a data-uid="circuits"></a> 
-  concept, when voltage stays the same, adding resistance to our circuit 
-  allows us to decrease the current (and removing resistance allows us to
-  increase the current).
+  <p><mark>When resistances are put in series, the total <i>resistance</i> adds
+  up. This becomes important because, if you recall from our <a data-uid=
+  "circuits"></a> concept, when voltage stays the same, adding resistance to
+  our circuit allows us to decrease the current (and removing resistance allows
+  us to increase the current).</mark></p>
 
-  <p>Here's an example:
-  
-      <p><mark>Battery/2-resistor series schematic, marked with R1 and R2
-    <p><mark>PIC: Battery/2-resistor WATER series schematic
+  <p><mark>Here's an example:</mark></p>
 
-  <p>In the electric circuit above, the total resistance of the circuit 
-  now becomes R1 + R2.  As you can probably now guess, putting two 
-  equal resistances in <i>series</i> gives exactly <i>twice</i> the 
-  resistance.  And remembering back to our earlier discuss of
-  Ohm's Law, if you keep the voltage the same in the circuit, doubling the 
-  resistance will cut the current in half.
+  <p><mark><mark>Battery/2-resistor series schematic, marked with R1 and
+  R2</mark></mark></p>
 
-  <p>On the other hand, when resistances are put in parallel, the total 
-  <i>resistance</i> is divided.  Another way to say this is that the total
-  <i>current</i> adds up.   
-  
-  Again, going back to Ohm's Law, we remember that this is important
-  because decreasing
-  <p>When resistances are in parallel, the total <i>conductance</i> adds up.
-  <i>Conductance</i> is the reciprocal of the resistance.  In other words,
+  <p><mark><mark>PIC: Battery/2-resistor WATER series
+  schematic</mark></mark></p>
+
+  <p><mark>In the electric circuit above, the total resistance of the circuit
+  now becomes R1 + R2. As you can probably now guess, putting two equal
+  resistances in <i>series</i> gives exactly <i>twice</i> the resistance. And
+  remembering back to our earlier discuss of Ohm's Law, if you keep the voltage
+  the same in the circuit, doubling the resistance will cut the current in
+  half.</mark></p>
+
+  <p><mark>On the other hand, when resistances are put in parallel, the total
+  <i>resistance</i> is divided. Another way to say this is that the total
+  <i>current</i> adds up. Again, going back to Ohm's Law, we remember that this
+  is important because decreasing</mark></p>
+
+  <p><mark>When resistances are in parallel, the total <i>conductance</i> adds
+  up. <i>Conductance</i> is the reciprocal of the resistance. In other words,
   resistance is a measure of how <i>difficult</i> it is for current to flow
   through a component, while conductance is the opposite - a measure of how
-  <i>easy</i> it is for current to flow through a component.  
-  This is more evident in a picture:
+  <i>easy</i> it is for current to flow through a component. This is more
+  evident in a picture:</mark></p>
 
-    <p><mark>Battery/2-resistor parallel schematic, marked with R1 and R2
-    <p><mark>PIC: Battery/2-resistor WATER parallel schematic
+  <p><mark><mark>Battery/2-resistor parallel schematic, marked with R1 and
+  R2</mark></mark></p>
 
-<p>As you increase the number of resistors you allow <i>more</i> current to
-flow.  So, in this case, the total
-<i>conductance</i> is the sum of the individual <i>conductances</i>, or:
-<sup>1</sup>&frasl;<sub>R1</sub> + 
-<sup>1</sup>&frasl;<sub>R2</sub>
+  <p><mark><mark>PIC: Battery/2-resistor WATER parallel
+  schematic</mark></mark></p>
 
-<p>The math for this can be a bit more confusing, but is very clear from the
-water analogy picture.  Two equal resistors in parallel allow twice the amount
-of current to flow, or in other words, they resist the current flow less (half
-as much).
-<p>So, this means that: 
- <strong>two equal resistances in <i>parallel</i> gives
-exactly <i>half</i> the resistance.</strong>
-</div>
+  <p><mark>As you increase the number of resistors you allow <i>more</i>
+  current to flow. So, in this case, the total <i>conductance</i> is the sum of
+  the individual <i>conductances</i>, or: <sup>1</sup>⁄<sub>R1</sub> +
+  <sup>1</sup>⁄<sub>R2</sub></mark></p>
+
+  <p><mark>The math for this can be a bit more confusing, but is very clear
+  from the water analogy picture. Two equal resistors in parallel allow twice
+  the amount of current to flow, or in other words, they resist the current
+  flow less (half as much).</mark></p>
+
+  <p><mark>So, this means that: <strong>two equal resistances in
+  <i>parallel</i> gives exactly <i>half</i> the resistance.</strong></mark></p>
+ </div>
 </body>
 </html>
-

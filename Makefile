@@ -56,7 +56,7 @@ $(TIDY_TARGETS):
 	@# separately so we can ignore its error.
 	tidy -quiet --alt-text "" -m $@ >/dev/null 2>&1; exit 0
 
-	$(eval TIDYOPTS=-w 80 -quiet --indent auto)
+	$(eval TIDYOPTS=-w 80 -quiet --indent-spaces 1 --indent auto)
 	@echo tidy $(TIDYOPTS) $@
 	@tidy $(TIDYOPTS) -f /tmp/tidyerrors -m $@; \
 		if [ $$? -gt 0 ]; then \

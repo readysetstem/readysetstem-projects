@@ -1,46 +1,46 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-  <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="default.css">
-  <link rel="stylesheet" type="text/css" href="project.css">
-  <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
-  <link type="text/css" id="theme" rel="stylesheet" href=
-  "/assets/themes/solarized-dark.css">
-  <script type="text/javascript" src="/assets/cmirror/codemirror.js">
-  </script>
-  <script type="text/javascript" src="/assets/cmirror/python.js">
-  </script>
-  <script type="text/javascript" src="onload.js">
-  </script>
-  <script type="text/javascript" src="flows.js">
-  </script>
-  <script type="text/javascript" src="flow_cookie.js">
-  </script>
-  <script type="text/javascript" src="project.js">
-  </script>
-  <script type="text/javascript" src="stickydiv.js">
-  </script>
-  <script type="text/javascript" src="codeblocks.js">
-  </script>
+ <meta name="generator" content=
+ "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
+ <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+ <title></title>
+ <link rel="stylesheet" type="text/css" href="default.css">
+ <link rel="stylesheet" type="text/css" href="project.css">
+ <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
+ <link type="text/css" id="theme" rel="stylesheet" href=
+ "/assets/themes/solarized-dark.css">
+ <script type="text/javascript" src="/assets/cmirror/codemirror.js">
+ </script>
+ <script type="text/javascript" src="/assets/cmirror/python.js">
+ </script>
+ <script type="text/javascript" src="onload.js">
+ </script>
+ <script type="text/javascript" src="flows.js">
+ </script>
+ <script type="text/javascript" src="flow_cookie.js">
+ </script>
+ <script type="text/javascript" src="project.js">
+ </script>
+ <script type="text/javascript" src="stickydiv.js">
+ </script>
+ <script type="text/javascript" src="codeblocks.js">
+ </script>
 </head>
 <body>
-  <h2>Overview</h2>
+ <h2>Overview</h2>
 
-  <p>In this project, we'll build on the sprite animations we did in the
-  previous project by not only animating Steve on the LED Matrix, but also
-  creating a synchronized animation of Steve in the Minecraft world. What we
-  draw on the LED Matrix will be replicated in blocks in the Minecraft
-  world.</p>
-  <h2>Hardware Setup</h2><img class="bb" src="img/LED_Matrix_bb.jpg" alt="">
-  <h2>Writing Our Code</h2>
+ <p>In this project, we'll build on the sprite animations we did in the
+ previous project by not only animating Steve on the LED Matrix, but also
+ creating a synchronized animation of Steve in the Minecraft world. What we
+ draw on the LED Matrix will be replicated in blocks in the Minecraft
+ world.</p>
+ <h2>Hardware Setup</h2><img class="bb" src="img/LED_Matrix_bb.jpg" alt="">
+ <h2>Writing Our Code</h2>
 
-  <p>xxx</p>
-  <div class="code" data-firstline="1">
-    <textarea>
+ <p>xxx</p>
+ <div class="code" data-firstline="1">
+  <textarea>
 from rstem.mcpi import minecraft, control, block
 from rstem.mcpi.vec3 import Vec3
 from rstem.led_matrix import FrameBuffer, Sprite
@@ -100,11 +100,11 @@ def sprite_in_minecraft(mc, sprite, pos):
     char_sprite = reversed(str(sprite).splitlines())
     for height, row in enumerate(char_sprite):
         for width, char in enumerate(row):
-                if char == '0':
-                    blk = block.AIR
-                else:
-                    blk = block.WOOD
-                mc.setBlock(player_pos + Vec3(width, height, 0), blk)
+            if char == '0':
+                blk = block.AIR
+            else:
+                blk = block.WOOD
+            mc.setBlock(player_pos + Vec3(width, height, 0), blk)
     
 player_pos = mc.player.getTilePos()
 animation = cycle(animation)
@@ -120,6 +120,6 @@ while True:
     time.sleep(0.1)
 
 </textarea>
-  </div>
+ </div>
 </body>
 </html>
