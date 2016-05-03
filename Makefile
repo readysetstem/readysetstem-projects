@@ -55,7 +55,8 @@ $(TIDY_TARGETS):
 	@# First run of tidy will insert 'alt=""' text on images.  We run is
 	@# separately so we can ignore its error.
 	tidy -quiet --alt-text "" -m $@ >/dev/null 2>&1; exit 0
-	$(eval TIDYOPTS=-w 80 -quiet --indent auto)
+
+	$(eval TIDYOPTS=-w 80 -quiet --indent-spaces 1 --indent auto)
 	@echo tidy $(TIDYOPTS) $@
 	@tidy $(TIDYOPTS) -f /tmp/tidyerrors -m $@; \
 		if [ $$? -gt 0 ]; then \
@@ -64,8 +65,25 @@ $(TIDY_TARGETS):
 				exit $$?; \
 			fi \
 		fi
+
 	@# Add extra line spacing before paragraphs
 	gawk -i inplace '/<p>/{print ""}1' $@
+
+	# Force opening <textarea> EOL
+	@# (tidy doesn't do it, and this is needed for the following compile test)
+	gsed -i 's/\(<textarea>\)\(..*\)/\1\n\2/' $@
+
+	# Verify that code compiles without syntaxerrors
+	@# To do so
+	@#	1) extra code from textareas,
+	@#	2) remove leading '*' if exists (we use that for highlight arrows in the PG),
+	@#  3) use php to decode html entities
+	@#  4) use python to test compile
+	gawk '/<textarea>/{on=1;next}/<\/textarea>/{on=0;next}on' $@ | \
+		sed 's/^\*//' | \
+		php -r 'while(($$line=fgets(STDIN)) !== FALSE) echo html_entity_decode($$line, ENT_QUOTES|ENT_HTML401);' > .compile.py
+	python3 -m py_compile .compile.py || (echo; echo $@; nl -ba .compile.py; exit 1)
+	rm .compile.py
 
 upload:
 	$(SETUP) sdist upload

@@ -31,7 +31,7 @@ setup(
     version = read('VERSION').strip(),
     author = 'Brian Silverman',
     author_email = 'bri@readysetstem.com',
-    description = ('RaspberrySTEM Project Guides'),
+    description = ('Ready Set STEM Project Guides'),
     keywords = ['readysetstem', 'raspberrypi', 'stem', 'docs'],
     url = 'http://www.readysetstem.com',
     long_description = read('README.md'),

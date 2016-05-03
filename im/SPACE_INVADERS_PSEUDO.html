@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="default.css">
-  <link rel="stylesheet" type="text/css" href="project.css">
-  <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
-  <link type="text/css" id="theme" rel="stylesheet" href=
-  "/assets/themes/solarized-dark.css">
-  <script type="text/javascript" src="/assets/cmirror/codemirror.js">
-  </script>
-  <script type="text/javascript" src="/assets/cmirror/python.js">
-  </script>
-  <script type="text/javascript" src="onload.js">
-  </script>
-  <script type="text/javascript" src="flows.js">
-  </script>
-  <script type="text/javascript" src="flow_cookie.js">
-  </script>
-  <script type="text/javascript" src="project.js">
-  </script>
-  <script type="text/javascript" src="stickydiv.js">
-  </script>
-  <script type="text/javascript" src="codeblocks.js">
-  </script>
+ <meta name="generator" content=
+ "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
+ <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+ <title></title>
+ <link rel="stylesheet" type="text/css" href="default.css">
+ <link rel="stylesheet" type="text/css" href="project.css">
+ <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
+ <link type="text/css" id="theme" rel="stylesheet" href=
+ "/assets/themes/solarized-dark.css">
+ <script type="text/javascript" src="/assets/cmirror/codemirror.js">
+ </script>
+ <script type="text/javascript" src="/assets/cmirror/python.js">
+ </script>
+ <script type="text/javascript" src="onload.js">
+ </script>
+ <script type="text/javascript" src="flows.js">
+ </script>
+ <script type="text/javascript" src="flow_cookie.js">
+ </script>
+ <script type="text/javascript" src="project.js">
+ </script>
+ <script type="text/javascript" src="stickydiv.js">
+ </script>
+ <script type="text/javascript" src="codeblocks.js">
+ </script>
 </head>
 <body>
-<div class=section>
-      In this project, we kick off the development of our Space Invaders by
-      writing the pseudo-code.
+ <div class="section">
+  In this project, we kick off the development of our Space Invaders by writing
+  the pseudo-code.
 
   <p>You're probably familiar with the game Space Invaders, which was
   originally made popular in the 1970s in arcades and on the Atari (one of the
@@ -38,22 +38,22 @@
   revolutionary.</p>
 
   <p>Over the next 10 projects, we're going to build a basic version of Space
-  Invaders using the RaspberrySTEM CREATOR Kit components we've already wired
+  Invaders using the Ready Set STEM CREATOR Kit components we've already wired
   up. The LED Matrix will be used to display the graphics, the accelerometer
   will be used to control the left and right movement of the ship (by tilting
-  the RaspberrySTEM CREATOR Kit left or right) and the button will be used to
+  the Ready Set STEM CREATOR Kit left or right) and the button will be used to
   fire missiles at the invading aliens. By the time we've completed this
   project, you should have the basic skills necessary to build more complex
   games.</p>
 
   <p>Like most games you'll build, this one is going to start with a game loop,
   and in this first Space Invaders project, we'll start by writing the
-  pseudo-code for our game loop (see <a data-uid="gameloops"></a> for more information on both pseudo-code and game loops). In our
-  experience, the best way to write pseudo-code is in an iterative process,
-  meaning that we write the very high level steps out first, and then we break
-  each of those steps into smaller chunks with more details. We continue doing
-  this until we have enough detail that we're ready to actually start writing
-  our code.</p>
+  pseudo-code for our game loop (see <a data-uid="gameloops"></a> for more
+  information on both pseudo-code and game loops). In our experience, the best
+  way to write pseudo-code is in an iterative process, meaning that we write
+  the very high level steps out first, and then we break each of those steps
+  into smaller chunks with more details. We continue doing this until we have
+  enough detail that we're ready to actually start writing our code.</p>
   <h2>Our Game Loop</h2>
 
   <p>Let's start with the basic outline for any game loop, much as we described
@@ -62,12 +62,12 @@
 Initialize the game environment
 
 while (game not finished):
-        Check for user input
-        Update the game world
-        Draw graphics on the screen
-        Wait for some period of time
+    Check for user input
+    Update the game world
+    Draw graphics on the screen
+    Wait for some period of time
 
-Finish &amp; Cleanup
+Finish & Cleanup
 </pre>
 
   <p>Now, let's look at each of these areas individually...</p>
@@ -154,8 +154,8 @@ Show the framebuffer
   our next round through the loop. For this game, our graphics aren't going to
   (necessarily) update each time through the loop, so our wait time doesn't
   need to be correlated to our graphics updates. That said, we need to pick a
-  time that is not too long -- otherwise the graphics will not be as responsive as
-  we'd like -- and also not too short -- or we'll needlessly overwork the
+  time that is not too long -- otherwise the graphics will not be as responsive
+  as we'd like -- and also not too short -- or we'll needlessly overwork the
   processor.</p>
 
   <p>We'll play around with various wait times and see what works, but
@@ -164,14 +164,14 @@ Show the framebuffer
 # Wait for some period of time
 Wait for between .001 and .01 seconds
 </pre>
-  <h2>Finish &amp; Cleanup</h2>
+  <h2>Finish & Cleanup</h2>
 
   <p>Finally, we need to handle the case where we fall through the loop, either
   because we've won the game (destroyed all the aliens) or lost the game (the
   aliens got to the bottom of the screen). In either case, we'll at least print
   the final game status (win or lose) to the output window.</p>
   <pre>
-# Finish &amp; Cleanup
+# Finish & Cleanup
 Print "You won!" if the player wins
 Print "You lost..." if the player loses
 </pre>
@@ -209,12 +209,11 @@ while True:
     # Wait for some period of time
     Wait for between .001 and .01 seconds
 
-# Finish &amp; Cleanup
+# Finish & Cleanup
 Print "You won!" if the player wins
 Print "You lost..." if the player loses
 
 </pre>
-
-</div>
+ </div>
 </body>
 </html>

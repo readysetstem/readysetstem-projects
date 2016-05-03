@@ -1,36 +1,36 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-  <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="default.css">
-  <link rel="stylesheet" type="text/css" href="project.css">
-  <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
-  <link type="text/css" id="theme" rel="stylesheet" href=
-  "/assets/themes/solarized-dark.css">
-  <script type="text/javascript" src="/assets/cmirror/codemirror.js">
-  </script>
-  <script type="text/javascript" src="/assets/cmirror/python.js">
-  </script>
-  <script type="text/javascript" src="onload.js">
-  </script>
-  <script type="text/javascript" src="flows.js">
-  </script>
-  <script type="text/javascript" src="flow_cookie.js">
-  </script>
-  <script type="text/javascript" src="project.js">
-  </script>
-  <script type="text/javascript" src="stickydiv.js">
-  </script>
-  <script type="text/javascript" src="codeblocks.js">
-  </script>
+ <meta name="generator" content=
+ "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
+ <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+ <title></title>
+ <link rel="stylesheet" type="text/css" href="default.css">
+ <link rel="stylesheet" type="text/css" href="project.css">
+ <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
+ <link type="text/css" id="theme" rel="stylesheet" href=
+ "/assets/themes/solarized-dark.css">
+ <script type="text/javascript" src="/assets/cmirror/codemirror.js">
+ </script>
+ <script type="text/javascript" src="/assets/cmirror/python.js">
+ </script>
+ <script type="text/javascript" src="onload.js">
+ </script>
+ <script type="text/javascript" src="flows.js">
+ </script>
+ <script type="text/javascript" src="flow_cookie.js">
+ </script>
+ <script type="text/javascript" src="project.js">
+ </script>
+ <script type="text/javascript" src="stickydiv.js">
+ </script>
+ <script type="text/javascript" src="codeblocks.js">
+ </script>
 </head>
 <body>
-  <div class="section" id="intro">
-      <p>
-      In this project, we add missile firing using our button.
+ <div class="section" id="intro">
+
+  <p>In this project, we add missile firing using our button.</p>
 
   <p>In this project, we're going to add the ability to fire missiles.</p>
 
@@ -47,7 +47,7 @@
 
   <p>Here is what this piece of code will look like:</p>
   <div class="code" data-firstline="0">
-    <textarea>
+   <textarea>
 from rstem.button import Button
 fire_button = Button(7)
 missile_x, missile_y = -1, -1
@@ -65,7 +65,7 @@ MISSILE_STEP_TIME = 0.1
   determine if enough time has elapsed that we need to move any existing
   missiles on the screen:</p>
   <div class="code" data-firstline="0">
-    <textarea>
+   <textarea>
 presses = fire_button.presses()
 now = time.time()
 </textarea>
@@ -74,35 +74,35 @@ now = time.time()
 
   <p>To change the world, we'll first need to check if either:</p>
   <ol>
-    <li>
+   <li>
 
-      <p><strong>A missile was already launched and it's time to move
-      it</strong>: We'll know this if <code>missile_x &gt;= 0</code>, and
-      <code>MISSILE_STEP_TIME</code> time has passed since the missile last
-      moved. If so, we'll move the missile up, but if it goes past the top of
-      the LED Matrix display, we'll remove it.</p>
-    </li>
-    <li>
+    <p><strong>A missile was already launched and it's time to move
+    it</strong>: We'll know this if <code>missile_x &gt;= 0</code>, and
+    <code>MISSILE_STEP_TIME</code> time has passed since the missile last
+    moved. If so, we'll move the missile up, but if it goes past the top of the
+    LED Matrix display, we'll remove it.</p>
+   </li>
+   <li>
 
-      <p><strong>The fire button was pressed</strong>: If so, we'll create a
-      new missile, just above the ship.</p>
-    </li>
+    <p><strong>The fire button was pressed</strong>: If so, we'll create a new
+    missile, just above the ship.</p>
+   </li>
   </ol>
   <div class="code" data-firstline="0">
-    <textarea>
+   <textarea>
 if missile_x &gt;= 0 and now - missile_start_time &gt; MISSILE_STEP_TIME:
-        # Missile already launched - move it up
-        missile_y += 1
+    # Missile already launched - move it up
+    missile_y += 1
   
-        if missile_y &gt;= fb.height:
-                missile_x, missile_y = -1, -1
+    if missile_y &gt;= fb.height:
+        missile_x, missile_y = -1, -1
 
-        missile_start_time = now
+    missile_start_time = now
 
 elif presses:
-        # Button was pressed - launch missile    
-        missile_x, missile_y = (round(spaceship_position), 1)
-        missile_start_time = now
+    # Button was pressed - launch missile    
+    missile_x, missile_y = (round(spaceship_position), 1)
+    missile_start_time = now
 </textarea>
   </div>
   <h4>3. Show the world:</h4>
@@ -110,10 +110,10 @@ elif presses:
   <p>To show the world, we'll check to see if there is an existing missile on
   the screen, and if there is, we'll draw its current location.</p>
   <div class="code" data-firstline="0">
-    <textarea>
+   <textarea>
 # Draw missile
 if missile_x &gt;= 0:
-        fb.point(missile_x, missile_y, MISSILE_COLOR)
+    fb.point(missile_x, missile_y, MISSILE_COLOR)
 </textarea>
   </div>
 
@@ -121,7 +121,7 @@ if missile_x &gt;= 0:
   project, our full project will look like this -- when you run it, try
   pressing the button and watching the missile fire:</p>
   <div class="code" data-firstline="1">
-    <textarea>
+   <textarea>
 # ###############################################################
 #
 # SPACE INVADERS GAME
@@ -131,7 +131,7 @@ if missile_x &gt;= 0:
 # ################################
 # Initialize the game environment
 # ################################
-                
+
 # Import required functions/modules
 from rstem.accel import Accel
 from rstem.button import Button
@@ -161,62 +161,59 @@ MISSILE_STEP_TIME = 0.1
 
 
 while True:
-        # ########################################
-        # Get inputs
-        # ########################################
-        presses = fire_button.presses()
-        x_force, y_force, z_force = accel.forces()
-        now = time.time()
+    # ########################################
+    # Get inputs
+    # ########################################
+    presses = fire_button.presses()
+    x_force, y_force, z_force = accel.forces()
+    now = time.time()
 
-        # ########################################
-        # Change the World
-        # ########################################
+    # ########################################
+    # Change the World
+    # ########################################
 
-        if missile_x &gt;= 0 and now - missile_start_time &gt; MISSILE_STEP_TIME:
-                # Missile already launched - move it up
-                missile_y += 1
-                if missile_y &gt;= fb.height:
-                        missile_x, missile_y = -1, -1
-                missile_start_time = now
-        elif presses:
-                # Button was pressed - launch missile
-                missile_x, missile_y = (round(spaceship_position), 1)
-                missile_start_time = now
+    if missile_x &gt;= 0 and now - missile_start_time &gt; MISSILE_STEP_TIME:
+        # Missile already launched - move it up
+        missile_y += 1
+        if missile_y &gt;= fb.height:
+            missile_x, missile_y = -1, -1
+        missile_start_time = now
+    elif presses:
+        # Button was pressed - launch missile
+        missile_x, missile_y = (round(spaceship_position), 1)
+        missile_start_time = now
 
-        # Move spaceship
-        if x_force &gt; TILT_FORCE:
-                spaceship_position -= SPACESHIP_STEP
-        elif x_force &lt; -TILT_FORCE:
-                spaceship_position += SPACESHIP_STEP
-        spaceship_position = max(0, min(fb.width - 1, spaceship_position))
+    # Move spaceship
+    if x_force &gt; TILT_FORCE:
+        spaceship_position -= SPACESHIP_STEP
+    elif x_force &lt; -TILT_FORCE:
+        spaceship_position += SPACESHIP_STEP
+    spaceship_position = max(0, min(fb.width - 1, spaceship_position))
 
-        # ########################################
-        # Show world
-        # ########################################
+    # ########################################
+    # Show world
+    # ########################################
 
-        fb.erase()
+    fb.erase()
 
-        # Draw missile
-        if missile_x &gt;= 0:
-                fb.point(missile_x, missile_y, MISSILE_COLOR)
+    # Draw missile
+    if missile_x &gt;= 0:
+        fb.point(missile_x, missile_y, MISSILE_COLOR)
 
-        # Draw spaceship
-        fb.point(round(spaceship_position), 0)
+    # Draw spaceship
+    fb.point(round(spaceship_position), 0)
 
-        # Draw aliens
-        for column in alien_columns:
-                fb.point(column, alien_row)
+    # Draw aliens
+    for column in alien_columns:
+        fb.point(column, alien_row)
 
-        # Show FrameBuffer on LED Matrix
-        fb.show()
-        time.sleep(0.001)
+    # Show FrameBuffer on LED Matrix
+    fb.show()
+    time.sleep(0.001)
 </textarea>
   </div>
-
-  </div>
-  <div class="section" id="hw">
-  </div>
-  <div class="section" id="sw">
-  </div>
+ </div>
+ <div class="section" id="hw"></div>
+ <div class="section" id="sw"></div>
 </body>
 </html>
