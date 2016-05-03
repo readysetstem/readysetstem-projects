@@ -1,45 +1,45 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-  <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="default.css">
-  <link rel="stylesheet" type="text/css" href="project.css">
-  <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
-  <link type="text/css" id="theme" rel="stylesheet" href=
-  "/assets/themes/solarized-dark.css">
-  <script type="text/javascript" src="/assets/cmirror/codemirror.js">
-  </script>
-  <script type="text/javascript" src="/assets/cmirror/python.js">
-  </script>
-  <script type="text/javascript" src="onload.js">
-  </script>
-  <script type="text/javascript" src="flows.js">
-  </script>
-  <script type="text/javascript" src="flow_cookie.js">
-  </script>
-  <script type="text/javascript" src="project.js">
-  </script>
-  <script type="text/javascript" src="stickydiv.js">
-  </script>
-  <script type="text/javascript" src="codeblocks.js">
-  </script>
+ <meta name="generator" content=
+ "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
+ <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+ <title></title>
+ <link rel="stylesheet" type="text/css" href="default.css">
+ <link rel="stylesheet" type="text/css" href="project.css">
+ <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
+ <link type="text/css" id="theme" rel="stylesheet" href=
+ "/assets/themes/solarized-dark.css">
+ <script type="text/javascript" src="/assets/cmirror/codemirror.js">
+ </script>
+ <script type="text/javascript" src="/assets/cmirror/python.js">
+ </script>
+ <script type="text/javascript" src="onload.js">
+ </script>
+ <script type="text/javascript" src="flows.js">
+ </script>
+ <script type="text/javascript" src="flow_cookie.js">
+ </script>
+ <script type="text/javascript" src="project.js">
+ </script>
+ <script type="text/javascript" src="stickydiv.js">
+ </script>
+ <script type="text/javascript" src="codeblocks.js">
+ </script>
 </head>
 <body>
-<div class=section>
-  
+ <div class="section">
+
   <p>Over the next eight projects, we're going to use buttons, LEDs and a good
   bit of code to build and program a pattern-matching game much like the
-  popular toy Simon.  If you're not familiar with Simon, let me describe how our
-  pattern-matching game will work:
-  
-  <p>The game will start by flashing one of four different color
-  LEDs at random, and will play a tone specific to that LED. You (the player)
-  will then have a short amount of time to press the button associated with the
-  LED that flashed. If you do that successfully, the game will repeat the first
-  LED flash and then add a second LED flash at random. Again, you'll need to
+  popular toy Simon. If you're not familiar with Simon, let me describe how our
+  pattern-matching game will work:</p>
+
+  <p>The game will start by flashing one of four different color LEDs at
+  random, and will play a tone specific to that LED. You (the player) will then
+  have a short amount of time to press the button associated with the LED that
+  flashed. If you do that successfully, the game will repeat the first LED
+  flash and then add a second LED flash at random. Again, you'll need to
   remember the pattern and press the correct buttons to replicate the pattern.
   Each time you successfully enter the correct sequence, the game will replay
   the previous pattern and add a random new LED flash at the end. This will
@@ -51,27 +51,25 @@
   far, it's important to spend some time planning what the code will do and in
   what order. To do this, we'll create an outline for Simon using a common
   programming technique called pseudo-code.</p>
-
   <div class="info">
-    <div>
-      Pseudo-Code
-    </div>
-    <div>
+   <div>
+    Pseudo-Code
+   </div>
+   <div>
 
-      <p>Writing pseudo-code before you write software is similar to writing an
-      outline before you write a paper or an article. Basically, you create an
-      outline for your code using a combination of regular English mixed with
-      some bits of programming code. This allows you (or others) to read the
-      order of the code and determine if what you're getting ready to write is
-      logical and will accomplish what you want and expect.</p>
+    <p>Writing pseudo-code before you write software is similar to writing an
+    outline before you write a paper or an article. Basically, you create an
+    outline for your code using a combination of regular English mixed with
+    some bits of programming code. This allows you (or others) to read the
+    order of the code and determine if what you're getting ready to write is
+    logical and will accomplish what you want and expect.</p>
 
-      <p>Let's use the<a data-uid="manybuttons"></a> 
-      project to show an example of how we'd write pseudo-code. In that
-      project, we had a bunch of buttons, and we wanted to print when the
-      buttons were pressed.</p>
+    <p>Let's use the<a data-uid="manybuttons"></a> project to show an example
+    of how we'd write pseudo-code. In that project, we had a bunch of buttons,
+    and we wanted to print when the buttons were pressed.</p>
 
-      <p>Here is what our pseudo-code might look like:</p>
-      <pre>
+    <p>Here is what our pseudo-code might look like:</p>
+    <pre>
 Create a list of Buttons
 Repeat:
     For each button in the list of buttons:
@@ -80,15 +78,14 @@ Repeat:
     Pause
 </pre>
 
-      <p>You notice that each line is easily readable as English -- with some
-      indenting to help the readability -- and overall, you now have a outline
-      that you can use as a template to create your code.</p>
+    <p>You notice that each line is easily readable as English -- with some
+    indenting to help the readability -- and overall, you now have a outline
+    that you can use as a template to create your code.</p>
 
-      <p>Now, in reality, you might not need to use pseudo-code for such a
-      simple program. But, for more complex software, writing the pseudo-code
-      before you start writing the actual code can make the entire process much
-      easier.</p>
-    </div>
+    <p>Now, in reality, you might not need to use pseudo-code for such a simple
+    program. But, for more complex software, writing the pseudo-code before you
+    start writing the actual code can make the entire process much easier.</p>
+   </div>
   </div>
 
   <p>Let's talk about what the pseudo-code for our Simon game will look like.
@@ -113,10 +110,10 @@ If the user enters the wrong sequence, play an error sequence
 
   <p>That's basically all our Simon game needs to do. But, now it's time to
   start thinking about how this outline would actually look when written with
-  code. You'll notice that the second to last line indicate that -- for as long as
-  the user does something correctly -- we go back to the top of the code. Does
-  this sound like a concept we've already discussed? A <code>while</code> loop,
-  perhaps?</p>
+  code. You'll notice that the second to last line indicate that -- for as long
+  as the user does something correctly -- we go back to the top of the code.
+  Does this sound like a concept we've already discussed? A <code>while</code>
+  loop, perhaps?</p>
 
   <p>Also, you'll notice that in the middle of the code, we're checking for the
   sequence of button presses from the user -- one-by-one. This sequence of
@@ -138,8 +135,8 @@ while (user enters the sequence correctly):
 If the user enters the wrong sequence, play an error sequence
 </pre>
 
-  <p>The pseudo-code above is easy to follow, but by adding in the
-  two loops, we start to see the format for our program.</p>
+  <p>The pseudo-code above is easy to follow, but by adding in the two loops,
+  we start to see the format for our program.</p>
 
   <p>We could drill down into each piece of the pseudo-code further -- and in
   some future projects we'll be much more detailed -- but for our Simon-like
@@ -147,7 +144,6 @@ If the user enters the wrong sequence, play an error sequence
   over the next many projects, we'll use the outline above to organize and
   ensure that we're doing everything that needs to be done to get the game
   working properly.</p>
-
-</div>
+ </div>
 </body>
 </html>

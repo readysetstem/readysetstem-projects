@@ -1,37 +1,38 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-  <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="default.css">
-  <link rel="stylesheet" type="text/css" href="project.css">
-  <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
-  <link type="text/css" id="theme" rel="stylesheet" href=
-  "/assets/themes/solarized-dark.css">
-  <script type="text/javascript" src="/assets/cmirror/codemirror.js">
-  </script>
-  <script type="text/javascript" src="/assets/cmirror/python.js">
-  </script>
-  <script type="text/javascript" src="onload.js">
-  </script>
-  <script type="text/javascript" src="flows.js">
-  </script>
-  <script type="text/javascript" src="flow_cookie.js">
-  </script>
-  <script type="text/javascript" src="project.js">
-  </script>
-  <script type="text/javascript" src="stickydiv.js">
-  </script>
-  <script type="text/javascript" src="codeblocks.js">
-  </script>
+ <meta name="generator" content=
+ "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
+ <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+ <title></title>
+ <link rel="stylesheet" type="text/css" href="default.css">
+ <link rel="stylesheet" type="text/css" href="project.css">
+ <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
+ <link type="text/css" id="theme" rel="stylesheet" href=
+ "/assets/themes/solarized-dark.css">
+ <script type="text/javascript" src="/assets/cmirror/codemirror.js">
+ </script>
+ <script type="text/javascript" src="/assets/cmirror/python.js">
+ </script>
+ <script type="text/javascript" src="onload.js">
+ </script>
+ <script type="text/javascript" src="flows.js">
+ </script>
+ <script type="text/javascript" src="flow_cookie.js">
+ </script>
+ <script type="text/javascript" src="project.js">
+ </script>
+ <script type="text/javascript" src="stickydiv.js">
+ </script>
+ <script type="text/javascript" src="codeblocks.js">
+ </script>
 </head>
 <body>
-<div class=section>
-	  <h1>Overview</h1>
-      <p>In this project, we introduce the concept of Game Loops, and we use a
-      game loop to create a very basic game for the LED Matrix display.
+ <div class="section">
+  <h1>Overview</h1>
+
+  <p>In this project, we introduce the concept of Game Loops, and we use a game
+  loop to create a very basic game for the LED Matrix display.</p>
 
   <p>Now that we have the LED Matrix as a display and can take input with
   buttons, there's no reason we can't start creating some simple games. But,
@@ -54,25 +55,23 @@
 Initialize the game environment
 
 while (game not finished):
-        Check for user input
-        Update the game world
-        Draw graphics on the screen
-        Wait for some period of time
+    Check for user input
+    Update the game world
+    Draw graphics on the screen
+    Wait for some period of time
 
 Finish &amp; Cleanup
 </pre>
+ </div>
+ <div class="section">
+  <h1>A Simple "Game"</h1>
 
-</div>
-<div class=section>
-	  <h1> A Simple "Game"</h1>
-
-<p>We're going to create a simple "game" - too simple to really qualify as a
-game - but that will give us start to creating more complicated games later.
-This game is going to draw a dot on the screen, and move it across the screen
-from left to right.  That's it - simple.
-
+  <p>We're going to create a simple "game" - too simple to really qualify as a
+  game - but that will give us start to creating more complicated games later.
+  This game is going to draw a dot on the screen, and move it across the screen
+  from left to right. That's it - simple.</p>
   <div class="code" data-firstline="1">
-    <textarea>
+   <textarea>
 # Initialize the game environment
 from rstem.led_matrix import FrameBuffer
 import time
@@ -81,29 +80,29 @@ fb = FrameBuffer()
 x, y = (0, 0)
 
 while True: 
-	# Get user input 
+    # Get user input 
 
-	# Update the game world 
-	x += 1 
+    # Update the game world 
+    x += 1 
 
-	# Draw graphics on the screen 
-	fb.erase() 
-	fb.point(x, y) 
-	fb.show() 
+    # Draw graphics on the screen 
+    fb.erase() 
+    fb.point(x, y) 
+    fb.show() 
 
-	# Wait for some period of time 
-	time.sleep(.5)
+    # Wait for some period of time 
+    time.sleep(.5)
 
 # Finish &amp; Cleanup
 </textarea>
   </div>
 
-  <p>If you have LED Matrix hooked up, you can give this a a try now!
+  <p>If you have LED Matrix hooked up, you can give this a a try now!</p>
+ </div>
+ <div class="section">
+  <h1>How It Works</h1>
 
-</div>
-<div class=section>
-	  <h1>How It Works</h1>
-  <p>Lets examine the code line-by-line below.
+  <p>Lets examine the code line-by-line below.</p>
   <h2>Initialize the game environment</h2>
 
   <p>The very first step in any game is to initialize anything that will be
@@ -114,31 +113,28 @@ while True:
   game, defining the start location and speed of various game characters,
   etc.</p>
 
-  <p>In most all Python programs, you'll start importing the functions you're going
-  to use in the program.
+  <p>In most all Python programs, you'll start importing the functions you're
+  going to use in the program.</p>
   <div class="code" data-firstline="5">
-    <textarea>
+   <textarea>
 fb = FrameBuffer()
 x, y = (0, 0)
 </textarea>
   </div>
-  
-  <p>In lines 5 and 6, we'll:
+
+  <p>In lines 5 and 6, we'll:</p>
   <ol>
-    <li>
+   <li>
 
-      <p>Create a framebuffer that we'll use to draw and display the dot</p>
-    </li>
-    <li>
+    <p>Create a framebuffer that we'll use to draw and display the dot</p>
+   </li>
+   <li>
 
-      <p>Initialize the location of a dot when the loop starts (in this case,
-      let's put the dot in the corner of the LED Matrix)</p>
-    </li>
+    <p>Initialize the location of a dot when the loop starts (in this case,
+    let's put the dot in the corner of the LED Matrix)</p>
+   </li>
   </ol>
-
-  <h2>The game loop (while game is not finished)
-  
-  </h2>
+  <h2>The game loop (while game is not finished)</h2>
 
   <p>We call it a game loop because it's an actual loop in the code that
   continues until the game is finished or until the user says chooses to exit.
@@ -148,8 +144,9 @@ x, y = (0, 0)
 
   <p>So, this will be the very first line of our game loop:</p>
   <div class="code" data-firstline="8">
-    <textarea>
+   <textarea>
 while True:
+    ...
 </textarea>
   </div>
   <h2>Check for user input</h2>
@@ -177,7 +174,7 @@ while True:
   increment the x-coordinate by 1. We then erase the current framebuffer data
   and update the framebuffer with the new location.</p>
   <div class="code" data-firstline="12">
-    <textarea>
+   <textarea>
 x += 1
 </textarea>
   </div>
@@ -189,7 +186,7 @@ x += 1
   graphics to the framebuffer and then displaying that framebuffer. We can do
   that just like we did in the last project:</p>
   <div class="code" data-firstline="15">
-    <textarea>
+   <textarea>
 fb.erase()
 fb.point(x, y)
 fb.show()
@@ -214,7 +211,7 @@ fb.show()
   happy moving the location of the dot every half-second. Which means we'll
   want to put in a half-second delay at the end of the loop.</p>
   <div class="code" data-firstline="20">
-    <textarea>
+   <textarea>
 time.sleep(.5)
 </textarea>
   </div>
@@ -227,9 +224,9 @@ time.sleep(.5)
   graphics (for example, something special if the player beats the game) or you
   may want to go back to another menu screen.</p>
 
-  <p>In this project, we never drop out of the loop (remember, we used a <code>while
-  True:</code> loop), so there doesn't need to be any code at this point in the
-  program.</p>
+  <p>In this project, we never drop out of the loop (remember, we used a
+  <code>while True:</code> loop), so there doesn't need to be any code at this
+  point in the program.</p>
   <h2>Putting It All Together</h2>
 
   <p>When you run this code, you should see the dot start at one corner of the
@@ -239,12 +236,11 @@ time.sleep(.5)
   the dot has disappeared, you can stop the program.</p>
 
   <p>Also, you might notice that the first place you see the dot is one the LED
-  second from the left.  This is due to the fact that we "update the game
-  world" before we "draw graphics on the screen".  Our first update moves the
-  dot one position to the right, before we've even had a chance to see it on
-  the screen.  In a more normal game, this doesn't matter, as the wait period
-  will be fast, and this small quirk won't be noticable.
-
-</div>
+  second from the left. This is due to the fact that we "update the game world"
+  before we "draw graphics on the screen". Our first update moves the dot one
+  position to the right, before we've even had a chance to see it on the
+  screen. In a more normal game, this doesn't matter, as the wait period will
+  be fast, and this small quirk won't be noticable.</p>
+ </div>
 </body>
 </html>

@@ -1,34 +1,34 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-  <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="default.css">
-  <link rel="stylesheet" type="text/css" href="project.css">
-  <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
-  <link type="text/css" id="theme" rel="stylesheet" href=
-  "/assets/themes/solarized-dark.css">
-  <script type="text/javascript" src="/assets/cmirror/codemirror.js">
-  </script>
-  <script type="text/javascript" src="/assets/cmirror/python.js">
-  </script>
-  <script type="text/javascript" src="onload.js">
-  </script>
-  <script type="text/javascript" src="flows.js">
-  </script>
-  <script type="text/javascript" src="flow_cookie.js">
-  </script>
-  <script type="text/javascript" src="project.js">
-  </script>
-  <script type="text/javascript" src="stickydiv.js">
-  </script>
-  <script type="text/javascript" src="codeblocks.js">
-  </script>
+ <meta name="generator" content=
+ "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
+ <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+ <title></title>
+ <link rel="stylesheet" type="text/css" href="default.css">
+ <link rel="stylesheet" type="text/css" href="project.css">
+ <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
+ <link type="text/css" id="theme" rel="stylesheet" href=
+ "/assets/themes/solarized-dark.css">
+ <script type="text/javascript" src="/assets/cmirror/codemirror.js">
+ </script>
+ <script type="text/javascript" src="/assets/cmirror/python.js">
+ </script>
+ <script type="text/javascript" src="onload.js">
+ </script>
+ <script type="text/javascript" src="flows.js">
+ </script>
+ <script type="text/javascript" src="flow_cookie.js">
+ </script>
+ <script type="text/javascript" src="project.js">
+ </script>
+ <script type="text/javascript" src="stickydiv.js">
+ </script>
+ <script type="text/javascript" src="codeblocks.js">
+ </script>
 </head>
 <body>
-<div class=section>
+ <div class="section">
 
   <p>As mentioned earlier, Minecraft has its own API that can be used to
   control and manipulate the Minecraft world. The API is called
@@ -37,37 +37,37 @@
   Minecraft world.</p>
 
   <p>Note: There is an mcpi API downloadable online, which is slightly
-  different from the one available on the RaspberrySTEM. The RaspberrySTEM has
+  different from the one available on the Ready Set STEM. The Ready Set STEM has
   an enhanced version that includes functions for controlling the movement of
   the Minecraft player, determining the direction the player is looking, and
   showing/hiding the Minecraft window. When using the mcpi API on the
-  RaspberrySTEM, we highly recommend using our API, as opposed to the standard
+  Ready Set STEM, we highly recommend using our API, as opposed to the standard
   mcpi API.</p>
 
   <p>A typical Minecraft program will consist of four parts:</p>
   <ol>
-    <li>
+   <li>
 
-      <p>Initialization Code</p>
-    </li>
-    <li>
+    <p>Initialization Code</p>
+   </li>
+   <li>
 
-      <p>Starting Minecraft</p>
-    </li>
-    <li>
+    <p>Starting Minecraft</p>
+   </li>
+   <li>
 
-      <p>Connecting to the Minecraft Server</p>
-    </li>
-    <li>
+    <p>Connecting to the Minecraft Server</p>
+   </li>
+   <li>
 
-      <p>The Game Loop</p>
-    </li>
+    <p>The Game Loop</p>
+   </li>
   </ol>
   <h3>Initialization Code</h3>
 
   <p>The first thing we typically do in any program (including our Minecraft
   programs) is to import the modules and functions we'll need for our code. The
-  set of functions that the RaspberrySTEM uses for Minecraft programs is called
+  set of functions that the Ready Set STEM uses for Minecraft programs is called
   <code>rstem.mcpi</code>, so in addition to any other functions we will need
   to import, we'll typically either import the entire <code>rstem.mcpi</code>
   module or we'll import specific functions within the <code>rstem.mcpi</code>
@@ -101,7 +101,7 @@
   <p>Putting all three steps together, the basic framework of our Minecraft
   programs will look something like this:</p>
   <div class="code" data-firstline="1">
-    <textarea>
+   <textarea>
 from rstem.mcpi import minecraft, control
 
 control.show()
@@ -117,6 +117,6 @@ while True:
 
   <p>For more detailed information about these -- and all -- Minecraft APIs,
   check out the API documentation linked from the RDE above.</p>
-</div>
+ </div>
 </body>
 </html>

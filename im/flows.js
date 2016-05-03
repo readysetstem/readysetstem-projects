@@ -2,8 +2,6 @@
 //{filename: "INTRO_TO_FUNCTIONS.html",           title: "INTRO TO FUNCTIONS",                    concept: true, uid: ""},
 //{filename: "FUNCTION_INPUTS.html",              title: "FUNCTION INPUTS",                       concept: true, uid: ""},
 //{filename: "FUNCTION_OUTPUTS.html",             title: "FUNCTION OUTPUTS",                      concept: true, uid: ""},
-//{filename: "STRING_THEORY.html",                title: "STRING THEORY",                         concept: true, uid: "strings"},
-//{filename: "CALCULATIONS.html",                 title: "CALCULATIONS",                          concept: true, uid: "calc"},
 var pg_flows =  {};
 
 pg_flows.Main = [
@@ -45,7 +43,7 @@ pg_flows.Main = [
     {filename: "SOUNDS_FUNCTION.html",              title: "OTHER SOUNDS",                  concept: true, uid: ""},
     {filename: "BETTER_PIANO.html",                 title: "BUILD A BETTER PIANO",          concept: false, uid: "betterpiano"},
     {filename: "WALKABLE_PIANO.html",               title: "BUILD A WALKABLE PIANO",        concept: false, uid: ""},
-    {filename: "TEXT_TO_SPEECH.html",               title: "TEXT TO SPEECH (TTS)",          concept: true, uid: ""},
+    {filename: "TEXT_TO_SPEECH.html",               title: "TEXT TO SPEECH (TTS)",          concept: true, uid: "tts"},
     {filename: "TEXT_TO_SPEECH_PROJECT.html",       title: "TTS SOUND MACHINE",             concept: false, uid: ""},
 
     {filename: "SIMON_PSEUDO.html",                 title: "SIMON 0",                       concept: true, uid: "", section: "SIMON"},
@@ -66,19 +64,21 @@ pg_flows.Main = [
     {filename: "FRAMEBUFFERS.html",                 title: "FRAMEBUFFER",                   concept: true, uid: "fb"},
     {filename: "BOUNCING_BALL_2.html",              title: "BOUNCING BALL 2",               concept: false, uid: ""},
     {filename: "PULSATING_RECT.html",               title: "PULSATING RECTANGLE",           concept: false, uid: ""},
-    {filename: "SPRITES.html",                      title: "SPRITES & TEXT",                concept: true, uid: ""},
+    {filename: "SPRITES.html",                      title: "SPRITES",                       concept: true, uid: ""},
     {filename: "RUNNING_MAN.html",                  title: "RUNNING MAN",                   concept: false, uid: ""},
+    {filename: "TEXT.html",                         title: "TEXT",                          concept: true, uid: ""},
     {filename: "SCROLLING_TEXT.html",               title: "SCROLLING TEXT",                concept: false, uid: ""},
 
     {filename: "ACCELEROMETER.html",                title: "THE ACCELEROMETER",             concept: true, uid: "accel", section: "ACCELEROMETER"},
     {filename: "ACCELEROMETER_PROJECT.html",        title: "USING THE ACCELEROMETER",       concept: false, uid: ""},
-    {filename: "TILT_METER.html",                   title: "TILT METER",                    concept: false, uid: ""},
-    {filename: "SECRET_KNOCK1.html",                title: "SECRET KNOCK",                  concept: false, uid: ""},
-    {filename: "SECRET_KNOCK2.html",                title: "SECRET KNOCK",                  concept: false, uid: ""},
-    {filename: "SECRET_KNOCK3.html",                title: "SECRET KNOCK",                  concept: false, uid: ""},
-    {filename: "SHAKE1.html",                       title: "BOOP IT 1",                     concept: false, uid: ""},
-    {filename: "SHAKE2.html",                       title: "BOOP IT 2",                     concept: false, uid: ""},
-    {filename: "SHAKE3.html",                       title: "BOOP IT 3",                     concept: false, uid: ""},
+    {filename: "BALANCING_DOT1.html",               title: "BALANCING DOT 1",               concept: false, uid: ""},
+    {filename: "BALANCING_DOT2.html",               title: "BALANCING DOT 2",               concept: false, uid: ""},
+    {filename: "SECRET_KNOCK1.html",                title: "SECRET KNOCK 1",                concept: false, uid: ""},
+    {filename: "SECRET_KNOCK2.html",                title: "SECRET KNOCK 2",                concept: false, uid: ""},
+    {filename: "SECRET_KNOCK3.html",                title: "SECRET KNOCK 3",                concept: false, uid: ""},
+    {filename: "SHAKE1.html",                       title: "SHAKE ME 1",                    concept: false, uid: ""},
+    {filename: "SHAKE2.html",                       title: "SHAKE ME 2",                    concept: false, uid: ""},
+    {filename: "SHAKE3.html",                       title: "SHAKE ME 3",                    concept: false, uid: ""},
 
     {filename: "SPACE_INVADERS_PSEUDO.html",        title: "SPACE INVADERS 0",              concept: true, uid: "", section: "SPACE INVADERS"},
     {filename: "SPACE_INVADERS_1.html",             title: "SPACE INVADERS 1",              concept: false, uid: ""},
@@ -132,6 +132,8 @@ pg_flows.Main = [
     {filename: "MORE_RESOURCES.html",               title: "MORE RESOURCES",                  concept: true, uid: ""},
     {filename: "HANDLING_ERRORS.html",              title: "HANDLING ERRORS",                 concept: true, uid: ""},
     {filename: "TROUBLESHOOTING.html",              title: "TROUBLESHOOTING",                 concept: true, uid: ""},
+    {filename: "STRING_THEORY.html",                title: "STRING THEORY",                   concept: true, uid: "strings"},
+    {filename: "CALCULATIONS.html",                 title: "CALCULATIONS",                    concept: true, uid: "calc"},
     {filename: "GLOSSARY.html",                     title: "GLOSSARY",                        concept: true, uid: ""},
     ];
 

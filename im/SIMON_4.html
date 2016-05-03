@@ -1,106 +1,97 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-  <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="default.css">
-  <link rel="stylesheet" type="text/css" href="project.css">
-  <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
-  <link type="text/css" id="theme" rel="stylesheet" href=
-  "/assets/themes/solarized-dark.css">
-  <script type="text/javascript" src="/assets/cmirror/codemirror.js">
-  </script>
-  <script type="text/javascript" src="/assets/cmirror/python.js">
-  </script>
-  <script type="text/javascript" src="onload.js">
-  </script>
-  <script type="text/javascript" src="flows.js">
-  </script>
-  <script type="text/javascript" src="flow_cookie.js">
-  </script>
-  <script type="text/javascript" src="project.js">
-  </script>
-  <script type="text/javascript" src="stickydiv.js">
-  </script>
-  <script type="text/javascript" src="codeblocks.js">
-  </script>
+ <meta name="generator" content=
+ "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
+ <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+ <title></title>
+ <link rel="stylesheet" type="text/css" href="default.css">
+ <link rel="stylesheet" type="text/css" href="project.css">
+ <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
+ <link type="text/css" id="theme" rel="stylesheet" href=
+ "/assets/themes/solarized-dark.css">
+ <script type="text/javascript" src="/assets/cmirror/codemirror.js">
+ </script>
+ <script type="text/javascript" src="/assets/cmirror/python.js">
+ </script>
+ <script type="text/javascript" src="onload.js">
+ </script>
+ <script type="text/javascript" src="flows.js">
+ </script>
+ <script type="text/javascript" src="flow_cookie.js">
+ </script>
+ <script type="text/javascript" src="project.js">
+ </script>
+ <script type="text/javascript" src="stickydiv.js">
+ </script>
+ <script type="text/javascript" src="codeblocks.js">
+ </script>
 </head>
 <body>
-  <div class="hw" data-count="4" data-name="resistor"></div>
-  <div class="hw" data-count="4" data-name="led"></div>
-  <div class="hw" data-count="4" data-name="button"></div>
+ <div class="hw" data-count="4" data-name="resistor"></div>
+ <div class="hw" data-count="4" data-name="led"></div>
+ <div class="hw" data-count="4" data-name="button"></div>
+ <div class="section" id="intro">
 
-  <div class="section" id="intro">
-      <p>
-      In this project, we continue the development of our Simon-like pattern
-      matching game by adding randomized LED blinking.
+  <p>In this project, we continue the development of our Simon-like pattern
+  matching game by adding randomized LED blinking.</p>
+ </div>
+ <div class="section" id="hw">
 
-</div>
-
-  <div class="section" id="hw">
-
-<p>The hardware setup for this project should be the same setup that was 
-completed for the <a data-uid="simon2"></a> project.  Here's a reminder:
-
-<img class="bb" src="img/simon-4but-4led_bb.jpg" alt="">
-</div>
-
-  <div class="section" id="sw">
+  <p>The hardware setup for this project should be the same setup that was
+  completed for the <a data-uid="simon2"></a> project. Here's a reminder:
+  <img class="bb" src="img/simon-4but-4led_bb.jpg" alt=""></p>
+ </div>
+ <div class="section" id="sw">
 
   <p>In our last project, we wrote some code to flash LEDs in a pre-planned
   sequence. While that's a good start, in our Simon-like game, we're going to
-  need to flash LEDs in a random sequence.  This will require us to make some 
-  modifications to the code from the last project, which will give us a random 
-  sequence of LED flashes. 
-  
-  <p>In the next project, we'll add in the buttons.</p>
+  need to flash LEDs in a random sequence. This will require us to make some
+  modifications to the code from the last project, which will give us a random
+  sequence of LED flashes.</p>
 
-<h3 class=step>Add Initialization Code</h3>
+  <p>In the next project, we'll add in the buttons.</p>
+  <h3 class="step">Add Initialization Code</h3>
 
   <p>Starting with the code we left off with in the previous project, the first
-  thing we'll need to do is import the function <code>randrange()</code> to 
+  thing we'll need to do is import the function <code>randrange()</code> to
   create our random generation of LED flashes:</p>
-
   <div class="code" data-firstline="0">
-    <textarea>
+   <textarea>
 from random import randrange
 </textarea>
   </div>
-
-<h3 class=step>Create a List for LED Flashes & Generate First LED</h3>
+  <h3 class="step">Create a List for LED Flashes &amp; Generate First LED</h3>
 
   <p>Next, instead of filling the list <code>play_order</code> with our
-  pre-defined sequence of LED flashes, we're going to create an empty list 
-  that we can fill with random sequence of flashes. 
-  
-  <p>To do that, we'll replace the list we created previously with a new (empty) 
-  list:</p>
+  pre-defined sequence of LED flashes, we're going to create an empty list that
+  we can fill with random sequence of flashes.</p>
+
+  <p>To do that, we'll replace the list we created previously with a new
+  (empty) list:</p>
   <div class="code" data-firstline="0">
-    <textarea>
+   <textarea>
 play_order = []
 </textarea>
   </div>
 
-  <p>Finally, we'll have to create our random sequence of LEDs. Each round of the
-  game, we'll want to add one random LED to the end of the <code>play_order</code> 
-  list. The following line of code is a shorthand to append an item to a list 
-  (in this case, the item is a random number from 0 to 3):</p>
-
+  <p>Finally, we'll have to create our random sequence of LEDs. Each round of
+  the game, we'll want to add one random LED to the end of the
+  <code>play_order</code> list. The following line of code is a shorthand to
+  append an item to a list (in this case, the item is a random number from 0 to
+  3):</p>
   <div class="code" data-firstline="0">
-    <textarea>
+   <textarea>
 play_order += [randrange(4)]
 </textarea>
   </div>
-
-<h3 class=step>Play the List of LED Flashes</h3>
+  <h3 class="step">Play the List of LED Flashes</h3>
 
   <p>If we add this code to our previous code that includes the play sequence,
   we'll see that we're adding a single random LED flash to our sequence list
   and then flashing it:</p>
   <div class="code" data-firstline="0">
-    <textarea>
+   <textarea>
 # Initialize the LEDs and sequence list
 from rstem.gpio import Output
 import time
@@ -114,25 +105,24 @@ play_order += [randrange(4)]
 
 # Ensure all lights are off
 for light in lights: 
-        light.off()
+    light.off()
 
 # Play sequence
 for i in play_order:
-        lights[i].on()
-        time.sleep(0.4)
-        lights[i].off()
-        time.sleep(0.2)
+    lights[i].on()
+    time.sleep(0.4)
+    lights[i].off()
+    time.sleep(0.2)
 </textarea>
   </div>
-
-<h3 class=step>Use a Loop to Generate an LED Sequence</h3>
+  <h3 class="step">Use a Loop to Generate an LED Sequence</h3>
 
   <p>If we add a <code>while</code> loop, we can continue to generate a random
   LED and add it to the list each time through the loop. This will play the
   entire sequence of random LED flashes, add a new LED to the sequence, play
   the list again with the new LED added, and then repeat:</p>
   <div class="code" data-firstline="0">
-    <textarea>
+   <textarea>
 # Initialize the LEDs and sequence list
 from rstem.gpio import Output
 import time
@@ -143,22 +133,21 @@ play_order = []
 
 # Ensure all lights are off
 for light in lights: 
-        light.off()
+    light.off()
 
 while True:
-	  # Add another random LED to sequence
-	  play_order += [randrange(4)]
-	  
-	  # Play sequence
-	  for i in play_order:
-	  	  lights[i].on()
-		  time.sleep(0.4)
-		  lights[i].off()
-		  time.sleep(0.2)
+      # Add another random LED to sequence
+      play_order += [randrange(4)]
+      
+      # Play sequence
+      for i in play_order:
+          lights[i].on()
+          time.sleep(0.4)
+          lights[i].off()
+          time.sleep(0.2)
 </textarea>
   </div>
-
-<h3 class=step>Put It All Together</h3>
+  <h3 class="step">Put It All Together</h3>
 
   <p>Here is what the code for this project should look like at this point --
   when you run it, you will see a random LED flash, then that light will repeat
@@ -166,7 +155,7 @@ while True:
   a third added and so on (the sequence will continue until you stop the
   program):</p>
   <div class="code" data-firstline="1">
-    <textarea>
+   <textarea>
 # ##################################
 # Import Modules and Initialize Game
 # ##################################
@@ -215,8 +204,6 @@ while True:
 # Game Over -- Play error sequence
 </textarea>
   </div>
-</div>
-
-
+ </div>
 </body>
 </html>

@@ -1,37 +1,37 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-  <meta name="generator" content=
-  "HTML Tidy for HTML5 for Mac OS X version 4.9.26">
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="default.css">
-  <link rel="stylesheet" type="text/css" href="project.css">
-  <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
-  <link type="text/css" id="theme" rel="stylesheet" href=
-  "/assets/themes/solarized-dark.css">
-  <script type="text/javascript" src="/assets/cmirror/codemirror.js">
-  </script>
-  <script type="text/javascript" src="/assets/cmirror/python.js">
-  </script>
-  <script type="text/javascript" src="onload.js">
-  </script>
-  <script type="text/javascript" src="flows.js">
-  </script>
-  <script type="text/javascript" src="flow_cookie.js">
-  </script>
-  <script type="text/javascript" src="project.js">
-  </script>
-  <script type="text/javascript" src="stickydiv.js">
-  </script>
-  <script type="text/javascript" src="codeblocks.js">
-  </script>
+ <meta name="generator" content=
+ "HTML Tidy for HTML5 for Mac OS X version 5.1.25">
+ <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+ <title></title>
+ <link rel="stylesheet" type="text/css" href="default.css">
+ <link rel="stylesheet" type="text/css" href="project.css">
+ <link type="text/css" rel="stylesheet" href="/assets/cmirror/codemirror.css">
+ <link type="text/css" id="theme" rel="stylesheet" href=
+ "/assets/themes/solarized-dark.css">
+ <script type="text/javascript" src="/assets/cmirror/codemirror.js">
+ </script>
+ <script type="text/javascript" src="/assets/cmirror/python.js">
+ </script>
+ <script type="text/javascript" src="onload.js">
+ </script>
+ <script type="text/javascript" src="flows.js">
+ </script>
+ <script type="text/javascript" src="flow_cookie.js">
+ </script>
+ <script type="text/javascript" src="project.js">
+ </script>
+ <script type="text/javascript" src="stickydiv.js">
+ </script>
+ <script type="text/javascript" src="codeblocks.js">
+ </script>
 </head>
 <body>
-  <div class="section" id="intro">
-      <p>
-      In this project, we continue the development of our Space Invaders game
-      by adding in the aliens.
+ <div class="section" id="intro">
+
+  <p>In this project, we continue the development of our Space Invaders game by
+  adding in the aliens.</p>
 
   <p>In this project, we're going to add our aliens into the code.</p>
 
@@ -45,7 +45,7 @@
   same row). We'll start the aliens at the top of the display (the height of
   the display minus 1):</p>
   <div class="code" data-firstline="1">
-    <textarea>
+   <textarea>
 alien_columns = [0, 1, 2, 3]
 alien_row = fb.height - 1
 </textarea>
@@ -54,10 +54,10 @@ alien_row = fb.height - 1
   <p>Next, we need to add code to draw the aliens each time through the
   loop:</p>
   <div class="code" data-firstline="1">
-    <textarea>
+   <textarea>
 # Draw aliens   
 for column in alien_columns: 
-        fb.point(column, alien_row)
+    fb.point(column, alien_row)
 </textarea>
   </div>
 
@@ -65,7 +65,7 @@ for column in alien_columns:
 
   <p>Here is the full project at this point:</p>
   <div class="code" data-firstline="1">
-    <textarea>
+   <textarea>
 # ###############################################################
 #
 # SPACE INVADERS GAME
@@ -99,45 +99,42 @@ alien_row = fb.height - 1
 # Initialize missiles
 
 while True:
-        # ########################################
-        # Get inputs
-        # ########################################
-        x_force, y_force, z_force = accel.forces()
+    # ########################################
+    # Get inputs
+    # ########################################
+    x_force, y_force, z_force = accel.forces()
 
-        # ########################################
-        # Change the World
-        # ########################################
+    # ########################################
+    # Change the World
+    # ########################################
 
-        # Move spaceship
-        if x_force &gt; TILT_FORCE:
-                spaceship_position -= SPACESHIP_STEP
-        elif x_force &lt; -TILT_FORCE:
-                spaceship_position += SPACESHIP_STEP
-        spaceship_position = max(0, min(fb.width - 1, spaceship_position))
+    # Move spaceship
+    if x_force &gt; TILT_FORCE:
+        spaceship_position -= SPACESHIP_STEP
+    elif x_force &lt; -TILT_FORCE:
+        spaceship_position += SPACESHIP_STEP
+    spaceship_position = max(0, min(fb.width - 1, spaceship_position))
 
-        # ########################################
-        # Show world
-        # ########################################
+    # ########################################
+    # Show world
+    # ########################################
 
-        fb.erase()
+    fb.erase()
 
-        # Draw spaceship
-        fb.point(round(spaceship_position), 0)
+    # Draw spaceship
+    fb.point(round(spaceship_position), 0)
 
-        # Draw aliens
-        for column in alien_columns:
-                fb.point(column, alien_row)
+    # Draw aliens
+    for column in alien_columns:
+        fb.point(column, alien_row)
 
-        # Show FrameBuffer on LED Matrix
-        fb.show()
-        time.sleep(0.001)
+    # Show FrameBuffer on LED Matrix
+    fb.show()
+    time.sleep(0.001)
 </textarea>
   </div>
-
-  </div>
-  <div class="section" id="hw">
-  </div>
-  <div class="section" id="sw">
-  </div>
+ </div>
+ <div class="section" id="hw"></div>
+ <div class="section" id="sw"></div>
 </body>
 </html>

@@ -42,6 +42,12 @@ div.autotoc table#index_table > tbody:nth-child(odd) {
 div.autotoc table#index_table > tbody:nth-child(even) {
     background: hsl(26, 87%, 51%); /* Header orange */
 }
+div.autotoc table#index_table > tbody:nth-child(odd) td:last-child {
+    background: hsl(26, 87%, 91%); /* Header extra extra light orange */
+}
+div.autotoc table#index_table > tbody:nth-child(even) td:last-child {
+    background: hsl(26, 87%, 81%); /* Header extra light orange */
+}
 tr.content_row p {
     margin-top: 0.0in;
     margin-bottom: 0.0in;
@@ -50,7 +56,6 @@ tr.content_row p {
 }
 .section {
     position: relative;
-    display: inline-block;
     padding-left: 100px;
     overflow: hidden;
 }
@@ -71,15 +76,7 @@ td.concept, td.project {
     border-radius: 12px;
     padding: 2px 15px 2px 15px;
     width: 100%;
-    position: relative; /* Required to make cotainer clickable.  See below. */
-}
-td.concept {
-    background: -webkit-linear-gradient(left, lightgray, white);
-    background: linear-gradient(to left, lightgray, white);
-}
-td.project {
-    background: -webkit-linear-gradient(right, lightgray, white);
-    background: linear-gradient(to right, lightgray, white);
+    position: relative; /* Required to make container clickable.  See below. */
 }
 td.project p {
     text-align: right;
@@ -88,7 +85,7 @@ td.concept p {
     text-align: left;
 }
 td.concept:hover, td.project:hover {
-    background: gray;
+    background: gray !important;
 }
 td.concept a span, td.project a span {
     /*
@@ -118,6 +115,9 @@ table#index_header td.spacer {
 table#index_header {
     font-size: 36px;
     font-weight: bold;
+    border-collapse: separate;
+    border-spacing: 0px;
+    padding: 8px;
 }
 table#index_header td div { /* tootip question mark <div> */
     background: hsl(210, 64%, 45%); /* Header blue */
@@ -125,8 +125,12 @@ table#index_header td div { /* tootip question mark <div> */
     width: 25px;
     border-radius: 50%;
     text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
+}
+table#index_header td:nth-child(2) div {
+    margin-left: 20px;
+}
+table#index_header td:nth-last-child(2) div {
+    margin-right: 20px;
 }
 table#index_header td div p { /* tootip question mark <p> */
     position: relative;
