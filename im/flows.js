@@ -130,7 +130,7 @@ pg_flows.Main = [
 
     {filename: "CONGRATS.html",                     title: "CONGRATULATIONS!",                concept: true, uid: "", section: "APPENDIX"},
     {filename: "MORE_RESOURCES.html",               title: "MORE RESOURCES",                  concept: true, uid: ""},
-    {filename: "HANDLING_ERRORS.html",              title: "HANDLING ERRORS",                 concept: true, uid: ""},
+    {filename: "HANDLING_ERRORS.html",              title: "HANDLING ERRORS",                 concept: true, uid: "errors"},
     {filename: "TROUBLESHOOTING.html",              title: "TROUBLESHOOTING",                 concept: true, uid: ""},
     {filename: "STRING_THEORY.html",                title: "STRING THEORY",                   concept: true, uid: "strings"},
     {filename: "CALCULATIONS.html",                 title: "CALCULATIONS",                    concept: true, uid: "calc"},

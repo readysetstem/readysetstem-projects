@@ -353,6 +353,7 @@ table.basic {
     border: 3px solid black;
     border-spacing: 0;
     border-radius: 20px;
+    overflow: hidden;
 }
 table.basic th {
     background: hsl(0, 0%, 60%);
