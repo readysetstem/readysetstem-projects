@@ -1,4 +1,4 @@
 readysetstem-projects
 ======================
 
-RaspberrySTEM(TM) Project Guides
+Ready Set STEM(TM) Project Guides
