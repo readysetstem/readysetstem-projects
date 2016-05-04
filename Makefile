@@ -85,6 +85,19 @@ $(TIDY_TARGETS):
 	python3 -m py_compile .compile.py || (echo; echo $@; nl -ba .compile.py; exit 1)
 	rm .compile.py
 
+SPELL_TARGETS=$(addsuffix .spell,$(basename $(wildcard im/*.html)))
+.PHONY: $(SPELL_TARGETS)
+spell: $(SPELL_TARGETS)
+$(SPELL_TARGETS):
+	@$(eval TARGET=$(addsuffix .html,$(basename $@)))
+	@ln -sf $(CURDIR)/dict.pws  ~/.aspell.en.pws
+	@echo $(TARGET)
+	@gawk '/<textarea>/,/<\/textarea>/{next}1' $(TARGET) | \
+		gawk 'BEGIN{RS="<code>"}{sub(".*</code>","")}1' | \
+		aspell list --mode html | \
+		sort --ignore-case | uniq -i | \
+		gsed 's/^/\t/'
+
 upload:
 	$(SETUP) sdist upload
 
