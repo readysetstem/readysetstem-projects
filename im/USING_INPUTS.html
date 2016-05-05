@@ -71,16 +71,16 @@
   </table>
   <h4>Step #2: Wire one side of the button to a GPIO.</h4>
 
-  <p>Next, we connect one side of the button (it doesn’t matter which one, as
+  <p>Next, we connect one side of the button (it doesn't matter which one, as
   the internal components of the button are symmetrical) to a GPIO. In this
-  example, we’ll connect the button to GPIO14.</p><img class="bb" src=
+  example, we'll connect the button to GPIO14.</p><img class="bb" src=
   "img/Buttons_with_GPIO_1_bb.jpg" alt="">
   <h4>Step #3: Wire the other side of the button to ground.</h4>
 
   <p>Finally, we connect the other side of the button to ground.</p><img class=
   "bb" src="img/Buttons_with_GPIO_2_bb.jpg" alt="">
 
-  <p>That’s it for the wiring – pretty simple, right?</p>
+  <p>That's it for the wiring – pretty simple, right?</p>
   <h4>Step #4: Write the code.</h4>
 
   <p>Now that the circuit is wired, we can write the code to get the GPIO state
@@ -120,7 +120,7 @@ print(my_button.is_pressed())
   time, we can continually read and print the state of the GPIO for as long as
   the program is running.</p>
 
-  <p>Here’s what that code would look like:</p>
+  <p>Here's what that code would look like:</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.button import Button

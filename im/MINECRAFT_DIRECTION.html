@@ -34,16 +34,16 @@
 
   <p>None required.</p>
   <h2>The Software</h2>The Minecraft Pi does not have any direct way to
-  determine which direction Steve is facing. That’s a bummer, because if you
+  determine which direction Steve is facing. That's a bummer, because if you
   did know which way you were facing, you could change the world directly in
   front of you. However, the Ready Set STEM adds a couple new APIs to get the
   direction. They use some tricks to determine your direction. Because they use
-  tricks, they have do briefly blank the screen &mdash; you’ll see the world turn
+  tricks, they have do briefly blank the screen &mdash; you'll see the world turn
   black for about a half second when you call these functions. The first
   function is called get_heading(). It returns the angle you are pointing
   relative to the Z axis. import control.show() mc =
   minecraft.Minecraft.create() white True: print(control.get_heading(mc))
-  time.sleep(1) When run, you’ll see the screen go black briefly, once a
+  time.sleep(1) When run, you'll see the screen go black briefly, once a
   second. In the Program Output window, you see the angle printed. Try turning
   Steve around to watch the angle change. INFO Box: How get_heading works The
   second function, get_direction(), provides two angles &mdash; the first angle is
