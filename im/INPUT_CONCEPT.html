@@ -30,13 +30,13 @@
 
   <p>In our previous GPIO concept, we focused on how we could control our
   circuit from our code (GPIO as Outputs). This concept will focus on the other
-  aspect of how GPIOs are used -- to allow the outside world (our circuits) to
+  aspect of how GPIOs are used &mdash; to allow the outside world (our circuits) to
   communicate with our code. This is important because we often want to trigger
   our code to do certain things or take certain actions based on input or
   changes coming from our circuit.</p>
 
   <p>For example, our code might count the number of times a button is pressed
-  in a short a period of time -- if the button is pressed once, have our code
+  in a short a period of time &mdash; if the button is pressed once, have our code
   do one thing and if the button is pressed twice, have our code do something
   else. In this way, we've added "intelligence" to our button presses. When our
   hardware can communicate directly with our code, we open a world of
@@ -47,7 +47,7 @@
 
   <p>Much like GPIO outputs work by simply setting a voltage on the GPIO pin to
   either low (0V) or high (3.3V), GPIO inputs work by reading the voltage --
-  either 0V or 3.3V -- being sent to the GPIO pin by the attached
+  either 0V or 3.3V &mdash; being sent to the GPIO pin by the attached
   component:</p><img style="width: 450px;" alt="" src="img/gpio_input.jpg">
 
   <p>For example, a GPIO can be used to get the current state of a button or
@@ -71,7 +71,7 @@
   component directly into the rest of the circuit, we instead wire the
   component directly to a GPIO. Typically, a component wired to a GPIO input
   would either generate 0V or 3.3V and the GPIO input would read that voltage
-  and communicate it to our code -- hence the code knows about the "state" of
+  and communicate it to our code &mdash; hence the code knows about the "state" of
   the component.</p>
 
   <p>Buttons are a little bit different, as they don't generate a voltage. But,

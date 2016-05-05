@@ -35,11 +35,11 @@
 
   <p>Now that we have the framebuffer initialized and have verified that the
   LED Matrix is working, let's put our spaceship where it's supposed to be
-  located -- in the middle of the LED Matrix horizontally (along the x-axis)
+  located &mdash; in the middle of the LED Matrix horizontally (along the x-axis)
   and at the bottom of the LED Matrix vertically (y=0).</p>
 
   <p>To determine the middle of the LED Matrix, we could take the known width
-  (8 dots) and divide that by two -- that would give us our middle dot (x=4).
+  (8 dots) and divide that by two &mdash; that would give us our middle dot (x=4).
   But, what if you later want to use this code on a smaller or larger LED
   Matrix display? For example, let's say you put four LED Matrices together to
   build a 16x16 display. If you put x=4 right into your code, when you run the
@@ -66,7 +66,7 @@ spaceship_position = fb.width / 2
   have the actual x-coordinate from our calculation above, so we can draw the
   ship at its actual starting position.</p>
 
-  <p>But, there's one thing we need to keep in mind -- now that we're using a
+  <p>But, there's one thing we need to keep in mind &mdash; now that we're using a
   calculation to determine the position of the ship, it's possible that the
   result of our calculation won't be a whole number (for example, if we were
   using an LED Matrix that was 7 dots wide, our initial position would be
