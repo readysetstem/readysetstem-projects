@@ -48,51 +48,51 @@
   <p><mark>More info</mark></p>
  </div>
  <div class="section">
-  <h1><mark>Using TTS</mark></h1>
+  <h1>Using TTS</h1>
 
-  <p><mark>The Ready Set STEM API provides some simple functions to play
+  <p>The Ready Set STEM API provides some simple functions to play
   recorded sounds that are on the SD card. The main function you'll used to
-  play sounds is:</mark></p>
-  <pre><mark>
+  play sounds is:</p>
+  <pre>
 Sound(<i>text_to_speak</i>)
-</mark></pre>
+</pre>
 
-  <p><mark>where <code><i>text_to_speak</i></code> is a string of text that you
-  want to speak.</mark></p>
+  <p>where <code><i>text_to_speak</i></code> is a string of text that you
+  want to speak.</p>
 
-  <p><mark>For example, to hear a cat meow, try this:</mark></p>
+  <p>For example, to hear a cat meow, try this:</p>
   <div class="code" data-firstline="0">
-   <mark>
+   
    <textarea>
 from rstem.sound import Speech
 madbro = Speech('Y U MAD BRO?')
 madbro.play()
 madbro.wait()
-</textarea></mark>
+</textarea>
   </div>
  </div>
  <div class="section">
-  <h1><mark>Sound chains</mark></h1>
+  <h1>Sound chains</h1>
 
-  <p><mark>Often in programming languages, you may want to perform a sequence
+  <p>Often in programming languages, you may want to perform a sequence
   of operations in a row. We've been doing this with sounds, where we first
   create the sound (or note or speech), then we play it, then we wait for it to
-  finish.</mark></p>
+  finish.</p>
 
-  <p><mark>Because this is so common, many times APIs will provide a simpler
+  <p>Because this is so common, many times APIs will provide a simpler
   way to do this, called chaining. The Ready Set STEM API supports this for
   sounds, and it makes playing a sound or speech very concise. The code above
-  as a simplified call chain would look like:</mark></p>
+  as a simplified call chain would look like:</p>
   <div class="code" data-firstline="0">
-   <mark>
+   
    <textarea>
 from rstem.sound import Speech
 Speech('Y U MAD BRO?').play().wait()
-</textarea></mark>
+</textarea>
   </div>
 
-  <p><mark>The above creates some speech, plays it, and waits for it exactly as
-  before.</mark></p>
+  <p>The above creates some speech, plays it, and waits for it exactly as
+  before.</p>
  </div>
 </body>
 </html>
