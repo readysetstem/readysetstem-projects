@@ -55,7 +55,7 @@ alien_speed = 1
   <p>And here is the new code that will replace the existing code in our game
   loop:</p>
   <div class="code" data-firstline="1">
-   <textarea class="do_no_compile"># Move aliens
+   <textarea class="do_not_compile"># Move aliens
 if now - alien_start_time &gt; ALIENS_STEP_TIME / alien_speed:
     alien_at_right_side = alien_direction &gt; 0 and max(alien_columns) == fb.width - 1
     alien_at_left_side = alien_direction &lt; 0 and min(alien_columns) == 0
