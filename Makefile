@@ -92,9 +92,9 @@ $(SPELL_TARGETS):
 	@$(eval TARGET=$(addsuffix .html,$(basename $@)))
 	@ln -sf $(CURDIR)/dict.pws  ~/.aspell.en.pws
 	@echo $(TARGET)
-	@gawk '/<textarea>/,/<\/textarea>/{next}1' $(TARGET) | \
-		gawk 'BEGIN{RS="<span.*class=[^>]*nospell[^>]*>"}{sub(".*</span>","")}1' | \
-		gawk 'BEGIN{RS="<span.*class=.*nospell.*>"}{sub(".*</span>","")}1' | \
+	@gawk '/<textarea[ >]/,/<\/textarea>/{next}1' $(TARGET) | \
+		gawk 'BEGIN{RS="<span[^>]*class=[^>]*nospell[^>]*>"}{sub(".*</span>","")}1' | \
+		gawk 'BEGIN{RS="<pre[ >]"}{sub(".*</pre>","")}1' | \
 		gawk 'BEGIN{RS="<code>"}{sub(".*</code>","")}1' | \
 		aspell list --mode html | \
 		sort --ignore-case | uniq -i | \
