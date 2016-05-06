@@ -93,6 +93,8 @@ $(SPELL_TARGETS):
 	@ln -sf $(CURDIR)/dict.pws  ~/.aspell.en.pws
 	@echo $(TARGET)
 	@gawk '/<textarea>/,/<\/textarea>/{next}1' $(TARGET) | \
+		gawk 'BEGIN{RS="<span.*class=[^>]*nospell[^>]*>"}{sub(".*</span>","")}1' | \
+		gawk 'BEGIN{RS="<span.*class=.*nospell.*>"}{sub(".*</span>","")}1' | \
 		gawk 'BEGIN{RS="<code>"}{sub(".*</code>","")}1' | \
 		aspell list --mode html | \
 		sort --ignore-case | uniq -i | \
