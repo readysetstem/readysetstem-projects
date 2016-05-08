@@ -372,6 +372,21 @@ div.info div:last-child {
 }
 
 /*
+ * side-by-side image tables
+ */
+table.images {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.2in;
+    margin-bottom: 0.2in;
+    border: 0;
+}
+table.images td {
+    border: 0;
+}
+
+/*
  * basic tables
  */
 table.basic {
