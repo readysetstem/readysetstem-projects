@@ -14,6 +14,7 @@
  *                  <tr><td colspan="3">Item Name
  *                  <tr><td colspan="3">(Cell Name)
  */
+@import "fonts.css";
 
 /*
  * overall header
@@ -471,6 +472,8 @@ div.image_text p {
     position: absolute;
     color: black;
     font-weight: bold;
+    font-family: 'Indie Flower';
+    line-height: 0;
 }
 
 /*
