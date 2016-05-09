@@ -15,7 +15,7 @@
  *                  <tr><td colspan="3">(Cell Name)
  */
 
-/* 
+/*
  * overall header
  */
 body {
@@ -200,7 +200,7 @@ div.outer#troubleshooting p {
     position: relative;
     z-index: 1;
     -webkit-border-radius: 10px;
-    border-radius: 10px;  
+    border-radius: 10px;
 }
 
 .section_heading div::after{
@@ -212,8 +212,8 @@ div.outer#troubleshooting p {
     position: absolute;
     right: -1em;
     top: 50%;
-    z-index: -1;  
-    -webkit-transform: rotate(45deg); 
+    z-index: -1;
+    -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     -webkit-border-radius: 10px;
     border-radius: 10px;
@@ -259,7 +259,7 @@ h1 {
     font-size: 20pt;
     padding: 0.4em;
     background: hsl(26, 87%, 46%); /* Header orange */
-    border-radius: 10px;  
+    border-radius: 10px;
 }
 h2 {
     font-size: 16pt;
@@ -460,6 +460,18 @@ table p {
     margin-left: 5px;
 }
 
+/*
+ * Text overlay on images
+ */
+div.image_text {
+    position: relative;
+    margin: auto;
+}
+div.image_text p {
+    position: absolute;
+    color: black;
+    font-weight: bold;
+}
 
 /*
  * Images
