@@ -1,0 +1,24 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="128"
+     height="144">
+    <defs/>
+    <g transform=" scale(0.76) translate(-556,-980)">
+        <rect x="636" y="996" width="8" height="8" fill="#000000" stroke="none"
+              pointer-events="none"/>
+        <path d="M 596 1084 C 684.08 1084 684.08 1084 684.08 1084" fill="none"
+              stroke="#000000" stroke-width="8" stroke-linecap="round"
+              stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 612 1108 C 650.28 1108 668 1108 668 1108" fill="none"
+              stroke="#000000" stroke-width="8" stroke-linecap="round"
+              stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 628 1132 C 640.48 1132 652 1132 652 1132" fill="none"
+              stroke="#000000" stroke-width="8" stroke-linecap="round"
+              stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 640 1004 L 640 1076" fill="#000000" stroke="#000000"
+              stroke-width="8" stroke-linecap="square" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <rect x="624" y="984" width="32" height="32" fill="none" stroke="none"
+              pointer-events="none"/>
+    </g>
+</svg>

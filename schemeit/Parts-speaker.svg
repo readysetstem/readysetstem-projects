@@ -1,0 +1,30 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="184"
+     height="248">
+    <defs/>
+    <g transform=" scale(0.82) translate(-1420,-516)">
+        <rect x="1436" y="596" width="8" height="8" fill="#000000" stroke="none"
+              pointer-events="none"/>
+        <rect x="1436" y="676" width="8" height="8" fill="#000000" stroke="none"
+              pointer-events="none"/>
+        <path d="M 1444 600 L 1496 600" fill="#000000" stroke="#000000"
+              stroke-width="8" stroke-linecap="square" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <path d="M 1540 580 L 1500 580 L 1500 700 L 1540 700" fill="#ffffff"
+              stroke="#000000" stroke-width="8" stroke-linejoin="round"
+              stroke-linecap="square" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <path d="M 1620 520 L 1620 760 L 1540 700 L 1540 580 L 1620 520"
+              fill="#ffffff" stroke="#000000" stroke-width="8"
+              stroke-linejoin="round" stroke-linecap="square"
+              stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 1444 680 L 1496 680" fill="#000000" stroke="#000000"
+              stroke-width="8" stroke-linecap="square" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <rect x="1424" y="584" width="32" height="32" fill="none" stroke="none"
+              pointer-events="none"/>
+        <rect x="1424" y="664" width="32" height="32" fill="none" stroke="none"
+              pointer-events="none"/>
+    </g>
+</svg>

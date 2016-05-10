@@ -1,0 +1,42 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="76"
+     height="104">
+    <defs/>
+    <g transform=" scale(0.66) translate(-328,-688)">
+        <rect x="338" y="758" width="4" height="4" fill="#000000" stroke="none"
+              pointer-events="none"/>
+        <rect x="418" y="698" width="4" height="4" fill="#000000" stroke="none"
+              pointer-events="none"/>
+        <rect x="418" y="818" width="4" height="4" fill="#000000" stroke="none"
+              pointer-events="none"/>
+        <path d="M 342 760 L 388 760" fill="none" stroke="#000000"
+              stroke-width="4" stroke-linecap="square" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <path d="M 390 770 L 420 790" fill="none" stroke="#000000"
+              stroke-width="4" stroke-linejoin="round" stroke-linecap="round"
+              stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 390 750 L 420 730" fill="none" stroke="#000000"
+              stroke-width="4" stroke-linejoin="round" stroke-linecap="round"
+              stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 420 702 L 420 728" fill="none" stroke="#000000"
+              stroke-width="4" stroke-linecap="square" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <path d="M 420 792 L 420 818" fill="none" stroke="#000000"
+              stroke-width="4" stroke-linecap="square" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <path d="M 390 726 L 390 794" fill="none" stroke="#000000"
+              stroke-width="4" stroke-linejoin="round" stroke-linecap="round"
+              stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 404.32 787.12 L 419.4 789.22 L 410.51 776.85 Z"
+              fill="#000000" stroke="#000000" stroke-width="2"
+              stroke-linejoin="round" stroke-linecap="round"
+              stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="332" y="752" width="16" height="16" fill="none" stroke="none"
+              pointer-events="none"/>
+        <rect x="412" y="692" width="16" height="16" fill="none" stroke="none"
+              pointer-events="none"/>
+        <rect x="412" y="812" width="16" height="16" fill="none" stroke="none"
+              pointer-events="none"/>
+    </g>
+</svg>
