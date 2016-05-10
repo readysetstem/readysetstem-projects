@@ -183,6 +183,7 @@ div.outer#troubleshooting p {
     padding: 20px;
     margin-bottom: 30px;
     border-radius: 10px;
+    overflow: hidden;
 }
 .section > *:first-child {
     margin-top: 0;
