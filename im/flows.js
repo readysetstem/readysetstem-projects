@@ -23,7 +23,7 @@ pg_flows.Main = [
     {filename: "GPIO_CONCEPT.html",                 title: "GPIO OUTPUTS",                  concept: true, uid: "gpioc", section: "INPUT/OUTPUT"},
     {filename: "GENERAL_PURPOSE_INPUT-OUTPUT.html", title: "OUTPUTS (LIGHTING LEDS)",       concept: false, uid: "gpoutp"},
     {filename: "INPUT_CONCEPT.html",                title: "GPIO INPUTS",                   concept: true, uid: ""},
-    {filename: "USING_INPUTS.html",                 title: "INPUT TO OUTPUT",               concept: false, uid: ""},
+    {filename: "USING_INPUTS.html",                 title: "USING INPUTS",                  concept: false, uid: ""},
     {filename: "VARIABLES_-_ASSIGNMENTS.html",      title: "VARIABLES",                     concept: true, uid: "vars"},
     {filename: "IF_-_ELSE_STATEMENTS.html",         title: "IF STATEMENTS",                 concept: true, uid: ""},
     {filename: "USING_BUTTONS_WITH_GPIO.html",      title: "INPUTS (READING BUTTONS)",      concept: false, uid: "button"},
@@ -43,11 +43,13 @@ pg_flows.Main = [
     {filename: "SOUNDS_FUNCTION.html",              title: "OTHER SOUNDS",                  concept: true, uid: ""},
     {filename: "BETTER_PIANO.html",                 title: "BUILD A BETTER PIANO",          concept: false, uid: "betterpiano"},
     {filename: "WALKABLE_PIANO.html",               title: "BUILD A WALKABLE PIANO",        concept: false, uid: ""},
+    {filename: "STRING_THEORY.html",                title: "STRING THEORY",                 concept: true, uid: "strings"},
     {filename: "TEXT_TO_SPEECH.html",               title: "TEXT TO SPEECH (TTS)",          concept: true, uid: "tts"},
     {filename: "TEXT_TO_SPEECH_PROJECT.html",       title: "TTS SOUND MACHINE",             concept: false, uid: ""},
 
     {filename: "SIMON_PSEUDO.html",                 title: "SIMON SAYS 0",                  concept: true, uid: "simon0", section: "SIMON SAYS"},
     {filename: "SIMON_1.html",                      title: "SIMON SAYS 1",                  concept: false, uid: "simon1"},
+    {filename: "CALCULATIONS.html",                 title: "CALCULATIONS",                  concept: true, uid: "calc"},
     {filename: "SIMON_2.html",                      title: "SIMON SAYS 2",                  concept: false, uid: "simon2"},
     {filename: "SIMON_3.html",                      title: "SIMON SAYS 3",                  concept: false, uid: "simon3"},
     {filename: "RANDOM.html",                       title: "RANDOM FUNCTIONS",              concept: true, uid: ""},
@@ -132,8 +134,6 @@ pg_flows.Main = [
     {filename: "MORE_RESOURCES.html",               title: "MORE RESOURCES",                  concept: true, uid: ""},
     {filename: "HANDLING_ERRORS.html",              title: "HANDLING ERRORS",                 concept: true, uid: "errors"},
     {filename: "TROUBLESHOOTING.html",              title: "TROUBLESHOOTING",                 concept: true, uid: ""},
-    {filename: "STRING_THEORY.html",                title: "STRING THEORY",                   concept: true, uid: "strings"},
-    {filename: "CALCULATIONS.html",                 title: "CALCULATIONS",                    concept: true, uid: "calc"},
     {filename: "GLOSSARY.html",                     title: "GLOSSARY",                        concept: true, uid: ""},
     ];
 

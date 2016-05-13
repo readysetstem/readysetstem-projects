@@ -30,6 +30,7 @@
 <body>
  <div class="section">
 
+  <h1>Introduction to GPIOs</h1>
   <p>In our earlier projects, we wrote some basic code to print text to our
   Program Output window and we built some simple circuits to light up an LED.
   While doing these types of projects is important to learn the basics of
@@ -40,9 +41,9 @@
   <p>We like to describe it as <i>using your code to bring your circuits to
   life!</i></p>
 
+  <h2>What are GPIOs?</h2>
   <p>One of the most common ways for code and circuits to work together is
   through General Purpose Inputs &amp; Outputs (GPIOs).</p>
-  <h2>Introduction to GPIOs</h2>
 
   <p>GPIOs are specific pins (little metal "legs" on the bottom or sides of a
   computer chip) that provide a way for the computer processor to communicate
@@ -85,7 +86,8 @@
   As in <i>Input</i>. The rest of this concept (and the following project) will
   focus on using GPIOs as Outputs; in our next concept, we'll discuss using
   GPIOs as Inputs.</p>
-  <h2>GPIOs As Outputs</h2>
+ </div><div class="section">
+  <h1>GPIOs As Outputs</h1>
 
   <p>As mentioned above, GPIOs are a great way for your computer code to
   control your circuits. The most common use for having your code control your
@@ -97,7 +99,7 @@
   "" src="img/gpio_output.jpg">
 
   <p>Your code uses GPIO Outputs to control circuits in very simple way &mdash; at
-  any given time your code tell a GPIO pin to set its voltage <i>low</i>
+  any given time your code tells a GPIO pin to set its voltage <i>low</i>
   (meaning to to 0V) or set its voltage <i>high</i> (meaning to 3.3V). By
   controlling whether a GPIO voltage is set low or high, your software can
   force your circuit to do something (or perhaps <i>not</i> do something, if
@@ -133,7 +135,7 @@
   <p>Now, imagine that we wire a circuit &mdash; similar to above &mdash; but where the
   bottom of the circuit has a switch. And, that switch can be toggled between
   connecting to power and connecting to ground:</p>
-  <table style="width: 100%;" border="0" cellpadding="2" cellspacing="2">
+  <table class=basic>
    <tbody>
     <tr>
      <td style="text-align: center;"><img style="width: 180px;" alt="" src=
@@ -158,6 +160,8 @@
   <p>This is conceptually how a GPIO works. Using software, we can set the GPIO
   to either power or ground.</p>
 
+<p>Note that there is no mechanical switch inside a GPIO &mdash; the above is
+just a <i>model</i> of how a GPIO works.
   <p>Here is a schematic representation of a GPIO within a
   circuit:</p><img style="width: 300px;" alt="" src=
   "img/Battery-LED-Circuit-to-GPIO.png">
@@ -183,6 +187,8 @@
     <p>This is why you'll sometimes hear engineers use the term "Active Low."
     It indicates that the GPIO needs to be set low (to ground) for the circuit
     to be active (turned on).</p>
+
+    <p>Finally, the opposite of "Active Low" is "Active High."
    </div>
   </div>
  </div>
