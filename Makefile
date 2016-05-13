@@ -41,11 +41,13 @@ all: $(TARGETS)
 #
 
 PG=projectsguide
+HOST=raspberrystem
+USER=jsteinhorn
 pushpg:
-	ssh readysetstem@readysetstem.com mkdir -p readysetstem.com/$(PG)
-	scp -r im/* swolski@readysetstem.com:readysetstem.com/$(PG)
+	ssh $(USER)@$(HOST).com mkdir -p $(HOST).com/$(PG)
+	scp -r im/* $(USER)@$(HOST).com:$(HOST).com/$(PG)
 	@echo "####################################################################"
-	@echo "### NOTE: you may want to also 'make pushpg' from readysetstem-ide"
+	@echo "### NOTE: you may want to also 'make pushpg' from $(HOST)-ide"
 	@echo "####################################################################"
 
 TIDY_TARGETS=$(wildcard im/*.html)
