@@ -33,7 +33,7 @@
 
   <p>Variables are one of the most important concepts in programming, and you
   will certainly be using them in every useful program you write. Variables are
-  like labels, or names, for the numbers, strings and other values in your
+  like labels, or names, for the numbers and values in your
   programs. Variables are used for keeping track of all the facts and figures
   you use throughout your code.</p>
 
@@ -41,6 +41,54 @@
   to that!) Choosing good variable names makes it easier to write your code, to
   change your code later and to help others understand your code.</p>
 
+  <div class="info">
+   <div>
+    Variable names
+   </div>
+   <div>
+
+    <p>Choosing good variable names can make a program easier to read an understand.  A variable
+    can generally be any name you want, as long as it contains only:
+    <ul><li><p>Uppercase (A through Z) or lowercase (a thorugh z) letters</p></li>
+    <li><p>Digits (0 through 9)</p></li>
+    <li><p>The underscore character ("_")</p></li>
+    </ul>
+    <p>And, it can't start with a digit, either.
+    <p>So, for example:
+    <table class="basic slim">
+     <tbody class="thistable">
+      <tr>
+       <th>
+
+        <p>Variable Name</p>
+       </th>
+       <th>
+
+        <p>Allowed?</p>
+       </th>
+      </tr>
+      <tr> <td> <p>fred</td> <td> <p>YES</p> </td> </tr>
+      <tr> <td> <p>Fred</td> <td> <p>YES</p> </td> </tr>
+      <tr> <td> <p>FRED</td> <td> <p>YES</p> </td> </tr>
+      <tr> <td> <p>Fred.Schmed</td> <td> <p>NO &mdash; Can't use periods</p> </td> </tr>
+      <tr> <td> <p>this_is_a_really_long_variable_name</td> <td> <p>YES</p> </td> </tr>
+      <tr> <td> <p>thisisareallylongvariablenametoo</td> <td> <p>YES &mdash; but it sure is hard
+      to read</p> </td> </tr>
+      <tr> <td> <p>Fred's_house</td> <td> <p>NO &mdash; Can't use apostophe</p> </td> </tr>
+      <tr> <td> <p>Freds house</td> <td> <p>NO &mdash; Can't use spaces</p> </td> </tr>
+      <tr> <td> <p>Freds_house</td> <td> <p>YES</p> </td> </tr>
+      <tr> <td> <p>Fred123</td> <td> <p>YES</p> </td> </tr>
+      <tr> <td> <p>123Fred</td> <td> <p>NO &mdash; Can't start with a digit</p> </td> </tr>
+      <tr> <td> <p>You Don't Say?</td> <td> <p>NO &mdash; Can't use apostophe or question mark</p> </td> </tr>
+      <tr> <td> <p>#firstworldproblems</td> <td> <p>NO &mdash; Can't use hash</p> </td> </tr>
+     </tbody>
+    </table>
+    <p>Even though you can name variables any way you want, it's common to
+    write variable names that are longer than one word by separating the words
+    with underscores.  And, that's the way we'll generally do it throughout this guide.
+   </div>
+  </div>
+  <h2>Assigning Values to Variables</h2>
   <p>The definition of "variable" is something that can vary (change), and
   that's what program variables do throughout a program. To assign a variable a
   value, you use the equals sign in what is called an assignment statement,
@@ -61,22 +109,16 @@ my_variable = 7
 
   <p>A variable can be any type of value, including a number, a phrase, the
   results of a calculation, or a list.</p>
-  <h2>Variables Can Be Numbers</h2>
+  <h2>Variables Can Be Assigned Numbers</h2>
 
   <p>As an example, we'll calculate the number of seconds in a day. To do do
-  this, we'll start by creating a variable called "sec_in_minute" that will be
+  this, we'll start by creating a variable called <code>sec_in_minute</code> that will be
   the number of seconds in a minute (which is 60):</p>
   <div class="code" data-firstline="0">
    <textarea>
 sec_in_minute = 60
 </textarea>
   </div>
-
-  <p><strong>Note:</strong> When naming variables, you can use any combination
-  of uppercase letters, lowercase letters, numbers and underscore characters
-  (_). The only rule is that the variable name must start with a letter. It's
-  good practice to use variable names that make your code easier to understand
-  and read.</p>
 
   <p>Now, let's create two more variables:</p>
   <div class="code" data-firstline="0">
@@ -106,7 +148,7 @@ print(sec_in_minute * min_in_hour * hour_in_day)
 
   <p>Remember we said above that variables can be almost any type of data –
   that includes data from other variables. We can take our program one step
-  further by creating a variable called sec_in_day and using it to be our
+  further by creating a variable called <code>sec_in_day</code> and using it to be our
   calculation for the number of seconds in a day:</p>
   <div class="code" data-firstline="0">
    <textarea>
@@ -115,7 +157,7 @@ sec_in_day = sec_in_minute * min_in_hour * hour_in_day
   </div>
 
   <p>Now, if you want to output the number of seconds in a day, you can simply
-  print the number being held by the sec_in_day variable:</p>
+  print the number being held by the <code>sec_in_day</code> variable:</p>
   <div class="code" data-firstline="0">
    <textarea>
 print(sec_in_day)
@@ -128,10 +170,11 @@ print(sec_in_day)
 86400
 </pre>
   </div>
-  <h2>Variables Can Be Strings</h2>
+  <h2>Variables Can Be Assigned Strings</h2>
 
-  <p>Variables can also be strings. For example, we could have a variable that
-  holds one of the output message we're using above:</p>
+  <p>Variables can also be "strings".   In programming, strings are just
+  sequences of characters &mdash; generally normal text.  For example, we could
+  have a variable that holds one of the output message we're using above:</p>
   <div class="code" data-firstline="0">
    <textarea>
 message = "Number of seconds in a day: "
@@ -156,6 +199,30 @@ Number of seconds in a day: 86400
 
   <p>Note that because message is now a variable, we don't put quotation marks
   around it.</p>
+  <div class="info">
+   <div>
+    Other Types
+   </div>
+   <div>
+
+    <p><mark>Must discuss and review</mark></p>
+    <p>In this section, we discussed two types of values: numbers and strings.  But there are
+    other types as well:
+    <ul>
+    <li><p>Lists &mdash; Lists are ordered sequences of other values.  We'll discuss them more in
+  <a data-uid="lists"></a>.  </p></li>
+    <li><p>Booleans - Booleans are a funny name for the values <code>True</code> and
+    <code>False</code>.  We'll discuss them more in
+  <a data-uid="if"></a>.  </p></li>
+    <li><p>None &mdash; <code>None</code> is a special value which strangely indicates that there
+    is no value at all.  </p></li>
+    </ul>
+    <p>Those are the most common types of values, and they cover the ones you'll see in this
+    guide.  But there are more, and there are even types you can define yourself.  In
+    Python, as in some other programming languages, all values are called objects, and there
+    different types of objects.
+   </div>
+  </div>
  </div>
 </body>
 </html>

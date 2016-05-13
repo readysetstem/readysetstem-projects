@@ -29,7 +29,7 @@
 </head>
 <body>
  <div class="section">
-  <h1>IF/ELSE STATEMENTS</h1>
+  <h1>IF Statements</h1>
 
   <p>Much of our lives are spent asking questions in order to figure out what
   we should be saying or doing at any given time. For example, we may ask our
@@ -42,7 +42,7 @@
   the park," you probably won't be eating popcorn in a dark theater that
   day.</p>
 
-  <p>Programming is very similar – we often ask a lot of questions in our
+  <p>Programming is very similar &mdash; we often ask a lot of questions in our
   software to determine what to do next. For example, when you push a button on
   your television remote control, it sends a signal to your TV telling the TV
   to change the station or adjust the volume. But, what you probably don't
@@ -57,7 +57,7 @@
 
   <p>The most basic way for software to ask and respond to a question is by
   using what is known as an <code>if</code> statement. An <code>if</code>
-  statement asks a True or False question, and based on the answer, takes
+  statement asks a <code>True</code> or <code>False</code> question, and based on the answer, takes
   appropriate action.</p>
 
   <p>Let's say we have a circuit that contains a thermometer and sends the
@@ -92,10 +92,10 @@ if temperature &gt; 90:
   <p>If you run the program, you'll see that the computer prints, "Wow, it's
   hot out there!" in your output window. In this case, the computer evaluated
   the statement (<code>temperature &gt; 90</code>), determined that the
-  statement was True (the temperature is 95, which is over 90) and then took
-  the specified action based on the fact that the statement was True.</p>
+  statement was <code>True</code> (the temperature is 95, which is over 90) and then took
+  the specified action based on the fact that the statement was <code>True</code>.</p>
 
-  <p>What if the statement were False? For example, like this:</p>
+  <p>What if the statement were <code>False</code>? For example, like this:</p>
   <div class="code" data-firstline="1">
    <textarea>
 temperature = 95
@@ -107,8 +107,8 @@ if temperature &lt; 90:
 
   <p>In this case, the temperature is still defined as 95 degrees, but this
   time, we're asking if the temperature is LESS THAN 90. The answer to that
-  question is obviously False (the temperature is not less than 90). And
-  because the statement is False, the action following the <code>if</code>
+  question is obviously <code>False</code> (the temperature is not less than 90). And
+  because the statement is <code>False</code>, the action following the <code>if</code>
   statement is not executed, and nothing is printed to the screen.</p>
 
   <p>We typically call the evaluation a "conditional statement" and we
@@ -209,24 +209,27 @@ my_age = 43
 
   <p>Now for our examples:</p>
   <p style="margin-left: 0.5in;"><code>my_dogs_age == 4</code> would evaluate
-  as True</p>
+  as <code>True</code></p>
   <p style="margin-left: 0.5in;"><code>my_age != 43</code> would evaluate as
-  False</p>
+  <code>False</code></p>
   <p style="margin-left: 0.5in;"><code>my_age &gt; my_dogs_age</code> would
-  evaluate as True</p>
+  evaluate as <code>True</code></p>
   <p style="margin-left: 0.5in;"><code>my_age &lt; my_dogs_age</code> would
-  evaluate as False</p>
+  evaluate as <code>False</code></p>
   <p style="margin-left: 0.5in;"><code>my_dogs_age &gt;= 4</code> would
-  evaluate as True</p>
+  evaluate as <code>True</code></p>
   <p style="margin-left: 0.5in;"><code>my_age &lt;= 35</code> would evaluate as
-  False</p>
+  <code>False</code></p>
 
   <p><strong>Note:</strong> Keep in mind that = and == are very different in
   programming. The = sign tells the computer that we're assigning the value of
   one thing (whatever is on the right side of the = sign) to another thing (the
   variable on the left side of the = sign). But, the == asks the computer
-  whether two things are equal, and returns a True (if they are equal) or a
-  False (if they are not equal).</p>
+  whether two things are equal, and returns a <code>True</code> (if they are equal) or a
+  <code>False</code> (if they are not equal).</p>
+ </div>
+ <div class="section">
+  <h1>Complex Conditions</h1>
   <h2>Code Blocks</h2>
 
   <p>In all the examples so far in this chapter, our code blocks have consisted
@@ -299,8 +302,8 @@ if (temperature &gt; 80) and (temperature &lt; 90):
   </div>
 
   <p>The <code>and</code> keyword tells the computer that both statements must
-  be True in order for the entire compound conditional statement to be
-  True.</p>
+  be <code>True</code> in order for the entire compound conditional statement to be
+  <code>True</code>.</p>
 
   <p>What if we only cared about the situation where the temperature was less
   than 80 degrees or more than 90 degrees? We can create a compound conditional
@@ -313,17 +316,34 @@ if (temperature &lt; 80) or (temperature &gt; 90):
   </div>
 
   <p>In this case, the <code>or</code> keyword tells the computer that either
-  one or both of the statements must be True in order for the entire compound
-  conditional statement to be True.</p>
+  one or both of the statements must be <code>True</code> in order for the entire compound
+  conditional statement to be <code>True</code>.</p>
 
   <p>Any number or combination of <code>and</code> and <code>or</code> keywords
   can be used to combine conditional statements.</p>
+
+  <p>Finally, the <code>not</code> keyword works just like <i>not</i> in English &mdash; it tests
+  if the opposite of a condition is <code>True</code>.  For example, the following if statments
+      are written differently, but test the same exact thing:
+
+  <div class="code" data-firstline="0">
+   <textarea>
+if (temperature != 80):
+    print("It is not exactly 80 degrees.")
+if (not temperature == 80):
+    print("It is still not exactly 80 degrees.")
+</textarea>
+  </div>
+
+ </div>
+ <div class="section">
+  <h1>Adding ELSE</h1>
   <h2>IF/ELSE Statements</h2>
 
   <p>In our previous examples, we evaluated a conditional, and took action if
-  the result of the evaluation was True. But, in many cases, we also want to
-  take action when the result of the evaluation is False, in addition to when
-  it's True.</p>
+  the result of the evaluation was <code>True</code>. But, in many cases, we also want to
+  take action when the result of the evaluation is <code>False</code>, in addition to when
+  it's <code>True</code>.</p>
 
   <p>For example, perhaps we don't just want to let the user know if the
   temperature is over 90 degrees, but we also want to let the user know if the
@@ -338,14 +358,14 @@ else:
   </div>
 
   <p>We use the else: keyword to indicate what action should be taken if the
-  conditional statement evaluates to False. We are basically telling the
+  conditional statement evaluates to <code>False</code>. We are basically telling the
   computer:</p>
 
-  <p><i>If the conditional statement is True, do this. Otherwise
+  <p><i>If the conditional statement is true, do this. Otherwise
   (<code>else:</code>), do that.</i></p>
   <h2><span class="nospell">ELIF</span> Statements</h2>
 
-  <p>There are going to be some cases where, "If True, do this. If False, do
+  <p>There are going to be some cases where, "If true, do this. If false, do
   that," just isn't enough to provide the functionality you need.</p>
 
   <p>For example, perhaps we want to know more than whether the temperature is

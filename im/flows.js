@@ -25,7 +25,7 @@ pg_flows.Main = [
     {filename: "INPUT_CONCEPT.html",                title: "GPIO INPUTS",                   concept: true, uid: ""},
     {filename: "USING_INPUTS.html",                 title: "USING INPUTS",                  concept: false, uid: ""},
     {filename: "VARIABLES_-_ASSIGNMENTS.html",      title: "VARIABLES",                     concept: true, uid: "vars"},
-    {filename: "IF_-_ELSE_STATEMENTS.html",         title: "IF STATEMENTS",                 concept: true, uid: ""},
+    {filename: "IF_-_ELSE_STATEMENTS.html",         title: "IF STATEMENTS",                 concept: true, uid: "if"},
     {filename: "USING_BUTTONS_WITH_GPIO.html",      title: "INPUTS (READING BUTTONS)",      concept: false, uid: "button"},
     {filename: "BUILT-IN_FUNCTIONS.html",           title: "USING FUNCTIONS",               concept: true, uid: ""},
     {filename: "FLASHLIGHT.html",                   title: "BUILDING A FLASHLIGHT",         concept: false, uid: ""},
