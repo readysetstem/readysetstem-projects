@@ -1,5 +1,10 @@
+# double_fzz_to_jpg usage:
+#
+#	./double_fzz_to_jpg <fzz_file> <bottom_trim_amount> <left_trim_amount>
 .PHONY:
 all:
+	./double_fzz_to_jpg Just_Power.fzz								60	30
+	./double_fzz_to_jpg Inputs.fzz									60	30
 	./double_fzz_to_jpg Breadboard_short.fzz						40	30
 	./double_fzz_to_jpg Breadboard_short_red_rail.fzz				40	30
 	./double_fzz_to_jpg LED_Matrix_with_ce.fzz						40	30
@@ -11,7 +16,6 @@ all:
 	./double_fzz_to_jpg Introducing_Buttons_2.fzz					40	30
 	./double_fzz_to_jpg Introducing_Buttons_3.fzz					40	30
 	./double_fzz_to_jpg Introducing_Buttons_4.fzz					40	30
-	./double_fzz_to_jpg Just_Power.fzz								40	30
 	./double_fzz_to_jpg LED_Matrix_Accel_Buttons.fzz
 	./double_fzz_to_jpg LED_Matrix_Accel.fzz
 	./double_fzz_to_jpg LED_Matrix.fzz								40	30
