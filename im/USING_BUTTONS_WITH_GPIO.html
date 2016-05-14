@@ -67,7 +67,7 @@
   </table>
   <p>Also note, the button can be placed fully within a single row of connect
   strips (as shown above), or it can be placed across the notch in the
-  bradboard, as we'll do in the next step.  The choice only depends on where
+  breadboard, as we'll do in the next step.  The choice only depends on where
   you'd like to place the button.
   <h2 class=step>Wire one side of the button to a GPIO</h2>
 
@@ -163,11 +163,31 @@ while True:
   <ol>
    <li>
 
-    <p><mark>needed</mark>
+    <p>We placed  the button so that on the breadboard so that it sat across
+    the notch.  Try hooking it up within a single row of connect strips (as we
+    showed how to do in the orientation diagram above in Step #2).
    </li>
    <li>
 
-    <p>
+    <p>Try hooking up two buttons, and print when either one is pressed.
+   </li>
+   <li>
+
+    <p>With two buttons hooked up, print something only when BOTH of them
+    are pressed at the same time.
+   </li>
+   <li>
+
+    <p>We wrote a loop that prints every 0.1 seconds the state of the
+    button.  Can you print out "PRESS" only once each time the button is
+    pressed?  Hint: you'll probably want a variable that keeps track of the
+    state of the button &mdash; that way you can test if the button is
+    currently pressed, but wasn't pressed previously.
+   </li>
+   <li>
+
+    <p> Can you print out "PRESS" only once each time the button is pressed,
+    and "RELEASE" only once each time the button is released?
    </li>
   </ol>
  </div>
