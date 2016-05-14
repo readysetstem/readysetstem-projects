@@ -22,7 +22,7 @@ pg_flows.Main = [
 
     {filename: "GPIO_CONCEPT.html",                 title: "GPIO OUTPUTS",                  concept: true, uid: "gpioc", section: "INPUT/OUTPUT"},
     {filename: "GENERAL_PURPOSE_INPUT-OUTPUT.html", title: "OUTPUTS (LIGHTING LEDS)",       concept: false, uid: "gpoutp"},
-    {filename: "INPUT_CONCEPT.html",                title: "GPIO INPUTS",                   concept: true, uid: ""},
+    {filename: "INPUT_CONCEPT.html",                title: "GPIO INPUTS",                   concept: true, uid: "gpioi"},
     {filename: "USING_INPUTS.html",                 title: "USING INPUTS",                  concept: false, uid: ""},
     {filename: "VARIABLES_-_ASSIGNMENTS.html",      title: "VARIABLES",                     concept: true, uid: "vars"},
     {filename: "IF_-_ELSE_STATEMENTS.html",         title: "IF STATEMENTS",                 concept: true, uid: "if"},

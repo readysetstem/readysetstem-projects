@@ -33,33 +33,27 @@
   <p>In this project, we will use GPIOs to get input from a pushbutton into our
   software.</p>
 
-  <p>Before jumping into this project, we very strongly recommend that you read
-  <a data-uid="gpioc"></a>, as these concepts will be the basis for this
-  project and nearly all future Ready Set STEM projects.</p>
-
-  <p>In the previous project, we saw how GPIOs can be used as outputs to
-  control components attached to the Raspberry Pi (like our LED). GPIOs can
-  also be used as inputs to take information from external components; that
-  input can then be acted upon by the Raspberry Pi and appropriate actions can
-  be taken.</p>
-  <h2>Reading Buttons Using GPIOs</h2>
-
-  <p>In <a data-uid="gpioc"></a>, we introduced the idea of reading button
+  <p>In <a data-uid="gpioi"></a>, we introduced the idea of reading button
   state based on using GPIOs as inputs and then provided a schematic for the
   circuit we'd need to accomplish this. It turns out that implementing that
   circuit on our breadboard is easy. Let's give it a try...</p>
 
+ </div>
+ <div class="section" id="hw">
+  <h2 class=step>Reading Buttons Using GPIOs</h2>
+
+
   <p>First, we start with an empty breadboard, with power and ground wired from
   the Lid Connector Board, like this:</p><img class="bb" src=
-  "img/Just_Power_bb.jpg" alt=""> With our breadboard empty, here is how we
+  "img/Just_Power_bb.jpg" alt=""> <p>With our breadboard empty, here is how we
   build our circuit and then use code to get input from the button through the
   GPIO:
-  <h4>Step #1: Place button on breadboard.</h4>
+  <h2 class=step>Place button on breadboard</h2>
 
   <p>We start by placing a button on the breadboard. Remember, it is important
   that the button is oriented correctly &mdash; the two independent sides of the
   button must sit on different connect strips, as follows:</p>
-  <table style="margin: auto; width: 70%;">
+  <table class=basic>
    <tbody>
     <tr>
      <td><img src="img/Button_orientation_correct.png" width="285" alt=""></td>
@@ -71,19 +65,24 @@
     </tr>
    </tbody>
   </table>
-  <h4>Step #2: Wire one side of the button to a GPIO.</h4>
+  <p>Also note, the button can be placed fully within a single row of connect
+  strips (as shown above), or it can be placed across the notch in the
+  bradboard, as we'll do in the next step.  The choice only depends on where
+  you'd like to place the button.
+  <h2 class=step>Wire one side of the button to a GPIO</h2>
 
   <p>Next, we connect one side of the button (it doesn't matter which one, as
   the internal components of the button are symmetrical) to a GPIO. In this
   example, we'll connect the button to GPIO14.</p><img class="bb" src=
   "img/Buttons_with_GPIO_1_bb.jpg" alt="">
-  <h4>Step #3: Wire the other side of the button to ground.</h4>
+  <h2 class=step>Wire the other side of the button to ground</h2>
 
   <p>Finally, we connect the other side of the button to ground.</p><img class=
   "bb" src="img/Buttons_with_GPIO_2_bb.jpg" alt="">
 
   <p>That's it for the wiring – pretty simple, right?</p>
-  <h4>Step #4: Write the code.</h4>
+ </div>
+ <div class="section" id="sw">
 
   <p>Now that the circuit is wired, we can write the code to get the GPIO state
   (low or high):</p>
@@ -100,7 +99,7 @@ print(my_button.is_pressed())
   that moment. Try running the program a couple times, either holding down or
   not holding down the button at the moment the program is run.</p>
 
-  <p>You may notice that this example is similar to the<a data-uid=
+  <p>You may notice that this example is similar to the <a data-uid=
   "gpoutp"></a> example. But in this case, we configure the GPIO as a input
   instead of an output:</p>
   <ul>
@@ -160,7 +159,17 @@ while True:
   the square STOP icon in the upper-left-hand corner of the code window (this
   icon replaced the PLAY icon while the program was running).</p>
  </div>
- <div class="section" id="hw"></div>
- <div class="section" id="sw"></div>
+ <div class="section" id="challenge">
+  <ol>
+   <li>
+
+    <p><mark>needed</mark>
+   </li>
+   <li>
+
+    <p>
+   </li>
+  </ol>
+ </div>
 </body>
 </html>

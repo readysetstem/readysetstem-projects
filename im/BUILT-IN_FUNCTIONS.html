@@ -29,13 +29,21 @@
 </head>
 <body>
  <div class="section">
-  <h1>USING FUNCTIONS &amp; MODULES</h1>
+  <h1>Using Functions</h1>
 
-  <p>The other concepts on functions (<a href="INTRO_TO_FUNCTIONS.html">INTRO
-  TO FUNCTIONS</a>, <a href="FUNCTION_INPUTS.html">FUNCTION INPUTS</a>, and
-  <a href="FUNCTION_OUTPUTS.html">FUNCTION OUTPUTS</a>) discussed how you can
-  write and use your own functions. This concept discusses how you can use
-  OTHER PEOPLE'S functions to make your code much more powerful.</p>
+  <p>In this project we're going to learn about functions and modules. A
+  function is one of the most basic concepts in programming, and also one of
+  the most important. It often takes a lot of code to get a computer to do even
+  a simple task. And if you want the computer to do a simple task over and over
+  again, that could mean having to write lots of code over and over again.</p>
+
+  <p>That doesn't sound very efficient, does it?</p>
+
+  <p>It's not, which is why instead of writing the same code many times, we
+  have the ability to just write the code once in a special format, and then we
+  can use that code over and over again, as many times as we want. The special
+  format that allows us to re-use the code over and over again is called a
+  function.</p>
 
   <p>While you may not have realized it, you've already used several functions
   that other people have written. Some of those functions are included in the
@@ -44,7 +52,7 @@
   you are actually calling a function named "print" that comes standard with
   the Python language. You may think that <code>print()</code> requires just a
   single line of code, but what you don't see behind-the-scenes is that the
-  <code>print()</code> function utilizes <code>thousands</code> of lines of
+  <code>print()</code> function utilizes <i>thousands</i> of lines of
   code. You read that correctly &mdash; every time you use <code>print()</code>,
   Python is running thousands of lines of code. But, because Python provides
   this command as a function, you can print output using a single programming
@@ -56,7 +64,7 @@
   building with and using the Ready Set STEM CREATOR Kit easier and more
   functional. For example, you might see the following in one of our
   projects:</p>
-  <div class="code" data-firstline="1">
+  <div class="code" data-firstline="0">
    <textarea>
 my_led = Output(14)
 my_led.on()
@@ -73,15 +81,30 @@ my_led.on()
 
   <p>And again, you were able to utilize all that code by writing just a single
   line.</p>
-  <h2>Built-In Commands and Importing Functions/Modules</h2>
+  <div class="info">
+   <div>
+    Why the dot?
+   </div>
+   <div>
 
-  <p>In our <a href="INTRO_TO_FUNCTIONS.html">INTRODUCTION TO FUNCTIONS</a>
-  lesson, you saw how functions could be included in the same file as the rest
-  of your program. But, many times, functions are separated into their own
-  files. These files are called modules, and a module will generally contain
-  many functions all related to a common task.</p>
+    <p>Throughout the projects, you'll see code that looks like:
+    <pre>
+my_led.on()
+</pre>
+    <p>In the above, the period is called the <i>dot operator</i>.  It says that the next function (in
+    this case <code>on()</code>) is a function <i>of</i> the variable <code>my_led</code>.  It is
+    a special function that can use <code>my_led</code>.
+    <mark>incomplete</mark>
+  </div>
 
-  <p>In Python, there are two specific ways functions are used:</p>
+   </div>
+  </div>
+ </div>
+ <div class="section">
+  <h1>Other People's Code</h1>
+
+  <p>There are two ways you can use that other people have written:
+
   <ul>
    <li>
 

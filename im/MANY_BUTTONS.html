@@ -52,7 +52,8 @@
   individually. While this project will focus on buttons, the concept of
   monitoring inputs and controlling outputs using lists and loops can be
   applied to pretty much any component.</p>
-  <h4>Step #1: Build the circuit.</h4>
+ </div>
+ <div class="section" id="hw">
 
   <p>Wiring four buttons to four different GPIOs is no different than wiring a
   single button to a GPIO and then replicating that circuit four times. Give it
@@ -78,7 +79,8 @@
   <p>Here is what your breadboard should look like at this point (we've chosen
   to use GPIO14, GPIO15, GPIO25 and GPIO7 for our buttons):</p><img class="bb"
   src="img/Many_Buttons_bb.jpg" alt="">
-  <h4>Step #2: Write the code.</h4>
+ </div>
+ <div class="section" id="sw">
 
   <p>For this project, we're simply going to create a list of buttons and then
   use a <code>for</code> loop to cycle through the list and determine which
@@ -104,21 +106,15 @@ while True:
   <ul>
    <li>
 
-    <p>On Line 1, we import the module we will need to initialize our
-    buttons</p>
-   </li>
-   <li>
-
-    <p>On Line 2, we import the <code>time</code> module, as we're going to be
-    using a loop and will want to slow the repetition of the loop down a
-    bit</p>
+    <p>On Line 1 and 2, we import the modules and functions we need
+    </p>
    </li>
    <li>
 
     <p>On Line 4, we create a list called buttons that contains the
     initialization for each of the four buttons we've created. For each button
     in the list, we call the Button() function, which returns a "button object"
-    for each item in the my_buttons variable. We talked about that a bit in
+    for each item in the <code>my_buttons</code> variable. We talked about that a bit in
     <a data-uid="vars"></a>, but the important thing to understand is that we
     can use these objects to access Button() functions and attributes</p>
    </li>
@@ -134,12 +130,12 @@ while True:
    </li>
    <li>
 
-    <p>On Line 8, we check to see if the next button in our list is currently
+    <p>On Line 8, we check to see if the next <code>button</code> in our list is currently
     being pressed</p>
    </li>
    <li>
 
-    <p>On Line 9, if the button we observed in Line 8 was being pressed, we
+    <p>On Line 9, if the <code>button</code> we observed in Line 8 was being pressed, we
     send that information to the Program Output window</p>
    </li>
    <li>
@@ -162,11 +158,22 @@ while True:
   that has 88 keys)? The code to monitor the 88 keys on a piano keyboard would
   be no longer than the code you see above. When you run this code, you'll see
   that every time you press a button, that information is sent to the Program
-  Output window. If you want to try a variation of this project, why not try
+  Output window. 
+ </div>
+ <div class="section" id="challenge">
+  <p><mark>old, but useable</mark>If you want to try a variation of this project, why not try
   replacing the buttons with LEDs, and then rewrite the code to flash the LEDs
   instead of reading the buttons?</p>
+  <ol>
+   <li>
+
+    <p><mark>needed</mark>
+   </li>
+   <li>
+
+    <p>
+   </li>
+  </ol>
  </div>
- <div class="section" id="hw"></div>
- <div class="section" id="sw"></div>
 </body>
 </html>
