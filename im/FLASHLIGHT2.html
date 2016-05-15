@@ -30,140 +30,26 @@
 <body>
  <div class="section" id="intro">
 
-  <p>In this project, we'll put together the work we did in the previous
-  projects &mdash; getting GPIO input from the button and controlling the LED with
-  GPIO output &mdash; to create a "flashlight" circuit that will illuminate an LED
-  when the button is pressed. The flashlight will rely on software for both
-  input and output.</p>
+  <p>In this project, we'll expand on the code in the previous <a
+data-uid="flashlight"></a> project to create a flashing flash light with multiple
+functions.  Our new flashlight will have several mode that it rotates through
+on each press of the button.  This is common in lots of flashlights you can buy
+today, and it is generally some computer code that makes it possible.
 
-  <p>In the <a data-uid="button"></a> project, we were able to get button input
-  from a GPIO. In the <a data-uid="gpoutp"></a> project, we were able to
-  control an LED using GPIO. In this project, we're going to put those concepts
-  together to read a button input using one GPIO and use that information
-  toggle an LED using another GPIO.</p>
  </div>
  <div class="section" id="hw">
-  <h2>Wire the button and LED to GPIOs</h2>
-
-  <p>For the hardware in this project, we're going to wire two completely
-  independent circuits:</p>
-  <ol>
-   <li>
-
-    <p>The first circuit will consist of a button wired to a GPIO (like we did
-    in <a data-uid="button"></a>);</p>
-   </li>
-   <li>
-
-    <p>The second circuit will consist of an LED wired to a separate GPIO (like
-    we did in <a data-uid="gpoutp"></a>)</p>
-   </li>
-  </ol>
-
-  <p>Here is what the breadboard should look like with the two circuits wired.
-  If you have any questions about how to wire either of these two circuits,
-  refer back to the projects referenced above.</p><img class="bb" src=
+  <p>The hardware for this flashlight will be the same as the last one &mdash;
+  two independent circuits, one for the LED and one for the button:</p>
+  </p>
+  <img class="bb" src=
   "img/Flashlight_bb.jpg" alt="">
 
-  <p>You'll notice that our button is wired to GPIO18 and our LED is wired to
-  GPIO14.</p>
  </div>
  <div class="section" id="sw">
   <h2 class=step>Write the code.</h2>
 
-  <p>Now that we have the circuits built and ready to go, it's time to write
-  our software. For this project, our software is going to do two things:</p>
-  <ol>
-   <li>
-
-    <p>Read the state of the button (pressed or released) using a GPIO as
-    input</p>
-   </li>
-   <li>
-
-    <p>If the button is pressed, turn on the LED using a GPIO as output, and if
-    the button is not pressed, turn off the LED using the GPIO as output</p>
-   </li>
-  </ol>
-
-  <p>Here is the code that will accomplish this:</p>
-  <div class="code" data-firstline="1">
-   <textarea>
-from rstem.button import Button
-from rstem.gpio import Output
-
-my_button = Button(18)
-my_led = Output(14)
-
-if my_button.is_pressed():
-    my_led.on()
-else:
-    my_led.off()
-</textarea>
-  </div>
-
-  <p>Let's to through the code line-by-line and take a look at what it's
-  doing:</p>
-  <ul>
-   <li>
-
-    <p>On Line 1, we import the module we will need to initialize the button
-    (called <code>Button()</code>)</p>
-   </li>
-   <li>
-
-    <p>On Line 2, we import the module we will need to initialize the LED
-    (called <code>Output()</code>)</p>
-   </li>
-   <li>
-
-    <p>On Line 4, we initialize our button. We call the <code>Button()</code>
-    function, which returns a "Button object" to our <code>my_button</code>
-    variable. We talked about that a bit in <a data-uid="vars"></a>, but the
-    important thing to understand is that we can now use <code>my_button</code>
-    to call other GPIO functions that can control our button</p>
-   </li>
-   <li>
-
-    <p>On Line 5, we initialize our LED. We call the <code>Output()</code>
-    function, which returns a "GPIO Output object" to our <code>my_led</code>
-    variable. Again, we talked about that a bit in <a data-uid="vars"></a>, but
-    the important thing to understand is that we can now use
-    <code>my_led</code> to call other GPIO functions that can control our
-    LED</p>
-   </li>
-   <li>
-
-    <p>On Line 7, we check the state of the button using the
-    <code>is_pressed()</code> function. This function will return True if the
-    button is pressed (this is done by reading the voltage at the GPIO, like we
-    discussed in <a data-uid="button"></a>), and will return False if the
-    button is released</p>
-   </li>
-   <li>
-
-    <p>On Line 8, if the return from our if statement is True (the button is
-    pressed), we light the LED using the <code>on()</code> function</p>
-   </li>
-   <li>
-
-    <p>On Lines 9 and 10, if the return from our if statement is False (the
-    button is released), we turn off the LED using the <code>off()</code> function</p>
-   </li>
-  </ul>
-
-  <p>Notice that with this code, the button status is only read one time when
-  the program is run. So, if you want the LED to illuminate, you need to be
-  holding the button when you run the code. If you're not holding down the
-  button at the time the program is run, the code will see that the button is
-  released and the LED will not illuminate.</p>
-  <h2 class=step>Improve the code.</h2>
-
-  <p>To make this program more useful, we can put the code that reads the
-  button into a loop so that it will continually read the button state and
-  update the LED every time it changes. To do this, we simply put the last four
-  lines of the code (the lines that test the state of the button and turn the
-  LED on or off) in a <code>while True:</code> loop, like this:</p>
+<p>This program will be similar to the previous project, except we'll add some
+code highlighted with arrows below:
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.button import Button
@@ -173,17 +59,124 @@ import time
 my_button = Button(18)
 my_led = Output(14)
 
+*NUM_MODES = 3
+*mode = 0
+*was_pressed = False
 while True:
-    if my_button.is_pressed():
-        my_led.on()
-    else:
+*    is_pressed = my_button.is_pressed()
+*    if is_pressed and not was_pressed:
+*        mode = mode + 1
+*        if mode &gt; NUM_MODES:
+*            mode = 0
+
+*    if mode == 0:
         my_led.off()
+    else:
+        my_led.on()
+
+*    was_pressed = is_pressed
     time.sleep(.01)
 </textarea>
   </div>
 
-  <p>Give it a try. The flashlight will continue to work until you manually
+  <p>The difference here is that we are now keeping track of the state of the
+  button to increment a <code>mode</code>:  
+  <ul>
+  <li><p>
+  In Lines 8 through 10: we initialize variables we'll need later, including
+  <code>NUM_MODES</code>, the number of on/off modes of our flashlight.
+  </p></li> <li><p>
+  In Line 23: At the end of each run through the loop, we save the state of the
+  button as <code>was_pressed</code>.  
+  
+  </p></li> <li><p>
+  In Lines 12 and 13: given that we know if the button was previously pressed,
+  we can now tell the moment a button is pressed &mdash; it occurs when the
+  button is <i>currently</i> pressed, but last time through the loop it was
+  <i>not</i> pressed.  
+  
+  </p></li> <li><p>
+  In Lines 14 through 16, which occur right when the button is pressed, we
+  increment the <code>mode</code>.  When it gets to the max mode, we set it
+  back to zero.  This way, the <code>mode</code> will run through the sequence
+  (0, 1, 2, 0, 1, 2...) each time the button is pressed.
+
+  </p></li> <li> <p>In Lines 18 through 21, we turn the light off for
+  <code>mode</code> 0.  All other modes (modes 1 and 2), we turn the light off.
+  </p></li> </ul>
+
+  <p>Give it a try. 
+  Because modes 1 and 2 both simply turn the light on, you'll have to press the
+  button once to turn it on, and twice to turn it back off.  We'll add more
+  functionality when we improve the code in the next step.
+  The flashlight will continue to work until you manually
   stop the program.</p>
+  <h2 class=step>Improve the code.</h2>
+  <p>Now, let's add some functionality to modes 1 and 2.  Mode 1 will work as
+  before (just turn the light on.  Mode 2 will make the light flash.  To do so,
+  we'll add a counter that keeps track of how many times we've gone through the
+  <code>while</code> loop:
+  <div class="code" data-firstline="1">
+   <textarea>
+from rstem.button import Button
+from rstem.gpio import Output
+import time
+
+my_button = Button(18)
+my_led = Output(14)
+
+*mode2_count = 0
+*MODE2_COUNT_TIME = 100
+
+NUM_MODES = 3
+mode = 0
+was_pressed = False
+while True:
+    is_pressed = my_button.is_pressed()
+    if is_pressed and not was_pressed:
+        mode = mode + 1
+        if mode &gt; NUM_MODES:
+            mode = 0
+
+    if mode == 0:
+        my_led.off()
+*    elif mode == 1:
+*        my_led.on()
+*    elif mode == 2:
+*        mode2_count = mode2_count + 1
+*        if mode2_count &gt; MODE2_COUNT_TIME:
+*            mode2_count = 0
+*        if mode2_count &lt; MODE2_COUNT_TIME/2:
+*            my_led.on()
+*        else:
+*            my_led.off()
+
+    was_pressed = is_pressed
+    time.sleep(.01)
+</textarea>
+  </div>
+ <p>Here, we've added code to flash the light in mode 2:
+  <ul>
+  <li><p>
+  In Lines 8 and 9: we initialize variables we'll need later, including
+  <code>MODE2_COUNT_TIME</code>, which is the period of time that the light
+  will flash when in mode 2.
+  </p></li> <li><p>
+  In Lines 23 and 24: for mode 1, we simply turn the light on.
+  button as <code>was_pressed</code>.  
+  
+  </p></li> <li><p>
+  In Lines 25 though 28: for mode 2, we use a counter, <code>mode2_count</code> to keep track of
+  where we are in the flashing cycle.  The counter will count from 0 up to 
+  <code>MODE2_COUNT_TIME</code>, and then repeat.
+  
+  </p></li> <li><p>
+  In Lines 29 though 32: for mode 2, we check our counter, <code>mode2_count</code> &mdash; if it
+  is less than half way done, we turn the light on, otherwise we turn it off.  This will make our
+  light flash 50% on and 50% off.
+  </p></li> </ul>
+
+  <p>Give this new flashing light a try. 
  </div>
  <div class="section" id="challenge">
   <ol>
