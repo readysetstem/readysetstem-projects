@@ -30,37 +30,35 @@
 <body>
  <div class="section" id="intro">
 
-  <p>In this project, we'll read the voltage from a wire attached to a GPIO
-  input.
-
   <p>Before jumping into this project, we very strongly recommend that you read
   <a data-uid="gpioi"></a>, as these concepts will be the basis for this
   project and nearly all future Ready Set STEM projects.</p>
 
-  <p>In the previous project, we saw how GPIOs can be used as outputs to
-  control components attached to the Raspberry Pi (like our LED). GPIOs can
-  also be used as inputs to take information from external components; that
-  input can then be acted upon by the Raspberry Pi and appropriate actions can
-  be taken.</p>
+  <p>In the previous tutorial, we talked about the fact that GPIOs can
+  be used as inputs to take information from external components.  They do this
+  by reading a voltage at the GPIO input pin. In this project, we'll attach a
+  wire to a GPIO pin, and then read the voltage from our code.
+
 </div>
  <div class="section" id="hw">
   <h2 class="step">Start with a clean slate</h2>
   <p>First, we start with an empty breadboard, with power and ground wired from
-  the Lid Connector Board, like this:</p><img class="bb" src=
-  "img/Just_Power_bb.jpg" alt=""> With our breadboard empty, here is how we
-  build our circuit and then use code to get input from the button through the
-  GPIO:
+  the Lid Connector Board &mdash; like this:</p><img class="bb" src=
+  "img/Just_Power_bb.jpg" alt=""> 
 
-  <h2 class="step">Wire up two inputs</h2>
-  <p>We'll use two different GPIO pins as inputs to show what reading an input
-  looks like when connected to power or ground.  Connect GPIOs 14 and 18 to
-  power and ground, respectively, as shown:
+  <h2 class="step">Wire Two Inputs</h2>
+  <p>For this project, we'll wire two different GPIO pins as inputs -- one wired
+  directly to 3.3V (power) and one wired directly to 0V (ground).  Connect GPIO14 
+  and GPIO18 to power and ground, respectively, as shown:
 
   <img class="bb" src="img/Inputs_bb.jpg" alt="">
 
  </div>
  <div class="section" id="sw">
- <p>Now, for the code:  
+ <p>Now that we have two GPIO inputs wired, we can write the code that will read
+ those inputs and print the state (high or low) of the GPIO.  Here's what the code
+ will look like:
+   
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.gpio import Input
@@ -93,11 +91,14 @@ False
 </pre>
   </div>
 
-<p>The <code>True</code> indicates that the first input was <i>on</i>.  For an
-<code>Input()</code>, the default is that if it is <i>on</i>, that means it is <i>high</i> (that
-is, 3.3V).  In other words, inputs are by default active high (as we discussed in 
-  <a data-uid="gpioc"></a>).
+<p>The <code>True</code> in the first line indicates that the first input was <i>on</i>.  For an
+<code>Input()</code>, <i>on</i> generally means that the GPIO is reading <i>high</i> (or 3.3V).
+<code>False</code> in the second line indicates that the second input was <i>off</i>.  For an
+<code>Input()</code>, <i>off</i> generally means that the GPIO is reading <i>low</i> (or 0V). 
+In other words, inputs are by default active high (as we discussed in <a data-uid="gpioc"></a>).
 
+<p>Given that the first input was wired to power and the second was wired to ground, this is
+exactly the result we should expect.
  </div>
  <div class="section" id="challenge">
   <ol>
@@ -105,11 +106,11 @@ is, 3.3V).  In other words, inputs are by default active high (as we discussed i
    out what you expect?
    </li> <li> <p> If you wire both GPIOs to ground, and rerun the code, does it print
    out what you expect?
-   </li> <li> <p>Can you change the code to use different GPIO inputs?  More
-   that two inputs?
-   </li> <li> <p>What happens if you disconnect the GPIOs both power and ground
-   (that is, don't hook them up at all) and rerun the code?  Hint: you may not
-   get the same values each time, rerun it multiple times to see.
+   </li> <li> <p>Can you change the code (and the wiring) to use different GPIO inputs?  
+   How about more than two inputs?
+   </li> <li> <p>What happens if you disconnect power and ground from the GPIOs completely
+   and rerun the code?  Hint: you may not get the same values each time -- rerun it multiple 
+   times to see.  Remember our discussion about "Floating Inputs?"
    </li>
   </ol>
  </div>
