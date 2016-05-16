@@ -37,97 +37,97 @@
  </div>
  <div id="hw" class="section">
 
-  <p><mark>The assembled CREATOR Kit has an attached speaker and audio cable,
+  <p>The assembled CREATOR Kit has an attached speaker and audio cable,
   and also a set of functions that allow you to play notes, music and sound
-  effects.</mark></p>
+  effects.</p>
 
-  <p><mark>If your audio cable was removed, reattach it now:</mark></p>
+  <p>If your audio cable was removed, reattach it now:</p>
   <ol>
    <li>
 
-    <p><mark>Insert the Audio Cable into the audio jack on the Raspberry
-    Pi.</mark></p><mark><img style="width: 70%;" alt="" src=
-    "img/Insert%20audio%20cable.jpg"></mark>
+    <p>Insert the Audio Cable into the audio jack on the Raspberry
+    Pi.</p><img style="width: 70%;" alt="" src=
+    "img/Insert%20audio%20cable.jpg">
    </li>
    <li>
 
-    <p><mark>Connect the other end of the Audio Cable to the Speaker Cable (the
-    cable attached to the Speaker Assembly). Note: It doesn’t matter which way
-    the three-pronged Audio Cable is oriented.</mark></p><mark><img style=
-    "width: 80%;" alt="" src="img/Audio%20to%20speaker.jpg"></mark>
+    <p>Connect the other end of the Audio Cable to the Speaker Cable (the
+    cable attached to the Speaker Assembly). Note: It doesn't matter which way
+    the three-pronged Audio Cable is oriented.</p><img style=
+    "width: 80%;" alt="" src="img/Audio%20to%20speaker.jpg">
    </li>
   </ol>
 
-  <p><mark>With the speaker hardware connected, we can start making noise with
-  just a few lines of code...</mark></p>
+  <p>With the speaker hardware connected, we can start making noise with
+  just a few lines of code...</p>
  </div>
  <div id="sw" class="section">
 
-  <p><mark>In this project, we're just going to use the basic functionality of
+  <p>In this project, we're just going to use the basic functionality of
   the sound functions to play notes of different durations. Let's start with
-  this code:</mark></p>
+  this code:</p>
   <div class="code" data-firstline="1">
-   <mark>
+   
    <textarea>
 from rstem.sound import Note
 note = Note('A')
 note.play()
 note.wait()
-</textarea></mark>
+</textarea>
   </div>
 
-  <p><mark>If you run this code, you'll hear a single tone play for one second.
-  Its a simply 4 line program that works by:</mark></p>
+  <p>If you run this code, you'll hear a single tone play for one second.
+  Its a simply 4 line program that works by:</p>
   <ul>
    <li>
 
-    <p><mark>In line 1, import the <code>Note</code> function</mark></p>
+    <p>In line 1, import the <code>Note</code> function</p>
    </li>
    <li>
 
-    <p><mark>In line 2, create an "A" <code>Note</code>, that we'll store in a
-    new variable named <code>note</code></mark></p>
+    <p>In line 2, create an "A" <code>Note</code>, that we'll store in a
+    new variable named <code>note</code></p>
    </li>
    <li>
 
-    <p><mark>In line 3, start to <code>play()</code> the note (by default,
-    notes play for one second).</mark></p>
+    <p>In line 3, start to <code>play()</code> the note (by default,
+    notes play for one second).</p>
    </li>
    <li>
 
-    <p><mark>In line 4, <code>wait()</code> for the note to finish
-    playing</mark></p>
+    <p>In line 4, <code>wait()</code> for the note to finish
+    playing</p>
    </li>
   </ul>
 
-  <p><mark>If you want to change the duration of the note, you can set duration
-  in the <code>play()</code> function, as you see below:</mark></p>
+  <p>If you want to change the duration of the note, you can set duration
+  in the <code>play()</code> function, as you see below:</p>
   <div class="code" data-firstline="1">
-   <mark>
+   
    <textarea>
 from rstem.sound import Note
 note = Note('A')
 note.play(duration=0.5)
 note.wait()
-</textarea></mark>
+</textarea>
   </div>
  </div>
  <div id="challenge" class="section">
   <ol>
    <li>
 
-    <p><mark>What happens if you don't <code>wait()</code> for the sound to
-    finish playing? Why?</mark></p>
+    <p>What happens if you don't <code>wait()</code> for the sound to
+    finish playing? Why?</p>
    </li>
    <li>
 
-    <p><mark>If you play two notes in a row for 1 second each, does it sound
-    the same as one note for 2 seconds?</mark></p>
+    <p>If you play two notes in a row for 1 second each, does it sound
+    the same as one note for 2 seconds?</p>
    </li>
    <li>
 
-    <p><mark>Play a rhythm, like the "Shave and a haircut" door
-    knock.</mark></p>
+    <p>Play a rhythm, like the "Shave and a haircut" door
+    knock.</p>
    </li>
   </ol>
  </div>

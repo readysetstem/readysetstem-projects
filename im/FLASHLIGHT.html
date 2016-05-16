@@ -31,8 +31,8 @@
  <div class="section" id="intro">
 
   <p>In this project, we'll put together the work we did in the previous
-  projects -- getting GPIO input from the button and controlling the LED with
-  GPIO output -- to create a "flashlight" circuit that will illuminate an LED
+  projects &mdash; getting GPIO input from the button and controlling the LED with
+  GPIO output &mdash; to create a "flashlight" circuit that will illuminate an LED
   when the button is pressed. The flashlight will rely on software for both
   input and output.</p>
 
@@ -41,9 +41,11 @@
   control an LED using GPIO. In this project, we're going to put those concepts
   together to read a button input using one GPIO and use that information
   toggle an LED using another GPIO.</p>
-  <h4>Step #1: Wire the button and LED to GPIOs</h4>
+ </div>
+ <div class="section" id="hw">
+  <h2>Wire the button and LED to GPIOs</h2>
 
-  <p>For the hardware in this project, we’re going to wire two completely
+  <p>For the hardware in this project, we're going to wire two completely
   independent circuits:</p>
   <ol>
    <li>
@@ -63,11 +65,13 @@
   refer back to the projects referenced above.</p><img class="bb" src=
   "img/Flashlight_bb.jpg" alt="">
 
-  <p>You’ll notice that our button is wired to GPIO18 and our LED is wired to
+  <p>You'll notice that our button is wired to GPIO18 and our LED is wired to
   GPIO14.</p>
-  <h4>Step #2: Write the code.</h4>
+ </div>
+ <div class="section" id="sw">
+  <h2 class=step>Write the code.</h2>
 
-  <p>Now that we have the circuits built and ready to go, it’s time to write
+  <p>Now that we have the circuits built and ready to go, it's time to write
   our software. For this project, our software is going to do two things:</p>
   <ol>
    <li>
@@ -139,21 +143,21 @@ else:
    <li>
 
     <p>On Line 8, if the return from our if statement is True (the button is
-    pressed), we light the LED using the on() function</p>
+    pressed), we light the LED using the <code>on()</code> function</p>
    </li>
    <li>
 
     <p>On Lines 9 and 10, if the return from our if statement is False (the
-    button is released), we turn off the LED using the off() function</p>
+    button is released), we turn off the LED using the <code>off()</code> function</p>
    </li>
   </ul>
 
   <p>Notice that with this code, the button status is only read one time when
   the program is run. So, if you want the LED to illuminate, you need to be
-  holding the button when you run the code. If you’re not holding down the
+  holding the button when you run the code. If you're not holding down the
   button at the time the program is run, the code will see that the button is
   released and the LED will not illuminate.</p>
-  <h4>Step #3: Improve the code.</h4>
+  <h2 class=step>Improve the code.</h2>
 
   <p>To make this program more useful, we can put the code that reads the
   button into a loop so that it will continually read the button state and
@@ -181,7 +185,26 @@ while True:
   <p>Give it a try. The flashlight will continue to work until you manually
   stop the program.</p>
  </div>
- <div class="section" id="hw"></div>
- <div class="section" id="sw"></div>
+ <div class="section" id="challenge">
+  <ol>
+   <li>
+
+    <p>Modify the code so that the light turns on with the first press, and off
+    with the next press &mdash; that is, so you don't have to hold the button
+    down for the light to stay on.  Hint: you'll probably want a variable that
+    keeps track of the state of the button.
+   </li>
+   <li>
+
+    <p>Can you make the light turn on/off with each press, but when it's on,
+    only stays on for 3 seconds?
+   </li>
+   <li>
+
+    <p>Add a second button.  Have the first button turn the light on when
+pressed.  Have the second button turn the light off when pressed.
+   </li>
+  </ol>
+ </div>
 </body>
 </html>

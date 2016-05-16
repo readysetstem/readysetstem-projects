@@ -38,16 +38,16 @@
   example of this is when we have a function that does some calculations for
   us, and we want to get the results of those calculations.</p>
 
-  <p>Perhaps instead of printing the name and birth year of people, we’d rather
+  <p>Perhaps instead of printing the name and birth year of people, we'd rather
   know how old the person will be on their birthday this year. Using the
   information we already have from our previous lesson, this calculation is
   pretty simple – we just subtract the birth year from the current year (2015
-  as of this writing) and we’ll get the age they will be turning this year.</p>
+  as of this writing) and we'll get the age they will be turning this year.</p>
 
-  <p>To create a new function to do this, we can still pass in the “birth_year”
-  parameter for the person’s birth year (like we did in the previous project)
+  <p>To create a new function to do this, we can still pass in the "birth_year"
+  parameter for the person's birth year (like we did in the previous project)
   but, instead of printing the information, we do our age calculation and store
-  the resulting value in a new variable called “age”.</p>
+  the resulting value in a new variable called "age".</p>
 
   <p>This is what the function would look like:</p>
   <div class="code" data-firstline="1">
@@ -58,13 +58,13 @@ def calculate_age(birth_year):
   </div>
 
   <p><strong>Note:</strong> When calling this function, it is required that the
-  “birth_year” parameter is a number and not a string so that we can use it to
+  "birth_year" parameter is a number and not a string so that we can use it to
   perform this calculation.</p>
 
-  <p>Now, to send the information we’ve calculated back to the main program, we
-  end the function with a return statement that contains the information we’re
-  sending back (in this case, we’re sending the information contained in the
-  variable, “age”):</p>
+  <p>Now, to send the information we've calculated back to the main program, we
+  end the function with a return statement that contains the information we're
+  sending back (in this case, we're sending the information contained in the
+  variable, "age"):</p>
   <div class="code" data-firstline="1">
    <textarea>
 def calculate_age(birth_year):
@@ -73,7 +73,7 @@ def calculate_age(birth_year):
 </textarea>
   </div>
 
-  <p>The value of “age” would then be returned to where the function was called
+  <p>The value of "age" would then be returned to where the function was called
   and that value could be stored in another variable, printed or used however
   it is needed.</p>
 

@@ -14,8 +14,9 @@
  *                  <tr><td colspan="3">Item Name
  *                  <tr><td colspan="3">(Cell Name)
  */
+@import "fonts.css";
 
-/* 
+/*
  * overall header
  */
 body {
@@ -39,6 +40,37 @@ div.inner {
     text-align: center;
     background: hsl(210, 64%, 82%); /* Header light blue */
     border-radius: 10px;
+}
+
+/*
+ * Challenge Ordered lists
+ */
+div#challenge ol {
+    list-style-type: none;
+    margin: 0;
+    margin-left: 3em;
+    padding: 0;
+    counter-reset: li-counter;
+}
+div#challenge ol > li{
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 0.5em;
+    min-height: 3em;
+    border-left: 3px solid #222222;
+}
+div#challenge ol > li:before {
+    position: absolute;
+    top: 0;
+    left: -1em;
+    width: 0.8em;
+    font-size: 3em;
+    line-height: 1;
+    font-weight: bold;
+    text-align: right;
+    color: #464646;
+    content: counter(li-counter);
+    counter-increment: li-counter;
 }
 
 /*
@@ -151,6 +183,7 @@ div.outer#troubleshooting p {
     padding: 20px;
     margin-bottom: 30px;
     border-radius: 10px;
+    overflow: hidden;
 }
 .section > *:first-child {
     margin-top: 0;
@@ -169,7 +202,7 @@ div.outer#troubleshooting p {
     position: relative;
     z-index: 1;
     -webkit-border-radius: 10px;
-    border-radius: 10px;  
+    border-radius: 10px;
 }
 
 .section_heading div::after{
@@ -181,8 +214,8 @@ div.outer#troubleshooting p {
     position: absolute;
     right: -1em;
     top: 50%;
-    z-index: -1;  
-    -webkit-transform: rotate(45deg); 
+    z-index: -1;
+    -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     -webkit-border-radius: 10px;
     border-radius: 10px;
@@ -228,7 +261,7 @@ h1 {
     font-size: 20pt;
     padding: 0.4em;
     background: hsl(26, 87%, 46%); /* Header orange */
-    border-radius: 10px;  
+    border-radius: 10px;
 }
 h2 {
     font-size: 16pt;
@@ -327,7 +360,6 @@ div.info > div:first-child {
     background-position: 20px 10px;
     background-size: 50px;
     background-color: #657777;
-    height: 60px;
     line-height: 60px;
     padding: 10;
     padding-left: 90px;
@@ -342,6 +374,21 @@ div.info div:last-child {
 }
 
 /*
+ * side-by-side image tables
+ */
+table.images {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.2in;
+    margin-bottom: 0.2in;
+    border: 0;
+}
+table.images td {
+    border: 0;
+}
+
+/*
  * basic tables
  */
 table.basic {
@@ -353,6 +400,7 @@ table.basic {
     border: 3px solid black;
     border-spacing: 0;
     border-radius: 20px;
+    overflow: hidden;
 }
 table.basic th {
     background: hsl(0, 0%, 60%);
@@ -412,6 +460,33 @@ th p {
 table p {
     margin: 0;
     margin-left: 5px;
+}
+
+/*
+ * Text overlay on images
+ */
+div.image_text {
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+    margin: auto;
+}
+div.image_text div {
+    position: relative;
+}
+div.image_text div p {
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    font-family: 'Indie Flower';
+    line-height: 0;
+    margin: auto;
+}
+div.image_text div img {
+    position: relative;
+    padding: 0;
+    width: 100%;
 }
 
 

@@ -42,13 +42,13 @@
   work.</p>
 
   <p>Most computer games (and especially those that most kids would consider to
-  be video games) share a common method of programming called the “game loop.”
+  be video games) share a common method of programming called the "game loop."
   A game loop is a simple concept, but is the heart of most video games. The
   game loop essentially works by doing the same things over and over the entire
   time the game is running.</p>
 
   <p>We're going to explain game loops below using pseudo-code, which we
-  discussed in more detail in our Simon 0 project.</p>
+  discussed in more detail in our <a data-uid="simon0"></a> project.</p>
 
   <p>The pseudo-code for a typical game loop will look something like this:</p>
   <pre>
@@ -66,10 +66,10 @@ Finish &amp; Cleanup
  <div class="section">
   <h1>A Simple "Game"</h1>
 
-  <p>We're going to create a simple "game" - too simple to really qualify as a
-  game - but that will give us start to creating more complicated games later.
+  <p>We're going to create a simple "game" &mdash; too simple to really qualify as a
+  game &mdash; but that will give us start to creating more complicated games later.
   This game is going to draw a dot on the screen, and move it across the screen
-  from left to right. That's it - simple.</p>
+  from left to right. That's it &mdash; simple.</p>
   <div class="code" data-firstline="1">
    <textarea>
 # Initialize the game environment
@@ -159,9 +159,9 @@ while True:
   loop.</p>
   <h2>Update the game world</h2>
 
-  <p>Updating the game world means taking the new information we have -- either
+  <p>Updating the game world means taking the new information we have &mdash; either
   from the user input we've received or just because we are further along in
-  time -- and to use this new information to update any parts of our game that
+  time &mdash; and to use this new information to update any parts of our game that
   now need to change. For example, in a character-based game, if a user has
   indicated that they want their character to move to the right of the screen,
   the game world update might involve changing the location of the character,
@@ -202,7 +202,7 @@ fb.show()
   <p>Because your graphics will be updating each time through the loop, you'll
   want to choose a wait time that makes sense for your graphics updates. If
   not, you'll probably want to play around with various pause times and see
-  which work the best -- too slow, and you might find that your program is not
+  which work the best &mdash; too slow, and you might find that your program is not
   responsive; too fast, and you might find that the processor wastes power and
   causes poor performance of other programs running on the computer at the same
   time.</p>
@@ -240,7 +240,7 @@ time.sleep(.5)
   before we "draw graphics on the screen". Our first update moves the dot one
   position to the right, before we've even had a chance to see it on the
   screen. In a more normal game, this doesn't matter, as the wait period will
-  be fast, and this small quirk won't be noticable.</p>
+  be fast, and this small quirk won't be noticeable.</p>
  </div>
 </body>
 </html>

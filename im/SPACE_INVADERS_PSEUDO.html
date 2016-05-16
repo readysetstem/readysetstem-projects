@@ -29,16 +29,17 @@
 </head>
 <body>
  <div class="section">
-  In this project, we kick off the development of our Space Invaders by writing
-  the pseudo-code.
+  In this project, we kick off the development of a game "Alien Intruders" by
+  writing the pseudo-code.
 
-  <p>You're probably familiar with the game Space Invaders, which was
+  <p>You're probably familiar with the game Space Invaders&TM;, which was
   originally made popular in the 1970s in arcades and on the Atari (one of the
   first home gaming systems). When it first came out, this game was pretty
   revolutionary.</p>
 
-  <p>Over the next 10 projects, we're going to build a basic version of Space
-  Invaders using the Ready Set STEM CREATOR Kit components we've already wired
+  <p>Over the next 10 projects, we're going to build a game that is a simplified
+  version of Space Invaders&TM; using the Ready Set STEM CREATOR Kit components
+  we've already wired
   up. The LED Matrix will be used to display the graphics, the accelerometer
   will be used to control the left and right movement of the ship (by tilting
   the Ready Set STEM CREATOR Kit left or right) and the button will be used to
@@ -47,7 +48,7 @@
   games.</p>
 
   <p>Like most games you'll build, this one is going to start with a game loop,
-  and in this first Space Invaders project, we'll start by writing the
+  and in this first Alien Intruders project, we'll start by writing the
   pseudo-code for our game loop (see <a data-uid="gameloops"></a> for more
   information on both pseudo-code and game loops). In our experience, the best
   way to write pseudo-code is in an iterative process, meaning that we write
@@ -74,7 +75,7 @@ Finish & Cleanup
   <h2>Initialize the game environment</h2>
 
   <p>This is where we're going to initialize all of the components and game
-  elements that we'll be using throughout our game. In our Space Invaders
+  elements that we'll be using throughout our game. In our Alien Intruders
   implementation, the three major components we'll have are the ship that we
   control ("spaceship"), the alien ships that we try to destroy ("aliens") and
   the missiles that we fire from our spaceship at the aliens ("missiles").
@@ -122,7 +123,7 @@ Get button input
   <h2>Update the game world</h2>
 
   <p>Each time through the loop, we'll have to update the status of all the
-  three major components of the game -- the spaceship, the aliens and the
+  three major components of the game &mdash; the spaceship, the aliens and the
   missiles. In addition, we'll want to test to see if any of the previously
   launched missiles has collided with an alien.</p>
 
@@ -154,8 +155,8 @@ Show the framebuffer
   our next round through the loop. For this game, our graphics aren't going to
   (necessarily) update each time through the loop, so our wait time doesn't
   need to be correlated to our graphics updates. That said, we need to pick a
-  time that is not too long -- otherwise the graphics will not be as responsive
-  as we'd like -- and also not too short -- or we'll needlessly overwork the
+  time that is not too long &mdash; otherwise the graphics will not be as responsive
+  as we'd like &mdash; and also not too short &mdash; or we'll needlessly overwork the
   processor.</p>
 
   <p>We'll play around with various wait times and see what works, but

@@ -36,14 +36,36 @@
   <i>voltage</i>, <i>current</i> and <i>resistance</i>. These three things
   aren't just measurements; they actually define how, when and to what extent
   electric charge flows, and by controlling these three parts of a circuit, we
-  can harness the power that electricity provides. While we can’t actually see
+  can harness the power that electricity provides. While we can't actually see
   voltage, current or resistance, there are some analogies we can use (based on
   the water analogy) to help understand what each of these concepts are and how
   they interact with each other.</p>
 
   <p>Let's take a look at a new circuit and an analogous water loop:</p>
 
-  <p><mark>PIC: Battery resistive circuit vs water resistive circuit</mark></p>
+    <table class=images>
+        <tr>
+            <td>
+<div class="image_text">
+<div>
+  <img src="img/resistor-and-battery-600.gif" style="width: auto; height: 300px;" alt="">
+  <p style="font-size: 24px; left: 21%; top: 83%;">Battery</p>
+  <p style="font-size: 24px; right: 15%; top: 40%;">Resistor</p>
+</div>
+</div>
+              </td>
+            <td>
+<div class="image_text">
+<div>
+  <img src="img/pump-and-constriction-600.gif" style="width: auto; height: 300px;" alt="">
+  <p style="font-size: 24px; left: 30%; top: 70%;">Pump</p>
+  <p style="font-size: 24px; right: 15%; top: 45%;">Narrow</p>
+  <p style="font-size: 24px; right: 15%; top: calc(45% + 24px);">Pipe</p>
+</div>
+</div>
+             </td>
+        </tr>
+    </table>
 
   <p>Similar to our previous water analogy example, the battery (or pump)
   forces charged particles (or water molecules) around a closed circuit (or
@@ -96,8 +118,7 @@
   </table>
 
   <p>Now let's talk about each of these components in more detail...</p>
-  <h2>Voltage</h2><mark>PIC: Battery vs water circuits, with low/high
-  voltage/pressure highlighted</mark>
+  <h2>Voltage</h2>
 
   <p>Voltage is electrical force and it's measured as the difference in the
   amount of charge from one point in an electrical circuit to another. An
@@ -107,6 +128,28 @@
   lower charge. If there is the same amount of charge at two points in a
   circuit, no electric charge will flow.</p>
 
+    <table class=images>
+        <tr>
+            <td>
+<div class="image_text">
+<div>
+  <img src="img/resistor-and-battery-600.gif" style="width: auto; height: 300px;" alt="">
+  <p style="font-size: 24px; left: 25%; top: 13%;">Higher Voltage</p>
+  <p style="font-size: 24px; left: 30%; top: 90%;">Lower Voltage</p>
+</div>
+</div>
+              </td>
+            <td>
+<div class="image_text">
+<div>
+  <img src="img/pump-and-constriction-600.gif" style="width: auto; height: 300px;" alt="">
+  <p style="font-size: 22px; left: 30%; top: 20%;">Higher Pressure</p>
+  <p style="font-size: 22px; left: 33%; top: 83%;">Lower Pressure</p>
+</div>
+</div>
+             </td>
+        </tr>
+    </table>
   <p>Using our water analogy, voltage is analogous to the amount of pressure
   (basically, the force) that is pushing water through the pipe. In a circuit
   of pipes where water is being pushed, water enters the pump at a low pressure
@@ -134,14 +177,34 @@
   <p>Voltage is measured in "volts", which are named after the Italian
   physicist Alessandro Volta, who was one of the first inventors of a
   rudimentary battery around 1800.</p>
-  <h2>Current</h2><mark>PIC: Battery vs water circuits, with constant current
-  highlighted</mark>
+  <h2>Current</h2>
 
   <p>Current is the flow of electric charge through a circuit and it's measured
   as the amount of charged particles moving through a point in the circuit in a
   given period of time. Using our water analogy, current is analogous to the
   volume of water actually flowing through the pipe.</p>
 
+    <table class=images>
+        <tr>
+            <td>
+<div class="image_text">
+<div>
+  <img src="img/resistor-and-battery-current-600.gif" style="width: auto; height: 300px;" alt="">
+  <p style="font-size: 24px; left: 40%; top: 50%;">Current</p>
+</div>
+</div>
+              </td>
+            <td>
+<div class="image_text">
+<div>
+  <img src="img/pump-and-constriction-current-600.gif" style="width: auto; height: 300px;" alt="">
+  <p style="font-size: 24px; left: 48%; top: 47%;">Water</p>
+  <p style="font-size: 24px; left: 50%; top: calc(47% + 24px);">Flow</p>
+</div>
+</div>
+             </td>
+        </tr>
+    </table>
   <p>It's important to note that in our simple circuit example above, the
   current is exactly the same at every point in the circuit. That is, at any
   point in the circuit, the same number of charged particles are passing that
@@ -151,12 +214,12 @@
 
   <p>If you think about the water analogy, you might realize that this must be
   true. If there was any segment of the circuit where there was more water
-  continuouslly going into that segment than going out, then the pipe would
-  ballon up at that point, and maybe even burst. But that doesn't happen &mdash;
+  continuously going into that segment than going out, then the pipe would
+  balloon up at that point, and maybe even burst. But that doesn't happen &mdash;
   current flows around the entire circuit all together, in lock step.</p>
 
   <p>Current is measured in "amperes" ("amps", for short), which are named
-  after the French physicist André-Marie Ampère, who researched electrical
+  after the French physicist <span class=nospell>André-Marie Ampère</span>, who researched electrical
   current and other phenomenon in the 1800s.</p>
   <div class="info">
    <div>
@@ -167,7 +230,7 @@
     <p>Benjamin Franklin is generally credited with defining the "positive" and
     "negative" values of charge (which come from protons and electrons within
     atoms). Unfortunately, he did so more than 200 years before the discovery
-    of atoms, so he didn't know what charge physically was; in fact, he refered
+    of atoms, so he didn't know what charge physically was; in fact, he referred
     to it as "electrical fluid".</p>
 
     <p>It turns out, you can understand many of the concepts of electricity
@@ -191,16 +254,23 @@
     electrons.</p>
    </div>
   </div>
-  <h2>Resistance</h2><mark>PIC: Labelled water/pump/narrowing resistance
-  circuit</mark>
+  <h2>Resistance</h2>
 
   <p>Resistance is what reduces the flow of current in a circuit. Using our
   water analogy, if a water pipe is constricted (narrowed), then less water can
   flow through it using the same amount of force. If you've ever played with a
   garden hose, this concept is probably familiar to you &mdash; if you pinch the
   hose, less water comes out. If you pinch the hose hard enough, <i>no</i>
-  water comes out.</p>
+  water comes out.  You can imagine this in the water analogy as shown below:</p>
 
+<div class="image_text" style="max-width: 400px;">
+<div>
+  <img src="img/Resistance-600.gif" alt="" style="padding-bottom: 30px">
+  <p style="font-size: 24px; left: calc(50% - 80px); top: 25%;">No Resistance</p>
+  <p style="font-size: 24px; left: calc(50% - 90px); top: 61%;">A Little Resistance</p>
+  <p style="font-size: 24px; left: calc(50% - 100px); top: 97%;">A Lot of Resistance</p>
+</div>
+</div>
   <p>As you might imagine from the water analogy, the more you increase
   resistance in an electrical circuit, the more you reduce the current moving
   through the circuit. All components in an electrical circuit will have some
@@ -234,7 +304,7 @@
     <p>You can't tell how much resistance a resistor has by the size of it. One
     resistor that is exactly the same size and shape as another can have a
     million or more times as much resistance. Because of this, some resistors
-    are labelled with a color code &mdash; a set of colored bands that indicate what
+    are labeled with a color code &mdash; a set of colored bands that indicate what
     the value of the resistance, in ohms. The color code matches a color with
     each of the digits 0-9:</p>
     <style>
@@ -355,7 +425,7 @@
     "img/resistor_color_code.png">
 
     <p>As shown above, the first 2 bands of color are the first two digits of
-    the resistance. The third band is a multiplier - it is the number of zeros
+    the resistance. The third band is a multiplier &mdash; it is the number of zeros
     to add to the end of the number.</p>
 
     <p>For example, for the resistor shown above, the color bands are brown,

@@ -35,7 +35,7 @@
 
   <p>In our last project, we finished wiring up the four LEDs and tested to
   verify they work. Assuming your buttons and LEDs are all working correctly,
-  we've now completed the hardware for our Simon-like game and are ready to
+  we've now completed the hardware for our Simon Says game and are ready to
   move on to writing our game code.</p>
  </div>
  <div class="section" id="hw">
@@ -48,7 +48,7 @@
 
   <p>To start programming our game, the first thing we want to do is learn how
   to flash a sequence of LEDs, as this will be the basis for the entire game.
-  For this project, we'll start slow and just use a pre-defined list of LED
+  For this project, we'll start slow and just use a predefined list of LED
   flashes that we make up and write the code to execute that list of flashes.
   In the next project, we'll expand on that by making the flashing sequence
   random.</p>
@@ -72,7 +72,7 @@ lights = [Output(4), Output(18), Output(24), Output(27)]
 
   <p>For our game, we'll store the sequence of LED flashes in a list. Each item
   in that list will refer to one of the LEDs in our <code>lights[]</code> list
-  above. Remember, the first item in a list is considered the 0th element, so
+  above. Remember, the first item in a list is considered the zeroth element, so
   if we want to refer to the first LED in <code>lights[]</code>, it would be
   <code>lights[0]</code>. The second LED would be <code>lights[1]</code>, and
   so on.</p>
@@ -117,7 +117,7 @@ for i in play_order:
   </div>
   <h3 class="step">Put It All Together</h3>
 
-  <p>Here is our full code at this point -- when you run it, you will see the
+  <p>Here is our full code at this point &mdash; when you run it, you will see the
   four LEDs flash in the hard-coded pattern that we've added to the code:</p>
   <div class="code" data-firstline="1">
    <textarea>

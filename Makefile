@@ -41,11 +41,13 @@ all: $(TARGETS)
 #
 
 PG=projectsguide
+HOST=raspberrystem
+USER=jsteinhorn
 pushpg:
-	ssh readysetstem@readysetstem.com mkdir -p readysetstem.com/$(PG)
-	scp -r im/* swolski@readysetstem.com:readysetstem.com/$(PG)
+	ssh $(USER)@$(HOST).com mkdir -p $(HOST).com/$(PG)
+	scp -r im/* $(USER)@$(HOST).com:$(HOST).com/$(PG)
 	@echo "####################################################################"
-	@echo "### NOTE: you may want to also 'make pushpg' from readysetstem-ide"
+	@echo "### NOTE: you may want to also 'make pushpg' from $(HOST)-ide"
 	@echo "####################################################################"
 
 TIDY_TARGETS=$(wildcard im/*.html)
@@ -84,6 +86,21 @@ $(TIDY_TARGETS):
 		php -r 'while(($$line=fgets(STDIN)) !== FALSE) echo html_entity_decode($$line, ENT_QUOTES|ENT_HTML401);' > .compile.py
 	python3 -m py_compile .compile.py || (echo; echo $@; nl -ba .compile.py; exit 1)
 	rm .compile.py
+
+SPELL_TARGETS=$(addsuffix .spell,$(basename $(wildcard im/*.html)))
+.PHONY: $(SPELL_TARGETS)
+spell: $(SPELL_TARGETS)
+$(SPELL_TARGETS):
+	@$(eval TARGET=$(addsuffix .html,$(basename $@)))
+	@ln -sf $(CURDIR)/dict.pws  ~/.aspell.en.pws
+	@echo $(TARGET)
+	@gawk '/<textarea[ >]/,/<\/textarea>/{next}1' $(TARGET) | \
+		gawk 'BEGIN{RS="<span[^>]*class=[^>]*nospell[^>]*>"}{sub(".*</span>","")}1' | \
+		gawk 'BEGIN{RS="<pre[ >]"}{sub(".*</pre>","")}1' | \
+		gawk 'BEGIN{RS="<code>"}{sub(".*</code>","")}1' | \
+		aspell list --mode html | \
+		sort --ignore-case | uniq -i | \
+		gsed 's/^/\t/'
 
 upload:
 	$(SETUP) sdist upload

@@ -31,25 +31,25 @@
  <div class="section">
   <h1>INTRODUCTION TO FUNCTIONS</h1>
 
-  <p>In this project we’re going to learn about functions and modules. A
+  <p>In this project we're going to learn about functions and modules. A
   function is one of the most basic concepts in programming, and also one of
   the most important. It often takes a lot of code to get a computer to do even
   a simple task. And if you want the computer to do a simple task over and over
   again, that could mean having to write lots of code over and over again.</p>
 
-  <p>That doesn’t sound very efficient, does it?</p>
+  <p>That doesn't sound very efficient, does it?</p>
 
-  <p>It’s not, which is why instead of writing the same code many times, we
+  <p>It's not, which is why instead of writing the same code many times, we
   have the ability to just write the code once in a special format, and then we
   can use that code over and over again, as many times as we want. The special
   format that allows us to re-use the code over and over again is called a
   function.</p>
 
-  <p>Here’s an example…</p>
+  <p>Here's an example…</p>
 
-  <p>Let’s say that we wanted to write some code that would print my name and
-  the year I was born. We could do this exactly like we did with the “Hello,
-  World!” code we wrote in Project #1, and our code might look like the
+  <p>Let's say that we wanted to write some code that would print my name and
+  the year I was born. We could do this exactly like we did with the "Hello,
+  World!" code we wrote in Project #1, and our code might look like the
   following:</p>
   <div class="code" data-firstline="1">
    <textarea>
@@ -58,15 +58,15 @@ print('I was born in: 1971')
 </textarea>
   </div>
 
-  <p>Now let’s say we expected to print those same lines many times within our
+  <p>Now let's say we expected to print those same lines many times within our
   code. While we could type those lines over and over again in the code, a
   simpler way would be to create a function that prints those two lines, and
-  then “call” that function every time we want those lines printed. Let’s turn
+  then "call" that function every time we want those lines printed. Let's turn
   the above two lines into a function that we can call from other places in our
   code.</p>
 
   <p>The first step in creating a function is giving it a name. In this case,
-  let’s say we wanted to call this function, “show_my_info”. Here's how we'd
+  let's say we wanted to call this function, "show_my_info". Here's how we'd
   create it:</p>
   <div class="code" data-firstline="1">
    <textarea>
@@ -82,7 +82,7 @@ def show_my_info():
   "called."</p>
 
   <p>After the first line that names the function comes the code that we want
-  our function to run every time it is called. In this case, it’s the two print
+  our function to run every time it is called. In this case, it's the two print
   lines we discussed earlier.</p>
 
   <p>Notice that all the code lines of the function are indented. This is
@@ -100,7 +100,7 @@ show_my_info()
   <p>To call the function, all we have to do is to provide the function name
   followed by a set of parentheses.</p>
 
-  <p>Let’s put it all together and write a program that defines this function
+  <p>Let's put it all together and write a program that defines this function
   and then calls this function to actually have it print out those two
   lines:</p>
   <div class="code" data-firstline="1">
@@ -114,7 +114,7 @@ show_my_info()
   </div>
 
   <p>One advantage of functions is that they allow us to reuse the same code
-  over and over. So, let’s see what happens when we call that function several
+  over and over. So, let's see what happens when we call that function several
   times in a row:</p>
   <div class="code" data-firstline="1">
    <textarea>
@@ -128,7 +128,7 @@ show_my_info()
 </textarea>
   </div>
 
-  <p>If you run this program, you’ll see that each of the three times the
+  <p>If you run this program, you'll see that each of the three times the
   function is called, it prints the two lines. Imagine if we were going to need
   those two lines printed a hundred times throughout our program – you can see
   how using a function is a lot simpler and also makes our code much less
@@ -137,14 +137,14 @@ show_my_info()
   <p><strong>Note:</strong> We mentioned earlier that when you run a program,
   the computer will execute each line of code, starting at the top and moving
   down through the code, line-by-line. But, when the computer sees a function,
-  it doesn’t execute that code until the function is called. So, for our code
+  it doesn't execute that code until the function is called. So, for our code
   above, the first three lines (the function definition and the two lines of
   code in the function) are ignored and the computer will start by executing
   the first line below the function. To make things simpler, functions are
   often stored in separate files, so that the code is easier to read and
   follow.</p>
 
-  <p>There's more to functions than what we've covered here - we highly
+  <p>There's more to functions than what we've covered here &mdash; we highly
   recommend reading <a href="FUNCTION_INPUTS.html">FUNCTION INPUTS</a> before
   moving on.</p>
  </div>
