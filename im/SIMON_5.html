@@ -207,7 +207,7 @@ failed = False
 while not failed:
     
     # Add another random LED to sequence
-    play_order += [randrange(4)] 
+    play_order.append(randrange(4))
 
     # Play LED sequence 
     for i in play_order: 

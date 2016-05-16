@@ -82,7 +82,7 @@ play_order = []
   3):</p>
   <div class="code" data-firstline="0">
    <textarea>
-play_order += [randrange(4)]
+play_order.append(randrange(4))
 </textarea>
   </div>
   <h2 class="step">Play the List of LED Flashes</h2>
@@ -101,7 +101,7 @@ lights = [Output(4), Output(18), Output(24), Output(27)]
 play_order = []
 
 # Add another random LED to sequence
-play_order += [randrange(4)]
+play_order.append(randrange(4))
 
 # Ensure all lights are off
 for light in lights: 
@@ -136,15 +136,15 @@ for light in lights:
     light.off()
 
 while True:
-      # Add another random LED to sequence
-      play_order += [randrange(4)]
+    # Add another random LED to sequence
+    play_order.append(randrange(4))
       
-      # Play sequence
-      for i in play_order:
-          lights[i].on()
-          time.sleep(0.4)
-          lights[i].off()
-          time.sleep(0.2)
+    # Play sequence
+    for i in play_order:
+        lights[i].on()
+        time.sleep(0.4)
+        lights[i].off()
+        time.sleep(0.2)
 </textarea>
   </div>
   <h2 class="step">Put It All Together</h2>
@@ -179,7 +179,7 @@ play_order = []
 while True:
     
     # Add another random LED to sequence
-    play_order += [randrange(4)] 
+    play_order.append(randrange(4))
 
     # Play LED sequence 
     for i in play_order: 
