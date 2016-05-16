@@ -70,27 +70,28 @@ you_failed_note = Note('E2')
   updated to:</p>
   <div class="code" data-firstline="0">
    <textarea>
-# Play LED sequence 
-for i in play_order: 
-    lights[i].on() 
-    notes[i].play(0.4).wait() 
+# Play LED sequence
+for i in play_order:
+    lights[i].on()
+    notes[i].play(0.4).wait()
     lights[i].off()
-    time.sleep(0.2) 
+    time.sleep(0.2)
 </textarea>
   </div>
   <div class="code" data-firstline="0">
    <textarea>
 # If user enters correct button, flash LED and play tone
-lights[button_pressed].on()     
+lights[button_pressed].on()
 notes[button_pressed].play(duration=None)
-buttons[button_pressed].wait(press=False) 
+buttons[button_pressed].wait(press=False)
 time.sleep(0.2)
-lights[button_pressed].off() 
-notes[button_pressed].stop()    
+lights[button_pressed].off()
+notes[button_pressed].stop()
 </textarea>
   </div>
 
-  <p>Here is what the code for this project should look like at this point &mdash;
+  <p>Here is what the code for this project should look like at this point (with
+  new changes highlighted with arrows) &mdash;
   it should run similarly to the previous project, but with sound added:</p>
   <div class="code" data-firstline="1">
    <textarea>
@@ -100,17 +101,17 @@ notes[button_pressed].stop()
 
 from rstem.button import Button
 from rstem.gpio import Output
-from rstem.sound import Note
+*from rstem.sound import Note
 from random import randrange
 import time
 
 buttons = [Button(14), Button(15), Button(23), Button(17)]
 lights = [Output(4), Output(18), Output(24), Output(27)]
-notes = [Note('C'), Note('D'), Note('E'), Note('F')]
+*notes = [Note('C'), Note('D'), Note('E'), Note('F')]
+*
+*you_failed_note = Note('E2')
 
-you_failed_note = Note('E2')
-
-for light in lights: 
+for light in lights:
     light.off()
 
 play_order = []
@@ -122,16 +123,16 @@ failed = False
 # ##################################
 
 while not failed:
-    
+
     # Add another random LED to sequence
     play_order.append(randrange(4))
 
-    # Play LED sequence 
-    for i in play_order: 
-        lights[i].on() 
-        notes[i].play(0.4).wait() 
+    # Play LED sequence
+    for i in play_order:
+        lights[i].on()
+*        notes[i].play(0.4).wait()
         lights[i].off()
-        time.sleep(0.2) 
+        time.sleep(0.2)
 
     # #############################
     # for: loop to get player input
@@ -140,25 +141,23 @@ while not failed:
     for i in play_order:
 
         # Get the user's button press
-        button_pressed = Button.wait_many(buttons, timeout=3) 
+        button_pressed = Button.wait_many(buttons, timeout=3)
 
         # If user enters incorrect button, end game
-        if button_pressed != i: 
-            failed = True 
-            break 
+        if button_pressed != i:
+            failed = True
+            break
 
         # If user enters correct button, flash LED and play tone
-        lights[button_pressed].on()     
-        notes[button_pressed].play(duration=None)
-        buttons[button_pressed].wait(press=False) 
+        lights[button_pressed].on()
+*        notes[button_pressed].play(duration=None)
+        buttons[button_pressed].wait(press=False)
         time.sleep(0.2)
-        lights[button_pressed].off() 
-        notes[button_pressed].stop() 
+        lights[button_pressed].off()
+*        notes[button_pressed].stop()
 
-    if not failed: 
+    if not failed:
         time.sleep(1.0)
-
-# Game Over &mdash; Play error sequence
 </textarea>
   </div>
  </div>

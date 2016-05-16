@@ -54,7 +54,7 @@ pg_flows.Main = [
     {filename: "SIMON_3.html",                      title: "SIMON SAYS 3",                  concept: false, uid: "simon3"},
     {filename: "RANDOM.html",                       title: "RANDOM FUNCTIONS",              concept: true, uid: ""},
     {filename: "SIMON_4.html",                      title: "SIMON SAYS 4",                  concept: false, uid: "simon4"},
-    {filename: "BUTTON_FUNCTIONS.html",             title: "MORE BUTTON FUNCTIONS",         concept: true, uid: ""},
+    {filename: "BUTTON_FUNCTIONS.html",             title: "MORE BUTTON FUNCTIONS",         concept: true, uid: "buttonfuncs"},
     {filename: "SIMON_5.html",                      title: "SIMON SAYS 5",                  concept: false, uid: "simon5"},
     {filename: "SIMON_6.html",                      title: "SIMON SAYS 6",                  concept: false, uid: "simon6"},
     {filename: "SIMON_7.html",                      title: "SIMON SAYS 7",                  concept: false, uid: "simon7"},

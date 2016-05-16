@@ -154,8 +154,8 @@ import time
 
 my_buttons = [Button(14), Button(15), Button(23), Button(17)]
 
-while True: 
-    for button in my_buttons: 
+while True:
+    for button in my_buttons:
         if button.is_pressed():
             print("Button connected to GPIO", button.pin, "is pressed")
     time.sleep(0.1)

@@ -104,7 +104,7 @@ play_order = []
 play_order.append(randrange(4))
 
 # Ensure all lights are off
-for light in lights: 
+for light in lights:
     light.off()
 
 # Play sequence
@@ -132,13 +132,13 @@ lights = [Output(4), Output(18), Output(24), Output(27)]
 play_order = []
 
 # Ensure all lights are off
-for light in lights: 
+for light in lights:
     light.off()
 
 while True:
     # Add another random LED to sequence
     play_order.append(randrange(4))
-      
+
     # Play sequence
     for i in play_order:
         lights[i].on()
@@ -149,7 +149,8 @@ while True:
   </div>
   <h2 class="step">Put It All Together</h2>
 
-  <p>Here is what the code for this project should look like at this point --
+  <p>Here is what the code for this project should look like at this point (with
+  new changes highlighted with arrows) &mdash;
   when you run it, you will see a random LED flash, then that light will repeat
   with a second random light added, then that 2-light sequence will repeat with
   a third added and so on (the sequence will continue until you stop the
@@ -161,47 +162,31 @@ while True:
 # ##################################
 
 from rstem.gpio import Output
-from random import randrange
+*from random import randrange
 import time
 
 lights = [Output(4), Output(18), Output(24), Output(27)]
 
-for light in lights: 
+for light in lights:
     light.off()
 
-play_order = []
-
+*play_order = []
 
 # ##################################
 # Main while: loop for game
 # ##################################
 
-while True:
-    
-    # Add another random LED to sequence
-    play_order.append(randrange(4))
+*while True:
 
-    # Play LED sequence 
-    for i in play_order: 
-        lights[i].on() 
-        time.sleep(0.4) 
+*    # Add another random LED to sequence
+*    play_order.append(randrange(4))
+
+    # Play LED sequence
+    for i in play_order:
+        lights[i].on()
+        time.sleep(0.4)
         lights[i].off()
-        time.sleep(0.2) 
-
-    # #############################
-    # for: loop to get player input
-    # #############################
-
-    # for i in play_order:
-
-        # Get the user's button press
-
-        # If user enters incorrect button, end game
-
-        # If user enters correct button, flash LED and play tone
-
-
-# Game Over &mdash; Play error sequence
+        time.sleep(0.2)
 </textarea>
   </div>
  </div>

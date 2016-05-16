@@ -73,29 +73,31 @@
   <div class="code" data-firstline="0">
    <textarea>
 # Game Over &mdash; Play error sequence
-if button_pressed == None: 
-    for light in lights: 
+if button_pressed == None:
+    for light in lights:
         light.on()
-else: 
+else:
     lights[button_pressed].on()
 
 you_failed_note.play(1.5).wait()
 
-for light in lights: 
+for light in lights:
     light.off()
 
 time.sleep(0.5)
 
 # Play correct sequence fast
-for i in play_order: 
-    lights[i].on() 
+for i in play_order:
+    lights[i].on()
     notes[i].play(0.1).wait()
-    lights[i].off() 
+    lights[i].off()
     time.sleep(0.05)
 </textarea>
   </div>
 
-  <p>Here is what the final code for this project looks like &mdash; go have some
+  <p>Here is what the final code for this project looks like 
+  (with new changes highlighted with arrows) &mdash;
+  go have some
   fun playing and feel free to add more features to customize the game how
   you'd like:</p>
   <div class="code" data-firstline="1">
@@ -116,7 +118,7 @@ notes = [Note('C'), Note('D'), Note('E'), Note('F')]
 
 you_failed_note = Note('E2')
 
-for light in lights: 
+for light in lights:
     light.off()
 
 play_order = []
@@ -128,16 +130,16 @@ failed = False
 # ##################################
 
 while not failed:
-    
+
     # Add another random LED to sequence
     play_order.append(randrange(4))
 
-    # Play LED sequence 
-    for i in play_order: 
-        lights[i].on() 
-        notes[i].play(0.4).wait() 
+    # Play LED sequence
+    for i in play_order:
+        lights[i].on()
+        notes[i].play(0.4).wait()
         lights[i].off()
-        time.sleep(0.2) 
+        time.sleep(0.2)
 
     # #############################
     # for: loop to get player input
@@ -146,44 +148,44 @@ while not failed:
     for i in play_order:
 
         # Get the user's button press
-        button_pressed = Button.wait_many(buttons, timeout=3) 
+        button_pressed = Button.wait_many(buttons, timeout=3)
 
         # If user enters incorrect button, end game
-        if button_pressed != i: 
-            failed = True 
-            break 
+        if button_pressed != i:
+            failed = True
+            break
 
         # If user enters correct button, flash LED and play tone
-        lights[button_pressed].on()     
+        lights[button_pressed].on()
         notes[button_pressed].play(duration=None)
-        buttons[button_pressed].wait(press=False) 
+        buttons[button_pressed].wait(press=False)
         time.sleep(0.2)
-        lights[button_pressed].off() 
-        notes[button_pressed].stop() 
+        lights[button_pressed].off()
+        notes[button_pressed].stop()
 
-    if not failed: 
+    if not failed:
         time.sleep(1.0)
 
-# Game Over &mdash; Play error sequence
-if button_pressed == None: 
-    for light in lights: 
-        light.on()
-else: 
-    lights[button_pressed].on()
-
-you_failed_note.play(1.5).wait()
-
-for light in lights: 
-    light.off()
-
-time.sleep(0.5)
-
-# Play correct sequence fast
-for i in play_order: 
-    lights[i].on() 
-    notes[i].play(0.2).wait()
-    lights[i].off() 
-    time.sleep(0.2)
+*# Game Over &mdash; Play error sequence
+*if button_pressed == None:
+*    for light in lights:
+*        light.on()
+*else:
+*    lights[button_pressed].on()
+*
+*you_failed_note.play(1.5).wait()
+*
+*for light in lights:
+*    light.off()
+*
+*time.sleep(0.5)
+*
+*# Play correct sequence fast
+*for i in play_order:
+*    lights[i].on()
+*    notes[i].play(0.2).wait()
+*    lights[i].off()
+*    time.sleep(0.2)
 </textarea>
   </div>
  </div>

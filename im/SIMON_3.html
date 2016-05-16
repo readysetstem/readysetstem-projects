@@ -104,13 +104,13 @@ play_order = [0, 1, 2, 3, 2, 1, 0, 3]
   <div class="code" data-firstline="0">
    <textarea>
 # Ensure all lights are off
-for light in lights: 
+for light in lights:
     light.off()
 
 # Play sequence
-for i in play_order: 
-    lights[i].on() 
-    time.sleep(0.4) 
+for i in play_order:
+    lights[i].on()
+    time.sleep(0.4)
     lights[i].off()
     time.sleep(0.2)
 </textarea>
@@ -131,12 +131,12 @@ lights = [Output(4), Output(18), Output(24), Output(27)]
 play_order = [0, 1, 2, 3, 2, 1, 0, 3]
 
 # Play sequence
-for light in lights: 
+for light in lights:
     light.off()
 
-for i in play_order: 
-    lights[i].on() 
-    time.sleep(0.4) 
+for i in play_order:
+    lights[i].on()
+    time.sleep(0.4)
     lights[i].off()
     time.sleep(0.2)
 </textarea>
@@ -146,7 +146,7 @@ for i in play_order:
   <ol>
    <li> <p>
    The <code>play_order</code> only includes numbers 0 through 3, that
-   correspond to each of the 4 LEDs.  What happens if you use a number in 
+   correspond to each of the 4 LEDs.  What happens if you use a number in
    <code>play_order</code> greater than 3?  Why?
    </p></li> <li> <p>
    Can you make the LEDs play in the order 0, 1, 2, 3, 0, 1, 2, 3...  forever?

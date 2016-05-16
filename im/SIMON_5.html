@@ -112,11 +112,11 @@ for i in play_order:
    </div>
    <div>
 
-    <p>The wait_many() function takes a list of buttons as a parameter, will
+    <p>As discussed in the
+  <a data-uid="buttonfuncs"></a> project,
+    the <code>wait_many()</code> function takes a list of buttons as a parameter, will
     wait for any of them to be pressed and will then return the index into the
-    buttons list of the button that was pressed.</p>
-
-    <p>See the API reference for more details.</p>
+    button list of the button that was pressed.</p>
    </div>
   </div>
 
@@ -174,7 +174,8 @@ while not failed:
   </div>
   <h2 class="step">Put It All Together</h2>
 
-  <p>Here is what the code for this project should look like at this point &mdash;
+  <p>Here is what the code for this project should look like at this point (with
+  new changes highlighted with arrows) &mdash;
   when you run it, you will see a single LED flash, and you can press the
   button associated with that LED; then the pattern will repeat, adding a new
   LED light and you can enter the 2-light sequence; the sequence will continue
@@ -185,61 +186,59 @@ while not failed:
 # Import Modules and Initialize Game
 # ##################################
 
-from rstem.button import Button
+*from rstem.button import Button
 from rstem.gpio import Output
 from random import randrange
 import time
 
-buttons = [Button(14), Button(15), Button(23), Button(17)]
+*buttons = [Button(14), Button(15), Button(23), Button(17)]
 lights = [Output(4), Output(18), Output(24), Output(27)]
 
-for light in lights: 
+for light in lights:
     light.off()
 
 play_order = []
 
-failed = False
+*failed = False
 
 # ##################################
 # Main while: loop for game
 # ##################################
 
-while not failed:
-    
+*while not failed:
+
     # Add another random LED to sequence
     play_order.append(randrange(4))
 
-    # Play LED sequence 
-    for i in play_order: 
-        lights[i].on()
-        time.sleep(0.5) 
-        lights[i].off()
-        time.sleep(0.2) 
-
-    # #############################
-    # for: loop to get player input
-    # #############################
-
+    # Play LED sequence
     for i in play_order:
-
-        # Get the user's button press
-        button_pressed = Button.wait_many(buttons, timeout=3) 
-
-        # If user enters incorrect button, end game
-        if button_pressed != i: 
-            failed = True 
-            break 
-
-        # If user enters correct button, flash LED and play tone
-        lights[button_pressed].on()     
-        buttons[button_pressed].wait(press=False) 
+        lights[i].on()
+        time.sleep(0.4)
+        lights[i].off()
         time.sleep(0.2)
-        lights[button_pressed].off() 
 
-    if not failed: 
-        time.sleep(1.0)
-
-# Game Over &mdash; Play error sequence
+*    # #############################
+*    # for: loop to get player input
+*    # #############################
+*
+*    for i in play_order:
+*
+*        # Get the user's button press
+*        button_pressed = Button.wait_many(buttons, timeout=3)
+*
+*        # If user enters incorrect button, end game
+*        if button_pressed != i:
+*            failed = True
+*            break
+*
+*        # If user enters correct button, flash LED and play tone
+*        lights[button_pressed].on()
+*        buttons[button_pressed].wait(press=False)
+*        time.sleep(0.2)
+*        lights[button_pressed].off()
+*
+*    if not failed:
+*        time.sleep(1.0)
 </textarea>
   </div>
  </div>
