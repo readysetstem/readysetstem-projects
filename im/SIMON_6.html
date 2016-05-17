@@ -36,9 +36,6 @@
   <p>In this project, we continue the development of our Simon Says pattern
   matching game by adding sound to our LED flashes.</p>
 
-  <p>In our last project, we added in the use of the buttons as inputs and we
-  tested the sequence of button presses to determine if they were correct. In
-  this project, we'll add sound to our LED flashes.</p>
  </div>
  <div class="section" id="hw">
 
@@ -47,49 +44,6 @@
   <img class="bb" src="img/simon-4but-4led_bb.jpg" alt=""></p>
  </div>
  <div class="section" id="sw">
-  <h2>Programming Implementation</h2>
-
-  <p>First, we need to import the sound function we'll use and initialize a
-  list of four sounds &mdash; one for each of the LEDs. We'll also initialize a
-  specific note to play when an incorrect button is pressed (this is for
-  later):</p>
-  <div class="code" data-firstline="1">
-   <textarea>
-# Initialize the LEDs and sequence list
-from rstem.sound import Note
-
-notes = [Note('A'), Note('B'), Note('C'), Note('D')]
-
-you_failed_note = Note('E2')
-</textarea>
-  </div>
-
-  <p>Next, we need to insert our sounds into two locations &mdash; where we flash
-  the sequence of LEDs for the player and where the player presses a button
-  while repeating the sequence. Here is what those two code blocks should be
-  updated to:</p>
-  <div class="code" data-firstline="0">
-   <textarea>
-# Play LED sequence
-for i in play_order:
-    lights[i].on()
-    notes[i].play(0.4).wait()
-    lights[i].off()
-    time.sleep(0.2)
-</textarea>
-  </div>
-  <div class="code" data-firstline="0">
-   <textarea>
-# If user enters correct button, flash LED and play tone
-lights[button_pressed].on()
-notes[button_pressed].play(duration=None)
-buttons[button_pressed].wait(press=False)
-time.sleep(0.2)
-lights[button_pressed].off()
-notes[button_pressed].stop()
-</textarea>
-  </div>
-
   <p>Here is what the code for this project should look like at this point (with
   new changes highlighted with arrows) &mdash;
   it should run similarly to the previous project, but with sound added:</p>
@@ -108,8 +62,6 @@ import time
 buttons = [Button(14), Button(15), Button(23), Button(17)]
 lights = [Output(4), Output(18), Output(24), Output(27)]
 *notes = [Note('C'), Note('D'), Note('E'), Note('F')]
-*
-*you_failed_note = Note('E2')
 
 for light in lights:
     light.off()
@@ -160,13 +112,45 @@ while not failed:
         time.sleep(1.0)
 </textarea>
   </div>
+
+  <p>Next, we need to insert our sounds into two locations &mdash; where we flash
+  the sequence of LEDs for the player and where the player presses a button
+  while repeating the sequence. Here is what those two code blocks should be
+  updated to:</p>
+ <p>Here, we've added code to play sounds:
+  <ul>
+  <li><p>
+  In Line 13: we initialize <code>Notes()</code>s, one note that corresponds to each LED.
+  </p></li> <li><p>
+  In Line 34: we play the note corresponding to the LED in the sequence.  At this line, we
+  previously just paused with a <code>time.sleep()</code>.  Now, we play the correct note for
+  exactly the amount of time that we previously were pausing.
+  </p></li> <li><p>
+  In Lines 54 and 58: we play the note that corresponds to the button that was pressed.  The first
+  line we've added starts the note playing, and the second line stops it.  This way, the note will
+  play for the entire time the user has the button pressed.
+  
+  </p></li> </ul>
  </div>
  </div>
  <div class="section" id="challenge">
   <ol>
    <li> <p>
+   The notes we've chosen are at a relatively low volume for the small speaker in the CREATOR Kit.
+   Try changing the pitch of all of the notes to the same notes two octaves higher.
    </p></li> <li> <p>
+   When the user is trying to repeat the sequence, the notes will play for as long as the button
+   is pressed.  Instead, change the code to only play the note for exactly 0.4 seconds.
    </p></li> <li> <p>
+   Instead of notes, change the code to use <code>Speech()</code> that
+   corresponds to the color of each led.  That is, when you press the button
+   next to the red LED, have the speaker say the word "Red".
+   </p></li> <li> <p>
+   Instead of notes, change the code to use <code>Sound()</code>.  You could
+   have an animal sound for each button.  Some animal sounds available are:
+   "Meow.wav", "Horse.wav", "Rooster.wav", "Kitten.wav", "Cricket.wav",
+   "Dog1.wav", "Dog2.wav", "Goose.wav", "Owl.wav", "Bird.wav", and "Duck.wav".
+   
    </p></li>
   </ol>
  </div>
