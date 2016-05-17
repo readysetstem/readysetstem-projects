@@ -18,7 +18,6 @@ chainedOnload(function() {
         //
         // Rationale: There is sometimes, but not always, an extra newline at
         // the end.
-        var lineHighlight = [];
         var lines = codetext.value.split('\n');
         if (lines[lines.length-1] == '') {
             lines.splice(-1,1);
@@ -26,6 +25,7 @@ chainedOnload(function() {
 
         // Lines marked with '*' are to be highlighted in the gutter with an
         // arrow.  Find all lines to remember them, and remove the asterisk.
+        var lineHighlight = [];
         var needHighlightGutter = false;
         for (var j = 0; j < lines.length; j++) {
             highlight = lines[j][0] == "*";
@@ -39,7 +39,12 @@ chainedOnload(function() {
             gutters.unshift("CodeMirror-arrow");
         }
 
-        // Reaasmble codetext from lines.
+        // At beginning of line, convert all 4-space blocks to tabs
+        for (var j = 0; j < lines.length; j++) {
+            lines[j] = lines[j].replace(/ {4}/g, "\t");
+        }
+
+        // Reassemble codetext from lines.
         codetext.value = lines.join('\n');
 
         var cm = CodeMirror.fromTextArea(codetext, {
