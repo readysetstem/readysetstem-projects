@@ -60,8 +60,6 @@
   projects):</p>
   <div class="code" data-firstline="0">
    <textarea>
-# Initialize the LEDs and sequence list
-
 from rstem.gpio import Output
 import time
 
@@ -86,8 +84,6 @@ lights = [Output(4), Output(18), Output(24), Output(27)]
   <p>Here's what our LED sequence list will look like:</p>
   <div class="code" data-firstline="0">
    <textarea>
-# Initialize the LEDs and sequence list
-
 play_order = [0, 1, 2, 3, 2, 1, 0, 3]
 </textarea>
   </div>
@@ -121,8 +117,6 @@ for i in play_order:
   four LEDs flash in the hard-coded pattern that we've added to the code:</p>
   <div class="code" data-firstline="1">
    <textarea>
-# Initialize the LEDs and sequence list
-
 from rstem.gpio import Output
 import time
 

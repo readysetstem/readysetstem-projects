@@ -35,14 +35,6 @@
 
   <p>In this project, we continue the development of our Simon Says pattern
   matching game by adding button input.</p>
- </div>
- <div class="section" id="hw">
-
-  <p>The hardware setup for this project should be the same setup that was
-  completed for the <a data-uid="simon2"></a> project. Here's a reminder:
-  <img class="bb" src="img/simon-4but-4led_bb.jpg" alt=""></p>
- </div>
- <div class="section" id="sw">
 
   <p>In our last project, we created a random sequence of LED flashes. We
   included that code in a loop that will continue to add another flash to the
@@ -54,6 +46,15 @@
 
   <p>In this project, we'll add the buttons as input, and add the code that
   will verify the button sequence that the player enters.</p>
+ </div>
+ <div class="section" id="hw">
+
+  <p>The hardware setup for this project should be the same setup that was
+  completed for the <a data-uid="simon2"></a> project. Here's a reminder:
+  <img class="bb" src="img/simon-4but-4led_bb.jpg" alt=""></p>
+ </div>
+ <div class="section" id="sw">
+
   <h2 class="step">Add Initialization Code</h2>
 
   <p>The first thing we're going to need to do is initialize the buttons &mdash;
@@ -61,7 +62,6 @@
   in <a data-uid="manybuttons"></a>:</p>
   <div class="code" data-firstline="0">
    <textarea>
-# Initialize the LEDs and sequence list
 from rstem.button import Button
 
 buttons = [Button(14), Button(15), Button(23), Button(17)]
@@ -163,7 +163,6 @@ lights[button_pressed].off()
   <code>while</code> loop as follows:</p>
   <div class="code" data-firstline="0">
    <textarea>
-# Initialize the LEDs and sequence list
 failed = False
 
 ...
@@ -241,6 +240,15 @@ play_order = []
 *        time.sleep(1.0)
 </textarea>
   </div>
+ <p>Here, we've made the following code changes:
+  <ul>
+  <li><p>
+  In Lines 5 and 10: 
+  </p></li> <li><p>
+  In Lines 18 and 24: 
+  </p></li> <li><p>
+  In Lines 36 through 57: 
+  </p></li> </ul>
  </div>
  <div class="section" id="challenge">
   <ol>

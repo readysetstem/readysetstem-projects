@@ -35,6 +35,13 @@
 
   <p>In this project, we continue the development of our Simon Says pattern
   matching game by adding randomized LED blinking.</p>
+
+  <p>In our last project, we wrote some code to flash LEDs in a preplanned
+  sequence. While that's a good start, in our Simon Says game, we're going to
+  need to flash LEDs in a random sequence. This will require us to make some
+  modifications to the code from the last project, which will give us a random
+  sequence of LED flashes.</p>
+
  </div>
  <div class="section" id="hw">
 
@@ -44,110 +51,6 @@
  </div>
  <div class="section" id="sw">
 
-  <p>In our last project, we wrote some code to flash LEDs in a preplanned
-  sequence. While that's a good start, in our Simon Says game, we're going to
-  need to flash LEDs in a random sequence. This will require us to make some
-  modifications to the code from the last project, which will give us a random
-  sequence of LED flashes.</p>
-
-  <p>In the next project, we'll add in the buttons.</p>
-  <h2 class="step">Add Initialization Code</h2>
-
-  <p>Starting with the code we left off with in the previous project, the first
-  thing we'll need to do is import the function <code>randrange()</code> to
-  create our random generation of LED flashes:</p>
-  <div class="code" data-firstline="0">
-   <textarea>
-from random import randrange
-</textarea>
-  </div>
-  <h2 class="step">Create a List for LED Flashes &amp; Generate First LED</h2>
-
-  <p>Next, instead of filling the list <code>play_order</code> with our
-  predefined sequence of LED flashes, we're going to create an empty list that
-  we can fill with random sequence of flashes.</p>
-
-  <p>To do that, we'll replace the list we created previously with a new
-  (empty) list:</p>
-  <div class="code" data-firstline="0">
-   <textarea>
-play_order = []
-</textarea>
-  </div>
-
-  <p>Finally, we'll have to create our random sequence of LEDs. Each round of
-  the game, we'll want to add one random LED to the end of the
-  <code>play_order</code> list. The following line of code is a shorthand to
-  append an item to a list (in this case, the item is a random number from 0 to
-  3):</p>
-  <div class="code" data-firstline="0">
-   <textarea>
-play_order.append(randrange(4))
-</textarea>
-  </div>
-  <h2 class="step">Play the List of LED Flashes</h2>
-
-  <p>If we add this code to our previous code that includes the play sequence,
-  we'll see that we're adding a single random LED flash to our sequence list
-  and then flashing it:</p>
-  <div class="code" data-firstline="0">
-   <textarea>
-# Initialize the LEDs and sequence list
-from rstem.gpio import Output
-import time
-
-lights = [Output(4), Output(18), Output(24), Output(27)]
-
-play_order = []
-
-# Add another random LED to sequence
-play_order.append(randrange(4))
-
-# Ensure all lights are off
-for light in lights:
-    light.off()
-
-# Play sequence
-for i in play_order:
-    lights[i].on()
-    time.sleep(0.4)
-    lights[i].off()
-    time.sleep(0.2)
-</textarea>
-  </div>
-  <h2 class="step">Use a Loop to Generate an LED Sequence</h2>
-
-  <p>If we add a <code>while</code> loop, we can continue to generate a random
-  LED and add it to the list each time through the loop. This will play the
-  entire sequence of random LED flashes, add a new LED to the sequence, play
-  the list again with the new LED added, and then repeat:</p>
-  <div class="code" data-firstline="0">
-   <textarea>
-# Initialize the LEDs and sequence list
-from rstem.gpio import Output
-import time
-
-lights = [Output(4), Output(18), Output(24), Output(27)]
-
-play_order = []
-
-# Ensure all lights are off
-for light in lights:
-    light.off()
-
-while True:
-    # Add another random LED to sequence
-    play_order.append(randrange(4))
-
-    # Play sequence
-    for i in play_order:
-        lights[i].on()
-        time.sleep(0.4)
-        lights[i].off()
-        time.sleep(0.2)
-</textarea>
-  </div>
-  <h2 class="step">Put It All Together</h2>
 
   <p>Here is what the code for this project should look like at this point (with
   new changes highlighted with arrows) &mdash;
@@ -189,14 +92,25 @@ for light in lights:
         time.sleep(0.2)
 </textarea>
   </div>
- </div>
- <div class="section" id="challenge">
-  <ol>
-   <li> <p>
-   </p></li> <li> <p>
-   </p></li> <li> <p>
-   </p></li>
-  </ol>
+
+ <p>Here, we've made the following code changes:
+  <ul>
+  <li><p>
+  In Line 6: we import the <code>randrange()</code> we'll need later.
+  </p></li> <li><p>
+  In Line 14: instead of filling the <code>play_order</code> list with our
+  predefined sequence of LED flashes, we're going to create an empty list that
+  we can fill with random sequence of flashes.
+  </p></li> <li><p>
+  In Line 20: we add a <code>while</code> loop, so that we can continue to
+  generate a random LED and add it to the list each time through the loop. This
+  new loop will play the entire sequence of random LED flashes, add a new LED
+  to the sequence, play the list again with the new LED added, and then
+  repeat.
+  </p></li> <li><p>
+  In Line 23: we append another random LED to sequence the
+  <code>play_order</code> list.
+  </p></li> </ul>
  </div>
 </body>
 </html>
