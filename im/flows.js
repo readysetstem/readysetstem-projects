@@ -27,7 +27,7 @@ pg_flows.Main = [
     {filename: "VARIABLES_-_ASSIGNMENTS.html",      title: "VARIABLES",                     concept: true, uid: "vars"},
     {filename: "IF_-_ELSE_STATEMENTS.html",         title: "IF STATEMENTS",                 concept: true, uid: "if"},
     {filename: "USING_BUTTONS_WITH_GPIO.html",      title: "INPUTS (READING BUTTONS)",      concept: false, uid: "button"},
-    {filename: "BUILT-IN_FUNCTIONS.html",           title: "USING FUNCTIONS",               concept: true, uid: ""},
+    {filename: "BUILT-IN_FUNCTIONS.html",           title: "FUNCTIONS & MODULES",           concept: true, uid: ""},
     {filename: "FLASHLIGHT.html",                   title: "BUILDING A FLASHLIGHT",         concept: false, uid: "flashlight"},
     {filename: "WHILE_LOOPS.html",                  title: "WHILE LOOPS",                   concept: true, uid: "while"},
     {filename: "FLASHLIGHT2.html",                  title: "A FLASH LIGHT FLASHLIGHT",           concept: false, uid: ""},
