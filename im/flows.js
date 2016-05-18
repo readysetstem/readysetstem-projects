@@ -30,7 +30,7 @@ pg_flows.Main = [
     {filename: "BUILT-IN_FUNCTIONS.html",           title: "FUNCTIONS & MODULES",           concept: true, uid: ""},
     {filename: "FLASHLIGHT.html",                   title: "BUILDING A FLASHLIGHT",         concept: false, uid: "flashlight"},
     {filename: "WHILE_LOOPS.html",                  title: "WHILE LOOPS",                   concept: true, uid: "while"},
-    {filename: "FLASHLIGHT2.html",                  title: "A FLASH LIGHT FLASHLIGHT",           concept: false, uid: ""},
+    {filename: "FLASHLIGHT2.html",                  title: "FLASHING FLASHLIGHT",           concept: false, uid: ""},
     {filename: "LISTS.html",                        title: "LISTS",                         concept: true, uid: "lists"},
     {filename: "FOR_LOOPS.html",                    title: "FOR LOOPS",                     concept: true, uid: ""},
     {filename: "MANY_BUTTONS.html",                 title: "READING MULTIPLE BUTTONS",      concept: false, uid: "manybuttons"},
