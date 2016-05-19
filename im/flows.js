@@ -1,7 +1,3 @@
-//{filename: "INTRODUCTION_TO_THE_PROJECTS_GUIDE.html", title: "INTRODUCTION TO THE PROJECTS GUIDE", concept: true, uid: "", section: "INTRO"},
-//{filename: "INTRO_TO_FUNCTIONS.html",           title: "INTRO TO FUNCTIONS",                    concept: true, uid: ""},
-//{filename: "FUNCTION_INPUTS.html",              title: "FUNCTION INPUTS",                       concept: true, uid: ""},
-//{filename: "FUNCTION_OUTPUTS.html",             title: "FUNCTION OUTPUTS",                      concept: true, uid: ""},
 var pg_flows =  {};
 
 pg_flows.Main = [
@@ -17,8 +13,6 @@ pg_flows.Main = [
     {filename: "INTRODUCING_BUTTONS_PROJECT.html",  title: "ADDING A BUTTON",               concept: false, uid: ""},
     {filename: "CIRCUIT_THEORY.html",               title: "CIRCUIT THEORY",                concept: true, uid: "circuits"},
     {filename: "TWEAKING_YOUR_CIRCUIT.html",        title: "TWEAKING YOUR CIRCUIT",         concept: false, uid: "tweak"},
-    {filename: "SERIES_PARALLEL.html",              title: "SERIES & PARALLEL",             concept: true, uid: ""},
-    {filename: "SERIES_PARALLEL_PROJECT.html",      title: "SERIES & PARALLEL",             concept: false, uid: ""},
 
     {filename: "GPIO_CONCEPT.html",                 title: "GPIO OUTPUTS",                  concept: true, uid: "gpioc", section: "INPUT/OUTPUT"},
     {filename: "GENERAL_PURPOSE_INPUT-OUTPUT.html", title: "OUTPUTS (LIGHTING LEDS)",       concept: false, uid: "gpoutp"},
