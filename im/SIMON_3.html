@@ -101,6 +101,7 @@ play_order = [0, 1, 2, 3, 2, 1, 0, 3]
   flash.</p>
 
   <p>Here's what the play sequence should look like:</p>
+  
   <div class="code" data-firstline="0">
    <textarea>
 # Ensure all lights are off
@@ -119,10 +120,12 @@ for i in play_order:
 
   <p>Here is our full code at this point &mdash; when you run it, you will see the
   four LEDs flash in the hard-coded pattern that we've added to the code:</p>
-  <div class="code" data-firstline="1">
+    
+    <div class="code" data-firstline="1">
    <textarea>
-# Initialize the LEDs and sequence list
-
+# ##################################
+# Import Modules and Initialize Game
+# ##################################
 from rstem.gpio import Output
 import time
 
@@ -130,10 +133,11 @@ lights = [Output(4), Output(18), Output(24), Output(27)]
 
 play_order = [0, 1, 2, 3, 2, 1, 0, 3]
 
-# Play sequence
+# Ensure all lights are off
 for light in lights: 
     light.off()
 
+# Play sequence
 for i in play_order: 
     lights[i].on() 
     time.sleep(0.4) 
@@ -141,6 +145,7 @@ for i in play_order:
     time.sleep(0.2)
 </textarea>
   </div>
+
  </div>
 </body>
 </html>

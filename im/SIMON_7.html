@@ -28,12 +28,24 @@
  </script>
 </head>
 <body>
+
+ <div class="hw" data-count="4" data-name="resistor"></div>
+ <div class="hw" data-count="4" data-name="led"></div>
+ <div class="hw" data-count="4" data-name="button"></div>
  <div class="section" id="intro">
 
-  <p>In this project, we finish the development of our Simon Says pattern
-  matching game by adding a final win/lose sequence.</p>
+  <p>In this project, we'll finish the development of our Simon Says pattern
+  matching game by adding a final sequence when the player loses.</p>
+ </div>
+ <div class="section" id="hw">
 
-  <p>In this project, we're going to add in our final sequence when the user
+  <p>The hardware setup for this project should be the same setup that was
+  completed for the <a data-uid="simon2"></a> project. Here's a reminder:
+  <img class="bb" src="img/simon-4but-4led_bb.jpg" alt=""></p>
+ </div>
+ 
+ <div class="section" id="sw">
+  <p>The last piece of our game is to add in a final sequence for when the user
   makes a mistake and we drop through the <code>while</code> loop.</p>
 
   <p>When this happens, we want to do the following:</p>
@@ -176,7 +188,5 @@ for i in play_order:
 </textarea>
   </div>
  </div>
- <div class="section" id="hw"></div>
- <div class="section" id="sw"></div>
 </body>
 </html>

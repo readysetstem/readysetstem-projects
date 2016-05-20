@@ -28,17 +28,25 @@
  </script>
 </head>
 <body>
- <div class="section" id="intro">
 
-  <p>In this project, we continue the development of our Simon Says pattern
-  matching game by adding sound to our LED flashes.</p>
+ <div class="hw" data-count="4" data-name="resistor"></div>
+ <div class="hw" data-count="4" data-name="led"></div>
+ <div class="hw" data-count="4" data-name="button"></div>
+ <div class="section" id="intro">
 
   <p>In our last project, we added in the use of the buttons as inputs and we
   tested the sequence of button presses to determine if they were correct. In
   this project, we'll add sound to our LED flashes.</p>
-  <h2>Programming Implementation</h2>
+ </div>
+ <div class="section" id="hw">
 
-  <p>First, we need to import the sound function we'll use and initialize a
+  <p>The hardware setup for this project should be the same setup that was
+  completed for the <a data-uid="simon2"></a> project. Here's a reminder:
+  <img class="bb" src="img/simon-4but-4led_bb.jpg" alt=""></p>
+ </div>
+ <div class="section" id="sw">
+  <p>The first thing we'll need to do to start integrating sound into our game is
+  to import the sound function we'll use and initialize a
   list of four sounds &mdash; one for each of the LEDs. We'll also initialize a
   specific note to play when an incorrect button is pressed (this is for
   later):</p>
@@ -151,7 +159,5 @@ while not failed:
 </textarea>
   </div>
  </div>
- <div class="section" id="hw"></div>
- <div class="section" id="sw"></div>
 </body>
 </html>
