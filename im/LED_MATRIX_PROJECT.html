@@ -96,16 +96,21 @@
    <div>
 
     <p>You can think of a framebuffer as a temporary "canvas" that sits inside
-    of a computer (specifically inside the computer's memory).</p>
+    of a computer (specifically inside the computer's memory).  We can draw
+	anything we want on this "canvas" and then display it on our LED Matrix.</p>
 
-    <p>We use a framebuffer with the LED Matrix. The Ready Set STEM API
-    provides a set of functions to use the framebuffer:</p>
+    <p>The Ready Set STEM API provides a set of functions to use the framebuffer:</p>
     <ul>
      <li>
 
-      <p><code>FrameBuffer()</code> initializes the framebuffer</p>
+      <p><code>FrameBuffer()</code> initializes the framebuffer.  We must do this
+	  once prior to using the framebuffer.</p>
      </li>
-     <li>
+      <li>
+
+      <p>The <code>erase()</code> function erases the framebuffer (the canvas.</p>
+     </li>
+    <li>
 
       <p>A number of functions (<code>point()</code>, <code>line()</code>,
       <code>rect()</code>, etc) can be used to draw on the framebuffer. Drawing
@@ -113,8 +118,8 @@
      </li>
      <li>
 
-      <p>The <code>show()</code> function causes the canvas that was stored in
-      the computer's memory to instantly become visible LED Matrix.</p>
+      <p>The <code>show()</code> function causes the framebuffer (the canvas) that 
+	  was stored in the computer's memory to instantly become visible LED Matrix.</p>
      </li>
     </ul>
    </div>
@@ -142,7 +147,7 @@ fb.show()
    <li>
 
     <p>On Line 2, we initialize our framebuffer. We call the
-    <code>Framebuffer()</code> function, which returns a "framebuffer" to our
+    <code>Framebuffer()</code> function, which returns a "framebuffer" object to our
     <code>fb</code> variable. We'll talk about this more in an upcoming concept
     <a data-uid="fb"></a>, but the important thing to understand is that we can
     now use the <code>fb</code> variable to call other framebuffer
