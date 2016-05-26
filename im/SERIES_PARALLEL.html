@@ -29,6 +29,14 @@
 </head>
 <body>
  <div class="section">
+ <p><strong>This concept is a bit more advanced than most of the other concepts
+ in this guide.  We've included this concept (and the following project) for those
+ who are interested in some more advanced circuit theory concepts, but you
+ should feel free to skip this concept and/or the next project if you find it
+ overwhelming.</strong>
+ </div>
+ 
+ <div class="section">
   <h1>Going Loopy</h1>
 
   <p>All of our first circuits contained just one loop &mdash; that is, just one
@@ -79,7 +87,7 @@
     <p>In the above case, resistors <i>R1</i> and <i>R2</i> are in parallel.  Resistor
     <i>R3</i> is in series with the combination of <i>R1</i> and <i>R2</i>
     <strong>together</strong>.  And 
-    <i>R4</i> is in series with the combination of <i>R1</i>, <i>R2</i> and
+    <i>R4</i> is in parallel with the combination of <i>R1</i>, <i>R2</i> and
     <i>R3</i> 
     <strong>together</strong>.
 
@@ -117,33 +125,19 @@
 
   <p>On the other hand, when resistances are put in parallel, the total
   <i>resistance</i> is divided. Another way to say this is that the total
-  <i>current</i> adds up. Again, going back to Ohm's Law, we remember that this
-  is important because decreasing</p>
-
-  <p>When resistances are in parallel, the total <i>conductance</i> adds
-  up. <i>Conductance</i> is the reciprocal of the resistance. In other words,
-  resistance is a measure of how <i>difficult</i> it is for current to flow
-  through a component, while conductance is the opposite &mdash; a measure of how
-  <i>easy</i> it is for current to flow through a component. This is more
-  evident in a picture:</p>
-
+  <i>current</i> adds up -- the current going into each of the branches
+  is split between the branches proportional to the amount of resistance in the 
+  branch.  Here's a picture:
+  
   <img class="schematic" style="max-width: 400px;" alt="" src= "img/Resistors-in-parallel-2-labeled.png">
 
   <p><mark>PIC: Battery/2-resistor WATER parallel
   schematic</mark></p>
 
-  <p>As you increase the number of resistors you allow <i>more</i>
-  current to flow. So, in this case, the total <i>conductance</i> is the sum of
-  the individual <i>conductances</i>, or: <sup>1</sup>⁄<sub>R1</sub> +
-  <sup>1</sup>⁄<sub>R2</sub></p>
+  <p>Without a little bit of math, this may be difficult to conceptualize, but 
+  the picture above should give you an idea.  We don't want to get too mathy here, so
+  hopefully our next project will make things a little clearer.</p>
 
-  <p>The math for this can be a bit more confusing, but is very clear
-  from the water analogy picture. Two equal resistors in parallel allow twice
-  the amount of current to flow, or in other words, they resist the current
-  flow less (half as much).</p>
-
-  <p>So, this means that: <strong>two equal resistances in
-  <i>parallel</i> gives exactly <i>half</i> the resistance.</strong></p>
  </div>
 </body>
 </html>

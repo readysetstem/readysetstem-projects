@@ -32,22 +32,21 @@
   <h1>Making Notes</h1>
 
   <p>Songs are made up of sequences of notes (or combinations of multiple
-  notes). The Ready Set STEM API provides a <code>Note()</code> function to
-  create notes of different pitches.</p>
+  notes). The Ready Set STEM API provides a <code>Note()</code> function that
+  will create notes of different pitches.</p>
 
-  <p>The basic use of the <code>Note()</code> function is to create a note
-  with:</p>
+  <p>The basic use of the <code>Note()</code> function is to create a note:</p>
   <pre>
 Note(<i>pitch</i>)
 </pre>
 
-  <p>where <code><i>pitch</i></code> can be either a number which represents
-  the frequency of the pitch, or a letter A though G which is the name of the
-  note.</p>
+  <p>where <code><i>pitch</i></code> can be either a number (which represents
+  the frequency of the pitch), or a letter (A though G, the name of the
+  note).</p>
 
   <p>For example, an 'A' note (above middle 'C') has the frequency of 440Hz (Hz
   is a unit of frequency &mdash; it is how many times something happens each second).
-  So create an 'A' note you have two choices:</p>
+  So, to create an 'A' note you have two choices:</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.sound import Note
@@ -63,10 +62,13 @@ another_a_note = Note(440)
   <p>If you've played an instrument, you know there are more notes than just A
   through G. For one, each note can be played a half-step up ("sharp") or down
   ("flat"). To specify sharps or flats with the <code>Note()</code> function,
-  append a '#' to your note for a sharp, or 'b' for a flat. For example, to
-  create a B flat, use:</p>
+  append a '#' to your note for a sharp, or 'b' for a flat. 
+  
+  <p>For example, to create a B sharp and a B flat, we could do this:</p>
+
   <div class="code" data-firstline="0">
    <textarea>
+my_b_sharp = Note('B#')
 my_b_flat = Note('Bb')
 </textarea>
   </div>
@@ -74,19 +76,22 @@ my_b_flat = Note('Bb')
   <p>And there's octaves, too! To specify the octave, append a single digit to
   the very end of your note. By default, the octave is the fourth octave. One
   octave higher would be the fifth octave, one octave lower would be the third.
-  For example, some more ways to specify an 'A':</p>
+  
+  <p>For example, some more ways to specify an 'A':</p>
+
   <div class="code" data-firstline="0">
    <textarea>
 a_note = Note('A')
 the_same_a_note = Note('A4')
 an_octave_higher_a_note = Note('A5')
-an_octave_lower_a_note = Note('A5')
+an_octave_lower_a_note = Note('A3')
 </textarea>
   </div>
 
   <p>Finally, you can combine sharps or flats with octaves, as in: 'Ab4',
   'B#6', or 'Db7'</p>
  </div>
+
  <div class="section">
   <h1>Making Music</h1>
 
@@ -102,13 +107,13 @@ note.play()
 
   <p>Try the above if you want, and you'll be disappointed to find your note
   doesn't play. The reason is that <code>play()</code> just <i>starts</i>
-  playing a note, in the background. After starting it, the program will
+  playing a note, in the background. After starting playing, the program will
   continue to run &mdash; but in our program above, there's no more code after line
-  3, so the program ends. The note will stop playing if you tell it to, or if
-  the program ends.</p>
+  3, so the program ends. The program actually ends before we hear the note playing,
+  so we don't hear anything.</p>
 
-  <p>What you normally want to do is <code>wait()</code> for the note to
-  finish. For example here we've added a wait:</p>
+  <p>This is why we typically use a <code>wait()</code> to force our program to
+  wait for the note to finish. For example here we've added a wait:</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.sound import Note
@@ -118,9 +123,9 @@ note.play()
 </textarea>
   </div>
 
-  <p>And because the <code>wait()</code> above waits for one second, you could
-  also just pause for one second if you wanted, for about the same result, by
-  changing the wait to a <code>time.sleep(1)</code>.</p>
+  <p>Note that the <code>wait()</code> above essentially just waits for one second;
+  if you prefered, you could have used a <code>sleep(1)</code> to accomplish
+  nearly the same thing.
 
   <p>Playing your own song would involve a sequence of playing notes of
   different durations and waiting for them to finish playing. In addition, a
@@ -133,7 +138,10 @@ note.play()
   <p>Finally, what if you want to stop a note early? When writing a game, you
   might want to start a note when something happens (say a button is pressed)
   and then stop it when the button is released. To stop it, you'd use the
-  <code>stop()</code> function. For example:</p>
+  <code>stop()</code> function. 
+  
+  <p>Here is an example:</p>
+
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.sound import Note
@@ -150,13 +158,13 @@ note.stop()
   <ul>
    <li>
 
-    <p>During the first sleep, the note has started playing, and won't stop
-    until we stop it or the program ends...</p>
+    <p>During the first sleep, the note is started playing</p>
    </li>
    <li>
 
-    <p>During the second sleep, the note was just stopped &mdash; so wait for two
-    more second just to prove it really stopped!</p>
+    <p>During the second sleep, the note is already stopped &mdash; but 
+	we want to prove that we forced the note to stop, not that the note
+	stopped because the program ended
    </li>
   </ul>
 

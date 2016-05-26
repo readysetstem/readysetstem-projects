@@ -33,20 +33,14 @@
  <div class="hw" data-count="2" data-name="button"></div>
  <div class="section" id="intro">
 
-  <p>In this project, we'll put together the work we did in the previous
-  projects &mdash; getting GPIO input from the button and controlling the LED with
+  <p>In this project, we'll put together the work we did in two of our previous
+  projects &mdash; getting GPIO input from a button and controlling an LED with a
   GPIO output &mdash; to create a "flashlight" circuit that will illuminate an LED
-  when the button is pressed. The flashlight will rely on software for both
-  input and output.</p>
+  when the button is pressed.  The flashlight will rely on software for both the
+  input (reading the button) and the output (lighting the LED).</p>
 
-  <p>In the <a data-uid="button"></a> project, we were able to get button input
-  from a GPIO. In the <a data-uid="gpoutp"></a> project, we were able to
-  control an LED using GPIO. In this project, we're going to put those concepts
-  together to read a button input using one GPIO and use that information
-  toggle an LED using another GPIO.</p>
  </div>
  <div class="section" id="hw">
-  <h2>Wire the button and LED to GPIOs</h2>
 
   <p>For the hardware in this project, we're going to wire two completely
   independent circuits:</p>
@@ -63,14 +57,29 @@
    </li>
   </ol>
 
-  <p>Here is what the breadboard should look like with the two circuits wired.
-  If you have any questions about how to wire either of these two circuits,
-  refer back to the projects referenced above.</p><img class="bb" src=
-  "img/Flashlight_bb.jpg" alt="">
+  <h2 class="step">Wire the LED circuit.</h2>
 
-  <p>You'll notice that our button is wired to GPIO18 and our LED is wired to
-  GPIO14.</p>
+  <p>Let's start by wiring the LED circuit like we did in <a data-uid="gpoutp"></a>:
+  
+  <img class="bb" src="img/Your_First_Breadboard_Add_GPIO_bb.jpg" alt="">
+  
+  <p>We've chosen to wire our LED to GPIO14 &mdash; you can use any GPIO you like,
+  but if you use a different one, make sure to modify your code appropriately.
+  
+  <h2 class="step">Wire the button circuit.</h2>
+
+  <p>Next, let's add a button circuit to our breadboard:
+  
+  <img class="bb" src="img/Flashlight_bb.jpg" alt="">
+
+  <p>In this case, we've chosen GPIO18 for our button &mdash; again, you are 
+  welcome to use any GPIO you like, but if you use a different one, the default code
+  below will need to be changed.
+  
+  <p>Now that we have our LED and button circuits wired, we can write some code
+  to bring those circuits to life...</p>
  </div>
+
  <div class="section" id="sw">
   <h2 class=step>Write the code.</h2>
 
@@ -110,12 +119,12 @@ else:
   <ul>
    <li>
 
-    <p>On Line 1, we import the module we will need to initialize the button
+    <p>On Line 1, we import the function we will need to initialize the button
     (called <code>Button()</code>)</p>
    </li>
    <li>
 
-    <p>On Line 2, we import the module we will need to initialize the LED
+    <p>On Line 2, we import the function we will need to initialize the LED
     (called <code>Output()</code>)</p>
    </li>
    <li>

@@ -33,22 +33,23 @@
  <div class="hw" data-count="1" data-name="audio_cable"></div>
  <div class="section" id="intro">
 
-  <p>In this project, we integrate the multiple buttons we implemented several
-  projects ago along with the note/sound generation from the sound functions
-  and the speaker.</p>
+  <p>In this project, we will create a simple piano using multiple buttons
+  attached to multiple GPIO inputs and then writing code to assign each button
+  a musical note.
+
+  <p>We'll keep it simple in this project, and just play each note for one 
+  second when the corresponding button is pressed.  
  </div>
  <div class="section" id="hw">
 
-  <p>Using the hardware setup from <a data-uid="manybuttons"></a>, we can turn
-  our CREATOR Kit into a very basic piano. We will start with four buttons each
-  wired to a GPIO as input, and write some code that will generate
-  corresponding note when each button is pressed. We'll keep it simple in this
-  project, and just play each note for one second.</p>
+  <p>Our hardware will consist of four buttons, each wired to a GPIO as input.
+  In fact, we'll use the same circuit we wired in the <a data-uid="manybuttons"></a> 
+  project. As a reminder, here is what your breadboard should look like:
 
-  <p>Your breadboard will use the same circuit we wired in the <a data-uid=
-  "manybuttons"></a> project. As a reminder, here is what it should look like:
   <img class="bb" src="img/Many_Buttons_bb.jpg" alt=""></p>
+
  </div>
+
  <div class="section" id="sw">
 
   <p>The code for this project is straightforward:</p>
@@ -65,7 +66,7 @@
    <li>
 
     <p>Then, we create a while loop that will continually test each button for
-    a press, and if a press if received, will play the corresponding note.</p>
+    a press, and if a press is received, will play the corresponding note.</p>
    </li>
   </ul>
 
@@ -96,7 +97,7 @@ while True:
   pressed, the program will try to <i>replay</i> the note over and over again,
   each time through the <code>while</code> loop. When you <i>replay</i> a note
   (that is, play a note that is already playing), you'll hear a little pause as
-  the note stops and restarts. That is the clicking you hear &mdash; and we'll fix
+  the note stops and restarts. That is the clicking you hear &mdash; we'll fix
   this in the next project.</p>
  </div>
  <div class="section" id="challenge">
@@ -108,30 +109,18 @@ while True:
    </li>
    <li>
 
-    <p>Can you modify only your <i>hardware</i> so that a 'C' note plays only
-    if <i>all</i> of the buttons are pressed? Hint: think about buttons in
-    series or parallel.</p>
-   </li>
-   <li>
-
-    <p>Can you modify only your <i>hardware</i> so that a 'C' note plays only
-    if <i>any</i> of the buttons are pressed? Hint: think about buttons in
-    series or parallel.</p>
-   </li>
-   <li>
-
-    <p>Can you modify only your <i>software</i> so that a 'C' note plays only
+    <p>Can you modify your software so that a 'C' note plays only
     if <i>all</i> of the buttons are pressed?</p>
    </li>
    <li>
 
-    <p>Can you modify only your <i>software</i> so that a 'C' note plays only
+    <p>Can you modify your software so that a 'C' note plays only
     if <i>any</i> of the buttons are pressed?</p>
    </li>
    <li>
 
     <p>We picked the notes (C, D, E and G) so that we could play the song that
-    we created in <a data-uid="mary"></a>. Give it a try!</p>
+    we created in <a data-uid="mary"></a>. Can you play the song?  Give it a try!</p>
    </li>
   </ol>
  </div>

@@ -29,7 +29,7 @@
 </head>
 <body>
  <div class="section">
-  <h1>FOR LOOPS</h1>
+  <h1>FOR Loops</h1>
 
   <p>In <a data-uid="while"></a>, we discussed how <code>while</code> loops can
   be used to cycle through code an indefinite (or even an infinite) number of
@@ -61,10 +61,17 @@ This is time # 3 through the loop.
   <p>Essentially, the code ran through the code block 3 times, and with each
   time through the loop, the loop variable <code>x</code> was set to the next item
   in the list.  
-  
+ 
+ </div>
+ 
+  <div class="section">
+  <h1>RANGE</h1>
+ 
   <p>Because counting through a list of numbers is very common, Python provides a built-in
-  function to help us out: <code>range()</code>.  Range returns a sequence of numbers, from 0 up to the
-  just before the number we give it.  For example:
+  function to help us do specifically that: <code>range()</code>.  Range returns a sequence 
+  of numbers, from 0 up to the just before the number we give it.  
+  
+  <p>Here's an example:
 
   <div class="code" data-firstline="0">
    <textarea>
@@ -87,6 +94,11 @@ This is time # 4 through the loop.
   <p>This time, you'll notice that the list starts counting at 0 not 1,
   as that's how <code>range()</code> works.  You may remember from the <a data-uid="lists"></a>
   concept that list items are counted starting from 0 as well.</p>
+
+</div>
+ 
+  <div class="section">
+  <h1>Looping Through Lists</h1>
 
   <p>We can also use <code>for</code> loops to iterate through the items in a list. Here's
   the example from the <a data-uid="lists"></a> concept &mdash; a list of the first
