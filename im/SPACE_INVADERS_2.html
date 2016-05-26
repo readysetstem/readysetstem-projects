@@ -46,8 +46,8 @@
 
   <p>Now that we have the framebuffer initialized and have verified that the
   LED Matrix is working, let's put our spaceship where it's supposed to be
-  located &mdash; in the middle of the LED Matrix horizontally (along the x-axis)
-  and at the bottom of the LED Matrix vertically (y=0).</p>
+  located &mdash; in the middle of the LED Matrix horizontally, and in the bottom
+  row.</p>
 
   <p>To determine the middle of the LED Matrix, we could take the known width
   (8 dots) and divide that by two &mdash; that would give us our middle dot (x=4).
@@ -57,9 +57,9 @@
   program on your new 16x16 display, your spaceship will no longer be in the
   middle of the display.</p>
 
-  <p>Luckily, we have a way to handle this. There is a <code>FrameBuffer</code>
-  attribute called <code>width</code> that will determine how many LED Matrices
-  you have chained together and will tell you the width of your LED Matrix
+  <p>Luckily, we have a way to handle this. If you remember back to our <code>FrameBuffer</code>
+  concept, we have an attribute called <code>fb.width</code> that will determine how many 
+  LED Matrices you have chained together and will tell you the total width of your LED Matrix
   display. We can use that attribute to determine the actual width of the
   display, and then divide that actual width by 2 to get the starting position
   of our spaceship.</p>
@@ -73,7 +73,7 @@ spaceship_position = fb.width / 2
 </textarea>
   </div>
 
-  <p>In our previous project, we just drew the ship at x=3, y=0. But, now we
+  <p>In our previous project, we just drew the ship at (3,0). But, now we
   have the actual x-coordinate from our calculation above, so we can draw the
   ship at its actual starting position.</p>
 
@@ -84,8 +84,11 @@ spaceship_position = fb.width / 2
   x=3.5). To accommodate for that, we need to round our calculation to the
   nearest whole number, and that is where we will display our ship.</p>
 
-  <p>We do that using the built-in math function called <code>round()</code>.
-  Here is what the code will look like:</p>
+  <p>We do that using the built-in math function called <code>round()</code>, which
+  will round the value we give it to the nearest whole number.
+  
+  <p>Here is what the code will look like:</p>
+
   <div class="code" data-firstline="0">
    <textarea>
 # Draw the spaceship
@@ -93,7 +96,7 @@ fb.point(round(spaceship_position),0)
 </textarea>
   </div>
 
-  <p>Finally, now is as good a time as any to put our pause at the end of the
+  <p>Finally, now is as good a time as any to put the pause at the end of the
   game loop. We had discussed trying a pause of of between .001 and .01
   seconds. Let's start with the smaller number and see if that poses any
   problems as we're continuing to develop the game:</p>
