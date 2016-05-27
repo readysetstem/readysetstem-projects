@@ -66,7 +66,7 @@ pg_flows.Main = [
     {filename: "SCROLLING_TEXT.html",               title: "SCROLLING TEXT",                concept: false, uid: ""},
 
     {filename: "ACCELEROMETER.html",                title: "THE ACCELEROMETER",             concept: true, uid: "accel", section: "ACCELEROMETER"},
-    {filename: "ACCELEROMETER_PROJECT.html",        title: "USING THE ACCELEROMETER",       concept: false, uid: ""},
+    {filename: "ACCELEROMETER_PROJECT.html",        title: "USING THE ACCELEROMETER",       concept: false, uid: "accelp"},
     {filename: "BALANCING_DOT1.html",               title: "BALANCING DOT 1",               concept: false, uid: ""},
     {filename: "BALANCING_DOT2.html",               title: "BALANCING DOT 2",               concept: false, uid: ""},
     {filename: "SHAKE1.html",                       title: "SHAKE ME 1",                    concept: false, uid: ""},
