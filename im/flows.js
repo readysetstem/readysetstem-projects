@@ -39,7 +39,7 @@ pg_flows.Main = [
     {filename: "WALKABLE_PIANO.html",               title: "BUILD A WALKABLE PIANO",        concept: false, uid: ""},
     {filename: "STRING_THEORY.html",                title: "STRING THEORY",                 concept: true, uid: "strings"},
     {filename: "TEXT_TO_SPEECH.html",               title: "TEXT TO SPEECH (TTS)",          concept: true, uid: "tts"},
-    {filename: "TEXT_TO_SPEECH_PROJECT.html",       title: "TTS SOUND MACHINE",             concept: false, uid: ""},
+    {filename: "TEXT_TO_SPEECH_PROJECT.html",       title: "TTS SOUND MACHINE",             concept: false, uid: "speechp"},
 
     {filename: "SIMON_PSEUDO.html",                 title: "SIMON SAYS 0",                  concept: true, uid: "simon0", section: "SIMON SAYS"},
     {filename: "SIMON_1.html",                      title: "SIMON SAYS 1",                  concept: false, uid: "simon1"},

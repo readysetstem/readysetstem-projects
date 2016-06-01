@@ -29,95 +29,171 @@
 </head>
 <body>
  <div class="hw" data-count="1" data-name="accelerometer"></div>
- <div class="hw" data-count="1" data-name="led_matrix"></div>
- <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
+ <div class="hw" data-count="1" data-name="speaker"></div>
+ <div class="hw" data-count="1" data-name="audio_cable"></div>
  <div id="intro" class="section">
 
-  <p>In this project, we will add in an LED Matrix and create a "balancing dot"
-  &mdash; a single dot on the LED Matrix that moves around as we tilt the
-  CREATOR Kit.  For this project, to keep things simple, we will only move the
-  dot left and right on the LED Matrix.
+  <p>In this project, we'll add sounds to our accelerometer shake game.  With sounds, specfically
+  text-to-speech like we used in the 
+    <a data-uid= "speechp"></a> project, we can command the user to do different actions through
+    the game, and let them know if the've succeeded.
 
  </div>
  <div id="hw" class="section">
 
-  <p>You'll need to wire up both the Accelerometer and LED Matrix as done in
-  previous projects.  Here is what your breadboard should look like once the
-  accelerometer is properly wired:</p>
+  <p>You'll need to wire up the Accelerometer as done in previous projects.
+  Here is what your breadboard should look like once the accelerometer is
+  properly wired:</p>
   <div style="text-align: center;"><img class="bb" src=
-  "img/LED_Matrix_Accel_bb.jpg" alt=""></div>
+  "img/Accel_bb.jpg" alt=""></div>
+ <p>In addition, you'll need the speaker hooked up &mdash; refer back to the <a
+ data-uid= "playingnotes"></a> project if you need help.
  </div>
  <div id="sw" class="section">
-
-  <p>For our first try, we're simply going to put a single dot on the screen and
-  have it move left when the CREATOR Kit is tilted left, or move right when the
-  CREATOR Kit is tilted right.
-  <p>Most of the code should be very familiar, as it comes from the initial 
-  <a data-uid="ledp"></a> project and <a data-uid="accelp"></a> project.  The code that's new is
-  highlighted with arrows, below:
+  <p>Here is what the code for this project should look like at this point (with
+  new changes highlighted with arrows) &mdash;
+  it should run similarly to the previous project, but with sound added:</p>
 
 <div class="code" data-firstline="1">
    <textarea>
 from rstem.accel import Accel
-from rstem.led_matrix import FrameBuffer
+from rstem.sound import Speech
+import random
 import time
 
-fb = FrameBuffer()
+ready_tts = Speech("Ready to play?")
+
+tilt_left_tts = Speech("Tilt left!")
+*tilt_right_tts = Speech("Tilt right!")
+*tilt_up_tts = Speech("Tilt up!")
+*shake_me_tts = Speech("Shake me!")
+no_action_tts = Speech("No action!")
+
+detect_tts = Speech("I detected:")
+wrong_tts = Speech("Oops!")
+correct_tts = Speech("Correct!")
+try_again_tts = Speech("Try again another time!")
+
+*actions_tts = [no_action_tts, tilt_left_tts, tilt_right_tts, tilt_up_tts, shake_me_tts]
+
 accel = Accel()
 
-*TILT_FORCE = 0.1
-*STEP = 0.1
-*x, y = (3, 3)
-while True:
-    x_force, y_force, z_force = accel.forces()
-    
-*    if x_force &gt; TILT_FORCE:
-*        x -= STEP
-*    elif x_force &lt; -TILT_FORCE:
-*        x += STEP
+NOACTION = 0
+LEFT = 1
+RIGHT = 2
+UP = 3
+SHAKE = 4
 
-    fb.erase()
-*    fb.point(round(x), round(y))
-    fb.show()
-    
-    time.sleep(.1)
+# Ready to play?
+SCORE_NEEDED = 10
+period = 300
+ready_tts.play().wait()
+while True:
+*    request = random.randint(1,4)
+    action = NOACTION
+    actions_tts[request].play().wait()
+
+*    tilt_left_score = 0
+*    tilt_right_score = 0
+*    tilt_up_score = 0
+    shake_me_score = 0
+    for i in range(period):
+        x, y, z = accel.forces()
+        if x > 0.75:
+            tilt_left_score += 1
+*        if x < -0.75:
+*            tilt_right_score += 1
+*        if y > 0.75:
+*            tilt_up_score += 1
+*        if (z < 0.7 or z > 1.3) and (-0.5 < x < 0.5) and (-0.5 < y < 0.5):
+*            shake_me_score += 1
+
+        if tilt_left_score > SCORE_NEEDED:
+            action = LEFT
+            break
+*        elif tilt_right_score > SCORE_NEEDED:
+*            action = RIGHT
+*            break
+*        elif tilt_up_score > SCORE_NEEDED:
+*            action = UP
+*            break
+*        elif shake_me_score > SCORE_NEEDED:
+*            action = SHAKE
+*            break
+
+        time.sleep(0.01)
+
+    if request == action:
+        # Correct action performed!
+        correct_tts.play().wait()
+    else:
+        # Timeout - let user know what we detected
+        wrong_tts.play().wait()
+        detect_tts.play().wait()
+        actions_tts[action].play().wait()
+        break
+
+*    period = int(period * 0.95)
+    time.sleep(0.5)
+
+try_again_tts.play().wait()
 </textarea>
   </div>
 
-  <p>The new addions we've made hgilight above are:</p>
-  <ul>
-   <li>
+  <p>Now, let's take a look at what our code is doing...</p>
 
-    <p>
-    On Line 8, we define the <code>TILT_FORCE</code>.  The <code>TILT_FORCE</code> is how much we have to tilt the
-    CREATOR Kit to make the dot move.
+    <p>The bulk of the changes above are to add 3 new tilt methods: tile right,
+    tilt up, and "shake me".  After adding these, we'll now have a real game!
+    For each new tilt type, we've duplicated the code that handles the left
+    tilt, and changed the variable names and detection to handle right tilt,
+    tilt up, and "shake me".
+
+    <p>The "shake me" detection is a little different, and needs so
+    explanation.  To correctly do a "shake" you must keep the CREATOR Kit
+    level, and shake up and down.  This is necessary &mdash; if we allowed the
+    kit to be tiled while it was shaken, we wouldn't be able to tell the
+    difference between a tilt and a shake.
+
+    <p>So to test for "shaking" we test to make sure that <code>x</code> is
+    small (it's not tilted left or right) and that <code>y</code> is small
+    (it's not tiled up or down).  Then we check that <code>z</code> is far
+    away from 1 (it's normal position).  Remember: when the CREATOR Kit is
+    sitting flat on a table, <code>z</code> will be 1 &mdash; it means that
+    the force of the earth is pulling it down.  When the kit is moved up
+    quickly <code>z</code> will go a good bit higher than 1.  
+    When the kit is moved back down quickly
+    <code>z</code> will go a good bit lower than 1.  
+  <p>Besides testing for the new tilts, there are some other minor changes:
+  <ul>
+   <li> <p>
+   On Line 34, we no longer always request <code>LEFT</code> tilt.  Instead, we
+   now randomly choose a tilt, from 1 to 4, which corresponds to
+   <code>LEFT</code>, <code>RIGHT</code>, <code>UP</code>, or
+   <code>SHAKE</code>.
    </p></li> <li> <p>
-    On Line 9, we define the <code>STEP</code>.  The <code>STEP</code> is how much we should move
-    the dot while the CREATOR Kit is being tiled.  Note that <code>STEP</code> is small &mdash;
-    it's less than one.
-   </p></li> <li> <p>
-    On Line 10, we define the starting coordinates of the dot.
-   </p></li> <li> <p>
-    On Lines 14 through 17, we move the dot if the CREATOR Kit is tilted.  The first part says: if
-    the kit is tilted to the left (greater than the <code>TILT_FORCE</code>), then decrease the x
-    position.  Alternatively, if tilted right (a negative <code>TILT_FORCE</code>), then increase
-    the x position.
-   </p></li> <li> <p>
-    On Line 20, we draw the dot.  Notice that we use the built-in function
-    <code>round()</code>.  We need this because our x position moves by
-    fractional <code>STEP</code>s.  So, our x position is fractional, too
-    &mdash; it might be something like 3.2.  However, the coordinates on the
-    LED Matrix are <i>integers</i>.  Therefore, we must round them to the
-    nearest integer (using the <code>round()</code> function).
-  </ul>
+   On Line 58, we change the period, after each time the user performs the
+   correct action.  This will make the game go faster and faster until it's
+   crazy hard to respond with the correct action in time.
  </div>
  <div id="challenge" class="section">
   <ol>
    <li> <p>
-   Can you make the dot move faster when tilted?
+    The speaker is unamplified, and sounds are sometime hard to hear.  Can you
+    modify all of the sounds to have an overdriven volume?  (Hint: see
+    <a data-uid= "tts"></a>)
     </p> </li> <li> <p>
-   Can you make the dot tilt
+    Can you add a "tilt down" action that is the opposite of tilt up?
     </p> </li> <li> <p>
+    Can you keep a count of how many correct actions were performed correctly, and print out the
+    number of correct actions once the game is over?
+    </p> </li> <li> <p>
+    Instead of printing the number of correct action (from the last question), can you have the
+    code say the number out loud?  (Hint: you may need to create a new <code>Speech()</code> for each
+    number you want to say &mdash; so you might need to limit the answer to numbers under, say, 10)
+    
+    </p> </li> <li> <p>
+    Can you add a sideways shake action (that is, shake left and right, while
+    keeping the kit level)?
   </ol>
  </div>
 </body>

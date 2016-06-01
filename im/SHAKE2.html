@@ -29,96 +29,116 @@
 </head>
 <body>
  <div class="hw" data-count="1" data-name="accelerometer"></div>
- <div class="hw" data-count="1" data-name="led_matrix"></div>
- <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
+ <div class="hw" data-count="1" data-name="speaker"></div>
+ <div class="hw" data-count="1" data-name="audio_cable"></div>
  <div id="intro" class="section">
 
-  <p>In this project, we will add in an LED Matrix and create a "balancing dot"
-  &mdash; a single dot on the LED Matrix that moves around as we tilt the
-  CREATOR Kit.  For this project, to keep things simple, we will only move the
-  dot left and right on the LED Matrix.
+  <p>In this project, we'll add sounds to our accelerometer shake game.  With sounds, specfically
+  text-to-speech like we used in the 
+    <a data-uid= "speechp"></a> project, we can command the user to do different actions through
+    the game, and let them know if the've succeeded.
 
  </div>
  <div id="hw" class="section">
 
-  <p>You'll need to wire up both the Accelerometer and LED Matrix as done in
-  previous projects.  Here is what your breadboard should look like once the
-  accelerometer is properly wired:</p>
+  <p>You'll need to wire up the Accelerometer as done in previous projects.
+  Here is what your breadboard should look like once the accelerometer is
+  properly wired:</p>
   <div style="text-align: center;"><img class="bb" src=
-  "img/LED_Matrix_Accel_bb.jpg" alt=""></div>
+  "img/Accel_bb.jpg" alt=""></div>
+ <p>In addition, you'll need the speaker hooked up &mdash; refer back to the <a
+ data-uid= "playingnotes"></a> project if you need help.
  </div>
  <div id="sw" class="section">
-
-  <p>For our first try, we're simply going to put a single dot on the screen and
-  have it move left when the CREATOR Kit is tilted left, or move right when the
-  CREATOR Kit is tilted right.
-  <p>Most of the code should be very familiar, as it comes from the initial 
-  <a data-uid="ledp"></a> project and <a data-uid="accelp"></a> project.  The code that's new is
-  highlighted with arrows, below:
+  <p>Here is what the code for this project should look like at this point (with
+  new changes highlighted with arrows) &mdash;
+  it should run similarly to the previous project, but with sound added:</p>
 
 <div class="code" data-firstline="1">
    <textarea>
 from rstem.accel import Accel
-from rstem.led_matrix import FrameBuffer
+*from rstem.sound import Speech
 import time
 
-fb = FrameBuffer()
+*ready_tts = Speech("Ready to play?")
+*
+*tilt_left_tts = Speech("Tilt left!")
+*no_action_tts = Speech("No action!")
+*
+*detect_tts = Speech("I detected:")
+*wrong_tts = Speech("Oops!")
+*correct_tts = Speech("Correct!")
+*try_again_tts = Speech("Try again another time!")
+*
+*actions_tts = [no_action_tts, tilt_left_tts]
+
 accel = Accel()
 
-*TILT_FORCE = 0.1
-*STEP = 0.1
-*x, y = (3, 3)
-while True:
-    x_force, y_force, z_force = accel.forces()
-    
-*    if x_force &gt; TILT_FORCE:
-*        x -= STEP
-*    elif x_force &lt; -TILT_FORCE:
-*        x += STEP
+NOACTION = 0
+LEFT = 1
+RIGHT = 2
+UP = 3
+SHAKE = 4
 
-    fb.erase()
-*    fb.point(round(x), round(y))
-    fb.show()
-    
-    time.sleep(.1)
+# Ready to play?
+SCORE_NEEDED = 10
+period = 300
+*ready_tts.play().wait()
+while True:
+    request = LEFT
+    action = NOACTION
+*    actions_tts[request].play().wait()
+
+    tilt_left_score = 0
+    for i in range(period):
+        x, y, z = accel.forces()
+        if x > 0.75:
+            tilt_left_score += 1
+
+        if tilt_left_score > SCORE_NEEDED:
+            action = LEFT
+            break
+
+        time.sleep(0.01)
+
+    if request == action:
+*        # Correct action performed!
+*        correct_tts.play().wait()
+    else:
+*        # Timeout - let user know what we detected
+*        wrong_tts.play().wait()
+*        detect_tts.play().wait()
+*        actions_tts[action].play().wait()
+        break
+
+    time.sleep(0.5)
+
+*try_again_tts.play().wait()
 </textarea>
   </div>
 
-  <p>The new addions we've made hgilight above are:</p>
+  <p>Now, let's take a look at what our code is doing:</p>
   <ul>
-   <li>
-
-    <p>
-    On Line 8, we define the <code>TILT_FORCE</code>.  The <code>TILT_FORCE</code> is how much we have to tilt the
-    CREATOR Kit to make the dot move.
-   </p></li> <li> <p>
-    On Line 9, we define the <code>STEP</code>.  The <code>STEP</code> is how much we should move
-    the dot while the CREATOR Kit is being tiled.  Note that <code>STEP</code> is small &mdash;
-    it's less than one.
-   </p></li> <li> <p>
-    On Line 10, we define the starting coordinates of the dot.
-   </p></li> <li> <p>
-    On Lines 14 through 17, we move the dot if the CREATOR Kit is tilted.  The first part says: if
-    the kit is tilted to the left (greater than the <code>TILT_FORCE</code>), then decrease the x
-    position.  Alternatively, if tilted right (a negative <code>TILT_FORCE</code>), then increase
-    the x position.
-   </p></li> <li> <p>
-    On Line 20, we draw the dot.  Notice that we use the built-in function
-    <code>round()</code>.  We need this because our x position moves by
-    fractional <code>STEP</code>s.  So, our x position is fractional, too
-    &mdash; it might be something like 3.2.  However, the coordinates on the
-    LED Matrix are <i>integers</i>.  Therefore, we must round them to the
-    nearest integer (using the <code>round()</code> function).
-  </ul>
- </div>
- <div id="challenge" class="section">
-  <ol>
    <li> <p>
-   Can you make the dot move faster when tilted?
-    </p> </li> <li> <p>
-   Can you make the dot tilt
-    </p> </li> <li> <p>
-  </ol>
+   In Lines 5 through 15, we create the <code>Speech()</code> that we'll
+   play throughout the program.  We'll also set up a list,
+   <code>actions_tts</code>, that is the speech for each action that a user can
+   take.  The list is in the same order as the variables <code>NOACTION</code>,
+   <code>LEFT</code>, etc, which is important.  We'll use this list to let the
+   user know which action we've detected.
+   </p></li> <li> <p>
+   In Line 15, we let the user know the game is starting.
+   </p></li> <li> <p>
+   In Line 32, we request the user to perform an specific tilt.  Of course, in this version of the
+   game, the tilt is still always just LEFT!  (Don't worry, we'll change it next project).
+   </p></li> <li> <p>
+   In Lines 47 through 53, instead of just printing out if the right or wrong action was peformed,
+   we speak to the user.  And, it was wrong, we tell them the action that we think they did.
+   </p></li> <li> <p>
+   In Line 58, we let the user know the game has ended.
+  </ul>
+  <p>Give it a try.  The game is still exeptionally easy &mdash; you are only every requested to
+  tilt left, so it's hard to fail.  We'll make this into a real game in the next project.
  </div>
 </body>
 </html>

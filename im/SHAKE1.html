@@ -29,94 +29,115 @@
 </head>
 <body>
  <div class="hw" data-count="1" data-name="accelerometer"></div>
- <div class="hw" data-count="1" data-name="led_matrix"></div>
- <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
  <div id="intro" class="section">
 
-  <p>In this project, we will add in an LED Matrix and create a "balancing dot"
-  &mdash; a single dot on the LED Matrix that moves around as we tilt the
-  CREATOR Kit.  For this project, to keep things simple, we will only move the
-  dot left and right on the LED Matrix.
+  <p>In this project, we start creating an accelerometer game that commands the
+  user to shake and tilt the CREATOR Kit in a random order.  The challenge is
+  to correctly shake/tilt the kit even as the game gets progressively faster.
+
+  <p>We'll start simple. There will only be one action the user can take: tilt
+  the kit left.  But, in our program, we'll still need to calculate if the user
+  tilted it left within a shortr amount of time.
 
  </div>
  <div id="hw" class="section">
 
-  <p>You'll need to wire up both the Accelerometer and LED Matrix as done in
-  previous projects.  Here is what your breadboard should look like once the
-  accelerometer is properly wired:</p>
+  <p>You'll need to wire up the Accelerometer as done in previous projects.
+  Here is what your breadboard should look like once the accelerometer is
+  properly wired:</p>
+  <mark>wrong image (should be accel only)</mark>
   <div style="text-align: center;"><img class="bb" src=
   "img/LED_Matrix_Accel_bb.jpg" alt=""></div>
  </div>
  <div id="sw" class="section">
 
-  <p>For our first try, we're simply going to put a single dot on the screen and
-  have it move left when the CREATOR Kit is tilted left, or move right when the
-  CREATOR Kit is tilted right.
-  <p>Most of the code should be very familiar, as it comes from the initial 
-  <a data-uid="ledp"></a> project and <a data-uid="accelp"></a> project.  The code that's new is
-  highlighted with arrows, below:
+  <p>For our first cut, we'll always request that the user tilts left.  Then, we'll simply print
+  out if the user correctly tilted left, or didn't.
 
 <div class="code" data-firstline="1">
    <textarea>
 from rstem.accel import Accel
-from rstem.led_matrix import FrameBuffer
 import time
 
-fb = FrameBuffer()
 accel = Accel()
 
-*TILT_FORCE = 0.1
-*STEP = 0.1
-*x, y = (3, 3)
-while True:
-    x_force, y_force, z_force = accel.forces()
-    
-*    if x_force &gt; TILT_FORCE:
-*        x -= STEP
-*    elif x_force &lt; -TILT_FORCE:
-*        x += STEP
+NOACTION = 0
+LEFT = 1
+RIGHT = 2
+UP = 3
+SHAKE = 4
 
-    fb.erase()
-*    fb.point(round(x), round(y))
-    fb.show()
-    
-    time.sleep(.1)
+# Ready to play?
+SCORE_NEEDED = 10
+period = 300
+while True:
+    request = LEFT
+    action = NOACTION
+    print(request)
+
+    tilt_left_score = 0
+    for i in range(period):
+        x, y, z = accel.forces()
+        if x > 0.75:
+            tilt_left_score += 1
+
+        if tilt_left_score > SCORE_NEEDED:
+            action = LEFT
+            break
+
+        time.sleep(0.01)
+
+    if request == action:
+        print("CORRECT!")
+    else:
+        print("OOPS!")
+        break
+
+    time.sleep(0.5)
 </textarea>
   </div>
 
-  <p>The new addions we've made hgilight above are:</p>
+  <p>Now, let's take a look at what our code is doing:</p>
   <ul>
-   <li>
+   <li> <p>
+In Lines 6 though 14, we intialize some variables we'll need later.  The variables
+<code>NOACTION</code>, 
+<code>LEFT</code>,
+<code>RIGHT</code>,
+<code>UP</code>, and
+<code>SHAKE</code> are used to keep track of which action is requested.  
+And, for now, this game will only use
+<code>NOACTION</code> and
+<code>LEFT</code>.
 
-    <p>
-    On Line 8, we define the <code>TILT_FORCE</code>.  The <code>TILT_FORCE</code> is how much we have to tilt the
-    CREATOR Kit to make the dot move.
    </p></li> <li> <p>
-    On Line 9, we define the <code>STEP</code>.  The <code>STEP</code> is how much we should move
-    the dot while the CREATOR Kit is being tiled.  Note that <code>STEP</code> is small &mdash;
-    it's less than one.
+   In Lines 16 through 18, at the start of the game loop, we define two variables:
+   <code>request</code> and <code>action</code>.
+   The <code>request</code> is what we want the user to do, and the <code>action</code> is what
+   the user has actually done.  
+   For this first cut at the game, we will only request that they
+   tilt left.  And, we assume at first that they have taken <code>NOACTION</code>
    </p></li> <li> <p>
-    On Line 10, we define the starting coordinates of the dot.
+   In Lines 20 through 30, we record what action the user has taken.  To determine the action
+   they've taken, we test the forces on the accelerometer.  We'll keep score of every time they
+   are tilting the accelerometer to the left, and increase the score.  Once they've gotten over
+   some threshold (SCORE_NEEDED), then we know they've taken that action.  The reason we need to
+   keep score (instead of just assuming that the user is tilting the kit the first time we read
+   the accelerometer) is that sometimes a jiggle of the kit will read as a tilt.  We want to make
+   sure that the user <i>really</i> meant to tilt the kit by checking a number of times.
    </p></li> <li> <p>
-    On Lines 14 through 17, we move the dot if the CREATOR Kit is tilted.  The first part says: if
-    the kit is tilted to the left (greater than the <code>TILT_FORCE</code>), then decrease the x
-    position.  Alternatively, if tilted right (a negative <code>TILT_FORCE</code>), then increase
-    the x position.
-   </p></li> <li> <p>
-    On Line 20, we draw the dot.  Notice that we use the built-in function
-    <code>round()</code>.  We need this because our x position moves by
-    fractional <code>STEP</code>s.  So, our x position is fractional, too
-    &mdash; it might be something like 3.2.  However, the coordinates on the
-    LED Matrix are <i>integers</i>.  Therefore, we must round them to the
-    nearest integer (using the <code>round()</code> function).
+   In Lines 32 through 36, we check if the our <code>request</code> matches the user's
+   <code>action</code>.  If not, the game is over and we exit the while loop.
   </ul>
  </div>
  <div id="challenge" class="section">
   <ol>
    <li> <p>
-   Can you make the dot move faster when tilted?
+   The <code>SCORE_NEEDED</code> value affects how sensitive our code is at detecting tilts, and
+   also affects how long it takes to detect the tilt.  Try changing 
+   <code>SCORE_NEEDED</code> to a high or low value, and see how it affects the tilt detection.
     </p> </li> <li> <p>
-   Can you make the dot tilt
+    
     </p> </li> <li> <p>
   </ol>
  </div>

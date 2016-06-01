@@ -93,40 +93,43 @@ while True:
 </textarea>
   </div>
 
-  <p>The new addions we've made hgilight above are:</p>
+  <p>The new additions we've made are (highlighted with arrows above):</p>
   <ul>
    <li>
 
     <p>
-    On Line 8, we define the <code>TILT_FORCE</code>.  The <code>TILT_FORCE</code> is how much we have to tilt the
+    On Line 18, we stop the dot from rolling off the display.  To do this, we use
+    <code>min()</code>
+    and 
+    <code>max()</code>
+    functions to ensure that the value of x is never less than zero, or greater than the width of
+    the display.  
+    <code>min()</code> returns the smallest value of the parameters it is given, and 
+    <code>max()</code> returns the largest value of the parameters it is given.
     CREATOR Kit to make the dot move.
    </p></li> <li> <p>
-    On Line 9, we define the <code>STEP</code>.  The <code>STEP</code> is how much we should move
-    the dot while the CREATOR Kit is being tiled.  Note that <code>STEP</code> is small &mdash;
-    it's less than one.
-   </p></li> <li> <p>
-    On Line 10, we define the starting coordinates of the dot.
-   </p></li> <li> <p>
-    On Lines 14 through 17, we move the dot if the CREATOR Kit is tilted.  The first part says: if
-    the kit is tilted to the left (greater than the <code>TILT_FORCE</code>), then decrease the x
-    position.  Alternatively, if tilted right (a negative <code>TILT_FORCE</code>), then increase
-    the x position.
-   </p></li> <li> <p>
-    On Line 20, we draw the dot.  Notice that we use the built-in function
-    <code>round()</code>.  We need this because our x position moves by
-    fractional <code>STEP</code>s.  So, our x position is fractional, too
-    &mdash; it might be something like 3.2.  However, the coordinates on the
-    LED Matrix are <i>integers</i>.  Therefore, we must round them to the
-    nearest integer (using the <code>round()</code> function).
+    On Lines 20 through 24, we repeat everything we did for the x-direction in the y-direction.
+    This allows the dot to move up, down, left, or right on the display.
   </ul>
  </div>
  <div id="challenge" class="section">
   <ol>
    <li> <p>
-   Can you make the dot move faster when tilted?
+   Can you flip the "controller" so that tiling up causes the the dot to move <i>up</i> instead of
+   <i>down</i>.  Likewise, can you reverse the direction the dot moves when tilted down, right or
+   left?
     </p> </li> <li> <p>
-   Can you make the dot tilt
+   When the dot reaches the edge of the display, instead of having it stay at the edge, can you
+   make it appear at the opposite edge?
     </p> </li> <li> <p>
+    If the user moves the dot so that it touches a specific coordinate, can
+    you break out of the <code>while</code> loop?
+    </p> </li> <li> <p>
+    Secret code: If the user moves the dot so that it touches a sequence a specific coordinates, can
+    you break out of the <code>while</code> loop?  For example, say the cooridinates are (0,0), (7,7) and
+    (0,3).  The user must first move the dot to the lower left corner, then the upper right
+    corner, then position (0,3) on the left side.  Once the dot passes through those 3 positions
+    in order, exit the <code>while</code> loop.
   </ol>
  </div>
 </body>

@@ -77,6 +77,44 @@ madbro.play()
 madbro.wait()
 </textarea>
   </div>
+
+  <div class="info">
+   <div>
+    Volume Control
+   </div>
+   <div>
+
+    <p>The base CREATOR Kit speaker is unamplified, and has a volume similar to that 
+    of a speaker in a greeting card.  As such, the volume, which is by default
+    at its maximum, can still sometimes be hard to hear.
+
+    <p>To make <i>really</i> loud sounds, you can use external speakers or
+    headphones.  However,
+    even with the unamplified speaker, you can "overdrive" the speaker by
+    setting the volume to louder than the maximum.  The drawback is that the
+    sound will be distorted &mdash; and the more you increase the volume past
+    the maximum, the more distored it will be.
+
+    <p>All <code>Sound</code>s, <code>Note</code>s, and <code>Speech</code> can have their volume
+    changed by running:
+    <pre>
+my_sound.volume = <i>new_volume</i>
+</pre>
+<p>where <code>new_volume</code> is an integer that is the volume percentage.
+By default, the volume
+is set at 100 (that is 100%, which is the maximum).
+   <p>So, for example, to say "hello" at louder than max, you might do:
+    <pre>
+from rstem.sound import Speech
+hello = Speech('Hello.')
+hello.volume = 400
+hello.play()
+hello.wait()
+</pre>
+
+   </div>
+  </div>
+
  </div>
 
 
