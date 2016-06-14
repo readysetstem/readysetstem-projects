@@ -32,14 +32,28 @@
 
   <p>In this project, we add missile firing using our button.</p>
 
+ </div>
+ <div class="section" id="hw">
+
+  <p>The hardware setup for this project should be the same setup that was
+  completed for the <a data-uid="ai1"></a> project. Here's a reminder:
+  
+  <img class="bb" src="img/LED_Matrix_Accel_Buttons_bb.jpg" alt=""></p>
+ </div>
+
+ <div class="section" id="sw">
+
   <p>In this project, we're going to add the ability to fire missiles.</p>
 
   <p>The first step is to initialize the button that we'll use to fire the
   missiles in our initialization section. We do this by importing the function
   that we will use, creating a Button object associated with our firing button
   and then initializing the position of our missile (we'll only allow one
-  missile to be on the screen at a given time so we only need one set of X, Y
-  coordinates for the missile). We also will want to create two other variables
+  missile to be on the screen at a given time so we only need one set of rectangular
+  coordinates for the missile). Our left/right coordinate will be <code>X</code>
+  and our up/down coordinate will be <code>Y</code>, which is pretty standard.
+  
+  <p>We also will want to create two other variables
   &mdash; one that will define the color of the missile (we can make it less bright
   than the other objects on the LED Matrix screen to give it a unique look) and
   one that will define how quickly the missile will move (in terms of number of
@@ -213,7 +227,5 @@ while True:
 </textarea>
   </div>
  </div>
- <div class="section" id="hw"></div>
- <div class="section" id="sw"></div>
 </body>
 </html>

@@ -29,21 +29,25 @@
 </head>
 <body>
  <div class="section">
-  In this project, we kick off the development of a game "Alien Intruders" by
-  writing the pseudo-code.
+   <h1>Intro to Alien Intruders</h1>
 
-  <p>You're probably familiar with the game Space Invaders&TM;, which was
+  <p>In this project, we kick off the development of an LED Matrix game we
+  call "Alien Intruders." We'll start by writing the pseudo-code in this concept
+  and then build the game over the next several projects.
+
+  <p>You're may be familiar with the game Space Invaders&reg;, which was
   originally made popular in the 1970s in arcades and on the Atari (one of the
   first home gaming systems). When it first came out, this game was pretty
-  revolutionary.</p>
+  revolutionary.  The game involves the user controlling a ship that can move
+  left and right &mdash; the ship shoots missiles at alien invaders scrolling
+  from the top of the screen towards the bottom.</p>
 
   <p>Over the next 10 projects, we're going to build a game that is a simplified
-  version of Space Invaders&TM; using the Ready Set STEM CREATOR Kit components
-  we've already wired
-  up. The LED Matrix will be used to display the graphics, the accelerometer
-  will be used to control the left and right movement of the ship (by tilting
-  the Ready Set STEM CREATOR Kit left or right) and the button will be used to
-  fire missiles at the invading aliens. By the time we've completed this
+  version of Space Invaders&reg; using many of the Ready Set STEM CREATOR Kit components
+  that we've already learned to wire up. The LED Matrix will be used to display 
+  the graphics, the accelerometer will be used to control the left and right movement 
+  of the ship (by tilting the kit left or right) and a single button will be used to
+  fire missiles at the invading aliens.  By the time we've completed this
   project, you should have the basic skills necessary to build more complex
   games.</p>
 
@@ -55,7 +59,10 @@
   the very high level steps out first, and then we break each of those steps
   into smaller chunks with more details. We continue doing this until we have
   enough detail that we're ready to actually start writing our code.</p>
-  <h2>Our Game Loop</h2>
+</div>
+
+ <div class="section">
+   <h1>Our Game Loop</h1>
 
   <p>Let's start with the basic outline for any game loop, much as we described
   in <a data-uid="gameloops"></a>:</p>
@@ -71,7 +78,9 @@ while (game not finished):
 Finish & Cleanup
 </pre>
 
-  <p>Now, let's look at each of these areas individually...</p>
+  <p>Now, let's look at each of these areas individually and determine what we'll
+  need to do in each of these areas to bring our Alien Invaders game to life...</p>
+  
   <h2>Initialize the game environment</h2>
 
   <p>This is where we're going to initialize all of the components and game

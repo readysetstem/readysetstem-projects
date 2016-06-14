@@ -33,14 +33,10 @@
  <div class="hw" data-count="4" data-name="button"></div>
  <div class="section" id="intro">
 
-  <p>In this project, and we will continue to develop the moving dot from our
-  previous project and add in a second axis of movement.</p>
+  <p>In this project, we will create a sprite of a person (this is actually
+  the same sprite used by Minecraft for their main character, Steve), and we
+  will draw and animate that sprite on the LED Matrix.</p>
 
-  <p>In our last project, we learned how to move our dot on a single axis, but
-  keep it from falling off the edge of the screen by setting and testing
-  boundaries. In this project, we're going to start moving the dot on two axes
-  (left and right; up and down) and learn how to constrain the dot on both axes
-  so that it doesn't fall off the screen.</p>
  </div>
  <div class="section" id="hw">
 
@@ -48,20 +44,31 @@
   "ledp"></a> project. As a reminder, here is what it should look like:
   <img class="bb" src="img/LED_Matrix_bb.jpg" alt=""></p>
  </div>
+ 
  <div class="section" id="sw">
 
-  <p>Adding the same functionality along the other axis (the y-axis) is
-  actually pretty simple. In addition to changing the x location by 1 each time
-  through the loop, we also do the same with the y location. This requires
-  another <code>direction</code> variable to keep track of the y-axis
-  direction. To avoid confusion with the variable names, we'll also change the
-  previous variable <code>direction</code> to <code>x_direction</code></p>
+  <p>In this project, we will create a sprite, and we will animate that sprite.
+  In order to animate the sprite, we will create multiple versions of the sprite,
+  and we will display the different versions of the sprite on our LED Matrix,
+  one at a time.  If we rotate through the sprite images reasonably quickly, the
+  sprites will appear as a continuous animation.  In this case, the animation will
+  be of a person running.</p>
 
-  <p>In addition, we need to increment in the y-direction each time through the
-  loop and test whether we've hit the y-axis edge.</p>
+  <p>Here are the four sprites we will rotate through to create our animation:
+  
+  <p><img src="img/runningman.jpg" alt="">
+  
+  <p>If it's not completely obvious what the animation will look like based on those
+  four sprite designs, just wait and see...
+  
+  <p>For our code, we will use the Game Loop format.  First, we'll do all of our
+  initialization and define our sprites, then in a loop, we will cycle through
+  our sprites, erasing/drawing/displaying each sprite in the sequence.</p>
 
-  <p>Here is the final code, with the new code marked with arrows:</p>
-  <div class="code" data-firstline="0">
+  <p>Here is the code, which hopefully you'll find pretty straightforward at this
+  point:</p>
+
+  <div class="code" data-firstline="1">
    <textarea>
 # Initialize the game environment
 from rstem.led_matrix import FrameBuffer
@@ -131,9 +138,10 @@ while True:
 </textarea>
   </div>
 
-  <p>Give it a try. You should now see the dot bouncing back and forth on the
-  display in two directions.</p>
+  <p>Give it a try. You should see your animated sprite displayed on your
+  LED Matrix.</p>
  </div>
+
  <div id="challenge" class="section">
   <ol>
    <li>

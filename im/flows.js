@@ -77,7 +77,7 @@ pg_flows.Main = [
     {filename: "SECRET_KNOCK3.html",                title: "SECRET KNOCK 3",                concept: false, uid: ""},
 
     {filename: "SPACE_INVADERS_PSEUDO.html",        title: "ALIEN INTRUDERS 0",              concept: true, uid: "", section: "ALIEN INTRUDERS"},
-    {filename: "SPACE_INVADERS_1.html",             title: "ALIEN INTRUDERS 1",              concept: false, uid: ""},
+    {filename: "SPACE_INVADERS_1.html",             title: "ALIEN INTRUDERS 1",              concept: false, uid: "ai1"},
     {filename: "SPACE_INVADERS_2.html",             title: "ALIEN INTRUDERS 2",              concept: false, uid: ""},
     {filename: "SPACE_INVADERS_3.html",             title: "ALIEN INTRUDERS 3",              concept: false, uid: ""},
     {filename: "SPACE_INVADERS_4.html",             title: "ALIEN INTRUDERS 4",              concept: false, uid: ""},

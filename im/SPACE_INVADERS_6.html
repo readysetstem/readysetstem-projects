@@ -34,6 +34,17 @@
   by starting to animate the aliens and add some collision detection for the
   missiles we're firing at them.</p>
 
+ </div>
+ <div class="section" id="hw">
+
+  <p>The hardware setup for this project should be the same setup that was
+  completed for the <a data-uid="ai1"></a> project. Here's a reminder:
+  
+  <img class="bb" src="img/LED_Matrix_Accel_Buttons_bb.jpg" alt=""></p>
+ </div>
+
+ <div class="section" id="sw">
+
   <p>In this project, we're going to move the aliens to the right. Moving the
   aliens is going to look very similar to how we moved the missile in the
   previous project &mdash; we'll track time to determine when to move the aliens,
@@ -62,16 +73,20 @@ if now - alien_start_time &gt; ALIENS_STEP_TIME:
     alien_start_time = now
 </textarea>
   </div>
+  
   <div class="info">
    <div>
     List Comprehensions
    </div>
    <div>
 
+   <p><mark>GET RID OF THIS INFO BOX AND CHANGE THE CODE???</mark>
+   
     <p>In the above code, we snuck in a completely new concept in the line:</p>
     <pre>
 alien_columns = [column + 1 for column in alien_columns]
-</pre>It's called a list comprehension, and it's a handy tool in Python that
+</pre>
+<p>It's called a list comprehension, and it's a handy tool in Python that
 combines the features of lists and for loops into one. They are useful in cases
 where you want to create a list using a loop. For example, perhaps you want to
 create a list of the first five perfect squares (the product of a number
@@ -242,7 +257,5 @@ else:
 </textarea>
   </div>
  </div>
- <div class="section" id="hw"></div>
- <div class="section" id="sw"></div>
 </body>
 </html>
