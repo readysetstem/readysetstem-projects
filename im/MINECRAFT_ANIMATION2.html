@@ -32,34 +32,27 @@
  <div class="hw" data-count="1" data-name="audio_cable"></div>
  <div id="intro" class="section">
 
- <p>In this project, we'll build on the sprite animations we did in the
- previous project by not only animating Steve on the LED Matrix, but also
- creating a synchronized animation of Steve in the Minecraft world. What we
- draw on the LED Matrix will be replicated in blocks in the Minecraft
- world.</p>
- </div><div id="hw" class="section">
- <img class="bb" src="img/LED_Matrix_bb.jpg" alt="">
+  <p>In this project, we'll build on the sprite animations we did in the
+  previous project by not only animating Steve on the LED Matrix, but also
+  creating a synchronized animation of Steve in the Minecraft world. What we
+  draw on the LED Matrix will be replicated in blocks in the Minecraft
+  world.</p>
+ </div>
+ <div id="hw" class="section"><img class="bb" src="img/LED_Matrix_bb.jpg" alt=
+ "">
  <h2>Writing Our Code</h2>
+ <h2>Hardware Setup</h2><img class="bb" src="img/LED_Matrix_bb.png"></div>
+ <div id="sw" class="section">
 
+  <p>Our code for this project will be identical to the previous project, with
+  one addition -- a function that will be used to replicate the animation we're
+  doing on the LED Matrix in the Minecraft world as well.</p>
+  <h2>Full Code</h2>
 
-<h2>Hardware Setup</h2>
-<img class="bb" src="img/LED_Matrix_bb.png">
-
- </div><div id="sw" class="section">
-
-<p>Our code for this project will be identical to the previous 
-project, with one addition -- a function that will be used to
-replicate the animation we're doing on the LED Matrix in the
-Minecraft world as well.
-
-<h2>Full Code</h2>
-
-<p>
-Here is what the full code for this project should look like.  We'll
-dig further into the highlighted pieces of code below:
-</p>
-
-<div class="code" data-firstline="1"> <div></div> <textarea>
+  <p>Here is what the full code for this project should look like. We'll dig
+  further into the highlighted pieces of code below:</p>
+  <div class="code" data-firstline="1">
+   <textarea>
 from rstem.mcpi import minecraft, control, block
 from rstem.mcpi.vec3 import Vec3
 from rstem.led_matrix import FrameBuffer, Sprite
@@ -138,90 +131,87 @@ while True:
 
     time.sleep(0.1)
 
-</textarea></div>
+</textarea>
+  </div>
+  <h2><code>sprite_in_minecraft()</code> Function</h2>
 
-<h2><code>sprite_in_minecraft()</code> Function</h2>
+  <p>We've created a function that will animate our character as we define in
+  the Minecraft world. Unlike the LED Matrix, where we can use a simple API to
+  pass in an 8x8 design with a single function call, to create a design in the
+  Minecraft world, we need to draw block by block. For that reason, a major
+  purpose of our function is to turn our 8x8 list of 0's and non-0's into
+  blocks (for the non-0's) and air (for the 0's).</p>
 
-<p>We've created a function that will animate our character
-as we define in the Minecraft world.  Unlike the LED Matrix,
-where we can use a simple API to pass in an 8x8 design with 
-a single function call, to create a design in the Minecraft 
-world, we need to draw block by block.  For that reason, a
-major purpose of our function is to turn our 8x8 list of 0's
-and non-0's into blocks (for the non-0's) and air (for the 0's).
+  <p>Let's discuss what our function does, line-by-line:</p>
+  <ul>
+   <li>
 
-<p>Let's discuss what our function does, line-by-line:
+    <p>On Line #x, we define our function, and take three arguments as inputs:
+    our Minecraft object, the current 8x8 design that we want to draw and the
+    location of our character (where we want to draw).</p>
+   </li>
+   <li>
 
-<ul>
-<li><p>On Line #x, we define our function, and take three
-arguments as inputs: our Minecraft object, the current
-8x8 design that we want to draw and the location of our
-character (where we want to draw).</li>
-<li><p>On Line #x, we take our 8x8 design that we used
-to draw on our LED Matrix and we rearrange it in an order
-that will allow us to draw it in the Minecraft world.
-Specifically, we break up the design into the eight lines
-we defined in our list (using the <code>splitlines()</code>
-function and reverse the lines to go from bottom to 
-top, since we will draw starting from the ground (using
-the <code>reversed()</code> function.</li>
-<li><p>On Lines #x and #x, we "nest" (put one inside the
-other) two <code>for</code> loops.  This will allow us
-to run through each of the eight horizontal characters
-and each of the eight rows and execute the code that 
-follows the nested loops.</li>
-<li><p>On Lines #x-y, we have the code that will be 
-executed for each of the 64 (8x8) character positions.
-The code checks the character and if it's a 0 (which is
-equivalent to an off LED), it sets the block type to air, 
-which is the same as not drawing a block.  If the 
-character is a non-0 (which is equivalent to the LED
-being on in that position), it sets the block type to wood,
-so you'll see the block at that location.  The final line
-(Line #x) actually draws the specified type of block at the
-location.
-</li>
-</ul>
+    <p>On Line #x, we take our 8x8 design that we used to draw on our LED
+    Matrix and we rearrange it in an order that will allow us to draw it in the
+    Minecraft world. Specifically, we break up the design into the eight lines
+    we defined in our list (using the <code>splitlines()</code> function and
+    reverse the lines to go from bottom to top, since we will draw starting
+    from the ground (using the <code>reversed()</code> function.</p>
+   </li>
+   <li>
 
-    <div class="info">
-    <div><code>enumerate()</code> Function</div>
-    <div>
-<p>In the two <code>for</code> loops above, we use the
-<code>enumerate</code> function.  This function allows
-us to track the count of how many times we've gone through
-the <code>for</code> loop -- we call this the "index", it
-starts at 0 and it is stored in the first variable of the 
-loop.
+    <p>On Lines #x and #x, we "nest" (put one inside the other) two
+    <code>for</code> loops. This will allow us to run through each of the eight
+    horizontal characters and each of the eight rows and execute the code that
+    follows the nested loops.</p>
+   </li>
+   <li>
 
-<p>Here's an example:
+    <p>On Lines #x-y, we have the code that will be executed for each of the 64
+    (8x8) character positions. The code checks the character and if it's a 0
+    (which is equivalent to an off LED), it sets the block type to air, which
+    is the same as not drawing a block. If the character is a non-0 (which is
+    equivalent to the LED being on in that position), it sets the block type to
+    wood, so you'll see the block at that location. The final line (Line #x)
+    actually draws the specified type of block at the location.</p>
+   </li>
+  </ul>
+  <div class="info">
+   <div>
+    <code>enumerate()</code> Function
+   </div>
+   <div>
 
-<p><code>
-animals = ['dog', 'cat', 'bird']
-<p>for index, animal in (enumerate(animals)):
-<p>	   print index, animal
-</code>
+    <p>In the two <code>for</code> loops above, we use the
+    <code>enumerate</code> function. This function allows us to track the count
+    of how many times we've gone through the <code>for</code> loop -- we call
+    this the "index", it starts at 0 and it is stored in the first variable of
+    the loop.</p>
 
-<p>This code would output:
+    <p>Here's an example:</p>
 
-<p>0, dog
-<p>1, cat
-<p>2, bird
+    <p><code>animals = ['dog', 'cat', 'bird']</code></p>
 
-<p>To start our index on a different value than 0, we
-can pass another argument to <code>enumerate()</code>, 
-like this:
+    <p><code>for index, animal in (enumerate(animals)):</code></p>
 
-<p><code>for index, animal in (enumerate(animals, start = 1):</code>
- 
-    </div>
-    </div>
+    <p><code>print index, animal</code></p>
 
- </div><div id="challenge" class="section">
-  <ol>
-   <li> <p>
-    </p> </li> <li> <p>
-    </p> </li> <li> <p>
-    </p> </li> 
-  </ol>
+    <p>This code would output:</p>
+
+    <p>0, dog</p>
+
+    <p>1, cat</p>
+
+    <p>2, bird</p>
+
+    <p>To start our index on a different value than 0, we can pass another
+    argument to <code>enumerate()</code>, like this:</p>
+
+    <p><code>for index, animal in (enumerate(animals, start = 1):</code></p>
+   </div>
+  </div>
  </div>
-</body></html>
+ <div id="challenge" class="section"></div>
+</body>
+</html>

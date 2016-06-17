@@ -32,11 +32,13 @@
  <div class="hw" data-count="1" data-name="audio_cable"></div>
  <div id="intro" class="section">
 
- <p>In this project, we will use the Ready Set STEM kit to create a Minecraft
- controller. This first version of the controller will use the accelerometer to
- control where your character, Steve, is looking. In addition, we'll use four
- buttons to control Steve's movement foreward, backwards, left and right.</p>
- </div><div id="hw" class="section">
+  <p>In this project, we will use the Ready Set STEM kit to create a Minecraft
+  controller. This first version of the controller will use the accelerometer
+  to control where your character, Steve, is looking. In addition, we'll use
+  four buttons to control Steve's movement foreward, backwards, left and
+  right.</p>
+ </div>
+ <div id="hw" class="section">
 
  <p>The hardware setup for this project includes the accelerometer and four
  buttons. For more information about setting up the accelerometer, refer back
@@ -65,62 +67,62 @@
  </ul>
 
  <p>This is what your hardware setup should look like:</p><img class="bb" src=
- "img/Minecraft_Accel_4way_1button_bb.jpg" alt="">
- </div><div id="sw" class="section">
+ "img/Minecraft_Accel_4way_1button_bb.jpg" alt=""></div>
+ <div id="sw" class="section">
 
- <p>Our code for this project &mdash; and most of our Minecraft projects &mdash; will
- consist of three parts:</p>
- <ol>
-  <li>
+  <p>Our code for this project — and most of our Minecraft projects — will
+  consist of three parts:</p>
+  <ol>
+   <li>
 
-   <p>Initialization Code</p>
-  </li>
-  <li>
+    <p>Initialization Code</p>
+   </li>
+   <li>
 
-   <p>Starting Minecraft</p>
-  </li>
-  <li>
+    <p>Starting Minecraft</p>
+   </li>
+   <li>
 
-   <p>The Game Loop</p>
-  </li>
- </ol>
- <h2>Step #1: Initialization Code</h2>
+    <p>The Game Loop</p>
+   </li>
+  </ol>
+  <h2>Step #1: Initialization Code</h2>
 
- <p>Our initialization code will first import the modules and functions we'll
- need in the project. For this project, we need to import the functions needed
- for the following:</p>
- <ul>
-  <li>
+  <p>Our initialization code will first import the modules and functions we'll
+  need in the project. For this project, we need to import the functions needed
+  for the following:</p>
+  <ul>
+   <li>
 
-   <p>Using the Accelerometer</p>
-  </li>
-  <li>
+    <p>Using the Accelerometer</p>
+   </li>
+   <li>
 
-   <p>Using the Buttons</p>
-  </li>
-  <li>
+    <p>Using the Buttons</p>
+   </li>
+   <li>
 
-   <p>Starting Minecraft</p>
-  </li>
-  <li>
+    <p>Starting Minecraft</p>
+   </li>
+   <li>
 
-   <p>Implementing the <code>sleep</code> function</p>
-  </li>
- </ul>
+    <p>Implementing the <code>sleep</code> function</p>
+   </li>
+  </ul>
 
- <p>Here is what the import function code will look like:</p>
- <div class="code" data-firstline="0">
-  <textarea>
+  <p>Here is what the import function code will look like:</p>
+  <div class="code" data-firstline="0">
+   <textarea>
 from rstem.accel import Accel
 from rstem.button import Button
 from rstem.mcpi import control
 import time
 </textarea>
- </div>
+  </div>
 
- <p>Next, we'll create our buttons and our accelerometer objects:</p>
- <div class="code" data-firstline="0">
-  <textarea>
+  <p>Next, we'll create our buttons and our accelerometer objects:</p>
+  <div class="code" data-firstline="0">
+   <textarea>
 left = Button(18)
 right = Button(14)
 up = Button(15)
@@ -130,46 +132,46 @@ jump = Button(24)
 
 accel = Accel()
 </textarea>
- </div>
- <h2>Step #2: Start Minecraft</h2>
+  </div>
+  <h2>Step #2: Start Minecraft</h2>
 
- <p>Once we have our initialization code written, we can bring up the Minecraft
- window. As we discussed in an earlier project, that is accomplished using the
- <code>control.show()</code> function:</p>
- <div class="code" data-firstline="0">
-  <textarea>
+  <p>Once we have our initialization code written, we can bring up the
+  Minecraft window. As we discussed in an earlier project, that is accomplished
+  using the <code>control.show()</code> function:</p>
+  <div class="code" data-firstline="0">
+   <textarea>
 control.show()
 </textarea>
- </div>
- <h2>Step #3: The Game Loop</h2>
+  </div>
+  <h2>Step #3: The Game Loop</h2>
 
- <p>Finally, we'll create the game loop that will house the logic for our code.
- For this project, our game loop will continue forever (until the user manually
- stops the game), so our loop will start with:</p>
- <div class="code" data-firstline="0">
-  <textarea>
+  <p>Finally, we'll create the game loop that will house the logic for our
+  code. For this project, our game loop will continue forever (until the user
+  manually stops the game), so our loop will start with:</p>
+  <div class="code" data-firstline="0">
+   <textarea>
 while True:
     ...
 </textarea>
- </div>
+  </div>
 
- <p>Each time through the loop, we'll want to do two things:</p>
- <ol>
-  <li>
+  <p>Each time through the loop, we'll want to do two things:</p>
+  <ol>
+   <li>
 
-   <p>Check for button presses and take appropriate action</p>
-  </li>
-  <li>
+    <p>Check for button presses and take appropriate action</p>
+   </li>
+   <li>
 
-   <p>Check the accelerometer movement and take appropriate action</p>
-  </li>
- </ol>
+    <p>Check the accelerometer movement and take appropriate action</p>
+   </li>
+  </ol>
 
- <p>We'll start by checking each of the four buttons for presses, and if one of
- the buttons is pressed, we will move Steve in that direction. Here is what
- that code will look like:</p>
- <div class="code" data-firstline="0">
-  <textarea>
+  <p>We'll start by checking each of the four buttons for presses, and if one
+  of the buttons is pressed, we will move Steve in that direction. Here is what
+  that code will look like:</p>
+  <div class="code" data-firstline="0">
+   <textarea>
 if left.is_pressed():
     control.left()
 else:
@@ -195,39 +197,39 @@ if jump.is_pressed():
 else:
     control.jump(release=True)
 </textarea>
- </div>
+  </div>
 
- <p>If a key press is indicated, the code will start movement in that direction
- using the <code>control</code> function; if a key press is not indicated,
- movement in that direction will be stopped using <code>release=True</code> in
- our control statements.</p>
+  <p>If a key press is indicated, the code will start movement in that
+  direction using the <code>control</code> function; if a key press is not
+  indicated, movement in that direction will be stopped using
+  <code>release=True</code> in our control statements.</p>
 
- <p>Next, we'll read the position of the kit using the data from the
- accelerometer and we'll control where Steve is looking based on that
- information:</p>
- <div class="code" data-firstline="0">
-  <textarea>
+  <p>Next, we'll read the position of the kit using the data from the
+  accelerometer and we'll control where Steve is looking based on that
+  information:</p>
+  <div class="code" data-firstline="0">
+   <textarea>
 x, y, z = accel.forces()
 control.look(up=50*y, left=50*x)
 </textarea>
- </div>
+  </div>
 
- <p>Notice that because the the accelerometer returns a value between -1 and 1,
- and because our API expects a value between -50 and 50, we have to multiply
- our accelerometer result by 50 in our code.</p>
+  <p>Notice that because the the accelerometer returns a value between -1 and
+  1, and because our API expects a value between -50 and 50, we have to
+  multiply our accelerometer result by 50 in our code.</p>
 
- <p>Finally, to keep our game loop from running too quickly, we'll implement a
- brief <code>sleep</code> (1/100 of the second) at the bottom of the loop:</p>
- <div class="code" data-firstline="0">
-  <textarea>
+  <p>Finally, to keep our game loop from running too quickly, we'll implement a
+  brief <code>sleep</code> (1/100 of the second) at the bottom of the loop:</p>
+  <div class="code" data-firstline="0">
+   <textarea>
 time.sleep(0.01)
 </textarea>
- </div>
- <h2>Full Code</h2>
+  </div>
+  <h2>Full Code</h2>
 
- <p>Here is what the full code for this project should look like:</p>
- <div class="code" data-firstline="1">
-  <textarea>
+  <p>Here is what the full code for this project should look like:</p>
+  <div class="code" data-firstline="1">
+   <textarea>
 from rstem.accel import Accel
 from rstem.button import Button
 from rstem.mcpi import control
@@ -274,35 +276,29 @@ while True:
     time.sleep(0.01)
 
 </textarea>
- </div>
- <h2>Additional Challenges</h2>
+  </div>
+  <h2>Additional Challenges</h2>
 
- <p>Here are some additional challenges you can attempt on your own:</p>
- <ol>
-  <li>
-
-   <p>Modify the code so that pressing and holding a button doesn't work &mdash;
-   Steve only moves a small amount each time a button is pressed</p>
-  </li>
-  <li>
-
-   <p>Modify the code so that Steve's movements are based on the accelerometer
-   and where he looks are controlled by the buttons.</p>
-  </li>
-  <li>
-
-   <p>Add another button (or remap an existing button) to allow Steve to crouch
-   at the press of the button.</p>
-   <div style="margin-left: 2em"></div>
-  </li>
- </ol>
- </div><div id="challenge" class="section">
+  <p>Here are some additional challenges you can attempt on your own:</p>
   <ol>
-   <li> <p>
-    </p> </li> <li> <p>
-    </p> </li> <li> <p>
-    </p> </li> 
+   <li>
+
+    <p>Modify the code so that pressing and holding a button doesn't work —
+    Steve only moves a small amount each time a button is pressed</p>
+   </li>
+   <li>
+
+    <p>Modify the code so that Steve's movements are based on the accelerometer
+    and where he looks are controlled by the buttons.</p>
+   </li>
+   <li>
+
+    <p>Add another button (or remap an existing button) to allow Steve to
+    crouch at the press of the button.</p>
+    <div style="margin-left: 2em"></div>
+   </li>
   </ol>
  </div>
+ <div id="challenge" class="section"></div>
 </body>
 </html>

@@ -32,43 +32,44 @@
  <div class="hw" data-count="1" data-name="audio_cable"></div>
  <div id="intro" class="section">
 
- <p>In this project, we'll build on the previous bomb detonating project by
- making our explosion radius configurable from the controller (and display that
- radius on the LED Matrix). We also add sound to the explosion.</p>
- </div><div id="hw" class="section">
- <img class="bb" src=
+  <p>In this project, we'll build on the previous bomb detonating project by
+  making our explosion radius configurable from the controller (and display
+  that radius on the LED Matrix). We also add sound to the explosion.</p>
+ </div>
+ <div id="hw" class="section"><img class="bb" src=
  "img/Minecraft_Matrix_updown_1button_bb.jpg" alt="">
  <h2>Writing Our Code</h2>
+ <h2>Hardware Setup</h2>
+ <h1>Hardware pic contains extra button</h1><img class="bb" src=
+ "img/Minecraft_Matrix_updown_1button_bb.png"></div>
+ <div id="sw" class="section">
 
+  <p>This code is similar to the code from the previous project, except that we
+  a few things:</p>
+  <ul>
+   <li>
 
-<h2>Hardware Setup</h2>
+    <p>A variable called <code>radius</code> that is increased or decreased
+    using two new buttons that we've added to the hardware.</p>
+   </li>
+   <li>
 
-<h1>Hardware pic contains extra button</h1>
-<img class="bb" src="img/Minecraft_Matrix_updown_1button_bb.png">
+    <p>The LED Matrix display that updates with the currently selected
+    radius.</p>
+   </li>
+   <li>
 
- </div><div id="sw" class="section">
+    <p>A sound file that plays when the bomb is detonated.</p>
+   </li>
+  </ul>
 
-<p>This code is similar to the code from the previous project,
-except that we a few things:
+  <p>The code for this project should be easy to understand once all the
+  previous concepts have been studied.</p>
+  <h2>Full Code</h2>
 
-<ul>
-<li><p>A variable called <code>radius</code> that is increased
-or decreased using two new buttons that we've added to the hardware.</li>
-<li><p>The LED Matrix display that updates with the currently
-selected radius.</li>
-<li><p>A sound file that plays when the bomb is detonated.</li>
-</ul>
-
-<p>The code for this project should be easy to understand once all the 
-previous concepts have been studied.
-
-<h2>Full Code</h2>
-
-<p>
-Here is what the full code for this project should look like:
-</p>
-
-<div class="code" data-firstline="1"> <div></div> <textarea>
+  <p>Here is what the full code for this project should look like:</p>
+  <div class="code" data-firstline="1">
+   <textarea>
 from rstem.button import Button
 from rstem.mcpi import minecraft, control, block
 from rstem.mcpi.vec3 import Vec3
@@ -119,14 +120,8 @@ while True:
     time.sleep(0.01)
 
 </textarea>
+  </div>
  </div>
- </div><div id="challenge" class="section">
-  <ol>
-   <li> <p>
-    </p> </li> <li> <p>
-    </p> </li> <li> <p>
-    </p> </li> 
-  </ol>
- </div>
+ <div id="challenge" class="section"></div>
 </body>
 </html>

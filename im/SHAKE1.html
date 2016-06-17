@@ -32,29 +32,26 @@
  <div id="intro" class="section">
 
   <p>In this project, we start creating an accelerometer game that commands the
-  user to shake and tilt the CREATOR Kit in a random order.  The challenge is
-  to correctly shake/tilt the kit even as the game gets progressively faster.
+  user to shake and tilt the CREATOR Kit in a random order. The challenge is to
+  correctly shake/tilt the kit even as the game gets progressively faster.</p>
 
   <p>We'll start simple. There will only be one action the user can take: tilt
-  the kit left.  But, in our program, we'll still need to calculate if the user
-  tilted it left within a shortr amount of time.
-
+  the kit left. But, in our program, we'll still need to calculate if the user
+  tilted it left within a shortr amount of time.</p>
  </div>
  <div id="hw" class="section">
 
   <p>You'll need to wire up the Accelerometer as done in previous projects.
   Here is what your breadboard should look like once the accelerometer is
-  properly wired:</p>
-  <mark>wrong image (should be accel only)</mark>
+  properly wired:</p><mark>wrong image (should be accel only)</mark>
   <div style="text-align: center;"><img class="bb" src=
   "img/LED_Matrix_Accel_bb.jpg" alt=""></div>
  </div>
  <div id="sw" class="section">
 
-  <p>For our first cut, we'll always request that the user tilts left.  Then, we'll simply print
-  out if the user correctly tilted left, or didn't.
-
-<div class="code" data-firstline="1">
+  <p>For our first cut, we'll always request that the user tilts left. Then,
+  we'll simply print out if the user correctly tilted left, or didn't.</p>
+  <div class="code" data-firstline="1">
    <textarea>
 from rstem.accel import Accel
 import time
@@ -78,10 +75,10 @@ while True:
     tilt_left_score = 0
     for i in range(period):
         x, y, z = accel.forces()
-        if x > 0.75:
+        if x &gt; 0.75:
             tilt_left_score += 1
 
-        if tilt_left_score > SCORE_NEEDED:
+        if tilt_left_score &gt; SCORE_NEEDED:
             action = LEFT
             break
 
@@ -99,46 +96,52 @@ while True:
 
   <p>Now, let's take a look at what our code is doing:</p>
   <ul>
-   <li> <p>
-In Lines 6 though 14, we intialize some variables we'll need later.  The variables
-<code>NOACTION</code>, 
-<code>LEFT</code>,
-<code>RIGHT</code>,
-<code>UP</code>, and
-<code>SHAKE</code> are used to keep track of which action is requested.  
-And, for now, this game will only use
-<code>NOACTION</code> and
-<code>LEFT</code>.
+   <li>
 
-   </p></li> <li> <p>
-   In Lines 16 through 18, at the start of the game loop, we define two variables:
-   <code>request</code> and <code>action</code>.
-   The <code>request</code> is what we want the user to do, and the <code>action</code> is what
-   the user has actually done.  
-   For this first cut at the game, we will only request that they
-   tilt left.  And, we assume at first that they have taken <code>NOACTION</code>
-   </p></li> <li> <p>
-   In Lines 20 through 30, we record what action the user has taken.  To determine the action
-   they've taken, we test the forces on the accelerometer.  We'll keep score of every time they
-   are tilting the accelerometer to the left, and increase the score.  Once they've gotten over
-   some threshold (SCORE_NEEDED), then we know they've taken that action.  The reason we need to
-   keep score (instead of just assuming that the user is tilting the kit the first time we read
-   the accelerometer) is that sometimes a jiggle of the kit will read as a tilt.  We want to make
-   sure that the user <i>really</i> meant to tilt the kit by checking a number of times.
-   </p></li> <li> <p>
-   In Lines 32 through 36, we check if the our <code>request</code> matches the user's
-   <code>action</code>.  If not, the game is over and we exit the while loop.
+    <p>In Lines 6 though 14, we intialize some variables we'll need later. The
+    variables <code>NOACTION</code>, <code>LEFT</code>, <code>RIGHT</code>,
+    <code>UP</code>, and <code>SHAKE</code> are used to keep track of which
+    action is requested. And, for now, this game will only use
+    <code>NOACTION</code> and <code>LEFT</code>.</p>
+   </li>
+   <li>
+
+    <p>In Lines 16 through 18, at the start of the game loop, we define two
+    variables: <code>request</code> and <code>action</code>. The
+    <code>request</code> is what we want the user to do, and the
+    <code>action</code> is what the user has actually done. For this first cut
+    at the game, we will only request that they tilt left. And, we assume at
+    first that they have taken <code>NOACTION</code></p>
+   </li>
+   <li>
+
+    <p>In Lines 20 through 30, we record what action the user has taken. To
+    determine the action they've taken, we test the forces on the
+    accelerometer. We'll keep score of every time they are tilting the
+    accelerometer to the left, and increase the score. Once they've gotten over
+    some threshold (SCORE_NEEDED), then we know they've taken that action. The
+    reason we need to keep score (instead of just assuming that the user is
+    tilting the kit the first time we read the accelerometer) is that sometimes
+    a jiggle of the kit will read as a tilt. We want to make sure that the user
+    <i>really</i> meant to tilt the kit by checking a number of times.</p>
+   </li>
+   <li>
+
+    <p>In Lines 32 through 36, we check if the our <code>request</code> matches
+    the user's <code>action</code>. If not, the game is over and we exit the
+    while loop.</p>
+   </li>
   </ul>
  </div>
  <div id="challenge" class="section">
   <ol>
-   <li> <p>
-   The <code>SCORE_NEEDED</code> value affects how sensitive our code is at detecting tilts, and
-   also affects how long it takes to detect the tilt.  Try changing 
-   <code>SCORE_NEEDED</code> to a high or low value, and see how it affects the tilt detection.
-    </p> </li> <li> <p>
-    
-    </p> </li> <li> <p>
+   <li>
+
+    <p>The <code>SCORE_NEEDED</code> value affects how sensitive our code is at
+    detecting tilts, and also affects how long it takes to detect the tilt. Try
+    changing <code>SCORE_NEEDED</code> to a high or low value, and see how it
+    affects the tilt detection.</p>
+   </li>
   </ol>
  </div>
 </body>

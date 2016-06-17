@@ -31,27 +31,27 @@
  <div class="section">
   <h1>Let's Get Random</h1>
 
-  <p>There are many times when writing games or other programs when you're going
-  to want to generate a random choice (it could be a random number or even a 
-  random element from a list).  For example, in our Simon Says game, we're going
-  to want to generate a sequence of random LED flashes as part of our game.  As
-  another example, imagine you want to create sports video game, where you are 
-  playing against the computer. If the opposing team ran the same exact plays in
-  the same order every time you played the game, the game would get pretty boring.</p>
+  <p>There are many times when writing games or other programs when you're
+  going to want to generate a random choice (it could be a random number or
+  even a random element from a list). For example, in our Simon Says game,
+  we're going to want to generate a sequence of random LED flashes as part of
+  our game. As another example, imagine you want to create sports video game,
+  where you are playing against the computer. If the opposing team ran the same
+  exact plays in the same order every time you played the game, the game would
+  get pretty boring.</p>
 
   <p>Python provides a set of functions in the <code>random</code> module that
-  can return random numbers.  We'll describe the most common and useful functions
-  below...</p>
-</div>
-
+  can return random numbers. We'll describe the most common and useful
+  functions below...</p>
+ </div>
  <div class="section">
   <h1>RandRange()</h1>
-  
-  <p>One of the simplest random functions is <code>randrange(stop)</code>. It 
-  returns a random number grater than or equal to 0, but less than <i>stop</i>. 
-  
+
+  <p>One of the simplest random functions is <code>randrange(stop)</code>. It
+  returns a random number grater than or equal to 0, but less than
+  <i>stop</i>.</p>
+
   <p>For example, if you try:</p>
-  
   <div class="code" data-firstline="1">
    <textarea>
 from random import randrange
@@ -72,20 +72,18 @@ print(randrange(5))
 </pre>
   </div>
 
-  <p>Of course, if you run the program again (or many times), you'll almost certainly 
-  get a different set of numbers.</p>
-</div>
-
+  <p>Of course, if you run the program again (or many times), you'll almost
+  certainly get a different set of numbers.</p>
+ </div>
  <div class="section">
   <h1>RandInt()</h1>
-  
+
   <p>Another convenient function is <code>randint(a, b)</code>. It returns a
   random number between <i>a</i> and <i>b</i> (it's <i>inclusive</i>, meaning
-  the returned value could include <i>a</i> or <i>b</i>). 
-  
-  <p>For example:</p>
+  the returned value could include <i>a</i> or <i>b</i>).</p>
 
-    <div class="code" data-firstline="1">
+  <p>For example:</p>
+  <div class="code" data-firstline="1">
    <textarea>
 from random import randint
 print(randint(5, 8))
@@ -104,18 +102,16 @@ print(randint(5, 8))
 5
 </pre>
   </div>
-  
-   <p>In this example, the return value will always be either 5, 6, 7 or 8.</p>
-</div>
- 
+
+  <p>In this example, the return value will always be either 5, 6, 7 or 8.</p>
+ </div>
  <div class="section">
   <h1>Choice()</h1>
-  
-  <p>One more useful function is <code>choice(x)</code>. It returns a random item
-  in the list that you give it (where the list is <i>x</i>). 
-  
-  <p>For example:</p>
 
+  <p>One more useful function is <code>choice(x)</code>. It returns a random
+  item in the list that you give it (where the list is <i>x</i>).</p>
+
+  <p>For example:</p>
   <div class="code" data-firstline="1">
    <textarea>
 from random import choice

@@ -33,28 +33,40 @@
 
   <p>Variables are one of the most important concepts in programming, and you
   will certainly be using them in every useful program you write. Variables are
-  like labels, or names, for the numbers and values in your
-  programs. Variables are used for keeping track of all the facts and figures
-  you use throughout your code.</p>
+  like labels, or names, for the numbers and values in your programs. Variables
+  are used for keeping track of all the facts and figures you use throughout
+  your code.</p>
 
   <p>Variables can be given any name you choose (although there are some rules
   to that!) Choosing good variable names makes it easier to write your code, to
   change your code later and to help others understand your code.</p>
-
   <div class="info">
    <div>
     Variable names
    </div>
    <div>
 
-    <p>Choosing good variable names can make a program easier to read an understand.  A variable
-    can generally be any name you want, as long as it contains only:
-    <ul><li><p>Uppercase (A through Z) or lowercase (a through z) letters</p></li>
-    <li><p>Digits (0 through 9)</p></li>
-    <li><p>The underscore character ("_")</p></li>
+    <p>Choosing good variable names can make a program easier to read an
+    understand. A variable can generally be any name you want, as long as it
+    contains only:</p>
+    <ul>
+     <li>
+
+      <p>Uppercase (A through Z) or lowercase (a through z) letters</p>
+     </li>
+     <li>
+
+      <p>Digits (0 through 9)</p>
+     </li>
+     <li>
+
+      <p>The underscore character ("_")</p>
+     </li>
     </ul>
-    <p>And, it can't start with a digit, either.
-    <p>So, for example:
+
+    <p>And, it can't start with a digit, either.</p>
+
+    <p>So, for example:</p>
     <table class="basic slim">
      <tbody class="thistable">
       <tr>
@@ -67,34 +79,152 @@
         <p>Allowed?</p>
        </th>
       </tr>
-      <tr> <td> <p><span class=nospell>fred</span></td> <td> <p>YES</p> </td> </tr>
-      <tr> <td> <p><span class=nospell>Fred</span></td> <td> <p>YES</p> </td> </tr>
-      <tr> <td> <p><span class=nospell>FRED</span></td> <td> <p>YES</p> </td> </tr>
-      <tr> <td> <p><span class=nospell>Fred.Schmed</span></td> <td> <p>NO &mdash; Can't use periods</p> </td> </tr>
-      <tr> <td> <p><span class=nospell>this_is_a_really_long_variable_name</span></td> <td> <p>YES</p> </td> </tr>
-      <tr> <td> <p><span class=nospell>thisisareallylongvariablenametoo</span></td> <td> <p>YES &mdash; but it sure is hard
-      to read</p> </td> </tr>
-      <tr> <td> <p><span class=nospell>Fred's_house</span></td> <td> <p>NO &mdash; Can't use apostrophe</p> </td> </tr>
-      <tr> <td> <p><span class=nospell>Freds house</span></td> <td> <p>NO &mdash; Can't use spaces</p> </td> </tr>
-      <tr> <td> <p><span class=nospell>Freds_house</span></td> <td> <p>YES</p> </td> </tr>
-      <tr> <td> <p><span class=nospell>Fred123</span></td> <td> <p>YES</p> </td> </tr>
-      <tr> <td> <p><span class=nospell>123Fred</span></td> <td> <p>NO &mdash; Can't start with a digit</p> </td> </tr>
-      <tr> <td> <p><span class=nospell>You Don't Say?</span></td> <td> <p>NO &mdash; Can't use apostrophe or question mark</p> </td> </tr>
-      <tr> <td> <p><span class=nospell>#firstworldproblems</span></td> <td> <p>NO &mdash; Can't use hash</p> </td> </tr>
+      <tr>
+       <td>
+
+        <p><span class="nospell">fred</span></p>
+       </td>
+       <td>
+
+        <p>YES</p>
+       </td>
+      </tr>
+      <tr>
+       <td>
+
+        <p><span class="nospell">Fred</span></p>
+       </td>
+       <td>
+
+        <p>YES</p>
+       </td>
+      </tr>
+      <tr>
+       <td>
+
+        <p><span class="nospell">FRED</span></p>
+       </td>
+       <td>
+
+        <p>YES</p>
+       </td>
+      </tr>
+      <tr>
+       <td>
+
+        <p><span class="nospell">Fred.Schmed</span></p>
+       </td>
+       <td>
+
+        <p>NO — Can't use periods</p>
+       </td>
+      </tr>
+      <tr>
+       <td>
+
+        <p><span class="nospell">this_is_a_really_long_variable_name</span></p>
+       </td>
+       <td>
+
+        <p>YES</p>
+       </td>
+      </tr>
+      <tr>
+       <td>
+
+        <p><span class="nospell">thisisareallylongvariablenametoo</span></p>
+       </td>
+       <td>
+
+        <p>YES — but it sure is hard to read</p>
+       </td>
+      </tr>
+      <tr>
+       <td>
+
+        <p><span class="nospell">Fred's_house</span></p>
+       </td>
+       <td>
+
+        <p>NO — Can't use apostrophe</p>
+       </td>
+      </tr>
+      <tr>
+       <td>
+
+        <p><span class="nospell">Freds house</span></p>
+       </td>
+       <td>
+
+        <p>NO — Can't use spaces</p>
+       </td>
+      </tr>
+      <tr>
+       <td>
+
+        <p><span class="nospell">Freds_house</span></p>
+       </td>
+       <td>
+
+        <p>YES</p>
+       </td>
+      </tr>
+      <tr>
+       <td>
+
+        <p><span class="nospell">Fred123</span></p>
+       </td>
+       <td>
+
+        <p>YES</p>
+       </td>
+      </tr>
+      <tr>
+       <td>
+
+        <p><span class="nospell">123Fred</span></p>
+       </td>
+       <td>
+
+        <p>NO — Can't start with a digit</p>
+       </td>
+      </tr>
+      <tr>
+       <td>
+
+        <p><span class="nospell">You Don't Say?</span></p>
+       </td>
+       <td>
+
+        <p>NO — Can't use apostrophe or question mark</p>
+       </td>
+      </tr>
+      <tr>
+       <td>
+
+        <p><span class="nospell">#firstworldproblems</span></p>
+       </td>
+       <td>
+
+        <p>NO — Can't use hash</p>
+       </td>
+      </tr>
      </tbody>
     </table>
+
     <p>Even though you can name variables any way you want, it's common to
     write variable names that are longer than one word by separating the words
-    with underscores.  And, that's the way we'll generally do it throughout this guide.  One
-    exception: for variables that don't change values throughout the program, we'll
-    generally use ALL_CAPS for those variable names.
+    with underscores. And, that's the way we'll generally do it throughout this
+    guide. One exception: for variables that don't change values throughout the
+    program, we'll generally use ALL_CAPS for those variable names.</p>
    </div>
   </div>
   <h2>Assigning Values to Variables</h2>
-  <p>A "variable" is a value that can vary (change), and
-  that's what program variables do throughout a program. To assign a variable a
-  value, you use the equals sign (=) in what is called an "assignment statement,"
-  which looks like:</p>
+
+  <p>A "variable" is a value that can vary (change), and that's what program
+  variables do throughout a program. To assign a variable a value, you use the
+  equals sign (=) in what is called an "assignment statement," which looks
+  like:</p>
   <div class="code" data-firstline="0">
    <textarea>
 my_variable = 5
@@ -110,14 +240,13 @@ my_variable = 7
   </div>
 
   <p>A variable can be any type of value, including a number, a phrase, the
-  results of a calculation, or a list.  The value of a variable
-  can change any number of times in a program.</p>
-  
+  results of a calculation, or a list. The value of a variable can change any
+  number of times in a program.</p>
   <h2>Variables Can Be Assigned Numbers</h2>
 
   <p>As an example, we'll calculate the number of seconds in a day. To do do
-  this, we'll start by creating a variable called <code>sec_in_minute</code> that will be
-  the number of seconds in a minute (which is 60):</p>
+  this, we'll start by creating a variable called <code>sec_in_minute</code>
+  that will be the number of seconds in a minute (which is 60):</p>
   <div class="code" data-firstline="0">
    <textarea>
 sec_in_minute = 60
@@ -139,7 +268,7 @@ print(sec_in_minute * min_in_hour * hour_in_day)
 </textarea>
   </div>
 
-  <p>The asterisk ('*') is a multiplication symbol &mdash; see the <a data-uid=
+  <p>The asterisk ('*') is a multiplication symbol — see the <a data-uid=
   "calc"></a> project for more information.</p>
 
   <p>Here is what the output would look like if you ran that code:</p>
@@ -152,8 +281,8 @@ print(sec_in_minute * min_in_hour * hour_in_day)
 
   <p>Remember we said above that variables can be almost any type of data –
   that includes data from other variables. We can take our program one step
-  further by creating a variable called <code>sec_in_day</code> and using it to be our
-  calculation for the number of seconds in a day:</p>
+  further by creating a variable called <code>sec_in_day</code> and using it to
+  be our calculation for the number of seconds in a day:</p>
   <div class="code" data-firstline="0">
    <textarea>
 sec_in_day = sec_in_minute * min_in_hour * hour_in_day
@@ -176,9 +305,9 @@ print(sec_in_day)
   </div>
   <h2>Variables Can Be Assigned Strings</h2>
 
-  <p>Variables can also be "strings".   In programming, strings are just
-  sequences of characters &mdash; generally normal text.  For example, we could
-  have a variable that holds one of the output message we're using above:</p>
+  <p>Variables can also be "strings". In programming, strings are just
+  sequences of characters — generally normal text. For example, we could have a
+  variable that holds one of the output message we're using above:</p>
   <div class="code" data-firstline="0">
    <textarea>
 message = "Number of seconds in a day: "
@@ -209,24 +338,36 @@ Number of seconds in a day: 86400
    </div>
    <div>
 
-    <p>In this tutorial, we've discussed two types of variable values: numbers and strings.  But there are
-    many other types of data values that can be used as well:
+    <p>In this tutorial, we've discussed two types of variable values: numbers
+    and strings. But there are many other types of data values that can be used
+    as well:</p>
     <ul>
-    <li><p>Lists &mdash; Lists are ordered sequences of other values.  We'll discuss them more in
-  <a data-uid="lists"></a> and will be using them frequently in future projects.  </p></li>
-    <li><p><span class=nospell>Booleans</span> - <span
-    class=nospell>Booleans</span> are a funny name for the values
-    <code>True</code> and
-    <code>False</code>.  We'll discuss them more in
-  <a data-uid="if"></a> and you'll experience the concept of booleans lots of different places.  </p></li>
-    <li><p>None &mdash; <code>None</code> is a special value which strangely indicates that there
-    is no value at all.  </p></li>
+     <li>
+
+      <p>Lists — Lists are ordered sequences of other values. We'll discuss
+      them more in <a data-uid="lists"></a> and will be using them frequently
+      in future projects.</p>
+     </li>
+     <li>
+
+      <p><span class="nospell">Booleans</span> - <span class=
+      "nospell">Booleans</span> are a funny name for the values
+      <code>True</code> and <code>False</code>. We'll discuss them more in
+      <a data-uid="if"></a> and you'll experience the concept of booleans lots
+      of different places.</p>
+     </li>
+     <li>
+
+      <p>None — <code>None</code> is a special value which strangely indicates
+      that there is no value at all.</p>
+     </li>
     </ul>
-    <p>Those are the most common types of values, and they cover the ones you'll see in the core set
-    of Ready Set STEM projects.  But there are more, including types you can even define yourself.  By
-	the way, in
-    Python, as in some other programming languages, all values are called <i>objects</i>, and we'll 
-	discuss objects more throughout this guide.
+
+    <p>Those are the most common types of values, and they cover the ones
+    you'll see in the core set of Ready Set STEM projects. But there are more,
+    including types you can even define yourself. By the way, in Python, as in
+    some other programming languages, all values are called <i>objects</i>, and
+    we'll discuss objects more throughout this guide.</p>
    </div>
   </div>
  </div>

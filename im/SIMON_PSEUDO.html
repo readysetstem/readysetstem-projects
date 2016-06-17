@@ -31,14 +31,12 @@
  <div class="section">
 
   <p>Over the next eight projects, we're going to use buttons, LEDs and a good
-  bit of code to build and program a pattern-matching game "Simon Says", much like the
-  popular toy Simon&reg;: 
-  
-  <p>
-  <img src="img/simon.jpg" style="max-width: 300px;" alt="">
-  <p>
-  
-  If you're not familiar with Simon&reg;, let me describe how our
+  bit of code to build and program a pattern-matching game "Simon Says", much
+  like the popular toy Simon®:</p>
+
+  <p><img src="img/simon.jpg" style="max-width: 300px;" alt=""></p>
+
+  <p>If you're not familiar with Simon®, let me describe how our
   pattern-matching game will work:</p>
 
   <p>The game will start by flashing one of four different color LEDs at
@@ -49,9 +47,9 @@
   remember the pattern and press the correct buttons to replicate the pattern.
   Each time you successfully enter the correct sequence, the game will replay
   the previous pattern and add a random new LED flash at the end. This will
-  continue until you incorrectly repeat the sequence &mdash; of if you take too long
-  between button presses &mdash; at which point the game ends and the entire
-  sequence is repeated back to you one last time.</p>
+  continue until you incorrectly repeat the sequence — of if you take too long
+  between button presses — at which point the game ends and the entire sequence
+  is repeated back to you one last time.</p>
 
   <p>Since this is a bit longer and more complex project than we've done so
   far, it's important to spend some time planning what the code will do and in
@@ -84,8 +82,8 @@ Repeat:
     Pause
 </pre>
 
-    <p>You notice that each line is easily readable as English &mdash; with some
-    indenting to help the readability &mdash; and overall, you now have a outline
+    <p>You notice that each line is easily readable as English — with some
+    indenting to help the readability — and overall, you now have a outline
     that you can use as a template to create your code.</p>
 
     <p>Now, in reality, you might not need to use pseudo-code for such a simple
@@ -94,14 +92,14 @@ Repeat:
    </div>
   </div>
 
-  <p>Let's talk about what the pseudo-code for our Simon Says game will look like.
-  An effective way to outline a programming project is to start with big ideas
-  and then break those ideas down into smaller and smaller pieces, until the
-  pieces are small enough that we're comfortable starting to write our
+  <p>Let's talk about what the pseudo-code for our Simon Says game will look
+  like. An effective way to outline a programming project is to start with big
+  ideas and then break those ideas down into smaller and smaller pieces, until
+  the pieces are small enough that we're comfortable starting to write our
   code.</p>
 
-  <p>For example, this is what the very high level outline for our Simon Says game
-  might look like:</p>
+  <p>For example, this is what the very high level outline for our Simon Says
+  game might look like:</p>
   <pre>
 Import Modules and Initialize Game
 Add a new random LED to sequence
@@ -110,20 +108,20 @@ Allow player to repeat sequence one button at a time
 Get the user's button presses, one-by-one
 If user enters incorrect button, end game
 If user enters correct button, flash LED and play tone
-If user enters the whole sequence, go back & add another random LED 
+If user enters the whole sequence, go back &amp; add another random LED 
 If user enters the wrong sequence, play an error sequence
 </pre>
 
   <p>That's basically all our Simon game needs to do. But, now it's time to
   start thinking about how this outline would actually look when written with
-  code. You'll notice that the second to last line indicates that &mdash; for as long
-  as the user does something correctly &mdash; we go back to the top of the code.
+  code. You'll notice that the second to last line indicates that — for as long
+  as the user does something correctly — we go back to the top of the code.
   Does this sound like a concept we've already discussed? A <code>while</code>
   loop, perhaps?</p>
 
   <p>Also, you'll notice that in the middle of the code, we're checking for the
-  sequence of button presses from the user &mdash; one-by-one. This sequence of
-  getting input and checking it would likely be a loop as well &mdash; in this case,
+  sequence of button presses from the user — one-by-one. This sequence of
+  getting input and checking it would likely be a loop as well — in this case,
   probably a <code>for</code> loop.</p>
 
   <p>Let's rewrite our pseudo-code above, but this time, let's add in a couple
@@ -144,8 +142,8 @@ If the user enters the wrong sequence, play an error sequence
   <p>The pseudo-code above is easy to follow, but by adding in the two loops,
   we start to see the format for our program.</p>
 
-  <p>We could drill down into each piece of the pseudo-code further &mdash; and in
-  some future projects we'll be much more detailed &mdash; but for our Simon Says
+  <p>We could drill down into each piece of the pseudo-code further — and in
+  some future projects we'll be much more detailed — but for our Simon Says
   game, we think this is enough detail to get started. As we build up the code
   over the next many projects, we'll use the outline above to organize and
   ensure that we're doing everything that needs to be done to get the game

@@ -75,7 +75,7 @@
   </li>
  </ol>
 
- <p><strong>Note:</strong> Both CE0 and CE1 are on the Lid Connector Board &mdash;
+ <p><strong>Note:</strong> Both CE0 and CE1 are on the Lid Connector Board —
  ensure that you're connected to CE0.</p>
 
  <p><strong>Note:</strong> Use a separate jumper wire (this is not included in
@@ -88,42 +88,41 @@
  <div id="sw" class="section">
 
   <p>To display graphics on our LED Matrix, we use a set of functions that
-  allows us to create, draw, display and erase a <i>framebuffer</i>.  We'll talk
-  a bunch about framebuffers in an upcoming concept (<a data-uid="fb"></a>), but 
-  for now, the important thing to understand is that framebuffers are the tool we 
-  use to manage the LED Matrix display.</p>
-  
-    <div class="info">
+  allows us to create, draw, display and erase a <i>framebuffer</i>. We'll talk
+  a bunch about framebuffers in an upcoming concept (<a data-uid="fb"></a>),
+  but for now, the important thing to understand is that framebuffers are the
+  tool we use to manage the LED Matrix display.</p>
+  <div class="info">
    <div>
     Rectangular Coordinates
    </div>
    <div>
-   
-    <p>To draw on our LED Matrix, we will rely on something called <i>rectangular
-	coordinates</i>, which is a system for defining a location.  Each of the 64 LEDs 
-	on our LED Matrix will be referred to by two numbers &mdash; the first number will be
-	the distance from the left side of the LED Matrix and the second number will be
-	the distance from the bottom of the LED Matrix.</p>
 
-    <p>Here is the basis for those two numbers:
-	
-	</p><img style="width: 276px" src="img/ledcoordinates.jpg" alt="">
+    <p>To draw on our LED Matrix, we will rely on something called
+    <i>rectangular coordinates</i>, which is a system for defining a location.
+    Each of the 64 LEDs on our LED Matrix will be referred to by two numbers —
+    the first number will be the distance from the left side of the LED Matrix
+    and the second number will be the distance from the bottom of the LED
+    Matrix.</p>
 
-	<p>The first number in our rectangular coordinates refers to the bottom row of
-	numbers.  The second number in our rectangular coordinates refers to the side
-	row of numbers.
-	
-	<p>So, if we wanted to refer to the LED in the lower left hand corner of the 
-	LED Matrix, we would use the coordinates (0,0) &mdash; that's the LED that is 0 from
-	the left and 0 from the bottom.  And, if we wanted to refer to the LED in the upper
-	right hand corner of the LED Matrix, we would use the coordinates (7,7).
-	
-	<p>Here is the LED at coordinates (3,6):
-	
-	</p><img style="width: 276px" src="img/ledcoordinates2.jpg" alt="">
+    <p>Here is the basis for those two numbers:</p><img style="width: 276px"
+    src="img/ledcoordinates.jpg" alt="">
 
-	<p>You'll be able to play with these coordinates in the project below.
-	   </div>
+    <p>The first number in our rectangular coordinates refers to the bottom row
+    of numbers. The second number in our rectangular coordinates refers to the
+    side row of numbers.</p>
+
+    <p>So, if we wanted to refer to the LED in the lower left hand corner of
+    the LED Matrix, we would use the coordinates (0,0) — that's the LED that is
+    0 from the left and 0 from the bottom. And, if we wanted to refer to the
+    LED in the upper right hand corner of the LED Matrix, we would use the
+    coordinates (7,7).</p>
+
+    <p>Here is the LED at coordinates (3,6):</p><img style="width: 276px" src=
+    "img/ledcoordinates2.jpg" alt="">
+
+    <p>You'll be able to play with these coordinates in the project below.</p>
+   </div>
   </div>
 
   <p>Here is the basic code we'll use to initialize our LED Matrix and draw a
@@ -148,9 +147,9 @@ fb.show()
    <li>
 
     <p>On Line 2, we initialize our framebuffer. We call the
-    <code>Framebuffer()</code> function, which returns a "framebuffer" object to our
-    <code>fb</code> variable. We can now use the <code>fb</code> variable to call other 
-	framebuffer functions</p>
+    <code>Framebuffer()</code> function, which returns a "framebuffer" object
+    to our <code>fb</code> variable. We can now use the <code>fb</code>
+    variable to call other framebuffer functions</p>
    </li>
    <li>
 
@@ -170,9 +169,9 @@ fb.show()
    </li>
   </ul>
 
-  <p>When you run this code, you should see a dot appear on the LED Matrix
-  at coordinates (3,6) &mdash; which is the point we used in our example in
-  the Info Box above.</p>
+  <p>When you run this code, you should see a dot appear on the LED Matrix at
+  coordinates (3,6) — which is the point we used in our example in the Info Box
+  above.</p>
  </div>
  <div id="challenge" class="section">
   <ol>

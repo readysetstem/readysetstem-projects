@@ -51,11 +51,12 @@
  <div class="section" id="sw">
 
   <p>Here, we fix the popping/crackling sound from the previous project when a
-  button is held down.  Instead of trying to <code>play()</code> the note each time
-  we see that the button is pressed down, we will instead only only play the note 
-  when we see a button press <i>and</i> the note is not already playing. This way, 
-  we only start the note once at the start of the button press and aren't continually 
-  restarting the note each time through the loop.</p>
+  button is held down. Instead of trying to <code>play()</code> the note each
+  time we see that the button is pressed down, we will instead only only play
+  the note when we see a button press <i>and</i> the note is not already
+  playing. This way, we only start the note once at the start of the button
+  press and aren't continually restarting the note each time through the
+  loop.</p>
 
   <p>In addition, if the button is <i>not</i> pressed, we <code>stop()</code>
   playing the note. This only has an affect if the note was already playing
@@ -99,7 +100,8 @@ while True:
     <p>We used the new function <code>is_playing()</code> in the code above.
     However, the code can be written without it. How? Hint: You'll likely need
     a variable (or variables) to keep track of whether or not each note is
-    playing.  Can you rewrite the code above without <code>is_playing()</code>?</p>
+    playing. Can you rewrite the code above without
+    <code>is_playing()</code>?</p>
    </li>
    <li>
 

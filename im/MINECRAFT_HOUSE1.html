@@ -32,40 +32,32 @@
  <div class="hw" data-count="1" data-name="audio_cable"></div>
  <div id="intro" class="section">
 
- <p>In this project, we'll build a simple house in the Minecraft world at the
- touch of a button.</p>
- </div><div id="hw" class="section">
- <img class="bb" src="img/Minecraft_1button_bb.jpg" alt=
- "">
+  <p>In this project, we'll build a simple house in the Minecraft world at the
+  touch of a button.</p>
+ </div>
+ <div id="hw" class="section"><img class="bb" src=
+ "img/Minecraft_1button_bb.jpg" alt="">
  <h2>Writing Our Code</h2>
+ <h2>Hardware Setup</h2><img class="bb" src=
+ "img/Minecraft_1button_bb.png"></div>
+ <div id="sw" class="section">
 
+  <p>The code for this project should look very familiar. It is very similar to
+  our Minecraft Animation project, where we drew an animation of our character
+  using blocks. In that project, we were also drawing the sprite on our LED
+  Matrix, so we used 0 to denote LED off and 1-8 and A-F to denote intensity of
+  the LED display.</p>
 
-<h2>Hardware Setup</h2>
-<img class="bb" src="img/Minecraft_1button_bb.png">
+  <p>Because we're not using the LED Matrix in this project, we don't need to
+  include the LED intensity in our sprite design. Instead, we will use 0 and 1
+  to simply denote block types -- 0 will indicate no block (block type AIR) and
+  1 will indicate a stone block. We implement this using a list, and the 0 and
+  1 are simply indexes in that list.</p>
+  <h2>Full Code</h2>
 
- </div><div id="sw" class="section">
-
-<p>The code for this project should look very familiar.  It is
-very similar to our Minecraft Animation project, where we drew
-an animation of our character using blocks.  In that project,
-we were also drawing the sprite on our LED Matrix, so we used
-0 to denote LED off and 1-8 and A-F to denote intensity of the
-LED display.  
-
-<p>Because we're not using the LED Matrix in this project, 
-we don't need to include the LED intensity in our sprite design.
-Instead, we will use 0 and 1 to simply denote block types --
-0 will indicate no block (block type AIR) and 1 will indicate
-a stone block.  We implement this using a list, and the 0 and 1
-are simply indexes in that list. 
-
-<h2>Full Code</h2>
-
-<p>
-Here is what the full code for this project should look like:
-</p>
-
-<div class="code" data-firstline="1"> <div></div> <textarea>
+  <p>Here is what the full code for this project should look like:</p>
+  <div class="code" data-firstline="1">
+   <textarea>
 from rstem.button import Button
 from rstem.mcpi import minecraft, control, block
 from rstem.mcpi.vec3 import Vec3
@@ -139,14 +131,8 @@ while True:
     time.sleep(0.01)
 
 </textarea>
+  </div>
  </div>
- </div><div id="challenge" class="section">
-  <ol>
-   <li> <p>
-    </p> </li> <li> <p>
-    </p> </li> <li> <p>
-    </p> </li> 
-  </ol>
- </div>
+ <div id="challenge" class="section"></div>
 </body>
 </html>

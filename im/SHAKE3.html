@@ -33,28 +33,28 @@
  <div class="hw" data-count="1" data-name="audio_cable"></div>
  <div id="intro" class="section">
 
-  <p>In this project, we'll add sounds to our accelerometer shake game.  With sounds, specfically
-  text-to-speech like we used in the 
-    <a data-uid= "speechp"></a> project, we can command the user to do different actions through
-    the game, and let them know if the've succeeded.
-
+  <p>In this project, we'll add sounds to our accelerometer shake game. With
+  sounds, specfically text-to-speech like we used in the <a data-uid=
+  "speechp"></a> project, we can command the user to do different actions
+  through the game, and let them know if the've succeeded.</p>
  </div>
  <div id="hw" class="section">
 
   <p>You'll need to wire up the Accelerometer as done in previous projects.
   Here is what your breadboard should look like once the accelerometer is
   properly wired:</p>
-  <div style="text-align: center;"><img class="bb" src=
-  "img/Accel_bb.jpg" alt=""></div>
- <p>In addition, you'll need the speaker hooked up &mdash; refer back to the <a
- data-uid= "playingnotes"></a> project if you need help.
+  <div style="text-align: center;"><img class="bb" src="img/Accel_bb.jpg" alt=
+  ""></div>
+
+  <p>In addition, you'll need the speaker hooked up — refer back to the
+  <a data-uid="playingnotes"></a> project if you need help.</p>
  </div>
  <div id="sw" class="section">
-  <p>Here is what the code for this project should look like at this point (with
-  new changes highlighted with arrows) &mdash;
-  it should run similarly to the previous project, but with sound added:</p>
 
-<div class="code" data-firstline="1">
+  <p>Here is what the code for this project should look like at this point
+  (with new changes highlighted with arrows) — it should run similarly to the
+  previous project, but with sound added:</p>
+  <div class="code" data-firstline="1">
    <textarea>
 from rstem.accel import Accel
 from rstem.sound import Speech
@@ -99,25 +99,25 @@ while True:
     shake_me_score = 0
     for i in range(period):
         x, y, z = accel.forces()
-        if x > 0.75:
+        if x &gt; 0.75:
             tilt_left_score += 1
-*        if x < -0.75:
+*        if x &lt; -0.75:
 *            tilt_right_score += 1
-*        if y > 0.75:
+*        if y &gt; 0.75:
 *            tilt_up_score += 1
-*        if (z < 0.7 or z > 1.3) and (-0.5 < x < 0.5) and (-0.5 < y < 0.5):
+*        if (z &lt; 0.7 or z &gt; 1.3) and (-0.5 &lt; x &lt; 0.5) and (-0.5 &lt; y &lt; 0.5):
 *            shake_me_score += 1
 
-        if tilt_left_score > SCORE_NEEDED:
+        if tilt_left_score &gt; SCORE_NEEDED:
             action = LEFT
             break
-*        elif tilt_right_score > SCORE_NEEDED:
+*        elif tilt_right_score &gt; SCORE_NEEDED:
 *            action = RIGHT
 *            break
-*        elif tilt_up_score > SCORE_NEEDED:
+*        elif tilt_up_score &gt; SCORE_NEEDED:
 *            action = UP
 *            break
-*        elif shake_me_score > SCORE_NEEDED:
+*        elif shake_me_score &gt; SCORE_NEEDED:
 *            action = SHAKE
 *            break
 
@@ -142,58 +142,74 @@ try_again_tts.play().wait()
 
   <p>Now, let's take a look at what our code is doing...</p>
 
-    <p>The bulk of the changes above are to add 3 new tilt methods: tile right,
-    tilt up, and "shake me".  After adding these, we'll now have a real game!
-    For each new tilt type, we've duplicated the code that handles the left
-    tilt, and changed the variable names and detection to handle right tilt,
-    tilt up, and "shake me".
+  <p>The bulk of the changes above are to add 3 new tilt methods: tile right,
+  tilt up, and "shake me". After adding these, we'll now have a real game! For
+  each new tilt type, we've duplicated the code that handles the left tilt, and
+  changed the variable names and detection to handle right tilt, tilt up, and
+  "shake me".</p>
 
-    <p>The "shake me" detection is a little different, and needs so
-    explanation.  To correctly do a "shake" you must keep the CREATOR Kit
-    level, and shake up and down.  This is necessary &mdash; if we allowed the
-    kit to be tiled while it was shaken, we wouldn't be able to tell the
-    difference between a tilt and a shake.
+  <p>The "shake me" detection is a little different, and needs so explanation.
+  To correctly do a "shake" you must keep the CREATOR Kit level, and shake up
+  and down. This is necessary — if we allowed the kit to be tiled while it was
+  shaken, we wouldn't be able to tell the difference between a tilt and a
+  shake.</p>
 
-    <p>So to test for "shaking" we test to make sure that <code>x</code> is
-    small (it's not tilted left or right) and that <code>y</code> is small
-    (it's not tiled up or down).  Then we check that <code>z</code> is far
-    away from 1 (it's normal position).  Remember: when the CREATOR Kit is
-    sitting flat on a table, <code>z</code> will be 1 &mdash; it means that
-    the force of the earth is pulling it down.  When the kit is moved up
-    quickly <code>z</code> will go a good bit higher than 1.  
-    When the kit is moved back down quickly
-    <code>z</code> will go a good bit lower than 1.  
-  <p>Besides testing for the new tilts, there are some other minor changes:
+  <p>So to test for "shaking" we test to make sure that <code>x</code> is small
+  (it's not tilted left or right) and that <code>y</code> is small (it's not
+  tiled up or down). Then we check that <code>z</code> is far away from 1 (it's
+  normal position). Remember: when the CREATOR Kit is sitting flat on a table,
+  <code>z</code> will be 1 — it means that the force of the earth is pulling it
+  down. When the kit is moved up quickly <code>z</code> will go a good bit
+  higher than 1. When the kit is moved back down quickly <code>z</code> will go
+  a good bit lower than 1.</p>
+
+  <p>Besides testing for the new tilts, there are some other minor changes:</p>
   <ul>
-   <li> <p>
-   On Line 34, we no longer always request <code>LEFT</code> tilt.  Instead, we
-   now randomly choose a tilt, from 1 to 4, which corresponds to
-   <code>LEFT</code>, <code>RIGHT</code>, <code>UP</code>, or
-   <code>SHAKE</code>.
-   </p></li> <li> <p>
-   On Line 58, we change the period, after each time the user performs the
-   correct action.  This will make the game go faster and faster until it's
-   crazy hard to respond with the correct action in time.
+   <li>
+
+    <p>On Line 34, we no longer always request <code>LEFT</code> tilt. Instead,
+    we now randomly choose a tilt, from 1 to 4, which corresponds to
+    <code>LEFT</code>, <code>RIGHT</code>, <code>UP</code>, or
+    <code>SHAKE</code>.</p>
+   </li>
+   <li>
+
+    <p>On Line 58, we change the period, after each time the user performs the
+    correct action. This will make the game go faster and faster until it's
+    crazy hard to respond with the correct action in time.</p>
+   </li>
+  </ul>
  </div>
  <div id="challenge" class="section">
   <ol>
-   <li> <p>
-    The speaker is unamplified, and sounds are sometime hard to hear.  Can you
-    modify all of the sounds to have an overdriven volume?  (Hint: see
-    <a data-uid= "tts"></a>)
-    </p> </li> <li> <p>
-    Can you add a "tilt down" action that is the opposite of tilt up?
-    </p> </li> <li> <p>
-    Can you keep a count of how many correct actions were performed correctly, and print out the
-    number of correct actions once the game is over?
-    </p> </li> <li> <p>
-    Instead of printing the number of correct action (from the last question), can you have the
-    code say the number out loud?  (Hint: you may need to create a new <code>Speech()</code> for each
-    number you want to say &mdash; so you might need to limit the answer to numbers under, say, 10)
-    
-    </p> </li> <li> <p>
-    Can you add a sideways shake action (that is, shake left and right, while
-    keeping the kit level)?
+   <li>
+
+    <p>The speaker is unamplified, and sounds are sometime hard to hear. Can
+    you modify all of the sounds to have an overdriven volume? (Hint: see
+    <a data-uid="tts"></a>)</p>
+   </li>
+   <li>
+
+    <p>Can you add a "tilt down" action that is the opposite of tilt up?</p>
+   </li>
+   <li>
+
+    <p>Can you keep a count of how many correct actions were performed
+    correctly, and print out the number of correct actions once the game is
+    over?</p>
+   </li>
+   <li>
+
+    <p>Instead of printing the number of correct action (from the last
+    question), can you have the code say the number out loud? (Hint: you may
+    need to create a new <code>Speech()</code> for each number you want to say
+    — so you might need to limit the answer to numbers under, say, 10)</p>
+   </li>
+   <li>
+
+    <p>Can you add a sideways shake action (that is, shake left and right,
+    while keeping the kit level)?</p>
+   </li>
   </ol>
  </div>
 </body>

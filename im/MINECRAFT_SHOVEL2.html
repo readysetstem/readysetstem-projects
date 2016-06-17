@@ -32,42 +32,43 @@
  <div class="hw" data-count="1" data-name="audio_cable"></div>
  <div id="intro" class="section">
 
- <p>In the last project, we learned how to read the list of previous hit events
- and then to cycle through them and take some action (printing out the
- coordinates of the block that was hit). In this project, we're going to
- continue with the same idea, but instead of just printing out information
- about the block that was hit, we're going to create an effect on that
- block.</p>
- </div><div id="hw" class="section">
- 
+  <p>In the last project, we learned how to read the list of previous hit
+  events and then to cycle through them and take some action (printing out the
+  coordinates of the block that was hit). In this project, we're going to
+  continue with the same idea, but instead of just printing out information
+  about the block that was hit, we're going to create an effect on that
+  block.</p>
+ </div>
+ <div id="hw" class="section">
 
- <p>The hardware configuration for this project is exactly the same as the
- previous project &mdash; a single button mapped to GPIO7: <img class="bb" src=
- "img/Minecraft_1button_bb.jpg" alt=""></p>
- </div><div id="sw" class="section">
+  <p>The hardware configuration for this project is exactly the same as the
+  previous project — a single button mapped to GPIO7: <img class="bb" src=
+  "img/Minecraft_1button_bb.jpg" alt=""></p>
+ </div>
+ <div id="sw" class="section">
 
- <p>The code for this project is going to look identical to the code in our
- last project, with one exception. In our last project, we used the following
- to print out the coordinates of each block that we hit:</p>
- <div class="code" data-firstline="0">
-  <textarea>
+  <p>The code for this project is going to look identical to the code in our
+  last project, with one exception. In our last project, we used the following
+  to print out the coordinates of each block that we hit:</p>
+  <div class="code" data-firstline="0">
+   <textarea>
 print("The X, Y, Z coordinates of the block you hit is:", blockHit.pos)
 </textarea>
- </div>
+  </div>
 
- <p>In this project, we're going to use the <code>mc.setBlock()</code> function
- to actually modify the block we hit, instead of just printing information
- about it. Like this:</p>
- <div class="code" data-firstline="0">
-  <textarea>
+  <p>In this project, we're going to use the <code>mc.setBlock()</code>
+  function to actually modify the block we hit, instead of just printing
+  information about it. Like this:</p>
+  <div class="code" data-firstline="0">
+   <textarea>
 mc.setBlock(hit.pos, block.AIR)
 </textarea>
- </div>
+  </div>
 
- <p>In the example above, the block gets turned into Air, making the block
- disappear. The full code is as follows:</p>
- <div class="code" data-firstline="1">
-  <textarea>
+  <p>In the example above, the block gets turned into Air, making the block
+  disappear. The full code is as follows:</p>
+  <div class="code" data-firstline="1">
+   <textarea>
 from rstem.button import Button
 from rstem.mcpi import minecraft, control, block
 import time
@@ -89,21 +90,15 @@ while True:
 
     time.sleep(0.01)
 </textarea>
- </div>The <code>mc.setBlock()</code> function takes two arguments:
- <ol>
-  <li>The location of the block that was hit. This was gathered by the
-  <code>mc.events.pollBlockHits()</code> function; and</li>
-  <li>The type of block that should be created in this location. In this case,
-  we're create a block type of "AIR" which simply removes the block
-  entirely.</li>
- </ol>
- </div><div id="challenge" class="section">
+  </div>The <code>mc.setBlock()</code> function takes two arguments:
   <ol>
-   <li> <p>
-    </p> </li> <li> <p>
-    </p> </li> <li> <p>
-    </p> </li> 
+   <li>The location of the block that was hit. This was gathered by the
+   <code>mc.events.pollBlockHits()</code> function; and</li>
+   <li>The type of block that should be created in this location. In this case,
+   we're create a block type of "AIR" which simply removes the block
+   entirely.</li>
   </ol>
  </div>
+ <div id="challenge" class="section"></div>
 </body>
 </html>
