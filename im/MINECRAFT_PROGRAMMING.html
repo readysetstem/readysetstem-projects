@@ -30,6 +30,7 @@
 <body>
  <div class="section">
 
+<h1>Coding Minecraft</h1>
   <p>As mentioned earlier, Minecraft has its own API that can be used to
   control and manipulate the Minecraft world. The API is called
   <code>mcpi</code>, which stands for Minecraft Pi. The mcpi API is a set of
@@ -63,7 +64,7 @@
     <p>The Game Loop</p>
    </li>
   </ol>
-  <h3>Initialization Code</h3>
+  <h2>Initialization Code</h2>
 
   <p>The first thing we typically do in any program (including our Minecraft
   programs) is to import the modules and functions we'll need for our code. The
@@ -72,13 +73,13 @@
   to import, we'll typically either import the entire <code>rstem.mcpi</code>
   module or we'll import specific functions within the <code>rstem.mcpi</code>
   module.</p>
-  <h3>Starting Minecraft</h3>
+  <h2>Starting Minecraft</h2>
 
   <p>In order to start Minecraft, we use a function within the
   <code>rstem.mcpi</code> module called <code>control.show()</code>. This
   function will be used in pretty much every Minecraft program to start the
   game prior to executing our game loop.</p>
-  <h3>Connecting to the Minecraft Server</h3>
+  <h2>Connecting to the Minecraft Server</h2>
 
   <p>Once the Minecraft game has been started and we have our Minecraft window
   open, we next need to connect our code to the Minecraft server so that we can
@@ -90,13 +91,13 @@
   completed, but many do. There is no downside to including this in the code,
   so even for programs that don't require this step, it's still good to get in
   the habit of including it.</p>
-  <h3>The Game Loop</h3>
+  <h2>The Game Loop</h2>
 
   <p>Once we have our initialization complete and we've started the Minecraft
   game, we then create the game loop that will house the logic for our code. In
   many cases, the game loop will be a <code>while TRUE:</code> loop that will
   run forever (until we manually stop it).</p>
-  <h3>Putting It All Together</h3>
+  <h2>Putting It All Together</h2>
 
   <p>Putting all three steps together, the basic framework of our Minecraft
   programs will look something like this:</p>

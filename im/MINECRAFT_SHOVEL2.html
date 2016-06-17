@@ -28,21 +28,9 @@
  </script>
 </head>
 <body>
- <header>
-  <div id="title"></div>
-  <div id="description">
-   This is a minecraft project
-  </div>
-  <div id="hw_required">
-   Accelerometer Cell<br>
-   LED Matrix Cell
-  </div>
-  <div id="troubleshooting">
-   <a href="TROUBLESHOOTING.html">Having issues? Check out the Troubleshooting
-   Guide.</a>
-  </div>
- </header>
- <h2>Overview</h2>
+ <div class="hw" data-count="1" data-name="speaker"></div>
+ <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div id="intro" class="section">
 
  <p>In the last project, we learned how to read the list of previous hit events
  and then to cycle through them and take some action (printing out the
@@ -50,12 +38,13 @@
  continue with the same idea, but instead of just printing out information
  about the block that was hit, we're going to create an effect on that
  block.</p>
- <h2>Hardware Setup</h2>
+ </div><div id="hw" class="section">
+ 
 
  <p>The hardware configuration for this project is exactly the same as the
  previous project &mdash; a single button mapped to GPIO7: <img class="bb" src=
  "img/Minecraft_1button_bb.jpg" alt=""></p>
- <h2>Writing Our Code</h2>
+ </div><div id="sw" class="section">
 
  <p>The code for this project is going to look identical to the code in our
  last project, with one exception. In our last project, we used the following
@@ -108,6 +97,13 @@ while True:
   we're create a block type of "AIR" which simply removes the block
   entirely.</li>
  </ol>
- <h2>Additional Challenges</h2>
+ </div><div id="challenge" class="section">
+  <ol>
+   <li> <p>
+    </p> </li> <li> <p>
+    </p> </li> <li> <p>
+    </p> </li> 
+  </ol>
+ </div>
 </body>
 </html>

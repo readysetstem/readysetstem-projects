@@ -28,28 +28,31 @@
  </script>
 </head>
 <body>
- <h2>Overview</h2>
+ <div class="hw" data-count="1" data-name="speaker"></div>
+ <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div id="intro" class="section">
 
  <p>In this project, we'll build on the sprite animations we did in the
  previous project by not only animating Steve on the LED Matrix, but also
  creating a synchronized animation of Steve in the Minecraft world. What we
  draw on the LED Matrix will be replicated in blocks in the Minecraft
  world.</p>
- <h2>Hardware Setup</h2><img class="bb" src="img/LED_Matrix_bb.jpg" alt="">
+ </div><div id="hw" class="section">
+ <img class="bb" src="img/LED_Matrix_bb.jpg" alt="">
  <h2>Writing Our Code</h2>
 
 
 <h2>Hardware Setup</h2>
 <img class="bb" src="img/LED_Matrix_bb.png">
 
-<h2>Writing Our Code</h2>
+ </div><div id="sw" class="section">
 
 <p>Our code for this project will be identical to the previous 
 project, with one addition -- a function that will be used to
 replicate the animation we're doing on the LED Matrix in the
 Minecraft world as well.
 
-<h3>Full Code</h3>
+<h2>Full Code</h2>
 
 <p>
 Here is what the full code for this project should look like.  We'll
@@ -137,7 +140,7 @@ while True:
 
 </textarea></div>
 
-<h3><code>sprite_in_minecraft()</code> Function</h3>
+<h2><code>sprite_in_minecraft()</code> Function</h2>
 
 <p>We've created a function that will animate our character
 as we define in the Minecraft world.  Unlike the LED Matrix,
@@ -213,5 +216,12 @@ like this:
     </div>
     </div>
 
-<div id=footer></div>
+ </div><div id="challenge" class="section">
+  <ol>
+   <li> <p>
+    </p> </li> <li> <p>
+    </p> </li> <li> <p>
+    </p> </li> 
+  </ol>
+ </div>
 </body></html>

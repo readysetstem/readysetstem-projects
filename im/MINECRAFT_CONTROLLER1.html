@@ -28,27 +28,15 @@
  </script>
 </head>
 <body>
- <header>
-  <div id="title"></div>
-  <div id="description">
-   This is a minecraft project
-  </div>
-  <div id="hw_required">
-   Accelerometer Cell<br>
-   LED Matrix Cell
-  </div>
-  <div id="troubleshooting">
-   <a href="TROUBLESHOOTING.html">Having issues? Check out the Troubleshooting
-   Guide.</a>
-  </div>
- </header>
- <h2>Overview</h2>
+ <div class="hw" data-count="1" data-name="speaker"></div>
+ <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div id="intro" class="section">
 
  <p>In this project, we will use the Ready Set STEM kit to create a Minecraft
  controller. This first version of the controller will use the accelerometer to
  control where your character, Steve, is looking. In addition, we'll use four
  buttons to control Steve's movement foreward, backwards, left and right.</p>
- <h2>Hardware Setup</h2>
+ </div><div id="hw" class="section">
 
  <p>The hardware setup for this project includes the accelerometer and four
  buttons. For more information about setting up the accelerometer, refer back
@@ -78,7 +66,7 @@
 
  <p>This is what your hardware setup should look like:</p><img class="bb" src=
  "img/Minecraft_Accel_4way_1button_bb.jpg" alt="">
- <h2>Writing Our Code</h2>
+ </div><div id="sw" class="section">
 
  <p>Our code for this project &mdash; and most of our Minecraft projects &mdash; will
  consist of three parts:</p>
@@ -96,7 +84,7 @@
    <p>The Game Loop</p>
   </li>
  </ol>
- <h3>Step #1: Initialization Code</h3>
+ <h2>Step #1: Initialization Code</h2>
 
  <p>Our initialization code will first import the modules and functions we'll
  need in the project. For this project, we need to import the functions needed
@@ -143,7 +131,7 @@ jump = Button(24)
 accel = Accel()
 </textarea>
  </div>
- <h3>Step #2: Start Minecraft</h3>
+ <h2>Step #2: Start Minecraft</h2>
 
  <p>Once we have our initialization code written, we can bring up the Minecraft
  window. As we discussed in an earlier project, that is accomplished using the
@@ -153,7 +141,7 @@ accel = Accel()
 control.show()
 </textarea>
  </div>
- <h3>Step #3: The Game Loop</h3>
+ <h2>Step #3: The Game Loop</h2>
 
  <p>Finally, we'll create the game loop that will house the logic for our code.
  For this project, our game loop will continue forever (until the user manually
@@ -235,7 +223,7 @@ control.look(up=50*y, left=50*x)
 time.sleep(0.01)
 </textarea>
  </div>
- <h3>Full Code</h3>
+ <h2>Full Code</h2>
 
  <p>Here is what the full code for this project should look like:</p>
  <div class="code" data-firstline="1">
@@ -308,5 +296,13 @@ while True:
    <div style="margin-left: 2em"></div>
   </li>
  </ol>
+ </div><div id="challenge" class="section">
+  <ol>
+   <li> <p>
+    </p> </li> <li> <p>
+    </p> </li> <li> <p>
+    </p> </li> 
+  </ol>
+ </div>
 </body>
 </html>

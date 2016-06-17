@@ -28,31 +28,20 @@
  </script>
 </head>
 <body>
- <header>
-  <div id="title"></div>
-  <div id="description">
-   This is a minecraft project
-  </div>
-  <div id="hw_required">
-   Accelerometer Cell<br>
-   LED Matrix Cell
-  </div>
-  <div id="troubleshooting">
-   <a href="TROUBLESHOOTING.html">Having issues? Check out the Troubleshooting
-   Guide.</a>
-  </div>
- </header>
- <h2>Overview</h2>
+ <div class="hw" data-count="1" data-name="speaker"></div>
+ <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div id="intro" class="section">
 
  <p>In this project, we will write code to place a piece of gold in a random
  location around the Minecraft world.</p>
- <h2>Hardware Setup</h2>
+ </div><div id="hw" class="section">
+ 
 
  <p>There is no specific hardware setup for this project. You will need to be
  able to move throughout the Minecraft world to use the code you'll be writing,
  and to do that, you are welcome to either use a keyboard/mouse or to use the
  Minecraft controller you built earlier with your Ready Set STEM kit.</p>
- <h2>Writing Our Code</h2>
+ </div><div id="sw" class="section">
  <div class="code" data-firstline="1">
   <textarea>
 from rstem.mcpi import minecraft, control, block
@@ -97,6 +86,13 @@ mc.postToChat("You found the gold!")
 time.sleep(3)
 </textarea>
  </div>
- <h2>Additional Challenges</h2>
+ </div><div id="challenge" class="section">
+  <ol>
+   <li> <p>
+    </p> </li> <li> <p>
+    </p> </li> <li> <p>
+    </p> </li> 
+  </ol>
+ </div>
 </body>
 </html>

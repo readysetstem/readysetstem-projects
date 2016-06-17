@@ -28,21 +28,9 @@
  </script>
 </head>
 <body>
- <header>
-  <div id="title"></div>
-  <div id="description">
-   This is a minecraft project
-  </div>
-  <div id="hw_required">
-   Accelerometer Cell<br>
-   LED Matrix Cell
-  </div>
-  <div id="troubleshooting">
-   <a href="TROUBLESHOOTING.html">Having issues? Check out the Troubleshooting
-   Guide.</a>
-  </div>
- </header>
- <h2>Overview</h2>
+ <div class="hw" data-count="1" data-name="speaker"></div>
+ <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div id="intro" class="section">
 
  <p>In this project, we'll expand on our previous project where we integrated
  the LED Matrix to indicate our position in the Minecraft world. In the
@@ -55,15 +43,16 @@
  of the LED Matrix, instead of just displaying the location as the edge of the
  LED Matrix, we'll display the location at the edge and flash the LED. This
  will indicate that we're outside of the scaled world.</p>
- <h2>Hardware Setup</h2><img class="bb" src="img/LED_Matrix_bb.jpg" alt="">
- <h2>Writing Our Code</h2>
+ </div><div id="hw" class="section">
+ <img class="bb" src="img/LED_Matrix_bb.jpg" alt="">
+ </div><div id="sw" class="section">
 
  <p>The main differnce between the code in the last project and the code in
  this project is that, for this project, we'll add an extra test to determine
  if the location of our character is outside the boundaries of the LED Matrix,
  and if so, we'll flash the LED for as long as that condition continues to be
  true.</p>
- <h3>Full Code</h3>
+ <h2>Full Code</h2>
 
  <p>Here is what the full code for this project should look like. We'll dig
  further into the highlighted pieces of code below:</p>
@@ -113,7 +102,7 @@ while True:
     time.sleep(0.01)
 </textarea>
  </div>
- <h3><code>scale_to_led()</code> Function</h3>
+ <h2><code>scale_to_led()</code> Function</h2>
 
  <p>Like the function we wrote in the previous project, this function will
  first scale the position in the Minecraft world and map it to a whole number
@@ -127,7 +116,7 @@ while True:
  we are outside the range and should be flashing the LED. After that, we'll
  continue to convert our range to between 0 and 7, and then we'll return both
  the position value and the value of our <code>flash_on</code> variable.</p>
- <h3>Flashing the LED</h3>
+ <h2>Flashing the LED</h2>
 
  <p>In our main game loop, after getting our position and setting the default
  <code>flashing</code> variable value to False, we pass both the X and Z
@@ -141,5 +130,13 @@ while True:
  for longer than our pre-defined flash duration, and if so, toggles the
  appropriate LED state and resets the count. Finally, we check to see if the
  LED should be lit, and if so, we plot that point on the LED Matrix.</p>
+ </div><div id="challenge" class="section">
+  <ol>
+   <li> <p>
+    </p> </li> <li> <p>
+    </p> </li> <li> <p>
+    </p> </li> 
+  </ol>
+ </div>
 </body>
 </html>

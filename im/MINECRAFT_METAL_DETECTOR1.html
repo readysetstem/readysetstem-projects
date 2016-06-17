@@ -28,33 +28,22 @@
  </script>
 </head>
 <body>
- <header>
-  <div id="title"></div>
-  <div id="description">
-   This is a minecraft project
-  </div>
-  <div id="hw_required">
-   Accelerometer Cell<br>
-   LED Matrix Cell
-  </div>
-  <div id="troubleshooting">
-   <a href="TROUBLESHOOTING.html">Having issues? Check out the Troubleshooting
-   Guide.</a>
-  </div>
- </header>
- <h2>Overview</h2>
+ <div class="hw" data-count="1" data-name="speaker"></div>
+ <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div id="intro" class="section">
 
  <p>In this project, we will write code to place a block of gold in a random
  location around the Minecraft world. We will then allow our character to move
  about the world and when he smashes the block, we'll end the game and let the
  user know that the gold has been found.</p>
- <h2>Hardware Setup</h2>
+ </div><div id="hw" class="section">
+ 
 
  <p>There is no specific hardware setup for this project. You will need to be
  able to move throughout the Minecraft world to use the code you'll be writing,
  and to do that, you are welcome to either use a keyboard/mouse or to use the
  Minecraft controller you built earlier with your Ready Set STEM kit.</p>
- <h2>Writing Our Code</h2>
+ </div><div id="sw" class="section">
 
  <p>Our code for this project will be pretty simple; in our next project, we'll
  expand on it and make it more robust. But, for this project, the code will do
@@ -77,7 +66,7 @@
    <p>When the gold is found/smashed, indicate the status to the user</p>
   </li>
  </ol>
- <h3>Step #1: Perform some initialization and create our game loop</h3>
+ <h2>Step #1: Perform some initialization and create our game loop</h2>
 
  <p>First, we'll do our basic initialization of the Minecraft code, including
  creating our game loop:</p>
@@ -102,7 +91,7 @@ while True:
  gold will be hidden from our character. In this project, we don't have any way
  of indicating where the gold is, so we don't want to place it too far from us;
  we'll fix that issue in the next project.</p>
- <h3>Step #2: Place gold in a random location</h3>
+ <h2>Step #2: Place gold in a random location</h2>
 
  <p>Next, we will pick a random block within the game world &mdash; and within the
  distance from our character that we defined above &mdash; and change it to
@@ -140,7 +129,7 @@ gold_exists = True
  <code>True</code> to indicate that the gold has not yet been found. This
  variable will be needed later for our loop to determine when the gold has been
  found/smashed.</p>
- <h3>Step #3: Test whether the player has smashed the gold block we placed</h3>
+ <h2>Step #3: Test whether the player has smashed the gold block we placed</h2>
 
  <p>Next, we need to write the code in our game loop. This purpose of this code
  is to continually test whether the gold block has been smashed (whether it
@@ -164,7 +153,7 @@ while gold_exists:
  <p>Note that we've changed the loop from continuing forever <code>while
  True</code> to continuing until we've indicated that the gold has been found
  (which we do by setting <code>gold_exists</code> to False.</p>
- <h3>Step #4: When the gold is found, indicate the status to the user</h3>
+ <h2>Step #4: When the gold is found, indicate the status to the user</h2>
 
  <p>Once the gold has been found and we've exited the loop, we need to let the
  user know that he found the gold:</p>
@@ -174,7 +163,7 @@ mc.postToChat("You found the gold!")
 time.sleep(3)
 </textarea>
  </div>
- <h3>Full Code</h3>
+ <h2>Full Code</h2>
 
  <p>Here is what the full code for this project should look like:</p>
  <div class="code" data-firstline="1">
@@ -203,7 +192,13 @@ while gold_exists:
 mc.postToChat("You found the gold!")
 time.sleep(3)
 </textarea>
+ </div><div id="challenge" class="section">
+  <ol>
+   <li> <p>
+    </p> </li> <li> <p>
+    </p> </li> <li> <p>
+    </p> </li> 
+  </ol>
  </div>
- <h2>Additional Challenges</h2>
 </body>
 </html>
