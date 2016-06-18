@@ -28,34 +28,19 @@
  </script>
 </head>
 <body>
- <header>
-  <div id="title"></div>
-  <div id="description">
-   This is a minecraft project
-  </div>
-  <div id="hw_required">
-   Accelerometer Cell<br>
-   LED Matrix Cell
-  </div>
-  <div id="troubleshooting">
-   <a href="TROUBLESHOOTING.html">Having issues? Check out the Troubleshooting
-   Guide.</a>
-  </div>
- </header>
- <h2>Overview</h2>
-
+ <div id="intro" class="section">
  <p>In this project, we're going to expand on our previous two shovel projects.
  Instead of just smashing the single block that we hit, when we hit a block,
  we'll actually smash that block plus all the other blocks within a defined
  radius of that block. This will demonstrate how the Minecraft API can be used
  to start doing more interesting types of modifications to the game.</p>
- <h2>Hardware Setup</h2>
+ </div><div id="hw" class="section">
 
  <p>For this project, we need just a single button mapped to GPIO24. You are
  welcome to keep the hardware setup from a previous project that has a button
  attached to that GPIO, or you can simplify your hardware to the following:
  <img class="bb" src="img/Minecraft_1button_bb.jpg" alt=""></p>
- <h2>Writing Our Code</h2>
+ </div><div id="sw" class="section">
 
  <p>In this project, we're going to use an external function that will control
  what happens every time we attempt to smash a block (or dig). This function
@@ -103,9 +88,10 @@ def dig(mc, pos, radius):
    the blocks in the r_vector radius around the location of the hit block.</p>
   </li>
  </ul>
- <h3>Full Code</h3>
+ <h2>Full Code</h2>
 
- <p>Here is what the full code for this project should look like:</p>
+  <p>Here is what the code for this project should look like at this point
+  (with new changes highlighted with arrows):</p>
  <div class="code" data-firstline="1">
   <textarea>
 from rstem.button import Button
@@ -117,11 +103,11 @@ control.show()
 mc = minecraft.Minecraft.create()
 button = Button(24)
 
-radius = 1
+*radius = 1
 
-def dig(mc, pos, radius):
-    r_vector = Vec3(radius,radius,radius)
-    mc.setBlocks(pos - r_vector, pos + r_vector, block.AIR)
+*def dig(mc, pos, radius):
+*    r_vector = Vec3(radius,radius,radius)
+*    mc.setBlocks(pos - r_vector, pos + r_vector, block.AIR)
 
 while True:
     if button.presses():
@@ -129,11 +115,38 @@ while True:
 
     hits = mc.events.pollBlockHits()
     for hit in hits:
-        dig(mc, hit, radius)
+*        dig(mc, hit, radius)
 
     time.sleep(0.01)
 
 </textarea>
+ </div>
+ </div><div id="challenge" class="section">
+  <ol>
+   <li>
+
+    <p>To the above code, add code to make this project a Minecraft controller (using code from the <a
+  data-uid="mccontr3"></a> project).
+     </p> </li> <li> <p>
+    Change the radius to create a larger shovel.
+     </p> </li> <li> <p>
+    Add (or reuse) 2 buttons: one button should increase the radius, the other
+    one should decrease it.  Now you'll have a shovel of varying size!
+     </p> </li> <li> <p>
+    Instead of turning the blocks that were hit into Air, turn them into something
+    else (say, Brick, perhaps).  Now your code works as if you are placing
+        blocks!
+     </p> </li> <li> <p>
+     Our <code>dig()</code> function dug a perfect cube, but that's not the
+     only shape you can dig.  Instead of using <code>setBlocks</code>, use
+     multiple <code>setBlock()</code> calls to dig a different shape.
+     </p> </li> <li> <p>
+     Add some randomness &mdash; when digging with <code>setBlock()</code> you
+     don't always have to turn the block into Air.  Use a random function to
+     change it into Air half the time, and a different block type the other
+     half of the time.
+   </p> </li>
+  </ol>
  </div>
 </body>
 </html>

@@ -64,8 +64,6 @@ print(months)
 </textarea>
     </div>
    </li>
-  </ul>
-  <ul>
    <li>
 
     <p>We can reference a single item in the list. For example, let's say we
@@ -150,8 +148,17 @@ print(months[2])
 
     <p>So, the third item on our list of months is months[2].</p>
    </li>
-  </ul>
-  <ul>
+   <li>
+
+    <p>We can find the length of the list with the built-in <code>len()</code> function.  For example:
+    </p>
+    <div class="code" data-firstline="0">
+     <textarea>
+print(len(months))
+</textarea>
+    </div>
+
+   </li>
    <li>
 
     <p>We can reference a range of items on the list. For example, let's say we
@@ -166,8 +173,6 @@ print(months[1:3])
     a range, the second number is the item where we stop – that item is not
     included in the range.</p>
    </li>
-  </ul>
-  <ul>
    <li>
 
     <p>We can change an item in the list. For example, let's say we wanted to
@@ -179,8 +184,6 @@ months[1] = 'Feb'
 </textarea>
     </div>
    </li>
-  </ul>
-  <ul>
    <li>
 
     <p>We can add an item to the list. For example, if we decide that we want
@@ -194,8 +197,6 @@ months.append('June')
     <p>The .append() that we used above is called a function — see <a href=
     "INTRO_TO_FUNCTIONS.html">INTRO TO FUNCTIONS</a> for more information.</p>
    </li>
-  </ul>
-  <ul>
    <li>
 
     <p>Just like we added an item to the list above, we can also remove an item
@@ -207,8 +208,6 @@ months.remove('April')
 </textarea>
     </div>
    </li>
-  </ul>
-  <ul>
    <li>
 
     <p>After making all of these changes, here is how the computer would now
@@ -216,14 +215,14 @@ months.remove('April')
     <table class="basic">
      <tbody>
       <tr>
-       <td style="width: 100px;">
+       <th>
 
         <p><strong>ITEM #</strong></p>
-       </td>
-       <td style="width: 150px;">
+       </th>
+       <th>
 
         <p><strong>ITEM NAME</strong></p>
-       </td>
+       </th>
       </tr>
       <tr>
        <td>
