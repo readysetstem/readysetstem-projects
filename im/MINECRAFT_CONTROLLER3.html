@@ -51,7 +51,28 @@
   <code>while</code> loop, specifically around the <code>control.look()</code>
   function, which defines where the character is looking.</p>
 
-  <p>Here is what the full code for this project should look like:</p>
+  <p>In the previous 
+  <a data-uid="mccontr2"></a> project, we used the x and y values of the accelerometer to control
+  which direction we looked:
+  <div class="code" data-firstline="0">
+   <textarea>
+    control.look(up=50*y, left=50*x)
+</textarea>
+  </div>
+  <p>And that works...  But there are two things we can improve on:
+  <ol>
+  <li><p>
+  Too hard to look down &mdash; to look down, you have to point the controller down, and it can be
+  difficult to twist your wrists enough to tilt it fully down.  We can adjust this.
+  </p></li> <li><p>
+  Controller is not sensitive enough. Currently, when you tilt the controller a little, Steve moves a
+  little and when you tilt a lot, Steve moves a lot.  That works reasonaly well, but the current
+  code doesn't take that far enough.
+  </p></li>
+  </ol>
+
+  <p>Here is what the code for this project should look like at this point
+  (with new changes highlighted with arrows):</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.accel import Accel
@@ -84,7 +105,44 @@ while True:
 
 </textarea>
   </div>
+  <p>The above hightlighted changes are:</p>
+  <ul>
+   <li>
+
+    <p>On Line 24: we decrease the y value by a small amount (0.3).  Now, when we hold the kit
+    at a more comfortable angle (with y pointing a little bit up) Steve won't move at all.</p>
+   </li>
+   <li>
+
+    <p>On Line 25: previously we converted the accelerometer force to a reasonable amount to
+    <code>look()</code>
+    using the equation <code>50*x</code> (and likewise for <code>y</code>).  That makes a small
+    value of <code>x</code> move Steve a little, and a large value move him a lot.  We can
+    increase this effect by using x-squared &mdash; a small value will still move him a little, and
+    a large value will move him even more.   To use x-squared, you would expect the the code
+    to be <code>x*x</code>, but instead we use <code>x*abs(x)</code>.  The reason is that 
+    <code>x*x</code> changes negative numbers to positive, which we don't want.  Our code that uses
+    <code>abs()</code> keeps negative <code>x</code> values negative.
+   </li>
+   <li>
+    <p>Also on Line 25: 
+    We've adjusted the multiplier from 50 to 150, but the choice here is just chosen by experimenting!</p>
+   </li>
+  </ul>
  </div>
- <div id="challenge" class="section"></div>
+ <div id="challenge" class="section">
+  <ol>
+   <li>
+
+    <p>Our new code makes Steve not look around when the kit is slightly tilted up.  Can you
+    change this so that Steve doesn't look around when the kit is tilted slightly right?</p>
+   </li>
+   <li>
+
+    <p>We increased the sensitivity of the controller by using x-squared instead of x.  Can you
+    increase this more by using x-cubed?</p>
+   </li>
+  </ol>
+ </div>
 </body>
 </html>

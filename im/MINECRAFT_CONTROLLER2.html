@@ -107,7 +107,7 @@ while True:
     our code</p>
    </li>
   </ol>
-  <h2>Step #1: Implement a Dictionary and a <code>for</code> loop</h2>
+  <h2 class=step>Implement a Dictionary and a <code>for</code> loop</h2>
 
   <p>The first thing we're going to do to simplify our code is to use a Python
   Dictionary to enumerate (create a list of) our button controls.</p>
@@ -141,7 +141,7 @@ for button, action in keymap.items():
         action(release=True)
 </textarea>
   </div>
-  <h2>Step #2: Simplify the <code>if/else</code> statement</h2>
+  <h2 class=step>Simplify the <code>if/else</code> statement</h2>
 
   <p>In our code above, we use a four-line if-else statement to check each
   controller button (to see if it was being pressed) each time through the game
@@ -158,8 +158,8 @@ else:
   <p>While this works just fine, using four lines of code is a lot more
   cumbersome than necessary.</p>
 
-  <p><b>NOTE:</b>You may notice that in the Controller 1 project and in Step #1
-  above, we did not include <code>release=False</code> in the first
+  <p><b>NOTE:</b>You may notice that in the Controller 1 project and in the 
+  above step, we did not include <code>release=False</code> in the first
   <code>action</code> statement. This is because that is the default assumption
   of the function, and therefore it's not needed. We include it above, as it
   will make the next part of this discussion more understandable.</p>
@@ -179,7 +179,7 @@ action(release=(not button.is_pressed()))
    <div>
     WHY DOES IT WORK?
    </div>
-
+   <div>
    <p>If it's not clear why the single line of code above is equivalent to the
    original four lines of code, let us take a minute to try to explain it.</p>
 
@@ -210,6 +210,8 @@ action(release=(not button.is_pressed()))
 
    <p>simply takes the result of <code>button.is_pressed()</code>, flips it and
    inserts the result into the <code>release=...</code> statement.</p>
+   </div>
+
   </div>
 
   <p>We can now replace the <code>if/else</code> statement in our
@@ -257,6 +259,21 @@ while True:
 </textarea>
   </div>
  </div>
- <div id="challenge" class="section"></div>
+ <div id="challenge" class="section">
+  <ol>
+   <li>
+
+    <p>Add another button (or remap an existing button) to allow Steve to
+    crouch at the press of the button.  Notice how easy this is to add now compared to in
+    
+  the <a data-uid="mccontr1"></a> project.
+   </li>
+   <li>
+
+    <p>Invert your controller &mdash; make it look down when you tilt up and up when you tilt
+    down.</p>
+   </li>
+  </ol>
+ </div>
 </body>
 </html>

@@ -68,7 +68,7 @@
     <p>When the gold is found/smashed, indicate the status to the user</p>
    </li>
   </ol>
-  <h2>Step #1: Perform some initialization and create our game loop</h2>
+  <h2 class=step>Perform some initialization and create our game loop</h2>
 
   <p>First, we'll do our basic initialization of the Minecraft code, including
   creating our game loop:</p>
@@ -93,7 +93,7 @@ while True:
   gold will be hidden from our character. In this project, we don't have any
   way of indicating where the gold is, so we don't want to place it too far
   from us; we'll fix that issue in the next project.</p>
-  <h2>Step #2: Place gold in a random location</h2>
+  <h2 class=step>Place gold in a random location</h2>
 
   <p>Next, we will pick a random block within the game world — and within the
   distance from our character that we defined above — and change it to
@@ -132,7 +132,7 @@ gold_exists = True
   <code>True</code> to indicate that the gold has not yet been found. This
   variable will be needed later for our loop to determine when the gold has
   been found/smashed.</p>
-  <h2>Step #3: Test whether the player has smashed the gold block we
+  <h2 class=step>Test whether the player has smashed the gold block we
   placed</h2>
 
   <p>Next, we need to write the code in our game loop. This purpose of this
@@ -157,7 +157,7 @@ while gold_exists:
   <p>Note that we've changed the loop from continuing forever <code>while
   True</code> to continuing until we've indicated that the gold has been found
   (which we do by setting <code>gold_exists</code> to False.</p>
-  <h2>Step #4: When the gold is found, indicate the status to the user</h2>
+  <h2 class=step>When the gold is found, indicate the status to the user</h2>
 
   <p>Once the gold has been found and we've exited the loop, we need to let the
   user know that he found the gold:</p>
@@ -197,7 +197,17 @@ mc.postToChat("You found the gold!")
 time.sleep(3)
 </textarea>
   </div>
-  <div id="challenge" class="section"></div>
+ <div id="challenge" class="section">
+  <ol>
+   <li>
+
+    <p>1</p>
+   </li>
+   <li>
+
+    <p>2</p>
+   </li>
+  </ol>
  </div>
 </body>
 </html>

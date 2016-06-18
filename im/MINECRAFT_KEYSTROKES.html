@@ -29,17 +29,17 @@
 </head>
 <body>
  <div class="section">
-  <h2>Controlling Our Character</h2>
+  <h1>Controlling Our Character</h1>
 
   <p>As mentioned earlier, the Ready Set STEM has an enhanced Minecraft API
   (<code>mcpi</code>) that allows us to control our Minecraft character (Steve)
-  and manipulate the Minecraft world. One of the things the API allows us to do
-  is to remap the keyboard presses in other ways. For example, normally when we
-  press the "W" key on the keyboard, Steve moves forward. But, using the API,
-  we could change this — we could make the "P" key on the keyboard move Steve
-  forward instead. Or, better yet, we could control the forward movement of
-  Steve using something else entirely...like a button on our Ready Set STEM
-  kit!</p>
+  and manipulate the Minecraft world.  Normally, Steve is moved in the Minecraft 
+  world when you type a key on the keyboard (for example, he moves forward when you press the "W"
+  key.  One of the things the API allows us to do is to <i>simulate</i> keypresses, that is our
+  program can make it Minecraft <i>think</i> that the "W" key is pressed, and Steve will move
+  forward.
+  This comes in reall handy to control the forward movement of
+  Steve when something happens &mdash; like when a button is pressed on the CREATOR Kit!</p>
 
   <p>Below, we'll discuss the major actions our character can perform in the
   game, and how we can remap those actions to things other than the standard
@@ -114,7 +114,7 @@ control.stop()
   </div>
 
   <p>In addition to controlling Steve's movements forward, backwards, left and
-  right, we also have the ability to control his other actions...</p>
+  right, we also have the ability to control his other actions.</p>
 
   <p>One of the main things that Steve does in Minecraft is breaking (smashing)
   blocks. This is typically accomplished using the left mouse button. Using the
@@ -141,8 +141,91 @@ control.jump()
   we can implement in our code — in fact, there is one for every keypress
   supported by Minecraft.</p>
 
-  <p>For reference, here is the full list of functions accessible by the
-  <code>control</code> code:</p>
+   <table class="basic">
+    <tbody>
+     <tr>
+      <th>
+
+       <p>KEY</p>
+      </th>
+      <th>
+
+       <p>FUNCTION</p>
+      </th>
+     </tr>
+     <tr> <td> <p>S</p> </td> <td> <p><code>backward()</code></p> </td>
+     <tr> <td> <p>W</p> </td> <td> <p><code>forward()</code></p> </td>
+     <tr> <td> <p>A</p> </td> <td> <p><code>left()</code></p> </td>
+     <tr> <td> <p>D</p> </td> <td> <p><code>right()</code></p> </td>
+     <tr> <td> <p>SPACE</p> </td> <td> <p><code>jump()</code></p> </td>
+     <tr> <td> <p>SHIFT</p> </td> <td> <p><code>crouch()</code></p> </td>
+     <tr> <td> <p>Left Mouse Click</p> </td> <td> <p><code>smash()</code></p> </td>
+     <tr> <td> <p>Right Mouse Click</p> </td> <td> <p><code>place()</code></p> </td>
+     <tr> <td> <p>Right Mouse Click</p> </td> <td> <p><code>hit()</code></p> </td>
+     <tr> <td> <p>1..8 (choice)</p> </td> <td> <p><code>item(choice)</code></p> </td>
+     <tr> <td> <p>ENTER</p> </td> <td> <p><code>enter()</code></p> </td>
+     <tr> <td> <p>E</p> </td> <td> <p><code>inventory()</code></p> </td>
+    </tbody>
+   </table>
+  <p>For more information on the <code>rstem.mcpi</code> API, 
+   check out the API documentation linked from the RDE above.</p>
+ </div><div class="section">
+  <h1>Look Out</h1>
+
+  <p>Keystrokes are important to move Steve around, but to fully control Steve,
+  you need to be able to simulate the mouse.  Mouse movements make Steve look
+  around, and you can simulate them with the control API function
+  <code>look()</code>.
+
+  <p>To use <code>look()</code> you need to give it the amount that you want to move the mouse
+  (and therefore Steve) left, right, up, and down.
+
+  <p>For example, to turn Steve left a little bit, try:
+
+  <div class="code" data-firstline="0">
+   <textarea>
+control.look(left=1)
+</textarea>
+  </div>
+  
+  <p>And, to look left a lot:
+  <div class="code" data-firstline="0">
+   <textarea>
+control.look(left=100)
+</textarea>
+  </div>
+  <p>You'll have to experiement to see what works best for you depending upon how you are trying
+  to move Steve &mdash; 0 won't turn Steve at all, numbers close to 1 will turn him a little, and
+  once you get somewhere between 100 and 1000, you'll end up turning him completely around.
+ <p>Besides left, he can look up, down, and right.  For example, to have Steve look up a lot:
+  <div class="code" data-firstline="0">
+   <textarea>
+control.look(up=100)
+</textarea>
+  </div>
+  Finally, you can combine looking in different directions at the same time:
+  <div class="code" data-firstline="0">
+   <textarea>
+control.look(left=100, up=100)
+</textarea>
+  </div>
+Of course, looking up and down (or left and right) at the same time by the same amount doesn't do
+anything.  For example, this does nothing:
+  <div class="code" data-firstline="0">
+   <textarea>
+control.look(up=300, down=300)
+</textarea>
+  </div>
+  <p>Finally, negative values work, too!  A negative value for left is the same as a positive
+  value for right.  And, the same is tru for up and down.  So, the following lines to exactly the
+  same thing:
+  <div class="code" data-firstline="0">
+   <textarea>
+control.look(up=-50)
+control.look(down=50)
+</textarea>
+  </div>
+
  </div>
 </body>
 </html>

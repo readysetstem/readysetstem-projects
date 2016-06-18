@@ -28,24 +28,10 @@
  </script>
 </head>
 <body>
- <header>
-  <div id="title"></div>
-  <div id="description">
-   This is a minecraft project
-  </div>
-  <div id="hw_required">
-   Accelerometer Cell<br>
-   LED Matrix Cell
-  </div>
-  <div id="troubleshooting">
-   <a href="TROUBLESHOOTING.html">Having issues? Check out the Troubleshooting
-   Guide.</a>
-  </div>
- </header>
- <h2>Minecraft Block APIs</h2>
- <h2>Minecraft Block APIs</h2>
+ <div class="section">
+ <h1>Minecraft Block APIs</h1>
 
- <p>Minecraft and RaspberrySTEM provide a number of APIs that allow us to
+ <p>Minecraft and Ready Set STEM provide a number of APIs that allow us to
  manipulate blocks in various ways. We'll be using many of these APIs in
  upcoming projects, but in the meantime, we wanted to provide a general
  overview of the block functions, how they work and what arguments are required
@@ -62,9 +48,9 @@
  other blocks, but have the specific type of "AIR." If you want to "remove" a
  block from Minecraft, you can change it's type to AIR.</p>
 
- <p>Here are the most commonly used block-related functions provided in the
- RaspberrySTEM API:</p>
- <h3>.getBlock()</h3>
+ <p>The following sections list the most commonly used block-related functions provided in the
+ Ready Set STEM API.</p>
+ <h2>getBlock()</h2>
 
  <p>The <code>getBlock()</code> function takes the location of a block (in X,
  Y, Z coordinates) and returns the type of block at that location.</p>
@@ -86,7 +72,7 @@ print(block_type)
 
  <p>See below for the different types of blocks supported in the Minecraft Pi
  edition.</p>
- <h3>.getBlockWithData()</h3>
+ <h2>getBlockWithData()</h2>
 
  <p>The <code>getBlockWithData()</code> function takes the location of a block
  (in X, Y, Z coordinates) and returns the type of block at that location, along
@@ -112,7 +98,7 @@ print(block_type, block_data)
 
  <p>See below for the different types of block data supported in the Minecraft
  Pi edition.</p>
- <h3>.setBlock()</h3>
+ <h2>setBlock()</h2>
 
  <p>The <code>setBlock()</code> function takes a location (and optionally a set
  of data) and places a block with that data type at the location.</p>
@@ -129,7 +115,7 @@ mc = minecraft.Minecraft.create()
 mc.setblock(0,0,0,block.WOOD.id, 1)
 </textarea>
  </div>
- <h3>.setBlocks()</h3>
+ <h2>setBlocks()</h2>
 
  <p>The <code>setBlocks()</code> function takes two locations (and optionally a
  set of data) and places a cuboid (three dimensional rectangular) set of blocks
@@ -148,7 +134,7 @@ mc = minecraft.Minecraft.create()
 mc.setblocks(0,0,0,5,5,5,block.WOOD.id)
 </textarea>
  </div>
- <h3>.getHeight()</h3>
+ <h2>getHeight()</h2>
 
  <p>The <code>getHeight()</code> function takes a two-dimensional x, z location
  and returns the height of the highest block at that location.</p>
@@ -168,51 +154,390 @@ height = mc.getHeight(0,0)
 print(height)
 </textarea>
  </div>
- <h3>Block Types</h3>
+ </div>
+ <div class="section">
+ <h1>Useable Blocks</h1>
+ <h2>Block Types</h2>
 
- <p>Here is a list of all block types available in the Minecraft Pi Edition:
- AIR = Block(0) STONE = Block(1) GRASS = Block(2) DIRT = Block(3) COBBLESTONE =
- Block(4) WOOD_PLANKS = Block(5) SAPLING = Block(6) BEDROCK = Block(7)
- WATER_FLOWING = Block(8) WATER = WATER_FLOWING WATER_STATIONARY = Block(9)
- LAVA_FLOWING = Block(10) LAVA = LAVA_FLOWING LAVA_STATIONARY = Block(11) SAND
- = Block(12) GRAVEL = Block(13) GOLD_ORE = Block(14) IRON_ORE = Block(15)
- COAL_ORE = Block(16) WOOD = Block(17) LEAVES = Block(18) GLASS = Block(20)
- LAPIS_LAZULI_ORE = Block(21) LAPIS_LAZULI_BLOCK = Block(22) SANDSTONE =
- Block(24) BED = Block(26) COBWEB = Block(30) GRASS_TALL = Block(31) WOOL =
- Block(35) FLOWER_YELLOW = Block(37) FLOWER_CYAN = Block(38) MUSHROOM_BROWN =
- Block(39) MUSHROOM_RED = Block(40) GOLD_BLOCK = Block(41) IRON_BLOCK =
- Block(42) STONE_SLAB_DOUBLE = Block(43) STONE_SLAB = Block(44) BRICK_BLOCK =
- Block(45) TNT = Block(46) BOOKSHELF = Block(47) MOSS_STONE = Block(48)
- OBSIDIAN = Block(49) TORCH = Block(50) FIRE = Block(51) STAIRS_WOOD =
- Block(53) CHEST = Block(54) DIAMOND_ORE = Block(56) DIAMOND_BLOCK = Block(57)
- CRAFTING_TABLE = Block(58) FARMLAND = Block(60) FURNACE_INACTIVE = Block(61)
- FURNACE_ACTIVE = Block(62) DOOR_WOOD = Block(64) LADDER = Block(65)
- STAIRS_COBBLESTONE = Block(67) DOOR_IRON = Block(71) REDSTONE_ORE = Block(73)
- SNOW = Block(78) ICE = Block(79) SNOW_BLOCK = Block(80) CACTUS = Block(81)
- CLAY = Block(82) SUGAR_CANE = Block(83) FENCE = Block(85) GLOWSTONE_BLOCK =
- Block(89) BEDROCK_INVISIBLE = Block(95) STONE_BRICK = Block(98) GLASS_PANE =
- Block(102) MELON = Block(103) FENCE_GATE = Block(107) GLOWING_OBSIDIAN =
- Block(246) NETHER_REACTOR_CORE = Block(247)</p>
- <h3>Block Data</h3>
+ <p>Here is a table of all block types available in the Minecraft Pi Edition:
+ <table class="basic slim">
+     <tbody>
+      <tr>
+       <th>
+
+        <p>Block Type</p>
+       </th>
+       <th>
+
+        <p>Value</p>
+       </th>
+      </tr>
+ 
+ <tr><td><p>block.AIR </p></td> <td><p>0</p></td></tr>
+ <tr><td><p>block.STONE </p></td> <td><p>1</p></td></tr>
+ <tr><td><p>block.GRASS </p></td> <td><p>2</p></td></tr>
+ <tr><td><p>block.DIRT </p></td> <td><p>3</p></td></tr>
+ <tr><td><p>block.COBBLESTONE </p></td> <td><p>4</p></td></tr>
+ <tr><td><p>block.WOOD_PLANKS </p></td> <td><p>5</p></td></tr>
+ <tr><td><p>block.SAPLING </p></td> <td><p>6</p></td></tr>
+ <tr><td><p>block.BEDROCK </p></td> <td><p>7</p></td></tr>
+ <tr><td><p>block.WATER_FLOWING </p></td> <td><p>8</p></td></tr>
+ <tr><td><p>block.WATER</p></td> <td><p>8</p></td></tr>
+ <tr><td><p>block.WATER_STATIONARY</p></td> <td><p>9</p></td></tr>
+ <tr><td><p>block.LAVA_FLOWING </p></td> <td><p>10</p></td></tr>
+ <tr><td><p>block.LAVA </p></td> <td><p>10</p></td></tr>
+ <tr><td><p>block.LAVA_STATIONARY </p></td> <td><p>11</p></td></tr>
+ <tr><td><p>block.SAND </p></td> <td><p>12</p></td></tr>
+ <tr><td><p>block.GRAVEL </p></td> <td><p>13</p></td></tr>
+ <tr><td><p>block.GOLD_ORE </p></td> <td><p>14</p></td></tr>
+ <tr><td><p>block.IRON_ORE </p></td> <td><p>15</p></td></tr>
+ <tr><td><p>block.COAL_ORE </p></td> <td><p>16</p></td></tr>
+ <tr><td><p>block.WOOD </p></td> <td><p>17</p></td></tr>
+ <tr><td><p>block.LEAVES </p></td> <td><p>18</p></td></tr>
+ <tr><td><p>block.GLASS </p></td> <td><p>20</p></td></tr>
+ <tr><td><p>block.LAPIS_LAZULI_ORE </p></td> <td><p>21</p></td></tr>
+ <tr><td><p>block.LAPIS_LAZULI_BLOCK </p></td> <td><p>22</p></td></tr>
+ <tr><td><p>block.SANDSTONE </p></td> <td><p>24</p></td></tr>
+ <tr><td><p>block.BED </p></td> <td><p>26</p></td></tr>
+ <tr><td><p>block.COBWEB </p></td> <td><p>30</p></td></tr>
+ <tr><td><p>block.GRASS_TALL </p></td> <td><p>31</p></td></tr>
+ <tr><td><p>block.WOOL </p></td> <td><p>35</p></td></tr>
+ <tr><td><p>block.FLOWER_YELLOW </p></td> <td><p>37</p></td></tr>
+ <tr><td><p>block.FLOWER_CYAN </p></td> <td><p>38</p></td></tr>
+ <tr><td><p>block.MUSHROOM_BROWN </p></td> <td><p>39</p></td></tr>
+ <tr><td><p>block.MUSHROOM_RED </p></td> <td><p>40</p></td></tr>
+ <tr><td><p>block.GOLD_BLOCK </p></td> <td><p>41</p></td></tr>
+ <tr><td><p>block.IRON_BLOCK </p></td> <td><p>42</p></td></tr>
+ <tr><td><p>block.STONE_SLAB_DOUBLE </p></td> <td><p>43</p></td></tr>
+ <tr><td><p>block.STONE_SLAB </p></td> <td><p>44</p></td></tr>
+ <tr><td><p>block.BRICK_BLOCK </p></td> <td><p>45</p></td></tr>
+ <tr><td><p>block.TNT </p></td> <td><p>46</p></td></tr>
+ <tr><td><p>block.BOOKSHELF </p></td> <td><p>47</p></td></tr>
+ <tr><td><p>block.MOSS_STONE </p></td> <td><p>48</p></td></tr>
+ <tr><td><p>block.OBSIDIAN </p></td> <td><p>49</p></td></tr>
+ <tr><td><p>block.TORCH </p></td> <td><p>50</p></td></tr>
+ <tr><td><p>block.FIRE </p></td> <td><p>51</p></td></tr>
+ <tr><td><p>block.STAIRS_WOOD </p></td> <td><p>53</p></td></tr>
+ <tr><td><p>block.CHEST </p></td> <td><p>54</p></td></tr>
+ <tr><td><p>block.DIAMOND_ORE </p></td> <td><p>56</p></td></tr>
+ <tr><td><p>block.DIAMOND_BLOCK </p></td> <td><p>57</p></td></tr>
+ <tr><td><p>block.CRAFTING_TABLE </p></td> <td><p>58</p></td></tr>
+ <tr><td><p>block.FARMLAND </p></td> <td><p>60</p></td></tr>
+ <tr><td><p>block.FURNACE_INACTIVE </p></td> <td><p>61</p></td></tr>
+ <tr><td><p>block.FURNACE_ACTIVE </p></td> <td><p>62</p></td></tr>
+ <tr><td><p>block.DOOR_WOOD </p></td> <td><p>64</p></td></tr>
+ <tr><td><p>block.LADDER </p></td> <td><p>65</p></td></tr>
+ <tr><td><p>block.STAIRS_COBBLESTONE </p></td> <td><p>67</p></td></tr>
+ <tr><td><p>block.DOOR_IRON </p></td> <td><p>71</p></td></tr>
+ <tr><td><p>block.REDSTONE_ORE </p></td> <td><p>73</p></td></tr>
+ <tr><td><p>block.SNOW </p></td> <td><p>78</p></td></tr>
+ <tr><td><p>block.ICE </p></td> <td><p>79</p></td></tr>
+ <tr><td><p>block.SNOW_BLOCK </p></td> <td><p>80</p></td></tr>
+ <tr><td><p>block.CACTUS </p></td> <td><p>81</p></td></tr>
+ <tr><td><p>block.CLAY </p></td> <td><p>82</p></td></tr>
+ <tr><td><p>block.SUGAR_CANE </p></td> <td><p>83</p></td></tr>
+ <tr><td><p>block.FENCE </p></td> <td><p>85</p></td></tr>
+ <tr><td><p>block.GLOWSTONE_BLOCK </p></td> <td><p>89</p></td></tr>
+ <tr><td><p>block.BEDROCK_INVISIBLE </p></td> <td><p>95</p></td></tr>
+ <tr><td><p>block.STONE_BRICK </p></td> <td><p>98</p></td></tr>
+ <tr><td><p>block.GLASS_PANE </p></td> <td><p>102</p></td></tr>
+ <tr><td><p>block.MELON </p></td> <td><p>103</p></td></tr>
+ <tr><td><p>block.FENCE_GATE </p></td> <td><p>107</p></td></tr>
+ <tr><td><p>block.GLOWING_OBSIDIAN </p></td> <td><p>246</p></td></tr>
+ <tr><td><p>block.NETHER_REACTOR_CORE </p></td> <td><p>247</p></td></tr>
+ </tbody>
+ </table>
+ <h2>Block Data</h2>
 
  <p>Here is a list of all block data types available in the Minecraft Pi
- Edition: WOOL: 0: White 1: Orange 2: Magenta 3: Light Blue 4: Yellow 5: Lime
- 6: Pink 7: Grey 8: Light grey 9: Cyan 10: Purple 11: Blue 12: Brown 13: Green
- 14: Red 15:Black WOOD: 0: Oak (up/down) 1: Spruce (up/down) 2: Birch (up/down)
- SAPLING: 0: Oak 1: Spruce 2: Birch GRASS_TALL: 0: Shrub 1: Grass 2: Fern
- TORCH: 1: Pointing east 2: Pointing west 3: Pointing south 4: Pointing north
- 5: Facing up STONE_BRICK: 0: Stone brick 1: Mossy stone brick 2: Cracked stone
- brick 3: Chiseled stone brick STONE_SLAB / STONE_SLAB_DOUBLE: 0: Stone 1:
- Sandstone 2: Wooden 3: Cobblestone 4: Brick 5: Stone Brick TNT: 0: Inactive 1:
- Ready to explode LEAVES: 1: Oak leaves 2: Spruce leaves 3: Birch leaves
- SANDSTONE: 0: Sandstone 1: Chiseled sandstone 2: Smooth sandstone
- STAIRS_[COBBLESTONE, WOOD]: 0: Ascending east 1: Ascending west 2: Ascending
- south 3: Ascending north 4: Ascending east (upside down) 5: Ascending west
- (upside down) 6: Ascending south (upside down) 7: Ascending north (upside
- down) LADDERS, CHESTS, FURNACES, FENCE_GATE: 2: Facing north 3: Facing south
- 4: Facing west 5: Facing east [WATER, LAVA]_STATIONARY: 0-7: Level of the
- water, 0 being the highest, 7 the lowest NETHER_REACTOR_CORE: 0: Unused 1:
- Active 2: Stopped / used up</p>
- <div id="footer"></div>
+ Edition.  The block data types are only applicable to certain block types:
+<h3>WOOL:</h3>
+ <table class="basic slim">
+     <tbody>
+      <tr>
+       <th>
+
+        <p>Block Data Value</p>
+       </th>
+       <th>
+
+        <p>Description</p>
+       </th>
+      </tr>
+<tr><td><p>0</p></td><td><p> White</p></td></tr>
+<tr><td><p>1</p></td><td><p> Orange</p></td></tr>
+<tr><td><p>2</p></td><td><p> Magenta</p></td></tr>
+<tr><td><p>3</p></td><td><p> Light Blue</p></td></tr>
+<tr><td><p>4</p></td><td><p> Yellow</p></td></tr>
+<tr><td><p>5</p></td><td><p> Lime</p></td></tr>
+<tr><td><p>6</p></td><td><p> Pink</p></td></tr>
+<tr><td><p>7</p></td><td><p> Grey</p></td></tr>
+<tr><td><p>8</p></td><td><p> Light grey</p></td></tr>
+<tr><td><p>9</p></td><td><p> Cyan</p></td></tr>
+<tr><td><p>10</p></td><td><p> Purple</p></td></tr>
+<tr><td><p>11</p></td><td><p> Blue</p></td></tr>
+<tr><td><p>12</p></td><td><p> Brown</p></td></tr>
+<tr><td><p>13</p></td><td><p> Green</p></td></tr>
+<tr><td><p>14</p></td><td><p> Red</p></td></tr>
+<tr><td><p>15</p></td><td><p>Black</p></td></tr>
+
+ </tbody>
+ </table>
+<h3>WOOD:</h3>
+ <table class="basic slim">
+     <tbody>
+      <tr>
+       <th>
+
+        <p>Block Data Value</p>
+       </th>
+       <th>
+
+        <p>Description</p>
+       </th>
+      </tr>
+<tr><td><p>0</p></td><td><p> Oak (up/down)</p></td></tr>
+<tr><td><p>1</p></td><td><p> Spruce (up/down)</p></td></tr>
+<tr><td><p>2</p></td><td><p> Birch (up/down)</p></td></tr>
+
+ </tbody>
+ </table>
+<h3>SAPLING:</h3>
+ <table class="basic slim">
+     <tbody>
+      <tr>
+       <th>
+
+        <p>Block Data Value</p>
+       </th>
+       <th>
+
+        <p>Description</p>
+       </th>
+      </tr>
+<tr><td><p>0</p></td><td><p> Oak</p></td></tr>
+<tr><td><p>1</p></td><td><p> Spruce</p></td></tr>
+<tr><td><p>2</p></td><td><p> Birch</p></td></tr>
+
+ </tbody>
+ </table>
+<h3>GRASS_TALL:</h3>
+ <table class="basic slim">
+     <tbody>
+      <tr>
+       <th>
+
+        <p>Block Data Value</p>
+       </th>
+       <th>
+
+        <p>Description</p>
+       </th>
+      </tr>
+<tr><td><p>0</p></td><td><p> Shrub</p></td></tr>
+<tr><td><p>1</p></td><td><p> Grass</p></td></tr>
+<tr><td><p>2</p></td><td><p> Fern</p></td></tr>
+
+ </tbody>
+ </table>
+<h3>TORCH:</h3>
+ <table class="basic slim">
+     <tbody>
+      <tr>
+       <th>
+
+        <p>Block Data Value</p>
+       </th>
+       <th>
+
+        <p>Description</p>
+       </th>
+      </tr>
+<tr><td><p>1</p></td><td><p> Pointing east</p></td></tr>
+<tr><td><p>2</p></td><td><p> Pointing west</p></td></tr>
+<tr><td><p>3</p></td><td><p> Pointing south</p></td></tr>
+<tr><td><p>4</p></td><td><p> Pointing north</p></td></tr>
+<tr><td><p>5</p></td><td><p> Facing up</p></td></tr>
+
+ </tbody>
+ </table>
+<h3>STONE_BRICK:</h3>
+ <table class="basic slim">
+     <tbody>
+      <tr>
+       <th>
+
+        <p>Block Data Value</p>
+       </th>
+       <th>
+
+        <p>Description</p>
+       </th>
+      </tr>
+<tr><td><p>0</p></td><td><p> Stone brick</p></td></tr>
+<tr><td><p>1</p></td><td><p> Mossy stone brick</p></td></tr>
+<tr><td><p>2</p></td><td><p> Cracked stone brick</p></td></tr>
+<tr><td><p>3</p></td><td><p> Chiseled stone brick</p></td></tr>
+
+ </tbody>
+ </table>
+<h3>STONE_SLAB / STONE_SLAB_DOUBLE:</h3>
+ <table class="basic slim">
+     <tbody>
+      <tr>
+       <th>
+
+        <p>Block Data Value</p>
+       </th>
+       <th>
+
+        <p>Description</p>
+       </th>
+      </tr>
+<tr><td><p>0</p></td><td><p> Stone</p></td></tr>
+<tr><td><p>1</p></td><td><p> Sandstone</p></td></tr>
+<tr><td><p>2</p></td><td><p> Wooden</p></td></tr>
+<tr><td><p>3</p></td><td><p> Cobblestone</p></td></tr>
+<tr><td><p>4</p></td><td><p> Brick</p></td></tr>
+<tr><td><p>5</p></td><td><p> Stone Brick</p></td></tr>
+
+ </tbody>
+ </table>
+<h3>TNT:</h3>
+ <table class="basic slim">
+     <tbody>
+      <tr>
+       <th>
+
+        <p>Block Data Value</p>
+       </th>
+       <th>
+
+        <p>Description</p>
+       </th>
+      </tr>
+<tr><td><p>0</p></td><td><p> Inactive</p></td></tr>
+<tr><td><p>1</p></td><td><p> Ready to explode</p></td></tr>
+
+ </tbody>
+ </table>
+<h3>LEAVES:</h3>
+ <table class="basic slim">
+     <tbody>
+      <tr>
+       <th>
+
+        <p>Block Data Value</p>
+       </th>
+       <th>
+
+        <p>Description</p>
+       </th>
+      </tr>
+<tr><td><p>1</p></td><td><p> Oak leaves</p></td></tr>
+<tr><td><p>2</p></td><td><p> Spruce leaves</p></td></tr>
+<tr><td><p>3</p></td><td><p> Birch leaves</p></td></tr>
+
+ </tbody>
+ </table>
+<h3>SANDSTONE:</h3>
+ <table class="basic slim">
+     <tbody>
+      <tr>
+       <th>
+
+        <p>Block Data Value</p>
+       </th>
+       <th>
+
+        <p>Description</p>
+       </th>
+      </tr>
+<tr><td><p>0</p></td><td><p> Sandstone</p></td></tr>
+<tr><td><p>1</p></td><td><p> Chiseled sandstone</p></td></tr>
+<tr><td><p>2</p></td><td><p> Smooth sandstone</p></td></tr>
+
+ </tbody>
+ </table>
+<h3>STAIRS_COBBLESTONE, STAIRS_WOOD:</h3>
+ <table class="basic slim">
+     <tbody>
+      <tr>
+       <th>
+
+        <p>Block Data Value</p>
+       </th>
+       <th>
+
+        <p>Description</p>
+       </th>
+      </tr>
+<tr><td><p>0</p></td><td><p> Ascending east</p></td></tr>
+<tr><td><p>1</p></td><td><p> Ascending west</p></td></tr>
+<tr><td><p>2</p></td><td><p> Ascending south</p></td></tr>
+<tr><td><p>3</p></td><td><p> Ascending north</p></td></tr>
+<tr><td><p>4</p></td><td><p> Ascending east (upside down)</p></td></tr>
+<tr><td><p>5</p></td><td><p> Ascending west (upside down)</p></td></tr>
+<tr><td><p>6</p></td><td><p> Ascending south (upside down)</p></td></tr>
+<tr><td><p>7</p></td><td><p> Ascending north (upside down)</p></td></tr>
+
+ </tbody>
+ </table>
+<h3>LADDERS, CHESTS, FURNACES, FENCE_GATE:</h3>
+ <table class="basic slim">
+     <tbody>
+      <tr>
+       <th>
+
+        <p>Block Data Value</p>
+       </th>
+       <th>
+
+        <p>Description</p>
+       </th>
+      </tr>
+<tr><td><p>2</p></td><td><p> Facing north</p></td></tr>
+<tr><td><p>3</p></td><td><p> Facing south</p></td></tr>
+<tr><td><p>4</p></td><td><p> Facing west</p></td></tr>
+<tr><td><p>5</p></td><td><p> Facing east</p></td></tr>
+
+ </tbody>
+ </table>
+<h3>WATER_STATIONARY, LAVA_STATIONARY:</h3>
+ <table class="basic slim">
+     <tbody>
+      <tr>
+       <th>
+
+        <p>Block Data Value</p>
+       </th>
+       <th>
+
+        <p>Description</p>
+       </th>
+      </tr>
+<tr><td><p>0-7</p></td><td><p> Level of the water, 0 being the highest, 7 the lowest</p></td></tr>
+
+ </tbody>
+ </table>
+<h3>NETHER_REACTOR_CORE:</h3>
+ <table class="basic slim">
+     <tbody>
+      <tr>
+       <th>
+
+        <p>Block Data Value</p>
+       </th>
+       <th>
+
+        <p>Description</p>
+       </th>
+      </tr>
+<tr><td><p>0</p></td><td><p> Unused</p></td></tr>
+<tr><td><p>1</p></td><td><p> Active</p></td></tr>
+<tr><td><p>2</p></td><td><p> Stopped / used up</p></td></tr>
+ </tbody>
+ </table>
+ 
 </body>
 </html>

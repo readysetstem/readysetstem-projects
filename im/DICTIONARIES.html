@@ -31,7 +31,9 @@
  <div class="section">
   <h1>DICTIONARIES</h1>
 
-  <p>In a previous concept, we discussed "Lists," how they work and what they
+  <p>In the
+  <a data-uid="lists"></a>
+     concept, we discussed Lists, how they work and what they
   are good for. If you recall, Lists are great for storing an ordered sequence
   of items. For example, a list of names or a list of values. In a List, the
   sequence of the data is important, and each piece of data is an independent
@@ -42,7 +44,6 @@
   you want to associate each person's age with each name.</p>
 
   <p>Here's an example:</p>
-  <div align="center">
    <table class="basic">
     <tbody>
      <tr>
@@ -107,10 +108,9 @@
      </tr>
     </tbody>
    </table>
-  </div>
 
-  <p>Using a list to store this these associated pieces of data is very
-  difficult and cumbersome. But, Python provides another mechanism that is
+  <p>Using a list to store this these associated pieces of data can be 
+  cumbersome. But, Python provides another mechanism that is
   perfect for storing data in this way — it's called a <i>Dictionary</i>. Just
   like a regular Dictionary that is use to map words to their definitions, a
   Python Dictionary maps "keys" (the first column) to their "values" (the
@@ -191,8 +191,9 @@ print("# of Day in Febuary: ", month_days[month_abbr['February']])
    <textarea>
 # Print months along with abbreviations and number of days
 for month, abbreviation in months_abbr.items():
-    print("The month %s is abbreviated %s and has %s days" %
-        (month, abbreviation, month_days[abbreviation]))
+    print("The month", month, 
+        "is abbreviated", abbreviation, 
+        "and has", month_days[abbreviation], "days")
 </textarea>
   </div>
  </div>
