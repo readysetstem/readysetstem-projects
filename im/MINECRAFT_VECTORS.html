@@ -54,7 +54,7 @@
  <div class="section">
   <h1>Vectors</h1>
   <p>Vectors define a position in the Minecraft world.  They are nothing more
-  than the three X, Y, and Z coordiantes used to define a position.  However,
+  than the three X, Y, and Z coordinates used to define a position.  However,
   some of the API functions return vectors, so it's handy to know how to use
   them.  And, you can add vectors together, which is quite convenient!
 
@@ -67,7 +67,7 @@
   block that you hit (which is at location <code>hit.pos</code>), you instead
   wanted to print the block above it.  With vectors, this is easy &mdash;
   simply add another vector (0,1,0) to it.  That will increase the Y value by
-  1, which will be one above the blobk that you hit.  Here's how you could do
+  1, which will be one above the block that you hit.  Here's how you could do
   it (modifying the code from the 
     <a data-uid="shovel1"></a> project) &mdash; instead of printing:
 
@@ -89,7 +89,7 @@ print("The X, Y, Z coordinates of the block you hit is:", hit.pos + Vec3(0,1,0))
   <p>There are two main thing's we'll want to do with Steve's position &mdash;
   find out what it is and change it.  Changing it takes effect immediately, so
   when you change his position, he teleports to the new location!
-  <h2>player.getPos() and player.getTilePos()</h2>
+  <h2><code>player.getPos()</code> and <code>player.getTilePos()</code></h2>
 
   <p>The <code>player.getPos()</code> function returns the Steve's location as a vector:
   <div class="code" data-firstline="1">
@@ -105,7 +105,7 @@ print(mc.player.getPos())
   tile that Steve is standing on.  These two functions return coordinates that
   are pretty close to each other.
 
-  <h2>player.setPos() and player.setTilePos()</h2>
+  <h2><code>player.setPos()</code> and <code>player.setTilePos()</code></h2>
   <p>The <code>player.setPos()</code> function sets Steve's location:
   <div class="code" data-firstline="1">
    <textarea>

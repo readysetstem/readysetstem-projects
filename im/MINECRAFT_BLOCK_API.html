@@ -50,7 +50,7 @@
 
  <p>The following sections list the most commonly used block-related functions provided in the
  Ready Set STEM API.</p>
- <h2>getBlock()</h2>
+ <h2><code>getBlock()</code></h2>
 
  <p>The <code>getBlock()</code> function takes the location of a block (in X,
  Y, Z coordinates) and returns the type of block at that location.</p>
@@ -72,7 +72,7 @@ print(block_type)
 
  <p>See below for the different types of blocks supported in the Minecraft Pi
  edition.</p>
- <h2>getBlockWithData()</h2>
+ <h2><code>getBlockWithData()</code></h2>
 
  <p>The <code>getBlockWithData()</code> function takes the location of a block
  (in X, Y, Z coordinates) and returns the type of block at that location, along
@@ -98,7 +98,7 @@ print(block_type, block_data)
 
  <p>See below for the different types of block data supported in the Minecraft
  Pi edition.</p>
- <h2>setBlock()</h2>
+ <h2><code>setBlock()</code></h2>
 
  <p>The <code>setBlock()</code> function takes a location (and optionally a set
  of data) and places a block with that data type at the location.</p>
@@ -115,7 +115,7 @@ mc = minecraft.Minecraft.create()
 mc.setblock(0,0,0,block.WOOD.id, 1)
 </textarea>
  </div>
- <h2>setBlocks()</h2>
+ <h2><code>setBlocks()</code></h2>
 
  <p>The <code>setBlocks()</code> function takes two locations (and optionally a
  set of data) and places a cuboid (three dimensional rectangular) set of blocks
@@ -134,7 +134,7 @@ mc = minecraft.Minecraft.create()
 mc.setblocks(0,0,0,5,5,5,block.WOOD.id)
 </textarea>
  </div>
- <h2>getHeight()</h2>
+ <h2><code>getHeight()</code></h2>
 
  <p>The <code>getHeight()</code> function takes a two-dimensional x, z location
  and returns the height of the highest block at that location.</p>
@@ -156,7 +156,7 @@ print(height)
  </div>
  </div>
  <div class="section">
- <h1>Useable Blocks</h1>
+ <h1>Usable Blocks</h1>
  <h2>Block Types</h2>
 
  <p>Here is a table of all block types available in the Minecraft Pi Edition:
@@ -272,7 +272,7 @@ print(height)
 <tr><td><p>5</p></td><td><p> Lime</p></td></tr>
 <tr><td><p>6</p></td><td><p> Pink</p></td></tr>
 <tr><td><p>7</p></td><td><p> Grey</p></td></tr>
-<tr><td><p>8</p></td><td><p> Light grey</p></td></tr>
+<tr><td><p>8</p></td><td><p> Light gray</p></td></tr>
 <tr><td><p>9</p></td><td><p> Cyan</p></td></tr>
 <tr><td><p>10</p></td><td><p> Purple</p></td></tr>
 <tr><td><p>11</p></td><td><p> Blue</p></td></tr>

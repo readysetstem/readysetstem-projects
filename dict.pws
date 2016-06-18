@@ -37,6 +37,7 @@ ethernet
 walkable
 TTS
 keypress
+keypresses
 spacebar
 Mojang
 ringtone
@@ -65,3 +66,8 @@ mashup
 nitty
 mathy
 prepend
+shorthands
+programmatically
+teleport
+teleports
+overdriven
