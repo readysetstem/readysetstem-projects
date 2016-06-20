@@ -39,9 +39,12 @@ chainedOnload(function() {
             gutters.unshift("CodeMirror-arrow");
         }
 
-        // At beginning of line, convert all 4-space blocks to tabs
+        // At ONLY beginning of line, convert all 4-space blocks to tabs
         for (var j = 0; j < lines.length; j++) {
-            lines[j] = lines[j].replace(/ {4}/g, "\t");
+            spaces = lines[j].search("[^ ]")
+            if (spaces > 0) {
+                lines[j] = lines[j].replace(/^ */, "\t".repeat(spaces/4));
+            }
         }
 
         // Reassemble codetext from lines.
