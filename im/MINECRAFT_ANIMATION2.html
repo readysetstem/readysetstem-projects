@@ -33,21 +33,23 @@
  <div id="intro" class="section">
 
   <p>In this project, we'll build on the sprite animations we did in the
-  previous project by not only animating Steve on the LED Matrix, but also
-  creating a synchronized animation of Steve in the Minecraft world. What we
+  LED Matrix 
+  <a data-uid="running"></a>
+   project by not only animating a running man on the LED Matrix, but also
+  creating a synchronized animation of the running man in the Minecraft world. What we
   draw on the LED Matrix will be replicated in blocks in the Minecraft
   world.</p>
  </div>
  <div id="hw" class="section"><img class="bb" src="img/LED_Matrix_bb.jpg" alt=
  "">
- <h2>Writing Our Code</h2>
- <h2>Hardware Setup</h2><img class="bb" src="img/LED_Matrix_bb.png"></div>
+ </div>
  <div id="sw" class="section">
 
   <p>Our code for this project will be identical to the previous project, with
   one addition &mdash; a function that will be used to replicate the animation we're
   doing on the LED Matrix in the Minecraft world as well.</p>
-  <h2>Full Code</h2>
+
+  <p>When you give this code a try, don't forget to look around to find the running man!
 
   <p>Here is what the full code for this project should look like. We'll dig
   further into the highlighted pieces of code below:</p>
@@ -55,16 +57,16 @@
    <textarea>
 from rstem.mcpi import minecraft, control, block
 from rstem.mcpi.vec3 import Vec3
-from rstem.led_matrix import FrameBuffer, Sprite
 from itertools import cycle
+from rstem.led_matrix import FrameBuffer, Sprite
 import time
-
-fb = FrameBuffer()
 
 control.show()
 mc = minecraft.Minecraft.create()
 
-animation = [
+fb = FrameBuffer()
+
+sprites = [
     Sprite("""
         00000000
         0000FF00
@@ -108,29 +110,30 @@ animation = [
     ]
 
 
-def sprite_in_minecraft(mc, sprite, pos):
-    char_sprite = reversed(str(sprite).splitlines())
-    for height, row in enumerate(char_sprite):
-        for width, char in enumerate(row):
-            if char == '0':
-                blk = block.AIR
-            else:
-                blk = block.WOOD
-            mc.setBlock(player_pos + Vec3(width, height, 0), blk)
+*def sprite_in_minecraft(mc, sprite, pos):
+*    char_sprite = reversed(str(sprite).splitlines())
+*    for height, row in enumerate(char_sprite):
+*        for width, char in enumerate(row):
+*            if char == '0':
+*                blk = block.AIR
+*            else:
+*                blk = block.WOOD
+*            mc.setBlock(player_pos + Vec3(width, height, 0), blk)
     
-player_pos = mc.player.getTilePos()
-animation = cycle(animation)
+*player_pos = mc.player.getTilePos()
+which_sprite = 0
 while True:
-    sprite = next(animation)
+    which_sprite = which_sprite + 1
+    if which_sprite &gt; 3:
+        which_sprite = 0
 
     fb.erase()
-    fb.draw(sprite)
+    fb.draw(sprites[which_sprite])
     fb.show()
 
-    sprite_in_minecraft(mc, sprite, player_pos)
+*    sprite_in_minecraft(mc, sprite, player_pos)
 
     time.sleep(0.1)
-
 </textarea>
   </div>
   <h2><code>sprite_in_minecraft()</code> Function</h2>
@@ -146,13 +149,13 @@ while True:
   <ul>
    <li>
 
-    <p>On Line #x, we define our function, and take three arguments as inputs:
+    <p>On Line 56, we define our function, which takes three arguments as inputs:
     our Minecraft object, the current 8x8 design that we want to draw and the
     location of our character (where we want to draw).</p>
    </li>
    <li>
 
-    <p>On Line #x, we take our 8x8 design that we used to draw on our LED
+    <p>On Line 57, we take our 8x8 design that we used to draw on our LED
     Matrix and we rearrange it in an order that will allow us to draw it in the
     Minecraft world. Specifically, we break up the design into the eight lines
     we defined in our list (using the <code>splitlines()</code> function and
@@ -161,20 +164,20 @@ while True:
    </li>
    <li>
 
-    <p>On Lines #x and #x, we "nest" (put one inside the other) two
+    <p>On Lines 58 and 59, we "nest" (put one inside the other) two
     <code>for</code> loops. This will allow us to run through each of the eight
     horizontal characters and each of the eight rows and execute the code that
     follows the nested loops.</p>
    </li>
    <li>
 
-    <p>On Lines #x-y, we have the code that will be executed for each of the 64
+    <p>On Lines 60 through 64, we have the code that will be executed for each of the 64
     (8x8) character positions. The code checks the character and if it's a 0
     (which is equivalent to an off LED), it sets the block type to air, which
     is the same as not drawing a block. If the character is a non-0 (which is
     equivalent to the LED being on in that position), it sets the block type to
-    wood, so you'll see the block at that location. The final line (Line #x)
-    actually draws the specified type of block at the location.</p>
+    wood, so you'll see the block at that location. The final line uses <code>setBlock()</code>
+    to draw the block.</p>
    </li>
   </ul>
   <div class="info">
@@ -184,31 +187,27 @@ while True:
    <div>
 
     <p>In the two <code>for</code> loops above, we use the
-    <code>enumerate</code> function. This function allows us to track the count
+    built-in <code>enumerate</code> function. This function allows us to track the count
     of how many times we've gone through the <code>for</code> loop &mdash; we call
     this the "index", it starts at 0 and it is stored in the first variable of
     the loop.</p>
 
     <p>Here's an example:</p>
 
-    <p><code>animals = ['dog', 'cat', 'bird']</code></p>
-
-    <p><code>for index, animal in (enumerate(animals)):</code></p>
-
-    <p><code>print index, animal</code></p>
+    <pre>
+<code>animals = ['dog', 'cat', 'bird']</code>
+<code>for index, animal in (enumerate(animals)):</code>
+    <code>print(index, animal)</code>
+</pre>
 
     <p>This code would output:</p>
 
-    <p>0, dog</p>
+<pre>
+0 dog
+1 cat
+2 bird
+</pre>
 
-    <p>1, cat</p>
-
-    <p>2, bird</p>
-
-    <p>To start our index on a different value than 0, we can pass another
-    argument to <code>enumerate()</code>, like this:</p>
-
-    <p><code>for index, animal in (enumerate(animals, start = 1):</code></p>
    </div>
   </div>
  </div>
@@ -216,11 +215,17 @@ while True:
   <ol>
    <li>
 
-    <p>1</p>
-   </li>
-   <li>
-
-    <p>2</p>
+    <p>We made the running man out of wood.  Can you change the type of block
+   that the running man is made of?
+   </p> </li> <li> <p>
+   Can you make the running man out of stripes?  That is, can you use
+   different materials for the odd and even rows?
+   </p> </li> <li> <p>
+   Can you make the running man out of random materials?
+   </p> </li> <li> <p>
+   We made the running man stand straight up in the Minecraft world (on the X
+   and Y axes).  Can you lay the running man down flat (on the X and Z axes)?
+   </p>
    </li>
   </ol>
  </div>
