@@ -31,9 +31,11 @@
  <div class="section">
   <h1>Sounds galore</h1>
 
-  <p>Games and gadgets often use prerecorded sounds and songs. The Ready Set
-  STEM API provides some simple functions to play recorded sounds that are on
-  the SD card. The main function you'll used to play sounds is:</p>
+  <p>Most games and gadgets use prerecorded sounds and songs to make the device
+  more useful and fun. The Ready Set STEM API provides some simple functions to
+  play recorded sounds that are on the SD card.</p>
+
+  <p>The main function you'll used to play sounds is:</p>
   <pre>
 Sound(<i>sound_filename</i>)
 </pre>
@@ -41,7 +43,7 @@ Sound(<i>sound_filename</i>)
   <p>where <code><i>sound_filename</i></code> is the name of the file on the SD
   card that you want to play.</p>
 
-  <p>For example, to hear a cat meow, try this:</p>
+  <p>For example, to hear a cat meow, you can try this:</p>
   <div class="code" data-firstline="0">
    <textarea>
 from rstem.sound import Sound
@@ -51,10 +53,10 @@ meow.wait()
 </textarea>
   </div>
 
-  <p>But what notes can you play? All the sounds on the SD card are stored in
-  one directory, and you can write a little program to see what they are. The
-  Ready Set STEM API can tell you what directory they are stored in using the
-  function <code>sound_dir</code>:</p>
+  <p>The sound file "Meow.wav" lives on the SD-Card in the default sound
+  directory, along with all the sounds on the SD card. If you'd like to find
+  out where this directory is located, you can write a little program to do
+  that, using the function <code>sound_dir</code>:</p>
   <div class="code" data-firstline="0">
    <textarea>
 from rstem.Sound import sound_dir
@@ -63,8 +65,8 @@ print(sound_dir())
   </div>
 
   <p>And, from there you could go to the desktop and view that directory from
-  the File Manager. But you can do it in Python as well! Python provides a
-  function that will return a list of all the files in a directory, called
+  the File Manager. Or, you can do it using some code as well! Python provides
+  a function that will return a list of all the files in a directory, called
   <code>listdir()</code>:</p>
   <div class="code" data-firstline="0">
    <textarea>
@@ -74,21 +76,27 @@ print(listdir(sound_dir()))
 </textarea>
   </div>
 
-  <p>And you'll see a list of all the sounds you can play.</p>
+  <p>If you run that program, you'll see a list of all the sounds you can
+  play.</p>
 
-  <p>In addition, you can add your own sounds to the SD card. If you're on the
-  network, you can download sound files from the web right onto the SD card.
-  You can even copy them directly to the SD card. We won't go into to the
-  details of downloading or copying here (you can find more info online) &mdash; but
-  once you have a sound downloaded, you can play it simply by specifying its
-  full location when creating the sound. For example, you might do:</p>
+  <p>In addition, you can add your own sounds to the SD card. If your Raspberry
+  Pi is on the network, you can download sound files from the web right onto
+  the SD card. You can even copy them directly to the SD card. We won't go into
+  to the details of downloading or copying here (you can find more info online)
+  — but once you have a sound downloaded, you can play it simply by specifying
+  its full location when creating the sound.</p>
+
+  <p>For example, if you had downloaded a sound file called
+  <span class=nospell>"MyVeryOwnCoolSound.wav"</span> and stored it in the <i>/home/pi</i> directory, you
+  could do the following:</p>
   <div class="code" data-firstline="0">
    <textarea>
 mysound = Sound('/home/pi/MyVeryOwnVeryCoolSound.wav')
 </textarea>
-  </div>Finally, a <code>Sound</code> is very similar to a <code>Note</code> in
-  that you can call the same functions to <code>play()</code> them,
-  <code>wait()</code> for them, or <code>stop()</code> them.
+  </div>One final thing to mention: a <code>Sound</code> is very similar to a
+  <code>Note</code> in that you can call the same functions to
+  <code>play()</code> them, <code>wait()</code> for them, or
+  <code>stop()</code> them.
  </div>
 </body>
 </html>

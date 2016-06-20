@@ -33,8 +33,8 @@
  <div class="hw" data-count="1" data-name="button"></div>
  <div class="section" id="intro">
 
-  <p>In this project, we will draw some text on the screen, and scroll the text
-  across.</p>
+  <p>In this project, we will draw some text, and scroll it across the LED
+  Matrix display like an electronic banner.</p>
  </div>
  <div class="section" id="hw">
 
@@ -44,7 +44,15 @@
   should look like: <img class="bb" src="img/LED_Matrix_bb.jpg" alt=""></p>
  </div>
  <div class="section" id="sw">
-  <div class="code" data-firstline="0">
+
+  <p>In this project, we're going to create some Text to display on the LED
+  Matrix, define the starting position of the text when we first display it,
+  and then scroll the text by changing the position of it on the LED Matrix
+  each time through a loop.</p>
+
+  <p>Again, for consistency, we'll format the code as a Game Loop. Here is the
+  final code:</p>
+  <div class="code" data-firstline="1">
    <textarea>
 from rstem.led_matrix import FrameBuffer
 from rstem.led_matrix import Text
@@ -52,17 +60,11 @@ import time
 
 # Initialize the game environment
 fb = FrameBuffer()
-intro = Text("Press to play!")
-you_win = Text("You win!")
-button = Button(14)
-text = you_win
+text = Text("Press to play!")
 x_position = 8
 
 while True:
     # Get user input
-    if button.presses():
-        text = you_win
-        x_position = 8
 
     # Update the game world
     x_position = x_position - 1
@@ -77,8 +79,9 @@ while True:
 </textarea>
   </div>
 
-  <p>Give it a try. You should now see the intro text scroll across the screen.
-  Press the button, and the text should switch.</p>
+  <p>Give it a try. You should now see the text scroll across the screen. In
+  future projects, we'll use code similar to this as part of one of our LED
+  Matrix games.</p>
  </div>
  <div id="challenge" class="section">
   <ol>
@@ -89,19 +92,20 @@ while True:
    </li>
    <li>
 
-    <p>The first time the button is pressed, the text switches. Can you have
-    another button press make the text switch back?</p>
+    <p>Can you add a button that, when pressed, switches the text to something
+    different? Can you make additional button presses scroll through a list of
+    text messages?</p>
    </li>
    <li>
 
-    <p>Can you make a second button press cause the text to scroll faster, with
-    each successive press?</p>
+    <p>Can you make a button press cause the text to scroll faster? How about
+    speeding up the text with each successive button press?</p>
    </li>
    <li>
 
-    <p>In our project, the vertical position doesn't change. Change that so the
-    text bounces &mdash; as it moves across, alternate the y position up and down one
-    point.</p>
+    <p>In our project, the vertical position of the text doesn't change. Can
+    you modify the code so that the text bounces — in other words, as it moves
+    across the display, alternate the y position up and down one point.</p>
    </li>
   </ol>
  </div>

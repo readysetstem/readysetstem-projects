@@ -30,19 +30,27 @@
 <body>
  <div class="section" id="intro">
 
-  <p>In this project, we continue the development of our Alien Intruders game by
-  initializing and getting movement input from our accelerometer.</p>
+  <p>In this project, we continue the development of our Alien Intruders game
+  by initializing and getting movement input from our accelerometer.</p>
+ </div>
+ <div class="section" id="hw">
+
+  <p>The hardware setup for this project should be the same setup that was
+  completed for the <a data-uid="ai1"></a> project. Here's a reminder:
+  <img class="bb" src="img/LED_Matrix_Accel_Buttons_bb.jpg" alt=""></p>
+ </div>
+ <div class="section" id="sw">
 
   <p>In the last project, we initialized our ship where it's supposed to start
-  and we created the loop in our game loop. In this project, we're going to add
-  the accelerometer and use it to get input from the user about which direction
-  to move our ship (tilting the Ready Set STEM CREATOR Kit left will move the
-  ship left and tilting right will move the ship right). In this project, we'll
-  use that input to animate our ship.</p>
+  and we created the loop for our game loop. In this project, we're going to
+  add the accelerometer and use it to get input from the user about which
+  direction to move our ship (tilting the Ready Set STEM CREATOR Kit left will
+  move the ship left and tilting right will move the ship right). In this
+  project, we'll use that input to animate the movement of our ship.</p>
 
   <p>As we learned in <a data-uid="accel"></a>, the initialization code for the
-  accelerometer will consist of importing the <code>Accel()</code> function and then
-  initializing the accelerometer:</p>
+  accelerometer will consist of importing the <code>Accel()</code> function and
+  then initializing the accelerometer:</p>
   <div class="code" data-firstline="0">
    <textarea>
 from rstem.accel import Accel
@@ -115,7 +123,7 @@ spaceship_position = max(0, min(fb.width - 1, spaceship_position))
 </textarea>
   </div>
 
-  <p>Here is the full code for our game at this point &mdash; when you run it, try
+  <p>Here is the full code for our game at this point — when you run it, try
   tilting your Ready Set STEM CREATOR Kit left and right, and you should see
   your ship move left and right in response:</p>
   <div class="code" data-firstline="1">
@@ -208,7 +216,5 @@ while True:
 </textarea>
   </div>
  </div>
- <div class="section" id="hw"></div>
- <div class="section" id="sw"></div>
 </body>
 </html>

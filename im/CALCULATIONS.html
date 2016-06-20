@@ -33,7 +33,7 @@
 
   <p>Most of your programs will use numbers, and will need to perform and
   calculations on those numbers. Computers are ideal for doing numerical
-  calculation &mdash; its what they were created for. If it takes you a minute to
+  calculation — its what they were created for. If it takes you a minute to
   multiply two ten digit numbers together, then an average desktop computer
   today is more than a trillion times faster than you.</p>
 
@@ -72,56 +72,53 @@ print(1+1)
 
   <p>The most common math calculations you'll do while programming will be
   addition, subtraction, multiplication and division. You've already seen that
-  when doing addition in your code, you use the + sign, just like in the real
-  world. And subtraction will use the – sign as well. But, when writing code,
-  we use different operator signs for multiply and divide.</p>
+  when doing addition in your code, you use the '+' (plus) sign, just like in
+  the real world. And subtraction will use the '–' (minus) sign as well. But,
+  when writing code, we use different operator signs for multiply and
+  divide.</p>
 
   <p>Here is a quick reference of the basic operator signs you will need to
   know (there are lots of others, but these are the most common):</p>
-  <center>
-   <table class="basic" border="1" cellpadding="8" cellspacing="0" width="339">
-    <col width="223">
-    <col width="82">
-    <tbody>
-     <tr valign="top">
-      <td bgcolor="#FFFFFF" height="17" width="223">
+  <table class="basic">
+   <tbody>
+    <tr>
+     <td style="width: 50%">
 
-       <p>Addition</p>
-      </td>
-      <td bgcolor="#FFFFFF" width="82">
-       <p align="center">+</p>
-      </td>
-     </tr>
-     <tr valign="top">
-      <td bgcolor="#FFFFFF" height="18" width="223">
+      <p>Addition</p>
+     </td>
+     <td>
+      <p style="text-align:center"><code>+</code></p>
+     </td>
+    </tr>
+    <tr>
+     <td>
 
-       <p>Subtraction</p>
-      </td>
-      <td bgcolor="#FFFFFF" width="82">
-       <p align="center">-</p>
-      </td>
-     </tr>
-     <tr valign="top">
-      <td bgcolor="#FFFFFF" height="18" width="223">
+      <p>Subtraction</p>
+     </td>
+     <td>
+      <p style="text-align:center"><code>-</code></p>
+     </td>
+    </tr>
+    <tr>
+     <td>
 
-       <p>Multiplication</p>
-      </td>
-      <td bgcolor="#FFFFFF" width="82">
-       <p align="center">*</p>
-      </td>
-     </tr>
-     <tr valign="top">
-      <td bgcolor="#FFFFFF" height="17" width="223">
+      <p>Multiplication</p>
+     </td>
+     <td>
+      <p style="text-align:center"><code>*</code></p>
+     </td>
+    </tr>
+    <tr>
+     <td>
 
-       <p>Division</p>
-      </td>
-      <td bgcolor="#FFFFFF" width="82">
-       <p align="center">/</p>
-      </td>
-     </tr>
-    </tbody>
-   </table>
-  </center>
+      <p>Division</p>
+     </td>
+     <td>
+      <p style="text-align:center"><code>/</code></p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
 
   <p>Let's practice using these operators. In your code window, enter the
   following lines:</p>
@@ -186,11 +183,123 @@ print(60 * 60 * 24)
 </pre>
   </div>
 
-  <p>There are 86,400 seconds in a day. 
-  <!--TBD: Order of Operations, Combining Strings & Calculations--></p>
- </div>
- <div class="section">
- <mark>section on +=, *= etc</mark>
+  <p>There are 86,400 seconds in a day.</p>
+  <div class="info">
+   <div>
+    Programmers are Lazy
+   </div>
+   <div>
+
+    <p>Programmers are lazy — they often invent shorthands for code that is
+    very common, to make easier to write code quickly and efficiently.
+    Assignment statements are something that occur very frequently in the code,
+    an extremely common operation is just to increment a variable by one. The
+    way you'd do this, for a variable named <code>x</code> is:</p>
+    <pre>
+x = x + 1
+</pre>
+
+    <p>So, programmers came up with a nifty shorthand for this:</p>
+    <pre>
+x += 1
+</pre>
+
+    <p>But they didn't stop there — they added new assignment operators for
+    addition, subtraction, multiplication, and division. The table below shows
+    how a variable <code>x</code> could be modified by 5 using these assignment
+    operators.</p>
+    <table class="basic">
+     <tbody>
+      <tr>
+       <th>
+
+        <p>Operation</p>
+       </th>
+       <th>
+
+        <p>Operator</p>
+       </th>
+       <th>
+
+        <p>How to Use It</p>
+       </th>
+       <th>
+
+        <p>Equivalent To</p>
+       </th>
+      </tr>
+      <tr>
+       <td>
+
+        <p>Addition</p>
+       </td>
+       <td>
+        <p style="text-align:center"><code>+=</code></p>
+       </td>
+       <td>
+
+        <p><code>x += 5</code></p>
+       </td>
+       <td>
+
+        <p><code>x = x + 5</code></p>
+       </td>
+      </tr>
+      <tr>
+       <td>
+
+        <p>Subtraction</p>
+       </td>
+       <td>
+        <p style="text-align:center"><code>-=</code></p>
+       </td>
+       <td>
+
+        <p><code>x -= 5</code></p>
+       </td>
+       <td>
+
+        <p><code>x = x - 5</code></p>
+       </td>
+      </tr>
+      <tr>
+       <td>
+
+        <p>Multiplication</p>
+       </td>
+       <td>
+        <p style="text-align:center"><code>*=</code></p>
+       </td>
+       <td>
+
+        <p><code>x *= 5</code></p>
+       </td>
+       <td>
+
+        <p><code>x = x * 5</code></p>
+       </td>
+      </tr>
+      <tr>
+       <td>
+
+        <p>Division</p>
+       </td>
+       <td>
+        <p style="text-align:center"><code>/=</code></p>
+       </td>
+       <td>
+
+        <p><code>x /= 5</code></p>
+       </td>
+       <td>
+
+        <p><code>x = x / 5</code></p>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+  </div><!--TBD: Order of Operations, Combining Strings & Calculations-->
  </div>
 </body>
 </html>

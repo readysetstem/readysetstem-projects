@@ -31,30 +31,29 @@
  <div class="hw" data-count="2" data-name="button"></div>
  <div class="section" id="intro">
 
-  <p>In this project, we will use GPIOs to get input from a pushbutton into our
-  software.</p>
+  <p>In this project, we will use a GPIO to read the state (pressed or
+  unpressed) of a button.</p>
 
   <p>In <a data-uid="gpioi"></a>, we introduced the idea of reading button
-  state based on using GPIOs as inputs and then provided a schematic for the
+  state based on using GPIOs as inputs. We also provided the schematic for the
   circuit we'd need to accomplish this. It turns out that implementing that
   circuit on our breadboard is easy. Let's give it a try...</p>
-
  </div>
  <div class="section" id="hw">
-  <h2 class=step>Reading Buttons Using GPIOs</h2>
-
+  <h2 class="step">Reading Buttons Using GPIOs</h2>
 
   <p>First, we start with an empty breadboard, with power and ground wired from
   the Lid Connector Board, like this:</p><img class="bb" src=
-  "img/Just_Power_bb.jpg" alt=""> <p>With our breadboard empty, here is how we
-  build our circuit and then use code to get input from the button through the
-  GPIO:
-  <h2 class=step>Place button on breadboard</h2>
+  "img/Just_Power_bb.jpg" alt="">
+
+  <p>With our breadboard empty, here is how we build our circuit and then use
+  code to get input from the button through the GPIO:</p>
+  <h2 class="step">Place button on breadboard</h2>
 
   <p>We start by placing a button on the breadboard. Remember, it is important
-  that the button is oriented correctly &mdash; the two independent sides of the
+  that the button is oriented correctly — the two independent sides of the
   button must sit on different connect strips, as follows:</p>
-  <table class=basic>
+  <table class="basic">
    <tbody>
     <tr>
      <td><img src="img/Button_orientation_correct.png" width="285" alt=""></td>
@@ -66,20 +65,25 @@
     </tr>
    </tbody>
   </table>
+
   <p>Also note, the button can be placed fully within a single row of connect
   strips (as shown above), or it can be placed across the notch in the
-  breadboard, as we'll do in the next step.  The choice only depends on where
-  you'd like to place the button.
-  <h2 class=step>Wire one side of the button to a GPIO</h2>
+  breadboard, as we'll do in the next step. The choice only depends on where
+  you'd like to place the button.</p>
+  <h2 class="step">Wire one side of the button to a GPIO</h2>
 
   <p>Next, we connect one side of the button (it doesn't matter which one, as
   the internal components of the button are symmetrical) to a GPIO. In this
   example, we'll connect the button to GPIO14.</p><img class="bb" src=
   "img/Buttons_with_GPIO_1_bb.jpg" alt="">
-  <h2 class=step>Wire the other side of the button to ground</h2>
+  <h2 class="step">Wire the other side of the button to ground</h2>
 
   <p>Finally, we connect the other side of the button to ground.</p><img class=
   "bb" src="img/Buttons_with_GPIO_2_bb.jpg" alt="">
+
+  <p><strong>Note:</strong> The 3.3V power isn't being used for this circuit,
+  but it's always good to have power wired to the breadboard...and, we'll need
+  it later when we expand on this button circuit.</p>
 
   <p>That's it for the wiring – pretty simple, right?</p>
  </div>
@@ -106,7 +110,7 @@ print(my_button.is_pressed())
   <ul>
    <li>
 
-    <p>In Line 2: We're configuring GPIO 14 as a button input.</p>
+    <p>In Line 2: We're configuring GPIO14 as a button input.</p>
    </li>
    <li>
 
@@ -141,7 +145,7 @@ while True:
   when the button is pressed and when it is released.</p>
   <div class="info">
    <div>
-    "while True:"
+    while True:
    </div>
    <div>
 
@@ -164,31 +168,19 @@ while True:
   <ol>
    <li>
 
-    <p>We placed  the button so that on the breadboard so that it sat across
-    the notch.  Try hooking it up within a single row of connect strips (as we
-    showed how to do in the orientation diagram above in Step #2).
+    <p>We placed the button on the breadboard so that it sat across the notch.
+    Try hooking it up within a single row of connect strips (as we showed how
+    to do in the orientation diagram above in Step #2).</p>
    </li>
    <li>
 
-    <p>Try hooking up two buttons, and print when either one is pressed.
+    <p>Try hooking up two buttons to two different GPIOs, and print when either
+    one is pressed.</p>
    </li>
    <li>
 
-    <p>With two buttons hooked up, print something only when BOTH of them
-    are pressed at the same time.
-   </li>
-   <li>
-
-    <p>We wrote a loop that prints every 0.1 seconds the state of the
-    button.  Can you print out "PRESS" only once each time the button is
-    pressed?  Hint: you'll probably want a variable that keeps track of the
-    state of the button &mdash; that way you can test if the button is
-    currently pressed, but wasn't pressed previously.
-   </li>
-   <li>
-
-    <p> Can you print out "PRESS" only once each time the button is pressed,
-    and "RELEASE" only once each time the button is released?
+    <p>With two buttons hooked up, print something only when BOTH of them are
+    pressed at the same time.</p>
    </li>
   </ol>
  </div>

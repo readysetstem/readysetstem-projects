@@ -33,12 +33,12 @@
  <div id="intro" class="section">
 
   <p>In this project, we introduce the sound functions and use them to play
-  notes through the speaker. <mark>more?</mark></p>
+  notes through the speaker.</p>
  </div>
  <div id="hw" class="section">
 
-  <p>The assembled CREATOR Kit has an attached speaker and audio cable,
-  and also a set of functions that allow you to play notes, music and sound
+  <p>The assembled CREATOR Kit has an attached speaker and audio cable, and
+  also a set of functions that allow you to play notes, music and sound
   effects.</p>
 
   <p>If your audio cable was removed, reattach it now:</p>
@@ -51,23 +51,22 @@
    </li>
    <li>
 
-    <p>Connect the other end of the Audio Cable to the Speaker Cable (the
-    cable attached to the Speaker Assembly). Note: It doesn't matter which way
-    the three-pronged Audio Cable is oriented.</p><img style=
-    "width: 80%;" alt="" src="img/Audio%20to%20speaker.jpg">
+    <p>Connect the other end of the Audio Cable to the Speaker Cable (the cable
+    attached to the Speaker Assembly). Note: It doesn't matter which way the
+    three-pronged Audio Cable is oriented.</p><img style="width: 80%;" alt=""
+    src="img/Audio%20to%20speaker.jpg">
    </li>
   </ol>
 
-  <p>With the speaker hardware connected, we can start making noise with
-  just a few lines of code...</p>
+  <p>With the speaker hardware connected, we can start making noise with just a
+  few lines of code...</p>
  </div>
  <div id="sw" class="section">
 
-  <p>In this project, we're just going to use the basic functionality of
-  the sound functions to play notes of different durations. Let's start with
-  this code:</p>
+  <p>In this project, we're just going to use the basic functionality of the
+  sound functions to play notes of different durations. Let's start with this
+  code:</p>
   <div class="code" data-firstline="1">
-   
    <textarea>
 from rstem.sound import Note
 note = Note('A')
@@ -76,34 +75,32 @@ note.wait()
 </textarea>
   </div>
 
-  <p>If you run this code, you'll hear a single tone play for one second.
-  Its a simply 4 line program that works by:</p>
+  <p>If you run this code, you'll hear a single tone play for one second. Its a
+  simply 4 line program that works by:</p>
   <ul>
    <li>
 
-    <p>In line 1, import the <code>Note</code> function</p>
+    <p>On line 1, we import the <code>Note()</code> function</p>
    </li>
    <li>
 
-    <p>In line 2, create an "A" <code>Note</code>, that we'll store in a
-    new variable named <code>note</code></p>
+    <p>On line 2, we create an "A" <code>Note</code>, that we'll store in a new
+    variable named <code>note</code></p>
    </li>
    <li>
 
-    <p>In line 3, start to <code>play()</code> the note (by default,
-    notes play for one second).</p>
+    <p>On line 3, we start to <code>play()</code> the note (by default, notes
+    play for one second)</p>
    </li>
    <li>
 
-    <p>In line 4, <code>wait()</code> for the note to finish
-    playing</p>
+    <p>On line 4, we <code>wait()</code> for the note to finish playing</p>
    </li>
   </ul>
 
-  <p>If you want to change the duration of the note, you can set duration
-  in the <code>play()</code> function, as you see below:</p>
+  <p>If you want to change the duration of the note, you can set duration in
+  the <code>play()</code> function, like this:</p>
   <div class="code" data-firstline="1">
-   
    <textarea>
 from rstem.sound import Note
 note = Note('A')
@@ -116,18 +113,17 @@ note.wait()
   <ol>
    <li>
 
-    <p>What happens if you don't <code>wait()</code> for the sound to
-    finish playing? Why?</p>
+    <p>What happens if you don't <code>wait()</code> for the sound to finish
+    playing? Why?</p>
    </li>
    <li>
 
-    <p>If you play two notes in a row for 1 second each, does it sound
-    the same as one note for 2 seconds?</p>
+    <p>If you play two of the same notes in a row for 1 second each, does it
+    sound the same as if you play the one note for 2 seconds?</p>
    </li>
    <li>
 
-    <p>Play a rhythm, like the "Shave and a haircut" door
-    knock.</p>
+    <p>Play a rhythm, like the "Shave and a haircut" door knock.</p>
    </li>
   </ol>
  </div>

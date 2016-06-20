@@ -28,57 +28,60 @@
  </script>
 </head>
 <body>
- <header>
-  <div id="title"></div>
-  <div id="description">
-   This is a minecraft project
-  </div>
-  <div id="hw_required">
-   Accelerometer Cell<br>
-   LED Matrix Cell
-  </div>
-  <div id="troubleshooting">
-   <a href="TROUBLESHOOTING.html">Having issues? Check out the Troubleshooting
-   Guide.</a>
-  </div>
- </header>
- <h2>Overview</h2>
+ <div class="hw" data-count="1" data-name="speaker"></div>
+ <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div id="intro" class="section">
 
- <p>In this project, we'll build on the previous bomb detonating project by
- making our explosion radius configurable from the controller (and display that
- radius on the LED Matrix). We also add sound to the explosion.</p>
- <h2>Hardware Setup</h2><img class="bb" src=
+  <p>In this project, we'll build on the previous bomb detonating project by
+  making our explosion radius configurable from the controller (and display
+  that radius on the LED Matrix). We also add sound to the explosion.</p>
+ </div>
+ <div id="hw" class="section"><img class="bb" src=
  "img/Minecraft_Matrix_updown_1button_bb.jpg" alt="">
- <h2>Writing Our Code</h2>
+ <mark>Hardware pic contains extra button</mark>
+ </div>
+ <div id="sw" class="section">
 
- <p>xxx</p>
- <h2>The Software</h2>
- <div class="code" data-firstline="1">
-  <textarea>
+  <p>This code is similar to the code from the previous project, except that we
+  added:</p>
+  <ul>
+   <li>
+
+    <p>A variable called <code>radius</code> that is increased or decreased
+    using two new up and down buttons that we've added to the hardware.</p>
+   </li>
+   <li>
+
+    <p>The LED Matrix display that displays the current radius.</p>
+   </li>
+  </ul>
+
+
+  <h2>Full Code</h2>
+  <p>Here is what the code for this project should look like at this point
+  (with new changes highlighted with arrows):</p>
+  <div class="code" data-firstline="1">
+   <textarea>
 from rstem.button import Button
 from rstem.mcpi import minecraft, control, block
 from rstem.mcpi.vec3 import Vec3
-from rstem.led_matrix import FrameBuffer, Text
-from rstem.sound import Sound
+*from rstem.led_matrix import FrameBuffer, Text
 import time
 
 fb = FrameBuffer()
 
-bomb_sound = Sound("fire.wav")
-
 control.show()
 mc = minecraft.Minecraft.create()
-bomb = Button(7)
-up = Button(18)
-down = Button(15)
+*bomb = Button(7)
+*up = Button(18)
+*down = Button(15)
 
 def detonate(mc, pos, radius=1):
     r_vector = Vec3(radius,radius,radius)
     mc.setBlocks(pos - r_vector, pos + r_vector, block.AIR)
-    bomb_sound.play()
 
 place_mode = True
-radius = 1
+*radius = 1
 while True:
     if place_mode:
         if bomb.presses():
@@ -91,20 +94,37 @@ while True:
 
     else:
         if bomb.presses():
-            detonate(mc, tnt_pos, radius)
+*            detonate(mc, tnt_pos, radius)
             place_mode = True
 
-    radius += up.presses()
-    radius -= down.presses()
-    radius = max(min(9, radius), 0)
+*    radius += up.presses()
+*    radius -= down.presses()
+*    radius = max(min(9, radius), 0)
 
-    fb.erase()
-    fb.draw(Text(str(radius)))
-    fb.show()
+*    fb.erase()
+*    fb.draw(Text(str(radius)))
+*    fb.show()
 
     time.sleep(0.01)
 
 </textarea>
+  </div>
+ </div>
+ <div id="challenge" class="section">
+  <ol>
+   <li> <p>
+    To the above code, add code to make this project a Minecraft controller
+  (using code from the <a
+  data-uid="mccontr3"></a> project).
+   </p> </li> <li> <p>
+   Can you add a bomb explosion sound when the detonation occurs?  Note:
+   "hit.wav" is a reasonable sound to use.
+   </p> </li> <li> <p>
+   Can you make the explosion occur near, but not exactly at, the TNT position?
+   Hint: use a random function.
+   </p>
+   </li>
+  </ol>
  </div>
 </body>
 </html>

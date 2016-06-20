@@ -33,12 +33,12 @@
  <div class="section" id="intro">
 
   <p>In this project, we continue using the sound functions to play a version
-  of Mary Had a Little Lamb.</p>
+  of "Mary Had a Little Lamb."</p>
  </div>
  <div class="section" id="hw">
 
-  <p>This project only requires the speaker &mdash; make sure it is hooked up as it
-  was in <a data-uid="mary"></a>.</p>
+  <p>This project only requires the speaker — make sure it is hooked up as it
+  was in <a data-uid="playingnotes"></a>.</p>
  </div>
  <div class="section" id="sw">
 
@@ -83,14 +83,15 @@ for note in notes:
 </textarea>
   </div>
 
-  <p>The code above is pretty simple &mdash; we create a list of notes, and then we
+  <p>The code above is pretty simple — we create a list of notes, and then we
   use a <code>for</code> loop to loop through them, play each in turn. Now, one
   issue with this code is that each note is of a fixed duration. But, in most
-  songs, you have notes of varying length (some longer and some shorter). We
-  can modify this code to specify the length of each note independently. We do
-  that changing the <code>Note()</code> into a list that contains both the note
-  and the note's durations. Then, in our <code>for</code> loop, we use both the
-  note and the duration in our <code>play()</code> function.</p>
+  songs, you have notes of varying length (some longer and some shorter).</p>
+
+  <p>We can modify this code to specify the length of each note independently.
+  We do that changing the <code>Note()</code> into a list that contains both
+  the note and the note's durations. Then, in our <code>for</code> loop, we use
+  both the note and the duration in our <code>play()</code> function.</p>
 
   <p>Here is what the code would look like:</p>
   <div class="code" data-firstline="1">
@@ -133,9 +134,9 @@ for note, duration in notes_and_durations:
   </div>
 
   <p>There's an interesting thing going on with the above
-  <code>notes_and_durations</code>. It is no longer just a list of Notes -
+  <code>notes_and_durations</code> list. It is no longer just a list of Notes —
   instead, it is now a lists of lists! Each "sublist" contains one Note and one
-  number &mdash; the length of time to play the note, in seconds.</p>
+  number — the length of time to play the note, in seconds.</p>
 
   <p>In the <code>for</code> loop, you'll see that there are two variables,
   <code>note</code> and <code>duration</code>, separated by a comma. When the

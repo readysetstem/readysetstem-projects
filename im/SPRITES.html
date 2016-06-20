@@ -34,12 +34,12 @@
   <h1>Sprites</h1>
 
   <p>Sprites are two-dimensional images that you can draw on a framebuffer. In
-  computer graphics, the term "sprite" is often used in games where there are
-  fixed images, like a spaceship or character that is moved around the screen
-  while the games is played. The Ready Set STEM API provides a
-  <code>Sprite()</code> function to create sprites that can be then be placed
-  at different locations on the screen, as well as being flipped, cropped, and
-  rotated.</p>
+  computer graphics, the term "sprite" is often used to refer to fixed images,
+  like a spaceship or character that is moved around the screen while the games
+  is played. The Ready Set STEM API provides a <code>Sprite()</code> function
+  to create sprites that can be then be placed at different locations on the
+  screen — we also provide functions to allow you to flip, crop and rotate your
+  sprite on the display.</p>
 
   <p>To create a sprite, you can use the the <code>Sprite()</code> function
   with a string representing the sprite:</p>
@@ -47,9 +47,9 @@
 Sprite(<i>string_sprite</i>)
 </pre>
 
-  <p>where <code><i>string_sprite</i></code> is a multiple line string. Each
-  character in the string represents the color of one point of the sprite. Each
-  row of the sprite much have the same number of points.</p>
+  <p>The <code><i>string_sprite</i></code> is a multiple line string, with each
+  character in the string representing the color of one point of the sprite.
+  Each row of the sprite much have the same number of points.</p>
   <div class="info">
    <div>
     Multiline Strings
@@ -57,7 +57,8 @@ Sprite(<i>string_sprite</i>)
    <div>
 
     <p>Sometimes, you'll want to create a string that has multiple lines. For
-    example, to <code>print()</code> a your grocery list, you might do:</p>
+    example, to <code>print()</code> a your grocery list, you might do the
+    following:</p>
     <pre>
 print("Cheeze Whiz")
 print("Snickers")
@@ -76,16 +77,18 @@ Mangoes""")
 </pre>
 
     <p>Just like single-line strings, multiline strings can be enclosed with
-    double quotes or single-quotes, but you'll need 3 of them.</p>
+    double quotes or single-quotes, but remember, you'll need 3 of them.</p>
    </div>
   </div>
 
-  <p>The sprite colors can be 0 through 15, as discussed in <a data-uid=
-  "fb"></a>. To represent the colors in the <code>string_sprite</code>, we need
-  to use only one digit for each character. So, we use the digits 0 through 9
-  followed by A through F. Plus, sprites add a new color: transparent. To use
-  it, you can put a dash ('-') inn the sprite string. The full list of colors
-  is:</p>
+  <p>The sprite colors range from 0 through 15, as discussed previously in
+  <a data-uid="fb"></a>. To represent the colors in the
+  <code>string_sprite</code>, we need to use only one digit for each character.
+  So, we use the digits 0 through 9 followed by A through F (where A=10, B=11,
+  and so forth). Plus, sprites add a new color: transparent. To use it, you can
+  put a dash ('-') in the sprite string.</p>
+
+  <p>The full list of colors for sprites is:</p>
   <style>
     tbody.thistable td { 
         padding:2px !important; 

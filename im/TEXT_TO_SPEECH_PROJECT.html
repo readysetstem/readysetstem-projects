@@ -39,14 +39,14 @@
  <div class="section" id="hw">
 
   <p>Your breadboard should still have the circuit we wired in the <a data-uid=
-  "manybuttons"></a> project. As a reminder, here is what it should look like:
+  "simplepiano"></a> project. As a reminder, here is what it should look like:
   <img class="bb" src="img/Many_Buttons_bb.jpg" alt=""></p>
  </div>
  <div class="section" id="sw">
 
-  <p>For our sound machine, we can start with the code from the last piano
-  project <a data-uid="betterpiano"></a>, except just replace
-  <code>Note()</code> with <code>Speech()</code>:</p>
+  <p>For our sound machine, we will start with the code from the previous piano
+  project <a data-uid="betterpiano"></a>, but we'll replace <code>Note()</code>
+  with <code>Speech()</code>:</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.button import Button
@@ -71,12 +71,14 @@ while True:
 </textarea>
   </div>
 
-  <p>And that works. But, unfortunately, you have to hold down the button for
-  the entire time that the speech plays. It would be nice if the speech would
-  start playing when the button was pressed, and just play until it finished,
-  regardless if we held down the button or not. We can actually simplify our
-  code to do this &mdash; we only need to remove the code that stops the sound from
-  playing when the button is released:</p>
+  <p>Give it a try!</p>
+
+  <p>While that works, you probably noticed that unfortunately you have to hold
+  down the button for the entire time that the speech plays. It would be nice
+  if the speech would start playing when the button was pressed, and just play
+  until it finished, regardless if we held down the button or not. We can
+  actually simplify our code to do this — we only need to remove the code that
+  stops the sound from playing when the button is released:</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.button import Button
@@ -125,8 +127,8 @@ print(randrange(4))
     </div>
 
     <p>uses the function <code>randrange()</code> to print a random number
-    between 0 and 3. Can you use <code>randrange()</code> to speak a random
-    joke when the button is pressed?</p>
+    between 0 and 3. Can you modify your code to use <code>randrange()</code>
+    to speak a random joke when the button is pressed?</p>
    </li>
   </ol>
  </div>

@@ -28,57 +28,29 @@
  </script>
 </head>
 <body>
- <header>
-  <div id="title"></div>
-  <div id="description">
-   This is a minecraft project
-  </div>
-  <div id="hw_required">
-   Accelerometer Cell<br>
-   LED Matrix Cell
-  </div>
-  <div id="troubleshooting">
-   <a href="TROUBLESHOOTING.html">Having issues? Check out the Troubleshooting
-   Guide.</a>
-  </div>
- </header>
- <h2>Overview</h2>
+ <div class="hw" data-count="1" data-name="speaker"></div>
+ <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div id="intro" class="section">
 
- <p>In the last project, we learned how to read the list of previous hit events
- and then to cycle through them and take some action (printing out the
- coordinates of the block that was hit). In this project, we're going to
- continue with the same idea, but instead of just printing out information
- about the block that was hit, we're going to create an effect on that
- block.</p>
- <h2>Hardware Setup</h2>
-
- <p>The hardware configuration for this project is exactly the same as the
- previous project &mdash; a single button mapped to GPIO7: <img class="bb" src=
- "img/Minecraft_1button_bb.jpg" alt=""></p>
- <h2>Writing Our Code</h2>
-
- <p>The code for this project is going to look identical to the code in our
- last project, with one exception. In our last project, we used the following
- to print out the coordinates of each block that we hit:</p>
- <div class="code" data-firstline="0">
-  <textarea>
-print("The X, Y, Z coordinates of the block you hit is:", blockHit.pos)
-</textarea>
+  <p>In the last project, we learned how to read the list of previous hit
+  events and then to cycle through them and take some action (printing out the
+  coordinates of the block that was hit). In this project, we're going to
+  continue with the same idea, but instead of just printing out information
+  about the block that was hit, we're going to create an effect on that
+  block.</p>
  </div>
+ <div id="hw" class="section">
 
- <p>In this project, we're going to use the <code>mc.setBlock()</code> function
- to actually modify the block we hit, instead of just printing information
- about it. Like this:</p>
- <div class="code" data-firstline="0">
-  <textarea>
-mc.setBlock(hit.pos, block.AIR)
-</textarea>
+  <p>The hardware configuration for this project is exactly the same as the
+  previous project — a single button mapped to GPIO24: <img class="bb" src=
+  "img/Minecraft_1button_bb.jpg" alt=""></p>
  </div>
+ <div id="sw" class="section">
 
- <p>In the example above, the block gets turned into Air, making the block
- disappear. The full code is as follows:</p>
- <div class="code" data-firstline="1">
-  <textarea>
+  <p>The code for this project is going to look identical to the code in our
+  last project, with one exception, show highlighted below:
+  <div class="code" data-firstline="1">
+   <textarea>
 from rstem.button import Button
 from rstem.mcpi import minecraft, control, block
 import time
@@ -87,7 +59,7 @@ control.show()
 
 mc = minecraft.Minecraft.create()
 
-button = Button(7)
+button = Button(24)
 
 while True:
     if button.presses():
@@ -96,18 +68,22 @@ while True:
     hits = mc.events.pollBlockHits()
 
     for hit in hits:
-        mc.setBlock(hit.pos, block.AIR)
+*        mc.setBlock(hit.pos, block.AIR)
 
     time.sleep(0.01)
 </textarea>
- </div>The <code>mc.setBlock()</code> function takes two arguments:
- <ol>
-  <li>The location of the block that was hit. This was gathered by the
-  <code>mc.events.pollBlockHits()</code> function; and</li>
-  <li>The type of block that should be created in this location. In this case,
-  we're create a block type of "AIR" which simply removes the block
-  entirely.</li>
- </ol>
- <h2>Additional Challenges</h2>
+</div>
+  <p>In the example above, instead of just printing out where a block was hit, we turn the block into Air, making the block
+  disappear
+  <p> The <code>mc.setBlock()</code> function takes two arguments:
+  <ol>
+   <li><p>The location of the block that was hit. This was gathered by the
+   <code>mc.events.pollBlockHits()</code> function; and</li>
+   <li><p>The type of block that should be created in this location. In this case,
+   we're create a block type of "AIR" which simply removes the block
+   entirely.</li>
+  <p>You've now created a shovel, which isn't really any different than smashing blocks.  However, our shovel only takes one hit to destroy a block.  In the next project
+  </ol>
+ </div>
 </body>
 </html>

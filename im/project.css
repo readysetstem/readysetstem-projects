@@ -496,7 +496,7 @@ div.image_text div img {
  */
 img {
     display: block;
-    width: calc(100% - 40px); /* must include left/right padding */
+    width: -webkit-calc(100% - 40px); /* must include left/right padding */
     padding: 20px;
     border-radius: 10px;
     background: white;
@@ -514,7 +514,7 @@ img.bb {
     margin: auto;
     margin-top: 0.25in;
     margin-bottom: 0.25in;
-    width: calc(100% - 0.75in);
+    width: -webkit-calc(100% - 0.75in);
     max-width: 800px;
 }
 img.schematic {
@@ -522,7 +522,7 @@ img.schematic {
     margin: auto;
     margin-top: 0.25in;
     margin-bottom: 0.25in;
-    width: calc(100% - 0.75in);
+    width: -webkit-calc(100% - 0.75in);
     max-width: 600px;
 }
 

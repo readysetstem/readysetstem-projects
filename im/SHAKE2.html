@@ -28,82 +28,131 @@
  </script>
 </head>
 <body>
- <div class="hw" data-count="1" data-name="led_matrix"></div>
- <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
- <div class="hw" data-count="1" data-name="button"></div>
- <div class="section" id="intro">
+ <div class="hw" data-count="1" data-name="accelerometer"></div>
+ <div class="hw" data-count="1" data-name="speaker"></div>
+ <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div id="intro" class="section">
 
-  <p>In this project, we will draw some text on the screen, and scroll the text
-  across.</p>
+  <p>In this project, we'll add sounds to our accelerometer shake game. With
+  sounds, specifically text-to-speech like we used in the <a data-uid=
+  "speechp"></a> project, we can command the user to do different actions
+  through the game, and let them know if they've succeeded.</p>
  </div>
- <div class="section" id="hw">
+ <div id="hw" class="section">
 
-  <p>Your breadboard should still have the circuit we wired in the <a data-uid=
-  "ledp"></a> project. In addition, we've added a button that we'll use to
-  control what we display on the LED matrix. As a reminder, here is what it
-  should look like: <img class="bb" src="img/LED_Matrix_bb.jpg" alt=""></p>
+  <p>You'll need to wire up the Accelerometer as done in previous projects.
+  Here is what your breadboard should look like once the accelerometer is
+  properly wired:</p>
+  <div style="text-align: center;"><img class="bb" src="img/Accel_bb.jpg" alt=
+  ""></div>
+
+  <p>In addition, you'll need the speaker hooked up — refer back to the
+  <a data-uid="playingnotes"></a> project if you need help.</p>
  </div>
- <div class="section" id="sw">
-  <div class="code" data-firstline="0">
+ <div id="sw" class="section">
+
+  <p>Here is what the code for this project should look like at this point
+  (with new changes highlighted with arrows) — it should run similarly to the
+  previous project, but with sound added:</p>
+  <div class="code" data-firstline="1">
    <textarea>
-from rstem.led_matrix import FrameBuffer
-from rstem.led_matrix import Text
+from rstem.accel import Accel
+*from rstem.sound import Speech
 import time
 
-# Initialize the game environment
-fb = FrameBuffer()
-intro = Text("Press to play!")
-you_win = Text("You win!")
-button = Button(14)
-text = you_win
-x_position = 8
+*ready_tts = Speech("Ready to play?")
+*
+*tilt_left_tts = Speech("Tilt left!")
+*no_action_tts = Speech("No action!")
+*
+*detect_tts = Speech("I detected:")
+*wrong_tts = Speech("Oops!")
+*correct_tts = Speech("Correct!")
+*try_again_tts = Speech("Try again another time!")
+*
+*actions_tts = [no_action_tts, tilt_left_tts]
 
+accel = Accel()
+
+NOACTION = 0
+LEFT = 1
+RIGHT = 2
+UP = 3
+SHAKE = 4
+
+# Ready to play?
+SCORE_NEEDED = 10
+period = 300
+*ready_tts.play().wait()
 while True:
-    # Get user input
-    if button.presses():
-        text = you_win
-        x_position = 8
+    request = LEFT
+    action = NOACTION
+*    actions_tts[request].play().wait()
 
-    # Update the game world
-    x_position = x_position - 1
-    if position &lt; -text.width:
-        x_position = 8
+    tilt_left_score = 0
+    for i in range(period):
+        x, y, z = accel.forces()
+        if x &gt; 0.75:
+            tilt_left_score += 1
 
-    # Draw graphics on the screen
-    fb.draw(text, (x_position, 0))
+        if tilt_left_score &gt; SCORE_NEEDED:
+            action = LEFT
+            break
 
-    # Wait for some period of time
-    time.sleep(0.1)
+        time.sleep(0.01)
+
+    if request == action:
+*        # Correct action performed!
+*        correct_tts.play().wait()
+    else:
+*        # Timeout - let user know what we detected
+*        wrong_tts.play().wait()
+*        detect_tts.play().wait()
+*        actions_tts[action].play().wait()
+        break
+
+    time.sleep(0.5)
+
+*try_again_tts.play().wait()
 </textarea>
   </div>
 
-  <p>Give it a try. You should now see the intro text scroll across the screen.
-  Press the button, and the text should switch.</p>
- </div>
- <div id="challenge" class="section">
-  <ol>
+  <p>Now, let's take a look at what our code is doing:</p>
+  <ul>
    <li>
 
-    <p>Can you reverse the text? It will now only be readable with a
-    mirror?</p>
+    <p>In Lines 5 through 15, we create the <code>Speech()</code> that we'll
+    play throughout the program. We'll also set up a list,
+    <code>actions_tts</code>, that is the speech for each action that a user
+    can take. The list is in the same order as the variables
+    <code>NOACTION</code>, <code>LEFT</code>, etc, which is important. We'll
+    use this list to let the user know which action we've detected.</p>
    </li>
    <li>
 
-    <p>The first time the button is pressed, the text switches. Can you have
-    another button press make the text switch back?</p>
+    <p>In Line 15, we let the user know the game is starting.</p>
    </li>
    <li>
 
-    <p>Can you make a second button press cause the text to scroll faster, with
-    each successive press?</p>
+    <p>In Line 32, we request the user to perform an specific tilt. Of course,
+    in this version of the game, the tilt is still always just LEFT! (Don't
+    worry, we'll change it next project).</p>
    </li>
    <li>
 
-    <p>In our project, the vertical position doesn't change. Change that so the
-    text bounces &mdash; as it moves across, alternate the y position up and down one
-    point.</p>
+    <p>In Lines 47 through 53, instead of just printing out if the right or
+    wrong action was performed, we speak to the user. And, it was wrong, we tell
+    them the action that we think they did.</p>
    </li>
-  </ol>
+   <li>
+
+    <p>In Line 58, we let the user know the game has ended.</p>
+   </li>
+  </ul>
+
+  <p>Give it a try. The game is still exceptionally easy — you are only every
+  requested to tilt left, so it's hard to fail. We'll make this into a real
+  game in the next project.</p>
  </div>
 </body>
 </html>

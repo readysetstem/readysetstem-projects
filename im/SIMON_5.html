@@ -54,10 +54,9 @@
   <img class="bb" src="img/simon-4but-4led_bb.jpg" alt=""></p>
  </div>
  <div class="section" id="sw">
-
   <h2 class="step">Add Initialization Code</h2>
 
-  <p>The first thing we're going to need to do is initialize the buttons &mdash;
+  <p>The first thing we're going to need to do is initialize the buttons —
   we'll import the function we need and create the button list just like we did
   in <a data-uid="manybuttons"></a>:</p>
   <div class="code" data-firstline="0">
@@ -112,11 +111,10 @@ for i in play_order:
    </div>
    <div>
 
-    <p>As discussed in the
-  <a data-uid="buttonfuncs"></a> project,
-    the <code>wait_many()</code> function takes a list of buttons as a parameter, will
-    wait for any of them to be pressed and will then return the index into the
-    button list of the button that was pressed.</p>
+    <p>As discussed in the <a data-uid="buttonfuncs"></a> project, the
+    <code>wait_many()</code> function takes a list of buttons as a parameter,
+    will wait for any of them to be pressed and will then return the index into
+    the button list of the button that was pressed.</p>
    </div>
   </div>
 
@@ -129,7 +127,7 @@ for i in play_order:
   </div>
 
   <p>If the button entered by the player was incorrect, we set a variable
-  called <code>failed</code> to True, and then we <code>break</code> &mdash; the
+  called <code>failed</code> to True, and then we <code>break</code> — the
   <code>break</code> command will immediately exit the <code>for</code>
   loop.</p>
 
@@ -147,7 +145,7 @@ lights[button_pressed].off()
   </div>
 
   <p>In the code above, we turn the LED on, wait until the button is released,
-  and turn it back off. But there's an extra line in there as well &mdash; we sleep
+  and turn it back off. But there's an extra line in there as well — we sleep
   for a very short period. This extends the time the LED is on to give a better
   appearance when a player presses and releases a button very quickly.</p>
   <h2 class="step">Update the <code>while</code> Loop</h2>
@@ -173,12 +171,12 @@ while not failed:
   </div>
   <h2 class="step">Put It All Together</h2>
 
-  <p>Here is what the code for this project should look like at this point (with
-  new changes highlighted with arrows) &mdash;
-  when you run it, you will see a single LED flash, and you can press the
-  button associated with that LED; then the pattern will repeat, adding a new
-  LED light and you can enter the 2-light sequence; the sequence will continue
-  to add a new LED for as long as you correctly enter the sequence:</p>
+  <p>Here is what the code for this project should look like at this point
+  (with new changes highlighted with arrows) — when you run it, you will see a
+  single LED flash, and you can press the button associated with that LED; then
+  the pattern will repeat, adding a new LED light and you can enter the 2-light
+  sequence; the sequence will continue to add a new LED for as long as you
+  correctly enter the sequence:</p>
   <div class="code" data-firstline="1">
    <textarea>
 # ##################################
@@ -240,30 +238,26 @@ play_order = []
 *        time.sleep(1.0)
 </textarea>
   </div>
- <p>Here, we've made the following code changes:
-  <ul>
-  <li><p>
-  In Lines 5 and 10: 
-  </p></li> <li><p>
-  In Lines 18 and 24: 
-  </p></li> <li><p>
-  In Lines 36 through 57: 
-  </p></li> </ul>
  </div>
  <div class="section" id="challenge">
   <ol>
-   <li> <p>
-   The user is given 3 seconds of time to press each button in the sequence.
-   Can you change this to 2 seconds?
-   </p></li> <li> <p>
-   Can you make the game even harder, by making the time the user has to press
-   a button decrease by 5% each time a new LED is added to the
-   <code>play_order</code>?
-   </p></li> <li> <p>
-   If the user hits the wrong button, give them another chance: flash the LED
-   (the wrong one) with 3 quick flashes.  Then give them another 3 seconds to
-   try again to hit the correct button.
-   </p></li>
+   <li>
+
+    <p>The user is given 3 seconds of time to press each button in the
+    sequence. Can you change this to 2 seconds?</p>
+   </li>
+   <li>
+
+    <p>Can you make the game even harder, by making the time the user has to
+    press a button decrease by 5% each time a new LED is added to the
+    <code>play_order</code>?</p>
+   </li>
+   <li>
+
+    <p>If the user hits the wrong button, give them another chance: flash the
+    LED (the wrong one) with 3 quick flashes. Then give them another 3 seconds
+    to try again to hit the correct button.</p>
+   </li>
   </ol>
  </div>
 </body>

@@ -32,38 +32,42 @@
   <h1>IF Statements</h1>
 
   <p>Much of our lives are spent asking questions in order to figure out what
-  we should be saying or doing at any given time. For example, we may ask our
-  friend, "Is it time for lunch?" If the answer is "Yes," we'll eat lunch… if
-  the answer is "No," we'll probably do something else.</p>
+  we should be doing next. For example, we may ask a friend, "Is it time for
+  lunch?" If his answer is "Yes," the next things we'll likely be doing is
+  eating lunch. If his answer is "No," we'll be doing something else next -- in
+  fact, oftentimes, we'll just continue doing whatever it was we were doing
+  before we asked the question!</p>
 
-  <p>As another example, you may ask a friend, "What would you like to do
-  today?" If he says, "I'd like to go to a movie," perhaps you'll spend some
-  time figuring out what movie to see. But, if he says, "I'd like to play in
-  the park," you probably won't be eating popcorn in a dark theater that
-  day.</p>
+  <p>As another example, you might ask a friend, "Do you want to see a movie
+  today?" If he says, "Sure," you'll probably next spend some time figuring out
+  what movie to see. But, if he says, "Nah, I'd rather go play in the park,"
+  the rest of your day will probably go much differently.</p>
 
-  <p>Programming is very similar &mdash; we often ask a lot of questions in our
-  software to determine what to do next. For example, when you push a button on
-  your television remote control, it sends a signal to your TV telling the TV
-  to change the station or adjust the volume. But, what you probably don't
-  realize is that this works because several times per second, the software in
-  your TV is asking, "Did I receive a signal from the remote control?"</p>
+  <p>Programming is very similar — we often ask a lot of questions in our
+  software to determine what we should do next. For example, when you push a
+  button on your television remote control, it sends a signal to your TV
+  telling the TV to change the station or adjust the volume. But, what you
+  probably don't realize is that this works because several times per second,
+  the software in your TV is asking, "Did someone just press a button on the
+  remove control?"</p>
 
   <p>Most of the time the answer is "No," so the TV software moves onto
-  something else for short period of time. But, if the answer is "Yes" (in
-  other words, if you were pressing a button on the remote), the TV will then
-  take action to determine what button was pressed and then carry out the
-  request.</p>
+  something else for short period of time (likely whatever else it was already
+  doing). But, if the answer is "Yes" (in other words, if you were pressing a
+  button on the remote), the TV will then take action to determine what button
+  was pressed and then carry out the request.</p>
 
   <p>The most basic way for software to ask and respond to a question is by
   using what is known as an <code>if</code> statement. An <code>if</code>
-  statement asks a <code>True</code> or <code>False</code> question, and based on the answer, takes
-  appropriate action.</p>
+  statement asks a <code>True</code> or <code>False</code> question, and based
+  on the answer, takes the appropriate action.</p>
 
-  <p>Let's say we have a circuit that contains a thermometer and sends the
-  current temperature back to computer. And let's pretend that the current
-  temperature is 95 degrees and that value is stored in a variable named
-  <code>temperature</code>:</p>
+  <p>As another example, let's say we have a circuit that contains a
+  thermometer and sends the current temperature back to computer every once in
+  a while. Next, let's assume that we use a variable named
+  <code>temperature</code> to store the data the thermometer sends us. Finally,
+  let's pretend that the most recent temperature sent to us by the thermometer
+  is 95 degrees. This is represented by our variable like this:</p>
   <div class="code" data-firstline="0">
    <textarea>
 temperature = 95
@@ -79,7 +83,12 @@ if temperature &gt; 90:
 </textarea>
   </div>
 
-  <p>Type those three lines into your code window and see what happens:</p>
+  <p><strong>Note:</strong> The <code>&gt;</code> sign is called an
+  <i>operator</i>, and it means "Greater Than" — we'll talk about how this, and
+  many other operators, work later in this tutorial.</p>
+
+  <p>Now, type these three lines into your code window, run the program and see
+  what happens:</p>
   <div class="code" data-firstline="1">
    <textarea>
 temperature = 95
@@ -92,10 +101,12 @@ if temperature &gt; 90:
   <p>If you run the program, you'll see that the computer prints, "Wow, it's
   hot out there!" in your output window. In this case, the computer evaluated
   the statement (<code>temperature &gt; 90</code>), determined that the
-  statement was <code>True</code> (the temperature is 95, which is over 90) and then took
-  the specified action based on the fact that the statement was <code>True</code>.</p>
+  statement was <code>True</code> (the temperature is 95, which is over 90) and
+  then took the specified action based on the fact that the statement was
+  <code>True</code>.</p>
 
-  <p>What if the statement were <code>False</code>? For example, like this:</p>
+  <p>But, what if the code determined that the statement were
+  <code>False</code>? For example, give this piece of code a try:</p>
   <div class="code" data-firstline="1">
    <textarea>
 temperature = 95
@@ -107,22 +118,40 @@ if temperature &lt; 90:
 
   <p>In this case, the temperature is still defined as 95 degrees, but this
   time, we're asking if the temperature is LESS THAN 90. The answer to that
-  question is obviously <code>False</code> (the temperature is not less than 90). And
-  because the statement is <code>False</code>, the action following the <code>if</code>
-  statement is not executed, and nothing is printed to the screen.</p>
+  question is <code>False</code> (the temperature is not less than 90). And
+  because the statement is <code>False</code>, the action following the
+  <code>if</code> statement is not executed, and nothing is printed to the
+  screen.</p>
 
-  <p>We typically call the evaluation a "conditional statement" and we
-  typically call the action commands after the conditional statement the "code
-  block." We'll be using those terms from here on out.</p>
+  <p>We typically call the evaluation line a "conditional statement," call the
+  comparison the "condition" and call the action commands after the conditional
+  statement the "code block."</p>
+
+  <p>So, in this case, the following is the conditional statement:</p>
+  <pre>
+  if temperature &lt; 90:
+  </pre>
+
+  <p>The following is the condition:</p>
+  <pre>
+  temperature &lt; 90
+  </pre>
+
+  <p>And this is the code block:</p>
+  <pre>
+  print("Okay, it's not too hot out there.")
+  </pre>
+
+  <p>We'll be using those terms from here on out.</p>
 
   <p>Now, let's discuss some additional features of conditional statements and
   code blocks…</p>
   <h2>Comparison Operators</h2>
 
-  <p>In the above examples, we used the symbols &gt; and &lt; in our condition
-  statements. We used &gt; to ask the question, "Is the first value greater
-  than the second value?" And, we used the symbol &lt; to ask the question "Is
-  the first value less than the second value?"</p>
+  <p>In the above examples, we used the symbols &gt; and &lt; in our
+  conditional statements. We used &gt; to ask the question, "Is the first value
+  greater than the second value?" And, we used the symbol &lt; to ask the
+  question "Is the first value less than the second value?"</p>
 
   <p>These are just two of several symbols (we call them "operators") that can
   be used to compare values in a conditional statement. Here is the list of the
@@ -225,8 +254,8 @@ my_age = 43
   programming. The = sign tells the computer that we're assigning the value of
   one thing (whatever is on the right side of the = sign) to another thing (the
   variable on the left side of the = sign). But, the == asks the computer
-  whether two things are equal, and returns a <code>True</code> (if they are equal) or a
-  <code>False</code> (if they are not equal).</p>
+  whether two things are equal, and returns a <code>True</code> (if they are
+  equal) or a <code>False</code> (if they are not equal).</p>
  </div>
  <div class="section">
   <h1>Complex Conditions</h1>
@@ -261,36 +290,32 @@ if temperature &lt; 90:
 
   <p>In this example, we have two print statements in our code block. Notice
   that both commands are indented the exact same amount – this is how the
-  computer knows that all the lines are part of the same code block. It's very
-  important that you use the same number of spaces or indents for every line of
-  the code block, or your code will not function as you expect (and may not
-  function at all).</p>
+  computer knows that all the lines are part of the same code block.
+  <strong>It's very important that you use the same number of spaces or indents
+  for every line of the code block</strong>, or your code will not function as
+  you expect (and may not function at all).</p>
   <h2>Compound Conditional Statements</h2>
 
   <p>In some situations, you may find that you need to have more complex
   conditional statements in your code than just a single comparison. When that
-  need arises, we can use compound conditional statements, which is really just
-  a fancy way of saying that we can chain multiple comparisons together into a
-  single conditional statement.</p>
+  need arises, we can use <i>compound</i> conditional statements, which is
+  really just a fancy way of saying that we can put multiple comparisons
+  together into a single conditional statement.</p>
 
   <p>For example, in the previous section, we used the condition:</p>
-  <div class="code" data-firstline="0">
-   <textarea>
-temperature &lt; 90
-</textarea>
-  </div>
+  <pre>
+  temperature &lt; 90
+  </pre>
 
   <p>to determine if it was less than 90 degrees outside.</p>
 
   <p>But, what if we didn't just want to know if the temperature was less than
   90 degrees – we wanted to know whether the temperature was between 80 and 90
   degrees? That would actually require two different conditions:</p>
-  <div class="code" data-firstline="0">
-   <textarea>
-temperature &gt; 80
-temperature &lt; 90
-</textarea>
-  </div>
+  <pre>
+  temperature &gt; 80
+  temperature &lt; 90
+  </pre>
 
   <p>We can create a compound conditional statement that will check both of
   those comparisons before taking any action, as follows:</p>
@@ -302,8 +327,8 @@ if (temperature &gt; 80) and (temperature &lt; 90):
   </div>
 
   <p>The <code>and</code> keyword tells the computer that both statements must
-  be <code>True</code> in order for the entire compound conditional statement to be
-  <code>True</code>.</p>
+  be <code>True</code> in order for the entire compound conditional statement
+  to be <code>True</code>.</p>
 
   <p>What if we only cared about the situation where the temperature was less
   than 80 degrees or more than 90 degrees? We can create a compound conditional
@@ -316,16 +341,16 @@ if (temperature &lt; 80) or (temperature &gt; 90):
   </div>
 
   <p>In this case, the <code>or</code> keyword tells the computer that either
-  one or both of the statements must be <code>True</code> in order for the entire compound
-  conditional statement to be <code>True</code>.</p>
+  one or both of the statements must be <code>True</code> in order for the
+  entire compound conditional statement to be <code>True</code>.</p>
 
   <p>Any number or combination of <code>and</code> and <code>or</code> keywords
   can be used to combine conditional statements.</p>
 
-  <p>Finally, the <code>not</code> keyword works just like <i>not</i> in English &mdash; it tests
-  if the opposite of a condition is <code>True</code>.  For example, the following if statements
-      are written differently, but test the same exact thing:
-
+  <p>Finally, the <code>not</code> keyword works just like <i>not</i> in
+  English — it tests if the opposite of a condition is <code>True</code>. For
+  example, the following if statements are written differently, but test the
+  same exact thing:</p>
   <div class="code" data-firstline="0">
    <textarea>
 if (temperature != 80):
@@ -334,16 +359,15 @@ if (not temperature == 80):
     print("It is still not exactly 80 degrees.")
 </textarea>
   </div>
-
  </div>
  <div class="section">
   <h1>Adding ELSE</h1>
   <h2>IF/ELSE Statements</h2>
 
   <p>In our previous examples, we evaluated a conditional, and took action if
-  the result of the evaluation was <code>True</code>. But, in many cases, we also want to
-  take action when the result of the evaluation is <code>False</code>, in addition to when
-  it's <code>True</code>.</p>
+  the result of the evaluation was <code>True</code>. But, in many cases, we
+  also want to take action when the result of the evaluation is
+  <code>False</code>, in addition to when it's <code>True</code>.</p>
 
   <p>For example, perhaps we don't just want to let the user know if the
   temperature is over 90 degrees, but we also want to let the user know if the
@@ -351,15 +375,15 @@ if (not temperature == 80):
   <div class="code" data-firstline="0">
    <textarea>
 if temperature &gt; 90:
-    print("Over 90 degrees &mdash; make sure to wear sunscreen.")
+    print("Over 90 degrees — make sure to wear sunscreen.")
 else:
     print("Under 90 degrees today – keep warm!")
 </textarea>
   </div>
 
   <p>We use the else: keyword to indicate what action should be taken if the
-  conditional statement evaluates to <code>False</code>. We are basically telling the
-  computer:</p>
+  conditional statement evaluates to <code>False</code>. We are basically
+  telling the computer:</p>
 
   <p><i>If the conditional statement is true, do this. Otherwise
   (<code>else:</code>), do that.</i></p>

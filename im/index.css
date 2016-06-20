@@ -70,6 +70,44 @@ tr.content_row p {
 }
 
 /*
+ * First project arrow
+ */
+div#firstproject {
+    position: absolute;
+    font-size: 500%;
+    line-height: 0px;
+    left: -90px;
+    top: 15px;
+    color: hsl(210, 64%, 45%); /* Header blue */
+    z-index: 999;
+}
+@-webkit-keyframes blink {
+    0% {
+        opacity:1;
+        font-size: 500%;
+    }
+    50% {
+        opacity:0.5;
+        font-size: 450%;
+    }
+    100% {
+        opacity:1;
+        font-size: 500%;
+    }
+}
+div#firstproject {
+    -webkit-animation-direction: normal;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: blink;
+    -webkit-animation-timing-function: ease-in-out;
+}
+/* Hide arrow with orange if it has been visited */
+a:visited div#firstproject {
+    color: hsl(26, 87%, 51%); /* Header orange */
+}
+
+/*
  * Index concept/project link boxes
  */
 td.concept, td.project {

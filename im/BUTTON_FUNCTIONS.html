@@ -29,10 +29,10 @@
 </head>
 <body>
  <div class="section">
-  <h1>Pressing your buttons</h1>
+  <h1>Pressing Your Buttons</h1>
 
   <p>The <code>Button()</code> function returns a button object, and with that
-  object you have access to a full set of button functions. To use the
+  object you have access to a wide array of button functions. To use the
   <code>Button()</code> function, as we have done throughout the guide, you
   simply call:</p>
   <pre>
@@ -41,7 +41,8 @@ Button(<i>pin</i>)
 
   <p>where <code><i>pin</i></code> is the number of the GPIO pin that is
   labeled on the Lid Connector Board. The simplest thing we can do with a
-  button, as we've done previously, is to see if the button is pressed:</p>
+  button, as we've done previously, is to see if the button is being
+  pressed:</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.button import Button
@@ -51,24 +52,29 @@ print(my_button.is_pressed())
   </div>
 
   <p>The above checks (and prints out) if the button attached to GPIO14 is
-  pressed.</p>
+  <i>currently</i> being pressed.</p>
 
   <p>The <code>is_pressed()</code> function is simple and easy to use, but has
-  a couple issues. One issue is that if our code isn't checking very frequently
-  if the button is pressed, it can miss a press. For example, say we write some
-  code that checks once a second to see if the button is pressed. If a user
-  pushes and releases the button quickly (say in a quarter of a second), it is
-  likely the that the code misses the button press — it might check before and
-  after the button is pressed, but not check during the press.</p>
+  a couple issues. One issue is that it only checks to see if the button is
+  being pressed at the time it is checked, so if our code isn't checking very
+  frequently for a button press, the press can be missed.</p>
 
-  <p>The Button object fixes this problem with a couple new functions. The
+  <p>For example, say we write some code that checks once a second to see if
+  the button is pressed. If a user pushes and releases the button quickly (for
+  example, in a quarter of a second), it is likely the that the code would miss
+  the button press — it might check for a press before the button is pressed
+  and then check again after the button was pressed, but if it doesn't check
+  during the press, the code will not know the press happened.</p>
+
+  <p>The Button object can fix this problem with a couple new functions. The
   function <code>presses()</code> returns the number of times the button has
-  been pressed since the last time the function was called. Similarly, the
-  function <code>releases()</code> returns the number of times the button has
-  been released since the last time the function was called. For example, if
-  you run the following code, and push the button several time while it is
-  running (during the <code>sleep()</code>, the output will be the number of
-  presses:</p>
+  been pressed since the last time the function was called.</p>
+
+  <p>Similarly, the function <code>releases()</code> returns the number of
+  times the button has been released since the last time the function was
+  called. For example, if you run the following code, and push the button
+  several time while it is running (during the <code>sleep()</code>, the output
+  will be the number of presses:</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.button import Button
@@ -80,7 +86,7 @@ print(my_button.presses())
   </div>
  </div>
  <div class="section">
-  <h1>Waiting for presses</h1>
+  <h1>Waiting for Presses</h1>
 
   <p>There are often times when you don't want to do anything in your code
   except wait until a certain button is pressed. A simple way to do this is
@@ -98,10 +104,12 @@ print("The button was pressed!")
 
   <p>The above code will wait until the button is pressed (that is, the
   <code>while</code> loop keeps running while there are zero
-  <code>presses()</code>, and then it outputs a message.</p>
+  <code>presses()</code>, and then it outputs a message once a press
+  occurs.</p>
 
-  <p>The Button object provides a convenience function, <code>wait()</code> to
-  do this for you, in a more efficient way:</p>
+  <p>While the code above will work, there's a simpler and more efficient way
+  to do this using the function <code>wait()</code>, provided by the Button
+  object:</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.button import Button
@@ -116,7 +124,9 @@ print("The button was pressed!")
   <code>wait_many(buttons)</code> that will wait for any button in a list of
   <code>buttons</code> to be pressed. But, because <code>wait_many()</code>
   works with a bunch of buttons together, and not a specific button, the way
-  you call it is a little different. To call it, you need call
+  you call it is a little different.</p>
+
+  <p>To call the <code>wait_many()</code> function, you need call
   <code>Button.wait_many(buttons)</code>. For example, say you had the same
   four buttons hooked up as in the <a data-uid="manybuttons"></a> project.
   Then, to wait for any one of them to be pressed:</p>
