@@ -42,14 +42,12 @@
   in the previous project, but in this project, we'll place a base of blocks
   from the bottom of the house well down into the ground.</p>
  </div>
- <div id="hw" class="section">&lt; <img class="bb" src=
- "img/Minecraft_1button_bb.png"></div>
+ <div id="hw" class="section"><img class="bb" src=
+ "img/Minecraft_1button_bb.jpg"></div>
  <div id="sw" class="section">
 
-  <p>The code for this project should be self-explanatory.</p>
-  <h2>Full Code</h2>
-
-  <p>Here is what the full code for this project should look like:</p>
+  <p>Here is what the code for this project should look like at this point
+  (with new changes highlighted with arrows):</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.button import Button
@@ -106,24 +104,23 @@ block_types = [
     ]
 
 def create_house(mc, house_slices, offset, base=block.STONE):
-    center = mc.player.getTilePos()
-    corner = center - offset
+    corner = mc.player.getTilePos() - offset
     for delta_y, house_slice in enumerate(house_slices):
         for delta_x, row in enumerate(house_slice):
             for delta_z, block_index in enumerate(row):
                 block_type = block_types[int(block_index)]
                 mc.setBlock(corner + Vec3(delta_x, delta_y, delta_z), block_type)
 
-    num_rows = len(house_slices[0])
-    row_length = len(house_slices[0][0])
-    mc.setBlocks(
-        (corner.x, -64, corner.z),
-        (corner.x + num_rows - 1, corner.y, corner.z + row_length - 1),
-        base)
+*    num_rows = len(house_slices[0])
+*    row_length = len(house_slices[0][0])
+*    mc.setBlocks(
+*        (corner.x, -64, corner.z),
+*        (corner.x + num_rows - 1, corner.y, corner.z + row_length - 1),
+*        base)
 
 control.show()
 mc = minecraft.Minecraft.create()
-button = Button(7)
+button = Button(24)
 
 while True:
     if button.presses():
@@ -136,13 +133,15 @@ while True:
  </div>
  <div id="challenge" class="section">
   <ol>
-   <li>
-
-    <p>1</p>
-   </li>
-   <li>
-
-    <p>2</p>
+   <li> <p>
+    To the above code, add code to make this project a Minecraft controller
+  (using code from the <a
+  data-uid="mccontr3"></a> project).
+   </p> </li> <li> <p>
+   The house is made of AIR and STONE.  Try swapping those materials to get a strange inverted house.
+   </p> </li> <li> <p>
+   Adjust the offset so that when the house is built, Steve is right inside of it.
+   </p>
    </li>
   </ol>
  </div>

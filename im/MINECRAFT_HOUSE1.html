@@ -37,13 +37,14 @@
  </div>
  <div id="hw" class="section"><img class="bb" src=
  "img/Minecraft_1button_bb.jpg" alt="">
- <h2>Writing Our Code</h2>
- <h2>Hardware Setup</h2><img class="bb" src=
- "img/Minecraft_1button_bb.png"></div>
+ </div>
  <div id="sw" class="section">
 
+
   <p>The code for this project should look very familiar. It is very similar to
-  our Minecraft Animation project, where we drew an animation of our character
+  the Minecraft 
+  <a data-uid="mcanimation"></a>
+  project, where we drew an animation of our character
   using blocks. In that project, we were also drawing the sprite on our LED
   Matrix, so we used 0 to denote LED off and 1-8 and A-F to denote intensity of
   the LED display.</p>
@@ -53,6 +54,20 @@
   to simply denote block types &mdash; 0 will indicate no block (block type AIR) and
   1 will indicate a stone block. We implement this using a list, and the 0 and
   1 are simply indexes in that list.</p>
+
+  <p>The magic happens in a function we've created called
+  <code>create_house()</code>.  Similar to the
+  <code>sprite_in_minecraft()</code> funtcion in the <a
+  data-uid="mcanimation"></a> project, we go through a set of nested loops and
+  draw a block in the Minecraft world.  In that case, we drew the animation in
+  2 dimensions (X and Y), and therefore we used two nested loops.  In this case
+  we'll draw the house in 3 dimensions, and so require 3 nested loops.
+
+  <p>The corner of the house is drawn relative to Steve's position, plus an
+  offset.  An <i>offset</i> is just a small change in position.  We chose a
+  small offset so that the house is close to Steve, but not right on top of
+  him.
+
   <h2>Full Code</h2>
 
   <p>Here is what the full code for this project should look like:</p>
@@ -112,8 +127,7 @@ block_types = [
     ]
 
 def create_house(mc, house_slices, offset, base=block.STONE):
-    center = mc.player.getTilePos()
-    corner = center - offset
+    corner = mc.player.getTilePos() - offset
     for delta_y, house_slice in enumerate(house_slices):
         for delta_x, row in enumerate(house_slice):
             for delta_z, block_index in enumerate(row):
@@ -122,7 +136,7 @@ def create_house(mc, house_slices, offset, base=block.STONE):
 
 control.show()
 mc = minecraft.Minecraft.create()
-button = Button(7)
+button = Button(24)
 
 while True:
     if button.presses():
@@ -135,13 +149,15 @@ while True:
  </div>
  <div id="challenge" class="section">
   <ol>
-   <li>
-
-    <p>1</p>
-   </li>
-   <li>
-
-    <p>2</p>
+   <li> <p>
+    To the above code, add code to make this project a Minecraft controller
+  (using code from the <a
+  data-uid="mccontr3"></a> project).
+   </p> </li> <li> <p>
+   The house is made of AIR and STONE.  Try swapping those materials to get a strange inverted house.
+   </p> </li> <li> <p>
+   Adjust the offset so that when the house is built, Steve is right inside of it.
+   </p>
    </li>
   </ol>
  </div>

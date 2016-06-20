@@ -37,8 +37,8 @@
   character to construct an more complex house &mdash; with many different types of
   blocks &mdash; at the touch of a button.</p>
  </div>
- <div id="hw" class="section">&lt; <img class="bb" src=
- "img/Minecraft_1button_bb.png"></div>
+ <div id="hw" class="section"><img class="bb" src=
+ "img/Minecraft_1button_bb.jpg"></div>
  <div id="sw" class="section">
 
   <p>The code for this project is very detailed, but is just an extension of
@@ -433,8 +433,7 @@ block_types = [
 
 
 def create_house(mc, house_slices, offset, base=block.STONE):
-    center = mc.player.getTilePos()
-    corner = center - offset
+    corner = mc.player.getTilePos() - offset
     for delta_y, house_slice in enumerate(house_slices):
         for delta_z, row in enumerate(house_slice):
             for delta_x, block_index_letter in enumerate(row):
@@ -453,7 +452,7 @@ def create_house(mc, house_slices, offset, base=block.STONE):
 
 control.show()
 mc = minecraft.Minecraft.create()
-button = Button(7)
+button = Button(24)
 
 while True:
     if button.presses():
