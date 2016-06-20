@@ -75,21 +75,20 @@ from rstem.mcpi import minecraft, control
 import time
 
 control.show()
+
 mc = minecraft.Minecraft.create()
 
 SCALE = 25
-
-def scale_to_led(pos, scale):
-    led_pos = round(pos/scale + .5*(fb_width - 1))
-    led_pos = min(fb.width-1, max(0, led_pos))
-    return led_pos
-
 fb = FrameBuffer()
+
 while True:
     pos = mc.player.getTilePos()
 
-    x = scale_to_led(pos.x, SCALE)
-    z = scale_to_led(pos.z, SCALE)
+    x = round(pos.x/SCALE + (fb.width-1)/2)
+    x = min(fb.width-1, max(0, x))
+
+    z = round(pos.z/SCALE + (fb.height-1)/2)
+    z = min(fb.height-1, max(0, z))
 
     fb.erase()
     fb.point(z, x)
@@ -105,26 +104,11 @@ while True:
   <h2>Determining the relative position of our character</h2>
 
   <p>Once we retrieve our position in the Minecraft world using the
-  <code>getTilePos()</code> function, we need to map that position to a
-  relative position on the LED Matrix. We've created a function called
-  <code>scale_to_led()</code> that can perform this work for us. That function
-  takes two inputs:</p>
-  <ol>
-   <li>
+  <code>getTilePos()</code> function, we need to map that vector position to a
+  point on the LED Matrix. We do this in lines 15 and 16 for the x
+  direction, and 18 and 19 for the z direction.
 
-    <p>The vector position of the location in the Minecraft world; and</p>
-   </li>
-   <li>
-
-    <p>The scale to which we're shrinking the Minecraft world.</p>
-   </li>
-  </ol>
-
-  <p>The vector position is simply the value returned by
-  <code>getTilePos()</code> for a particular axis. For this project, we'll be
-  using the X axis and the Z axis to define our two-dimensional location.</p>
-
-  <p>The scale value is the amount by which we want to shrink the Minecraft
+  <p>The <code>SCALE</code> value is the amount by which we want to shrink the Minecraft
   world to fit on the LED Matrix. While the size of the Minecraft world will
   change from game to game — it's generated randomly when the game starts — it
   will typically be around 200 units in length and width. Since we are going to
@@ -132,7 +116,7 @@ while True:
   length/width of 8 units (the length/width of the LED Matrix), our scale
   factor should be about 25 (200 / 25 = 8).</p>
 
-  <p>Here is a visual representation of what our function will need to do:</p>
+  <p>Here is a visual representation of what we will need to do:</p>
   <div style="text-align: center;"><img style="width: 500px" alt="" src=
   "img/minecraft_scale.jpg"></div>
 
@@ -153,19 +137,23 @@ while True:
 
   <p>This is accomplished using the code:</p>
 
-  <p><code>min(fb.width-1, max(0, led_pos))</code></p>
+  <pre><code>min(fb.width-1, max(0, led_pos))</code></pre>
 
-  <p>Our function then returns the resulting value between 0 and 7.</p>
+  <p>The resulting value is between 0 and 7 (assuming the width of the LED Matrix is 8 points).</p>
  </div>
  <div id="challenge" class="section">
   <ol>
    <li>
 
-    <p>1</p>
-   </li>
-   <li>
-
-    <p>2</p>
+    <p>We scaled down the Minecraft world so that a width of 200 Minecraft
+   blocks (from -100 to 100) is represented on the LED Matrix.  Modify this so
+   that only -10 to 10 Minecraft blocks are represented.</p>
+   </li> <li> <p>
+   Instead of using a point to represent the position, can you use a plus sign made up of two crossing lines (one horizontal and one vertical) that are each 3 points long?
+   </p>
+   </li> <li> <p>
+   Can you do the draw the same plus sign as the previous question, but with a <code>Sprite()</code>?
+   </p>
    </li>
   </ol>
  </div>
