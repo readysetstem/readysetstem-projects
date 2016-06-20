@@ -31,26 +31,32 @@
  <div class="hw" data-count="1" data-name="accelerometer"></div>
  <div id="intro" class="section">
 
-  <p>In this project, we start creating an accelerometer game that commands the
+  <p>In this project, we begin creating an accelerometer game that commands the
   user to shake and tilt the CREATOR Kit in a random order. The challenge is to
   correctly shake/tilt the kit even as the game gets progressively faster.</p>
 
-  <p>We'll start simple. There will only be one action the user can take: tilt
-  the kit left. But, in our program, we'll still need to calculate if the user
-  tilted it left within a shorter amount of time.</p>
+  <p>For this project, we'll start simple...  There will only be one action the 
+  user can take: tilt the kit left. In subsquent projects we'll add more 
+  functionality to complete the game.</p>
  </div>
  <div id="hw" class="section">
 
-  <p>You'll need to wire up the Accelerometer as done in previous projects.
-  Here is what your breadboard should look like once the accelerometer is
-  properly wired:</p><mark>wrong image (should be accel only)</mark>
+  <p>This project will only require the accelerometer.  Here is what your breadboard 
+  should look like once the accelerometer is properly wired:
+  
+  <p><mark>wrong image (should be accel only)</mark>
+
   <div style="text-align: center;"><img class="bb" src=
   "img/LED_Matrix_Accel_bb.jpg" alt=""></div>
  </div>
  <div id="sw" class="section">
 
-  <p>For our first cut, we'll always request that the user tilts left. Then,
-  we'll simply print out if the user correctly tilted left, or didn't.</p>
+  <p>For this first implementation of the game, we'll always request that the user 
+  tilts the kit left. Then, we'll print out if the user correctly tilted left, or 
+  made a mistake (didn't tilt left).</p>
+
+  <p>Here's what the code will look like:
+  
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.accel import Accel
@@ -98,7 +104,7 @@ while True:
   <ul>
    <li>
 
-    <p>In Lines 6 though 14, we initialize some variables we'll need later. The
+    <p>On Lines 6 though 14, we initialize some variables we'll need later. The
     variables <code>NOACTION</code>, <code>LEFT</code>, <code>RIGHT</code>,
     <code>UP</code>, and <code>SHAKE</code> are used to keep track of which
     action is requested. And, for now, this game will only use
@@ -106,7 +112,7 @@ while True:
    </li>
    <li>
 
-    <p>In Lines 16 through 18, at the start of the game loop, we define two
+    <p>On Lines 16 through 18, at the start of the game loop, we define two
     variables: <code>request</code> and <code>action</code>. The
     <code>request</code> is what we want the user to do, and the
     <code>action</code> is what the user has actually done. For this first cut
@@ -115,7 +121,7 @@ while True:
    </li>
    <li>
 
-    <p>In Lines 20 through 30, we record what action the user has taken. To
+    <p>OIn Lines 20 through 30, we record what action the user has taken. To
     determine the action they've taken, we test the forces on the
     accelerometer. We'll keep score of every time they are tilting the
     accelerometer to the left, and increase the score. Once they've gotten over
@@ -133,6 +139,7 @@ while True:
    </li>
   </ul>
  </div>
+ 
  <div id="challenge" class="section">
   <ol>
    <li>
