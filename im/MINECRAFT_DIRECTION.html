@@ -29,8 +29,7 @@
 </head>
 <body>
  <div class="section">
-  <h2>The Introduction</h2>
-  <h2>The Hardware</h2>
+  <h1>Introduction</h1>
 
   <p>The Minecraft API on the Raspberry Pi does not have any direct way to
   determine which direction Steve is facing. This makes it essentially
@@ -40,13 +39,13 @@
   can't write a program that will do something directly in front of (or next to
   or behind) your character.</p>
 
-  <p>However, the Ready Set STEM adds a couple new APIs that allows us to get
+  <p>However, the Ready Set STEM API includes a couple functions that allows us to get
   the direction Steve is facing, and therefore allows us to implement
   additional features that you couldn't get with the Minecraft API by itself.
   Note that to use the functions below, we are doing some behind-the-scenes
-  trickery with Minecraft, and because of that, you are likely to see the
+  trickery with Minecraft, and because of that, you will to see the
   screen briefly go blank (up to a half second) when you call these functions
-  &mdash; unfortunately, that's the result of what we have to do to get these APIs
+  &mdash; that's the result of what we have to do to get these APIs
   to work.</p>
   <h2><code>get_heading()</code></h2>
 

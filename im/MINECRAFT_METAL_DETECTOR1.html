@@ -42,19 +42,15 @@
   <p>There is no specific hardware setup for this project. You will need to be
   able to move throughout the Minecraft world to use the code you'll be
   writing, and to do that, you are welcome to either use a keyboard/mouse or to
-  use the Minecraft controller you built earlier with your Ready Set STEM
-  kit.</p>
+  use the Minecraft controller you built earlier with your CREATOR
+  Kit.</p>
  </div>
  <div id="sw" class="section">
 
   <p>Our code for this project will be pretty simple; in our next project,
-  we'll expand on it and make it more robust. But, for this project, the code
-  will do the following:</p>
+  we'll expand on it and make it more robust. For this project, besides the normal initialization we need to do for all Minecraft projects, we will:
+  </p>
   <ol>
-   <li>
-
-    <p>Perform some initialization and create our game loop</p>
-   </li>
    <li>
 
     <p>Place a gold block in a random location</p>
@@ -68,31 +64,7 @@
     <p>When the gold is found/smashed, indicate the status to the user</p>
    </li>
   </ol>
-  <h2 class=step>Perform some initialization and create our game loop</h2>
 
-  <p>First, we'll do our basic initialization of the Minecraft code, including
-  creating our game loop:</p>
-  <div class="code" data-firstline="0">
-   <textarea>
-from rstem.mcpi import minecraft, control, block
-import time
-from random import randint
-
-control.show()
-mc = minecraft.Minecraft.create()
-
-ARENA_WIDTH = 3
-
-while True:
-    time.sleep(0.01)
-</textarea>
-  </div>
-
-  <p>Note that we have created a variable called <code>ARENA_WIDTH</code> and
-  set it equal to 3. This will be used to determine the maximum distance the
-  gold will be hidden from our character. In this project, we don't have any
-  way of indicating where the gold is, so we don't want to place it too far
-  from us; we'll fix that issue in the next project.</p>
   <h2 class=step>Place gold in a random location</h2>
 
   <p>Next, we will pick a random block within the game world — and within the
@@ -102,8 +74,8 @@ while True:
    <textarea>
 GOLD_DEPTH = 0
 gold_pos = mc.player.getTilePos()
-gold_pos.x +=  randint(-ARENA_WIDTH, ARENA_WIDTH)
-gold_pos.z +=  randint(-ARENA_WIDTH, ARENA_WIDTH)
+gold_pos.x += randint(-ARENA_WIDTH, ARENA_WIDTH)
+gold_pos.z += randint(-ARENA_WIDTH, ARENA_WIDTH)
 gold_pos.y = mc.getHeight(gold_pos.x, gold_pos.z) - GOLD_DEPTH
 mc.setBlock(gold_pos, block.GOLD_BLOCK)
 gold_exists = True
@@ -114,7 +86,12 @@ gold_exists = True
   current position, and then modifies the location coordinate-by-coordinate (x,
   y, z). For the x and y coordinates, the new position is a random distance
   between -3 and 3 (our <code>ARENA_WIDTH</code>) from the current player
-  position.</p>
+  position.
+  
+  <code>ARENA_WIDTH</code> sets the maximum distance the
+  gold will be hidden from our character. In this project, we don't have any
+  way of indicating where the gold is, so we don't want to place it too far
+  from us; we'll fix that issue in the next project.</p>
 
   <p>For the z position (the height of the gold), we place the gold at ground
   level — our code must determine the elevation of the particular block, since
@@ -122,6 +99,7 @@ gold_exists = True
   where our character currently is. We use the <code>getHeight()</code>
   function for this. Note that we can change increase the depth of the buried
   gold by increasing our <code>GOLD_DEPTH</code> variable.</p>
+
 
   <p>Once we've chosen a location for the gold block, we use the
   <code>setBlock()</code> function to change the block at that location from
@@ -139,7 +117,7 @@ gold_exists = True
   code is to continually test whether the gold block has been smashed (whether
   it still exists) and when it has been smashed (it ceases to exist), to exit
   the loop.</p>
-  <div class="code" data-firstline="1">
+  <div class="code" data-firstline="0">
    <textarea>
 while gold_exists:
     player_pos = mc.player.getTilePos()
@@ -161,7 +139,7 @@ while gold_exists:
 
   <p>Once the gold has been found and we've exited the loop, we need to let the
   user know that he found the gold:</p>
-  <div class="code" data-firstline="1">
+  <div class="code" data-firstline="0">
    <textarea>
 mc.postToChat("You found the gold!")
 time.sleep(3)
@@ -182,30 +160,37 @@ mc = minecraft.Minecraft.create()
 ARENA_WIDTH = 3
 GOLD_DEPTH = 0
 gold_pos = mc.player.getTilePos()
-gold_pos.x +=  randint(-ARENA_WIDTH, ARENA_WIDTH)
-gold_pos.z +=  randint(-ARENA_WIDTH, ARENA_WIDTH)
+gold_pos.x += randint(-ARENA_WIDTH, ARENA_WIDTH)
+gold_pos.z += randint(-ARENA_WIDTH, ARENA_WIDTH)
 gold_pos.y = mc.getHeight(gold_pos.x, gold_pos.z) - GOLD_DEPTH
 mc.setBlock(gold_pos, block.GOLD_BLOCK)
-gold_exists = True
 
-while gold_exists:
+while block.Block(mc.getBlock(gold_pos)) == block.GOLD_BLOCK:
     player_pos = mc.player.getTilePos()
-    gold_exists = block.Block(mc.getBlock(gold_pos)) == block.GOLD_BLOCK
     time.sleep(0.01)
 
 mc.postToChat("You found the gold!")
 time.sleep(3)
 </textarea>
   </div>
+  </div>
  <div id="challenge" class="section">
   <ol>
-   <li>
-
-    <p>1</p>
-   </li>
-   <li>
-
-    <p>2</p>
+   <li> <p>
+    To the above code, add code to make this project a Minecraft controller
+  (using code from the <a
+  data-uid="mccontr3"></a> project).
+    </p> </li> <li> <p>
+    We've hidden the gold at the very surface &mdash; which isn't really hiding it at all!  Increase the gold depth to hide the gold below the surface.
+    </p> </li> <li> <p>
+    If you play the game more than once in the same spot, you may find that there is old gold there from a previous game.  To prevent this, when the game starts, search for old gold, and convert it to dirt.
+    </p> </li> <li> <p>
+    Create an easier version &mdash; instead of one hidden block of gold, hide
+    two (or three or more), and end the game when <i>any</i> of them are found.
+    </p> </li> <li> <p>
+    Create an easier version &mdash; instead of one hidden block of gold, hide
+    two (or three or more), and end the game when <i>all</i> of them are found.
+    </p>
    </li>
   </ol>
  </div>

@@ -104,7 +104,6 @@ while True:
 *    control.look(up=150*y*abs(y), left=150*x*abs(x))
     
     time.sleep(0.01)
-
 </textarea>
   </div>
   <p>The above highlighted changes are:</p>
@@ -136,13 +135,16 @@ while True:
   <ol>
    <li>
 
-    <p>Our new code makes Steve not look around when the kit is slightly tilted up.  Can you
-    change this so that Steve doesn't look around when the kit is tilted slightly right?</p>
+    <p>
+    We increased the sensitivity of the controller by using x-squared instead of x.  Can you
+    increase this more by using x-cubed?
+    </p>
    </li>
    <li>
 
-    <p>We increased the sensitivity of the controller by using x-squared instead of x.  Can you
-    increase this more by using x-cubed?</p>
+    <p>
+    The controller is now more comfortable to handle, because the default position is to keep it slightly tilted up.  One issue, however, is that when you set the kit on a table, Steve will look down at the ground.  Can you detect when the CREATOR Kit is placed flat on a table, and have Steve look straight ahead?
+    </p>
    </li>
   </ol>
  </div>

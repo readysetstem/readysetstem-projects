@@ -32,8 +32,11 @@
  <div class="hw" data-count="1" data-name="audio_cable"></div>
  <div id="intro" class="section">
 
-  <p>In this project, we will write code to place a piece of gold in a random
-  location around the Minecraft world.</p>
+  <p>In this project, we will finish the
+  <a
+  data-uid="metal1"></a> project where we 
+   wrote code to place a piece of gold in a random
+  location around the Minecraft world.  We'll add sound in this project to make a true metal detector.  As you get closer to the gold, we'll beep the speaker at a faster and faster rate, until you are right on top of it when we'll continuously play the beep.</p>
  </div>
  <div id="hw" class="section">
 
@@ -44,60 +47,96 @@
   kit.</p>
  </div>
  <div id="sw" class="section">
+  <p>Here is what the code for this project should look like at this point
+  (with new changes highlighted with arrows):</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.mcpi import minecraft, control, block
-from rstem.sound import Note
 import time
 from random import randint
-from math import log
+*from rstem.sound import Note
+*from math import log
 
 control.show()
 mc = minecraft.Minecraft.create()
 
-beep = Note('A5')
-BEEP_DURATION = 0.05
+*beep = Note('A5')
+*BEEP_DURATION = 0.05
 
-ARENA_WIDTH = 10
-GOLD_DEPTH = 2
+*ARENA_WIDTH = 10
+*GOLD_DEPTH = 2
 gold_pos = mc.player.getTilePos()
-gold_pos.x +=  randint(-ARENA_WIDTH, ARENA_WIDTH)
-gold_pos.z +=  randint(-ARENA_WIDTH, ARENA_WIDTH)
+gold_pos.x += randint(-ARENA_WIDTH, ARENA_WIDTH)
+gold_pos.z += randint(-ARENA_WIDTH, ARENA_WIDTH)
 gold_pos.y = mc.getHeight(gold_pos.x, gold_pos.z) - GOLD_DEPTH
 mc.setBlock(gold_pos, block.GOLD_BLOCK)
 
-next_beep_time = time.time()
+*next_beep_time = time.time()
 while block.Block(mc.getBlock(gold_pos)) == block.GOLD_BLOCK:
     player_pos = mc.player.getTilePos()
-    vector_to_gold = gold_pos - player_pos
-    vector_to_gold.y = 0
-    distance_to_gold = vector_to_gold.length()
+*    vector_to_gold = gold_pos - player_pos
+*    vector_to_gold.y = 0
+*    distance_to_gold = vector_to_gold.length()
 
-    if time.time() &gt; next_beep_time:
-        if distance_to_gold &lt;= 1:
-            if not beep.is_playing():
-                beep.play(duration=None)
-        else:
-            beep.play(duration=BEEP_DURATION).wait()
-            next_beep_time = time.time() + log(distance_to_gold/100 + 1)
+*    if time.time() &gt; next_beep_time:
+*        if distance_to_gold &lt;= 1:
+*            if not beep.is_playing():
+*                beep.play(duration=None)
+*        else:
+*            beep.play(duration=BEEP_DURATION).wait()
+*            next_beep_time = time.time() + log(distance_to_gold/100 + 1)
     
     time.sleep(0.01)
 
-beep.stop()
+*beep.stop()
 mc.postToChat("You found the gold!")
 time.sleep(3)
 </textarea>
   </div>
- </div>
- <div id="challenge" class="section">
-  <ol>
+  <p>The important highlighted changes are:</p>
+  <ul>
    <li>
 
-    <p>1</p>
+    <p>On Lines 24 through 26: we compute the distance between the gold and
+   Steve.  With vectors, this is easy, because vectors provide a function
+   <code>length()</code> that is the length of the vector.  However, we only
+   want to know the distance in the X and Z directions (along the ground), so
+   we zero out the Y direction.
    </li>
    <li>
 
-    <p>2</p>
+    <p>On Line 28 through 34: we beep the speaker, if it's time to do so.  We
+    then need to determine the <code>next_beep_time</code> based on the
+    distance from the gold: if we're right on top of the good, beep forever;
+    otherwise, we calculate the time to wait using the <code>log()</code>
+    function.  If you haven't seen it before, <code>log()</code> is a mathematical
+    function that basically returns the magnitude of a number.</p>
+   </li>
+   <li>
+    <p>On Line 38: if the beep was playing forever when we ended the game loop, we need to stop it now.
+   </li>
+  </ul>
+ </div>
+ <div id="challenge" class="section">
+  <ol>
+   <li> <p>
+    To the above code, add code to make this project a Minecraft controller
+  (using code from the <a
+  data-uid="mccontr3"></a> project).
+    </p> </li> <li> <p> We used <code>log()</code> to computer the time to the next
+    beep.  If you change the calculation to be based on
+    <code>distance_to_gold</code> without using <code>log()</code> how does
+    this affect the game?
+    </p> </li> <li> <p> 
+    In the
+  <a
+  data-uid="metal1"></a> project we challenged you to add more than one hidden
+  gold block to make the game easier.  With this version of the game, the gold
+  is hidden and its location is hinted at only by beeping, so it can often seem
+  harder when there is more than one gold block.  Can you add a second gold block and end the
+  game if you find either? Note: you'll have to compute the distance to each
+  gold block, and use the shorter distance.
+    </p>
    </li>
   </ol>
  </div>
