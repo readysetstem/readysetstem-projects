@@ -32,29 +32,29 @@
  <div class="hw" data-count="1" data-name="led"></div>
  <div class="section" id="intro">
 
-  <p>In this project, for the first time, we'll use GPIOs to control 
-  some hardware.  Specifically, we'll wire an LED and then control the 
-  LED output using code that we'll write.</p>
+  <p>In this project, for the first time, we'll use GPIOs to control some
+  hardware. Specifically, we'll wire an LED and then control the LED output
+  using code that we'll write.</p>
 
   <p>Before jumping into this project, we very strongly recommend that you read
   <a data-uid="gpioc"></a>, as the concepts discussed there will be the basis
   for this project and nearly all future Ready Set STEM projects.</p>
 
   <p>In a previous project, we created a circuit that allowed us to control an
-  LED using a pushbutton &mdash; the LED was controlled solely using other hardware.
-  But, the most fun and exciting part of the Ready Set STEM CREATOR Kit is using
-  software to control the hardware to make it do interesting and useful
+  LED using a pushbutton — the LED was controlled solely using other hardware.
+  But, the most fun and exciting part of the Ready Set STEM CREATOR Kit is
+  using software to control the hardware to make it do interesting and useful
   things.</p>
 
   <p>In this project, we'll rebuild a version of our original circuit (with
   just the power source, LED and resistor), but we'll the wire up the LED a
-  little differently and then write some code to control it using the
-  Raspberry Pi's GPIOs.</p>
+  little differently and then write some code to control it using the Raspberry
+  Pi's GPIOs.</p>
  </div>
  <div class="section" id="hw">
 
   <p>Before we start the new wiring for this project, let's wire up our
-  original circuit from the <a data-uid="rpipower"></a> project &mdash; this will
+  original circuit from the <a data-uid="rpipower"></a> project — this will
   give us some context so we can understand how we're going from that circuit
   (which uses strictly hardware to control the LED) to our new circuit (which
   uses a GPIO to control the LED). As a reminder, here is what that circuit
@@ -80,7 +80,7 @@
   <p>Now, connect a wire from the LED to a GPIO as shown in the diagram.</p>
 
   <p>For this project, we will assume that you're using GPIO14 on the Lid
-  Connector Board, though you're welcome to use any GPIO &mdash; just remember that
+  Connector Board, though you're welcome to use any GPIO — just remember that
   you'll just need to modify the code appropriately if you choose a GPIO other
   than 14 for this project.</p>
 
@@ -94,10 +94,10 @@
 
     <p>You will probably notice that the LED is not lit at this point, even
     though we've hooked it up to the GPIO. The reason for this is that the
-    GPIO, by default, reads a high voltage. As we discussed in the previous
-    concept, if the GPIO voltage is high, there is no voltage difference across
-    the LED, and as a result no electric current will flow &mdash; the LED will not
-    light up.</p>
+    GPIO, by default, outputs a "high" voltage (3.3 volts). As we discussed in
+    the previous concept, if the GPIO voltage is high, there is no voltage
+    difference across the LED, and as a result no electric current will flow —
+    the LED will not light up.</p>
 
     <p>The code we're about to write will set the GPIO voltage low (also known
     as ground, or 0V). When the GPIO is low, current can flow through the LED,
@@ -114,7 +114,8 @@
   <h2 class="step">Write the code.</h2>
 
   <p>The code to control the GPIO (and with it the LED) is pretty short. It
-  uses a function called <code>Output()</code> to configure a GPIO as an output.</p>
+  uses a function called <code>Output()</code> to configure a GPIO as an
+  output.</p>
 
   <p>Type (or cut-and-paste) the following code into the your RDE's Code
   Window:</p>
@@ -132,8 +133,8 @@ my_led.on()
    <li>
 
     <p>In Line 2: We're configuring GPIO14 as an output. Every time we use a
-    GPIO, we need to configure it as either an input or an output &mdash; it can't
-    be both at once.</p>
+    GPIO, we need to configure it as either an input or an output — it can't be
+    both at once.</p>
    </li>
    <li>
 

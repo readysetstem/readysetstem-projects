@@ -30,25 +30,34 @@
 <body>
  <div class="section" id="intro">
 
-  <p>In this project, we continue the development of our Alien Intruders game by
-  initializing and drawing our ship at the correct location.</p>
+  <p>In this project, we continue the development of our Alien Intruders game
+  by initializing and drawing our ship at the correct location.</p>
+ </div>
+ <div class="section" id="hw">
+
+  <p>The hardware setup for this project should be the same setup that was
+  completed for the <a data-uid="ai1"></a> project. Here's a reminder:
+  <img class="bb" src="img/LED_Matrix_Accel_Buttons_bb.jpg" alt=""></p>
+ </div>
+ <div class="section" id="sw">
 
   <p>Now that we have the framebuffer initialized and have verified that the
   LED Matrix is working, let's put our spaceship where it's supposed to be
-  located &mdash; in the middle of the LED Matrix horizontally (along the x-axis)
-  and at the bottom of the LED Matrix vertically (y=0).</p>
+  located — in the middle of the LED Matrix horizontally, and in the bottom
+  row.</p>
 
   <p>To determine the middle of the LED Matrix, we could take the known width
-  (8 dots) and divide that by two &mdash; that would give us our middle dot (x=4).
+  (8 dots) and divide that by two — that would give us our middle dot (x=4).
   But, what if you later want to use this code on a smaller or larger LED
   Matrix display? For example, let's say you put four LED Matrices together to
   build a 16x16 display. If you put x=4 right into your code, when you run the
   program on your new 16x16 display, your spaceship will no longer be in the
   middle of the display.</p>
 
-  <p>Luckily, we have a way to handle this. There is a <code>FrameBuffer</code>
-  attribute called <code>width</code> that will determine how many LED Matrices
-  you have chained together and will tell you the width of your LED Matrix
+  <p>Luckily, we have a way to handle this. If you remember back to our
+  <code>FrameBuffer</code> concept, we have an attribute called
+  <code>fb.width</code> that will determine how many LED Matrices you have
+  chained together and will tell you the total width of your LED Matrix
   display. We can use that attribute to determine the actual width of the
   display, and then divide that actual width by 2 to get the starting position
   of our spaceship.</p>
@@ -62,19 +71,21 @@ spaceship_position = fb.width / 2
 </textarea>
   </div>
 
-  <p>In our previous project, we just drew the ship at x=3, y=0. But, now we
-  have the actual x-coordinate from our calculation above, so we can draw the
-  ship at its actual starting position.</p>
+  <p>In our previous project, we just drew the ship at (3,0). But, now we have
+  the actual x-coordinate from our calculation above, so we can draw the ship
+  at its actual starting position.</p>
 
-  <p>But, there's one thing we need to keep in mind &mdash; now that we're using a
+  <p>But, there's one thing we need to keep in mind — now that we're using a
   calculation to determine the position of the ship, it's possible that the
   result of our calculation won't be a whole number (for example, if we were
   using an LED Matrix that was 7 dots wide, our initial position would be
   x=3.5). To accommodate for that, we need to round our calculation to the
   nearest whole number, and that is where we will display our ship.</p>
 
-  <p>We do that using the built-in math function called <code>round()</code>.
-  Here is what the code will look like:</p>
+  <p>We do that using the built-in math function called <code>round()</code>,
+  which will round the value we give it to the nearest whole number.</p>
+
+  <p>Here is what the code will look like:</p>
   <div class="code" data-firstline="0">
    <textarea>
 # Draw the spaceship
@@ -82,7 +93,7 @@ fb.point(round(spaceship_position),0)
 </textarea>
   </div>
 
-  <p>Finally, now is as good a time as any to put our pause at the end of the
+  <p>Finally, now is as good a time as any to put the pause at the end of the
   game loop. We had discussed trying a pause of of between .001 and .01
   seconds. Let's start with the smaller number and see if that poses any
   problems as we're continuing to develop the game:</p>
@@ -174,7 +185,5 @@ while True:
 </textarea>
   </div>
  </div>
- <div class="section" id="hw"></div>
- <div class="section" id="sw"></div>
 </body>
 </html>

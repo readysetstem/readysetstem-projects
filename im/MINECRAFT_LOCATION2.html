@@ -28,118 +28,108 @@
  </script>
 </head>
 <body>
- <header>
-  <div id="title"></div>
-  <div id="description">
-   This is a minecraft project
-  </div>
-  <div id="hw_required">
-   Accelerometer Cell<br>
-   LED Matrix Cell
-  </div>
-  <div id="troubleshooting">
-   <a href="TROUBLESHOOTING.html">Having issues? Check out the Troubleshooting
-   Guide.</a>
-  </div>
- </header>
- <h2>Overview</h2>
+ <div class="hw" data-count="1" data-name="speaker"></div>
+ <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div id="intro" class="section">
 
- <p>In this project, we'll expand on our previous project where we integrated
- the LED Matrix to indicate our position in the Minecraft world. In the
- previous project, we scaled our position in the Minecraft world to a position
- on the LED Matrix, but when our scaled position was outside the LED Matrix
- boundary of 0 to 7, we forced it to either 0 or 7 and displayed it at that
- location.</p>
+  <p>In this project, we'll expand on our previous project where we integrated
+  the LED Matrix to indicate our position in the Minecraft world. In the
+  previous project, we scaled our position in the Minecraft world to a position
+  on the LED Matrix, but when our scaled position was outside the LED Matrix
+  boundary of 0 to 7, we forced it to either 0 or 7 and displayed it at that
+  location.</p>
 
- <p>In this project, when we determine that our character is outside the bounds
- of the LED Matrix, instead of just displaying the location as the edge of the
- LED Matrix, we'll display the location at the edge and flash the LED. This
- will indicate that we're outside of the scaled world.</p>
- <h2>Hardware Setup</h2><img class="bb" src="img/LED_Matrix_bb.jpg" alt="">
- <h2>Writing Our Code</h2>
+  <p>In this project, when we determine that our character is outside the
+  bounds of the LED Matrix, instead of just displaying the location as the edge
+  of the LED Matrix, we'll display the location at the edge and flash the LED.
+  This will indicate that we're outside of the scaled world.</p>
+ </div>
+ <div id="hw" class="section"><img class="bb" src="img/LED_Matrix_bb.jpg" alt=
+ ""></div>
+ <div id="sw" class="section">
 
- <p>The main differnce between the code in the last project and the code in
- this project is that, for this project, we'll add an extra test to determine
- if the location of our character is outside the boundaries of the LED Matrix,
- and if so, we'll flash the LED for as long as that condition continues to be
- true.</p>
- <h3>Full Code</h3>
+  <p>The main difference between the code in the last project and the code in
+  this project is that, for this project, we'll add an extra test to determine
+  if the location of our character is outside the boundaries of the LED Matrix,
+  and if so, we'll flash the LED for as long as that condition continues to be
+  true.</p>
 
- <p>Here is what the full code for this project should look like. We'll dig
- further into the highlighted pieces of code below:</p>
- <div class="code" data-firstline="1">
-  <textarea>
+  <p>Here is what the full code for this project should look like. We'll dig
+  further into the highlighted pieces of code below:</p>
+  <div class="code" data-firstline="1">
+   <textarea>
 from rstem.led_matrix import FrameBuffer
 from rstem.mcpi import minecraft, control
 import time
 
 control.show()
 
-fb = FrameBuffer()
+mc = minecraft.Minecraft.create()
 
 SCALE = 25
-count = 0
-FLASH_COUNT = 3
-flash_lit = True
+fb = FrameBuffer()
 
-def scale_to_led(pos, scale):
-    led_pos = round(pos/scale + .5*(fb_width - 1))
-    if not 0 &lt;= led_pos &lt;= 7:
-        flash_on = True
-    else:
-        flash_on = False
-    led_pos = min(7, max(0, led_pos))
-    return led_pos, flash_on
-
+*count = 0
+*FLASH_COUNT = 3
+*flash_lit = True
 while True:
     pos = mc.player.getTilePos()
 
-    flashing = False
+    x = round(pos.x/SCALE + (fb.width-1)/2)
+*    x_out_of_bounds = not 0 <= x < fb.width
+    x = min(fb.width-1, max(0, x))
 
-    x, flash_x = scale_to_led(pos.x, SCALE)
-    z, flash_z = scale_to_led(pos.x, SCALE)
-    if flash_x == True or flash_z == True:
-        flashing = True
+    z = round(pos.z/SCALE + (fb.height-1)/2)
+*    z_out_of_bounds = not 0 <= z < fb.height
+    z = min(fb.height-1, max(0, z))
 
     fb.erase()
-    count += 1
-    if count &gt; FLASH_COUNT:
-        flash_lit = not flash_lit
-        count = 0
-    if not flashing or flashing and flash_lit:
-        fb.point(z, x)
+*    count += 1
+*    if count > FLASH_COUNT:
+*        flash_lit = not flash_lit
+*        count = 0
+*    if not x_out_of_bounds and not z_out_of_bounds or flash_lit:
+*        fb.point(z, x)
     fb.show()
 
     time.sleep(0.01)
 </textarea>
+  </div>
+  <p>The above highlighted changes are:</p>
+  <ul>
+   <li>
+
+    <p>
+    On Lines 11 through 13: we intialize variables we'll use in the game loop.
+    We'll discuss their use below.
+    </p> </li> <li> <p>
+    On Lines 19 and 23: we determine if Steve has moved out-of-bounds.  He's
+    out-of-bounds if his scaled position would be off of the LED Matrix.
+    </p> </li> <li> <p>
+    On Lines 27 through 30: we keep a count that keeps track of how long
+    we flash on and off.  Every time through the loop, we increment a
+    <code>count</code>.  If the <code>count</code> exceeds
+    <code>FLASH_COUNT</code>, then we toggle the <code>flash_lit</code>
+    variable, which keeps track of whether the flashing LED is on or off.
+    </p> </li> <li> <p>
+    On Lines 31 and 32: we light the Steve's location on LED Matrix.  We light it in two cases: when its not out-of-bounds, or if it's <code>flash_lit</code>.
+    </p> </li> 
+  </ul>
  </div>
- <h3><code>scale_to_led()</code> Function</h3>
+ <div id="challenge" class="section">
+  <ol>
+   <li>
 
- <p>Like the function we wrote in the previous project, this function will
- first scale the position in the Minecraft world and map it to a whole number
- value. In the previous project, we ensured that value was between 0 and 7, but
- in this project, we want to take appropriate action (flash the LED) if it
- falls outside of that value.</p>
-
- <p>For that reason, after generating the whole number value, our function will
- check to see if the value is between 0 and 7, and if it falls outside that
- range, we'll set our <code>flash_on</code> variable to True, indicating that
- we are outside the range and should be flashing the LED. After that, we'll
- continue to convert our range to between 0 and 7, and then we'll return both
- the position value and the value of our <code>flash_on</code> variable.</p>
- <h3>Flashing the LED</h3>
-
- <p>In our main game loop, after getting our position and setting the default
- <code>flashing</code> variable value to False, we pass both the X and Z
- location values to our function. For each, our function returns the LED value
- for that axis and an indication of whether the LED should be flashing for that
- axis. If either axis should result in the LED flashing, we set our
- <code>flashing</code> variable to True before we continue to our drawing
- code.</p>
-
- <p>Our drawing code first checks to see if our LED has been lit (or not lit)
- for longer than our pre-defined flash duration, and if so, toggles the
- appropriate LED state and resets the count. Finally, we check to see if the
- LED should be lit, and if so, we plot that point on the LED Matrix.</p>
+    <p>Can you make the out-of-bounds flashing occur at a slower rate?
+    </p> </li> <li> <p>
+    Can you make  the flashing occur <i>only</i> when Steve goes out-of-bounds
+    in the north/south direction (the x axis)?
+    </p> </li> <li> <p>
+    Can you make  the flashing occur <i>only</i> when Steve goes out-of-bounds
+    in the <i>south</i> direction (the x axis)?
+    </p>
+   </li>
+  </ol>
+ </div>
 </body>
 </html>

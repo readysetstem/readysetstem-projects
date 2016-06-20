@@ -44,13 +44,17 @@ function generate_toc() {
             html += "<tr class=content_row>";
         }
         toc_type = row.concept ? 'concept' : 'project';
+        first_project_arrow = i == 0 ? '<div id=firstproject>&#10137;</div>' : '';
         title_cell =
-            '<td class="' + toc_type + '"><p>'
-            + '<a href="' + row.filename + '">'
-                + row.title
-                + '<span></span>' // Required to make container clickable - see CSS
+            '<td class="' + toc_type + '">'
+                + '<a href="' + row.filename + '">'
+                    + first_project_arrow
+                    + '<p>'
+                        + row.title
+                        + '<span></span>' // Required to make container clickable - see CSS
+                    + '</p>'
                 + '</a>'
-            + '</p></td>';
+            + '</td>';
         html += title_cell;
         html += "</tr>";
     }

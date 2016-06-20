@@ -28,80 +28,119 @@
  </script>
 </head>
 <body>
- <div class="hw" data-count="1" data-name="led_matrix"></div>
- <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
- <div class="hw" data-count="1" data-name="button"></div>
- <div class="section" id="intro">
+ <div class="hw" data-count="1" data-name="accelerometer"></div>
+ <div id="intro" class="section">
 
-  <p>In this project, we will draw some text on the screen, and scroll the text
-  across.</p>
- </div>
- <div class="section" id="hw">
+  <p>In this project, we start creating an accelerometer game that commands the
+  user to shake and tilt the CREATOR Kit in a random order. The challenge is to
+  correctly shake/tilt the kit even as the game gets progressively faster.</p>
 
-  <p>Your breadboard should still have the circuit we wired in the <a data-uid=
-  "ledp"></a> project. In addition, we've added a button that we'll use to
-  control what we display on the LED matrix. As a reminder, here is what it
-  should look like: <img class="bb" src="img/LED_Matrix_bb.jpg" alt=""></p>
+  <p>We'll start simple. There will only be one action the user can take: tilt
+  the kit left. But, in our program, we'll still need to calculate if the user
+  tilted it left within a shorter amount of time.</p>
  </div>
- <div class="section" id="sw">
-  <div class="code" data-firstline="0">
+ <div id="hw" class="section">
+
+  <p>You'll need to wire up the Accelerometer as done in previous projects.
+  Here is what your breadboard should look like once the accelerometer is
+  properly wired:</p><mark>wrong image (should be accel only)</mark>
+  <div style="text-align: center;"><img class="bb" src=
+  "img/LED_Matrix_Accel_bb.jpg" alt=""></div>
+ </div>
+ <div id="sw" class="section">
+
+  <p>For our first cut, we'll always request that the user tilts left. Then,
+  we'll simply print out if the user correctly tilted left, or didn't.</p>
+  <div class="code" data-firstline="1">
    <textarea>
-from rstem.led_matrix import FrameBuffer
-from rstem.led_matrix import Text
+from rstem.accel import Accel
 import time
 
-# Initialize the game environment
-fb = FrameBuffer()
-intro = Text("Press to play!")
-you_win = Text("You win!")
-button = Button(14)
-text = you_win
-x_position = 8
+accel = Accel()
 
+NOACTION = 0
+LEFT = 1
+RIGHT = 2
+UP = 3
+SHAKE = 4
+
+# Ready to play?
+SCORE_NEEDED = 10
+period = 300
 while True:
-    # Get user input
-    if button.presses():
-        text = you_win
-        x_position = 8
+    request = LEFT
+    action = NOACTION
+    print(request)
 
-    # Update the game world
-    x_position = x_position - 1
-    if position &lt; -text.width:
-        x_position = 8
+    tilt_left_score = 0
+    for i in range(period):
+        x, y, z = accel.forces()
+        if x &gt; 0.75:
+            tilt_left_score += 1
 
-    # Draw graphics on the screen
-    fb.draw(text, (x_position, 0))
+        if tilt_left_score &gt; SCORE_NEEDED:
+            action = LEFT
+            break
 
-    # Wait for some period of time
-    time.sleep(0.1)
+        time.sleep(0.01)
+
+    if request == action:
+        print("CORRECT!")
+    else:
+        print("OOPS!")
+        break
+
+    time.sleep(0.5)
 </textarea>
   </div>
 
-  <p>Give it a try. You should now see the intro text scroll across the screen.
-  Press the button, and the text should switch.</p>
+  <p>Now, let's take a look at what our code is doing:</p>
+  <ul>
+   <li>
+
+    <p>In Lines 6 though 14, we initialize some variables we'll need later. The
+    variables <code>NOACTION</code>, <code>LEFT</code>, <code>RIGHT</code>,
+    <code>UP</code>, and <code>SHAKE</code> are used to keep track of which
+    action is requested. And, for now, this game will only use
+    <code>NOACTION</code> and <code>LEFT</code>.</p>
+   </li>
+   <li>
+
+    <p>In Lines 16 through 18, at the start of the game loop, we define two
+    variables: <code>request</code> and <code>action</code>. The
+    <code>request</code> is what we want the user to do, and the
+    <code>action</code> is what the user has actually done. For this first cut
+    at the game, we will only request that they tilt left. And, we assume at
+    first that they have taken <code>NOACTION</code></p>
+   </li>
+   <li>
+
+    <p>In Lines 20 through 30, we record what action the user has taken. To
+    determine the action they've taken, we test the forces on the
+    accelerometer. We'll keep score of every time they are tilting the
+    accelerometer to the left, and increase the score. Once they've gotten over
+    some threshold (SCORE_NEEDED), then we know they've taken that action. The
+    reason we need to keep score (instead of just assuming that the user is
+    tilting the kit the first time we read the accelerometer) is that sometimes
+    a jiggle of the kit will read as a tilt. We want to make sure that the user
+    <i>really</i> meant to tilt the kit by checking a number of times.</p>
+   </li>
+   <li>
+
+    <p>In Lines 32 through 36, we check if the our <code>request</code> matches
+    the user's <code>action</code>. If not, the game is over and we exit the
+    while loop.</p>
+   </li>
+  </ul>
  </div>
  <div id="challenge" class="section">
   <ol>
    <li>
 
-    <p>Can you reverse the text? It will now only be readable with a
-    mirror?</p>
-   </li>
-   <li>
-
-    <p>The first time the button is pressed, the text switches. Can you have
-    another button press make the text switch back?</p>
-   </li>
-   <li>
-
-    <p>Can you make a second button press cause the text to scroll faster, with
-    each successive press?</p>
-   </li>
-   <li>
-
-    <p>In our project, the vertical position doesn't change. Change that so the
-    text bounces &mdash; as it moves across, alternate the y position up and down one
-    point.</p>
+    <p>The <code>SCORE_NEEDED</code> value affects how sensitive our code is at
+    detecting tilts, and also affects how long it takes to detect the tilt. Try
+    changing <code>SCORE_NEEDED</code> to a high or low value, and see how it
+    affects the tilt detection.</p>
    </li>
   </ol>
  </div>

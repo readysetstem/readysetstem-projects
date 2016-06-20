@@ -28,31 +28,51 @@
  </script>
 </head>
 <body>
- <header>
-  <div id="title"></div>
-  <div id="description">
-   This is a minecraft project
-  </div>
-  <div id="hw_required">
-   Accelerometer Cell<br>
-   LED Matrix Cell
-  </div>
-  <div id="troubleshooting">
-   <a href="TROUBLESHOOTING.html">Having issues? Check out the Troubleshooting
-   Guide.</a>
-  </div>
- </header>
- <h2>Overview</h2>
+ <div class="hw" data-count="1" data-name="speaker"></div>
+ <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div id="intro" class="section">
 
- <p>In this project, we'll build a simple house in the Minecraft world at the
- touch of a button.</p>
- <h2>Hardware Setup</h2><img class="bb" src="img/Minecraft_1button_bb.jpg" alt=
- "">
- <h2>Writing Our Code</h2>
+  <p>In this project, we'll build a simple house in the Minecraft world at the
+  touch of a button.</p>
+ </div>
+ <div id="hw" class="section"><img class="bb" src=
+ "img/Minecraft_1button_bb.jpg" alt="">
+ </div>
+ <div id="sw" class="section">
 
- <p>xxx</p>
- <div class="code" data-firstline="1">
-  <textarea>
+
+  <p>The code for this project should look very familiar. It is very similar to
+  the Minecraft 
+  <a data-uid="mcanimation"></a>
+  project, where we drew an animation of our character
+  using blocks. In that project, we were also drawing the sprite on our LED
+  Matrix, so we used 0 to denote LED off and 1-8 and A-F to denote intensity of
+  the LED display.</p>
+
+  <p>Because we're not using the LED Matrix in this project, we don't need to
+  include the LED intensity in our sprite design. Instead, we will use 0 and 1
+  to simply denote block types &mdash; 0 will indicate no block (block type AIR) and
+  1 will indicate a stone block. We implement this using a list, and the 0 and
+  1 are simply indexes in that list.</p>
+
+  <p>The magic happens in a function we've created called
+  <code>create_house()</code>.  Similar to the
+  <code>sprite_in_minecraft()</code> funtcion in the <a
+  data-uid="mcanimation"></a> project, we go through a set of nested loops and
+  draw a block in the Minecraft world.  In that case, we drew the animation in
+  2 dimensions (X and Y), and therefore we used two nested loops.  In this case
+  we'll draw the house in 3 dimensions, and so require 3 nested loops.
+
+  <p>The corner of the house is drawn relative to Steve's position, plus an
+  offset.  An <i>offset</i> is just a small change in position.  We chose a
+  small offset so that the house is close to Steve, but not right on top of
+  him.
+
+  <h2>Full Code</h2>
+
+  <p>Here is what the full code for this project should look like:</p>
+  <div class="code" data-firstline="1">
+   <textarea>
 from rstem.button import Button
 from rstem.mcpi import minecraft, control, block
 from rstem.mcpi.vec3 import Vec3
@@ -107,8 +127,7 @@ block_types = [
     ]
 
 def create_house(mc, house_slices, offset, base=block.STONE):
-    center = mc.player.getTilePos()
-    corner = center - offset
+    corner = mc.player.getTilePos() - offset
     for delta_y, house_slice in enumerate(house_slices):
         for delta_x, row in enumerate(house_slice):
             for delta_z, block_index in enumerate(row):
@@ -117,7 +136,7 @@ def create_house(mc, house_slices, offset, base=block.STONE):
 
 control.show()
 mc = minecraft.Minecraft.create()
-button = Button(7)
+button = Button(24)
 
 while True:
     if button.presses():
@@ -126,6 +145,21 @@ while True:
     time.sleep(0.01)
 
 </textarea>
+  </div>
+ </div>
+ <div id="challenge" class="section">
+  <ol>
+   <li> <p>
+    To the above code, add code to make this project a Minecraft controller
+  (using code from the <a
+  data-uid="mccontr3"></a> project).
+   </p> </li> <li> <p>
+   The house is made of AIR and STONE.  Try swapping those materials to get a strange inverted house.
+   </p> </li> <li> <p>
+   Adjust the offset so that when the house is built, Steve is right inside of it.
+   </p>
+   </li>
+  </ol>
  </div>
 </body>
 </html>
