@@ -47,7 +47,7 @@
   <p>We'll change the voltage and resistance in the circuit, and see how it
   affects the current. Because we don't have any good tools to measure the
   amount of current flowing through the circuit, we'll rely on the LEDs to
-  indicate how much current is flowing &mdash; in general, the less current that
+  indicate how much current is flowing. In general, the less current that
   flows through an LED, the less bright it will appear; the more current
   flowing, the brighter it will appear (keep in mind that too much current will cause the
   LED to break...but we won't let that happen here).</p>
@@ -79,9 +79,9 @@
 
   <p>We're going to start by building two identical LED circuits on the
   breadboard. Then, we'll experiment with changing the voltage and resistance
-  through each of these circuits and seeing how it affects the current (the LED
-  brightness). The reason for building two identical circuits is so that we can
-  change one of them, and then compare the the LED brightness of changed
+  through each of these circuits and see how it affects the current (the LED
+  brightness). The reason for building two identical circuits is so we can
+  change one of them, and then compare the LED brightness of the changed
   circuit to the LED brightness of the unchanged circuit.</p>
   <h3 class="step">Build two identical LED circuits.</h3>
 
@@ -94,7 +94,7 @@
 
   <p><strong>Note:</strong> It may appear that this is just one big circuit with two LEDs and
   two resistors, but it only looks that way because we are using a single wire
-  from 3.3V power and single wire to ground. Both circuits are being powered
+  from 3.3V power and a single wire to ground. Both circuits are being powered
   from the red rail and are grounded to the blue rail, but they are completely
   separate circuits. In fact, you'll see that if you remove either of the
   LED/resistor pairs (either circuit), the other one continues to work exactly
@@ -124,7 +124,7 @@
   in the diagram below), let's change the voltage from 3.3V to 5V. We do this
   by moving the beginning of the circuit off the red power rail (so that the
   circuit is no longer being powered by the 3.3V on the red rail), and then
-  powering that circuit using a wire from one of the 5.5V pins on the Lid
+  powering that circuit using a wire from one of the 5V pins on the Lid
   Connector board.</p>
 
   <p>Here is what our circuits should now look like: <img class="bb" src=
@@ -152,7 +152,7 @@
    <li>
 
     <p>Using Ohm's Law, which circuit would you expect to generate a greater current:
-    An LED circuit using 1000 ohm resistor with 3.3V power or an LED circuit
+    an LED circuit using 1000 ohm resistor with 3.3V power or an LED circuit
     using 100 ohm resistor with 5V power? Once you have your theory, try
     wiring those two circuits side-by-side and see which generates the brighter
     LED. Was it the one you expected?</p>
