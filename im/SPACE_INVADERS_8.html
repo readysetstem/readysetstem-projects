@@ -28,6 +28,10 @@
  </script>
 </head>
 <body>
+ <div class="hw" data-count="1" data-name="button"></div>
+ <div class="hw" data-count="1" data-name="accelerometer"></div>
+ <div class="hw" data-count="1" data-name="led_matrix"></div>
+ <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
  <div class="section" id="intro">
 
   <p>In this project, we'll continue building our Alien Intruders game by
@@ -83,12 +87,6 @@ fb.draw(spaceship, origin=(spaceship_x, 0))
   spaceship design:</p>
   <div class="code" data-firstline="1">
    <textarea>
-# ###############################################################
-#
-# ALIEN INTRUDERS GAME
-#
-# ###############################################################
-
 # ################################
 # Initialize the game environment
 # ################################
@@ -96,7 +94,8 @@ fb.draw(spaceship, origin=(spaceship_x, 0))
 # Import required functions/modules
 from rstem.accel import Accel
 from rstem.button import Button
-from rstem.led_matrix import FrameBuffer, Sprite
+from rstem.led_matrix import FrameBuffer
+*from rstem.led_matrix import Sprite
 import time
 
 # Initialize framebuffer
@@ -106,11 +105,11 @@ fb = FrameBuffer()
 accel = Accel()
 
 # Initialize spaceship
-spaceship = Sprite('''
-    -F-
-    FAF
-    ''')
-spaceship_middle = 1
+*spaceship = Sprite('''
+*    -F-
+*    FAF
+*    ''')
+*spaceship_middle = 1
 spaceship_position = fb.width / 2
 TILT_FORCE = 0.1
 SPACESHIP_STEP = 0.1
@@ -127,20 +126,26 @@ ALIENS_STEP_TIME = .8
 fire_button = Button(7)
 missile_x, missile_y = -1, -1
 MISSILE_COLOR = 10
-MISSILE_STEP_TIME = 0.1         
+MISSILE_STEP_TIME = 0.1
 
 while True:
-    # ########################################
-    # Get inputs
-    # ########################################
+    # ################################
+    # Check for user input
+    # ################################
+
+    # Get button input
     presses = fire_button.presses()
+
+    # Get accelerometer input
     x_force, y_force, z_force = accel.forces()
+
     now = time.time()
 
-    # ########################################
-    # Change the World
-    # ########################################
+    # ################################
+    # Update the game world
+    # ################################
 
+    # Update the location of any missiles
     if missile_x &gt;= 0 and now - missile_start_time &gt; MISSILE_STEP_TIME:
         # Missile already launched - move it up
         missile_y += 1
@@ -152,14 +157,14 @@ while True:
         missile_x, missile_y = (round(spaceship_position), 1)
         missile_start_time = now
 
-    # Move spaceship
+    # Update the location of the spaceship
     if x_force &gt; TILT_FORCE:
         spaceship_position -= SPACESHIP_STEP
     elif x_force &lt; -TILT_FORCE:
         spaceship_position += SPACESHIP_STEP
     spaceship_position = max(0, min(fb.width - 1, spaceship_position))
 
-    # Move alien
+    # Update the location of the aliens
     if now - alien_start_time &gt; ALIENS_STEP_TIME / alien_speed:
         alien_at_right_side = alien_direction &gt; 0 and max(alien_columns) == fb.width - 1
         alien_at_left_side = alien_direction &lt; 0 and min(alien_columns) == 0
@@ -173,38 +178,45 @@ while True:
             alien_columns = [column + alien_direction for column in alien_columns]
         alien_start_time = now
 
-    # Check for collision
+    # Check for any missile collisions
     if missile_y == alien_row and missile_x in alien_columns:
         alien_columns.remove(missile_x)
         missile_x, missile_y = -1, -1
         if not alien_columns:
             break
 
-    # ########################################
-    # Show world
-    # ########################################
+    # ################################
+    # Draw graphics on the screen
+    # ################################
 
     fb.erase()
 
-    # Draw missile
+    # Draw any missiles
     if missile_x &gt;= 0:
         fb.point(missile_x, missile_y, MISSILE_COLOR)
 
-    # Draw spaceship
-    spaceship_x = round(spaceship_position) - spaceship_middle
-    fb.draw(spaceship, origin=(spaceship_x, 0))
+    # Draw the spaceship
+*    spaceship_x = round(spaceship_position) - spaceship_middle
+*    fb.draw(spaceship, origin=(spaceship_x, 0))
 
-    # Draw aliens
+    # Draw the aliens
     for column in alien_columns:
         fb.point(column, alien_row)
 
-    # Show FrameBuffer on LED Matrix
     fb.show()
+
+    # Wait briefly
     time.sleep(0.001)
 
+# ################################
+# Finish and cleanup
+# ################################
+
 if alien_columns:
+    # Print "You lost..." if the player loses
     print("Ouch!")
 else:
+    # Print "You lost..." if the player loses
     print("You win!")
 </textarea>
   </div>

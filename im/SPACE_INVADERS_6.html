@@ -28,6 +28,10 @@
  </script>
 </head>
 <body>
+ <div class="hw" data-count="1" data-name="button"></div>
+ <div class="hw" data-count="1" data-name="accelerometer"></div>
+ <div class="hw" data-count="1" data-name="led_matrix"></div>
+ <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
  <div class="section" id="intro">
 
   <p>In this project, we're going to continue building our Alien Intruders game
@@ -75,8 +79,6 @@ if now - alien_start_time &gt; ALIENS_STEP_TIME:
     List Comprehensions
    </div>
    <div>
-
-    <p><mark>GET RID OF THIS INFO BOX AND CHANGE THE CODE???</mark></p>
 
     <p>In the above code, we snuck in a completely new concept in the line:</p>
     <pre>
@@ -145,12 +147,6 @@ else:
   be able to fire missiles and destroy the aliens:</p>
   <div class="code" data-firstline="1">
    <textarea>
-# ###############################################################
-#
-# ALIEN INTRUDERS GAME
-#
-# ###############################################################
-
 # ################################
 # Initialize the game environment
 # ################################
@@ -175,8 +171,8 @@ SPACESHIP_STEP = 0.1
 # Initialize aliens
 alien_columns = [0, 1, 2, 3]
 alien_row = fb.height - 1
-alien_start_time = time.time()
-ALIENS_STEP_TIME = .8
+*alien_start_time = time.time()
+*ALIENS_STEP_TIME = .8
 
 # Initialize missiles
 fire_button = Button(7)
@@ -185,17 +181,23 @@ MISSILE_COLOR = 10
 MISSILE_STEP_TIME = 0.1
 
 while True:
-    # ########################################
-    # Get inputs
-    # ########################################
+    # ################################
+    # Check for user input
+    # ################################
+
+    # Get button input
     presses = fire_button.presses()
+
+    # Get accelerometer input
     x_force, y_force, z_force = accel.forces()
+
     now = time.time()
 
-    # ########################################
-    # Change the World
-    # ########################################
+    # ################################
+    # Update the game world
+    # ################################
 
+    # Update the location of any missiles
     if missile_x &gt;= 0 and now - missile_start_time &gt; MISSILE_STEP_TIME:
         # Missile already launched - move it up
         missile_y += 1
@@ -207,50 +209,57 @@ while True:
         missile_x, missile_y = (round(spaceship_position), 1)
         missile_start_time = now
 
-    # Move spaceship
+    # Update the location of the spaceship
     if x_force &gt; TILT_FORCE:
         spaceship_position -= SPACESHIP_STEP
     elif x_force &lt; -TILT_FORCE:
         spaceship_position += SPACESHIP_STEP
     spaceship_position = max(0, min(fb.width - 1, spaceship_position))
 
-    # Move alien
-    if now - alien_start_time &gt; ALIENS_STEP_TIME:
-        alien_columns = [column + 1 for column in alien_columns]
-        alien_start_time = now
+    # Update the location of the aliens
+*    if now - alien_start_time &gt; ALIENS_STEP_TIME:
+*        alien_columns = [column + 1 for column in alien_columns]
+*        alien_start_time = now
 
-    # Check for collision
-    if missile_y == alien_row and missile_x in alien_columns:
-        alien_columns.remove(missile_x)
-        missile_x, missile_y = -1, -1
-        if not alien_columns:
-            break
+    # Check for any missile collisions
+*    if missile_y == alien_row and missile_x in alien_columns:
+*        alien_columns.remove(missile_x)
+*        missile_x, missile_y = -1, -1
+*        if not alien_columns:
+*            break
 
-    # ########################################
-    # Show world
-    # ########################################
+    # ################################
+    # Draw graphics on the screen
+    # ################################
 
     fb.erase()
 
-    # Draw missile
+    # Draw any missiles
     if missile_x &gt;= 0:
         fb.point(missile_x, missile_y, MISSILE_COLOR)
 
-    # Draw spaceship
+    # Draw the spaceship
     fb.point(round(spaceship_position), 0)
 
-    # Draw aliens
+    # Draw the aliens
     for column in alien_columns:
         fb.point(column, alien_row)
 
-    # Show FrameBuffer on LED Matrix
     fb.show()
+
+    # Wait briefly
     time.sleep(0.001)
 
-if alien_columns:
-    print("Ouch!")
-else:
-    print("You win!")
+# ################################
+# Finish and cleanup
+# ################################
+
+*if alien_columns:
+*    # Print "You lost..." if the player loses
+*    print("Ouch!")
+*else:
+*    # Print "You lost..." if the player loses
+*    print("You win!")
 </textarea>
   </div>
  </div>

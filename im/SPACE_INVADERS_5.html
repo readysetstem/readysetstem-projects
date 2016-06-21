@@ -28,6 +28,10 @@
  </script>
 </head>
 <body>
+ <div class="hw" data-count="1" data-name="button"></div>
+ <div class="hw" data-count="1" data-name="accelerometer"></div>
+ <div class="hw" data-count="1" data-name="led_matrix"></div>
+ <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
  <div class="section" id="intro">
 
   <p>In this project, we add missile firing using our button.</p>
@@ -134,19 +138,13 @@ if missile_x &gt;= 0:
   the button and watching the missile fire:</p>
   <div class="code" data-firstline="1">
    <textarea>
-# ###############################################################
-#
-# ALIEN INTRUDERS GAME
-#
-# ###############################################################
-
 # ################################
 # Initialize the game environment
 # ################################
 
 # Import required functions/modules
 from rstem.accel import Accel
-from rstem.button import Button
+*from rstem.button import Button
 from rstem.led_matrix import FrameBuffer
 import time
 
@@ -166,62 +164,79 @@ alien_columns = [0, 1, 2, 3]
 alien_row = fb.height - 1
 
 # Initialize missiles
-fire_button = Button(7)
-missile_x, missile_y = -1, -1
-MISSILE_COLOR = 10
-MISSILE_STEP_TIME = 0.1
-
+*fire_button = Button(7)
+*missile_x, missile_y = -1, -1
+*MISSILE_COLOR = 10
+*MISSILE_STEP_TIME = 0.1
 
 while True:
-    # ########################################
-    # Get inputs
-    # ########################################
-    presses = fire_button.presses()
+    # ################################
+    # Check for user input
+    # ################################
+
+    # Get button input
+*    presses = fire_button.presses()
+
+    # Get accelerometer input
     x_force, y_force, z_force = accel.forces()
-    now = time.time()
 
-    # ########################################
-    # Change the World
-    # ########################################
+*    now = time.time()
 
-    if missile_x &gt;= 0 and now - missile_start_time &gt; MISSILE_STEP_TIME:
-        # Missile already launched - move it up
-        missile_y += 1
-        if missile_y &gt;= fb.height:
-            missile_x, missile_y = -1, -1
-        missile_start_time = now
-    elif presses:
-        # Button was pressed - launch missile
-        missile_x, missile_y = (round(spaceship_position), 1)
-        missile_start_time = now
+    # ################################
+    # Update the game world
+    # ################################
 
-    # Move spaceship
+    # Update the location of any missiles
+*    if missile_x &gt;= 0 and now - missile_start_time &gt; MISSILE_STEP_TIME:
+*        # Missile already launched - move it up
+*        missile_y += 1
+*        if missile_y &gt;= fb.height:
+*            missile_x, missile_y = -1, -1
+*        missile_start_time = now
+*    elif presses:
+*        # Button was pressed - launch missile
+*        missile_x, missile_y = (round(spaceship_position), 1)
+*        missile_start_time = now
+
+    # Update the location of the spaceship
     if x_force &gt; TILT_FORCE:
         spaceship_position -= SPACESHIP_STEP
     elif x_force &lt; -TILT_FORCE:
         spaceship_position += SPACESHIP_STEP
     spaceship_position = max(0, min(fb.width - 1, spaceship_position))
 
-    # ########################################
-    # Show world
-    # ########################################
+    # Update the location of the aliens
+
+    # Check for any missile collisions
+
+    # ################################
+    # Draw graphics on the screen
+    # ################################
 
     fb.erase()
 
-    # Draw missile
-    if missile_x &gt;= 0:
-        fb.point(missile_x, missile_y, MISSILE_COLOR)
+    # Draw any missiles
+*    if missile_x &gt;= 0:
+*        fb.point(missile_x, missile_y, MISSILE_COLOR)
 
-    # Draw spaceship
+    # Draw the spaceship
     fb.point(round(spaceship_position), 0)
 
-    # Draw aliens
+    # Draw the aliens
     for column in alien_columns:
         fb.point(column, alien_row)
 
-    # Show FrameBuffer on LED Matrix
     fb.show()
+
+    # Wait briefly
     time.sleep(0.001)
+
+# ################################
+# Finish and cleanup
+# ################################
+
+# Print "You won!" if the player wins
+# Print "You lost..." if the player loses
 </textarea>
   </div>
  </div>
