@@ -74,7 +74,7 @@ MISSILE_STEP_TIME = 0.1
 
   <p>Next, we need to make changes to our game loop to support the missiles.
   This involves three parts of the loop:</p>
-  <h4>1. Getting inputs:</h4>
+  <h2 class=step>Getting inputs</h2>
 
   <p>In terms of getting inputs, we'll first want to check the button to
   determine when it's pressed. And we'll then want to get the current time to
@@ -86,7 +86,7 @@ presses = fire_button.presses()
 now = time.time()
 </textarea>
   </div>
-  <h4>2. Changing the world:</h4>
+  <h2 class=step>Changing the world:</h2>
 
   <p>To change the world, we'll first need to check if either:</p>
   <ol>
@@ -121,7 +121,7 @@ elif presses:
     missile_start_time = now
 </textarea>
   </div>
-  <h4>3. Show the world:</h4>
+  <h2 class=step>Show the world:</h2>
 
   <p>To show the world, we'll check to see if there is an existing missile on
   the screen, and if there is, we'll draw its current location.</p>
@@ -239,6 +239,23 @@ while True:
 # Print "You lost..." if the player loses
 </textarea>
   </div>
+ </div>
+ <div class="section" id="challenge">
+  <ol>
+   <li> <p>
+   Change the missile speed to as fast as possible, but so you can still see it.
+    </p> </li> <li> <p>
+   Change the missile color to as light as possible, without being invisible.
+    </p> </li> <li> <p>
+   Can you make missile quickly flash on and off as it moves up the screen?
+    </p> </li> <li> <p>
+    Our missile restarts shooting from the spaceship every time the button is
+    pressed.  Can you ignore button presses while the missile is shooting so
+    that a missile always makes it to the top of the display?
+    </p> </li> <li> <p>
+    Can you add a second missile, so that you can shoot up to two missiles at a time?
+    </p> </li>
+  </ol>
  </div>
 </body>
 </html>
