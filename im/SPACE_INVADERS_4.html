@@ -28,6 +28,10 @@
  </script>
 </head>
 <body>
+ <div class="hw" data-count="1" data-name="button"></div>
+ <div class="hw" data-count="1" data-name="accelerometer"></div>
+ <div class="hw" data-count="1" data-name="led_matrix"></div>
+ <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
  <div class="section" id="intro">
 
   <p>In this project, we continue the development of our Alien Intruders game
@@ -71,22 +75,17 @@ for column in alien_columns:
 
   <p>The aliens are not moving yet, but at least they are displayed!</p>
 
-  <p>Here is the full project at this point:</p>
+  <p>Here is what the code for this project should look like at this point
+  (with new changes highlighted with arrows):</p>
   <div class="code" data-firstline="1">
    <textarea>
-# ###############################################################
-#
-# ALIEN INTRUDERS GAME
-#
-# ###############################################################
-
 # ################################
 # Initialize the game environment
 # ################################
 
 # Import required functions/modules
-from rstem.led_matrix import FrameBuffer
 from rstem.accel import Accel
+from rstem.led_matrix import FrameBuffer
 import time
 
 # Initialize framebuffer
@@ -101,46 +100,81 @@ TILT_FORCE = 0.1
 SPACESHIP_STEP = 0.1
 
 # Initialize aliens
-alien_columns = [0, 1, 2, 3]
-alien_row = fb.height - 1
+*alien_columns = [0, 1, 2, 3]
+*alien_row = fb.height - 1
 
 # Initialize missiles
 
 while True:
-    # ########################################
-    # Get inputs
-    # ########################################
+    # ################################
+    # Check for user input
+    # ################################
+
+    # Get button input
+
+    # Get accelerometer input
     x_force, y_force, z_force = accel.forces()
 
-    # ########################################
-    # Change the World
-    # ########################################
+    # ################################
+    # Update the game world
+    # ################################
 
-    # Move spaceship
+    # Update the location of any missiles
+
+    # Update the location of the spaceship
     if x_force &gt; TILT_FORCE:
         spaceship_position -= SPACESHIP_STEP
     elif x_force &lt; -TILT_FORCE:
         spaceship_position += SPACESHIP_STEP
     spaceship_position = max(0, min(fb.width - 1, spaceship_position))
 
-    # ########################################
-    # Show world
-    # ########################################
+    # Update the location of the aliens
+
+    # Check for any missile collisions
+
+    # ################################
+    # Draw graphics on the screen
+    # ################################
 
     fb.erase()
 
-    # Draw spaceship
+    # Draw any missiles
+
+    # Draw the spaceship
     fb.point(round(spaceship_position), 0)
 
-    # Draw aliens
-    for column in alien_columns:
-        fb.point(column, alien_row)
+    # Draw the aliens
+*    for column in alien_columns:
+*        fb.point(column, alien_row)
 
-    # Show FrameBuffer on LED Matrix
     fb.show()
+
+    # Wait briefly
     time.sleep(0.001)
+
+# ################################
+# Finish and cleanup
+# ################################
+
+# Print "You won!" if the player wins
+# Print "You lost..." if the player loses
 </textarea>
   </div>
+ </div>
+ <div class="section" id="challenge">
+  <ol>
+   <li> <p>
+    We store the positions of the aliens in the variable
+    <code>alien_columns</code>, which is a list of column numbers.  Can you
+    create this same list using the <code>range()</code> function?
+    </p> </li> <li> <p>
+    Instead of four aliens right next to each other, can you make three aliens
+    that are separated from each other?
+    </p> </li> <li> <p>
+    The aliens start at the top row.  Can you change this to have them randomly
+    start in one of the top three rows?
+    </p> </li>
+  </ol>
  </div>
 </body>
 </html>

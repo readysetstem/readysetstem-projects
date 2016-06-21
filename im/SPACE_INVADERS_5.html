@@ -28,6 +28,10 @@
  </script>
 </head>
 <body>
+ <div class="hw" data-count="1" data-name="button"></div>
+ <div class="hw" data-count="1" data-name="accelerometer"></div>
+ <div class="hw" data-count="1" data-name="led_matrix"></div>
+ <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
  <div class="section" id="intro">
 
   <p>In this project, we add missile firing using our button.</p>
@@ -70,7 +74,7 @@ MISSILE_STEP_TIME = 0.1
 
   <p>Next, we need to make changes to our game loop to support the missiles.
   This involves three parts of the loop:</p>
-  <h4>1. Getting inputs:</h4>
+  <h2 class=step>Getting inputs</h2>
 
   <p>In terms of getting inputs, we'll first want to check the button to
   determine when it's pressed. And we'll then want to get the current time to
@@ -82,7 +86,7 @@ presses = fire_button.presses()
 now = time.time()
 </textarea>
   </div>
-  <h4>2. Changing the world:</h4>
+  <h2 class=step>Changing the world:</h2>
 
   <p>To change the world, we'll first need to check if either:</p>
   <ol>
@@ -117,7 +121,7 @@ elif presses:
     missile_start_time = now
 </textarea>
   </div>
-  <h4>3. Show the world:</h4>
+  <h2 class=step>Show the world:</h2>
 
   <p>To show the world, we'll check to see if there is an existing missile on
   the screen, and if there is, we'll draw its current location.</p>
@@ -134,19 +138,13 @@ if missile_x &gt;= 0:
   the button and watching the missile fire:</p>
   <div class="code" data-firstline="1">
    <textarea>
-# ###############################################################
-#
-# ALIEN INTRUDERS GAME
-#
-# ###############################################################
-
 # ################################
 # Initialize the game environment
 # ################################
 
 # Import required functions/modules
 from rstem.accel import Accel
-from rstem.button import Button
+*from rstem.button import Button
 from rstem.led_matrix import FrameBuffer
 import time
 
@@ -166,64 +164,98 @@ alien_columns = [0, 1, 2, 3]
 alien_row = fb.height - 1
 
 # Initialize missiles
-fire_button = Button(7)
-missile_x, missile_y = -1, -1
-MISSILE_COLOR = 10
-MISSILE_STEP_TIME = 0.1
-
+*fire_button = Button(7)
+*missile_x, missile_y = -1, -1
+*MISSILE_COLOR = 10
+*MISSILE_STEP_TIME = 0.1
 
 while True:
-    # ########################################
-    # Get inputs
-    # ########################################
-    presses = fire_button.presses()
+    # ################################
+    # Check for user input
+    # ################################
+
+    # Get button input
+*    presses = fire_button.presses()
+
+    # Get accelerometer input
     x_force, y_force, z_force = accel.forces()
-    now = time.time()
 
-    # ########################################
-    # Change the World
-    # ########################################
+*    now = time.time()
 
-    if missile_x &gt;= 0 and now - missile_start_time &gt; MISSILE_STEP_TIME:
-        # Missile already launched - move it up
-        missile_y += 1
-        if missile_y &gt;= fb.height:
-            missile_x, missile_y = -1, -1
-        missile_start_time = now
-    elif presses:
-        # Button was pressed - launch missile
-        missile_x, missile_y = (round(spaceship_position), 1)
-        missile_start_time = now
+    # ################################
+    # Update the game world
+    # ################################
 
-    # Move spaceship
+    # Update the location of any missiles
+*    if missile_x &gt;= 0 and now - missile_start_time &gt; MISSILE_STEP_TIME:
+*        # Missile already launched - move it up
+*        missile_y += 1
+*        if missile_y &gt;= fb.height:
+*            missile_x, missile_y = -1, -1
+*        missile_start_time = now
+*    elif presses:
+*        # Button was pressed - launch missile
+*        missile_x, missile_y = (round(spaceship_position), 1)
+*        missile_start_time = now
+
+    # Update the location of the spaceship
     if x_force &gt; TILT_FORCE:
         spaceship_position -= SPACESHIP_STEP
     elif x_force &lt; -TILT_FORCE:
         spaceship_position += SPACESHIP_STEP
     spaceship_position = max(0, min(fb.width - 1, spaceship_position))
 
-    # ########################################
-    # Show world
-    # ########################################
+    # Update the location of the aliens
+
+    # Check for any missile collisions
+
+    # ################################
+    # Draw graphics on the screen
+    # ################################
 
     fb.erase()
 
-    # Draw missile
-    if missile_x &gt;= 0:
-        fb.point(missile_x, missile_y, MISSILE_COLOR)
+    # Draw any missiles
+*    if missile_x &gt;= 0:
+*        fb.point(missile_x, missile_y, MISSILE_COLOR)
 
-    # Draw spaceship
+    # Draw the spaceship
     fb.point(round(spaceship_position), 0)
 
-    # Draw aliens
+    # Draw the aliens
     for column in alien_columns:
         fb.point(column, alien_row)
 
-    # Show FrameBuffer on LED Matrix
     fb.show()
+
+    # Wait briefly
     time.sleep(0.001)
+
+# ################################
+# Finish and cleanup
+# ################################
+
+# Print "You won!" if the player wins
+# Print "You lost..." if the player loses
 </textarea>
   </div>
+ </div>
+ <div class="section" id="challenge">
+  <ol>
+   <li> <p>
+   Change the missile speed to as fast as possible, but so you can still see it.
+    </p> </li> <li> <p>
+   Change the missile color to as light as possible, without being invisible.
+    </p> </li> <li> <p>
+   Can you make missile quickly flash on and off as it moves up the screen?
+    </p> </li> <li> <p>
+    Our missile restarts shooting from the spaceship every time the button is
+    pressed.  Can you ignore button presses while the missile is shooting so
+    that a missile always makes it to the top of the display?
+    </p> </li> <li> <p>
+    Can you add a second missile, so that you can shoot up to two missiles at a time?
+    </p> </li>
+  </ol>
  </div>
 </body>
 </html>

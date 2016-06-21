@@ -57,7 +57,7 @@
 
   <p>The magic happens in a function we've created called
   <code>create_house()</code>.  Similar to the
-  <code>sprite_in_minecraft()</code> funtcion in the <a
+  <code>sprite_in_minecraft()</code> function in the <a
   data-uid="mcanimation"></a> project, we go through a set of nested loops and
   draw a block in the Minecraft world.  In that case, we drew the animation in
   2 dimensions (X and Y), and therefore we used two nested loops.  In this case
@@ -146,6 +146,7 @@ while True:
 
 </textarea>
   </div>
+  <p>Give it a try.  You'll need to fly up and into the house to see its the inside.
  </div>
  <div id="challenge" class="section">
   <ol>
@@ -156,7 +157,11 @@ while True:
    </p> </li> <li> <p>
    The house is made of AIR and STONE.  Try swapping those materials to get a strange inverted house.
    </p> </li> <li> <p>
-   Adjust the offset so that when the house is built, Steve is right inside of it.
+   Adjust the <code>offset</code> passed into <code>create_house()</code> so
+   that when the house is built, Steve is just outside of it.
+   </p> </li> <li> <p>
+   Let's be honest &mdash; it's not much of a house.  Make it a little better
+   by adding a hole for a door and a flat roof.
    </p>
    </li>
   </ol>

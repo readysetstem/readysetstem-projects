@@ -31,8 +31,6 @@
  <div class="hw" data-count="1" data-name="speaker"></div>
  <div class="hw" data-count="1" data-name="audio_cable"></div>
  <div id="intro" class="section">
-  <h2>Overview</h2>
-
   <p>In the previous project, we allowed our Minecraft character to build a
   simple house at the touch of a button. We did no verification that the bottom
   of the house sat on the ground &mdash; in some cases, the house could have been
@@ -46,6 +44,15 @@
  "img/Minecraft_1button_bb.jpg"></div>
  <div id="sw" class="section">
 
+  <p>Now, we'll implement a base (or foundation) for the house.  We'll do this
+  with the <code>setBlocks()</code> function.  We'll also take a shortcut
+  &mdash; we'll assume that the house is no more than 64 blocks above the
+  ground.
+
+  <p>So, to do this, we need to draw a large cube below our house, and we pass
+  the two far corners of that cube to the <code>setBlocks()</code> function.
+
+  <h2>Full Code</h2>
   <p>Here is what the code for this project should look like at this point
   (with new changes highlighted with arrows):</p>
   <div class="code" data-firstline="1">
@@ -103,11 +110,11 @@ block_types = [
     block.STONE,
     ]
 
-def create_house(mc, house_slices, offset, base=block.STONE):
+def create_house(mc, house_slices, offset=Vec3(-1,0,-1), base=block.STONE):
     corner = mc.player.getTilePos() - offset
     for delta_y, house_slice in enumerate(house_slices):
-        for delta_x, row in enumerate(house_slice):
-            for delta_z, block_index in enumerate(row):
+        for delta_z, row in enumerate(house_slice):
+            for delta_x, block_index in enumerate(row):
                 block_type = block_types[int(block_index)]
                 mc.setBlock(corner + Vec3(delta_x, delta_y, delta_z), block_type)
 
@@ -124,10 +131,9 @@ button = Button(24)
 
 while True:
     if button.presses():
-        create_house(mc, house, Vec3(3,1,3))
+        create_house(mc, house)
 
     time.sleep(0.01)
-
 </textarea>
   </div>
  </div>
@@ -138,9 +144,13 @@ while True:
   (using code from the <a
   data-uid="mccontr3"></a> project).
    </p> </li> <li> <p>
-   The house is made of AIR and STONE.  Try swapping those materials to get a strange inverted house.
+   We built the foundation out of STONE &mdash; can you change this to BRICK?
+   </p> </li> <li> <p> 
+   Instead of making the foundation 64 block deep, only
+   make it 3 blocks deep.  Then, fly into the air and create a house &mdash;
+   you'll be able to fly under it and see your 3 block thick foundation.
    </p> </li> <li> <p>
-   Adjust the offset so that when the house is built, Steve is right inside of it.
+   Create a foundation that is larger than the base of the house in the X and Z directions.
    </p>
    </li>
   </ol>

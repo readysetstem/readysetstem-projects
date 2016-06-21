@@ -28,6 +28,10 @@
  </script>
 </head>
 <body>
+ <div class="hw" data-count="1" data-name="button"></div>
+ <div class="hw" data-count="1" data-name="accelerometer"></div>
+ <div class="hw" data-count="1" data-name="led_matrix"></div>
+ <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
  <div class="section" id="intro">
 
   <p>In this project, we'll finish up development of our Alien Intruders game
@@ -79,14 +83,11 @@ hit_sound.play()
 
   <p>Let's insert those code snippets into our full project, and we have a
   completed Alien Intruders game!</p>
+
+  <p>Here is what the final code for this project should look like
+  (with new changes highlighted with arrows):</p>
   <div class="code" data-firstline="1">
    <textarea>
-# ###############################################################
-#
-# ALIEN INTRUDERS GAME
-#
-# ###############################################################
-
 # ################################
 # Initialize the game environment
 # ################################
@@ -94,9 +95,10 @@ hit_sound.play()
 # Import required functions/modules
 from rstem.accel import Accel
 from rstem.button import Button
-from rstem.led_matrix import FrameBuffer, Sprite
-from rstem.sound import Sound, Note
-from itertools import cycle
+from rstem.led_matrix import FrameBuffer
+from rstem.led_matrix import Sprite
+*from rstem.sound import Sound, Note
+*from itertools import cycle
 import time
 
 # Initialize framebuffer
@@ -127,25 +129,31 @@ ALIENS_STEP_TIME = .8
 fire_button = Button(7)
 missile_x, missile_y = -1, -1
 MISSILE_COLOR = 10
-MISSILE_STEP_TIME = 0.1         
+MISSILE_STEP_TIME = 0.1
 
-# Initialize sounds             
-fire_sound = Sound("fire.wav")
-hit_sound = Sound("hit.wav")
-notes = cycle([Note('B3'), Note('G3'), Note('E3'), Note('C3')])
+*# Initialize sounds             
+*fire_sound = Sound("fire.wav")
+*hit_sound = Sound("hit.wav")
+*notes = cycle([Note('B3'), Note('G3'), Note('E3'), Note('C3')])
 
 while True:
-    # ########################################
-    # Get inputs
-    # ########################################
+    # ################################
+    # Check for user input
+    # ################################
+
+    # Get button input
     presses = fire_button.presses()
+
+    # Get accelerometer input
     x_force, y_force, z_force = accel.forces()
+
     now = time.time()
 
-    # ########################################
-    # Change the World
-    # ########################################
+    # ################################
+    # Update the game world
+    # ################################
 
+    # Update the location of any missiles
     if missile_x &gt;= 0 and now - missile_start_time &gt; MISSILE_STEP_TIME:
         # Missile already launched - move it up
         missile_y += 1
@@ -156,18 +164,18 @@ while True:
         # Button was pressed - launch missile
         missile_x, missile_y = (round(spaceship_position), 1)
         missile_start_time = now
-        fire_sound.play()
+*        fire_sound.play()
 
-    # Move spaceship
+    # Update the location of the spaceship
     if x_force &gt; TILT_FORCE:
         spaceship_position -= SPACESHIP_STEP
     elif x_force &lt; -TILT_FORCE:
         spaceship_position += SPACESHIP_STEP
     spaceship_position = max(0, min(fb.width - 1, spaceship_position))
 
-    # Move alien
+    # Update the location of the aliens
     if now - alien_start_time &gt; ALIENS_STEP_TIME / alien_speed:
-        next(notes).play(duration=0.20)
+*        next(notes).play(duration=0.20)
         alien_at_right_side = alien_direction &gt; 0 and max(alien_columns) == fb.width - 1
         alien_at_left_side = alien_direction &lt; 0 and min(alien_columns) == 0
         if alien_at_left_side or alien_at_right_side:
@@ -180,42 +188,79 @@ while True:
             alien_columns = [column + alien_direction for column in alien_columns]
         alien_start_time = now
 
-    # Check for collision
+    # Check for any missile collisions
     if missile_y == alien_row and missile_x in alien_columns:
         alien_columns.remove(missile_x)
         missile_x, missile_y = -1, -1
-        hit_sound.play()
+*        hit_sound.play()
         if not alien_columns:
             break
 
-    # ########################################
-    # Show world
-    # ########################################
+    # ################################
+    # Draw graphics on the screen
+    # ################################
 
     fb.erase()
 
-    # Draw missile
+    # Draw any missiles
     if missile_x &gt;= 0:
         fb.point(missile_x, missile_y, MISSILE_COLOR)
 
-    # Draw spaceship
+    # Draw the spaceship
     spaceship_x = round(spaceship_position) - spaceship_middle
     fb.draw(spaceship, origin=(spaceship_x, 0))
 
-    # Draw aliens
+    # Draw the aliens
     for column in alien_columns:
         fb.point(column, alien_row)
 
-    # Show FrameBuffer on LED Matrix
     fb.show()
+
+    # Wait briefly
     time.sleep(0.001)
 
+# ################################
+# Finish and cleanup
+# ################################
+
 if alien_columns:
+    # Print "You lost..." if the player loses
     print("Ouch!")
 else:
+    # Print "You lost..." if the player loses
     print("You win!")
 </textarea>
   </div>
+ </div>
+ <div class="section" id="challenge">
+  <ol>
+   <li> <p>
+    The small unamplified speaker that's in the kit is much better at producing
+    high frequency sounds than low frequency sounds.  Change the
+    <code>Note</code>s in the game to be two octaves higher.
+    </p> </li> <li> <p>
+    We used sounds <span class=nospell>"fire.wav"</span> and <span class=nospell>"hit.wav"</span> for the missile firing and
+    explosion sounds.  Can you change these to animal sounds?
+    </p> </li> <li> <p>
+    Can you add another sound that occurs when a missile falls off the screen,
+    without hitting any aliens?
+    </p> </li> <li> <p>
+    Start the aliens one row lower.  Periodically, add a single alien dot that
+    moves across the top of the display from left to right and then disappears.
+    &mdash;  this was a part of the original Space Invaders game.
+    </p> </li> <li> <p>
+    Run multiple levels of the game, where each levels starts faster.  At the
+    end, display a score of how many levels were completed.
+    </p> </li> <li> <p>
+    Change the controller to use left an right buttons instead of the
+    accelerometer to move the spaceship.
+    </p> </li> <li> <p>
+    Invert the controller to make a harder game &mdash; when the player tilts
+    the kit <i>left</i>, move the spaceship <i>right</i>, and vice versa.
+    </p> </li> <li> <p>
+    Do you own variation on this game, or create your own &mdash; the sky's the limit!
+    </p> </li>
+  </ol>
  </div>
 </body>
 </html>
