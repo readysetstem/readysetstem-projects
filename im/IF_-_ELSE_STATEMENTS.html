@@ -33,8 +33,8 @@
 
   <p>Much of our lives are spent asking questions in order to figure out what
   we should be doing next. For example, we may ask a friend, "Is it time for 
-  lunch?" If his answer is "Yes," the next things we'll likely be doing is
-  eating lunch.  If his answer is "No," we'll be doing something else next --
+  lunch?" If his answer is "Yes," the next thing we'll likely be doing is
+  eating lunch. If his answer is "No," we'll be doing something else next &mdash;
   in fact, oftentimes, we'll just continue doing whatever it was we were doing 
   before we asked the question!</p>
 
@@ -48,24 +48,24 @@
   your television remote control, it sends a signal to your TV telling the TV
   to change the station or adjust the volume. But, what you probably don't
   realize is that this works because several times per second, the software in
-  your TV is asking, "Did someone just press a button on the remove control?"
+  your TV is asking, "Did someone just press a button on the remote control?"
   
   <p>Most of the time the answer is "No," so the TV software moves onto
-  something else for short period of time (likely whatever else it was already doing). 
+  something else for a short period of time (likely whatever else it was already doing). 
   But, if the answer is "Yes" (in other words, if you were pressing a button on the 
   remote), the TV will then take action to determine what button was pressed and then 
   carry out the request.</p>
 
   <p>The most basic way for software to ask and respond to a question is by
   using what is known as an <code>if</code> statement. An <code>if</code>
-  statement asks a <code>True</code> or <code>False</code> question, and based on the 
+  statement asks a <code>True</code> or <code>False</code> question and, based on the 
   answer, takes the appropriate action.</p>
 
   <p>As another example, let's say we have a circuit that contains a thermometer and sends the
   current temperature back to computer every once in a while. Next, let's assume that we use
   a variable named <code>temperature</code> to store the data the thermometer sends us. 
   Finally, let's pretend that the most recent temperature sent to us by the thermometer
-  is 95 degrees.  This is represented by our variable like this:</p>
+  is 95 degrees. This is represented by our variable like this:</p>
   <div class="code" data-firstline="0">
    <textarea>
 temperature = 95
@@ -260,7 +260,7 @@ my_age = 43
   <h2>Code Blocks</h2>
 
   <p>In all the examples so far in this chapter, our code blocks have consisted
-  of a single line of code. For example, in this piece of code:</p>
+  of single lines of code. For example, in this piece of code:</p>
   <div class="code" data-firstline="1">
    <textarea>
 temperature = 95
@@ -272,7 +272,7 @@ if temperature &lt; 90:
 
   <p>our code block was a single print statement.</p>
 
-  <p>But, in many situations, after evaluating a conditional, we're going to
+  <p>But in many situations, after evaluating a conditional statement, we're going to
   want to take action that requires many commands, not just one. For this
   reason, code blocks can be any number of commands following a conditional
   statement. Our example above could be changed to:</p>
@@ -300,7 +300,7 @@ if temperature &lt; 90:
   a fancy way of saying that we can put multiple comparisons together into a
   single conditional statement.</p>
 
-  <p>For example, in the previous section, we used the condition:</p>
+  <p>For example, in the previous section we used the condition:</p>
 
   <pre>
   temperature &lt; 90
@@ -309,7 +309,7 @@ if temperature &lt; 90:
   <p>to determine if it was less than 90 degrees outside.</p>
 
   <p>But, what if we didn't just want to know if the temperature was less than
-  90 degrees – we wanted to know whether the temperature was between 80 and 90
+  90 degrees &mdash; we wanted to know whether the temperature was between 80 and 90
   degrees? That would actually require two different conditions:</p>
 
   <pre>
@@ -365,8 +365,8 @@ if (not temperature == 80):
   <h1>Adding ELSE</h1>
   <h2>IF/ELSE Statements</h2>
 
-  <p>In our previous examples, we evaluated a conditional, and took action if
-  the result of the evaluation was <code>True</code>. But, in many cases, we also want to
+  <p>In our previous examples, we evaluated a conditional statement, and took action if
+  the result of the evaluation was <code>True</code>. But, in many cases, we want to
   take action when the result of the evaluation is <code>False</code>, in addition to when
   it's <code>True</code>.</p>
 
@@ -382,7 +382,7 @@ else:
 </textarea>
   </div>
 
-  <p>We use the else: keyword to indicate what action should be taken if the
+  <p>We use the <code>else</code>code> keyword to indicate what action should be taken if the
   conditional statement evaluates to <code>False</code>. We are basically telling the
   computer:</p>
 
@@ -394,7 +394,7 @@ else:
   that," just isn't enough to provide the functionality you need.</p>
 
   <p>For example, perhaps we want to know more than whether the temperature is
-  above or below 90 degrees? Perhaps we want to know if it's below 60 degrees?
+  above or below 90 degrees. Perhaps we want to know, is it below 60 degrees?
   Or in the 60s? Or in the 70s? Or in the 80s? Or in the 90s? Or above 90
   degrees?</p>
 
@@ -405,13 +405,13 @@ else:
 if temperature &lt; 60:
     print("Brrrr…under 60 degrees.")
 elif temperature &lt; 70:
-    print("Between 60 and 70degrees.")
+    print("Between 60 and 70 degrees.")
 elif temperature &lt; 80:
     print("Between 70 and 80 degrees.")
 elif temperature &lt; 90:
     print("Between 80 and 90 degrees.")
 else:
-    print("It is over 90 degrees")
+    print("It is over 90 degrees.")
 </textarea>
   </div>
  </div>

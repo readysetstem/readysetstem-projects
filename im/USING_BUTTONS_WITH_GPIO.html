@@ -35,13 +35,13 @@
   unpressed) of a button.</p>
 
   <p>In <a data-uid="gpioi"></a>, we introduced the idea of reading button
-  state based on using GPIOs as inputs.  We also provided the schematic for the
+  state based on using GPIOs as inputs. We also provided the schematic for the
   circuit we'd need to accomplish this. It turns out that implementing that
   circuit on our breadboard is easy. Let's give it a try...</p>
 
  </div>
  <div class="section" id="hw">
-  <h2 class=step>Reading Buttons Using GPIOs</h2>
+  <h2 class=step>Reading Buttons Using GPIOs.</h2>
 
 
   <p>First, we start with an empty breadboard, with power and ground wired from
@@ -51,7 +51,7 @@
   <p>With our breadboard empty, here is how we
   build our circuit and then use code to get input from the button through the
   GPIO:
-  <h2 class=step>Place button on breadboard</h2>
+  <h2 class=step>Place button on breadboard.</h2>
 
   <p>We start by placing a button on the breadboard. Remember, it is important
   that the button is oriented correctly &mdash; the two independent sides of the
@@ -70,15 +70,15 @@
   </table>
   <p>Also note, the button can be placed fully within a single row of connect
   strips (as shown above), or it can be placed across the notch in the
-  breadboard, as we'll do in the next step.  The choice only depends on where
+  breadboard, as we'll do in the next step. The choice only depends on where
   you'd like to place the button.
-  <h2 class=step>Wire one side of the button to a GPIO</h2>
+  <h2 class=step>Wire one side of the button to a GPIO.</h2>
 
   <p>Next, we connect one side of the button (it doesn't matter which one, as
   the internal components of the button are symmetrical) to a GPIO. In this
   example, we'll connect the button to GPIO14.</p><img class="bb" src=
   "img/Buttons_with_GPIO_1_bb.jpg" alt="">
-  <h2 class=step>Wire the other side of the button to ground</h2>
+  <h2 class=step>Wire the other side of the button to ground.</h2>
 
   <p>Finally, we connect the other side of the button to ground.</p><img class=
   "bb" src="img/Buttons_with_GPIO_2_bb.jpg" alt="">
@@ -87,7 +87,7 @@
   it's always good to have power wired to the breadboard...and, we'll need it later 
   when we expand on this button circuit.
 
-  <p>That's it for the wiring – pretty simple, right?</p>
+  <p>That's it for the wiring &mdash; pretty simple, right?</p>
 
  </div>
  <div class="section" id="sw">
@@ -108,7 +108,7 @@ print(my_button.is_pressed())
   not holding down the button at the moment the program is run.</p>
 
   <p>You may notice that this example is similar to the <a data-uid=
-  "gpoutp"></a> example. But in this case, we configure the GPIO as a input
+  "gpoutp"></a> example, but in this case we configure the GPIO as a input
   instead of an output:</p>
   <ul>
    <li>
@@ -117,7 +117,7 @@ print(my_button.is_pressed())
    </li>
    <li>
 
-    <p>In Line 3: We're getting the state of the button, and printing it.</p>
+    <p>In Line 3: We're getting the state of the button and printing it.</p>
    </li>
   </ul>
 
@@ -144,7 +144,7 @@ while True:
   </div>
 
   <p>Run this program and then alternate between pressing and not pressing the
-  button. Take a look at the output window – you should see an indication of
+  button. Take a look at the output window &mdash; you should see an indication of
   when the button is pressed and when it is released.</p>
   <div class="info">
    <div>
@@ -172,11 +172,11 @@ while True:
    <li>
 
     <p>We placed the button on the breadboard so that it sat across
-    the notch.  Try hooking it up within a single row of connect strips 
+    the notch. Try hooking it up within a single row of connect strips 
 	(as we showed how to do in the orientation diagram above in Step #2).
    </li>
    <li>
-    <p>Try hooking up two buttons to two different GPIOs, and print when either one is pressed.
+    <p>Try hooking up two buttons to two different GPIOs, and modify the code print when either one is pressed.
    </li>
    <li>
     <p>With two buttons hooked up, print something only when BOTH of them

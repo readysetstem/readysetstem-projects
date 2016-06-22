@@ -32,25 +32,25 @@
   <h1>Functions</h1>
 
   <p>In this tutorial, we're going to learn about <i>functions</i> and <i>modules</i>. 
-  A function is one of the most basic concepts in programming, and also one of
+  A function is one of the most basic concepts in programming and also one of
   the most important. It often takes a lot of code to get a computer to do even
-  a simple task. And if you want the computer to do the same task over and over
+  a simple task, and if you want the computer to do the same task over and over
   again, that could mean having to write lots of the same code over and over again.</p>
 
   <p>That doesn't sound very efficient, does it?</p>
 
-  <p>It's not, which is why instead of writing the same code many times, we
+  <p>It's not, which is why, instead of writing the same code many times, we
   have the ability to just write the code once in a special format, and then we
   can use that code over and over again, as many times as we want. The special
   format that allows us to re-use the code over and over again is called a
   function.</p>
 
-  <p>One of the nice things about functions is that it also makes it easy for you
+  <p>One of the nice things about functions is that they also make it easy for you
   to use code that <i>other</i> people have written, without having to retype
-  all the code yourself into your software.  In fact, while you may not have 
+  all the code yourself into your software. In fact, while you may not have 
   realized it, you've already used several functions that other people have written. 
   Some of those functions are included in the Python programming language that 
-  everyone (at least everyone who uses Python) has access to.  You can often 
+  everyone (at least everyone who uses Python) has access to. You can often 
   recognize functions because they contain <code>()</code> after them (many times
   with information between the parentheses), and when we use a function in our
   code, we generally say we are <i>calling</i> the function.
@@ -90,7 +90,7 @@ my_led.on()
 
   <p>And again, you were able to utilize all that code by calling a couple functions.
   Even the best programmers in the world rarely write a piece of code that 
-  doesn't rely on code that others have written.  This is one of the powerful concepts
+  doesn't rely on code that others have written. This is one of the powerful concepts
   of programming &mdash; in addition to your own code, you get to benefit from
   code that others have written as well.</p>
 
@@ -105,15 +105,15 @@ my_led.on()
 my_led.on()
 </pre>
     <p>In the above, the period between <code>my_led</code> and <code>on()</code> is called the 
-	<i>dot operator</i>.  It tells that part of the computer that executes the code that what follows
+	<i>dot operator</i>. It tells that part of the computer that executes the code that what follows
 	it (in this case <code>on()</code>) is a special function that only works on variables of that type.
 	In this case, when we defined the <code>my_led</code> variable in the line above it, we did it by 
-	calling another function <code>Output()</code>.  By doing that, we gave the <code>my_led</code>
+	calling another function <code>Output()</code>. By doing that, we gave the <code>my_led</code>
 	variable the ability to call several special functions, like <code>on()</code> and <code>off()</code>.
 	
 	<p>The Ready Set STEM team wrote the <code>on()</code> and <code>off()</code> functions specifically
-	to be used any time we have a variable defined using the <code>Output()</code> function.  We'll have
-	more to say about this below, including information about how to get more information about the 
+	to be used any time we have a variable defined using the <code>Output()</code> function. We'll have
+	more to say about this below, including information about how to get more details about the 
 	functions available for you to use.
   </div>
   </div>
@@ -125,12 +125,12 @@ my_led.on()
   
   <p>In Python, a <i>module</i> is an organization of functions (and perhaps other things, like variables).
   Typically, the collection of things in a module are all related to one another &mdash; perhaps they 
-  all are focused on the same types of tasks or all come from the same person.  
+  all are focused on the same types of tasks or all come from the same person. 
   
   <p>For example, you probably noticed that our Projects Guide is broken up into sections, with each 
-  section focused on a particular topic and set of electronic components.  Well, in most cases, we also
-  organize the functions needed for each section into their own module.  We have a <i>gpio</i>
-  module that contains all of the functions you'll use in this section.  We have a <i>sound</i>
+  section focused on a particular topic and set of electronic components. Well, in most cases, we also
+  organize the functions needed for each section into their own module. We have a <i>gpio</i>
+  module that contains all of the functions you'll use in this section. We have a <i>sound</i>
   module that contains al the functions you'll use to generate sounds (in the next section and beyond).
   And so on...
   
@@ -140,9 +140,9 @@ my_led.on()
    </div>
    <div>	
 
-  <p>As you might imagine, different functions are used in different ways.  Some functions can be run
+  <p>As you might imagine, different functions are used in different ways. Some functions can be run
   by just using the function name followed by <code>()</code> (like the <code>on()</code> function we 
-  discussed above).  Other functions require a bunch of information to be placed between the <code>()</code>
+  discussed above). Other functions require a bunch of information to be placed between the <code>()</code>
   to tell the function exactly what to do (like putting the information we want printed between the 
   <code>()</code> in our <code>print()</code> statements.
   
@@ -150,11 +150,11 @@ my_led.on()
   functions available through a dot operator to certain functions and variables?
   
   <p>In most cases, functions will have <i>documentation</i> &mdash; that is, a place where you can
-  look up all the information about the function.  For example, if you want to see all the modules and that
+  look up all the information about the function. For example, if you want to see all the modules that
   were written and provided by the Ready Set STEM team, you can click on the <strong>API</strong> icon
-  at the top of this page.  <i>API</i> stands for "Application Programming Interface" and is a fancy name
-  for functions and modules that are used for a specific purpose -- in this case, the Ready Set STEM API
-  is used specifically to provide functionality to the the Ready Set STEM CREATOR Kit.  
+  at the top of this page. <i>API</i> stands for "Application Programming Interface" and is a fancy name
+  for functions and modules that are used for a specific purpose &mdash; in this case, the Ready Set STEM API
+  is used specifically to provide functionality to the the Ready Set STEM CREATOR Kit. 
   
   <p>If you click on the API icon above, you see...
   
@@ -168,7 +168,7 @@ my_led.on()
   <h1>Importing Functions & Modules</h1>
 
   <p>Depending on the specific function(s) you want to use, you may or may 
-  not have to let your software know about it beforehand.  Specifically, there
+  not have to let your software know about it beforehand. Specifically, there
   are the two type of functions you'll encounter:
   
   <ol>
@@ -182,8 +182,8 @@ my_led.on()
    </li>
    <li>
 
-    <p><strong>Imported Functions:</strong> For functions that we want to use 
-	that aren't built-in (including all the Ready Set STEM functions we provide),
+    <p><strong>Imported Functions:</strong> For functions that 
+	aren't built-in (including all the Ready Set STEM functions we provide),
     we need to tell the computer that we are going to want access to the
     function(s) before we can use them. We do this by <i>importing</i> the function
     (or the whole module that it's part of) into our code before we can call those 
@@ -196,9 +196,9 @@ my_led.on()
   importing the individual functions we need or importing the entire module that 
   holds that function.
   
-  <h2>Importing Individual Functions From a Module</h2>
+  <h2>Importing Individual Functions from a Module</h2>
 
-  <p>In the cases where we only need access to one or two functions within a module
+  <p>In the cases where we only need access to one or two functions within a module,
   it's often convenient to import only the functions we need, directly by name. 
   We do this using the <code>from ... import</code> command, with the following syntax:
   
@@ -206,8 +206,8 @@ my_led.on()
   from [module] import [function]
   </pre>
   
-  Here's an example of importing the <code>sleep()</code> function &mdash; a function 
-  that is used to put our program to sleep for a period of time:
+  <p>Here's an example of importing the <code>sleep()</code> function &mdash; a function 
+  that is used to put our program to sleep for a period of time:</p>
 
   <div class="code" data-firstline="1">
    <textarea>
@@ -216,8 +216,8 @@ from time import sleep
   </div>
   
   <p>As you can see, the <code>sleep()</code> function is part of the <code>time</code> 
-  module, and by importing the way we did above, we can use the sleep function in 
-  simply by calling it (along with the number of seconds we want to sleep).  Here's 
+  module and, by importing the way we did above, we can use the sleep function 
+  simply by calling it (along with the number of seconds we want to sleep). Here's 
   an example of what the code might look like:
   
   <div class="code" data-firstline="1">
@@ -227,8 +227,8 @@ sleep(10)
 </textarea>
   </div>
   
-  <p>The code above isn't very exciting &mdash; all it does is wait for 10 seconds and
-  then the program ends.  But, this should give you an idea of how functions can be
+  <p>The code above isn't very exciting (all it does is wait for 10 seconds and
+  then the program ends), but, this should give you an idea of how functions can be
   imported and used one at a time.
   
   <h2>Importing an Entire Module</h2>
@@ -236,7 +236,7 @@ sleep(10)
   <p>If you're going to be using several functions within the same module, it's
   generally easiest to just import the whole module into your code. Doing this gives
   you access to any of the functions in that module any time you need them. We
-  do this using the <code>import</code> command by itself.  
+  do this using the <code>import</code> command by itself. 
   
   <p>As an example, let's give
   ourselves access to the same <code>sleep()</code> function we used again by importing
@@ -263,8 +263,8 @@ time.sleep(10)
   </div>
 
   <p>Notice that to call the <code>sleep()</code> function in this example, we had to prepend 
-  the function call with the module name and the dot operator.  This is one of the drawbacks
-  to importing an entire function at a time &mdash; in order to use any functions within
+  the function call with the module name and the dot operator. This is one of the drawbacks
+  of importing an entire function at a time &mdash; in order to use any functions within
   that module, we need to call the function using the module name and the dot operator.
   
 

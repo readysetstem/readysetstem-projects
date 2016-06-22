@@ -77,7 +77,7 @@ When condition is False, continue here...
   </ol>
 
   <p>You'll notice that Steps #2-4 will repeat many times (60, to be exact)
-  before our variable gets to 0 and we jump to Step #6. The easiest way to
+  before our variable gets to 0 and we jump to Step #5. The easiest way to
   implement that repeating code is to use a <code>while</code> loop, as
   follows:</p>
   <div class="code" data-firstline="0">
@@ -97,11 +97,11 @@ sound_the_alarm()
 
   <p>Next, we use a <code>while</code> loop to test whether
   <code>time_left</code> equals 0 or not. If the expression <code>(time_left
-  &gt; 0)</code> tests true (i.e., we haven't yet gotten to zero), we subtract
+  &gt; 0)</code> tests True (i.e., we haven't yet gotten to zero), we subtract
   1 from <code>time_left</code> and go back to the top to test the expression
   again.</p>
 
-  <p>We continue this loop until the expression tests False (i.e., our variable
+  <p>We continue this loop until the expression tests <code>False</code> (i.e., our variable
   gets to 0), at which point we drop through the loop and start executing the
   code below it.</p>
 </div>
@@ -110,7 +110,7 @@ sound_the_alarm()
   <h1>while True:</h1>
 
   <p><code>while</code> loops are tremendously powerful, and you'll likely be 
-  using them very often.  One of the most basic types of <code>while</code> loops
+  using them very often. One of the most basic types of <code>while</code> loops
   &mdash; and also one of the most common &mdash; is a loop that will execute forever.
   In fact, that's the point of it &mdash; it will keep going until someone
   explicitly stops the program.</p>
@@ -123,7 +123,7 @@ while True:
 </textarea>
   </div>
 
-  <p>Because the expression "True" always evaluates to True, this code block
+  <p>Because the expression "True" always evaluates to <code>True</code>, this code block
   will loop over and over forever until the program is stopped by the user.</p>
 </div>
 
@@ -131,7 +131,7 @@ while True:
   <h1>BREAK Free</h1>
   <p>One more thing to note &mdash; sometimes we want to stop running a loop while
   we're in the middle of executing the code block, even if the expression that
-  we were testing still tests True. This can be accomplished by using the
+  we were testing still tests <code>True</code>. This can be accomplished by using the
   <code>break</code> keyword from within the loop, and will immediately drop
   through the loop to the code below.</p>
   
@@ -148,10 +148,10 @@ run_self_destruct_sequence()
 </textarea>
   </div>
 
- <p>In the code above, we are running in a loop forever, but at one point each 
+ <p>In the code above, we are running in a loop forever, but at one point during each 
  time through the loop, we're testing for some condition (in this case, we're testing
  to see if a SELF DESTRUCT button was pressed!), and if that condition tests as
- True, we drop through the loop.
+ <code>True</code>, we drop through the loop.
  </div>
 </body>
 </html>
