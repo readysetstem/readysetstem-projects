@@ -44,7 +44,7 @@ Note(<i>pitch</i>)
   the frequency of the pitch), or a letter (A though G, the name of the
   note).</p>
 
-  <p>For example, an 'A' note (above middle 'C') has the frequency of 440Hz (Hz
+  <p>For example, an 'A' note (above middle 'C' on a piano) has the frequency of 440Hz (Hz
   is a unit of frequency &mdash; it is how many times something happens each second).
   So, to create an 'A' note you have two choices:</p>
   <div class="code" data-firstline="1">
@@ -73,7 +73,7 @@ my_b_flat = Note('Bb')
 </textarea>
   </div>
 
-  <p>And there's octaves, too! To specify the octave, append a single digit to
+  <p>And there are octaves, too! To specify the octave, append a single digit to
   the very end of your note. By default, the octave is the fourth octave. One
   octave higher would be the fifth octave, one octave lower would be the third.
   
@@ -95,7 +95,7 @@ an_octave_lower_a_note = Note('A3')
  <div class="section">
   <h1>Making Music</h1>
 
-  <p>To play notes, as in the previous project, you'll use the play function,
+  <p>To play notes, as in the previous project, you'll use the <code>play()</code> function,
   which by default plays a note for one second. For example:</p>
   <div class="code" data-firstline="1">
    <textarea>
@@ -107,13 +107,13 @@ note.play()
 
   <p>Try the above if you want, and you'll be disappointed to find your note
   doesn't play. The reason is that <code>play()</code> just <i>starts</i>
-  playing a note, in the background. After starting playing, the program will
-  continue to run &mdash; but in our program above, there's no more code after line
+  playing a note, in the background. After starting to play, the program will
+  continue to run, but in our program above, there's no more code after line
   3, so the program ends. The program actually ends before we hear the note playing,
   so we don't hear anything.</p>
 
   <p>This is why we typically use a <code>wait()</code> to force our program to
-  wait for the note to finish. For example here we've added a wait:</p>
+  wait for the note to finish. For example, here we've added a <code>wait()</code>:</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.sound import Note
@@ -154,15 +154,15 @@ note.stop()
 </textarea>
   </div>
 
-  <p>There are 2 sleeps highlighted in the code above:</p>
+  <p>There are 2 <code>sleep()</code> functions highlighted in the code above:</p>
   <ul>
    <li>
 
-    <p>During the first sleep, the note is started playing</p>
+    <p>During the first <code>sleep()</code>, the note is started playing</p>
    </li>
    <li>
 
-    <p>During the second sleep, the note is already stopped &mdash; but 
+    <p>During the second <code>sleep()</code>, the note is already stopped, but 
 	we want to prove that we forced the note to stop, not that the note
 	stopped because the program ended
    </li>
