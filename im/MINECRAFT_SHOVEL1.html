@@ -28,31 +28,32 @@
  </script>
 </head>
 <body>
- <div class="hw" data-count="1" data-name="speaker"></div>
- <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div class="hw" data-count="1" data-name="button"></div>
  <div id="intro" class="section">
 
-  <p>In the previous projects, we remapped the control functions that are
+  <p>In previous Minecraft projects, we remapped the control functions that are
   typically handled by keyboard presses and implemented them in a custom
   controller that we built. In this project, we're going to start actually
   manipulating blocks in the Minecraft world.
 
   <p>In this specific project, we will learn how to monitor when Minecraft
-  blocks have been hit and then gather and use that information in our
+  blocks have been "hit" and then gather and use that information in our
   code.</p>
  </div>
  <div id="hw" class="section">
 
   <p>For this project, we need just a single button mapped to GPIO24. You are
-  welcome to keep the hardware setup from a previous project that has a button
-  attached to that GPIO, or you can simplify your hardware to the following:
+  welcome to keep the full hardware setup from a previous project that has a button
+  attached to GPIO24, or you can simplify your hardware to the following:
   <img class="bb" src="img/Minecraft_1button_bb.jpg" alt=""></p>
  </div>
  <div id="sw" class="section">
 
-  <p>Here is the code that will allow us to get information about a block that
+  <p>Here is the code that will allow us to get information about blocks that
   were hit and then print out information about those blocks.
-  <p>You should recognize most of the code below, but we've highlighted the new code with red arrows:
+
+  <p>You should recognize most of the code below, but we've highlighted the important
+  code with red arrows:
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.button import Button
@@ -141,7 +142,7 @@ print("The Z coordinate of the block you hit is:", hit.pos.z)
   <ol>
    <li>
 
-    <p>To the above code, add code to make this project a Minecraft controller
+    <p><mark>Not sure what this means???</mark>Add code to make this project a Minecraft controller
   (using code from the <a
   data-uid="mccontr3"></a> project).
      </p> </li> <li> <p>
