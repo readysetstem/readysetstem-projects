@@ -28,8 +28,8 @@
  </script>
 </head>
 <body>
- <div class="hw" data-count="1" data-name="speaker"></div>
- <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div class="hw" data-count="1" data-name="accelerometer"></div>
+ <div class="hw" data-count="5" data-name="button"></div>
  <div id="intro" class="section">
 
   <p>In our last project, we improved our Minecraft controller code to make it
@@ -38,10 +38,10 @@
   us (which is difficult to do) in order for our character to look down.</p>
 
   <p>In this project, we're going to improve that — we're going to modify the
-  tilt functionality so that our character looking down while the controller is
-  in the default position — horizontal or "flat on a table" — and have then we
+  tilt functionality so that our character is looking down while the controller is
+  in the default position (horizontal or "flat on a table") and then we
   only need to rotate the controller towards us (which is easy) to have him
-  start to look upwards.</p>
+  look upwards.</p>
  </div>
  <div id="hw" class="section"><img class="bb" src=
  "img/Minecraft_Accel_4way_1button_bb.jpg" alt=""></div>
@@ -62,11 +62,11 @@
   <p>And that works...  But there are two things we can improve on:
   <ol>
   <li><p>
-  Too hard to look down &mdash; to look down, you have to point the controller
+  <strong>Too hard to look down:</strong>  To look down, you have to point the controller
   down, and it can be difficult to twist your wrists enough to tilt it fully
   down.  We can adjust this.
   </p></li> <li><p>
-  Controller is not sensitive enough. Currently, when you tilt the controller a
+  <strong>Controller is not sensitive enough:</strong>  Currently, when you tilt the controller a
   little, Steve moves a little and when you tilt a lot, Steve moves a lot.
   That works reasonably well, but the current
   code doesn't take that far enough.
@@ -110,14 +110,14 @@ while True:
   <ul>
    <li>
 
-    <p>On Line 24: we decrease the y value by a small amount (0.3).  Now, when we hold the kit
+    <p>On Line 24, we decrease the y value by a small amount (0.3).  Now, when we hold the kit
     at a more comfortable angle (with y pointing a little bit up) Steve won't move at all.</p>
    </li>
    <li>
 
-    <p>On Line 25: previously we converted the accelerometer force to a reasonable amount to
-    <code>look()</code>
-    using the equation <code>50*x</code> (and likewise for <code>y</code>).  That makes a small
+    <p>On Line 25, we modify the accelerometer input we receive.  Previously, we converted the 
+	accelerometer force to a reasonable value using the equation <code>50*x</code> that could
+	be inserted into the <code>look()</code> (and likewise for <code>y</code>).  That made a small
     value of <code>x</code> move Steve a little, and a large value move him a lot.  We can
     increase this effect by using x-squared &mdash; a small value will still move him a little, and
     a large value will move him even more.   To use x-squared, you would expect the the code
@@ -126,10 +126,12 @@ while True:
     <code>abs()</code> keeps negative <code>x</code> values negative.
    </li>
    <li>
-    <p>Also on Line 25: 
-    We've adjusted the multiplier from 50 to 150, but the choice here is just chosen by experimenting!</p>
+    <p>Also on Line 25, we've adjusted the multiplier from 50 to 150.  There is nothing scientific
+	about this change &mdash; this just seemed to work better based on our experimentation!</p>
    </li>
   </ul>
+  
+  <p>Go ahead and give your modified controller a try...
  </div>
  <div id="challenge" class="section">
   <ol>
@@ -143,7 +145,10 @@ while True:
    <li>
 
     <p>
-    The controller is now more comfortable to handle, because the default position is to keep it slightly tilted up.  One issue, however, is that when you set the kit on a table, Steve will look down at the ground.  Can you detect when the CREATOR Kit is placed flat on a table, and have Steve look straight ahead?
+    The controller is now more comfortable to handle, because the default position is to keep 
+	it slightly tilted up.  One issue, however, is that when you set the kit on a table, Steve 
+	will look down at the ground.  Can you detect when the CREATOR Kit is placed flat on a 
+	table, and have Steve look straight ahead?
     </p>
    </li>
   </ol>

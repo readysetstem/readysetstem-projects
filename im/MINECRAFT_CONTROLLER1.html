@@ -28,14 +28,14 @@
  </script>
 </head>
 <body>
- <div class="hw" data-count="1" data-name="speaker"></div>
- <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div class="hw" data-count="1" data-name="accelerometer"></div>
+ <div class="hw" data-count="5" data-name="button"></div>
  <div id="intro" class="section">
 
-  <p>In this project, we will use the Ready Set STEM kit to create a Minecraft
+  <p>In this project, we will use the CREATOR Kit to design and build a Minecraft
   controller. This first version of the controller will use the accelerometer
   to control where your character, Steve, is looking. In addition, we'll use
-  four buttons to control Steve's movement forward, backwards, left and
+  four buttons to control Steve's movements forward, backwards, left and
   right.</p>
  </div>
  <div id="hw" class="section">
@@ -62,7 +62,7 @@
   </li>
   <li>
 
-   <p>Button Button: GPIO23</p>
+   <p>Down Button: GPIO23</p>
   </li>
   <li>
 
@@ -70,7 +70,9 @@
   </li>
  </ul>
 
- <p>This is what your hardware setup should look like:</p><img class="bb" src=
+ <p>This is what your hardware setup should look like (note that we've added
+ some extra wires to keep the breadboard looking clean and to make the buttons
+ easily accessible):</p><img class="bb" src=
  "img/Minecraft_Accel_4way_1button_bb.jpg" alt=""></div>
  <div id="sw" class="section">
 
@@ -82,8 +84,8 @@
   projects.  The initialization code will be similar to those projects.
 
 
-  <p>Here is what the code for this project should look like (where new code is highlighted with
-  red arrows):</p>
+  <p>Here is what the code for this project should look like (where the new code we'll
+  discuss below is highlighted with red arrows):</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.accel import Accel
@@ -134,12 +136,12 @@ while True:
 
 </textarea>
   </div>
-  <p>The new additions we've made highlighted above are:</p>
+  <p>The new additions we've made to the code (and highlighted above) are:</p>
   <ul>
    <li> <p>
    On Lines 16 through 39, we test each button and perform and action to control Steve.  For
-   example, if the left button <code>is_pressed</code>, then we start moving Steve left.  If the
-   left button is NOT pressed, then we stop Steve moving left (by releasing the left keystroke
+   example, if the left button <code>is_pressed</code>, we will start moving Steve left.  If the
+   left button is NOT pressed, then we will stop Steve moving left (by releasing the left keystroke
   using <code>release=True</code>).
    We repeat this if/then/else statement for all of the other buttons as well.
     </p> </li> <li> <p>
@@ -151,7 +153,8 @@ while True:
 
     </p> </li>
   </ul>
-
+  <p>Give your controller a try and see how it works.  In our upcoming projects, we'll
+  improve the code and add more controller functionality.
  </div>
  <div id="challenge" class="section">
   <ol>
