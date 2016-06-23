@@ -51,6 +51,7 @@ pushpg:
 	@echo "####################################################################"
 
 TIDY_TARGETS=$(wildcard im/*.html)
+TIDY_TARGETS=im/BREADBOARD_FIRST_CIRCUIT.html
 .PHONY: $(TIDY_TARGETS)
 tidy: $(TIDY_TARGETS)
 $(TIDY_TARGETS):
