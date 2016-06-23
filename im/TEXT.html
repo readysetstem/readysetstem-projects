@@ -33,29 +33,29 @@
  <div class="section">
   <h1>Text</h1>
 
-  <p>Text is a special case of a Sprite. Text is just a Sprite made of of
-  strings of text. Everything you can do with a Sprite, you can do with Text -
-  they can be rotated, cropped, flipped and drawn on the Framebuffer</p>
+  <p>Text is a special case of a Sprite. Text is just a Sprite made of
+  strings of characters. Everything we can do with a Sprite, we can do with Text -
+  it can be rotated, cropped, flipped and drawn on the Framebuffer</p>
 
-  <p>To create Text, you can use the the <code>Text()</code> function with a
+  <p>To create Text, we can use the the <code>Text()</code> function with a
   string representing the text:</p>
   <pre>
 Text(<i>text</i>)
 </pre>
 
   <p>where <code><i>text</i></code> is a string. Text also has some optional
-  parameters &mdash; for example, you can call <code>Text()</code> with:</p>
+  parameters &mdash; for example, we can call <code>Text()</code> with:</p>
   <pre>
 Text(<i>text</i>, <i>char_spacing=1</i>, <i>font_name='5x7'</i>)
 </pre>
 
-  <p>Both optional parameters have the defaults as shown &mdash; but you can change
+  <p>Both optional parameters have the defaults as shown, but we can change
   them. The <i>char_spacing</i> is the number of blank points between
   characters in the text. The <i>font_name</i> is the font that is used for the
   text. There are two choices for font: '5x7' and '3x5', and they are named
   according to the max width and height of the characters they use.</p>
 
-  <p>For example, the letter 'A' could be created and draw with:
+  <p>For example, the letter 'A' could be created and drawn with:
   <code>draw()</code> function:</p>
   <div class="code" data-firstline="1">
    <textarea>
@@ -92,7 +92,7 @@ fb.show()
   </div>
 
   <p>Before drawing <code>my_text</code> (just before the
-  <code>fb.draw()</code> function above), there's a number of operation we
+  <code>fb.draw()</code> function above), there are a number of operation we
   could do to modify it. The following table shows what the text would look
   like for various operations:</p>
   <table class="basic">

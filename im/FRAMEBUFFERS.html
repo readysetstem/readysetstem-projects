@@ -34,8 +34,8 @@
   <h1>What are Framebuffers?</h1>
 
   <p>A framebuffer acts as a temporary "canvas" that sits inside of a
-  computer's memory. They are often used so that the program can draw the
-  lines, points and other objects and have then all displayed at once. Without
+  computer's memory. They are often used so that the program can draw
+  lines, points and other objects and display them all at once. Without
   a framebuffer, the drawing on the screen can often have a disconcerting
   flickering effect.</p>
 
@@ -58,7 +58,7 @@
    </li>
   </ul>
 
-  <p>For every LED on the LED Matrix, the framebuffer stores a number, between
+  <p>For every LED on the LED Matrix, the framebuffer stores a number between
   0 and 15. This number is the color of the LED &mdash; colors are shades of red:</p>
   <style>
     tbody.thistable td { 
@@ -164,12 +164,12 @@
   </table>
  </div>
  <div class="section">
-  <h1>Framebuffer functions</h1>
+  <h1>Framebuffer Functions</h1>
 
   <p>We've already seen the framebuffer <code>point()</code> function. It takes
   two parameters: <code>x</code> and <code>y</code>, which define which LED to
   light up. <code>x</code> is the distance in from left to right, starting at
-  zero. <code>y</code> is the distance in from bottom to top, also starting at
+  zero. <code>y</code> is the distance up from bottom to top, also starting at
   zero.</p>
 
   <p>The <code>point()</code> function (and all framebuffer drawing functions)
@@ -211,7 +211,7 @@ print("The height is", fb.height)
   <i>attributes</i> of the framebuffer. The difference is that they act just
   like variables, instead of like functions. The difference is in the
   parenthesis &mdash; if you ever see parenthesis after the a name, then that name is
-  a function. If not, it's an attribute.</p>
+  a function. If not, it's an attribute.<mark>Maybe an example here would help?</mark></p>
 
   <p>Finally, there are two additional functions for drawing lines and
   rectangles.</p>
@@ -258,7 +258,7 @@ fb.show()
 
   <p>The above code just draws a point at the coordinates (0, 0). If we change
   line 5 (<code>fb.point(0,0)</code>) to use a different function and
-  parameters, the output would look like:</p>
+  parameters, the output would look like this:</p>
   <table class="basic">
    <tbody>
     <tr>

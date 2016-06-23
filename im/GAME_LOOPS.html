@@ -67,8 +67,8 @@ Finish &amp; Cleanup
   <h1>A Simple "Game"</h1>
 
   <p>We're going to create a simple "game" &mdash; too simple to really qualify as a
-  game &mdash; but that will give us start to creating more complicated games later.
-  This game is going to draw a dot on the screen, and move it across the screen
+  game, but one that will give us start to creating more complicated games later.
+  This game is going to draw a dot on the screen and move it across the screen
   from left to right. That's it &mdash; simple.</p>
   <div class="code" data-firstline="1">
    <textarea>
@@ -113,7 +113,7 @@ while True:
   game, defining the start location and speed of various game characters,
   etc.</p>
 
-  <p>In most all Python programs, you'll start importing the functions you're
+  <p>In most all Python programs, you'll start by importing the functions you're
   going to use in the program.</p>
   <div class="code" data-firstline="5">
    <textarea>
@@ -153,7 +153,7 @@ while True:
 
   <p>In a typical game loop, this is where we would check for user input &mdash;
   check for button presses, check for joystick movement, check for controller
-  movement, etc. And we'll do that in some subsequent projects. But, for this
+  movement, etc. We'll do that in some subsequent projects, but for this
   particular project, we're keeping things simple and we're not taking any
   input from the user. So, there's no code to add for this part of the
   loop.</p>
@@ -161,9 +161,9 @@ while True:
 
   <p>Updating the game world means taking the new information we have &mdash; either
   from the user input we've received or just because we are further along in
-  time &mdash; and to use this new information to update any parts of our game that
+  time &mdash; and using this new information to update any parts of our game that
   now need to change. For example, in a character-based game, if a user has
-  indicated that they want their character to move to the right of the screen,
+  indicated that they want their character to move to the right side of the screen,
   the game world update might involve changing the location of the character,
   shifting the background, changing the location of other characters in the
   game, etc. This part of the game loop will figure out what the next set of
@@ -182,7 +182,7 @@ x += 1
 
   <p>Once we have updated all the aspects of the game world and have the
   information about what will get displayed next, it's time to actually display
-  the the new graphics. This typically involves erasing and drawing the new
+  the new graphics. This typically involves erasing and drawing the new
   graphics to the framebuffer and then displaying that framebuffer. We can do
   that just like we did in the last project:</p>
   <div class="code" data-firstline="15">
@@ -199,16 +199,16 @@ fb.show()
   setting the frame rate, we can know exactly how much to move graphics around
   the display from one frame to the next.</p>
 
-  <p>Because your graphics will be updating each time through the loop, you'll
-  want to choose a wait time that makes sense for your graphics updates. If
-  not, you'll probably want to play around with various pause times and see
-  which work the best &mdash; too slow, and you might find that your program is not
+  <p>Because our graphics will be updating each time through the loop, we'll
+  want to choose a wait time that makes sense for our graphics updates.
+  You'll probably want to play around with various pause times and see
+  which works the best &mdash; too slow, and you might find that your program is not
   responsive; too fast, and you might find that the processor wastes power and
   causes poor performance of other programs running on the computer at the same
   time.</p>
 
   <p>In this case, our graphics rely on the loop speed, and we'd probably be
-  happy moving the location of the dot every half-second. Which means we'll
+  happy moving the location of the dot every half-second, which means we'll
   want to put in a half-second delay at the end of the loop.</p>
   <div class="code" data-firstline="20">
    <textarea>
@@ -235,10 +235,10 @@ time.sleep(.5)
   will just continue to run even after you can no longer see the dot. So, once
   the dot has disappeared, you can stop the program.</p>
 
-  <p>Also, you might notice that the first place you see the dot is one the LED
+  <p>Also, you might notice that the first place you see the dot is at the LED
   second from the left. This is due to the fact that we "update the game world"
-  before we "draw graphics on the screen". Our first update moves the dot one
-  position to the right, before we've even had a chance to see it on the
+  before we "draw graphics on the screen." Our first update moves the dot one
+  position to the right before we've even had a chance to see it on the
   screen. In a more normal game, this doesn't matter, as the wait period will
   be fast, and this small quirk won't be noticeable.</p>
  </div>
