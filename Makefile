@@ -51,7 +51,6 @@ pushpg:
 	@echo "####################################################################"
 
 TIDY_TARGETS=$(wildcard im/*.html)
-TIDY_TARGETS=im/BREADBOARD_FIRST_CIRCUIT.html
 .PHONY: $(TIDY_TARGETS)
 tidy: $(TIDY_TARGETS)
 $(TIDY_TARGETS):
@@ -68,6 +67,10 @@ $(TIDY_TARGETS):
 				exit $$?; \
 			fi \
 		fi
+
+	@# tidy mucks with &mdash;.  Convert all mdash/ndash UTF-8 chars back to &mdash;
+	gsed -i 's/\xe2\x80\x93/\&mdash;/' $@
+	gsed -i 's/\xe2\x80\x94/\&mdash;/' $@
 
 	@# Add extra line spacing before paragraphs
 	gawk -i inplace '/<p>/{print ""}1' $@
