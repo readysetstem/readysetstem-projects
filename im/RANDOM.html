@@ -31,22 +31,22 @@
  <div class="section">
   <h1>Randomize</h1>
 
-  <p>Often when creating games, you'll need to a random element. For example,
+  <p>Often when creating games, you'll need to add a random element. For example,
   imagine sports video game, where you are playing against the computer. If the
   opposing team ran the same exact plays every time you played the game, the
   game would get pretty boring.</p>
 
   <p>This is very true in the Simon Says projects game, where the computer must
-  play a random sequence, that the player has to repeat. If it wasn't random,
+  play a random sequence for the player to repeat. If the sequence isn't random,
   it's not nearly as interesting of a game (although it still would get quite
   hard as the sequence got longer).</p>
 
   <p>Python provides a set of functions in the <code>random</code> module that
-  can return random numbers.A We'll describe below how a few of them
+  can return random numbers. We'll describe below how a few of them
   work...</p>
 
   <p>One of the simplest functions is <code>randrange(stop)</code>. It returns
-  a random number grater than or equal to 0, but less than <i>stop</i>. For
+  a random number greater than or equal to 0, but less than <i>stop</i>. For
   example, if you try:</p>
   <div class="code" data-firstline="1">
    <textarea>
@@ -75,7 +75,7 @@ print(randrange(5))
   random number between <i>a</i> and <i>b</i> (inclusive). For example,
   <code>randint(5, 8)</code> can return 5, 6, 7, or 8.</p>
 
-  <p>One more useful function is <code>choice(x)</code>. It turns a random item
+  <p>One more useful function is <code>choice(x)</code>. It returns a random item
   in the list that you give it (<i>x</i>). For example:</p>
   <div class="code" data-firstline="1">
    <textarea>

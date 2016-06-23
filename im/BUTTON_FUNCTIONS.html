@@ -29,7 +29,7 @@
 </head>
 <body>
  <div class="section">
-  <h1>Pressing your buttons</h1>
+  <h1>Pressing Your Buttons</h1>
 
   <p>The <code>Button()</code> function returns a button object, and with that
   object you have access to a full set of button functions. To use the
@@ -58,15 +58,15 @@ print(my_button.is_pressed())
   if the button is pressed, it can miss a press. For example, say we write some
   code that checks once a second to see if the button is pressed. If a user
   pushes and releases the button quickly (say in a quarter of a second), it is
-  likely the that the code misses the button press — it might check before and
+  likely the code will miss the button press &mdash; it might check before and
   after the button is pressed, but not check during the press.</p>
 
-  <p>The Button object fixes this problem with a couple new functions. The
+  <p>The <code>Button()</code> object fixes this problem with a couple new functions. The
   function <code>presses()</code> returns the number of times the button has
   been pressed since the last time the function was called. Similarly, the
   function <code>releases()</code> returns the number of times the button has
   been released since the last time the function was called. For example, if
-  you run the following code, and push the button several time while it is
+  you run the following code, and push the button several times while it is
   running (during the <code>sleep()</code>, the output will be the number of
   presses:</p>
   <div class="code" data-firstline="1">
@@ -80,7 +80,7 @@ print(my_button.presses())
   </div>
  </div>
  <div class="section">
-  <h1>Waiting for presses</h1>
+  <h1>Waiting for Presses</h1>
 
   <p>There are often times when you don't want to do anything in your code
   except wait until a certain button is pressed. A simple way to do this is
@@ -112,14 +112,14 @@ print("The button was pressed!")
 </textarea>
   </div>
 
-  <p>The Button object also provides a function,
+  <p>The <code>Button()</code> object also provides a function,
   <code>wait_many(buttons)</code> that will wait for any button in a list of
   <code>buttons</code> to be pressed. But, because <code>wait_many()</code>
   works with a bunch of buttons together, and not a specific button, the way
-  you call it is a little different. To call it, you need call
+  you call it is a little different. To call it, you need to call
   <code>Button.wait_many(buttons)</code>. For example, say you had the same
   four buttons hooked up as in the <a data-uid="manybuttons"></a> project.
-  Then, to wait for any one of them to be pressed:</p>
+  Then, to wait for any one of them to be pressed, you would use the following code:</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.button import Button

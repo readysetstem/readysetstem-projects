@@ -34,7 +34,7 @@
  <div class="section" id="intro">
 
   <p>In our last project, we finished wiring up the four LEDs and tested to
-  verify they work. Assuming your buttons and LEDs are all working correctly,
+  verify they worked. Assuming your buttons and LEDs are all working correctly,
   we've now completed the hardware for our Simon Says game and are ready to
   move on to writing our game code.</p>
  </div>
@@ -52,7 +52,7 @@
   flashes that we make up and write the code to execute that list of flashes.
   In the next project, we'll expand on that by making the flashing sequence
   random.</p>
-  <h2 class="step">Add Initialization Code</h2>
+  <h2 class="step">Add initialization code.</h2>
 
   <p>The first thing we're going to need to do is to import the modules and
   functions we'll be using and initialize our list of LEDs. Here's what our
@@ -66,7 +66,7 @@ import time
 lights = [Output(4), Output(18), Output(24), Output(27)]
 </textarea>
   </div>
-  <h2 class="step">Create a List of LED Flashes</h2>
+  <h2 class="step">Create a list of LED flashes.</h2>
 
   <p>For our game, we'll store the sequence of LED flashes in a list. Each item
   in that list will refer to one of the LEDs in our <code>lights[]</code> list
@@ -78,7 +78,7 @@ lights = [Output(4), Output(18), Output(24), Output(27)]
   <p>So, our list of LED flashes will simply be a list of values between 0 and
   3, each representing an LED in <code>lights[]</code>. Let's call our list
   sequence of LEDs <code>play_order</code> and we'll start by having it run
-  through a sequence of LED flashes that we make up (we'll use 8 LED flashes,
+  through a sequence of LED flashes that we make up (we'll use eight LED flashes,
   hitting each LED twice).</p>
 
   <p>Here's what our LED sequence list will look like:</p>
@@ -87,7 +87,7 @@ lights = [Output(4), Output(18), Output(24), Output(27)]
 play_order = [0, 1, 2, 3, 2, 1, 0, 3]
 </textarea>
   </div>
-  <h2 class="step">Play the List of LED Flashes</h2>
+  <h2 class="step">Play the list of LED flashes</h2>
 
   <p>Finally, we want to actually play that sequence of flashes on our LEDs. To
   do that, we'll first ensure that all the LEDs are turned off when we start,
@@ -112,7 +112,7 @@ for i in play_order:
     time.sleep(0.2)
 </textarea>
   </div>
-  <h2 class="step">Put It All Together</h2>
+  <h2 class="step">Put it all together.</h2>
 
   <p>Here is our full code at this point &mdash; when you run it, you will see the
   four LEDs flash in the hard-coded pattern that we've added to the code:</p>
@@ -142,15 +142,15 @@ for i in play_order:
  <div class="section" id="challenge">
   <ol>
    <li> <p>
-   The <code>play_order</code> only includes numbers 0 through 3, that
-   correspond to each of the 4 LEDs.  What happens if you use a number in
+   The <code>play_order</code> only includes numbers 0 through 3, which
+   correspond to each of the 4 LEDs. What happens if you use a number in
    <code>play_order</code> greater than 3?  Why?
    </p></li> <li> <p>
-   Can you make the LEDs play in the order 0, 1, 2, 3, 0, 1, 2, 3...  forever?
+   Can you make the LEDs play in the order 0, 1, 2, 3, 0, 1, 2, 3... forever?
    </p></li> <li> <p>
    The example in this section lights up one LED for each item in
-   <code>play_order</code>.  Can you modify the code to light more than one LED
-   each time through the final for loop?  For example, first light LEDs 0, 1,
+   <code>play_order</code>. Can you modify the code to light more than one LED
+   each time through the final <code>for</code> loop? For example, first light LEDs 0, 1,
    and 2; then 2 and 3, then 0, 2 and 3; and so on...
    </p></li>
   </ol>

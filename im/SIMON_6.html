@@ -34,7 +34,7 @@
  <div class="hw" data-count="4" data-name="button"></div>
  <div class="section" id="intro">
 
-  <p>In this project, we continue the development of our Simon Says pattern
+  <p>In this project, we continue the development of our Simon Says pattern-
   matching game by adding sound to our LED flashes.</p>
 
  </div>
@@ -117,18 +117,18 @@ while not failed:
   <p>Next, we need to insert our sounds into two locations &mdash; where we flash
   the sequence of LEDs for the player and where the player presses a button
   while repeating the sequence. Here is what those two code blocks should be
-  updated to:</p>
+  updated to: ???should there be a pic here???</p>
  <p>Here, we've added code to play sounds:
   <ul>
   <li><p>
   In Line 13: we initialize <code>Notes()</code>s, one note that corresponds to each LED.
   </p></li> <li><p>
-  In Line 34: we play the note corresponding to the LED in the sequence.  At this line, we
-  previously just paused with a <code>time.sleep()</code>.  Now, we play the correct note for
+  In Line 34: we play the note corresponding to the LED in the sequence. At this line, we
+  previously just paused with a <code>time.sleep()</code>. Now, we play the correct note for
   exactly the amount of time that we previously were pausing.
   </p></li> <li><p>
-  In Lines 54 and 58: we play the note that corresponds to the button that was pressed.  The first
-  line we've added starts the note playing, and the second line stops it.  This way, the note will
+  In Lines 54 and 58: we play the note that corresponds to the button that was pressed. The first
+  line we've added starts the note playing, and the second line stops it. This way, the note will
   play for the entire time the user has the button pressed.
   
   </p></li> </ul>
@@ -141,14 +141,14 @@ while not failed:
    Try changing the pitch of all of the notes to the same notes two octaves higher.
    </p></li> <li> <p>
    When the user is trying to repeat the sequence, the notes will play for as long as the button
-   is pressed.  Instead, change the code to only play the note for exactly 0.4 seconds.
+   is pressed. Instead, change the code to only play the note for exactly 0.4 seconds.
    </p></li> <li> <p>
    Instead of notes, change the code to use <code>Speech()</code> that
-   corresponds to the color of each led.  That is, when you press the button
-   next to the red LED, have the speaker say the word "Red".
+   corresponds to the color of each led. That is, when you press the button
+   next to the red LED, have the speaker say the word "Red."
    </p></li> <li> <p>
-   Instead of notes, change the code to use <code>Sound()</code>.  You could
-   have an animal sound for each button.  Some animal sounds available are:
+   Instead of notes, change the code to use <code>Sound()</code>. You could
+   have an animal sound for each button. Some animal sounds available are:
    <span class=nospell>"Meow.wav", "Horse.wav", "Rooster.wav", "Kitten.wav", "Cricket.wav",
    "Dog1.wav", "Dog2.wav", "Goose.wav", "Owl.wav", "Bird.wav", and "Duck.wav"</span>.
    
