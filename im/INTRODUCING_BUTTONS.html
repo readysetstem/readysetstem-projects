@@ -51,7 +51,6 @@
   circuit, current will stop flowing and the light bulb will not
   illuminate:</p>
 
-  <p><mark>PIC: Animation of lightbulb circuit being cut.</mark></p>
   <div class="info">
    <div>
     The Path of Least Resistance
@@ -129,7 +128,7 @@
    <p>In that second example, we have a full circuit with a battery and
    lightbulb, and we also have a short that runs directly from the positive
    terminal of the battery to the negative terminal. Remember from earlier that
-   if current has a choice between two paths, and one path has much <i>much
+   if current has a choice between two paths, and one path has <i>much
    lower</i> resistance, most of the current will run through that path. In
    this case, most of the current will run from the positive terminal of the
    battery to the negative terminal, directly through the plain wire.</p>
@@ -139,7 +138,9 @@
    negative terminal without any load (components) in-between, you will quickly
    drain your battery.</p>
 
-   <p>Shorting the battery can actually work with any power source. For
+   <p>But shorts don't apply just to batteries &mdash; you can accidentally
+   short any power
+   source. For
    example, here is what a short circuit might look like using our breadboard
    with the Raspberry Pi as the power source:</p><img class="bb" src=
    "img/Breadboard_short_bb.jpg" alt="">
@@ -147,23 +148,23 @@
    <p>In this circuit, we have a short directly from power to ground. Because
    we have a <i>lot</i> of current running from the Raspberry Pi power source
    directly back to the Raspberry Pi ground, we'll overload the Raspberry Pi
-   electronic circuitry and the Raspberry Pi will likely reboot itself.</p>
+   electronic circuitry and the Raspberry Pi will likely shutdown.</p>
 
-   <p><b>NOTE: If the Raspberry Pi ever reboots for no apparent reason, check
-   to see if you have a short circuit on your breadboard.</b> This will often
+   <p><b>NOTE: If the Raspberry Pi ever shuts down or reboots while you are creating circuits,
+   check to see if you have a short circuit on your breadboard.</b>
+   This will often
    happen if you accidentally wire both power and ground into the same
    breadboard rail, like this:</p><img class="bb" src=
-   "img/Breadboard_short_red_rail_bb.jpg" alt=""></div>
+   "img/Breadboard_short_red_rail_bb.jpg" alt="">
+  <p>Look closely at the power and ground connections in the above circuit &mdash; it's <b>NOT</b> a working circuit!</p>
+   </div>
   </div>
   <h1>Pushing Your Buttons</h1>
 
   <p>One of the most common — and versatile — components in the electronics
   world is the pushbutton (or just "button"). A button is just a very simple
   switch — electric current can flow through it only when it is pressed, but
-  can't flow through it when it is not pressed. While buttons are very simple
-  in the way they work, when you use them strategically in a circuit — and when
-  you combine that circuit with some computer code — buttons can provide a very
-  versatile way to get information from a user to a computer program.</p>
+  can't flow through it when it is not pressed. </p>
 
   <p>Go ahead and take one of the buttons out of your <strong>Your First
   Circuit Ready Set STEM Cell</strong> bag, and let's take a closer look at how it
@@ -176,9 +177,9 @@
   another. If that button is inserted into a circuit, the circuit is
   <i>open</i> when the button is unpressed. As we learned above, in an open
   circuit, current doesn't flow and the components don't do anything. When the
-  button is pressed, a small metal disk inside of the button case pushes into
+  button is pressed, a small metal disk inside of the button pushes into
   the legs of the button, connecting all four metal legs together — this
-  <i>closes</i> the circuit. Remember, when a circuit is closed, current will
+  <i>closes</i> the circuit (when the button is part of a circuit). Remember, when a circuit is closed, current will
   flow and the components in the circuit will operate.</p>
 
   <p>One thing to note: internally, the left side of the button (the two legs
@@ -202,7 +203,7 @@
 
     <p>When the button is pressed, the button acts as a wire and closes the
     circuit — electric current can then flow through the button and the
-    components can operate.</p>
+    rest of the circuit.</p>
    </li>
   </ol>
  </div>
