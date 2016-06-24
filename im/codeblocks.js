@@ -43,7 +43,11 @@ chainedOnload(function() {
         for (var j = 0; j < lines.length; j++) {
             spaces = lines[j].search("[^ ]")
             if (spaces > 0) {
-                lines[j] = lines[j].replace(/^ */, "\t".repeat(spaces/4));
+                var tabs = "";
+                for (var s = 0; s < spaces/4; s++) {
+                    tabs += "\t";
+                }
+                lines[j] = lines[j].replace(/^ */, tabs);
             }
         }
 
