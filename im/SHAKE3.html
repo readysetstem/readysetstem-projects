@@ -33,11 +33,9 @@
  <div class="hw" data-count="1" data-name="audio_cable"></div>
  <div id="intro" class="section">
 
-  <p>In this project, we'll add sounds to our accelerometer shake game. With
-  sounds, specifically text-to-speech like we used in the <a data-uid=
-  "speechp"></a> project, we can command the user to do different actions
-  through the game, and let them know if they've succeeded.</p>
- </div>
+  <p>In this project, we'll finish up our accelerometer shake game by 
+  randomizing the subsequent command to the user and verifying that
+  the requested action was taken. </div>
  <div id="hw" class="section">
 
   <p>You'll need to wire up the Accelerometer as done in previous projects.
@@ -46,14 +44,11 @@
   <div style="text-align: center;"><img class="bb" src="img/Accel_bb.jpg" alt=
   ""></div>
 
-  <p>In addition, you'll need the speaker hooked up — refer back to the
-  <a data-uid="playingnotes"></a> project if you need help.</p>
  </div>
  <div id="sw" class="section">
 
   <p>Here is what the code for this project should look like at this point
-  (with new changes highlighted with arrows) — it should run similarly to the
-  previous project, but with sound added:</p>
+  (with new changes highlighted with arrows):</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.accel import Accel
@@ -142,22 +137,22 @@ try_again_tts.play().wait()
 
   <p>Now, let's take a look at what our code is doing...</p>
 
-  <p>The bulk of the changes above are to add 3 new tilt methods: tile right,
+  <p>The bulk of the changes above are to add 3 new tilt methods: tilt right,
   tilt up, and "shake me". After adding these, we'll now have a real game! For
   each new tilt type, we've duplicated the code that handles the left tilt, and
   changed the variable names and detection to handle right tilt, tilt up, and
   "shake me".</p>
 
-  <p>The "shake me" detection is a little different, and needs so explanation.
+  <p>The "shake me" detection is a little different, and needs some explanation.
   To correctly do a "shake" you must keep the CREATOR Kit level, and shake up
-  and down. This is necessary — if we allowed the kit to be tiled while it was
+  and down. This is necessary &mdash; if we allowed the kit to be tilted while it was
   shaken, we wouldn't be able to tell the difference between a tilt and a
   shake.</p>
 
-  <p>So to test for "shaking" we test to make sure that <code>x</code> is small
+  <p>So, to test for "shaking" we test to make sure that <code>x</code> is small
   (it's not tilted left or right) and that <code>y</code> is small (it's not
-  tiled up or down). Then we check that <code>z</code> is far away from 1 (it's
-  normal position). Remember: when the CREATOR Kit is sitting flat on a table,
+  tiled up or down). Then we check that <code>z</code> is far away from 1 (which
+  is its normal position). Remember: when the CREATOR Kit is sitting flat on a table,
   <code>z</code> will be 1 — it means that the force of the earth is pulling it
   down. When the kit is moved up quickly <code>z</code> will go a good bit
   higher than 1. When the kit is moved back down quickly <code>z</code> will go
@@ -179,6 +174,8 @@ try_again_tts.play().wait()
     crazy hard to respond with the correct action in time.</p>
    </li>
   </ul>
+  
+  <p>Now that the game is complete, give it a try and see how well you can do!
  </div>
  <div id="challenge" class="section">
   <ol>
@@ -200,10 +197,10 @@ try_again_tts.play().wait()
    </li>
    <li>
 
-    <p>Instead of printing the number of correct action (from the last
+    <p>Instead of printing the number of correct actions (from the last
     question), can you have the code say the number out loud? (Hint: you may
     need to create a new <code>Speech()</code> for each number you want to say
-    — so you might need to limit the answer to numbers under, say, 10)</p>
+    &mdash; so you might need to limit the answer to numbers under, say, 10)</p>
    </li>
    <li>
 

@@ -33,10 +33,10 @@
  <div class="hw" data-count="1" data-name="audio_cable"></div>
  <div id="intro" class="section">
 
-  <p>In this project, we'll add sounds to our accelerometer shake game. With
-  sounds, specifically text-to-speech like we used in the <a data-uid=
-  "speechp"></a> project, we can command the user to do different actions
-  through the game, and let them know if they've succeeded.</p>
+  <p>In this project, we'll add sounds to our accelerometer shake game. 
+  Specifically, we'll use text-to-speech like we used in the <a data-uid=
+  "speechp"></a> project to command the user to do different actions
+  throughout the game, and let them know if they've succeeded.</p>
  </div>
  <div id="hw" class="section">
 
@@ -46,14 +46,14 @@
   <div style="text-align: center;"><img class="bb" src="img/Accel_bb.jpg" alt=
   ""></div>
 
-  <p>In addition, you'll need the speaker hooked up — refer back to the
+  <p>In addition, you'll need the speaker hooked up &mdash; refer back to the
   <a data-uid="playingnotes"></a> project if you need help.</p>
  </div>
  <div id="sw" class="section">
 
   <p>Here is what the code for this project should look like at this point
-  (with new changes highlighted with arrows) — it should run similarly to the
-  previous project, but with sound added:</p>
+  (with new changes highlighted with arrows) &mdash; it should run similarly to the
+  previous project, but with our new TTS sounds added:</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.accel import Accel
@@ -117,11 +117,11 @@ while True:
 </textarea>
   </div>
 
-  <p>Now, let's take a look at what our code is doing:</p>
+  <p>Now, let's take a look at what our new code is doing:</p>
   <ul>
    <li>
 
-    <p>In Lines 5 through 15, we create the <code>Speech()</code> that we'll
+    <p>On Lines 5 through 15, we create the <code>Speech()</code> that we'll
     play throughout the program. We'll also set up a list,
     <code>actions_tts</code>, that is the speech for each action that a user
     can take. The list is in the same order as the variables
@@ -130,29 +130,40 @@ while True:
    </li>
    <li>
 
-    <p>In Line 15, we let the user know the game is starting.</p>
+    <p>On Line 15, we let the user know the game is starting.</p>
    </li>
    <li>
 
-    <p>In Line 32, we request the user to perform an specific tilt. Of course,
+    <p>On Line 32, we request the user to perform an specific tilt. Of course,
     in this version of the game, the tilt is still always just LEFT! (Don't
     worry, we'll change it next project).</p>
    </li>
    <li>
 
-    <p>In Lines 47 through 53, instead of just printing out if the right or
+    <p>On Lines 47 through 53, instead of just printing out if the right or
     wrong action was performed, we speak to the user. And, it was wrong, we tell
     them the action that we think they did.</p>
    </li>
    <li>
 
-    <p>In Line 58, we let the user know the game has ended.</p>
+    <p>On Line 58, we let the user know the game has ended.</p>
    </li>
   </ul>
 
-  <p>Give it a try. The game is still exceptionally easy — you are only every
+  <p>Give it a try. The game is still exceptionally easy &mdash; you are only
   requested to tilt left, so it's hard to fail. We'll make this into a real
   game in the next project.</p>
  </div>
+ 
+ <div id="challenge" class="section">
+  <ol>
+   <li>
+
+    <p>Can you modify the code so that it only requests (and registers) tilts
+	to the right instead of to the left?</p>
+   </li>
+  </ol>
+ </div>
+ 
 </body>
 </html>

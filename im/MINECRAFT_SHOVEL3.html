@@ -28,21 +28,24 @@
  </script>
 </head>
 <body>
+ <div class="hw" data-count="1" data-name="button"></div>
+
  <div id="intro" class="section">
  <p>In this project, we're going to expand on our previous two shovel projects.
  Instead of just smashing the single block that we hit, when we hit a block,
- we'll actually smash that block plus all the other blocks within a defined
+ we'll smash that block plus all the other blocks within a defined
  radius of that block. This will demonstrate how the Minecraft API can be used
- to start doing more interesting types of modifications to the game.</p>
+ to start doing more interesting types of modifications to the game world.</p>
  </div><div id="hw" class="section">
 
- <p>For this project, we need just a single button mapped to GPIO24. You are
- welcome to keep the hardware setup from a previous project that has a button
- attached to that GPIO, or you can simplify your hardware to the following:
+ <p>The hardware configuration for this project is exactly the same as the
+  previous project — a single button mapped to GPIO24:
  <img class="bb" src="img/Minecraft_1button_bb.jpg" alt=""></p>
  </div><div id="sw" class="section">
 
- <p>In this project, we're going to use an external function that will control
+ <p><mark>Where is the concept on creating functions?  Was that removed?  Do we 
+ want to put it back just before this project?</mark>
+ <p>In this project, we're going to create an external function that will control
  what happens every time we attempt to smash a block (or dig). This function
  will take three arguments:</p>
  <ol>

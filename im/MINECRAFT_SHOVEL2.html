@@ -28,12 +28,11 @@
  </script>
 </head>
 <body>
- <div class="hw" data-count="1" data-name="speaker"></div>
- <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div class="hw" data-count="1" data-name="button"></div>
  <div id="intro" class="section">
 
   <p>In the last project, we learned how to read the list of previous hit
-  events and then to cycle through them and take some action (printing out the
+  eventsm, cycle through them and then take some action (printing out the
   coordinates of the block that was hit). In this project, we're going to
   continue with the same idea, but instead of just printing out information
   about the block that was hit, we're going to create an effect on that
@@ -48,7 +47,7 @@
  <div id="sw" class="section">
 
   <p>The code for this project is going to look identical to the code in our
-  last project, with one exception, show highlighted below:
+  last project, with one exception, highlighted below:
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.button import Button
@@ -74,15 +73,25 @@ while True:
 </textarea>
 </div>
   <p>In the example above, instead of just printing out where a block was hit, we turn the block into Air, making the block
-  disappear
+  disappear.
   <p> The <code>mc.setBlock()</code> function takes two arguments:
   <ol>
-   <li><p>The location of the block that was hit. This was gathered by the
+   <li><p><strong>The location of the block that was hit:</strong> This was gathered by the
    <code>mc.events.pollBlockHits()</code> function; and</li>
-   <li><p>The type of block that should be created in this location. In this case,
-   we're create a block type of "AIR" which simply removes the block
-   entirely.</li>
-  <p>You've now created a shovel, which isn't really any different than smashing blocks.  However, our shovel only takes one hit to destroy a block.  In the next project
+   <li><p><strong>The type of block that should be created in this location:</strong> In this case,
+   we're creating a block type of "AIR" &mdash; this is essentially the same as removing the block entirely.</li>
+  <p>You've now created a shovel, which, you've probably noticed, does the exact same thing as just smashing blocks.  
+  However, our shovel code can be modified to do a whole lot more than just smashing a single block.  In fact, in the 
+  next project, we'll expand on our shovel functionality in a way that can't be done without custom programming.
+</div>
+
+  <div id="challenge" class="section">
+  <ol>
+   <li><p>Can you modify the code so that instead of breaking the block in front of you, instead you 
+   break the block behind you?  How about to the left or right?</p></li> 
+  </ol>
+ </div>
+
   </ol>
  </div>
 </body>

@@ -33,28 +33,23 @@
  <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
  <div id="intro" class="section">
 
-  <p>In this project, we will add in an LED Matrix and create a "balancing dot"
-  — a single dot on the LED Matrix that moves around as we tilt the CREATOR
-  Kit. For this project, to keep things simple, we will only move the dot left
-  and right on the LED Matrix.</p>
+  <p>In this project, we will expand on the previous "balancing dot" project
+  by adding movement in the Y direction (up/down) as well as the X direction.
+  Also, we'll keep the dot from moving off the LED Matrix display.</p>
  </div>
  <div id="hw" class="section">
 
-  <p>You'll need to wire up both the Accelerometer and LED Matrix as done in
-  previous projects. Here is what your breadboard should look like once the
-  accelerometer is properly wired:</p>
+  <p>The kit should be wired exactly the same as the previous project. Here is 
+  what your breadboard should look like:</p>
+
   <div style="text-align: center;"><img class="bb" src=
   "img/LED_Matrix_Accel_bb.jpg" alt=""></div>
  </div>
  <div id="sw" class="section">
 
-  <p>For our first try, we're simply going to put a single dot on the screen
-  and have it move left when the CREATOR Kit is tilted left, or move right when
-  the CREATOR Kit is tilted right.</p>
+  <p>Here is the updated code...the code that's new is highlighted with arrows, 
+  and we'll discuss that code below:</p>
 
-  <p>Most of the code should be very familiar, as it comes from the initial
-  <a data-uid="ledp"></a> project and <a data-uid="accelp"></a> project. The
-  code that's new is highlighted with arrows, below:</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.accel import Accel
@@ -115,9 +110,9 @@ while True:
   <ol>
    <li>
 
-    <p>Can you flip the "controller" so that tiling up causes the the dot to
+    <p>Can you modify the software so that tilting the kit up causes the the dot to
     move <i>up</i> instead of <i>down</i>. Likewise, can you reverse the
-    direction the dot moves when tilted down, right or left?</p>
+    direction the dot moves when tilted down, right and left?</p>
    </li>
    <li>
 
