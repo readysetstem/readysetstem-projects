@@ -83,12 +83,12 @@ my_led.on()
   </div>
 
   <p>Both of the lines of code above are calling Ready Set STEM functions that
-  we have written to make using the Ready Set STEM easier and more powerful.
+  we have written to make using the kit easier and more powerful.
   While you only needed to write two lines of code to setup the GPIO as an
   output and turn on the LED, behind the scenes, there were over 300 lines of
   code that the Ready Set STEM team has written to carry out those tasks. Not
   to mention, within those 300+ lines of code, we were calling functions that
-  other people had written — many thousands more lines of code!</p>
+  other people had written — many thousands of more lines of code!</p>
 
   <p>And again, you were able to utilize all that code by calling a couple
   functions. Even the best programmers in the world rarely write a piece of
@@ -107,31 +107,31 @@ my_led.on()
 my_led.on()
 </pre>
 
-    <p>In the above, the period between <code>my_led</code> and
-    <code>on()</code> is called the <i>dot operator</i>. It tells that part of
-    the computer that executes the code that what follows it (in this case
-    <code>on()</code>) is a special function that only works on variables of
-    that type. In this case, when we defined the <code>my_led</code> variable
-    in the line above it, we did it by calling another function
-    <code>Output()</code>. By doing that, we gave the <code>my_led</code>
-    variable the ability to call several special functions, like
-    <code>on()</code> and <code>off()</code>.</p>
 
-    <p>The Ready Set STEM team wrote the <code>on()</code> and
-    <code>off()</code> functions specifically to be used any time we have a
-    variable defined using the <code>Output()</code> function. We'll have more
-    to say about this below, including information about how to get more
-    information about the functions available for you to use.</p>
+    <p>In the above, the period between <code>my_led</code> and
+    <code>on()</code> is called the <i>dot operator</i>. The part on the right
+    of the dot (in this case <code>on()</code>) is associated with the variable
+    on the left (in this case <code>my_led</code>).  You can only use functions
+    that are supported by the type of the variable on the left.  In this case,
+    when we defined the <code>my_led</code> variable in the line above it, we
+    defined it as an <code>Output</code>. By doing that, we gave the
+    <code>my_led</code> variable the ability to call several special functions,
+    like <code>on()</code> and <code>off()</code>.</p>
+
+    <p>There are many other types of variables you'll use, like numbers, lists,
+    strings, <code>Input</code>s and <code>Output</code>s.  Each of those types
+    has it's own special functions that they can use, and we'll discuss this more later.
+
    </div>
   </div>
  </div>
  <div class="section">
   <h1>Modules</h1>
 
-  <p>In Python, a <i>module</i> is an organization of functions (and perhaps
+  <p>In Python, a <i>module</i> is an group of functions (and perhaps
   other things, like variables). Typically, the collection of things in a
   module are all related to one another — perhaps they all are focused on the
-  same types of tasks or all come from the same person.</p>
+  same types of tasks or we're all created by the same person.</p>
 
   <p>For example, you probably noticed that our Projects Guide is broken up
   into sections, with each section focused on a particular topic and set of
@@ -166,8 +166,8 @@ my_led.on()
     <strong>API</strong> icon at the top of this page. <i>API</i> stands for
     "Application Programming Interface" and is a fancy name for functions and
     modules that are used for a specific purpose &mdash; in this case, the Ready Set
-    STEM API is used specifically to provide functionality to the the Ready Set
-    STEM CREATOR Kit.</p>
+    STEM API is used specifically to provide functionality to the 
+    CREATOR Kit.</p>
 
     <p>If you click on the API icon at the top of the RDE, you'll see more
     detailed information on the Ready Set STEM API functions...</p>
@@ -178,9 +178,9 @@ my_led.on()
  <div class="section">
   <h1>Importing Functions &amp; Modules</h1>
 
-  <p>Depending on the specific function(s) you want to use, you may or
-  may not have to let your software know about it beforehand. Specifically,
-  there are the two type of functions you'll encounter:</p>
+  <p>Before you can use a function in your code, the computer needs to know
+  about it.  Specifically,
+  there are the two types of functions you'll encounter:</p>
   <ol>
    <li>
 
@@ -195,11 +195,9 @@ my_led.on()
 
     <p><strong>Imported Functions:</strong> For functions that we want to
     use that aren't built-in (including all the Ready Set STEM functions we
-    provide), we need to tell the computer that we are going to want access to
-    the function(s) before we can use them. We do this by <i>importing</i> the
-    function (or the whole module that it's part of) into our code before we
-    can call those functions. Only after the function has been imported into
-    our code can we use that function.</p>
+    provide), we need to tell the computer about those functions
+    before we can use them. We do this by <i>importing</i> the
+    function (or the whole module that it's part of) into our code.
    </li>
   </ol>
 
@@ -227,7 +225,7 @@ from time import sleep
 
   <p>As you can see, the <code>sleep()</code> function is part of the
   <code>time</code> module, and by importing the way we did above, we can use
-  the sleep function in simply by calling it (along with the number of seconds
+  the sleep function simply by calling it (along with the number of seconds
   we want to sleep). Here's an example of what the code might look
   like:</p>
   <div class="code" data-firstline="1">
