@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright (c) 2014, Scott Silver Labs, LLC.
+# Copyright (c) 2016, Ready Set STEM.
 #
 import os
 from setuptools import setup, find_packages
