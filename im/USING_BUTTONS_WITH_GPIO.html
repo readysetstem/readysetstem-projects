@@ -105,22 +105,45 @@ print(my_button.is_pressed())
   not holding down the button at the moment the program is run.</p>
 
   <p>You may notice that this example is similar to the <a data-uid=
-  "gpoutp"></a> example. But in this case, we configure the GPIO as a input
+  "gpoutp"></a> example. But in this case, we configure the GPIO as a button
   instead of an output:</p>
   <ul>
    <li>
 
-    <p>In Line 2: We're configuring GPIO14 as a button input.</p>
+    <p>On Line 2: We're configuring GPIO14 as a button input.</p>
    </li>
    <li>
 
-    <p>In Line 3: We're getting the state of the button, and printing it.</p>
+    <p>On Line 3: We're getting the state of the button, and printing it.</p>
    </li>
   </ul>
 
   <p>We'll look at these concepts again in more detail in upcoming
   projects.</p>
 
+  <div class="info">
+   <div>
+    Why <code>Button</code>?
+   </div>
+   <div>
+
+  <p>In <a data-uid="gpioi"></a>, we discussed reading buttons using GPIO inputs.  But now, in
+  this project, we're using <code>Button</code> to create our button variable instead of
+  <code>Input</code>.  Why the change?
+
+  <p><code>Button</code> is just a special case of <code>Input</code> that provides
+  special features for buttons.  For example, instead of testing if the button input
+  <code>is_on</code> as we did in the  
+  <a data-uid="gpioi"></a> project, we instead tested if the button input
+  <code>is_pressed</code>.
+
+  <p>For now, just know that we're using <code>Button</code> because we are
+  physically connecting up a button.  In later projects, we'll discuss some of
+  the special features that
+  <code>Button</code>s can use.</p>
+
+   </div>
+  </div>
   <p>To make the program a little more interesting (and convenient!), we can
   insert a loop so that, instead of just reading the state of the GPIO one
   time, we can continually read and print the state of the GPIO for as long as
@@ -141,7 +164,7 @@ while True:
   </div>
 
   <p>Run this program and then alternate between pressing and not pressing the
-  button. Take a look at the output window – you should see an indication of
+  button. Take a look at the output window &mdash; you should see an indication of
   when the button is pressed and when it is released.</p>
   <div class="info">
    <div>
