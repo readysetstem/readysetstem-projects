@@ -101,6 +101,7 @@ div.hw table {
     border-spacing: 0;
     min-width: 200px;
     margin: 0;
+    white-space: nowrap;
 }
 div.hw td {
     padding: 0px;
@@ -135,9 +136,9 @@ div.hw_count_separator p {
     margin: 0;
     font-family: Arial;
     font-size: 30px;
-    width: 20px;
     text-align: right;
     font-weight: bold;
+    padding-left: 5px;
 }
 div.hw_img {
     padding: 10px;
