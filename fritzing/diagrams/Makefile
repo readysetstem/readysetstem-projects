@@ -3,8 +3,9 @@
 #	./double_fzz_to_jpg <fzz_file> <bottom_trim_amount> <left_trim_amount>
 .PHONY:
 all:
-	./double_fzz_to_jpg Accel.fzz									40	30
+	./double_fzz_to_jpg Minecraft_Accel_4way_2buttons.fzz
 	exit 1
+	./double_fzz_to_jpg Accel.fzz									40	30
 	./double_fzz_to_jpg Just_Power.fzz								60	30
 	./double_fzz_to_jpg Inputs.fzz									60	30
 	./double_fzz_to_jpg Breadboard_short.fzz						40	30
