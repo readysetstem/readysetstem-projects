@@ -29,7 +29,7 @@
 </head>
 <body>
  <div class="section">
-  <h1>Sounds galore</h1>
+  <h1>Sounds Galore</h1>
 
   <p>Most games and gadgets use prerecorded sounds and songs to make the device
   more useful and fun. The Ready Set STEM API provides some simple functions to
@@ -44,7 +44,7 @@ Sound(<i>sound_filename</i>)
   card that you want to play.</p>
 
   <p>For example, to hear a cat meow, you can try this:</p>
-  <div class="code" data-firstline="0">
+  <div class="code" data-firstline="1">
    <textarea>
 from rstem.sound import Sound
 meow = Sound('Meow.wav')
@@ -57,9 +57,9 @@ meow.wait()
   directory, along with all the sounds on the SD card. If you'd like to find
   out where this directory is located, you can write a little program to do
   that, using the function <code>sound_dir</code>:</p>
-  <div class="code" data-firstline="0">
+  <div class="code" data-firstline="1">
    <textarea>
-from rstem.Sound import sound_dir
+from rstem.sound import sound_dir
 print(sound_dir())
 </textarea>
   </div>
@@ -68,9 +68,9 @@ print(sound_dir())
   the File Manager. Or, you can do it using some code as well! Python provides
   a function that will return a list of all the files in a directory, called
   <code>listdir()</code>:</p>
-  <div class="code" data-firstline="0">
+  <div class="code" data-firstline="1">
    <textarea>
-from rstem.Sound import sound_dir
+from rstem.sound import sound_dir
 from os import listdir
 print(listdir(sound_dir()))
 </textarea>
