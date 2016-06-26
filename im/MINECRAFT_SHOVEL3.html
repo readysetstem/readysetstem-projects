@@ -114,11 +114,11 @@ button = Button(24)
 
 while True:
     if button.presses():
-        control.hit()
+        control.hit(duration=0.2)
 
     hits = mc.events.pollBlockHits()
     for hit in hits:
-*        dig(mc, hit, radius)
+*        dig(mc, hit.pos, radius)
 
     time.sleep(0.01)
 
