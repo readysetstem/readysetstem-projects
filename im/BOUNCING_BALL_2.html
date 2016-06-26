@@ -34,7 +34,9 @@
 
   <p>In our previous project, we learned how to move a dot on a single axis
   (left to right), and how to keep it from falling off the edge of the screen
-  by setting and testing boundaries. In this project, we're going to learn to
+  by setting and testing boundaries. 
+  
+  <p>In this project, we're going to learn to
   move the dot on two axes (left and right, as well as up and down) and learn
   how to constrain the dot on both axes so that it doesn't fall off the
   screen.</p>
@@ -65,7 +67,7 @@ import time
 
 # Initialize the game environment
 fb = FrameBuffer()
-x, y = (3, 1)
+x, y = (0, 0)
 x_direction = 1
 *y_direction = 1
 
@@ -90,8 +92,8 @@ while True:
 </textarea>
   </div>
 
-  <p>Give it a try. You should now see the dot bouncing back and forth on the
-  display in two directions.</p>
+  <p>Give it a try. You should now see the dot moving on the
+  display in two directions simultaneously.</p>
  </div>
  <div id="challenge" class="section">
   <ol>

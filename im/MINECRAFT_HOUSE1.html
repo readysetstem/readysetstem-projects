@@ -28,43 +28,41 @@
  </script>
 </head>
 <body>
- <div class="hw" data-count="1" data-name="speaker"></div>
- <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div class="hw" data-count="1" data-name="button"></div>
  <div id="intro" class="section">
 
   <p>In this project, we'll build a simple house in the Minecraft world at the
   touch of a button.</p>
  </div>
- <div id="hw" class="section"><img class="bb" src=
+ <div id="hw" class="section">
+ <p>For this project, we just need a single button, wired to GPIO24:
+ <img class="bb" src=
  "img/Minecraft_1button_bb.jpg" alt="">
  </div>
  <div id="sw" class="section">
 
 
   <p>The code for this project should look very familiar. It is very similar to
-  the Minecraft 
-  <a data-uid="mcanimation"></a>
-  project, where we drew an animation of our character
-  using blocks. In that project, we were also drawing the sprite on our LED
-  Matrix, so we used 0 to denote LED off and 1-8 and A-F to denote intensity of
-  the LED display.</p>
+  the Minecraft <a data-uid="mcanimation"></a> project, where we drew an animation 
+  of our character using blocks. In that project, we were also drawing the sprite 
+  on our LED Matrix, so we used 0 to denote LED off and 1-8 and A-F to denote 
+  intensity of the LED display.</p>
 
   <p>Because we're not using the LED Matrix in this project, we don't need to
-  include the LED intensity in our sprite design. Instead, we will use 0 and 1
-  to simply denote block types &mdash; 0 will indicate no block (block type AIR) and
+  include the LED intensity in our sprite design. Instead, we will simply use 0 and 1
+  to denote our block types &mdash; 0 will indicate no block (block type AIR) and
   1 will indicate a stone block. We implement this using a list, and the 0 and
   1 are simply indexes in that list.</p>
 
-  <p>The magic happens in a function we've created called
-  <code>create_house()</code>.  Similar to the
-  <code>sprite_in_minecraft()</code> function in the <a
-  data-uid="mcanimation"></a> project, we go through a set of nested loops and
-  draw a block in the Minecraft world.  In that case, we drew the animation in
-  2 dimensions (X and Y), and therefore we used two nested loops.  In this case
-  we'll draw the house in 3 dimensions, and so require 3 nested loops.
+  <p>The magic happens in a function we've created called <code>create_house()</code>.  
+  Similar to the <code>sprite_in_minecraft()</code> function in the 
+  <a data-uid="mcanimation"></a> project, we go through a set of nested loops to
+  draw blocks in the Minecraft world.  In that project, we drew the animation in
+  2 dimensions (X and Y), and therefore we used two nested loops.  In this project,
+  we'll draw the house in 3 dimensions, which means we'll need three nested loops.
 
   <p>The corner of the house is drawn relative to Steve's position, plus an
-  offset.  An <i>offset</i> is just a small change in position.  We chose a
+  <i>offset</i>.  An offset is just a small change in position.  We chose a
   small offset so that the house is close to Steve, but not right on top of
   him.
 
@@ -146,14 +144,14 @@ while True:
 
 </textarea>
   </div>
-  <p>Give it a try.  You'll need to fly up and into the house to see its the inside.
+  <p>Give it a try.  You'll need to fly up and into the house to see the inside.
  </div>
  <div id="challenge" class="section">
   <ol>
    <li> <p>
-    To the above code, add code to make this project a Minecraft controller
-  (using code from the <a
-  data-uid="mccontr3"></a> project).
+   Assuming you still have your controller wired up, add this house making code to 
+	the Minecraft controller code (<a data-uid="mccontr3"></a> project) so that you
+	can build a house while using the CREATOR Kit as a controller.
    </p> </li> <li> <p>
    The house is made of AIR and STONE.  Try swapping those materials to get a strange inverted house.
    </p> </li> <li> <p>

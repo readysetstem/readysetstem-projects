@@ -30,7 +30,6 @@
 <body>
  <div class="hw" data-count="1" data-name="led_matrix"></div>
  <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
- <div class="hw" data-count="1" data-name="button"></div>
  <div class="section" id="intro">
 
   <p>In this project, we will draw some text, and scroll it across the LED
@@ -39,19 +38,18 @@
  <div class="section" id="hw">
 
   <p>Your breadboard should still have the circuit we wired in the <a data-uid=
-  "ledp"></a> project. In addition, we've added a button that we'll use to
-  control what we display on the LED matrix. As a reminder, here is what it
+  "ledp"></a> project. As a reminder, here is what it
   should look like: <img class="bb" src="img/LED_Matrix_bb.jpg" alt=""></p>
  </div>
  <div class="section" id="sw">
 
-  <p>In this project, we're going to create some Text to display on the LED
+  <p>In this project, we're going to create some text to display on the LED
   Matrix, define the starting position of the text when we first display it,
   and then scroll the text by changing the position of it on the LED Matrix
   each time through a loop.</p>
 
-  <p>Again, for consistency, we'll format the code as a Game Loop. Here is the
-  final code:</p>
+  <p>Again, for consistency, we'll format the code as a Game Loop. Here is what
+  the final code should look like:</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.led_matrix import FrameBuffer
@@ -68,12 +66,14 @@ while True:
 
     # Update the game world
     x_position = x_position - 1
-    if position &lt; -text.width:
+    if x_position &lt; -text.width:
         x_position = 8
 
     # Draw graphics on the screen
+	fb.erase()
     fb.draw(text, (x_position, 0))
-
+	fb.show()
+	
     # Wait for some period of time
     time.sleep(0.1)
 </textarea>
