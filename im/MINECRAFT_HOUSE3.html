@@ -28,30 +28,32 @@
  </script>
 </head>
 <body>
- <div class="hw" data-count="1" data-name="speaker"></div>
- <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div class="hw" data-count="1" data-name="button"></div>
  <div id="intro" class="section">
   <p>In this project, we'll build on the previous two projects and allow our
-  character to construct an more complex house &mdash; with many different types of
+  character to construct an even more complex house &mdash; with many different types of
   blocks &mdash; at the touch of a button.</p>
  </div>
- <div id="hw" class="section"><img class="bb" src=
+ <div id="hw" class="section"> 
+ <p>For this project, we just need a single button, wired to GPIO24:
+
+ <img class="bb" src=
  "img/Minecraft_1button_bb.jpg"></div>
  <div id="sw" class="section">
 
-  <p>The code for this project is nearly the same from the previous 
-  <a
-  data-uid="mccontr3"></a>.
-  project.  However, the <code>house</code> is very detailed, made up of many
-  house slices that are very intricate.  In addition, the house is made up of dozens of 
-  <code>block_types</code> including stairs, fireplaces and flowers.
+  <p>The code for this project is nearly the same as the previous 
+  <a data-uid="mccontr3"></a> project.  However, in this project, the <code>house</code> 
+  is very detailed, made up of many house slices that are very intricate.  In addition, 
+  the house is made up of dozens of <code>block_types</code> including stairs, fireplaces 
+  and flowers.
 
   <p>In fact, there are so many block types that we've had to make a minor
-  adjustment to the code.  Each character in the <code>house</code> previously
-  was either just a 0 or a 1.  Now, the character can be from '0' through '9',
+  adjustment to the code.  Each block in the <code>house</code> was previously
+  either just a 0 or a 1.  Now, the block type can range from '0' through '9',
   'A' through 'Z', or 'a' through 'z'.  If you look at the
   <code>block_types</code> in the code, you'll see that each type in the list
   is followed by a comment about which number/letter corresponds to that type.
+
   <h2>Full Code</h2>
 
   <p>Here is what the code for this project should look like at this point
@@ -469,18 +471,23 @@ while True:
     time.sleep(0.01)
 </textarea>
   </div>
+  
+  <p>Give it a try!
  </div>
  <div id="challenge" class="section">
   <ol>
    <li> <p>
-    To the above code, add code to make this project a Minecraft controller
-  (using code from the <a
-  data-uid="mccontr3"></a> project).
+   Assuming you still have your controller wired up, add this house making code to 
+	the Minecraft controller code (<a data-uid="mccontr3"></a> project) so that you
+	can build a house while using the CREATOR Kit as a controller.
    </p> </li> <li> <p>
    Time to mod-your-house!  Convert doors to windows, or windows to doors.  Add
    flowers.  Insert a NETHER_REACTOR_CORE into the corner.  Add a whole new
    level. All of this can be done just by editing the <code>house</code> and
    <code>block_types</code> lists!
+   </p> </li> <li> <p>
+   Can you add another button to your hardware and modify the code that the house
+   disappears at the press of the second button?
    </p>
    </li>
   </ol>

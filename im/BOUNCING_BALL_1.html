@@ -32,15 +32,15 @@
  <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
  <div class="section" id="intro">
 
-  <p>Lets expand on the previous concept, <a data-uid="gameloops"></a>, where
-  we created a simple "game" that moves a dot across the LED Matrix
-  display.</p>
+  <p>In this project, we're going to expand on what we did in the 
+  previous concept, <a data-uid="gameloops"></a>, where we created 
+  a simple "game" that moves a dot across the LED Matrix display.</p>
 
   <p>For this project, we're going to modify the game loop to test the location
   of the dot. When it reaches the edge of the display, we will reverse
   direction of the dot so that it never falls off the screen.</p>
 
-  <p>Here's a reminder of what the code looks like so far:</p>
+  <p>Here's a reminder of what the code should look like so far:</p>
   <div class="code" data-firstline="1">
    <textarea>
 # Initialize the game environment
@@ -76,8 +76,8 @@ while True:
  </div>
  <div class="section" id="sw">
 
-  <p>In the previous code, you'll notice that to move the dot to the right on
-  the display, we increment (increase) <code>x</code> by 1. This works
+  <p>In the previous code, to move the dot to the right on the LED Matrix display, 
+  we increment (increase) <code>x</code> by 1. This works
   great...until we get to the edge of the screen and we don't want to go any
   further. At that point, we're going to want the dot to move in the OPPOSITE
   direction (in this case, to the left). To do that, instead of incrementing
@@ -85,8 +85,8 @@ while True:
   <code>x</code> by 1.</p>
 
   <p>In other words, to go to the right, we increase <code>x</code> by 1. And
-  to go to the left, we decrease <code>x</code> by 1 — which is the same as
-  increasing <code>x</code> by -1.</p>
+  to go to the left, we decrease <code>x</code> by 1 — this is actually 
+  the same as increasing <code>x</code> by -1.</p>
 
   <p>We can do this by creating a variable (let's call it
   <code>direction</code>), setting that variable to either 1 or -1 (depending
@@ -98,7 +98,7 @@ while True:
   of the display (that is, when <code>x</code> gets to either 0 or 7), the dot
   will reverse direction.</p>
 
-  <p>This requires the following changes to the code, marked with arrows:</p>
+  <p>This requires the following changes to the code (marked with arrows):</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.led_matrix import FrameBuffer
