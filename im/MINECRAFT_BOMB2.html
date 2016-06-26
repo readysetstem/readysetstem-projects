@@ -93,7 +93,7 @@ place_mode = True
 while True:
     if place_mode:
         if bomb.presses():
-            control.hit()
+            control.hit(duration=.2)
         hits = mc.events.pollBlockHits()
         if hits:
             tnt_pos = hits[0].pos
@@ -118,20 +118,23 @@ while True:
 </textarea>
   </div>
 
-  <p>This code should 
+  <p>This code should be pretty self-explanatory at this point, but should
+  also give you some ideas on how you can continue to create new and 
+  interesting games and events in the Minecraft world.
+  
  </div>
  <div id="challenge" class="section">
   <ol>
    <li> <p>
-    To the above code, add code to make this project a Minecraft controller
-  (using code from the <a
-  data-uid="mccontr3"></a> project).
+   Assuming you still have your controller wired up, add this bomb code to 
+	the Minecraft controller code (<a data-uid="mccontr3"></a> project) so that you
+	can place a bomb while using the CREATOR Kit as a controller.
    </p> </li> <li> <p>
    Can you add a bomb explosion sound when the detonation occurs?  Note:
    <span class=nospell>"hit.wav"</span> is a reasonable sound to use.
    </p> </li> <li> <p>
    Can you make the explosion occur near, but not exactly at, the TNT position?
-   Hint: use a random function.
+   Hint: You might want to use a random function.
    </p>
    </li>
   </ol>

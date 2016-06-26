@@ -47,9 +47,47 @@
   game loop essentially works by doing the same things over and over the entire
   time the game is running.</p>
 
-  <p>We're going to explain game loops below using pseudo-code, which we
-  discussed in more detail in our <a data-uid="simon0"></a> project.</p>
+  <p>We're going to explain game loops below using pseudo-code.  As a reminder,
+  here is how pseudo-code works:
+  
+    <div class="info">
+   <div>
+    Pseudo-Code
+   </div>
+   <div>
 
+    <p>Writing pseudo-code before you write software is similar to writing an
+    outline before you write a paper or an article. Basically, you create an
+    outline for your code using a combination of regular English mixed with
+    some bits of programming code. This allows you (or others) to read the
+    order of the code and determine if what you're getting ready to write is
+    logical and will accomplish what you want and expect.</p>
+
+    <p>Let's use the <a data-uid="manybuttons"></a> project to show an example
+    of how we'd write pseudo-code. In that project, we had a bunch of buttons,
+    and we wanted to print when the buttons were pressed.</p>
+
+    <p>Here is what our pseudo-code might look like:</p>
+    <pre>
+Create a list of Buttons
+Repeat:
+    For each button in the list of buttons:
+        If the button is pressed:
+            Print which button was pressed
+    Pause
+</pre>
+
+    <p>You notice that each line is easily readable as English — with some
+    indenting to help the readability — and overall, you now have a outline
+    that you can use as a template to create your code.</p>
+
+    <p>Now, in reality, you might not need to use pseudo-code for such a simple
+    program. But, for more complex software, writing the pseudo-code before you
+    start writing the actual code can make the entire process much easier.</p>
+   </div>
+  </div>  
+  
+  
   <p>The pseudo-code for a typical game loop will look something like this:</p>
   <pre>
 Initialize the game environment
@@ -69,7 +107,7 @@ Finish &amp; Cleanup
   <p>We're going to create a simple "game" — too simple to really qualify as a
   game — but that will give us start to creating more complicated games later.
   This game is going to draw a dot on the screen, and move it across the screen
-  from left to right. That's it — simple.</p>
+  from left to right. That's it — like we said, pretty simple...</p>
   <div class="code" data-firstline="1">
    <textarea>
 # Initialize the game environment
@@ -97,7 +135,9 @@ while True:
 </textarea>
   </div>
 
-  <p>If you have LED Matrix hooked up, you can give this a a try now!</p>
+  <p>If you have LED Matrix hooked up, you can give this a a try now!  Note
+  that the dot will quickly move off the screen, and you'll need to manually
+  stop the program at that point.</p>
  </div>
  <div class="section">
   <h1>How It Works</h1>
@@ -113,16 +153,21 @@ while True:
   game, defining the start location and speed of various game characters,
   etc.</p>
 
-  <p>In most all Python programs, you'll start importing the functions you're
+  <p>In most all Python programs, you'll start by importing the functions you're
   going to use in the program.</p>
-  <div class="code" data-firstline="5">
+  <div class="code" data-firstline="1">
    <textarea>
+# Initialize the game environment
+from rstem.led_matrix import FrameBuffer
+import time
+
 fb = FrameBuffer()
 x, y = (0, 0)
 </textarea>
   </div>
 
-  <p>On lines 5 and 6, we'll:</p>
+  <p>On lines 2 and 3, we import the functions/modules we'll need.</p>
+  <p>On lines 5 and 6, we:</p>
   <ol>
    <li>
 
@@ -136,9 +181,11 @@ x, y = (0, 0)
   </ol>
   <h2>The game loop (while game is not finished)</h2>
 
-  <p>We call it a game loop because it's an actual loop in the code that
-  continues until the game is finished or until the user says chooses to exit.
-  For this project, we're going to take the easy way out and just let the
+  <p>This is where the magic happens.  We call this the game loop because it's 
+  an actual loop in the code thatbcontinues until the game is finished or 
+  until the user chooses to exit.
+  
+  <p>For this project, we're going to take the easy way out and just let the
   program run forever (until we stop the program). We can do this using a
   <code>while True:</code> loop.</p>
 
@@ -169,10 +216,9 @@ while True:
   game, etc. This part of the game loop will figure out what the next set of
   graphics to display looks like in preparation to draw the new graphics.</p>
 
-  <p>In our example, we're just going to automatically move the dot to the
+  <p>In our example above, we're just going to automatically move the dot to the
   right one space, regardless of what the user does. To do that, we need to
-  increment the x-coordinate by 1. We then erase the current framebuffer data
-  and update the framebuffer with the new location.</p>
+  increment the x-coordinate by 1.</p>
   <div class="code" data-firstline="12">
    <textarea>
 x += 1
@@ -217,7 +263,7 @@ time.sleep(.5)
   </div>
   <h2>Finish &amp; Cleanup</h2>
 
-  <p>At some point, the game will probably end and we'll drop out of the loop.
+  <p>At some point, the game will probably end and we'll drop out of the game loop.
   This is most common when the player wins or loses a game, or when a player
   purposefully exits a game for some reason. When that happens, you may want to
   indicate to the user the final outcome of the game, play a separate set of
@@ -233,10 +279,10 @@ time.sleep(.5)
   LED Matrix and move in one direction until it is off the screen. Because
   we're not checking to see if the dot is still on the screen or not, the code
   will just continue to run even after you can no longer see the dot. So, once
-  the dot has disappeared, you can stop the program.</p>
+  the dot has disappeared, you'll have to stop the program manually.</p>
 
   <p>Also, you might notice that the first place you see the dot is one the LED
-  second from the left. This is due to the fact that we "update the game world"
+  second from the left (not the very left). This is due to the fact that we "update the game world"
   before we "draw graphics on the screen". Our first update moves the dot one
   position to the right, before we've even had a chance to see it on the
   screen. In a more normal game, this doesn't matter, as the wait period will
