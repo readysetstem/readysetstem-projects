@@ -30,18 +30,17 @@
 <body>
  <div class="hw" data-count="1" data-name="led_matrix"></div>
  <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
- <div class="hw" data-count="1" data-name="button"></div>
  <div class="section" id="intro">
 
   <p>In this project, and we'll create a rectangular pulsating effect on the
   display.</p>
 
   <p>The pulsating rectangle will consist of 4 individual rectangles nested
-  within each other. The smallest rectangle with simply be a 2x2 grid of LEDs
+  within each other. The smallest rectangle will simply be a 2x2 square of LEDs
   at the center of the display. The largest rectangle will sit at the outer
   edge of the display.</p>
 
-  <p>By slowly changing the colors of the rectangle over time, we can generate
+  <p>By slowly changing the color intensity of the rectangles over time, we can generate
   a pulsating effect. Each rectangle will have a slightly different color than
   the one next to it.</p>
  </div>
@@ -62,13 +61,6 @@ fb = FrameBuffer()
 colors = [0, 2, 4, 6]
 
 while True:
-    x += x_direction
-    y += y_direction
-    if (x &lt;= 0) or (x &gt;= 7):
-        x_direction = -x_direction
-    if (y &lt;= 0) or (y &gt;= 7):
-        y_direction = -y_direction
-
     fb.erase()
     fb.rect((0,0), (8,8), color=colors[0])
     colors[0] = colors[0] + 2
@@ -90,19 +82,16 @@ while True:
 
     time.sleep(.5)
 </textarea>
-  </div><mark>Looks like there's x/y direction cruft in the above code - and no
-  code explanation</mark>
 
   <p>Give it a try. You should see a series pulsating rectangles.</p>
  </div>
  <div id="challenge" class="section">
   <ol>
    <li>
-
     <p>The four rectangles are individually drawn on the screen with very
-    similar code. That is, the code in lines 18-21 is repeated almost
+    similar code. That is, the code on lines 10-13 is repeated almost
     identically 4 times, once for each rectangle. Can you instead modify this
-    code to use a <code>for</code> loop that loops 4 times?</p>
+    code to use a <code>for</code> loop that creates these four rectangles?</p>
    </li>
    <li>
 
