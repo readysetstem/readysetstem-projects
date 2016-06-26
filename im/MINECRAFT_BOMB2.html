@@ -28,22 +28,30 @@
  </script>
 </head>
 <body>
+ <div class="hw" data-count="3" data-name="button"></div>
+ <div class="hw" data-count="1" data-name="led_matrix"></div>
+ <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
  <div class="hw" data-count="1" data-name="speaker"></div>
  <div class="hw" data-count="1" data-name="audio_cable"></div>
  <div id="intro" class="section">
 
   <p>In this project, we'll build on the previous bomb detonating project by
-  making our explosion radius configurable from the controller (and display
-  that radius on the LED Matrix). We also add sound to the explosion.</p>
+  making our explosion radius configurable from the controller and also display
+  that radius on the LED Matrix.</p>
  </div>
- <div id="hw" class="section"><img class="bb" src=
+ <div id="hw" class="section">
+ <p>For this project, we'll need the LED Matrix and three buttons
+ wired on the breadboard.  For our code below, we assume the buttons are wired
+ to GPIO7, GPIO14 and GPIO15.  Here's what your breadboard should look like:
+ 
+ <img class="bb" src=
  "img/Minecraft_Matrix_updown_1button_bb.jpg" alt="">
- <mark>Hardware pic contains extra button</mark>
  </div>
+
  <div id="sw" class="section">
 
-  <p>This code is similar to the code from the previous project, except that we
-  added:</p>
+  <p>This code is similar to the code from the previous project, except that we've
+  added a few things:</p>
   <ul>
    <li>
 

@@ -28,43 +28,48 @@
  </script>
 </head>
 <body>
- <div class="hw" data-count="1" data-name="speaker"></div>
- <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div class="hw" data-count="3" data-name="button"></div>
  <div id="intro" class="section">
 
   <p>In this project, we will allow our Minecraft character to place a bomb
   anywhere in the Minecraft world with a the press of a button, and then
   detonate that bomb with another press of the button.</p>
  </div>
- <div id="hw" class="section"><img class="bb" src=
+ <div id="hw" class="section">
+ <p>For this project, we only need a single button on the breadboard.  In
+ our code below, we assume the button is attached to GPIO24.  You are 
+ welcome to use a setup from a previous project, as long as one of the
+ buttons is correctly attached to GPIO you use in your code:
+ 
+ <img class="bb" src=
  "img/Minecraft_1button_bb.jpg" alt="">
  </div>
  <div id="sw" class="section">
 
-  <p>In our game
-  loop, there are two modes:
+  <p>For this project, we'll create a game loop that has two modes:
   <ul><li><p>
-  In <i>place</i> mode, when the button is pressed, we place a bomb at the
-  current location in from of Steve.  Then, we change to <i>detonate</i> mode.</p> </li>
+  In <i>Place</i> mode, when the button is pressed, we place a bomb at the
+  location immediately in front of Steve.  Then, we change to <i>Detonate</i> 
+  mode.</p> </li>
   <li><p>
-  In <i>detonate</i> mode, when the button is pressed, we detonate the bomb
+  In <i>Detonate</i> mode, when the button is pressed, we detonate the bomb
   that was previously placed (using a separate <code>detonate()</code>
-  function).   Then, we change to <i>place</i> mode.</p> </li>
+  function that we create).  Then, we change back to <i>Place</i> mode.</p> </li>
   </ul>
 
-<p>To keep track of the modes, we use the variable <code>place_mode</code>, which will be <code>True</code> when we're in place mode.  The game starts in place mode.
+  <p>To keep track of the modes, we use the variable <code>place_mode</code>,
+  which will be set to <code>True</code> when we're in place mode.  The game starts 
+  in place mode.
 
-<p>To find out where the bomb is placed, we use the <code>pollBlockHits()</code> function, similar to the way we used it in the 
-  <a
-  data-uid="shovel1"></a>
-project.
+  <p>To find out where the bomb is placed when the button is hit in Place mode, 
+  we use the <code>pollBlockHits()</code> function, similar to the way we used it in the 
+  <a data-uid="shovel1"></a> project.
 
-<p>Finally, out <code>detonate()</code> function is identical to the <code>dig()</code> function in the 
-  <a
-  data-uid="shovel3"></a>
-project.
+  <p>Finally, our <code>detonate()</code> function is identical to the <code>dig()</code> 
+  function in the <a data-uid="shovel3"></a> project.
 
   <p>Here is what the full code for this project should look like:</p>
+
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.button import Button
@@ -84,7 +89,7 @@ place_mode = True
 while True:
     if place_mode:
         if button.presses():
-            control.hit()
+            control.hit(duration=.2)
         hits = mc.events.pollBlockHits()
         if hits:
             tnt_pos = hits[0].pos
@@ -99,15 +104,18 @@ while True:
     time.sleep(0.01)
 </textarea>
   </div>
+  <p>Give it a try...hit the buton once to place the bomb, then move away
+  and hit the button again to detonate the bomb.
  </div>
+ 
  <div id="challenge" class="section">
   <ol>
    <li> <p>
-    To the above code, add code to make this project a Minecraft controller
-  (using code from the <a
-  data-uid="mccontr3"></a> project).
+   Assuming you still have your controller wired up, add this bomb code to 
+	the Minecraft controller code (<a data-uid="mccontr3"></a> project) so that you
+	can play place a bomb while using the CREATOR Kit as a controller.
    </p> </li> <li> <p>
-   The default radius of the explosion was 1.  Can you change the code to use a
+   The default radius of our explosion is 1.  Can you change the code to use a
    larger radius?  Don't go too big, if you do, you can end up deleting the
    whole Minecraft world (and the Minecraft server will likely hang for a while
    as that occurs).  Don't forget, though, you can always recreate a new world
