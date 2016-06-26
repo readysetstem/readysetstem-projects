@@ -21,7 +21,7 @@ pg_flows.Main = [
     {filename: "VARIABLES_-_ASSIGNMENTS.html",      title: "VARIABLES",                     concept: true, uid: "vars"},
     {filename: "IF_-_ELSE_STATEMENTS.html",         title: "IF STATEMENTS",                 concept: true, uid: "if"},
     {filename: "USING_BUTTONS_WITH_GPIO.html",      title: "INPUTS (READING BUTTONS)",      concept: false, uid: "button"},
-    {filename: "BUILT-IN_FUNCTIONS.html",           title: "FUNCTIONS & MODULES",           concept: true, uid: ""},
+    {filename: "BUILT-IN_FUNCTIONS.html",           title: "FUNCTIONS & MODULES",           concept: true, uid: "functions"},
     {filename: "FLASHLIGHT.html",                   title: "BUILDING A FLASHLIGHT",         concept: false, uid: "flashlight"},
     {filename: "WHILE_LOOPS.html",                  title: "WHILE LOOPS",                   concept: true, uid: "while"},
     {filename: "FLASHLIGHT2.html",                  title: "FLASHING FLASHLIGHT",           concept: false, uid: ""},
@@ -99,6 +99,7 @@ pg_flows.Main = [
     {filename: "MINECRAFT_SHOVEL1.html",            title: "SHOVEL 1",                      concept: false, uid: "shovel1"},
     {filename: "MINECRAFT_VECTORS.html",            title: "MINECRAFT VECTORS",             concept: true, uid: ""},
     {filename: "MINECRAFT_SHOVEL2.html",            title: "SHOVEL 2",                      concept: false, uid: "shovel2"},
+    {filename: "CUSTOM_FUNCTIONS.html",            	title: "CUSTOM FUNCTIONS",              concept: true, uid: ""},
     {filename: "MINECRAFT_SHOVEL3.html",            title: "SHOVEL 3",                      concept: false, uid: "shovel3"},
 
     {filename: "MINECRAFT_LOCATION1.html",          title: "LOCATION 1",                    concept: false, uid: "", section: "MORE MINECRAFT"},
