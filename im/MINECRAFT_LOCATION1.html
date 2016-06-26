@@ -28,15 +28,15 @@
  </script>
 </head>
 <body>
- <div class="hw" data-count="1" data-name="speaker"></div>
- <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div class="hw" data-count="1" data-name="led_matrix"></div>
+ <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
  <div id="intro" class="section">
 
-  <p>In this project, we'll integrate the LED Matrix into our projects. The LED
-  Matrix will be used as a map of the Minecraft world, and we'll light up one
-  of the LEDs to denote our position in the world. As we move through the
-  Minecraft world, the LED Matrix will track our movement and plot our
-  position.</p>
+  <p>Now we're goign to integrate the LED Matrix into our Minecraft projects. 
+  In this project, the LED Matrix will be used as a map of the Minecraft world, 
+  and we'll light up one of the LEDs to denote our position in the world. As 
+  we move through the Minecraft world, the LED Matrix will track our movement 
+  and plot our position.</p>
  </div>
  <div id="hw" class="section"><img class="bb" src="img/LED_Matrix_bb.jpg" alt=
  ""></div>
@@ -105,8 +105,8 @@ while True:
 
   <p>Once we retrieve our position in the Minecraft world using the
   <code>getTilePos()</code> function, we need to map that vector position to a
-  point on the LED Matrix. We do this in lines 15 and 16 for the x
-  direction, and 18 and 19 for the z direction.
+  point on the LED Matrix. We do this on lines 15 and 16 for the x
+  direction, and on lines 18 and 19 for the z direction.
 
   <p>The <code>SCALE</code> value is the amount by which we want to shrink the Minecraft
   world to fit on the LED Matrix. While the size of the Minecraft world will

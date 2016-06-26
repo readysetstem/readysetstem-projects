@@ -28,8 +28,8 @@
  </script>
 </head>
 <body>
- <div class="hw" data-count="1" data-name="speaker"></div>
- <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div class="hw" data-count="1" data-name="led_matrix"></div>
+ <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
  <div id="intro" class="section">
 
   <p>In this project, we'll expand on our previous project where we integrated
@@ -100,21 +100,26 @@ while True:
    <li>
 
     <p>
-    On Lines 11 through 13: we initialize variables we'll use in the game loop.
+    On Lines 11 through 13, we initialize the variables we'll use in the game loop.
     We'll discuss their use below.
     </p> </li> <li> <p>
-    On Lines 19 and 23: we determine if Steve has moved out-of-bounds.  He's
-    out-of-bounds if his scaled position would be off of the LED Matrix.
+    On Lines 19 and 23, we determine if Steve has moved out-of-bounds.  He's
+    out-of-bounds if his scaled position would be off of the LED Matrix (i.e., less
+	than 0 or greater than the width of the LED Matrix).
     </p> </li> <li> <p>
-    On Lines 27 through 30: we keep a count that keeps track of how long
+    On Lines 27 through 30, we keep a count that keeps track of how long
     we flash on and off.  Every time through the loop, we increment a
     <code>count</code>.  If the <code>count</code> exceeds
     <code>FLASH_COUNT</code>, then we toggle the <code>flash_lit</code>
     variable, which keeps track of whether the flashing LED is on or off.
     </p> </li> <li> <p>
-    On Lines 31 and 32: we light the Steve's location on LED Matrix.  We light it in two cases: when its not out-of-bounds, or if it's <code>flash_lit</code>.
+    On Lines 31 and 32, we light the Steve's location on LED Matrix.  
+	We light it in two cases: when its not out-of-bounds, or if it's 
+	<code>flash_lit</code>.
     </p> </li> 
   </ul>
+  <p>Give it a try...take Steve to the edge of the Minecraft world and you should
+  see the LED Matrix flash his location when he moves off the edge.
  </div>
  <div id="challenge" class="section">
   <ol>

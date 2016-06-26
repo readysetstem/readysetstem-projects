@@ -49,7 +49,7 @@
 
   <p>All of the character control functions are accessed from the
   <code>control</code> module, which we can import with:</p>
-  <div class="code" data-firstline="1">
+  <div class="code" data-firstline="0">
    <textarea>
 from rstem.mcpi import control
 </textarea>
@@ -64,7 +64,7 @@ from rstem.mcpi import control
 
   <p>For example, to have Steve walk forward for 2 seconds and then stop, this
   is what the code would look like:</p>
-  <div class="code" data-firstline="1">
+  <div class="code" data-firstline="0">
    <textarea>
 control.forward()
 time.sleep(2)
@@ -93,7 +93,7 @@ control.forward(release=True)
   a specific amount of time) is by using the <code>duration=</code> argument
   inside the function. Similar to above, the following code will have Steve 
   walk forward for 2 seconds and then stop:</p>
-  <div class="code" data-firstline="1">
+  <div class="code" data-firstline="0">
    <textarea>
 control.forward(duration=2)
 </textarea>
@@ -105,7 +105,7 @@ control.forward(duration=2)
   <p>Finally, to stop all keys from being pressed, you can use
   <code>control.stop()</code>. For example, to walk both forward and right for
   two seconds, and then stop, our code might look like this:</p>
-  <div class="code" data-firstline="1">
+  <div class="code" data-firstline="0">
    <textarea>
 control.forward()
 control.right()
@@ -121,7 +121,7 @@ control.stop()
   blocks. This is typically accomplished using the left mouse button. Using the
   same <code>control</code> module we've been using, we can have Steve smash
   whatever is in front of him using the following code:</p>
-  <div class="code" data-firstline="1">
+  <div class="code" data-firstline="0">
    <textarea>
 control.smash()
 </textarea>
@@ -130,7 +130,7 @@ control.smash()
   <p>Additionally, Steve has the ability to jump, which is typically
   accomplished using the spacebar on the keyboard, and can be implemented in
   our code like this:</p>
-  <div class="code" data-firstline="1">
+  <div class="code" data-firstline="0">
    <textarea>
 control.jump()
 </textarea>

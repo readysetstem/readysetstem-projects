@@ -29,7 +29,7 @@
 </head>
 <body>
  <div class="hw" data-count="1" data-name="accelerometer"></div>
- <div class="hw" data-count="5" data-name="button"></div>
+ <div class="hw" data-count="6" data-name="button"></div>
  <div id="intro" class="section">
 
   <p>In our last project, we created a basic Minecraft game controller and
@@ -59,6 +59,8 @@ left = Button(18)
 right = Button(14)
 up = Button(15)
 down = Button(23)
+smash = Button(7)
+jump = Button(24)
 
 accel = Accel()
 
@@ -118,10 +120,10 @@ while True:
   <div class="code" data-firstline="0">
    <textarea>
 keymap = {
-    Button(23) : control.left,
+    Button(18) : control.left,
     Button(14) : control.right,
-    Button(18) : control.forward,
-    Button(15) : control.backward,
+    Button(15) : control.forward,
+    Button(23) : control.backward,
     Button(7)  : control.smash,
     Button(24) : control.jump,
     }
@@ -170,7 +172,7 @@ else:
 
   <p>Those four lines of code can actually be condensed into the following
   single line of code, which does the exact same thing:</p>
-  <div class="code" data-firstline="1">
+  <div class="code" data-firstline="0">
    <textarea>
 action(release=(not button.is_pressed()))
 </textarea>
@@ -237,10 +239,10 @@ import time
 control.show()
 
 keymap = {
-    Button(23) : control.left,
+    Button(18) : control.left,
     Button(14) : control.right,
-    Button(18) : control.forward,
-    Button(15) : control.backward,
+    Button(15) : control.forward,
+    Button(23) : control.backward,
     Button(7)  : control.smash,
     Button(24) : control.jump,
     }

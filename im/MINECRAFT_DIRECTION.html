@@ -29,20 +29,21 @@
 </head>
 <body>
  <div class="section">
-  <h1>Introduction</h1>
+  <h1>Getting Direction</h1>
 
-  <p>The Minecraft API on the Raspberry Pi does not have any direct way to
-  determine which direction Steve is facing. This makes it essentially
+  <p>The Minecraft API on the Raspberry Pi doesn't have a direct way to
+  determine which direction Steve is facing (this is just a limitation of
+  the Minecraft API on this platform).  Unfortunately, this makes it essentially
   impossible to create code that allows you to modify the Minecraft world
   relative to what you are seeing in front of you on the screen. For example,
   without being able to programmatically tell what direction you're facing, you
-  can't write a program that will do something directly in front of (or next to
+  can't write a program that says to do something directly in front of (or next to,
   or behind) your character.</p>
 
-  <p>However, the Ready Set STEM API includes a couple functions that allows us to get
-  the direction Steve is facing, and therefore allows us to implement
-  additional features that you couldn't get with the Minecraft API by itself.
-  Note that to use the functions below, we are doing some behind-the-scenes
+  <p>For that reason, we've included several APIs in the Ready Set STEM API 
+  that will allow us to get the direction Steve is facing, and will therefore allow 
+  us to implement additional features that we couldn't get with the Minecraft API 
+  alone. Note that to use the functions below, we are doing some behind-the-scenes
   trickery with Minecraft, and because of that, you will to see the
   screen briefly go blank (up to a half second) when you call these functions
   &mdash; that's the result of what we have to do to get these APIs
@@ -53,7 +54,8 @@
   relative to the Z axis:</p>
   <div class="code" data-firstline="1">
    <textarea>
-from rstem.mcpi import minecraft
+from rstem.mcpi import minecraft, control
+import time
 
 control.show()
 
@@ -85,7 +87,8 @@ while True:
   <code>get_heading()</code> function:</p>
   <div class="code" data-firstline="1">
    <textarea>
-from rstem.mcpi import minecraft
+from rstem.mcpi import minecraft, control
+import time
 
 control.show()
 

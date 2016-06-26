@@ -29,14 +29,15 @@
 </head>
 <body>
  <div class="hw" data-count="1" data-name="accelerometer"></div>
- <div class="hw" data-count="5" data-name="button"></div>
+ <div class="hw" data-count="6" data-name="button"></div>
  <div id="intro" class="section">
 
   <p>In this project, we will use the CREATOR Kit to design and build a Minecraft
   controller. This first version of the controller will use the accelerometer
   to control where your character, Steve, is looking. In addition, we'll use
   four buttons to control Steve's movements forward, backwards, left and
-  right.</p>
+  right.  And we'll add two extra buttons as well &mdash; a left button to allow 
+  Steve to smash and a right button that will make Steve jump.</p>
  </div>
  <div id="hw" class="section">
 
@@ -68,6 +69,14 @@
 
    <p>Left Button: GPIO18</p>
   </li>
+  <li>
+
+   <p>Extra Left Button: GPIO7</p>
+  </li>
+  <li>
+
+   <p>Extra Right Button: GPIO24</p>
+  </li>
  </ul>
 
  <p>This is what your hardware setup should look like (note that we've added
@@ -97,6 +106,8 @@ left = Button(18)
 right = Button(14)
 up = Button(15)
 down = Button(23)
+smash = Button(7)
+jump = Button(24)
 
 accel = Accel()
 

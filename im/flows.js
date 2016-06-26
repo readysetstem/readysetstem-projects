@@ -87,7 +87,7 @@ pg_flows.Main = [
     {filename: "SPACE_INVADERS_8.html",             title: "ALIEN INTRUDERS 8",             concept: false, uid: ""},
     {filename: "SPACE_INVADERS_9.html",             title: "ALIEN INTRUDERS 9",             concept: false, uid: ""},
 
-    {filename: "MINECRAFT_STARTING.html",    		title: "STARTING MINECRAFT",            concept: false, uid: "", section: "MINECRAFT CONTROLLER"},
+    {filename: "MINECRAFT_STARTING.html",    		title: "STARTING MINECRAFT",            concept: false, uid: "mcstart", section: "MINECRAFT CONTROLLER"},
     {filename: "MINECRAFT_PROGRAMMING.html",        title: "MINECRAFT PROGRAMMING",         concept: true, uid: "mcprog"},
     {filename: "MINECRAFT_HELLO_MINECRAFT.html",    title: "HELLO MINECRAFT",               concept: false, uid: "mchello"},
     {filename: "MINECRAFT_KEYSTROKES.html",         title: "MINECRAFT CHARACTER CONTROL",   concept: true, uid: ""},
