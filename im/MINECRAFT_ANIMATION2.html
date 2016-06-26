@@ -28,8 +28,8 @@
  </script>
 </head>
 <body>
- <div class="hw" data-count="1" data-name="speaker"></div>
- <div class="hw" data-count="1" data-name="audio_cable"></div>
+ <div class="hw" data-count="1" data-name="led_matrix"></div>
+ <div class="hw" data-count="1" data-name="led_matrix_cable"></div>
  <div id="intro" class="section">
 
   <p>In this project, we'll build on the sprite animations we did in the
@@ -40,14 +40,20 @@
   draw on the LED Matrix will be replicated in blocks in the Minecraft
   world.</p>
  </div>
- <div id="hw" class="section"><img class="bb" src="img/LED_Matrix_bb.jpg" alt=
+
+ <div id="hw" class="section">
+ <p>This project will only require the LED Matrix display.  Here is what your 
+ breadboard should look like:
+ 
+ <img class="bb" src="img/LED_Matrix_bb.jpg" alt=
  "">
  </div>
  <div id="sw" class="section">
 
-  <p>Our code for this project will be identical to the previous project, with
-  one addition &mdash; a function that will be used to replicate the animation we're
-  doing on the LED Matrix in the Minecraft world as well.</p>
+  <p>Our code for this project will be identical to our code in the   
+  <a data-uid="running"></a> project, with one addition &mdash; we'll create 
+  a function that will replicate the animation we're doing on the LED Matrix 
+  in the Minecraft world as well.</p>
 
   <p>When you give this code a try, don't forget to look around to find the running man!
 
@@ -136,13 +142,14 @@ while True:
     time.sleep(0.1)
 </textarea>
   </div>
+
   <h2><code>sprite_in_minecraft()</code> Function</h2>
 
-  <p>We've created a function that will animate our character as we define in
+  <p>We've created a function that will animate our character in
   the Minecraft world. Unlike the LED Matrix, where we can use a simple API to
-  pass in an 8x8 design with a single function call, to create a design in the
-  Minecraft world, we need to draw block by block. For that reason, a major
-  purpose of our function is to turn our 8x8 list of 0's and non-0's into
+  pass in an 8x8 design (a sprite) with a single function call, to create a design in the
+  Minecraft world, we need to draw it block-by-block. For that reason, the bulk
+  of our function is used to turn our 8x8 list of 0's and non-0's into
   blocks (for the non-0's) and air (for the 0's).</p>
 
   <p>Let's discuss what our function does, line-by-line:</p>
@@ -151,33 +158,35 @@ while True:
 
     <p>On Line 56, we define our function, which takes three arguments as inputs:
     our Minecraft object, the current 8x8 design that we want to draw and the
-    location of our character (where we want to draw).</p>
+    location of our character (where we want to draw it).</p>
    </li>
    <li>
 
-    <p>On Line 57, we take our 8x8 design that we used to draw on our LED
+    <p>On Line 57, we take our 8x8 design that we drew on our LED
     Matrix and we rearrange it in an order that will allow us to draw it in the
-    Minecraft world. Specifically, we break up the design into the eight lines
-    we defined in our list (using the <code>splitlines()</code> function and
-    reverse the lines to go from bottom to top, since we will draw starting
-    from the ground (using the <code>reversed()</code> function.</p>
+    Minecraft world. Specifically, we break up the design into the eight separate
+	lines (using the <code>splitlines()</code> function) and then we
+    reverse the order of the lines from bottom to top (using the 
+	<code>reversed()</code> function), as we will draw starting from the ground 
+	and moving up.</p>
    </li>
    <li>
 
-    <p>On Lines 58 and 59, we "nest" (put one inside the other) two
+    <p>On Lines 58 and 59, we <i>nest</i> (put one inside the other) two
     <code>for</code> loops. This will allow us to run through each of the eight
     horizontal characters and each of the eight rows and execute the code that
     follows the nested loops.</p>
    </li>
    <li>
 
-    <p>On Lines 60 through 64, we have the code that will be executed for each of the 64
-    (8x8) character positions. The code checks the character and if it's a 0
-    (which is equivalent to an off LED), it sets the block type to air, which
-    is the same as not drawing a block. If the character is a non-0 (which is
-    equivalent to the LED being on in that position), it sets the block type to
-    wood, so you'll see the block at that location. The final line uses <code>setBlock()</code>
-    to draw the block.</p>
+    <p>On Lines 60 through 64, we have implemented the code that will be used to
+	create blocks at each of 64 (8x8) character positions. The code checks the character, 
+	and if it's a 0 (which is equivalent to the LED being <i>off</i> in that position), 
+	it sets the block type to AIR, which is the same as not drawing a block. If the 
+	character is a non-0 (which is equivalent to the LED being <i>on</i> in that position), 
+	it sets the block type to wood, so we'll see the block at that location. The final 
+	line of that code block uses the <code>setBlock()</code> function to draw the 
+	appropriate block.</p>
    </li>
   </ul>
   <div class="info">
@@ -221,7 +230,8 @@ while True:
    Can you make the running man out of stripes?  That is, can you use
    different materials for the odd and even rows?
    </p> </li> <li> <p>
-   Can you make the running man out of random materials?
+   Can you make the running man out of randomly generated materials for each
+   block?
    </p> </li> <li> <p>
    We made the running man stand straight up in the Minecraft world (on the X
    and Y axes).  Can you lay the running man down flat (on the X and Z axes)?
