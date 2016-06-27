@@ -71,11 +71,11 @@
   </li>
   <li>
 
-   <p>Extra Left Button: GPIO7</p>
+   <p>Extra Left Button: GPIO24</p>
   </li>
   <li>
 
-   <p>Extra Right Button: GPIO24</p>
+   <p>Extra Right Button: GPIO7</p>
   </li>
  </ul>
 
@@ -106,8 +106,8 @@ left = Button(18)
 right = Button(14)
 up = Button(15)
 down = Button(23)
-smash = Button(7)
-jump = Button(24)
+smash = Button(24)
+jump = Button(7)
 
 accel = Accel()
 
@@ -166,6 +166,13 @@ while True:
   </ul>
   <p>Give your controller a try and see how it works.  In our upcoming projects, we'll
   improve the code and add more controller functionality.
+
+  <p><strong>NOTE:</strong>  You may find that when you press the "TAB" key to exit any of the
+  Minecraft Controller projects, it may be difficult to control the cursor with the mouse 
+  (this will be especially true in later Minecraft Controller projects).  This is because the 
+  cursor is still being partially controlled by the CREATOR Kit.  If you tilt the CREATOR Kit 
+  around, you'll find that it's easier to control the mouse with the CREATOR Kit in certain 
+  positions.  Once you STOP the Minecraft program, all cursor control should return to the mouse.
  </div>
  <div id="challenge" class="section">
   <ol>
