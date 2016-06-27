@@ -46,7 +46,7 @@ chainedOnload(function() {
     }
 
     var filename = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
-    pos = pg_filename_to_pos[filename];
+    var pos = pg_filename_to_pos[filename];
 
     var body = document.getElementsByTagName("body")[0];
 
@@ -56,17 +56,17 @@ chainedOnload(function() {
     var hw = document.getElementsByClassName("hw");
     for (i = 0; i < hw.length; i++) {
         hw[i].className += " inner";
-        count = hw[i].getAttribute("data-count");
-        name = hw[i].getAttribute("data-name");
-        item = hw[i].getAttribute("data-item");
+        var count = hw[i].getAttribute("data-count");
+        var name = hw[i].getAttribute("data-name");
+        var item = hw[i].getAttribute("data-item");
         if (! item) {
             item = hw_types[name].item;
         }
-        cell = hw[i].getAttribute("data-cell");
+        var cell = hw[i].getAttribute("data-cell");
         if (! cell) {
             cell = hw_types[name].cell;
         }
-        html = '<table>';
+        var html = '<table>';
         html += '<tr><td>';
         if (count > 0) {
             html += '<div class="hw_count hw_count_' + count%10 + '"><p>' + count + '</p></div>';
@@ -103,8 +103,8 @@ chainedOnload(function() {
     /*
      * Create footer
      */
-    prev = pos > 0 ? pg_index[pos-1].filename : pg_index_html;
-    next = pos < pg_index.length - 1 ? pg_index[pos+1].filename : pg_index_html;
+    var prev = pos > 0 ? pg_index[pos-1].filename : pg_index_html;
+    var next = pos < pg_index.length - 1 ? pg_index[pos+1].filename : pg_index_html;
     var footer_html = '';
     footer_html += '<div class=outer>';
         footer_html += '<div class=inner>';
