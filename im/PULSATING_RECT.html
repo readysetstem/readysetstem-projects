@@ -26,6 +26,8 @@
  </script>
  <script type="text/javascript" src="codeblocks.js">
  </script>
+ <script type="text/javascript" src="matrix.js">
+ </script>
 </head>
 <body>
  <div class="hw" data-count="1" data-name="led_matrix"></div>
@@ -33,13 +35,27 @@
  <div class="section" id="intro">
 
   <p>In this project, and we'll create a rectangular pulsating effect on the
-  display.</p>
+  display.  </p>
 
+
+        
   <p>The pulsating rectangle will consist of 4 individual rectangles nested
   within each other. The smallest rectangle will simply be a 2x2 square of LEDs
   at the center of the display. The largest rectangle will sit at the outer
-  edge of the display.</p>
+  edge of the display:</p>
 
+      <div style="text-align: center">
+      <pre class="matrix">
+FFFFFFFF
+FBBBBBBF
+FB7777BF
+FB7337BF
+FB7337BF
+FB7777BF
+FBBBBBBF
+FFFFFFFF
+</pre>
+</div>
   <p>By slowly changing the color intensity of the rectangles over time, we can generate
   a pulsating effect. Each rectangle will have a slightly different color than
   the one next to it.</p>
@@ -98,6 +114,7 @@ while True:
 
     time.sleep(.5)
 </textarea>
+ </div>
 
   <p>Give it a try. You should see a series of pulsating rectangles.</p>
  </div>
