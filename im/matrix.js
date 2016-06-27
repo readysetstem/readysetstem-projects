@@ -35,7 +35,7 @@ chainedOnload(function() {
     var W = 1;
     var matrixes = document.getElementsByClassName('matrix');
     for (i = 0; i < matrixes.length; i++) {
-        var p = document.createElement('p');
+        var div = document.createElement('div');
         var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         svg.setAttribute('height', String(R*16+2*W));
         svg.setAttribute('width', String(R*16+2*W));
@@ -48,8 +48,8 @@ chainedOnload(function() {
                 circle(svg, W+2*x*R+R, W+2*y*R+R, R, lines[y][x], W);
             }
         }
-        p.appendChild(svg);
-        matrixes[i].parentNode.insertBefore(p, matrixes[i]);
+        div.appendChild(svg);
+        matrixes[i].parentNode.insertBefore(div, matrixes[i]);
     }
     /*
      * ASCII matrixes must be removed in a separate loop - if they are remove
