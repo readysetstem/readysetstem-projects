@@ -51,6 +51,22 @@
   <img class="bb" src="img/LED_Matrix_bb.jpg" alt=""></p>
  </div>
  <div class="section" id="sw">
+ 
+ <p>The code for this project will do the following:
+ 
+ <ul>
+ <li><p>Initialize a list of color intensities for the four rectangles we
+ plan to draw (with each one successively brighter)</li>
+ <li><p>In a loop, for each of the four rectangles, draw the rectangle with
+ the assigned color intensity</li>
+ <li><p>Each time through the loop, increase the intensity of each rectangle
+ (and reset to intensity 0 if it goes above the maximum threshold of 15)</li>
+ </ul>
+ 
+ <p>Because each of the rectangles is increasing in brightness in a fixed
+ pattern, it will appear that the rectangles are animated on the LED Matrix.
+ Here is what the code should look like:
+ 
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.led_matrix import FrameBuffer
@@ -83,7 +99,7 @@ while True:
     time.sleep(.5)
 </textarea>
 
-  <p>Give it a try. You should see a series pulsating rectangles.</p>
+  <p>Give it a try. You should see a series of pulsating rectangles.</p>
  </div>
  <div id="challenge" class="section">
   <ol>
