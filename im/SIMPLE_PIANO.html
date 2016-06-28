@@ -37,7 +37,7 @@
   attached to multiple GPIO inputs and then writing code to assign each button
   a musical note.</p>
 
-  <p>We'll keep it simple in this project, and just play each note for one
+  <p>We'll keep it simple in this project and just play each note for one
   second when the corresponding button is pressed.</p>
  </div>
  <div class="section" id="hw">
@@ -62,7 +62,7 @@
    </li>
    <li>
 
-    <p>Then, we create a while loop that will continually test each button for
+    <p>Then, we create a <code>while</code> loop that will continually test each button for
     a press, and if a press is received, will play the corresponding note.</p>
    </li>
   </ul>
@@ -89,7 +89,7 @@ while True:
 </textarea>
   </div>
 
-  <p>Try this, and you'll likely notice that the there's a popping/crackling
+  <p>Try this, and you'll likely notice that there's a popping/crackling
   sound while you hold the button down. The reason is that when the button is
   pressed, the program will try to <i>replay</i> the note over and over again,
   each time through the <code>while</code> loop. When you <i>replay</i> a note
@@ -101,7 +101,7 @@ while True:
   <ol>
    <li>
 
-    <p>Can you modify the code remove the popping/cracking sound? (Don't cheat
+    <p>Can you modify the code to remove the popping/cracking sound? (Don't cheat
     — we'll get to an answer in the next project).</p>
    </li>
    <li>

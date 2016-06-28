@@ -47,7 +47,7 @@
    <li>
 
     <p>The first circuit will consist of a button wired to a GPIO (like we did
-    in <a data-uid="button"></a>);</p>
+    in <a data-uid="button"></a>)</p>
    </li>
    <li>
 
@@ -79,8 +79,7 @@
  <div class="section" id="sw">
   <h2 class="step">Write the code.</h2>
 
-  <p>Now that we have the circuits built and ready to go, it's time to write
-  our software. For this project, our software is going to do two things:</p>
+  <p>For this project, our software is going to do two things:</p>
   <ol>
    <li>
 
@@ -143,19 +142,19 @@ else:
    <li>
 
     <p>On Line 7, we check the state of the button using the
-    <code>is_pressed()</code> function. This function will return True if the
+    <code>is_pressed()</code> function. This function will return <code>True</code> if the
     button is pressed (this is done by reading the voltage at the GPIO, like we
-    discussed in <a data-uid="button"></a>), and will return False if the
+    discussed in <a data-uid="button"></a>), and will return <code>False</code> if the
     button is released</p>
    </li>
    <li>
 
-    <p>On Line 8, if the return from our if statement is True (the button is
+    <p>On Line 8, if the return from our <code>if</code> statement is <code>True</code> (the button is
     pressed), we light the LED using the <code>on()</code> function</p>
    </li>
    <li>
 
-    <p>On Lines 9 and 10, if the return from our if statement is False (the
+    <p>On Lines 9 and 10, if the return from our <code>if</code> statement is <code>False</code> (the
     button is released), we turn off the LED using the <code>off()</code>
     function</p>
    </li>
@@ -198,7 +197,7 @@ while True:
   <ol>
    <li>
 
-    <p>Modify the code so that the light turns on with the first press, and off
+    <p>Modify the code so the light turns on with the first press, and off
     with the next press — that is, so you don't have to hold the button down
     for the light to stay on. Hint: you'll probably want a variable that keeps
     track of the state of the button.</p>
@@ -206,7 +205,7 @@ while True:
    <li>
 
     <p>Can you make the light turn on/off with each press, but when it's on,
-    only stays on for 3 seconds?</p>
+    it only stays on for 3 seconds?</p>
    </li>
    <li>
 

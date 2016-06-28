@@ -58,9 +58,9 @@
   give us some context so we can understand how we're going from that circuit
   (which uses strictly hardware to control the LED) to our new circuit (which
   uses a GPIO to control the LED). As a reminder, here is what that circuit
-  looks like, and how you'll want to wire your breadboard right
-  now:</p><img class="bb" src="img/Your_First_Breadboard_Add_Power_bb.jpg" alt=
-  "">
+  looks like and how you'll want to wire your breadboard:</p>
+  
+  <img class="bb" src="img/Your_First_Breadboard_Add_Power_bb.jpg" alt="">
 
   <p>The LED should now be lit.</p>
 
@@ -81,7 +81,7 @@
 
   <p>For this project, we will assume that you're using GPIO14 on the Lid
   Connector Board, though you're welcome to use any GPIO — just remember that
-  you'll just need to modify the code appropriately if you choose a GPIO other
+  you'll need to modify the code appropriately if you choose a GPIO other
   than 14 for this project.</p>
 
   <p>This is what your breadboard should now look like:</p><img class="bb" src=
@@ -113,11 +113,11 @@
  <div class="section" id="sw">
   <h2 class="step">Write the code.</h2>
 
-  <p>The code to control the GPIO (and with it the LED) is pretty short. It
+  <p>The code to control the GPIO (and with it, the LED) is pretty short. It
   uses a function called <code>Output()</code> to configure a GPIO as an
   output.</p>
 
-  <p>Type (or copy-and-paste) the following code into the your RDE's Code
+  <p>Type (or copy-and-paste) the following code into your RDE's Code
   Window:</p>
   <div class="code" data-firstline="1">
    <textarea>
@@ -144,7 +144,7 @@ my_led.on()
 
   <p>Other aspects of the code that you might not understand will become more
   clear as we progress through the tutorials. For now, understanding the basic
-  concepts above is enough to get you started.</p>
+  concepts above should be enough to get you started.</p>
   <h2 class="step">Run the code.</h2>
 
   <p>Run the code the same way you did in the <a data-uid="hello"></a> project
@@ -152,7 +152,7 @@ my_led.on()
   correctly, the LED should now be lit.</p>
 
   <p>Congratulations! You just controlled some hardware you built using
-  software that you wrote.</p>
+  software you wrote.</p>
  </div>
  <div class="section" id="challenge">
   <ol>
