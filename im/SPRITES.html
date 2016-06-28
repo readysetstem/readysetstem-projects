@@ -33,15 +33,15 @@
  <div class="section">
   <h1>Sprites</h1>
 
-  <p>Sprites are two-dimensional images that you can draw on a framebuffer. In
+  <p>Sprites are two-dimensional images that we can draw on a framebuffer. In
   computer graphics, the term "sprite" is often used to refer to fixed images,
   like a spaceship or character that is moved around the screen while the games
   is played. The Ready Set STEM API provides a <code>Sprite()</code> function
-  to create sprites that can be then be placed at different locations on the
+  to create sprites that can then be placed at different locations on the
   screen — we also provide functions to allow you to flip, crop and rotate your
   sprite on the display.</p>
 
-  <p>To create a sprite, you can use the the <code>Sprite()</code> function
+  <p>To create a sprite, we can use the the <code>Sprite()</code> function
   with a string representing the sprite:</p>
   <pre>
 Sprite(<i>string_sprite</i>)
@@ -49,15 +49,15 @@ Sprite(<i>string_sprite</i>)
 
   <p>The <code><i>string_sprite</i></code> is a multiple line string, with each
   character in the string representing the color of one point of the sprite.
-  Each row of the sprite much have the same number of points.</p>
+  Each row of the sprite must have the same number of points.</p>
   <div class="info">
    <div>
     Multiline Strings
    </div>
    <div>
 
-    <p>Sometimes, you'll want to create a string that has multiple lines. For
-    example, to <code>print()</code> a your grocery list, you might do the
+    <p>Sometimes, we'll want to create a string that has multiple lines. For
+    example, to <code>print()</code> a your grocery list, we might do the
     following:</p>
     <pre>
 print("Cheeze Whiz")
@@ -67,8 +67,8 @@ print("Mangoes")
 
     <p>However, it is sometimes useful to be able to put several lines all
     together in one string. Python provides a way to do this with multiline
-    strings. Multiline strings start and end with 3 quotes. For example, to
-    print the above grocery list with only one print statement, you could
+    strings. Multiline strings start and end with three quotes. For example, to
+    print the above grocery list with only one print statement, we could
     use:</p>
     <pre>
 print("""Cheeze Whiz
@@ -77,7 +77,7 @@ Mangoes""")
 </pre>
 
     <p>Just like single-line strings, multiline strings can be enclosed with
-    double quotes or single-quotes, but remember, you'll need 3 of them.</p>
+    double quotes or single-quotes, but remember, we'll need three of them.</p>
    </div>
   </div>
 
@@ -85,7 +85,7 @@ Mangoes""")
   <a data-uid="fb"></a>. To represent the colors in the
   <code>string_sprite</code>, we need to use only one digit for each character.
   So, we use the digits 0 through 9 followed by A through F (where A=10, B=11,
-  and so forth). Plus, sprites add a new color: transparent. To use it, you can
+  and so forth). Plus, sprites add a new color: transparent. To use it, we can
   put a dash ('-') in the sprite string.</p>
 
   <p>The full list of colors for sprites is:</p>
@@ -212,9 +212,9 @@ up_arrow = Sprite("""
 </textarea>
   </div>
 
-  <p>The <code>Sprite()</code> function doesn't care if you add extra spaces at
-  the beginning or end of a line, or if you add extra blank lines. Once you
-  have created a sprite, you can draw it on your framebuffer with the
+  <p>The <code>Sprite()</code> function doesn't care if we add extra spaces at
+  the beginning or end of a line, or if we add extra blank lines. Once we
+  have created a sprite, we can draw it on our framebuffer with the
   framebuffer's <code>draw()</code> function:</p>
   <div class="code" data-firstline="1">
    <textarea>
@@ -238,8 +238,8 @@ fb.show()
 </textarea>
   </div>
 
-  <p>Similar to framebuffers, sprites can also tell you how high and wide they
-  are, for example, to print the height and width of our arrow:</p>
+  <p>Similar to framebuffers, sprites can also tell us how high and wide they
+  are.  For example, to print the height and width of our arrow:</p>
   <div class="code" data-firstline="0">
    <textarea>
 print(up_arrow.height)
@@ -247,7 +247,7 @@ print(up_arrow.width)
 </textarea>
   </div>
 
-  <p>Finally, sprites have several function that allow you to modify the
+  <p>Finally, sprites have several function that allow us to modify the
   sprite:</p>
   <ul>
    <li>
@@ -279,7 +279,7 @@ print(up_arrow.width)
   </ul>
 
   <p>Like sound chains described in <a data-uid="tts"></a>, sprite functions
-  can be chained. This means that you can do multiple operations (crop, flip,
+  can be chained. This means that we can do multiple operations (crop, flip,
   rotate), together in one brief statement.</p>
  </div>
  <div class="section">
@@ -312,7 +312,7 @@ fb.show()
   </div>
 
   <p>Before drawing the flag (just before the <code>fb.draw()</code> function
-  above), there's a number of operation we could do to modify it. The following
+  above), there are a number of operations we could do to modify it. The following
   table shows what the flag would look like for various operations:</p>
   <table class="basic">
    <tbody>
