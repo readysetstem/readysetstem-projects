@@ -45,17 +45,17 @@
   hardware can communicate directly with our code, we open a world of
   possibilities.</p>
 
-  <p>So, how do we do this? By using GPIOs as Inputs.</p>
+  <p>So, how do we do this? By using GPIOs as inputs.</p>
   <h2>GPIOs As Inputs</h2>
 
-  <p>Much like GPIO outputs work by simply setting a voltage on the GPIO pin to
+  <p>Much like how GPIO outputs work by simply setting a voltage on the GPIO pin to
   either low (0V) or high (3.3V), GPIO inputs work by reading the voltage —
   either 0V or 3.3V — being sent to the GPIO pin by the attached
   component:</p><img style="width: 450px;" alt="" src="img/gpio_input.jpg">
 
   <p>For example, a GPIO can be used to get the current state of a button or
   switch (pressed or released). Based on the current state, the software can do
-  what we expect when the button/switch is in that state.</p>
+  what we define when the button/switch is in that state.</p>
   <div class="info">
    <div>
     "State"
@@ -96,9 +96,9 @@
   </div>
   <h2>GPIO Example: Buttons</h2>
 
-  <p>A simple way to think about GPIO inputs is with button. Buttons are
+  <p>A simple way to think about GPIO inputs is with a button. Buttons are
   actually a little bit different than some other devices that would be used
-  with a GPIO Input, as they don't generate a voltage (so we can't just read
+  with a GPIO input, as they don't generate a voltage (so we can't just read
   their voltage at the GPIO). But, with a little bit of behind-the-scenes
   configuration, we can wire a circuit so that our button uses a GPIO input and
   we can read the state of the button based on the voltages generated.</p>

@@ -33,15 +33,15 @@
  <div class="hw" data-count="4" data-name="button"></div>
  <div class="section" id="intro">
 
-  <p>In this project, we continue the development of our Simon Says pattern
-  matching game by adding button input.</p>
+  <p>In this project, we continue the development of our Simon Says pattern-matching 
+  game by adding button input.</p>
 
   <p>In our last project, we created a random sequence of LED flashes. We
   included that code in a loop that will continue to add another flash to the
   end of the sequence and replay the sequence. This is exactly how our game
   will work, except that after playing a sequence, the player will have to
   repeat the sequence using the buttons on the breadboard. If they do it
-  correctly, we add a new LED to the sequence; if they do it incorrectly, the
+  correctly, we add a new LED flash to the sequence; if they do it incorrectly, the
   game is over.</p>
 
   <p>In this project, we'll add the buttons as input, and add the code that
@@ -54,10 +54,10 @@
   <img class="bb" src="img/simon-4but-4led_bb.jpg" alt=""></p>
  </div>
  <div class="section" id="sw">
-  <h2 class="step">Add Initialization Code</h2>
+  <h2 class="step">Add Initialization Code.</h2>
 
-  <p>The first thing we're going to need to do is initialize the buttons —
-  we'll import the function we need and create the button list just like we did
+  <p>The first thing we're going to need to do is initialize the buttons.
+  We'll import the function we need and create the button list just like we did
   in <a data-uid="manybuttons"></a>:</p>
   <div class="code" data-firstline="0">
    <textarea>
@@ -66,7 +66,7 @@ from rstem.button import Button
 buttons = [Button(14), Button(15), Button(23), Button(17)]
 </textarea>
   </div>
-  <h2 class="step">Check Button Sequence Entered by Player</h2>
+  <h2 class="step">Check Button Sequence Entered by Player.</h2>
 
   <p>Next, we need to add code after we play the sequence to check for whether
   the user has entered the correct sequence back. There are several parts to
@@ -82,9 +82,9 @@ buttons = [Button(14), Button(15), Button(23), Button(17)]
    <li>
 
     <p>If an incorrect button was pressed, we set a variable called
-    <code>failed</code> to True. This will be our indication to the
-    <code>while</code> loop that the game is over and on our next pass, we
-    should drop through the loop. This will also require us to change our test
+    <code>failed</code> to <code>True</code>. This will be our indication to the
+    <code>while</code> loop that the game is over and that we should drop through
+	the loop on our next pass. This will also require us to change our test
     in the <code>while</code> loop that we already created (we'll do that in
     Step #3). And we'll need to stop checking for additional button presses and
     drop through the loop.</p>
@@ -127,12 +127,12 @@ for i in play_order:
   </div>
 
   <p>If the button entered by the player was incorrect, we set a variable
-  called <code>failed</code> to True, and then we <code>break</code> — the
+  called <code>failed</code> to <code>True</code>, and then we <code>break</code> — the
   <code>break</code> command will immediately exit the <code>for</code>
   loop.</p>
 
   <p>If the button entered by the player was correct, we need to light the LED
-  before moving on to checking the next button entered. Here is what that code
+  before moving on to check the next button entered. Here is what that code
   should look like:</p>
   <div class="code" data-firstline="0">
    <textarea>
@@ -148,16 +148,16 @@ lights[button_pressed].off()
   and turn it back off. But there's an extra line in there as well — we sleep
   for a very short period. This extends the time the LED is on to give a better
   appearance when a player presses and releases a button very quickly.</p>
-  <h2 class="step">Update the <code>while</code> Loop</h2>
+  <h2 class="step">Update the <code>while</code> Loop.</h2>
 
   <p>Finally, we have to update our <code>while</code> loop, as we want it to
   drop through if we determine that the user made a mistake and the game is
-  over. Remember, we set a variable called <code>failed</code> to True when the
+  over. Remember, we set a variable called <code>failed</code> to <code>True</code> when the
   user made a mistake, so we can simply test to see whether <code>failed</code>
   is <code>True</code> in our <code>while</code> loop.</p>
 
   <p>To update the <code>while</code> loop, we need to first initialize our
-  failed variable when we start the program, and then we can update our
+  failed variable when we start the program, then we can update our
   <code>while</code> loop as follows:</p>
   <div class="code" data-firstline="0">
    <textarea>
@@ -169,13 +169,13 @@ while not failed:
     ...
 </textarea>
   </div>
-  <h2 class="step">Put It All Together</h2>
+  <h2 class="step">Put It All Together.</h2>
 
   <p>Here is what the code for this project should look like at this point
   (with new changes highlighted with arrows) — when you run it, you will see a
   single LED flash, and you can press the button associated with that LED; then
   the pattern will repeat, adding a new LED light and you can enter the 2-light
-  sequence; the sequence will continue to add a new LED for as long as you
+  sequence; the sequence will continue to add a new LED flash for as long as you
   correctly enter the sequence:</p>
   <div class="code" data-firstline="1">
    <textarea>
@@ -248,7 +248,7 @@ play_order = []
    </li>
    <li>
 
-    <p>Can you make the game even harder, by making the time the user has to
+    <p>Can you make the game even harder by making the time the user has to
     press a button decrease by 5% each time a new LED is added to the
     <code>play_order</code>?</p>
    </li>

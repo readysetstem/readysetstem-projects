@@ -40,7 +40,7 @@
   circuit on our breadboard is easy. Let's give it a try...</p>
  </div>
  <div class="section" id="hw">
-  <h2 class="step">Reading Buttons Using GPIOs</h2>
+  <h2 class="step">Reading Buttons Using GPIOs.</h2>
 
   <p>First, we start with an empty breadboard, with power and ground wired from
   the Lid Connector Board, like this:</p><img class="bb" src=
@@ -48,7 +48,7 @@
 
   <p>With our breadboard empty, here is how we build our circuit and then use
   code to get input from the button through the GPIO:</p>
-  <h2 class="step">Place button on breadboard</h2>
+  <h2 class="step">Place button on breadboard.</h2>
 
   <p>We start by placing a button on the breadboard. Remember, it is important
   that the button is oriented correctly — the two independent sides of the
@@ -70,13 +70,13 @@
   strips (as shown above), or it can be placed across the notch in the
   breadboard, as we'll do in the next step. The choice only depends on where
   you'd like to place the button.</p>
-  <h2 class="step">Wire one side of the button to a GPIO</h2>
+  <h2 class="step">Wire one side of the button to a GPIO.</h2>
 
   <p>Next, we connect one side of the button (it doesn't matter which one, as
   the internal components of the button are symmetrical) to a GPIO. In this
   example, we'll connect the button to GPIO14.</p><img class="bb" src=
   "img/Buttons_with_GPIO_1_bb.jpg" alt="">
-  <h2 class="step">Wire the other side of the button to ground</h2>
+  <h2 class="step">Wire the other side of the button to ground.</h2>
 
   <p>Finally, we connect the other side of the button to ground.</p><img class=
   "bb" src="img/Buttons_with_GPIO_2_bb.jpg" alt="">
@@ -105,7 +105,7 @@ print(my_button.is_pressed())
   not holding down the button at the moment the program is run.</p>
 
   <p>You may notice that this example is similar to the <a data-uid=
-  "gpoutp"></a> example. But in this case, we configure the GPIO as a button
+  "gpoutp"></a> example, but in this case, we configure the GPIO as a button
   instead of an output:</p>
   <ul>
    <li>
@@ -114,7 +114,7 @@ print(my_button.is_pressed())
    </li>
    <li>
 
-    <p>On Line 3, we're getting the state of the button, and printing it.</p>
+    <p>On Line 3, we're getting the state of the button and printing it.</p>
    </li>
   </ul>
 
@@ -197,7 +197,7 @@ while True:
    </li>
    <li>
 
-    <p>Try hooking up two buttons to two different GPIOs, and print when either
+    <p>Try hooking up two buttons to two different GPIOs, and modify the code to print when either
     one is pressed.</p>
    </li>
    <li>

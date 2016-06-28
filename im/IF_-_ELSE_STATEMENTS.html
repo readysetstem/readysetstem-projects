@@ -52,14 +52,14 @@
   control?"</p>
 
   <p>Most of the time the answer is "No," so the TV software moves onto
-  something else for short period of time (likely whatever else it was already
+  something else for a short period of time (likely whatever else it was already
   doing). But, if the answer is "Yes" (in other words, if you were pressing a
   button on the remote), the TV will then take action to determine what button
   was pressed and then carry out the request.</p>
 
   <p>The most basic way for software to ask and respond to a question is by
   using what is known as an <code>if</code> statement. An <code>if</code>
-  statement asks a <code>True</code> or <code>False</code> question, and based
+  statement asks a <code>True</code> or <code>False</code> question and, based
   on the answer, takes the appropriate action.</p>
 
   <p>As another example, let's say we have a circuit that contains a
@@ -274,7 +274,7 @@ if temperature &lt; 90:
 
   <p>our code block was a single print statement.</p>
 
-  <p>But, in many situations, after evaluating a conditional, we're going to
+  <p>But in many situations, after evaluating a conditional, we're going to
   want to take action that requires many commands, not just one. For this
   reason, code blocks can be any number of commands following a conditional
   statement. Our example above could be changed to:</p>
@@ -385,7 +385,7 @@ else:
 </textarea>
   </div>
 
-  <p>We use the else: keyword to indicate what action should be taken if the
+  <p>We use the <code>else</code> keyword to indicate what action should be taken if the
   conditional statement evaluates to <code>False</code>. We are basically
   telling the computer:</p>
 
@@ -397,7 +397,7 @@ else:
   that," just isn't enough to provide the functionality you need.</p>
 
   <p>For example, perhaps we want to know more than whether the temperature is
-  above or below 90 degrees? Perhaps we want to know if it's below 60 degrees?
+  above or below 90 degrees? Perhaps we want to know, is it below 60 degrees?
   Or in the 60s? Or in the 70s? Or in the 80s? Or in the 90s? Or above 90
   degrees?</p>
 
@@ -408,13 +408,13 @@ else:
 if temperature &lt; 60:
     print("Brrrr…under 60 degrees.")
 elif temperature &lt; 70:
-    print("Between 60 and 70degrees.")
+    print("Between 60 and 70 degrees.")
 elif temperature &lt; 80:
     print("Between 70 and 80 degrees.")
 elif temperature &lt; 90:
     print("Between 80 and 90 degrees.")
 else:
-    print("It is over 90 degrees")
+    print("It is over 90 degrees.")
 </textarea>
   </div>
  </div>
