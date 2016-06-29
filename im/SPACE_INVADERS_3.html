@@ -45,7 +45,7 @@
  </div>
  <div class="section" id="sw">
 
-  <p>In the last project, we initialized our ship where it's supposed to start
+  <p>In the last project, we initialized our ship at its starting location
   and we created the loop for our game loop. In this project, we're going to
   add the accelerometer and use it to get input from the user about which
   direction to move our ship (tilting the Ready Set STEM CREATOR Kit left will
@@ -77,20 +77,20 @@ accel = Accel()
     certain amount before we register it as a tilt. If we want the game to be
     very sensitive to tilting, we can set this value close to 0 (so just a
     small tilt will register); if we don't want the game to be very sensitive,
-    we can set the value close to 1 (so only a large tilt will register). And
-    we'll start by setting the value to .1 and see how that works for us.</p>
+    we can set the value close to 1 (so only a large tilt will register).
+    We'll start by setting the value to .1 and see how that works.</p>
    </li>
    <li>
 
     <p><strong>SPACESHIP_STEP:</strong> As we register tilt in one direction or
-    the other, we need to have the ship move in that direction. And we need to
+    the other, we need to have the ship move in that direction. We also need to
     tell it how far to move during one pass through the game loop if a tilt is
     registered. If we move it too far each time, the ship will appear to move
     very fast and we'll feel like we have no control over it; if we move it too
     small of a distance each time, the game will feel sluggish and
     non-responsive. Most likely, we'll just want the ship to move a fraction of
     a dot each time a tilt is registered. We'll start with .1 dots for now and
-    see how that works for us.</p>
+    see how that works.</p>
    </li>
   </ul>
 
@@ -127,8 +127,8 @@ spaceship_position = max(0, min(fb.width - 1, spaceship_position))
   </div>
 
   <p>Here is the full code for our game at this point (with new changes
-  highlighted with arrows) &mdash;  when you run it, try
-  tilting your Ready Set STEM CREATOR Kit left and right, and you should see
+  highlighted with arrows). When you run it, try
+  tilting your CREATOR Kit left and right &mdash; you should see
   your ship move left and right in response:</p>
   <div class="code" data-firstline="1">
    <textarea>

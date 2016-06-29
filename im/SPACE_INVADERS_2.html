@@ -47,8 +47,8 @@
 
   <p>Now that we have the framebuffer initialized and have verified that the
   LED Matrix is working, let's put our spaceship where it's supposed to be
-  located — in the middle of the LED Matrix horizontally, and in the bottom
-  row.</p>
+  located — in the middle of the bottom
+  row of the LED Matrix.</p>
 
   <p>To determine the middle of the LED Matrix, we could take the known width
   (8 dots) and divide that by two — that would give us our middle dot (x=4).
@@ -63,7 +63,7 @@
   <code>fb.width</code> that will determine how many LED Matrices you have
   chained together and will tell you the total width of your LED Matrix
   display. We can use that attribute to determine the actual width of the
-  display, and then divide that actual width by 2 to get the starting position
+  display and then divide that actual width by 2 to get the starting position
   of our spaceship.</p>
 
   <p>Here is what the initialization code for the initial position of the ship
@@ -75,18 +75,18 @@ spaceship_position = fb.width / 2
 </textarea>
   </div>
 
-  <p>In our previous project, we just drew the ship at (3,0). But, now we have
-  the actual x-coordinate from our calculation above, so we can draw the ship
+  <p>In our previous project, we just drew the ship at (3,0), but now we have
+  the actual x-coordinate from our calculation above so we can draw the ship
   at its actual starting position.</p>
 
-  <p>But, there's one thing we need to keep in mind — now that we're using a
+  <p>There's one thing we need to keep in mind — now that we're using a
   calculation to determine the position of the ship, it's possible that the
   result of our calculation won't be a whole number (for example, if we were
   using an LED Matrix that was 7 dots wide, our initial position would be
   x=3.5). To accommodate for that, we need to round our calculation to the
-  nearest whole number, and that is where we will display our ship.</p>
+  nearest whole number, and that is where we will display our ship.
 
-  <p>We do that using the built-in math function called <code>round()</code>,
+  We do that using the built-in math function called <code>round()</code>,
   which will round the value we give it to the nearest whole number.</p>
 
   <p>Here is what the code for this project should look like at this point
@@ -161,7 +161,7 @@ while True:
    If you don't use <code>round()</code> as described above, does the code
    still work?  Why or why not?
     </p> </li> <li> <p>
-    Start the spaceship at the right edge of the screen, instead of in the center.
+    Start the spaceship at the right edge of the screen instead of in the center.
     </p> </li>
   </ol>
  </div>

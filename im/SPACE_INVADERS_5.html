@@ -74,7 +74,7 @@ MISSILE_STEP_TIME = 0.1
 
   <p>Next, we need to make changes to our game loop to support the missiles.
   This involves three parts of the loop:</p>
-  <h2 class=step>Getting inputs</h2>
+  <h2 class=step>Get the inputs.</h2>
 
   <p>In terms of getting inputs, we'll first want to check the button to
   determine when it's pressed. And we'll then want to get the current time to
@@ -86,7 +86,7 @@ presses = fire_button.presses()
 now = time.time()
 </textarea>
   </div>
-  <h2 class=step>Changing the world:</h2>
+  <h2 class=step>Change the world.</h2>
 
   <p>To change the world, we'll first need to check if either:</p>
   <ol>
@@ -121,10 +121,10 @@ elif presses:
     missile_start_time = now
 </textarea>
   </div>
-  <h2 class=step>Show the world:</h2>
+  <h2 class=step>Show the world.</h2>
 
   <p>To show the world, we'll check to see if there is an existing missile on
-  the screen, and if there is, we'll draw its current location.</p>
+  the screen and, if there is, we'll draw its current location.</p>
   <div class="code" data-firstline="0">
    <textarea>
 # Draw missile
@@ -135,7 +135,7 @@ if missile_x &gt;= 0:
 
   <p>If we integrate those snippets of code into our current code for the
   project, our full project will look like this — when you run it, try pressing
-  the button and watching the missile fire:</p>
+  the button to watch the missile fire:</p>
   <div class="code" data-firstline="1">
    <textarea>
 # ################################
@@ -247,13 +247,13 @@ while True:
     </p> </li> <li> <p>
    Change the missile color to as light as possible, without being invisible.
     </p> </li> <li> <p>
-   Can you make missile quickly flash on and off as it moves up the screen?
+   Can you make the missile quickly flash on and off as it moves up the screen?
     </p> </li> <li> <p>
     Our missile restarts shooting from the spaceship every time the button is
     pressed.  Can you ignore button presses while the missile is shooting so
     that a missile always makes it to the top of the display?
     </p> </li> <li> <p>
-    Can you add a second missile, so that you can shoot up to two missiles at a time?
+    Can you add a second missile so that you can shoot up to two missiles at a time?
     </p> </li>
   </ol>
  </div>
