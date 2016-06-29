@@ -34,12 +34,12 @@
  <div id="intro" class="section">
 
   <p>In this project, we'll finish up our accelerometer shake game by 
-  randomizing the subsequent command to the user and verifying that
-  the requested action was taken. </div>
+  randomizing the subsequent commands to the user and verifying that
+  the requested actions were taken. </div>
  <div id="hw" class="section">
 
-  <p>You'll need to wire up the Accelerometer as done in previous projects.
-  Here is what your breadboard should look like once the accelerometer is
+  <p>We'll need to wire up the Accelerometer as done in previous projects.
+  Here is what our breadboard should look like once the accelerometer is
   properly wired:</p>
   <img class="bb" src="img/Accel_bb.jpg" alt=
   "">
@@ -137,11 +137,11 @@ try_again_tts.play().wait()
 
   <p>Now, let's take a look at what our code is doing...</p>
 
-  <p>The bulk of the changes above are to add 3 new tilt methods: tilt right,
-  tilt up, and "shake me". After adding these, we'll now have a real game! For
+  <p>The bulk of the changes above are to add three new tilt methods: tilt right,
+  tilt up, and "shake me." After adding these, we'll now have a real game! For
   each new tilt type, we've duplicated the code that handles the left tilt, and
   changed the variable names and detection to handle right tilt, tilt up, and
-  "shake me".</p>
+  "shake me."</p>
 
   <p>The "shake me" detection is a little different, and needs some explanation.
   To correctly do a "shake" you must keep the CREATOR Kit level, and shake up
@@ -151,11 +151,11 @@ try_again_tts.play().wait()
 
   <p>So, to test for "shaking" we test to make sure that <code>x</code> is small
   (it's not tilted left or right) and that <code>y</code> is small (it's not
-  tiled up or down). Then we check that <code>z</code> is far away from 1 (which
+  tilted up or down). Then we check that <code>z</code> is far away from 1 (which
   is its normal position). Remember: when the CREATOR Kit is sitting flat on a table,
-  <code>z</code> will be 1 — it means that the force of the earth is pulling it
-  down. When the kit is moved up quickly <code>z</code> will go a good bit
-  higher than 1. When the kit is moved back down quickly <code>z</code> will go
+  <code>z</code> will be 1, which means that the force of the earth is pulling it
+  down. When the kit is moved up quickly, <code>z</code> will go a good bit
+  higher than 1. When the kit is moved back down quickly, <code>z</code> will go
   a good bit lower than 1.</p>
 
   <p>Besides testing for the new tilts, there are some other minor changes:</p>
@@ -169,7 +169,7 @@ try_again_tts.play().wait()
    </li>
    <li>
 
-    <p>On Line 58, we change the period, after each time the user performs the
+    <p>On Line 58, we change the period after each time the user performs the
     correct action. This will make the game go faster and faster until it's
     crazy hard to respond with the correct action in time.</p>
    </li>
@@ -181,7 +181,7 @@ try_again_tts.play().wait()
   <ol>
    <li>
     <p>Can you make the game harder?  Perhaps change all the actions to single 
-	word, like "LEFT" and "SHAKE" to speed up the command and having the time-out
+	words, like "LEFT" and "SHAKE" to speed up the commands and make the time-out
 	be shorter. 
    </li>
    <li>
@@ -189,8 +189,8 @@ try_again_tts.play().wait()
    </li>
    <li>
 
-    <p>Can you keep a count of how many correct actions were performed
-    correctly, and print out the number of correct actions once the game is
+    <p>Can you keep a count of how many actions were performed
+    correctly and print out the number once the game is
     over?</p>
    </li>
    <li>
@@ -198,7 +198,7 @@ try_again_tts.play().wait()
     <p>Instead of printing the number of correct actions (from the last
     question), can you have the code say the number out loud? (Hint: you may
     need to create a new <code>Speech()</code> for each number you want to say
-    &mdash; so you might need to limit the answer to numbers under, say, 10)</p>
+    &mdash; so you might need to limit the answer to numbers under, say, 10.)</p>
    </li>
    <li>
 

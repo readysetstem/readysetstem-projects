@@ -36,17 +36,17 @@
   <p>In this project, we'll add sounds to our accelerometer shake game. 
   Specifically, we'll use text-to-speech like we used in the <a data-uid=
   "speechp"></a> project to command the user to do different actions
-  throughout the game, and let them know if they've succeeded.</p>
+  throughout the game and to let them know if they've succeeded.</p>
  </div>
  <div id="hw" class="section">
 
-  <p>You'll need to wire up the Accelerometer as done in previous projects.
-  Here is what your breadboard should look like once the accelerometer is
+  <p>We'll need to wire up the Accelerometer as done in previous projects.
+  Here is what our breadboard should look like once the accelerometer is
   properly wired:</p>
   <img class="bb" src="img/Accel_bb.jpg" alt=
   "">
 
-  <p>In addition, you'll need the speaker hooked up &mdash; refer back to the
+  <p>In addition, we'll need the speaker to be hooked up &mdash; refer back to the
   <a data-uid="playingnotes"></a> project if you need help.</p>
  </div>
  <div id="sw" class="section">
@@ -134,15 +134,15 @@ while True:
    </li>
    <li>
 
-    <p>On Line 32, we request the user to perform an specific tilt. Of course,
+    <p>On Line 32, we request the user to perform a specific tilt. Of course,
     in this version of the game, the tilt is still always just LEFT! (Don't
-    worry, we'll change it next project).</p>
+    worry, we'll change it next project.)</p>
    </li>
    <li>
 
     <p>On Lines 47 through 53, instead of just printing out if the right or
-    wrong action was performed, we speak to the user. And, it was wrong, we tell
-    them the action that we think they did.</p>
+    wrong action was performed, we speak to the user. If the action was wrong, we tell
+    them what action we think they did.</p>
    </li>
    <li>
 
@@ -165,7 +165,7 @@ while True:
    <li>
     <p>As is, you have to tilt the kit more than about 45 degrees (halfway between
 	flat and fully on its side) before the tilt registers.  Can you modify the code
-	to make it more sensitive (less tilt to register) or less sensitive (more tilt
+	to make it more sensitive (requires less tilt to register) or less sensitive (requires more tilt
 	to register)?
 	</li>
    <li>

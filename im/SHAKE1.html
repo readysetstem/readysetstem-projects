@@ -114,7 +114,7 @@ while True:
     variables: <code>request</code> and <code>action</code>. The
     <code>request</code> is what we want the user to do, and the
     <code>action</code> is what the user has actually done. For this first cut
-    at the game, we will only request that they tilt left. And, we assume at
+    of the game, we will only request that they tilt left. And, we assume at
     first that they have taken <code>NOACTION</code></p>
    </li>
    <li>
@@ -131,13 +131,13 @@ while True:
    </li>
    <li>
 
-    <p>On Lines 32 through 36, we check if the our <code>request</code> matches
+    <p>On Lines 32 through 36, we check if our <code>request</code> matches
     the user's <code>action</code>. If not, the game is over and we exit the
     while loop.</p>
    </li>
   </ul>
   
-  <p>Try running the program and play around with tilting the kit to the left
+  <p>Try running the program and playing around with tilting the kit to the left
   to get an idea of how sensitive it is to picking up and registering tilts.
  </div>
  
@@ -145,8 +145,8 @@ while True:
   <ol>
    <li>
 
-    <p>The <code>SCORE_NEEDED</code> value affects how sensitive our code is at
-    detecting tilts, and also affects how long it takes to detect the tilt. Try
+    <p>The <code>SCORE_NEEDED</code> value affects how sensitive our code is to
+    detecting tilts; it also affects how long it takes to detect the tilt. Try
     changing <code>SCORE_NEEDED</code> to a high or low value, and see how it
     affects the tilt detection.</p>
    </li>
