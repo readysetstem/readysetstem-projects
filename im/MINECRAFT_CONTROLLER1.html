@@ -34,9 +34,9 @@
 
   <p>In this project, we will use the CREATOR Kit to design and build a Minecraft
   controller. This first version of the controller will use the accelerometer
-  to control where your character, Steve, is looking. In addition, we'll use
+  to control where our character, Steve, is looking. In addition, we'll use
   four buttons to control Steve's movements forward, backwards, left and
-  right.  And we'll add two extra buttons as well &mdash; a left button to allow 
+  right.  We'll add two extra buttons as well &mdash; a left button to allow 
   Steve to smash and a right button that will make Steve jump.</p>
  </div>
  <div id="hw" class="section">
@@ -93,8 +93,8 @@
   projects.  The initialization code will be similar to those projects.
 
 
-  <p>Here is what the code for this project should look like (where the new code we'll
-  discuss below is highlighted with red arrows):</p>
+  <p>Here is what the code for this project should look like (the new code, which we'll
+  discuss below, is highlighted with red arrows):</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.accel import Accel
@@ -154,7 +154,7 @@ while True:
    example, if the left button <code>is_pressed</code>, we will start moving Steve left.  If the
    left button is NOT pressed, then we will stop Steve moving left (by releasing the left keystroke
   using <code>release=True</code>).
-   We repeat this if/then/else statement for all of the other buttons as well.
+   We repeat this <code>if</code>/<code>then</code>/<code>else</code> statement for all of the other buttons as well.
     </p> </li> <li> <p>
     On line 42, 
   we control where Steve is looking based on how the accelerometer is tilted.  The accelerometer returns a value between -1 and
@@ -164,7 +164,7 @@ while True:
 
     </p> </li>
   </ul>
-  <p>Give your controller a try and see how it works.  In our upcoming projects, we'll
+  <p>Give the controller a try and see how it works.  In our upcoming projects, we'll
   improve the code and add more controller functionality.
 
   <p><strong>NOTE:</strong>  You may find that when you press the "TAB" key to exit any of the
@@ -185,7 +185,7 @@ while True:
     instead, have Steve only move a small amount when a button is pressed.
     </p> </li> <li> <p>
     Modify the code so that Steve's movements are based on the accelerometer
-    and where he looks are controlled by the buttons.
+    and where he looks is controlled by the buttons.
     </p> </li>
   </ol>
  </div>

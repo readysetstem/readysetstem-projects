@@ -67,7 +67,7 @@
 
   <p>The first thing we typically do in any program (including our Minecraft
   programs) is to import the modules and functions we'll need for our code. The
-  set of functions that the Ready Set STEM uses for Minecraft programs is
+  set of functions that the CREATOR Kit uses for Minecraft programs is
   called <code>rstem.mcpi</code>, so in addition to any other functions we will
   need to import, we'll typically either import the entire
   <code>rstem.mcpi</code> module or we'll import specific functions within the
@@ -81,18 +81,18 @@
   <h2>Connecting to the Minecraft Server</h2>
 
   <p>Once the Minecraft game has been started and we have our Minecraft window
-  open, we next need to connect our code to the Minecraft server so that we can
+  open, we need to connect our code to the Minecraft server so that we can
   interact with the existing game. This is accomplished using a function from
   the <code>rstem.mcpi</code> module called
   <code>minecraft.Minecraft.create()</code>.</p>
 
-  <p>Note that not every Minecraft function will require that this step was
+  <p>Note that not every Minecraft function will require this step to be
   completed, but many do, so it's good to get in
   the habit of including it even if you don't use it.</p>
   <h2>The Game Loop</h2>
 
   <p>Once we have our initialization complete and we've started the Minecraft
-  game, we then create the game loop that will house the logic for our code. In
+  game, we create the game loop that will house the logic for our code. In
   many cases, the game loop will be a <code>while</code> loop that will
   run forever (until we manually stop it).</p>
   <h2>Putting It All Together</h2>

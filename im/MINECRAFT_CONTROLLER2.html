@@ -47,7 +47,7 @@
  <div id="sw" class="section">
 
   <p>Our goal with this project is to greatly simplify the button controls we
-  implemented in our Minecraft Controller 1 project. This will make future controller
+  implemented in our <a data-uid="mccontr1"></a> project. This will make future controller
   projects easier to write and will also make the code easier to read and
   debug.</p>
 
@@ -109,7 +109,7 @@ while True:
     our code</p>
    </li>
   </ol>
-  <h2 class=step>Implement a Dictionary and a <code>for</code> loop</h2>
+  <h2 class=step>Implement a Dictionary and a <code>for</code> loop.</h2>
 
   <p>The first thing we're going to do to simplify our code is to use a Python
   Dictionary to enumerate (create a list of) our button controls.</p>
@@ -143,9 +143,9 @@ for button, action in keymap.items():
         action(release=True)
 </textarea>
   </div>
-  <h2 class=step>Simplify the <code>if/else</code> statement</h2>
+  <h2 class=step>Simplify the <code>if/else</code> statement.</h2>
 
-  <p>In our code above, we use a four-line if-else statement to check each
+  <p>In our code above, we use a four-line <code>if/else</code> statement to check each
   controller button (to see if it was being pressed) each time through the game
   loop:</p>
   <div class="code" data-firstline="0">
@@ -160,10 +160,10 @@ else:
   <p>While this works just fine, using four lines of code to complete this
   task is more cumbersome than necessary.</p>
 
-  <p><b>NOTE:</b>You may notice that in the Minecraft Controller 1 project and in the 
+  <p><b>NOTE:</b> You may notice that in the <a data-uid="mccontr1"></a> project and in the 
   above step, we did not include <code>release=False</code> in the first
   <code>action</code> statement. That's because this is the default assumption
-  of the function, and therefore it's not needed. We include it above, as it
+  of the function and, therefore, it's not needed. We include it above, as it
   will make the next part of this discussion more understandable.</p>
 
   <p>As you can see, the first line of the code above tests whether the button
@@ -205,7 +205,7 @@ action(release=(not button.is_pressed()))
    statement.</p>
 
    <p>The <code>not</code> keyword is referred to as a "boolean operator," and
-   it is used to flip False to True (0 to 1) and True to False (1 to 0). The
+   it is used to flip <code>False</code> to <code>True</code> (0 to 1) and <code>True</code> to <code>False</code> (1 to 0). The
    statement:</p>
 
    <p><code>action(release=(not button.is_pressed()))</code></p>
@@ -217,7 +217,7 @@ action(release=(not button.is_pressed()))
   </div>
 
   <p>We can now replace the <code>if/else</code> statement in our
-  <code>for</code> with the single statement:</p>
+  <code>for</code> loop with the single statement:</p>
   <div class="code" data-firstline="0">
    <textarea>
 for button, action in keymap.items():
@@ -227,7 +227,7 @@ for button, action in keymap.items():
   <h2>Full Code</h2>
 
   <p>Here is what the full code for this project should look like. The
-  functionality is equivalent to the functionality in the Minecraft Controller 1 project,
+  functionality is equivalent to the functionality in the <a data-uid="mccontr1"></a> project,
   but the code is much more compact and readable:</p>
   <div class="code" data-firstline="1">
    <textarea>

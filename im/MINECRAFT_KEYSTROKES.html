@@ -34,7 +34,7 @@
   <p>As we mentioned earlier, the Ready Set STEM CREATOR Kit has an enhanced Minecraft API
   (<code>mcpi</code>) that allows us to control our Minecraft character (Steve)
   and manipulate the Minecraft world.  Normally, we move Steve around the Minecraft 
-  world pressing keys on the keyboard (for example, he moves forward when you press the "W"
+  world by pressing keys on the keyboard (for example, he moves forward when you press the "W"
   key).  One of the things the API allows us to do is to <i>simulate</i> keypresses &mdash; 
   that is, our program can make Minecraft <i>think</i> that the "W" key is being pressed, and 
   Steve will move forward exactly as if the key were actually pressed.
@@ -43,7 +43,7 @@
   Steve when something happens &mdash; for example, when a button is pressed on the CREATOR Kit!</p>
 
   <p>Below, we'll discuss the major actions that our character can perform in the
-  game, and how we can remap those actions to things other than the standard
+  game, and how we can remap those actions to inputs other than the standard
   keyboard presses.</p>
   <h2>Control API</h2>
 
@@ -62,7 +62,7 @@ from rstem.mcpi import control
   invokes this movement. The "key" is not released until you call the function
   with the argument <code>release=True</code>.</p>
 
-  <p>For example, to have Steve walk forward for 2 seconds and then stop, this
+  <p>For example, to have Steve walk forward for two seconds and then stop, this
   is what the code would look like:</p>
   <div class="code" data-firstline="0">
    <textarea>
@@ -92,7 +92,7 @@ control.forward(release=True)
   <p>Another way to implement this same functionality (having a key pressed for
   a specific amount of time) is by using the <code>duration=</code> argument
   inside the function. Similar to above, the following code will have Steve 
-  walk forward for 2 seconds and then stop:</p>
+  walk forward for two seconds and then stop:</p>
   <div class="code" data-firstline="0">
    <textarea>
 control.forward(duration=2)
@@ -104,7 +104,7 @@ control.forward(duration=2)
 
   <p>Finally, to stop all keys from being pressed, you can use
   <code>control.stop()</code>. For example, to walk both forward and right for
-  two seconds, and then stop, our code might look like this:</p>
+  two seconds and then stop, our code might look like this:</p>
   <div class="code" data-firstline="0">
    <textarea>
 control.forward()
@@ -117,7 +117,7 @@ control.stop()
   <p>In addition to controlling Steve's movement forward, backwards, left and
   right, we also have the ability to control his other actions.</p>
 
-  <p>One of the main things that Steve does in Minecraft is breaking (smashing)
+  <p>One of the main things that Steve does in Minecraft is break (smash)
   blocks. This is typically accomplished using the left mouse button. Using the
   same <code>control</code> module we've been using, we can have Steve smash
   whatever is in front of him using the following code:</p>
@@ -127,8 +127,8 @@ control.smash()
 </textarea>
   </div>
 
-  <p>Additionally, Steve has the ability to jump, which is typically
-  accomplished using the spacebar on the keyboard, and can be implemented in
+  <p>Additionally, Steve has the ability to jump (which is typically
+  accomplished using the spacebar on the keyboard) and can be implemented in
   our code like this:</p>
   <div class="code" data-firstline="0">
    <textarea>
@@ -206,7 +206,7 @@ control.look(left=100)
 control.look(up=100)
 </textarea>
   </div>
-  Finally, we can combine the actions of looking in different directions at the same time:
+  We can also combine the actions of looking in different directions at the same time:
   <div class="code" data-firstline="0">
    <textarea>
 control.look(left=100, up=100)
@@ -220,7 +220,7 @@ control.look(up=300, down=300)
 </textarea>
   </div>
   <p>Finally, negative values work, too!  A negative value for left is the same as a positive
-  value for right.  And, the same is true for up and down.  So, the following lines to exactly the
+  value for right; the same is true for up and down.  So, the following lines do exactly the
   same thing:
   <div class="code" data-firstline="0">
    <textarea>
