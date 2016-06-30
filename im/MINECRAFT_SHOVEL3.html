@@ -49,12 +49,12 @@
  <ol>
   <li>
 
-   <p>The first will be the Minecraft object (<code>mc</code>) that we use to
+   <p>The Minecraft object (<code>mc</code>) that we use to
    interact with the Minecraft server;</p>
   </li>
   <li>
 
-   <p>The second will be the position of the block that was hit; and</p>
+   <p>The position of the block that was hit; and</p>
   </li>
   <li>
 
@@ -75,18 +75,18 @@ def dig(mc, pos, radius):
  <ul>
   <li>
 
-   <p>On Line 1, we define our function, called "dig" with the three arguments
+   <p>On Line 1, we define our function, called "<code>dig</code>", with the three arguments
    we discuss above.</p>
   </li>
   <li>
 
-   <p>On Line 2, we create a variable called "r_vector" (for "radius vector),
+   <p>On Line 2, we create a variable called "<code>r_vector</code>" (for "radius vector),
    which defines a 3-dimensional space using our predefined radius value.</p>
   </li>
   <li>
 
    <p>On Line 3, we use the <code>.setBlocks()</code> function to modify all
-   the blocks in the r_vector radius around the location of the hit block.</p>
+   the blocks in the <code>r_vector</code> radius around the location of the hit block.</p>
   </li>
  </ul>
  <h2>Full Code</h2>
@@ -132,7 +132,7 @@ while True:
      </p> </li> <li> <p>
     Change the radius to create a larger shovel.
      </p> </li> <li> <p>
-    Add (or reuse) 2 buttons: one button should increase the radius, the other
+    Add (or reuse) two buttons: one button should increase the radius, the other
     one should decrease it.  Now you'll have a shovel of varying size!
      </p> </li> <li> <p>
     Instead of turning the blocks that were hit into Air, turn them into something

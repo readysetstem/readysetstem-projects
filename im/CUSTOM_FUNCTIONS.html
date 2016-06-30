@@ -29,7 +29,7 @@
 </head>
 <body>
  <div class="section">
-  <h1>User Defined Functions</h1>
+  <h1>User-Defined Functions</h1>
 
   <p>In our earlier <a data-uid="functions"></a> tutorial, we discussed the concept
   of functions &mdash; specifically <i>built-in</i> functions, which are the functions
@@ -48,7 +48,7 @@
 
   <p>Let's say that we wanted to write some code that would print my name and
   the year I was born. We could do this exactly like we did with the "Hello,
-  World!" code we wrote in Project #1, and our code might look like the
+  World!" code we wrote in the <a data-uid="hello"></a> project, and our code might look like the
   following:</p>
   <div class="code" data-firstline="1">
    <textarea>
@@ -66,7 +66,7 @@ print('I was born in: 1991')
   <p>So, let's turn the above two lines into a function that we can call 
   from other places in our code...</p>
 
-  <p>The first step in creating a function is giving it a name. In this case,
+  <p>The first step in creating a function is to give it a name. In this case,
   let's say we wanted to call this function, "show_my_info". Here's how we'd
   create it:</p>
   <div class="code" data-firstline="0">
@@ -124,7 +124,7 @@ show_my_info()
 </textarea>
   </div>
 
-  <p>If you run this program, you'll see that each of the three times the
+  <p>If you run this program, you'll see that for each of the three times the
   function is called, it prints the two lines. Imagine if we were going to need
   those two lines printed a hundred times throughout our program – you can see
   how using a function is a lot simpler and also makes our code much less
@@ -142,17 +142,17 @@ show_my_info()
   </div>
   
  <div class="section">
-  <h1>FUNCTION INPUTS</h1>
+  <h1>Function Inputs</h1>
 
   <p>Now that we have a basic idea of what a function is and how it works,
   let's talk about one of the more powerful aspects of using functions.
   Oftentimes, functions will contain code that we want to use over and over
-  again, but we're going to want the code to do work slightly differently each
+  again, but we want the code to work slightly differently each
   time we use it.</p>
 
   <p>For example, when your cell phone rings, the software inside your phone is
   doing a lot of complicated stuff to generate the ring. Your phone has to
-  "wake up," turn on the back light, print information on the display, check to
+  "wake up," turn on the backlight, print information on the display, check to
   see if you're pushing any buttons, play a ringtone, etc. In fact, the code
   that makes your cell phone ring may contain a hundred or more lines of
   code.</p>
@@ -162,16 +162,16 @@ show_my_info()
   and picture. For your friend Allison, you might see Allison's name, phone
   number and picture. Does this mean that the software has to have a hundred
   lines of code for John and a different hundred lines of code for Allison (as
-  well as a different hundred lines of code every other person in your contact
+  well as a different hundred lines of code for every other person in your contact
   list)?</p>
 
   <p>Luckily, no...</p>
 
-  <p>With functions, we have the ability to write generic tasks (like generate
-  a ring), while also changing based on specific information (like putting
+  <p>With functions, we have the ability to write generic tasks (like generating
+  a ring) that change based on specific information (like putting
   different information on the screen for different callers). This is done by
   sending "inputs" (also called "parameters") to the function. Parameters are
-  just pieces of information that the function uses to customize the task it is
+  just pieces of information the function uses to customize the task it is
   performing.  You saw that with built-in functions as well &mdash; remember
   how we pass GPIOs in our <code>Output()</code> and <code>Button</code> functions:</p>
   
@@ -182,7 +182,7 @@ my_led = Output(14)
   </div>
 
   <p>Let's go back to our previous concept where we printed two pieces of
-  information on the screen – my name (Jason) and the year I was born (1991).
+  information on the screen: my name (Jason) and the year I was born (1991).
   What if we wanted to print a name and birth year for other people as well –
   people with a different name and birth year than mine? To do this, we modify
   our function to receive parameters and to use those parameters to customize
@@ -215,11 +215,11 @@ def show_my_info(name, birth_year):
 </textarea>
   </div>
 
-  <p>"name" and "birth_year" are now variables that we set when we call the
-  function, and those variables can be used within that function:</p>
+  <p>"Name" and "birth_year" are now variables that we set when we call the
+  function and those variables can be used within that function.</p>
 
-  <p>Now, when we call the show_my_info function, we will always supply two
-  parameters to the function – a name and a year.</p>
+  <p>Now, when we call the <code>show_my_info</code> function, we will always supply two
+  parameters to the function: a name and a year.</p>
 
   <p>For example, let's say we have a friend named Bob and he was born in 2005.
   We can send his information to the function like this:</p>
@@ -288,7 +288,7 @@ show_my_info('Susie', 1999)
 </div>
 
  <div class="section">
-  <h1>FUNCTION OUTPUTS</h1>
+  <h1>Function Outputs</h1>
 
   <p>As you might suspect, not only can functions take inputs, they can
   also send information back (return output) to other parts of the code. A good
@@ -298,7 +298,7 @@ show_my_info('Susie', 1999)
   <p>Perhaps instead of printing the name and birth year of people, we'd rather
   know how old the person will be on their birthday this year. Using the
   information we already have from our previous lesson, this calculation is
-  pretty simple – we just subtract the birth year from the current year (2015
+  pretty simple – we just subtract the birth year from the current year (2016
   as of this writing) and we'll get the age they will be turning this year.</p>
 
   <p>To create a new function to do this, we can still pass in the "birth_year"
@@ -320,8 +320,8 @@ def calculate_age(birth_year):
 
   <p>Now, to send the information we've calculated back to the main program, we
   end the function with a return statement that contains the information we're
-  sending back (in this case, we're sending the information contained in the
-  variable, "age"):</p>
+  sending back (In this case, we're sending the information contained in the
+  variable, "age".):</p>
   <div class="code" data-firstline="0">
    <textarea>
 def calculate_age(birth_year):
@@ -335,8 +335,8 @@ def calculate_age(birth_year):
   it is needed.</p>
 
   <p>For example, we could call this function for Bob and Susie like we did in
-  the last project, but this time, we could get their age as well, store it in
-  a variable and then print it out:</p>
+  the last project, but this time we could get their ages as well, store them in
+  a variable and then print them out:</p>
   <div class="code" data-firstline="0">
    <textarea>
 bob_age = calculate_age(2005)
