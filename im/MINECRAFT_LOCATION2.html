@@ -44,14 +44,14 @@
   of the LED Matrix, we'll display the location at the edge and flash the LED.
   This will indicate that we're outside of the scaled world.</p>
  </div>
- <div id="hw" class="section"><img class="bb" src="img/LED_Matrix_bb.jpg" alt=
+ <div id="hw" class="section"><mark>Should there be an explanation of the hardware setup here???</mark><img class="bb" src="img/LED_Matrix_bb.jpg" alt=
  ""></div>
  <div id="sw" class="section">
 
   <p>The main difference between the code in the last project and the code in
   this project is that, for this project, we'll add an extra test to determine
-  if the location of our character is outside the boundaries of the LED Matrix,
-  and if so, we'll flash the LED for as long as that condition continues to be
+  if the location of our character is outside the boundaries of the LED Matrix
+  and, if so, we'll flash the LED for as long as that condition continues to be
   true.</p>
 
   <p>Here is what the full code for this project should look like. We'll dig
@@ -101,20 +101,20 @@ while True:
 
     <p>
     On Lines 11 through 13, we initialize the variables we'll use in the game loop.
-    We'll discuss their use below.
+    We'll discuss their uses below.
     </p> </li> <li> <p>
-    On Lines 19 and 23, we determine if Steve has moved out-of-bounds.  He's
-    out-of-bounds if his scaled position would be off of the LED Matrix (i.e., less
+    On Lines 19 and 23, we determine if Steve has moved out of bounds.  He's
+    out of bounds if his scaled position would be off of the LED Matrix (i.e., less
 	than 0 or greater than the width of the LED Matrix).
     </p> </li> <li> <p>
-    On Lines 27 through 30, we keep a count that keeps track of how long
+    On Lines 27 through 30, we keep a count of how long
     we flash on and off.  Every time through the loop, we increment a
     <code>count</code>.  If the <code>count</code> exceeds
     <code>FLASH_COUNT</code>, then we toggle the <code>flash_lit</code>
     variable, which keeps track of whether the flashing LED is on or off.
     </p> </li> <li> <p>
-    On Lines 31 and 32, we light the Steve's location on LED Matrix.  
-	We light it in two cases: when its not out-of-bounds, or if it's 
+    On Lines 31 and 32, we light Steve's location on the LED Matrix.  
+	We light it in two cases: when its not out of bounds, and if it's 
 	<code>flash_lit</code>.
     </p> </li> 
   </ul>
@@ -125,13 +125,13 @@ while True:
   <ol>
    <li>
 
-    <p>Can you make the out-of-bounds flashing occur at a slower rate?
+    <p>Can you make the out of bounds flashing occur at a slower rate?
     </p> </li> <li> <p>
-    Can you make  the flashing occur <i>only</i> when Steve goes out-of-bounds
-    in the north/south direction (the x axis)?
+    Can you make  the flashing occur <i>only</i> when Steve goes out of bounds
+    in the north/south direction (the <code>x</code> axis)?
     </p> </li> <li> <p>
-    Can you make  the flashing occur <i>only</i> when Steve goes out-of-bounds
-    in the <i>south</i> direction (the x axis)?
+    Can you make  the flashing occur <i>only</i> when Steve goes out of bounds
+    in the <i>south</i> direction (the <code>x</code> axis)?
     </p>
    </li>
   </ol>

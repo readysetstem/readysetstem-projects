@@ -41,7 +41,7 @@
   or behind) your character.</p>
 
   <p>For that reason, we've included several APIs in the Ready Set STEM API 
-  that will allow us to get the direction Steve is facing, and will therefore allow 
+  that will allow us to get the direction Steve is facing and will, therefore, allow 
   us to implement additional features that we couldn't get with the Minecraft API 
   alone. Note that to use the functions below, we are doing some behind-the-scenes
   trickery with Minecraft, and because of that, you will to see the
@@ -51,7 +51,7 @@
   <h2><code>get_heading()</code></h2>
 
   <p>The <code>get_heading()</code> function returns the angle you are pointing
-  relative to the Z axis:</p>
+  relative to the Z-axis:</p>
   <div class="code" data-firstline="1">
    <textarea>
 from rstem.mcpi import minecraft, control
@@ -78,9 +78,9 @@ while True:
   angle change.</p>
   <h2><code>get_direction()</code></h2>
 
-  <p>The <code>get_direction()</code> function returns provides two angles -
-  the first angle is your heading, similar to the angle provided by
-  <code>get_heading()</code>. The second angle is the angle Steve is looking in
+  <p>The <code>get_direction()</code> function returns two angles.
+  The first angle is your heading, similar to the angle provided by
+  <code>get_heading()</code>; the second angle is the angle Steve is looking in
   the Y-axis (up or down). This function uses a different method to determine
   the angle, which is not as precise as get_heading(). So, if you want a more
   precise heading (relative to just the Z-axis), use the

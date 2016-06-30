@@ -32,14 +32,14 @@
  <div id="intro" class="section">
 
   <p>In this project, we will allow our Minecraft character to place a bomb
-  anywhere in the Minecraft world with a the press of a button, and then
+  anywhere in the Minecraft world with the press of a button and then
   detonate that bomb with another press of the button.</p>
  </div>
  <div id="hw" class="section">
  <p>For this project, we only need a single button on the breadboard.  In
  our code below, we assume the button is attached to GPIO24.  You are 
  welcome to use a setup from a previous project, as long as one of the
- buttons is correctly attached to GPIO you use in your code:
+ buttons is correctly attached to the GPIO you use in your code:
  
  <img class="bb" src=
  "img/Minecraft_1button_bb.jpg" alt="">
@@ -58,10 +58,10 @@
   </ul>
 
   <p>To keep track of the modes, we use the variable <code>place_mode</code>,
-  which will be set to <code>True</code> when we're in place mode.  The game starts 
-  in place mode.
+  which will be set to <code>True</code> when we're in <i>Place</i> mode.  The game starts 
+  in <i>Place</i> mode.
 
-  <p>To find out where the bomb is placed when the button is hit in Place mode, 
+  <p>To find out where the bomb is placed when the button is hit in <i>Place</i> mode, 
   we use the <code>pollBlockHits()</code> function, similar to the way we used it in the 
   <a data-uid="shovel1"></a> project.
 

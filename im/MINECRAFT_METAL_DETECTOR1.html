@@ -32,7 +32,7 @@
 
   <p>In this project, we will write code to place a block of gold in a random
   location around the Minecraft world. We will then allow our character to move
-  about the world and when he smashes the gold block, we'll end the game and let the
+  about the world to hunt for the gold block. When he smashes it, we'll end the game and let the
   user know that the gold has been found.</p>
   
   <p>We'll add additional functionality in our next project as well.
@@ -48,7 +48,7 @@
  <div id="sw" class="section">
 
   <p>Our code for this project will be pretty simple; in our next project,
-  we'll expand on it and make it more robust. For this project, 
+  we'll expand on this code to make it more robust. For this project, 
   besides the normal initialization we need to do for all Minecraft projects, 
   we will:
   </p>
@@ -67,9 +67,9 @@
    </li>
   </ol>
 
-  <h2 class=step>Place gold in a random location</h2>
+  <h2 class=step>Place gold in a random location.</h2>
 
-  <p>Next, we will pick a random block within the game world — and within the
+  <p>After initialization, we will pick a random block within the game world — and within the
   distance from our character that we defined above — and change it to
   gold:</p>
   <div class="code" data-firstline="0">
@@ -99,7 +99,7 @@ gold_exists = True
   level — our code must determine the elevation of the particular block, since
   the elevation of the gold may be different than the elevation of the block
   where our character currently is. We use the <code>getHeight()</code>
-  function for this. Note that we can change increase the depth of the buried
+  function for this. Note that we can change the depth of the buried
   gold by increasing our <code>GOLD_DEPTH</code> variable.</p>
 
   <p>Once we've chosen a location for the gold block, we use the
@@ -112,7 +112,7 @@ gold_exists = True
   variable will be needed later for our loop to determine when the gold has
   been found/smashed.</p>
 
-  <h2 class=step>Test if the gold block was smashed</h2>
+  <h2 class=step>Test if the gold block was smashed.</h2>
 
   <p>Next, we need to write the code in our game loop to continually test 
   whether the gold block has been smashed (we'll do this by actually testing
@@ -136,7 +136,7 @@ while gold_exists:
 
   <p>Note that we've changed the loop from continuing forever (<code>while
   True</code>) to continuing only until the gold has been found
-  (which we do by setting <code>gold_exists</code> to False).</p>
+  (which we do by setting <code>gold_exists</code> to <code>False</code>).</p>
 
   <h2 class=step>When gold is found, let the user know</h2>
 

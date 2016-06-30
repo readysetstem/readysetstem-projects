@@ -35,7 +35,7 @@
   <p>In this project, we'll build on the sprite animations we did in the
   LED Matrix 
   <a data-uid="running"></a>
-   project by not only animating a running man on the LED Matrix, but also
+   project by not only animating a running man on the LED Matrix, but also by
   creating a synchronized animation of the running man in the Minecraft world. What we
   draw on the LED Matrix will be replicated in blocks in the Minecraft
   world.</p>
@@ -147,8 +147,8 @@ while True:
 
   <p>We've created a function that will animate our character in
   the Minecraft world. Unlike the LED Matrix, where we can use a simple API to
-  pass in an 8x8 design (a sprite) with a single function call, to create a design in the
-  Minecraft world, we need to draw it block-by-block. For that reason, the bulk
+  pass an 8x8 design (a sprite) with a single function call to create a design in the
+  Minecraft world, we need to draw it block by block. For that reason, the bulk
   of our function is used to turn our 8x8 list of 0's and non-0's into
   blocks (for the non-0's) and air (for the 0's).</p>
 
@@ -162,9 +162,9 @@ while True:
    </li>
    <li>
 
-    <p>On Line 57, we take our 8x8 design that we drew on our LED
+    <p>On Line 57, we take the 8x8 design we drew on our LED
     Matrix and we rearrange it in an order that will allow us to draw it in the
-    Minecraft world. Specifically, we break up the design into the eight separate
+    Minecraft world. Specifically, we break up the design into eight separate
 	lines (using the <code>splitlines()</code> function) and then we
     reverse the order of the lines from bottom to top (using the 
 	<code>reversed()</code> function), as we will draw starting from the ground 
@@ -180,11 +180,11 @@ while True:
    <li>
 
     <p>On Lines 60 through 64, we have implemented the code that will be used to
-	create blocks at each of 64 (8x8) character positions. The code checks the character, 
-	and if it's a 0 (which is equivalent to the LED being <i>off</i> in that position), 
+	create blocks at each of 64 (8x8) character positions. The code checks the character
+	and, if it's a 0 (which is equivalent to the LED being <i>off</i> in that position), 
 	it sets the block type to AIR, which is the same as not drawing a block. If the 
 	character is a non-0 (which is equivalent to the LED being <i>on</i> in that position), 
-	it sets the block type to wood, so we'll see the block at that location. The final 
+	it sets the block type to WOOD, so we'll see the block at that location. The final 
 	line of that code block uses the <code>setBlock()</code> function to draw the 
 	appropriate block.</p>
    </li>
@@ -196,9 +196,9 @@ while True:
    <div>
 
     <p>In the two <code>for</code> loops above, we use the
-    built-in <code>enumerate</code> function. This function allows us to track the count
-    of how many times we've gone through the <code>for</code> loop &mdash; we call
-    this the "index", it starts at 0 and it is stored in the first variable of
+    built-in <code>enumerate</code> function. This function allows us to count
+    how many times we've gone through the <code>for</code> loop &mdash; we call
+    this the "index," it starts at 0 and it is stored in the first variable of
     the loop.</p>
 
     <p>Here's an example:</p>
@@ -224,10 +224,10 @@ while True:
   <ol>
    <li>
 
-    <p>We made the running man out of wood.  Can you change the type of block
+    <p>We made the running man out of WOOD.  Can you change the type of block
    that the running man is made of?
    </p> </li> <li> <p>
-   Can you make the running man out of stripes?  That is, can you use
+   Can you make the running man striped?  That is, can you use
    different materials for the odd and even rows?
    </p> </li> <li> <p>
    Can you make the running man out of randomly generated materials for each

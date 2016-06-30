@@ -29,10 +29,10 @@
 </head>
 <body>
  <div class="section">
- <h1>TROUBLESHOOTING CIRCUITS</h1>
+ <h1>Troubleshooting Circuits</h1>
 
  <p>Wiring circuits, using electronic components and writing software isn't
- always trouble free — "debugging" (fixing) hardware and software is a typical
+ always trouble-free. "Debugging" (fixing) hardware and software is a typical
  part of any programming and electronics work you'll ever do.</p>
 
  <p>Below, we offer some suggestions on how to work through the issues you
@@ -40,7 +40,7 @@
  addressed in any of the sections below, feel free to visit our support page at
  readysetstem.com.</p>
  </div><div class="section">
- <h1>CIRCUIT ISSUES</h1>
+ <h1>Circuit Issues</h1>
 
  <p>If your circuit isn't working, there are lots of potential issues you could
  be encountering. When this happens, the best approach is one that tests each
@@ -52,11 +52,11 @@
  components to ensure they've been placed/wired correctly and then testing for
  continuity around the entire circuit.</p>
 
- <p>Here is a step-by-step checklist that you can use to efficiently test your
+ <p>Here is a step-by-step checklist you can use to efficiently test your
  circuit to resolve issues. After following these troubleshooting steps a few
  times, you'll start to get the hang of how to resolve issues even more quickly
  on your own:</p>
- <h3 class=step>Verify that the Raspberry Pi computer is receiving power</h3>
+ <h3 class=step>Verify that the Raspberry Pi computer is receiving power.</h3>
 
  <p>The first step is to ensure that the Raspberry Pi computer is powered on.
  This is easy to verify — the red light on the front of the Raspberry Pi should
@@ -76,9 +76,9 @@
    Raspberry Pi computer</p>
   </li>
  </ul>
- <h3 class=step>Verify that the Lid Connector Board is being powered correctly</h3>
+ <h3 class=step>Verify that the Lid Connector Board is being powered correctly.</h3>
 
- <p>Now that we're confident that the Raspberry Pi is powered on, we want to
+ <p>Now that we're confident the Raspberry Pi is powered on, we want to
  ensure that it is correctly connected to the Lid Connector Board with the
  Ribbon Cable. To verify this, do the following:</p>
  <ol>
@@ -97,7 +97,7 @@
  <p>At this point, the LED should be illuminated, as follows:</p><img src=
  "img/Connector_Power.jpg" alt="">
 
- <p><strong>Note:</strong> Don't leave the LED like that for very long, as
+ <p><strong>Note:</strong> Don't leave the LED like that for very long as,
  without a resistor, the LED can be damaged and will also likely start to get
  very warm.</p>
 
@@ -114,7 +114,7 @@
    Connector Board, with the connector nearly flush with the lid</p>
   </li>
  </ul>
- <h3 class=step>Verify that the breadboard is being powered and grounded correctly</h3>
+ <h3 class=step>Verify that the breadboard is being powered and grounded correctly.</h3>
 
  <p>Assuming the Lid Connector Board is receiving power, the next thing you'll
  want to verify is that your breadboard is receiving power and ground
@@ -141,10 +141,10 @@
 
  <p>Here is an example:</p><img src="img/Power_Strip.jpg" alt="">
 
- <p><strong>Note:</strong> Don't leave the LED like that for very long, as
+ <p><strong>Note:</strong> Don't leave the LED like that for very long as,
  without a resistor, the LED can be damaged and will also likely start to get
  very warm.</p>
- <h3 class=step>Check that each component is being wired and programmed correctly</h3>
+ <h3 class=step>Check that each component is wired and programmed correctly.</h3>
 
  <p>Once you are confident that your breadboard is being powered and grounded
  correctly, the next step is to verify that each of your components is wired
@@ -169,12 +169,12 @@
    <p>LED Matrix Troubleshooting</p>
   </li>
  </ul>
- <h3 class=step>Verify your code is working as expected</h3>
+ <h3 class=step>Verify your code is working as expected.</h3>
 
- <p>If you've gotten this far, and it appears that your circuit is wired
- correctly, but your project still isn't working, we recommend going back to
- review the code you've written. In some cases, what appear to be hardware
- issues are really just mistakes in the code. Remember, not all coding mistakes
+ <p>If you've gotten this far and it appears that your circuit is wired
+ correctly but your project still isn't working, we recommend going back to
+ review the code you've written. In some cases, what appears to be a hardware
+ issue is really just a mistake in the code. Remember, not all coding mistakes
  will generate an error, so you may not realize that you have a problem with
  your code until you inspect things in more detail.</p>
 
@@ -183,22 +183,22 @@
  different GPIO. While that wouldn't generate an error in the code, it would
  keep your circuit from operating the way you are expecting it to.</p>
  </div><div class="section">
- <h1>LED TROUBLESHOOTING</h1>
+ <h1>LED Troubleshooting</h1>
 
  <p>LEDs are relatively simple devices, but there are still some challenges
  you'll face when using them in your circuits.</p>
 
  <p>Here are some tips on how to solve issues with LEDs:</p>
- <h3 class=step>Verify that the LED is working properly</h3>
+ <h3 class=step>Verify that the LED is working properly.</h3>
 
  <p>Assuming you have verified the breadboard is powered, you can place the LED
  with the long lead attached to power and the short lead attached to ground,
  and verify that it illuminates.</p>
 
- <p><strong>Note:</strong> Don't leave the LED like that for very long, as
+ <p><strong>Note:</strong> Don't leave the LED like that for very long as,
  without a resistor, the LED can be damaged, and will also likely start to get
  very warm.</p>
- <h3 class=step>Verify that the LED is oriented correctly</h3>
+ <h3 class=step>Verify that the LED is oriented correctly.</h3>
 
  <p>If the LED isn't working on the breadboard, you should ensure that the LED
  is oriented correctly, with the longer lead attached to the power and the
@@ -206,7 +206,7 @@
  correctly, you can always try turning it so that the leads attach the other
  way and see if it works. If the LED doesn't work in either direction, there is
  a good chance that your LED isn't functional.</p>
- <h3 class=step>If attached to a GPIO, verify that the LED is wired correctly</h3>
+ <h3 class=step>If attached to a GPIO, verify that the LED is wired correctly.</h3>
 
  <p>If you are attempting to attach an LED to a GPIO, you'll want to ensure
  that the longer lead is connected to power and that the shorter lead is
@@ -214,7 +214,7 @@
 
  <p><img class="bb" src="img/Your_First_Breadboard_Add_GPIO_bb.jpg" alt=""></p>
  <h3 class=step>If attached to a GPIO, verify that the code reflects the correct GPIO
- being used</h3>
+ being used.</h3>
 
  <p>Once you have verified that the LED is working correctly and that it is
  correctly wired, you can use the following short piece of code to verify that
@@ -230,8 +230,8 @@ my_led.on()
 
  <p>If you run the code, the LED should illuminate.</p>
  </div><div class="section">
- <h1>BUTTON TROUBLESHOOTING</h1>
- <h3 class=step>Verify that the button is oriented correctly on the breadboard</h3>
+ <h1>Button Troubleshooting</h1>
+ <h3 class=step>Verify that the button is oriented correctly on the breadboard.</h3>
 
  <p>There is a correct way and an incorrect way to place buttons on the
  breadboard, as follows:</p>
@@ -251,14 +251,14 @@ my_led.on()
  <p>You will want to ensure that your button is oriented correctly before
  continuing. Note that the button can also be placed across the notch in the
  breadboard, as long as it is oriented correctly.</p>
- <h3 class=step>Ensure the button is fully inserted into the breadboard</h3>
+ <h3 class=step>Ensure the button is fully inserted into the breadboard.</h3>
 
  <p>One of the most common issues with buttons is that they are not fully
  inserted into the breadboard. When this happens, the buttons don't have good
- connections to the power source or to other components, and they won't operate
+ connections to the power source or to other components and they won't operate
  correctly. Firmly press the button into the breadboard until there is no space
  between the bottom of the button and the surface of the breadboard.</p>
- <h3 class=step>If attached to a GPIO, verify that the button is wired correctly</h3>
+ <h3 class=step>If attached to a GPIO, verify that the button is wired correctly.</h3>
 
  <p>If you are attempting to attach a button to a GPIO, you'll want to ensure
  that one side of the button is connected to ground (NOT POWER) and that the
@@ -304,8 +304,8 @@ while True:
 
  <p>If wired correctly, pressing the button should illuminate the LED.</p>
  </div><div class="section">
- <h1>ACCELEROMETER TROUBLESHOOTING</h1>
- <h3 class=step>Ensure that the accelerometer is wired correctly</h3>
+ <h1>Accelerometer Troubleshooting</h1>
+ <h3 class=step>Ensure that the accelerometer is wired correctly.</h3>
 
  <p>If the accelerometer doesn't seem to be working, or if you're receiving an
  error when running your code, ensure that the SCL and SDA pins on the
@@ -314,7 +314,7 @@ while True:
 
  <p>Here is the correct wiring (the LED Matrix shown in this diagram is not
  required):</p><img class="bb" src="img/LED_Matrix_Accel_bb.jpg" alt="">
- <h3 class=step>Test the accelerometer with some simple code</h3>
+ <h3 class=step>Test the accelerometer with some simple code.</h3>
 
  <p>If a larger block of code is being used and the accelerometer doesn't
  appear to be working, you can check to verify that the accelerometer is wired
@@ -333,7 +333,7 @@ while True:
 </textarea>
  </div>
  <h3 class=step>If you see or smell smoke, you've likely wired the power and ground
- backwards</h3>
+ backwards.</h3>
 
  <p>If you have wired your accelerometer and you see (or smell) smoke, unplug
  it immediately by removing power to the Ready Set STEM CREATOR Kit. An
@@ -341,9 +341,9 @@ while True:
  ground are wired backwards, the accelerometer will very likely no longer
  work.</p>
  </div><div class="section">
- <h1>LED MATRIX TROUBLESHOOTING</h1>
+ <h1>LED Matrix Troubleshooting</h1>
  <h3 class=step>Verify that your LED Matrix display is oriented correctly on the LED
- Matrix circuit board</h3>
+ Matrix circuit board.</h3>
 
  <p>If the LED Matrix isn't working properly, the first thing you'll want to
  verify is that the LED Matrix display is correctly oriented on the circuit
@@ -360,14 +360,14 @@ while True:
 
  <p>Here is an example of a correctly assembled LED Matrix
  display:</p><img src="img/Matrix.jpg" alt="">
- <h3 class=step>Verify that your LED Matrix cable is installed correctly</h3>
+ <h3 class=step>Verify that your LED Matrix cable is installed correctly.</h3>
 
  <p>If the LED Matrix still isn't working properly, the next thing you'll want
  to verify is that the LED Matrix cable is installed correctly. With the LED
  Matrix display facing up and the pins of the LED Matrix facing to the left,
  the LED matrix cable should be inserted as follows:</p><img src=
  "img/Matrix_Cable.jpg" alt="">
- <h3 class=step>Ensure that the LED Matrix is powered and functional</h3>
+ <h3 class=step>Ensure that the LED Matrix is powered and functional.</h3>
 
  <p>See the section in the <a data-uid="ledmatrix"></a> project on how to
  correctly attach power and ground. Disconnect and reattach power and ground
@@ -376,13 +376,13 @@ while True:
  the display a single time. This is indication that the LED Matrix is powered
  up and working correctly.</p>
  <h3 class=step>Ensure that the LED Matrix is wired correctly and run a test
- program</h3>
+ program.</h3>
 
  <p>Next, we'll test the connection between the Raspberry Pi and the LED
  Matrix. See the section in the <a data-uid="ledmatrix"></a> project on how to
  correctly wire SCLK, MOSI, CE &amp; MISO pins.</p>
 
- <p>Open a new file and run a the short test program below to verify the LED
+ <p>Open a new file and run a short test program below to verify the LED
  Matrix is wired correctly and working properly.</p>
  <div class="code" data-firstline="1">
   <textarea>

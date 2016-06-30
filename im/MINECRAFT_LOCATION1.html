@@ -38,12 +38,12 @@
   we move through the Minecraft world, the LED Matrix will track our movement 
   and plot our position.</p>
  </div>
- <div id="hw" class="section"><img class="bb" src="img/LED_Matrix_bb.jpg" alt=
+ <div id="hw" class="section"><mark>Should there be an explanation of the hardware setup here???</mark><img class="bb" src="img/LED_Matrix_bb.jpg" alt=
  ""></div>
  <div id="sw" class="section">
 
   <p>Our code for this project will contain all the standard pieces necessary
-  to get Minecraft running — importing modules/functions we'll need, attaching
+  to get Minecraft running — importing modules/functions we'll need, connecting
   to the Minecraft server and starting Minecraft — while our project-specific
   code will completely lie within our game loop.</p>
 
@@ -105,8 +105,8 @@ while True:
 
   <p>Once we retrieve our position in the Minecraft world using the
   <code>getTilePos()</code> function, we need to map that vector position to a
-  point on the LED Matrix. We do this on lines 15 and 16 for the x
-  direction, and on lines 18 and 19 for the z direction.
+  point on the LED Matrix. We do this on lines 15 and 16 for the <code>x</code>
+  direction, and on lines 18 and 19 for the <code>z</code> direction.
 
   <p>The <code>SCALE</code> value is the amount by which we want to shrink the Minecraft
   world to fit on the LED Matrix. While the size of the Minecraft world will
@@ -132,7 +132,7 @@ while True:
   computation above and using the <code>round()</code> function.</p>
 
   <p>Finally, because we can't be sure of the actual size of the Minecraft
-  world (it could be larger than we anticipate), we need to ensure that this
+  world (it could be larger than we anticipated), we need to ensure that this
   whole number doesn't fall outside the 0 to 7 range.</p>
 
   <p>This is accomplished using the code:</p>
@@ -146,13 +146,13 @@ while True:
    <li>
 
     <p>We scaled down the Minecraft world so that a width of 200 Minecraft
-   blocks (from -100 to 100) is represented on the LED Matrix.  Modify this so
+   blocks (from -100 to 100) could be represented on the LED Matrix.  Modify this so
    that only -10 to 10 Minecraft blocks are represented.</p>
    </li> <li> <p>
-   Instead of using a point to represent the position, can you use a plus sign made up of two crossing lines (one horizontal and one vertical) that are each 3 points long?
+   Instead of using a point to represent the position, can you use a plus sign made up of two crossing lines (one horizontal and one vertical) that are each three points long?
    </p>
    </li> <li> <p>
-   Can you do the draw the same plus sign as the previous question, but with a <code>Sprite()</code>?
+   Can you draw the same plus sign as in the previous question, but with a <code>Sprite()</code>?
    </p>
    </li>
   </ol>

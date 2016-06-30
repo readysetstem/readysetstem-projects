@@ -51,14 +51,14 @@
   <p>Because we're not using the LED Matrix in this project, we don't need to
   include the LED intensity in our sprite design. Instead, we will simply use 0 and 1
   to denote our block types &mdash; 0 will indicate no block (block type AIR) and
-  1 will indicate a stone block. We implement this using a list, and the 0 and
+  1 will indicate a STONE block. We implement this using a list, and the 0 and
   1 are simply indexes in that list.</p>
 
   <p>The magic happens in a function we've created called <code>create_house()</code>.  
   Similar to the <code>sprite_in_minecraft()</code> function in the 
   <a data-uid="mcanimation"></a> project, we go through a set of nested loops to
   draw blocks in the Minecraft world.  In that project, we drew the animation in
-  2 dimensions (X and Y), and therefore we used two nested loops.  In this project,
+  two dimensions (X and Y), and therefore we used two nested loops.  In this project,
   we'll draw the house in 3 dimensions, which means we'll need three nested loops.
 
   <p>The corner of the house is drawn relative to Steve's position, plus an
@@ -149,7 +149,7 @@ while True:
  <div id="challenge" class="section">
   <ol>
    <li> <p>
-   Assuming you still have your controller wired up, add this house making code to 
+   Assuming you still have your controller wired up, add this house-making code to 
 	the Minecraft controller code (<a data-uid="mccontr3"></a> project) so that you
 	can build a house while using the CREATOR Kit as a controller.
    </p> </li> <li> <p>
