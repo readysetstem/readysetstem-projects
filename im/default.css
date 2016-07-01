@@ -1,3 +1,5 @@
+@import "fonts.css";
+
 @page {
     margin: 0.79in
 }
@@ -9,14 +11,14 @@ img {
     display: block;
 }
 body {
-    font-family: "Verdana", serif;
+    font-family: "Open Sans", sans-serif;
 }
 p {
     margin-bottom: 0.14in;
     color: #00000a;
     line-height: 150%;
     text-align: left;
-    font-size: 11pt;
+    font-size: 12pt;
 }
 
 /*
