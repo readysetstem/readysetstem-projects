@@ -114,9 +114,8 @@ pg_flows.Main = [
     {filename: "MINECRAFT_HOUSE2.html",             title: "HOUSE 2",                       concept: false, uid: ""},
     {filename: "MINECRAFT_HOUSE3.html",             title: "HOUSE 3",                       concept: false, uid: ""},
 
-    //{filename: "CONGRATS.html",                     title: "CONGRATULATIONS!",              concept: true, uid: "", section: "APPENDIX"},
-    //{filename: "MORE_RESOURCES.html",               title: "MORE RESOURCES",                concept: true, uid: ""},
-    {filename: "HANDLING_ERRORS.html",              title: "HANDLING ERRORS",               concept: true, uid: "errors", section: "APPX"},
+    {filename: "CONGRATULATIONS.html",                     title: "CONGRATULATIONS!",              concept: true, uid: "", section: "APPX"},
+    {filename: "HANDLING_ERRORS.html",              title: "HANDLING ERRORS",               concept: true, uid: "errors"},
     {filename: "TROUBLESHOOTING.html",              title: "TROUBLESHOOTING",               concept: true, uid: ""},
     //{filename: "GLOSSARY.html",                     title: "GLOSSARY",                      concept: true, uid: ""},
     ];
@@ -212,9 +211,8 @@ pg_flows.Minecraft = [
     {filename: "MINECRAFT_HOUSE2.html",             title: "HOUSE 2",                       concept: false, uid: ""},
     {filename: "MINECRAFT_HOUSE3.html",             title: "HOUSE 3",                       concept: false, uid: ""},
 
-    //{filename: "CONGRATS.html",                     title: "CONGRATULATIONS!",              concept: true, uid: "", section: "APPENDIX"},
-    //{filename: "MORE_RESOURCES.html",               title: "MORE RESOURCES",                concept: true, uid: ""},
-    {filename: "HANDLING_ERRORS.html",              title: "HANDLING ERRORS",               concept: true, uid: "errors", section: "APPX"},
+    {filename: "CONGRATULATIONS.html",                     title: "CONGRATULATIONS!",              concept: true, uid: "", section: "APPX"},
+    {filename: "HANDLING_ERRORS.html",              title: "HANDLING ERRORS",               concept: true, uid: "errors"},
     {filename: "TROUBLESHOOTING.html",              title: "TROUBLESHOOTING",               concept: true, uid: ""},
     //{filename: "GLOSSARY.html",                     title: "GLOSSARY",                      concept: true, uid: ""},
     ];
@@ -306,9 +304,8 @@ pg_flows.Gamer = [
     {filename: "SPACE_INVADERS_8.html",             title: "ALIEN INTRUDERS 8",             concept: false, uid: ""},
     {filename: "SPACE_INVADERS_9.html",             title: "ALIEN INTRUDERS 9",             concept: false, uid: ""},
 
-    //{filename: "CONGRATS.html",                     title: "CONGRATULATIONS!",              concept: true, uid: "", section: "APPENDIX"},
-    //{filename: "MORE_RESOURCES.html",               title: "MORE RESOURCES",                concept: true, uid: ""},
-    {filename: "HANDLING_ERRORS.html",              title: "HANDLING ERRORS",               concept: true, uid: "errors", section: "APPX"},
+    {filename: "CONGRATULATIONS.html",                     title: "CONGRATULATIONS!",              concept: true, uid: "", section: "APPX"},
+    {filename: "HANDLING_ERRORS.html",              title: "HANDLING ERRORS",               concept: true, uid: "errors"},
     {filename: "TROUBLESHOOTING.html",              title: "TROUBLESHOOTING",               concept: true, uid: ""},
     //{filename: "GLOSSARY.html",                     title: "GLOSSARY",                      concept: true, uid: ""},
     ];
