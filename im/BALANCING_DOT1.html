@@ -108,15 +108,15 @@ while True:
 
     <p>On Lines 14 through 17, we move the dot if the CREATOR Kit is tilted.
     The first part says: if the kit is tilted to the left (greater than the
-    <code>TILT_FORCE</code>), then decrease the x position. Alternatively, if
-    tilted right (a negative <code>TILT_FORCE</code>), then increase the x
+    <code>TILT_FORCE</code>), then decrease the X position. Alternatively, if
+    tilted right (a negative <code>TILT_FORCE</code>), then increase the X
     position.</p>
    </li>
    <li>
 
     <p>On Line 20, we draw the dot. Notice that we use the built-in function
-    <code>round()</code>. We need this because our x position moves by
-    fractional <code>STEP</code>s. So, our x position is fractional, too — it
+    <code>round()</code>. We need this because our X position moves by
+    fractional <code>STEP</code>s. So, our X position is fractional, too — it
     might be something like 3.2. However, the coordinates on the LED Matrix are
     <i>integers</i>. Therefore, we must round them to the nearest integer
     (using the <code>round()</code> function).</p>
@@ -133,7 +133,7 @@ while True:
    <li>
 
     <p>While keep the code above the same (that allows you to balance the dot
-    left and right), can you add code to change the row (y coordinate) that the
+    left and right), can you add code to change the row (Y coordinate) that the
     dot is on? You can change the row randomly, or in sequential order.</p>
    </li>
   </ol>

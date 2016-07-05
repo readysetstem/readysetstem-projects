@@ -86,7 +86,7 @@ gold_exists = True
 
   <p>This code first sets the position of the gold to be at the player's
   current position, and then modifies the location by a random amount for
-  each coordinate (x, y, z). For the x and y coordinates, the new position 
+  each coordinate (x, y, z). For the X and Y coordinates, the new position 
   is a random distance between -3 and 3 (our <code>ARENA_WIDTH</code>) from 
   the current player position.
   
@@ -95,7 +95,7 @@ gold_exists = True
   way of indicating where the gold is, so we don't want to place it too far
   from us; we'll fix that issue in the next project.</p>
 
-  <p>For the z position (the height of the gold), we place the gold at ground
+  <p>For the Z position (the height of the gold), we place the gold at ground
   level — our code must determine the elevation of the particular block, since
   the elevation of the gold may be different than the elevation of the block
   where our character currently is. We use the <code>getHeight()</code>
