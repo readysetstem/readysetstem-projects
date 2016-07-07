@@ -73,7 +73,7 @@
  </ol>
 
  <p>Here is what your breadboard should look like at this point (we've chosen
- to use GPIO14, GPIO15, GPIO25 and GPIO7 for our buttons):</p><img class="bb"
+ to use GPIO14, GPIO15, GPIO25 and GPIO12 for our buttons):</p><img class="bb"
  src="img/Many_Buttons_bb.jpg" alt=""></div>
  <div class="section" id="sw">
 
@@ -87,7 +87,7 @@
 from rstem.button import Button
 import time
 
-my_buttons = [Button(14), Button(15), Button(25), Button(7)]
+my_buttons = [Button(14), Button(15), Button(25), Button(12)]
 
 while True: 
     for button in my_buttons: 
