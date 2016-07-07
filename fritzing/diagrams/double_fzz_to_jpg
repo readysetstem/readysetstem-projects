@@ -5,7 +5,7 @@ UP=126
 DOWN=125
 ENTER=36
 
-SLEEP=0.3
+SLEEP=0.5
 
 function key() {
     sleep $SLEEP
@@ -57,7 +57,7 @@ function raise_lower_breadboard() {
     #
     # Raise or lower (']' or '[' character)
     #
-    sleep 0.5
+    sleep 1
     if [ $1 == 'top' ]; then
         shiftcmdkey ']'
     else
@@ -91,7 +91,7 @@ function raise_lower_breadboard() {
     keycode $RIGHT
     keycode $RIGHT
     keycode $ENTER
-    sleep 2 
+    sleep 3 
     keycode $RIGHT
     keycode $LEFT
     keycode $LEFT
@@ -106,19 +106,19 @@ BASE="${FILE%.*}"
 
 echo "$FILE"
 open "$FILE"
-sleep 16
+sleep 20
 
 rm -f "$BASE"_*.png
 raise_lower_breadboard top
 raise_lower_breadboard bot
-sleep 2
+sleep 3
 cmdkey w
-sleep 2
+sleep 3
 key d
 
 ./bb_stitch "$BASE"
 ./bb_png_to_jpg "$BASE"_bb $2 $3
 rm -f "$BASE"_*.png
-sleep 2
+sleep 3
 
 mv "$BASE"_bb.jpg ../../im/img
