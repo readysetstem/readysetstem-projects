@@ -40,9 +40,9 @@ all: $(TARGETS)
 # Targets
 #
 
-PG=projectsguide
-HOST=raspberrystem
-USER=jsteinhorn
+PG=projectsguide_full
+HOST=readysetstem
+USER=readysetstem
 pushpg:
 	ssh $(USER)@$(HOST).com mkdir -p $(HOST).com/$(PG)
 	scp -r im/* $(USER)@$(HOST).com:$(HOST).com/$(PG)
